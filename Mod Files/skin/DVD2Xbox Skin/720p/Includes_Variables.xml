@@ -1,0 +1,5 @@
+<includes>
+		<variable name="var-labelcolour">
+				<value>FFFFFFFF</value>
+		</variable>
+</includes>

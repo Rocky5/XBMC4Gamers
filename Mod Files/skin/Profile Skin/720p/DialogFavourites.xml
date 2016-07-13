@@ -1,0 +1,101 @@
+<window type="dialog" id="134">
+		<defaultcontrol always="true">450</defaultcontrol>
+		<!-- 	<animation effect="slide" start="0,100" end="0,0" time="200">Windowopen</animation>
+	<animation effect="slide" start="0,0" end="0,100" time="200">Windowclose</animation>
+ -->
+		<controls>
+				<control type="group">
+						<posx>200</posx>
+						<posy>-40</posy>
+						<include>Window_OpenClose_Animation</include>
+						<control type="label">
+								<posx>36</posx>
+								<posy>230</posy>
+								<width>1042</width>
+								<height>36</height>
+								<font>font25</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<scroll>true</scroll>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>[UPPERCASE]$INFO[Container(450).ListItem.Label][/UPPERCASE]</label>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(450).OnScrollNext">Conditional</animation>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(450).OnScrollPrevious">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>36</posx>
+								<posy>288</posy>
+								<width>216</width>
+								<height>316</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>black-back.png</texture>
+								<bordertexture border="5">poster-border.png</bordertexture>
+								<bordersize>5</bordersize>
+						</control>
+						<control type="image">
+								<posx>36</posx>
+								<posy>288</posy>
+								<width>216</width>
+								<height>316</height>
+								<aspectratio>stretch</aspectratio>
+								<texture background="true">$INFO[Container(450).ListItem.Icon]</texture>
+								<bordertexture>-</bordertexture>
+								<bordersize>5</bordersize>
+						</control>
+						<control type="panel" id="450">
+								<posx>260</posx>
+								<posy>288</posy>
+								<width>600</width>
+								<height>315</height>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>-</onup>
+								<ondown>-</ondown>
+								<viewtype label="Panels">Panel</viewtype>
+								<pagecontrol>62</pagecontrol>
+								<scrolltime>200</scrolltime>
+								<preloaditems>6</preloaditems>
+								<itemlayout height="110" width="84">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>68</width>
+												<height>96</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>ThumbNF.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>68</width>
+												<height>96</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true">$INFO[ListItem.Icon]</texture>
+												<bordertexture border="5">black-back.png</bordertexture>
+												<bordersize>1</bordersize>
+										</control>
+								</itemlayout>
+								<focusedlayout height="110" width="84">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>68</width>
+												<height>96</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>ThumbNF.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>68</width>
+												<height>96</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>poster-focus.png</texture>
+										</control>
+								</focusedlayout>
+						</control>
+				</control>
+				<!-- Debug Info -->
+				<include>Debug</include>
+		</controls>
+</window>

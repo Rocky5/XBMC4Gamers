@@ -1,0 +1,101 @@
+<dvd2xbox>
+		<main>
+				<!-- This overrides the value in the online settings. If dvd2xbox crashes during boot while  !-->
+				<!-- printing "Checking for available partitions" set this value to 0. Afterwards turn off   !-->
+				<!-- the autodetect feature in the online settings and activate manually the available disks.!-->
+				<autodetectHDD>1</autodetectHDD>
+				<!-- Files with this extension are opened in the text viewer if A is pressed. !-->
+				<!-- All other files can still be opened via the action menu                  !-->
+				<textExtensions>txt|nfo|cfg|ini|xml</textExtensions>
+				<!-- Configure the cdda title format. Available variables: !-->
+				<!-- ${TRACK}           : Track number with leading zero   !-->
+				<!-- ${TRACKARTIST} : Artist of the selected track         !-->
+				<!-- ${DISCARTIST}   : Artist of the whole cd              !-->
+				<!-- ${TITLE}            : Track title                     !-->
+				<trackformat>${TRACK}-${TRACKARTIST}-${TITLE}</trackformat>
+				<!-- Configure application which should be run when return to dash is pressed !-->
+				<!-- Leave 'default' to return to the default dash                                !-->
+				<return2dash>default</return2dash>
+		</main>
+		<!-- Put in all directories you would like to have as destination folders. Only the e: drive is      !-->
+		<!-- enabled per default (if autodetectHDD is 0). To see the f: and g: drive entries launch dvd2xbox !-->
+		<!-- press the white button and enable f: and/or g: (make sure that the drives are formatted).       !-->
+		<dumpdirs>
+				<dir>F:\Games</dir>
+				<dir>G:\Games</dir>
+				<!-- <dir>f:\games\Action\</dir>
+		<dir>f:\games\Driving\</dir>
+		<dir>f:\games\Emu\</dir>
+		<dir>f:\games\Fighting\</dir>
+		<dir>f:\games\FPS\</dir>
+		<dir>f:\games\other\</dir>
+		<dir>f:\games\RPG\</dir>
+		<dir>f:\games\Sport\</dir>
+		<dir>f:\games\Virtual drive\</dir> -->
+		</dumpdirs>
+		<!-- This directories will be searched for installed games for the gamemanager. It only looks for games !-->
+		<!-- directly installed below this directories and no level deeper !-->
+		<!-- f:\games\foo\default.xbe will be found 	!-->
+		<!-- f:\games\foo\ba\default.xbe won't be found !-->
+		<gamedirs>
+				<dir>F:\Games</dir>
+				<dir>G:\Games</dir>
+				<!-- <dir>f:\games\Action\</dir>
+		<dir>f:\games\Driving\</dir>
+		<dir>f:\games\Emu\</dir>
+		<dir>f:\games\Fighting\</dir>
+		<dir>f:\games\FPS\</dir>
+		<dir>f:\games\other\</dir>
+		<dir>f:\games\RPG\</dir>
+		<dir>f:\games\Sport\</dir>
+		<dir>f:\games\Virtual drive\</dir> -->
+		</gamedirs>
+		<network>
+				<!-- These settings configure the network interface of your xbox   !-->
+				<!-- Let it untouched to obtain the values from your dash settings !-->
+				<xboxip>192.168.1.6</xboxip>
+				<netmask>255.255.255.0</netmask>
+				<gateway>192.168.1.1</gateway>
+				<DNS>192.168.1.1</DNS>
+				<!-- IP or URL of a freedb mirror !-->
+				<cddbip>freedb.freedb.org</cddbip>
+		</network>
+		<smb>
+				<!-- Use this settings to connect to a windows share. These settings should be similar to XBMC.       !-->
+				<!-- Don't forget that WinXP requires to alter the user privileges on two tabs (access and security). !-->
+				<!-- workgroup : workgroup which dvd2xbox uses to login to a server.        !-->
+				<!-- winsserver: if you run one you can set the ip here (if you don't know  !-->
+				<!--             what it is, leave it as it is).                            !-->
+				<!-- you can use the following formats: !-->
+				<!-- smb://domain;user:password@ip/share/directory/ !-->
+				<!-- smb://user:password@ip/share/ !-->
+				<!-- if guest/public access is enabled: !-->
+				<!-- smb://ip/ !-->
+				<workgroup>WORKGROUP</workgroup>
+				<winsserver>-</winsserver>
+				<shares>
+						<share>
+								<name>Example share 1</name>
+								<url>smb://pups:pups@192.168.1.20/WUTemp/</url>
+						</share>
+						<share>
+								<name>Example share 2</name>
+								<url>smb://user2:pwd@192.168.1.20/WUTemp/</url>
+						</share>
+				</shares>
+		</smb>
+		<ftpserver>
+				<!-- This settings configure dvd2xbox ftp server xbfillezilla. !-->
+				<!-- Username and password should be at least 4 characters.    !-->
+				<username>xbox</username>
+				<password>xbox</password>
+				<max_users>2</max_users>
+				<!-- Nickname for the auto detection feature !-->
+				<nickname>dvd2xboxNick</nickname>
+		</ftpserver>
+		<gui>
+				<!-- disables the iso ripper in the disc copy dialog !-->
+				<disableisoripper>no</disableisoripper>
+				<disablefilemanager>no</disablefilemanager>
+		</gui>
+</dvd2xbox>

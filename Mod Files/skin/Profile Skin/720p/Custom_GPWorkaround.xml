@@ -1,0 +1,90 @@
+<window type="dialog" id="1113">
+		<defaultcontrol always="true">9000</defaultcontrol>
+		<controls>
+				<!-- Display preview overlay -->
+				<control type="group">
+						<visible>!Skin.HasSetting(Synopsis)</visible>
+						<control type="button" id="9000">
+								<posx>-500</posx>
+								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
+								<onfocus>PlayWith(dvdplayer)</onfocus>
+								<onfocus>xbmc.playmedia($INFO[ListItem.Path,,_resources\media\preview].xmv,1)</onfocus>
+								<onfocus>SetFocus(9004)</onfocus>
+								<onfocus>dialog.close(1113,true)</onfocus>
+								<visible>Skin.HasSetting(_recourcesenabled) + !Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+						</control>
+						<control type="button" id="9000">
+								<posx>-500</posx>
+								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
+								<onfocus>PlayWith(mplayer)</onfocus>
+								<onfocus>xbmc.playmedia($INFO[ListItem.Path,,_resources\media\preview].$INFO[Skin.String(PreviewFileExtension)],1)</onfocus>
+								<onfocus>SetFocus(9004)</onfocus>
+								<onfocus>dialog.close(1113,true)</onfocus>
+								<visible>Skin.HasSetting(_recourcesenabled) + Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+						</control>
+						<control type="button" id="9000">
+								<posx>-500</posx>
+								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
+								<onfocus>PlayWith(dvdplayer)</onfocus>
+								<onfocus>xbmc.playmedia($INFO[ListItem.Path,,preview].xmv,1)</onfocus>
+								<onfocus>SetFocus(9004)</onfocus>
+								<onfocus>dialog.close(1113,true)</onfocus>
+								<visible>!Skin.HasSetting(_recourcesenabled) + !Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+						</control>
+						<control type="button" id="9000">
+								<posx>-500</posx>
+								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
+								<onfocus>PlayWith(mplayer)</onfocus>
+								<onfocus>xbmc.playmedia($INFO[ListItem.Path,,preview].$INFO[Skin.String(PreviewFileExtension)],1)</onfocus>
+								<onfocus>SetFocus(9004)</onfocus>
+								<onfocus>dialog.close(1113,true)</onfocus>
+								<visible>!Skin.HasSetting(_recourcesenabled) + Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+						</control>
+				</control>
+				<control type="group">
+						<visible>Skin.HasSetting(Synopsis)</visible>
+						<control type="button" id="9000">
+								<posx>-500</posx>
+								<onfocus>Special://xbmc/scripts/XBMC4Kids/Synopsis/default.py</onfocus>
+								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
+								<onfocus>dialog.close(1113,true)</onfocus>
+								<visible>!Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+						</control>
+						<control type="button" id="9000">
+								<posx>-500</posx>
+								<onfocus>Special://xbmc/scripts/XBMC4Kids/Synopsis/default.py</onfocus>
+								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
+								<onfocus>dialog.close(1113,true)</onfocus>
+								<visible>Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+						</control>
+				</control>
+				<!-- Close preview window if no video is playing -->
+				<control type="button" id="9000">
+						<posx>-500</posx>
+						<onfocus>Skin.Reset(PreviewWindow)</onfocus>
+						<onfocus>dialog.close(1113,true)</onfocus>
+						<onfocus>SetFocus(50)</onfocus>
+						<visible>Skin.HasSetting(PreviewWindow) + !Player.HasVideo</visible>
+				</control>
+				<!-- Close preview window if a video is playing -->
+				<control type="button" id="9000">
+						<posx>-500</posx>
+						<onfocus>Stop</onfocus>
+						<onfocus>Special://xbmc/scripts/XBMC4Kids/Utilities/CleanMyVideos34.db.py</onfocus>
+						<onfocus>Skin.Reset(PreviewWindow)</onfocus>
+						<onfocus>dialog.close(1113,true)</onfocus>
+						<onfocus>SetFocus(50)</onfocus>
+						<visible>Player.HasVideo</visible>
+				</control>
+				<!-- Open PlayerControlles dialog if audio is playing -->
+				<control type="button" id="9000">
+						<posx>-500</posx>
+						<onfocus>Skin.Reset(PreviewWindow)</onfocus>
+						<onfocus>dialog.close(1113,true)</onfocus>
+						<onfocus>ReplaceWindow(114)</onfocus>
+						<visible>Player.HasAudio</visible>
+				</control>
+				<!-- Debug Info -->
+				<include>Debug</include>
+		</controls>
+</window>

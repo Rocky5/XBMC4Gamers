@@ -1,0 +1,173 @@
+**/06/2016
+1) Changed the PlayerControls screen, looks a lot better & matches the other dialogues.
+2) Added a toggle for the visualisation bars in the PlayerControls screen.
+3) Fixed the background images not setting when login into a profile.
+4) Removed the "FilezillaFix.py" (its in the not used folder)
+5) Updated the Profiles.py, now copies the source.xml to a new profile so no more issues with sources not being there and also it bypass the "DVD2Xbox" & "Manage Profiles" profiles.
+6) Also added ^ a new master profile, "Manage Profiles", this allows you to add remove profiles & adjust UI & network.
+7) Fixed the Keyboard not working when outside the Games list.
+8) Added a Preview video function (X button when no audio is playing)
+9) Added a custom preview extension option in the settings. (Handy if you don't have xmv files) 
+10) Updated the DVD Label & Spinning Disc, now displays throughout the skin.
+11) Updated the Settings look.
+12) Added a new fancy GUI buttons that display functions in the menus. (Dynamic)
+13) New graphics for the buttons. (created from scratch)
+14) Updated the Keymaps & "FileZilla Server.xml"
+15) New startup.xml, looks like the login screen to create a more seamless transition to the games directory.
+16) Added a toggle for the Profiles.py script, you can now enable it skin side :) (located in the "Manage Profiles Profile > Manage Profiles")
+17) Improved the stability of the skin/python scripts and optimized other areas.
+18) Changed the View Options (Up when in the games section) to be more streamlined.
+19) Added my resources view, that I use for testing _resources packs. (requires "game name/_resources/artwork/image files here")
+20) Redone a few textures. ^
+21) Updated the DialogProgress.xml
+22) Added a Synosis overlay for games ( (X) Button )
+23) Updated Skin settings look.
+24) Added a Preview Video Settings, you can select from common extensions or add your own.
+25) Added a new script, "CleanMyVideos34.db.py" removes bookmarks from preview videos.
+26) Added a new script, "ReadSynopsis.py" this reads a txt file named Synopsis.txt in the _Resources folder.
+
+
+
+
+***) Probably more, to many changes to keep track :/
+
+
+13/02/2016
+1) Fixed the snow not disabling after a set date. (due to XBMC not liking includes with visible System.Date(***,***) tags)
+2) Added a nice new Fanart View.
+3) Added the option to toggle the txt overlay for the new fanart view.
+4) Added a new option for fanart, you can now cycle through 75% opacity or 0% opacity or disabled.
+5) Added a custom keyboard layout for entering Hex colour strings. (custom background colours)
+6) Fixed Favourites from highlighting thin air when navigating left on the thumbs. 
+7) Now have in place the _resource structure from XBMC Origins, so packs for that will work with this skin. (Toggled)
+8) Added a nice new Thumb View.
+9) XML tiding.
+10) Profiles.py script updated with better logging & rescuedash copying added.
+11) Added a dialogue to the Clear Cache.py script. 
+12) Added a special easter login screen overlay.
+13) Updated the Snow effect for Christmas.
+14) There is more than likely more changes, but cant remember lol
+
+05/01/2015
+1) Created a new python script to toggle Editmod on or off for the skin settings. (no more lock code)
+2) Settings & Context menus are limited in User Mode, so the user cant change anything important.
+3) New custom Context menu for the Games views. (User mode only)
+4) Changed how I done the controls for certain menus. (B button now works in all areas bar the games view, when in User Mode)
+5) Updated the DVD2Xbox script to check for a default.xbe in the DVD drive before doing anything.
+6) Added a Build XBMC4Kids Update.bat.
+
+The above should make the skin easier to use & faster, due to not needing to enter passwords all the time.
+
+03/01/2015
+1) Added the option to add & create playlists from the Profile Skin. (in the skin settings menu)
+2) XML tiding & validations fixed.
+3) Debug info added to all xml files & screens.
+4) New Favourites view.
+5) Changed the login screen, looks a lot sleeker now.
+6) Changed the Poster view.
+7) The skin now no longer uses the footer.
+8) Updated the startup.xml files to match the login screen.
+9) Some graphical changes/updates.
+10) Added 8 new backgrounds & updated the previous 7, to use pastel colours.
+11) 2 new views Posters small & Login view.
+12) Custom help info for views.
+13) Disabled the fanart button for the Panel view.
+14) Added the Trainers overlay.
+15) Added different coloured view labels for light coloured backgrounds.
+16) Added snow to the login screen, 12-21/1-26 will add other holiday things.
+17) Updated the custom colour background, now enter a 6 digit hex colour code.
+18) Reduced the .xpr file by half, using superpng to reduce the file sizes. (No noticeable quality loss)
+
+15/12/2014
+1) Updated Profiles.py, now copies the softmod folders if present to the new profiles, shows progress & sets the skin for the current user.
+2) Updated EditMode.py, no more python errors & I added a dialog. (rare but they did happen)
+3) Updated the Poster View.
+4) Updated some textures.
+5) Added a new label to the top right of the Login screen for Edit mode.
+6) Added window fade in & out for login screen.
+7) Added Master Profile label to the home screen of the DVD2Xbox profile.
+8) Changed the default background colour to FF0099ECE, looks nicer.
+9) Updated startup.xml for both skins.
+10) Updated the batch file to build XBMC4Kids, if an XBMC or Build folder are found.
+11) Changed the login screen to match the Poster View.
+12) Fixed the ThumbFO.png position, on all dialogs.
+
+08/06/2014
+1) Fixed the Profiles script from asking you to change skins on the master profile.
+2) Fixed a potential issue with the Profiles.py script failing to rename the UDATA folder.
+
+25/05/2014
+1) Added a new script to stop XBMC form becoming none responsive if Filezilla Server.xml become corrupt.
+2) Rearranged the skins a tad, fixed wallpaper issues
+
+24/5/2014
+1) Fixed some grammar in the skin settings menu.
+2) Added the option to have an Emulator launcher button in the Options Dialogue. (enable in settings)
+
+16/05/2014
+1) Added a new view, called Panels.
+2) Fixed background visible issues.
+3) Changed how toggling Fanart & Views are done.
+4) Added a MyGameSave view.
+5) Fixed DVD2Xbox Script not working.
+6) Minor changes to the Poster View.
+7) Added a new options dialogue, that allows access to game saves, favourites & settings. (press Black)
+8) Added a Clear Cache script. (press Black when at the home screen of the master profile)
+9) Put the textures into an XPR file to save on memory.
+10) Fixed Player Controls, now when you press Stop it closes the dialogue.
+11) Separated the Views into there own xml file, easier & cleaner to edit.
+12) Updated the Advancedsettings.xml
+13) Updated the Startup.xml files to have correct backgrounds. (now if you have a custom colours it will show)
+14) Added a Trainers folder. (you need to enable a games trainer in Edit Mode)
+15) Fixed Scroll Offset Label. (now pops up like it was meant to)
+16) Added Repeat & Shuffle to the Player Controls.
+
+Note:
+Favourites need to be added in Edit Mode, afterwards they can be accessed in any mode.
+For the new player controls to function correctly the gamepad.xml file must be replaced.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+13/05/2014
+1) Added a Played Overlay to the Poster View.
+2) Added a info panel to the poster view. (enable in Skin settings)
+3) Updated Startup.xml & Home.xml. (now has a background)
+4) Added a custom colour button to the wallpaper selector. (FFFF6666 is the format, 8 Characters long. The first FF is opacity)
+5) Moved DVD2Xbox from "Master Profile/tools/" to "XBMC4Kids/Apps/DVD2Xbox/"
+6) Changed the DVD2Xbox Icon, added a darker background.
+
+09/05/2014
+1) Cosmetic update, Added a new Dialogue, for kid safe mode, when trying to access settings.
+2) Changed the Gamepad.xml to reflect above changes.
+3) Added AdvancedSetting.xml This will give you higher quality Thumbs for games. (was added two updates ago but forgot to put it in here)
+
+01/05/2014
+1) Added Startup Playlist support. (use Confluence Lite to create a playlist)
+2) Added Player controls. (X) Button
+3) Updated the Edit mode controls (Y) now takes a screenshot.
+4) Updated Create Kids Gaming XBMC.bat, to not remove paplayer. (required for Audio)
+Note: if you want Audio to play you will need to rerun the batch or FTP over paplayer to the correct location.
+
+30/04/2014
+1) Fixed the issue with logging off. (it seems XBMC doesn't like logging off when not at the Home screen)
+2) Updated the Profile Skin, fixed label placements & a few cosmetic/code changes.
+3) Maybe more, but cant remember :-\ need to start writing this stuff down.
+
+25/04/2014
+1) Added a disc indicator, in the top right of the screen.
+2) Updated the DVD2Xbox.py script to dynamically get the XBMC directory. (Fixes DVD2Xbox loading DVD2Xbox)
+3) Updated the gamepad.xml files. Press start to launch a disc based game.
+4) Created more images.
+5) Made a new DVD2Xbox Logo, for the Profile Screen.
+
+23/04/2014
+Changes.
+1) Changed the wallpaper selection to be a wraplist & centred on screen.
+2) Added the option to add custom wallpapers :D 
+3) Added the option to disable fanart, doesn't look good with some wallpapers. (push Up & Up on the Games screen.
+4) Just some code tidying & reduction of includes. (skins fast as hell)
+5) Updated & added some textures.
+6) Updated the Poster view, now works better with transparent images & its now in the MyPrograms.xml
+7) Updated the Lockscreen, moved the list down a tad.
+8) Updated the EditMode.py, now launched the dashboard from within python.
+7) maybe something else cant mind :-

@@ -1,0 +1,35 @@
+<fonts>
+		<font>
+				<name>font1</name>
+				<filename>Font.xpr</filename>
+		</font>
+		<font>
+				<name>fontb</name>
+				<filename>debugfont.xpr</filename>
+		</font>
+		<font>
+				<name>Sans_Serif_14</name>
+				<filename>Sans_Serif_14.xpr</filename>
+		</font>
+		<font>
+				<name>Arial_10</name>
+				<filename>Arial_10.xpr</filename>
+		</font>
+		<font>
+				<name>font12</name>
+				<filename>common-font12.xpr</filename>
+		</font>
+		<!-- this fonts/resources are used by the virtual keyboard !-->
+		<font>
+				<name>font12</name>
+				<filename>Font12.xpr</filename>
+		</font>
+		<font>
+				<name>font18</name>
+				<filename>Font18.xpr</filename>
+		</font>
+		<res>
+				<name>keyboard</name>
+				<filename>Resource.xpr</filename>
+		</res>
+</fonts>

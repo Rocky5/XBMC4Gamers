@@ -1,0 +1,113 @@
+<window id="1116">
+		<defaultcontrol always="true">1</defaultcontrol>
+		<controls>
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture fallback="Background.png">$INFO[Skin.String(Background_Color)]</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>background diffuse.png</texture>
+						<colordiffuse>$VAR[var-bgcustcolour]</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>$INFO[Skin.String(Background_Image)]</texture>
+						<aspectratio>scale</aspectratio>
+				</control>
+				<control type="group">
+						<posx>524</posx>
+						<posy>252</posy>
+						<include>Window_OpenClose_Animation</include>
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>234</width>
+								<height>234</height>
+								<aspectratio>stretch</aspectratio>
+								<texture border="5">button-focus.png</texture>
+						</control>
+						<control type="image">
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>224</width>
+								<height>224</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>black-back.png</texture>
+								<bordersize>1</bordersize>
+						</control>
+						<control type="image">
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>224</width>
+								<height>224</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>$INFO[System.ProfileThumb]</texture>
+						</control>
+						<!-- Flipped images -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>235</posy>
+								<width>234</width>
+								<height>234</height>
+								<aspectratio>stretch</aspectratio>
+								<texture flipy="true" diffuse="diffuse_mirror.png">button-focus.png</texture>
+						</control>
+						<control type="image">
+								<posx>5</posx>
+								<posy>240</posy>
+								<width>224</width>
+								<height>224</height>
+								<aspectratio>stretch</aspectratio>
+								<texture flipy="true" diffuse="diffuse_mirror.png">black-back.png</texture>
+						</control>
+						<control type="image">
+								<posx>5</posx>
+								<posy>240</posy>
+								<width>224</width>
+								<height>224</height>
+								<aspectratio>stretch</aspectratio>
+								<texture flipy="true" diffuse="diffuse_mirror.png">$INFO[System.ProfileThumb]</texture>
+						</control>
+				</control>
+				<control type="label">
+						<posx>0</posx>
+						<posy>559</posy>
+						<width>1280</width>
+						<height>36</height>
+						<font>font25</font>
+						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE]logging out[/UPPERCASE]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="button" id="1">
+						<description>Launch Games Window</description>
+						<posx>-500</posx>
+						<posy>0</posy>
+						<width>0</width>
+						<height>0</height>
+						<label>-</label>
+						<font>-</font>
+						<onfocus>dialog.close(all,true)</onfocus>
+						<onfocus>system.logoff</onfocus>
+						<texturenofocus>-</texturenofocus>
+						<texturefocus>-</texturefocus>
+						<enable>[System.HasLoginScreen + System.Loggedon]</enable>
+						<animation effect="fade" start="0" end="100" delay="2000" time="0">Focus</animation>
+				</control>
+		</controls>
+</window>

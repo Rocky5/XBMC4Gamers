@@ -1,0 +1,24 @@
+# Game: Leisure Suit Larry:Magna Cum Laude
+# Title ID: 56550031
+# Size: 2828 Mb(45 folders,697 files)
+# Author: ACL Written by AgentEB from Xbox-Scene
+
+# Fixes original disk protection on retail disk to run off your hdd. Tested and verified to work
+# on NTSC version. It will also remove the censorship in the game.
+
+CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+# Media patch long hex
+HR|*.xbe|1|744BE8CAFDFFFF85C07D0633C05050EB44F605|744BE8CAFDFFFF85C0EB0633C05050EB44F605|
+# Media patch short hex
+HR|*.xbe|1|E8CAFDFFFF85C07D|E8CAFDFFFF85C0EB|
+# Media check 1
+SM|*.xbe|C00001FF|
+
+# This will make a backup of the AppInit.JAM file and rename it to AppInit.JAM_orig
+CP|${DEST}\Data\JamFiles\Xbox\AppInit.JAM|${DEST}\Data\JamFiles\Xbox\AppInit.JAM_orig|
+
+# This will remove the censorship from Leisure Suit Larry @ offset 00076526
+HR|${DEST}\Data\JamFiles\Xbox\AppInit.JAM|1|6F6F6C65616E09446174612030|6F6F6C65616E09446174612031|
+
+# Offset 00168368 Removes protection from the game to be played on your hard drive
+HR|${DEST}\default.xbe|1|7411688C8B240068204B26008BCE|EB11688C8B240068204B26008BCE|

@@ -1,0 +1,71 @@
+<Skin name="ftp">
+		<Information>
+				<Author>Rocky5</Author>
+				<Copyright>Copyright 2014</Copyright>
+				<Version>1.0</Version>
+		</Information>
+		<LoadingScreen ShowInfo="False">
+				<Background>loading.png</Background>
+		</LoadingScreen>
+		<Main Globe="False" Orb="False" Fog="False">
+				<Background EnableAudio="False">menu.png</Background>
+				<Menu Scroll="False" Align="Left" Rotate="False" ShowIcon="False">
+						<Font>font10.xpr</Font>
+						<Position Top="145" Left="90" Width="150" Height="400" Fixed="False" FixAt="0" MaxItem="15" />
+				</Menu>
+				<GameIcon Enable="False" Opacity="90">
+						<Position Top="0" Left="0" Width="0" Height="0" />
+				</GameIcon>
+				<InfoFont>font10.xpr</InfoFont>
+				<!-- <Text Top="10" Left="10" Width="150" Scroll="0" Color="0xff3a3a46" Source="Running: v1.0" Align="Left"/> -->
+				<Text Top="135" Left="390" Width="150" Scroll="0" Color="0xffafb2ce" Source="System Info" Align="Middle" />
+				<Text Top="155" Left="393" Width="150" Scroll="0" Color="0xffafb2ce" Source="Version" Align="Left" />
+				<Text Top="175" Left="393" Width="150" Scroll="0" Color="0xffafb2ce" Source="Xbox Region: $VideoMode$" Align="Left" />
+				<Text Top="195" Left="393" Width="150" Scroll="0" Color="0xffafb2ce" Source="IP" Align="Left" />
+				<Text Top="215" Left="393" Width="150" Scroll="0" Color="0xffafb2ce" Source="NumClient" Align="Left" />
+				<Text Top="245" Left="390" Width="150" Scroll="0" Color="0xffafb2ce" Source="Info" Align="Middle" />
+				<Text Top="265" Left="393" Width="150" Scroll="0" Color="0xffafb2ce" Source="Running: V1.0" Align="Left" />
+				<Text Top="285" Left="393" Width="150" Scroll="0" Color="0xffafb2ce" Source="Creator: Rocky5" Align="Left" />
+				<ColorScheme>
+						<AMBIENT_FOGCOLOR>0x00000000</AMBIENT_FOGCOLOR>
+						<AMBIENT_SKYCOLOR>0x00000000</AMBIENT_SKYCOLOR>
+						<AMBIENT_CELLCOLOR>0x00000000</AMBIENT_CELLCOLOR>
+						<!-- -->
+						<CAPTION_TEXTCOLOR>0xffaee239</CAPTION_TEXTCOLOR>
+						<CAPTION_BACKCOLOR>0x00626473</CAPTION_BACKCOLOR>
+						<DIALOG_BORDERCOLOR>0xff3a3a46</DIALOG_BORDERCOLOR>
+						<DIALOG_BACKCOLOR>0xdd626473</DIALOG_BACKCOLOR>
+						<DIALOG_INNER_BORDERCOLOR>0xff3a3a46</DIALOG_INNER_BORDERCOLOR>
+						<DIALOG_INNER_BACKCOLOR>0xbb3a3a46</DIALOG_INNER_BACKCOLOR>
+						<DIALOG_TEXTCOLOR>0xffafb2ce</DIALOG_TEXTCOLOR>
+						<DIALOG_DISABLEDTEXT>0xff626473</DIALOG_DISABLEDTEXT>
+						<!-- -->
+						<OPTION_TEXTCOLOR>0xffafb2ce</OPTION_TEXTCOLOR>
+						<OPTION_ACTIVETEXTCOLOR>0xffaee239</OPTION_ACTIVETEXTCOLOR>
+						<OPTION_ACTIVEBACKCOLOR>0xff3a3a46</OPTION_ACTIVEBACKCOLOR>
+						<!-- -->
+						<BUTTON_BORDERCOLOR>0xff3a3a46</BUTTON_BORDERCOLOR>
+						<BUTTON_TEXTCOLOR>0xffafb2ce</BUTTON_TEXTCOLOR>
+						<BUTTON_BACKCOLOR>0xff626473</BUTTON_BACKCOLOR>
+						<BUTTON_ACTIVETEXTCOLOR>0xffaee239</BUTTON_ACTIVETEXTCOLOR>
+						<BUTTON_ACTIVEBACKCOLOR>0xff3a3a46</BUTTON_ACTIVEBACKCOLOR>
+						<!-- -->
+						<KB_KEYBG_HIGHLIGHT>0xff626473</KB_KEYBG_HIGHLIGHT>
+						<KB_KEYBG_DISABLED>0xff3a3a46</KB_KEYBG_DISABLED>
+						<KB_KEY_PRESSED>0xff3a3a46</KB_KEY_PRESSED>
+						<KB_KEY_NORMAL>0xff3a3a46</KB_KEY_NORMAL>
+						<KB_KEY_DISABLED>0xffafb2ce</KB_KEY_DISABLED>
+						<KB_KEY_ACTIVEBORDER>0xffaee239</KB_KEY_ACTIVEBORDER>
+						<KB_KEY_TEXTCOLOR>0xff3a3a46</KB_KEY_TEXTCOLOR>
+						<KB_KEY_TEXTBACKCOLOR>0xffaee239</KB_KEY_TEXTBACKCOLOR>
+						<KB_KEY_TEXTBORDERCOLOR>0xffaee239</KB_KEY_TEXTBORDERCOLOR>
+						<!-- -->
+						<MENU_TEXTCOLOR>0xffafb2ce</MENU_TEXTCOLOR>
+						<MENU_ACTIVETEXTCOLOR>0xffaee239</MENU_ACTIVETEXTCOLOR>
+						<MENU_BORDERCOLOR>0x00000000</MENU_BORDERCOLOR>
+						<MENU_BACKCOLOR>0x00000000</MENU_BACKCOLOR>
+						<MENU_ACTIVEBACKCOLOR>0x00000000</MENU_ACTIVEBACKCOLOR>
+						<MENU_ACTIVEBORDERCOLOR>0x00000000</MENU_ACTIVEBORDERCOLOR>
+				</ColorScheme>
+		</Main>
+</Skin>

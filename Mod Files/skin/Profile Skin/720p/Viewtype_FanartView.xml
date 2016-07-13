@@ -1,0 +1,182 @@
+<includes>
+		<include name="FanartView">
+				<control type="group">
+						<visible>Control.IsVisible(54) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Window.IsVisible(134)</visible>
+						<include>Window_OpenClose_Animation</include>
+						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
+						<!-- <animation effect="zoom" reversable="true" start="135,76,1280,720" end="1,45,1620,857" time="250" condition="Control.HasFocus(64)">Conditional</animation> -->
+						<control type="panel" id="54">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>720</height>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>117</onup>
+								<ondown>64</ondown>
+								<viewtype label="Fanarts">Panel</viewtype>
+								<pagecontrol>-</pagecontrol>
+								<scrolltime>300</scrolltime>
+								<focusposition>0</focusposition>
+								<movement>0</movement>
+								<orientation>horizontal</orientation>
+								<preloaditems>2</preloaditems>
+								<itemlayout width="1280" height="720">
+										<control type="image">
+												<posx>100</posx>
+												<posy>68</posy>
+												<width>1080</width>
+												<height>608</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+												<bordersize>5</bordersize>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>68</posy>
+												<width>1080</width>
+												<height>608</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" fallback="no_fanart.png">$INFO[ListItem.Path,,fanart.jpg]</texture>
+												<bordertexture border="5">poster-border.png</bordertexture>
+												<bordersize>5</bordersize>
+												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>68</posy>
+												<width>1080</width>
+												<height>608</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+												<bordertexture border="5">poster-border.png</bordertexture>
+												<bordersize>5</bordersize>
+												<visible>Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+								</itemlayout>
+								<focusedlayout width="1280" height="720">
+										<control type="image">
+												<posx>100</posx>
+												<posy>68</posy>
+												<width>1080</width>
+												<height>608</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+												<bordersize>5</bordersize>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>68</posy>
+												<width>1080</width>
+												<height>608</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>-</texture>
+												<bordertexture border="5">poster-border.png</bordertexture>
+												<bordersize>5</bordersize>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>68</posy>
+												<width>1080</width>
+												<height>608</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" fallback="no_fanart.png">$INFO[ListItem.Path,,fanart.jpg]</texture>
+												<bordertexture border="5">poster-border.png</bordertexture>
+												<bordersize>5</bordersize>
+												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>68</posy>
+												<width>1080</width>
+												<height>608</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+												<bordertexture border="5">poster-border.png</bordertexture>
+												<bordersize>5</bordersize>
+												<visible>Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>105</posx>
+												<posy>631</posy>
+												<width>1070</width>
+												<height>40</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+												<animation reversible="true" effect="fade" start="0" end="100" delay="500" time="500">Focus</animation>
+												<visible>!Skin.HasSetting(fanartoverlayenabled) + [!Container(54).OnNext | !Container(54).OnPrevious]</visible>
+										</control>
+										<control type="label">
+												<posx>640</posx>
+												<posy>633</posy>
+												<width>1070</width>
+												<height>35</height>
+												<font>font25</font>
+												<textcolor>white</textcolor>
+												<scroll>true</scroll>
+												<align>center</align>
+												<aligny>center</aligny>
+												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+												<animation reversible="true" effect="fade" start="0" end="100" delay="500" time="500">Focus</animation>
+												<visible>!Skin.HasSetting(fanartoverlayenabled) + [!Container(54).OnNext | !Container(54).OnPrevious]</visible>
+										</control>
+										<!-- Flipped images -->
+										<control type="image.">
+												<posx>135</posx>
+												<posy>644</posy>
+												<width>1010</width>
+												<height>568</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" flipy="true" diffuse="diffuse_mirror.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+												<bordersize>1</bordersize>
+										</control>
+										<control type="image.">
+												<posx>135</posx>
+												<posy>644</posy>
+												<width>1010</width>
+												<height>568</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" flipy="true" diffuse="diffuse_mirror.png" border="5">poster-border.png</texture>
+										</control>
+								</focusedlayout>
+						</control>
+						<!-- Scroll bar fails to work due to the scrolltime being set to 200 :-/ -->
+						<control type="scrollbar" id="64">
+								<posx>150</posx>
+								<posy>50r</posy>
+								<width>980</width>
+								<height>17</height>
+								<texturesliderbackground border="2,2,2,2">-</texturesliderbackground>
+								<texturesliderbar border="16,2,16,2">-</texturesliderbar>
+								<texturesliderbarfocus border="16,2,16,2">-</texturesliderbarfocus>
+								<textureslidernib>-</textureslidernib>
+								<textureslidernibfocus>-</textureslidernibfocus>
+								<onup>54</onup>
+								<ondown>-</ondown>
+								<showonepage>false</showonepage>
+								<orientation>horizontal</orientation>
+								<visible allowhiddenfocus="true">Control.HasFocus(64)</visible>
+								<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
+						</control>
+						<control type="scrollbar." id="64">
+								<posx>150</posx>
+								<posy>50r</posy>
+								<width>980</width>
+								<height>17</height>
+								<texturesliderbackground border="2,2,2,2">black-back.png</texturesliderbackground>
+								<texturesliderbar border="16,2,16,2">scrollbar_bar-vertical.png</texturesliderbar>
+								<texturesliderbarfocus border="16,2,16,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
+								<textureslidernib>scrollbar_nib-vertical.png</textureslidernib>
+								<textureslidernibfocus>scrollbar_nib-vertical.png</textureslidernibfocus>
+								<onup>54</onup>
+								<ondown>-</ondown>
+								<showonepage>false</showonepage>
+								<orientation>horizontal</orientation>
+								<visible allowhiddenfocus="true">Control.HasFocus(64)</visible>
+								<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
+						</control>
+				</control>
+		</include>
+</includes>

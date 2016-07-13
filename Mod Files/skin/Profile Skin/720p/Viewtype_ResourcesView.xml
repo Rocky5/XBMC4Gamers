@@ -1,0 +1,187 @@
+<includes>
+		<include name="ResourcesView">
+				<control type="group">
+						<visible>Control.IsVisible(56) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Window.IsVisible(134)</visible>
+						<include>Window_OpenClose_Animation</include>
+						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
+						<control type="image">
+								<posx>690r</posx>
+								<posy>200</posy>
+								<width>640</width>
+								<height>360</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>black-back.png</texture>
+								<bordersize>5</bordersize>
+						</control>
+						<control type="image">
+								<posx>690r</posx>
+								<posy>200</posy>
+								<width>640</width>
+								<height>360</height>
+								<aspectratio>scale</aspectratio>
+								<fadetime>FanartCrossfadeTime</fadetime>
+								<texture background="true" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+								<bordertexture border="5">poster-border.png</bordertexture>
+								<bordersize>5</bordersize>
+						</control>
+						<!-- Poster.jpg -->
+						<control type="group">
+								<posx>50</posx>
+								<posy>80</posy>
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>214</width>
+										<height>290</height>
+										<aspectratio>stretch</aspectratio>
+										<texture border="5">ThumbNF.png</texture>
+								</control>
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>205</width>
+										<height>280</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_poster.png">$INFO[ListItem.Path,,_resources\artwork\poster.jpg]</texture>
+										<bordertexture border="5">-</bordertexture>
+										<bordersize>1</bordersize>
+								</control>
+								<!-- Flipped images -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>290</posy>
+										<width>214</width>
+										<height>290</height>
+										<aspectratio>stretch</aspectratio>
+										<texture border="5" flipy="true" diffuse="diffuse_mirror2.png">ThumbNF.png</texture>
+								</control>
+								<control type="image">
+										<posx>5</posx>
+										<posy>294</posy>
+										<width>205</width>
+										<height>280</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" flipy="true" diffuse="diffuse_mirror2.png" fallback="no_poster.png">$INFO[ListItem.Path,,_resources\artwork\poster.jpg]</texture>
+										<bordertexture border="5">-</bordertexture>
+										<bordersize>1</bordersize>
+								</control>
+						</control>
+						<!-- Icon.jpg -->
+						<control type="group">
+								<posx>320</posx>
+								<posy>130</posy>
+								<control type="image">
+										<posx>2</posx>
+										<posy>0</posy>
+										<width>214</width>
+										<height>214</height>
+										<aspectratio>stretch</aspectratio>
+										<texture border="5">button-focus.png</texture>
+								</control>
+								<control type="image">
+										<posx>7</posx>
+										<posy>5</posy>
+										<width>204</width>
+										<height>204</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>black-back.png</texture>
+								</control>
+								<control type="image">
+										<posx>7</posx>
+										<posy>5</posy>
+										<width>204</width>
+										<height>204</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
+								</control>
+								<!-- Flipped images -->
+								<control type="image">
+										<posx>2</posx>
+										<posy>214</posy>
+										<width>214</width>
+										<height>214</height>
+										<aspectratio>stretch</aspectratio>
+										<texture flipy="true" diffuse="diffuse_mirror.png">button-focus.png</texture>
+								</control>
+								<control type="image">
+										<posx>7</posx>
+										<posy>214</posy>
+										<width>204</width>
+										<height>204</height>
+										<aspectratio>stretch</aspectratio>
+										<texture flipy="true" diffuse="diffuse_mirror.png">black-back.png</texture>
+								</control>
+								<control type="image">
+										<posx>7</posx>
+										<posy>214</posy>
+										<width>204</width>
+										<height>204</height>
+										<aspectratio>scale</aspectratio>
+										<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
+								</control>
+						</control>
+						<!-- Thumb.jpg -->
+						<control type="group">
+								<posx>120</posx>
+								<posy>480</posy>
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>320</width>
+										<height>180</height>
+										<aspectratio>stretch</aspectratio>
+										<texture border="5">button-focus.png</texture>
+								</control>
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>310</width>
+										<height>170</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>black-back.png</texture>
+								</control>
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>310</width>
+										<height>170</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_thumb.png">$INFO[ListItem.Path,,_resources\artwork\thumb.jpg]</texture>
+								</control>
+						</control>
+						<control type="fixedlist" id="56">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>460</height>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>117</onup>
+								<ondown>-</ondown>
+								<viewtype label="Posters">list</viewtype>
+								<pagecontrol>-</pagecontrol>
+								<scrolltime>200</scrolltime>
+								<focusposition>3</focusposition>
+								<movement>1</movement>
+								<orientation>horizontal</orientation>
+								<preloaditems>6</preloaditems>
+								<itemlayout />
+								<focusedlayout />
+						</control>
+						<control type="label">
+								<posx>320</posx>
+								<posy>70</posy>
+								<width>960</width>
+								<height>36</height>
+								<font>font25</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<scroll>false</scroll>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(56).OnScrollNext">Conditional</animation>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(56).OnScrollPrevious">Conditional</animation>
+						</control>
+				</control>
+		</include>
+</includes>

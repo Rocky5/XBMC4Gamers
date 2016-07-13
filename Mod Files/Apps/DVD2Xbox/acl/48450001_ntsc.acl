@@ -1,0 +1,20 @@
+# - Patch Australian Release of Rugby League to run from HDD and play on NTSC machines
+# Please note that after applying this patch, you will not be able to view all of the
+# videos in the game (contained in the folder 'movie0'). If you want to view these extra videos,
+# you can use XBMP, or some file managers such as the UnleashX File Manager.
+# Submitted by dzv
+# Serial: 2004010900
+
+CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+HR|${DEST}\default.xbe|1|744BE8CAFDFFFF85C07D0633C05050EB44F605|744BE8CAFDFFFF85C0EB0633C05050EB44F605|
+HR|${DEST}\default.xbe|1|E8CAFDFFFF85C07D|E8CAFDFFFF85C0EB|
+SM|${DEST}\default.xbe|400001FF|
+HR|${DEST}\default.xbe|1|7415E83D|EB15E83D|
+# OPTIONAL The next 4 lines delete unneeded folders of video files (all the videos are contained within the folder 'movie0'
+#RM|${DEST}\data\movie1|
+#RM|${DEST}\data\movie2|
+#RM|${DEST}\data\movie3|
+#RM|${DEST}\data\movie4|
+# OPTIONAL The next 2 lines will allow you to play the game on NTSC machines.
+HR|${DEST}\default.xbe|1|40020000395C24|E0010000395C24|
+HR|${DEST}\default.xbe|1|400200006A006A|E00100006A006A|

@@ -1,0 +1,58 @@
+<sources>
+		<programs>
+				<default pathversion="1">
+				</default>
+				<source>
+						<name>Games</name>
+						<path pathversion="1">E:\Games\</path>
+						<path pathversion="1">F:\Games\</path>
+						<path pathversion="1">G:\Games\</path>
+				</source>
+				<source>
+						<name>Applications</name>
+						<path pathversion="1">C:\Applications\</path>
+						<path pathversion="1">F:\Applications\</path>
+						<path pathversion="1">G:\Applications\</path>
+						<path pathversion="1">E:\Apps\</path>
+						<path pathversion="1">F:\Apps\</path>
+						<path pathversion="1">G:\Apps\</path>
+				</source>
+				<source>
+						<name>Homebrew</name>
+						<path pathversion="1">E:\Homebrew\</path>
+						<path pathversion="1">F:\Homebrew\</path>
+						<path pathversion="1">G:\Homebrew\</path>
+				</source>
+				<source>
+						<name>Emulators</name>
+						<path pathversion="1">E:\Emulators\</path>
+						<path pathversion="1">F:\Emulators\</path>
+						<path pathversion="1">G:\Emulators\</path>
+						<path pathversion="1">E:\Emus\</path>
+						<path pathversion="1">F:\Emus\</path>
+						<path pathversion="1">G:\Emus\</path>
+				</source>
+		</programs>
+		<video>
+				<default pathversion="1">
+				</default>
+		</video>
+		<music>
+				<default pathversion="1">
+				</default>
+				<source>
+						<name>Music</name>
+						<path pathversion="1">E:\Music\</path>
+						<path pathversion="1">F:\Music\</path>
+						<path pathversion="1">G:\Music\</path>
+				</source>
+		</music>
+		<pictures>
+				<default pathversion="1">
+				</default>
+		</pictures>
+		<files>
+				<default pathversion="1">
+				</default>
+		</files>
+</sources>

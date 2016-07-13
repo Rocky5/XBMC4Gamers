@@ -1,0 +1,256 @@
+<includes>
+		<include file="defaults.xml" />
+		<include file="includes_context_buttons.xml" />
+		<include file="includes_video_preview.xml" />
+		<include file="includes_view_options.xml" />
+		<include file="includes_debug.xml" />
+		<include file="includes_variables.xml" />
+		<include file="includes_snow.xml" />
+		<include file="includes_easter.xml" />
+		<constant name="FanartCrossfadeTime">200</constant>
+		<include name="CustomSettingsButtons">
+				<width>1175</width>
+				<height>40</height>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<texturefocus border="5">ThumbFO.png</texturefocus>
+				<texturenofocus border="5">ListNF.png</texturenofocus>
+		</include>
+		<include name="CommonBackground">
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture fallback="Background.png">$INFO[Skin.String(Background_Color)]</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>background diffuse.png</texture>
+						<colordiffuse>$VAR[var-bgcustcolour]</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>$INFO[Skin.String(Background_Image)]</texture>
+						<aspectratio>scale</aspectratio>
+				</control>
+		</include>
+		<include name="WindowHeader">
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>45</height>
+						<texture>Header.png</texture>
+				</control>
+				<control type="label">
+						<posx>10r</posx>
+						<posy>6</posy>
+						<width>200</width>
+						<height>45</height>
+						<align>right</align>
+						<label>$INFO[System.Time]</label>
+						<animation effect="slide" start="200,0" end="0,0" time="1000" condition="!System.HasMediaDVD">conditional</animation>
+						<visible>!Skin.HasSetting(DisplayTime)</visible>
+				</control>
+				<include>DiscPressentIdicator</include>
+		</include>
+		<include name="DiscPressentIdicator">
+				<control type="label">
+						<posx>1800</posx>
+						<posy>6</posy>
+						<width>1280</width>
+						<height>45</height>
+						<align>right</align>
+						<label>$INFO[System.DVDLabel]</label>
+						<animation effect="slide" start="0,0" end="-590" time="1000" condition="System.HasMediaDVD">conditional</animation>
+				</control>
+				<control type="image">
+						<posx>1380</posx>
+						<posy>0</posy>
+						<width>45</width>
+						<height>45</height>
+						<aspectratio>keep</aspectratio>
+						<texture>Gamedisc_small.png</texture>
+						<animation effect="slide" start="0,0" end="-160,0" time="1000" condition="WindowOpen">conditional</animation>
+						<animation effect="slide" start="0,0" end="-160,0" time="1000" condition="System.HasMediaDVD">conditional</animation>
+						<animation effect="rotate" start="0" end="-360" center="auto" time="1000" loop="true" condition="System.HasMediaDVD">conditional</animation>
+				</control>
+		</include>
+		<include name="WindowFooter">
+				<control type="image.">
+						<posx>0</posx>
+						<posy>50r</posy>
+						<width>1280</width>
+						<height>50</height>
+						<texture>Footer.png</texture>
+				</control>
+				<control type="label.">
+						<description>Page Count Label</description>
+						<posx>20r</posx>
+						<posy>30r</posy>
+						<width>500</width>
+						<height>20</height>
+						<font>font10</font>
+						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<scroll>false</scroll>
+						<align>right</align>
+						<aligny>center</aligny>
+						<label>[B]($INFO[Container.NumItems])[/B] $LOCALIZE[31025]$INFO[Container.TotalTime, - $LOCALIZE[180] [B](,)[/B]] - $LOCALIZE[31024] [B]($INFO[Container.CurrentPage]/$INFO[Container.NumPages])[/B]</label>
+						<visible>Window.IsVisible(1)</visible>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<include>Context_Buttons</include>
+		</include>
+		<include name="CommonOptionsMenuBack">
+				<include>VisibleFadeEffect</include>
+				<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus</visible>
+				<animation effect="slide" start="0,0" end="60,0" time="200" condition="Player.HasMedia">conditional</animation>
+				<posx>60</posx>
+				<posy>45</posy>
+				<control type="image">
+						<description>shadow border</description>
+						<posx>-8</posx>
+						<posy>17</posy>
+						<width>306</width>
+						<height>431</height>
+						<texture border="10">border-shadow.png</texture>
+				</control>
+				<control type="image">
+						<description>Down Arrow</description>
+						<posx>30</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>25</height>
+						<texture>arrow-big-up.png</texture>
+				</control>
+				<control type="image">
+						<description>background image</description>
+						<posx>0</posx>
+						<posy>25</posy>
+						<width>290</width>
+						<height>415</height>
+						<texture border="8">SubBack.png</texture>
+				</control>
+				<control type="image">
+						<description>Overlay image</description>
+						<posx>0</posx>
+						<posy>25</posy>
+						<width>200</width>
+						<height>310</height>
+						<texture>GlassOverlay.png</texture>
+				</control>
+				<control type="image">
+						<posx>0</posx>
+						<posy>25</posy>
+						<width>290</width>
+						<height>40</height>
+						<texture>HorizontalGlow.png</texture>
+				</control>
+		</include>
+		<include name="ScrollOffsetLabel">
+				<control type="group">
+						<visible>Container.Scrolling</visible>
+						<animation effect="slide" start="0,0" end="0,-70" delay="0" time="200">Visible</animation>
+						<animation effect="slide" start="0,-70" end="0,0" delay="100" time="200">Hidden</animation>
+						<control type="image">
+								<posx>70r</posx>
+								<posy>0r</posy>
+								<width>70</width>
+								<height>70</height>
+								<texture border="20,20,20,2">thumbfo.png</texture>
+						</control>
+						<control type="label">
+								<posx>70r</posx>
+								<posy>0r</posy>
+								<width>70</width>
+								<height>70</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>[B]$INFO[ListItem.SortLetter][/B]</label>
+								<textcolor>black</textcolor>
+								<font>font25</font>
+						</control>
+				</control>
+		</include>
+		<include name="ButtonCommonValues">
+				<height>44</height>
+				<width>280</width>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>10</textoffsetx>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<pulseonselect>true</pulseonselect>
+		</include>
+		<include name="ButtonHomeSubCommonValues">
+				<height>37</height>
+				<width>246</width>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">-</texturenofocus>
+				<pulseonselect>true</pulseonselect>
+		</include>
+		<include name="ButtonInfoDialogsCommonValues">
+				<height>25</height>
+				<width>200</width>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturefocus border="2">button-focus2.png</texturefocus>
+				<texturenofocus border="2">button-nofocus.png</texturenofocus>
+				<pulseonselect>no</pulseonselect>
+		</include>
+		<include name="Window_OpenClose_Animation">
+				<animation effect="fade" time="300">WindowOpen</animation>
+				<animation effect="fade" time="300">WindowClose</animation>
+		</include>
+		<include name="dialogeffect">
+				<animation effect="fade" time="200">WindowOpen</animation>
+				<animation effect="fade" time="200">WindowClose</animation>
+		</include>
+		<include name="DialogEffectZoom">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
+						<effect type="fade" start="0" end="100" time="300" delay="200" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+						<effect type="fade" start="100" end="0" time="300" />
+				</animation>
+		</include>
+		<include name="ViewVisibleEffect">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" />
+						<effect type="fade" start="0" end="100" time="300" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+						<effect type="fade" start="100" end="0" time="300" />
+				</animation>
+		</include>
+		<include name="VisibleFadeEffect">
+				<animation effect="fade" time="200">Visible</animation>
+				<animation effect="fade" time="200">Hidden</animation>
+		</include>
+</includes>

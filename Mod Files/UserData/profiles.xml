@@ -1,0 +1,44 @@
+<profiles>
+		<lastloaded>0</lastloaded>
+		<useloginscreen>true</useloginscreen>
+		<profile>
+				<name>Manage Profiles</name>
+				<directory pathversion="1">special://masterprofile/</directory>
+				<thumbnail pathversion="1">special://masterprofile/Thumbnails/Profiles/ManageProfiles.tbn</thumbnail>
+				<hasdatabases>true</hasdatabases>
+				<canwritedatabases>true</canwritedatabases>
+				<hassources>true</hassources>
+				<canwritesources>true</canwritesources>
+				<useavpacksettings>false</useavpacksettings>
+				<lockaddonmanager>false</lockaddonmanager>
+				<locksettings>false</locksettings>
+				<lockfiles>false</lockfiles>
+				<lockmusic>false</lockmusic>
+				<lockvideo>false</lockvideo>
+				<lockpictures>false</lockpictures>
+				<lockprograms>false</lockprograms>
+				<lockmode>0</lockmode>
+				<lockcode>7e2c085d859a0bafd9f2abd8dc30ae84</lockcode>
+				<lastdate>Has Never Logged In</lastdate>
+		</profile>
+		<profile>
+				<name>DVD2Xbox</name>
+				<directory pathversion="1">profiles/DVD2Xbox</directory>
+				<thumbnail pathversion="1">special://masterprofile/Thumbnails/Profiles/DVD2Xbox.tbn</thumbnail>
+				<hasdatabases>true</hasdatabases>
+				<canwritedatabases>true</canwritedatabases>
+				<hassources>true</hassources>
+				<canwritesources>true</canwritesources>
+				<useavpacksettings>false</useavpacksettings>
+				<lockaddonmanager>false</lockaddonmanager>
+				<locksettings>true</locksettings>
+				<lockfiles>true</lockfiles>
+				<lockmusic>false</lockmusic>
+				<lockvideo>false</lockvideo>
+				<lockpictures>false</lockpictures>
+				<lockprograms>false</lockprograms>
+				<lockmode>0</lockmode>
+				<lockcode>-</lockcode>
+				<lastdate>Has Never Logged In</lastdate>
+		</profile>
+</profiles>

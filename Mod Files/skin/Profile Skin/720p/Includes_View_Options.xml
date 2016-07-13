@@ -1,0 +1,260 @@
+<includes>
+		<include name="View_Options">
+				<!-- Background Select -->
+				<control type="grouplist" id="9998">
+						<posx>0</posx>
+						<posy>-60</posy>
+						<width>1280</width>
+						<height>570</height>
+						<itemgap>0</itemgap>
+						<ondown>50</ondown>
+						<animation effect="slide" start="0,0" end="0,60" time="300">Focus</animation>
+						<animation effect="slide" start="0,60" end="0,0" time="200">Unfocus</animation>
+						<control type="list" id="117">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>45</height>
+								<onleft>117</onleft>
+								<onright>117</onright>
+								<onup>118</onup>
+								<ondown>50</ondown>
+								<focusposition>3</focusposition>
+								<orientation>horizontal</orientation>
+								<itemlayout height="45" width="110">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>110</width>
+												<height>45</height>
+												<texture border="5">ListNF.png</texture>
+										</control>
+										<control type="image">
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>100</width>
+												<height>35</height>
+												<texture>$INFO[Listitem.ActualIcon]</texture>
+												<bordertexture>black-back.png</bordertexture>
+												<bordersize>1</bordersize>
+												<aspectratio>scale</aspectratio>
+										</control>
+								</itemlayout>
+								<focusedlayout height="45" width="110">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>110</width>
+												<height>45</height>
+												<texture border="5">ListNF.png</texture>
+												<visible>!Control.HasFocus(117)</visible>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>110</width>
+												<height>45</height>
+												<texture border="5">ThumbFO.png</texture>
+												<visible>Control.HasFocus(117)</visible>
+										</control>
+										<control type="image">
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>100</width>
+												<height>35</height>
+												<texture>$INFO[Listitem.ActualIcon]</texture>
+												<bordertexture>black-back.png</bordertexture>
+												<bordersize>1</bordersize>
+												<aspectratio>scale</aspectratio>
+										</control>
+								</focusedlayout>
+								<content>
+										<item id="0">
+												<label>-</label>
+												<onclick>Container.NextViewMode</onclick>
+												<icon>views.png</icon>
+										</item>
+										<item id="1">
+												<label>-</label>
+												<onclick>Skin.ToggleSetting(fanartenabled)</onclick>
+												<icon>fanart_disabled.png</icon>
+												<visible>!Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(56)</visible>
+										</item>
+										<item id="1">
+												<label>-</label>
+												<onclick>Skin.ToggleSetting(fadefanart)</onclick>
+												<icon>fanart_faded.png</icon>
+												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(56)</visible>
+										</item>
+										<item id="1">
+												<label>-</label>
+												<onclick>Skin.Reset(fanartenabled)</onclick>
+												<onclick>Skin.Reset(fadefanart)</onclick>
+												<icon>fanart.png</icon>
+												<visible>Skin.HasSetting(fadefanart) + Skin.HasSetting(fanartenabled) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(56)</visible>
+										</item>
+										<item id="2">
+												<label>-</label>
+												<onclick>Skin.ToggleSetting(fanartoverlayenabled)</onclick>
+												<icon>fanart_overlay_enabled.png</icon>
+												<visible>!Skin.HasSetting(fanartoverlayenabled) + Control.IsVisible(54)</visible>
+										</item>
+										<item id="2">
+												<label>-</label>
+												<onclick>Skin.ToggleSetting(fanartoverlayenabled)</onclick>
+												<icon>fanart_overlay_disabled.png</icon>
+												<visible>Skin.HasSetting(fanartoverlayenabled) + Control.IsVisible(54)</visible>
+										</item>
+										<item id="3">
+												<label>-</label>
+												<onclick>Skin.ToggleSetting(_recourcesenabled)</onclick>
+												<icon>_recources_enabled.png</icon>
+												<visible>Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(56)</visible>
+										</item>
+										<item id="3">
+												<label>-</label>
+												<onclick>Skin.ToggleSetting(_recourcesenabled)</onclick>
+												<icon>_recources_disabled.png</icon>
+												<visible>!Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(56)</visible>
+										</item>
+										<item id="4">
+												<label>-</label>
+												<onclick>Skin.Reset(Background_Color)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<icon>reset.png</icon>
+										</item>
+										<item id="5">
+												<label>-</label>
+												<onclick>Skin.SetImage(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Color)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>$INFO[Skin.String(Background_Image)]</icon>
+												<visible>IsEmpty.($INFO[Skin.String(Background_Image)])</visible>
+										</item>
+										<item id="5">
+												<label>-</label>
+												<onclick>Skin.SetImage(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Color)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>hdd.png</icon>
+												<visible>!IsEmpty.($INFO[Skin.String(Background_Image)])</visible>
+										</item>
+										<item id="6">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Custom_Color)</onclick>
+												<onclick>Skin.Reset(Background_Color)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<icon>custom_color.png</icon>
+										</item>
+										<!-- Backgrounds -->
+										<item id="10">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/1.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/1.png</icon>
+										</item>
+										<item id="11">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/2.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/2.png</icon>
+										</item>
+										<item id="12">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/3.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/3.png</icon>
+										</item>
+										<item id="13">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/4.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/4.png</icon>
+										</item>
+										<item id="14">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/5.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/5.png</icon>
+										</item>
+										<item id="15">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/6.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/6.png</icon>
+										</item>
+										<item id="16">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/7.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/7.png</icon>
+										</item>
+										<item id="17">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/8.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/8.png</icon>
+										</item>
+										<item id="18">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/9.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/9.png</icon>
+										</item>
+										<item id="19">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/10.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/10.png</icon>
+										</item>
+										<item id="20">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/11.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/11.png</icon>
+										</item>
+										<item id="21">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/12.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/12.png</icon>
+										</item>
+										<item id="22">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/13.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/13.png</icon>
+										</item>
+										<item id="23">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/14.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/14.png</icon>
+										</item>
+										<item id="24">
+												<label>-</label>
+												<onclick>Skin.SetString(Background_Color,special://skin/media/backgrounds/15.png)</onclick>
+												<onclick>Skin.Reset(Background_Image)</onclick>
+												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+												<icon>special://skin/media/backgrounds/15.png</icon>
+										</item>
+								</content>
+						</control>
+				</control>
+		</include>
+</includes>

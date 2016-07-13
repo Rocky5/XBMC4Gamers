@@ -1,0 +1,14 @@
+# 
+# 56550026_pal.acl
+#
+# Patch for Riddick PAL by Complex tools :-)
+#
+# Serial: 2004081500
+#
+
+CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+# Media check 1
+SM|*.xbe|C00001FF|
+# Disc check
+HR|${DEST}\default.xbe|3|34FF75088D|34EB41418D|
+HR|${DEST}\default.xbe|1|C07D1B50E852F7FFFFE8F7F6FFFF83F80275076A03E813F7FFFF33|C07C178B4508508B000C203D643A5C0075B158B800080000EB3733|

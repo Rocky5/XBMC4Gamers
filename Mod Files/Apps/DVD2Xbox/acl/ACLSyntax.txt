@@ -1,0 +1,56 @@
+#
+# ACL Syntax
+#
+# Serial: 2004092700
+#
+# dvd2xbox has the ability to patch every game individually. It determines the TitleID via the default.xbe in the root
+# folder of the DVD and the region setting via the eeprom. It then tries to load the TitleID_pal.acl/TitleID_ntsc.acl
+# file for the specific title. If the file can't be found it falls back to TitleID.acl. If TitleID.acl can't be found
+# the default.acl file is used. This file contains all known generic patches.
+#
+# SetMediaType: SM|*.xbe|400001FF| 
+# Set media type of all xbe's to 400001FF. Filemask could be 
+# *.ext             - all files with extension ext are patched (will fail on non xbox executables)
+# *                 - all files are patched (will fail on non xbox executables)
+# f:\foo\foo.xbe    - only foo.xbe is patched
+# ${DEST}\foo.xbe   - only foo.xbe in the destination dir is patched
+# ${DEST}\foo\*.xbe - all xbe's in dest\foo\ are patched
+# default.xbe       - all default.xbe's are patched
+#
+# SetGameRegion: SR|*.xbe|00000007| 
+# Set game region of all xbe's to 00000007 (all regions). 
+# See SM for file mask syntax.
+#
+# HexReplace: HR|*.xbe|1|E8CAFDFFFF85C0EB|E8CAFDFFFF85C07D|
+# Searches all xbe's for E8CAFDFFFF85C0EB and replace the first occurrence by E8CAFDFFFF85C07D.
+# Look at SetMediaType for the filemask syntax. 1,5,6 means first,fifth and sixth occurrence.
+#
+# CopyFile: CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+# Copies default.xbe in the destination dir to default.xbe_orig.
+#
+# Move: MV|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+# Moves default.xbe in the destination dir to default.xbe_orig.
+#
+# RemoveDir/File: RM|f:\foo\foobar|
+# deletes dir/file f:\foo\foobar.
+# Look at SetMediaType for the filemask syntax.
+#
+# Exclude path: 
+# EP|d:\xdemos|  - excludes the file or directory d:\xdemos
+#
+# Apply file:
+# AP|${DEST}\default.xbe|foo.ppf| - applies the patch foo.ppf to default.xbe. foo.ppf needs to be in the acl directory.
+# See http://www.paradogs.com/pdx_ppf3.htm for info and programs on how to create ppf files.
+#
+# Example:
+# [4D530014]
+# matches Tao Feng
+# CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+# HR|${DEST}\default.xbe|1|744BE8CAFDFFFF85C07D0633C05050EB44F605|744BE8CAFDFFFF85C0EB0633C05050EB44F605|
+# HR|${DEST}\default.xbe|1|E8CAFDFFFF85C07D|E8CAFDFFFF85C0EB|
+# SM|${DEST}\default.xbe|400001FF|
+#
+#
+# Searching for files takes a long time on titles with a lot of them. In the current implementation the whole dir
+# is searched for the specific file for every entry (except xbe's after the maincopy). 
+# Specifying file by file - as in the example - is the recommended way when possible.

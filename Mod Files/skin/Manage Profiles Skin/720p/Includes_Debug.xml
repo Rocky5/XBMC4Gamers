@@ -1,0 +1,109 @@
+<includes>
+		<include name="Debug">
+				<!-- Info Lables Underlay for FPS and Memory -->
+				<control type="image">
+						<posx>0</posx>
+						<posy>93r</posy>
+						<height>20</height>
+						<width>1280</width>
+						<texture>thumbnf.png</texture>
+						<colordiffuse>DDFFFFFF</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<control type="label">
+						<posx>10</posx>
+						<posy>96r</posy>
+						<width>1280</width>
+						<font>font11</font>
+						<label>$LOCALIZE[31994] $INFO[System.FPS] - $LOCALIZE[31992] $INFO[System.FreeMemory]</label>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<!-- Info Lables Underlay for Current Window info -->
+				<control type="image">
+						<posx>0</posx>
+						<posy>72r</posy>
+						<height>20</height>
+						<width>1280</width>
+						<texture>thumbnf.png</texture>
+						<colordiffuse>DDFFFFFF</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<control type="label">
+						<posx>10</posx>
+						<posy>75r</posy>
+						<width>1280</width>
+						<font>font11</font>
+						<label>$LOCALIZE[31995] $INFO[System.CurrentWindow]</label>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<!-- Info Lables Underlay for Current Control info -->
+				<control type="image">
+						<posx>0</posx>
+						<posy>51r</posy>
+						<height>20</height>
+						<width>1280</width>
+						<texture>thumbnf.png</texture>
+						<colordiffuse>DDFFFFFF</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<control type="label">
+						<posx>10</posx>
+						<posy>53r</posy>
+						<width>1280</width>
+						<font>font11</font>
+						<label>$LOCALIZE[31996] $INFO[System.CurrentControl]</label>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<!-- Info Lables Underlay for Current View info -->
+				<control type="image">
+						<posx>0</posx>
+						<posy>30r</posy>
+						<height>20</height>
+						<width>1280</width>
+						<texture>thumbnf.png</texture>
+						<colordiffuse>DDFFFFFF</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<control type="label">
+						<posx>10</posx>
+						<posy>32r</posy>
+						<width>1280</width>
+						<font>font11</font>
+						<label>$LOCALIZE[31997] $INFO[Container.Viewmode]</label>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<!-- Grid -->
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>overlays/debug/debuggrid.png</texture>
+						<colordiffuse>FF00aeff</colordiffuse>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<!-- XML Lables ie. DialogVolumeBar.xml eg -->
+				<control type="image">
+						<posx>0</posx>
+						<posy>15</posy>
+						<height>20</height>
+						<width>1280</width>
+						<texture>thumbnf.png</texture>
+						<colordiffuse>DDFFFFFF</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+				<control type="label">
+						<posx>10</posx>
+						<posy>13</posy>
+						<width>1280</width>
+						<font>font11</font>
+						<label>$LOCALIZE[31417] $INFO[window.property(xmlfile)]</label>
+						<visible>Skin.HasSetting(Debuginfo)</visible>
+				</control>
+		</include>
+</includes>

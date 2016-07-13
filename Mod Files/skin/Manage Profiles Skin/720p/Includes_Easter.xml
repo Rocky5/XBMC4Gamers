@@ -1,0 +1,49 @@
+<includes>
+		<include name="easter">
+				<control type="image">
+						<posx>30</posx>
+						<posy>125r</posy>
+						<width>207</width>
+						<height>137</height>
+						<texture>egg\egg3.png</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<posx>0</posx>
+						<posy>107r</posy>
+						<width>177</width>
+						<height>107</height>
+						<texture>egg\egg2.png</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<posx>174r</posx>
+						<posy>107r</posy>
+						<width>177</width>
+						<height>107</height>
+						<texture>egg\egg1.png</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="group">
+						<control type="multiimage">
+								<posx>-512</posx>
+								<posy>470</posy>
+								<width>256</width>
+								<height>256</height>
+								<visible>true</visible>
+								<imagepath>rabbit</imagepath>
+								<timeperimage>45</timeperimage>
+								<fadetime>0</fadetime>
+								<pauseatend>0</pauseatend>
+								<randomize>false</randomize>
+								<loop>yes</loop>
+								<aspectratio>stretch</aspectratio>
+								<animation type="Conditional" condition="true" reversible="false" loop="true">
+										<effect type="slide" start="-512" end="2304" delay="8000" time="12000" />
+										<effect type="zoom" end="-100,100" center="auto" delay="23000" time="0" />
+										<effect type="slide" start="-512" end="2304" delay="23000" time="12000" />
+								</animation>
+						</control>
+				</control>
+		</include>
+</includes>

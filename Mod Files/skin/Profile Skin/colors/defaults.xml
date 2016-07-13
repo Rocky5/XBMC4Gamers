@@ -1,0 +1,14 @@
+<colors>
+		<color name="white">FFFFFFFF</color>
+		<color name="grey">66FFFFFF</color>
+		<color name="grey2">88FFFFFF</color>
+		<color name="grey3">33FFFFFF</color>
+		<color name="black">FF000000</color>
+		<color name="blue">FF399EDA</color>
+		<color name="blue2">FF0059AB</color>
+		<color name="orange">FFEB9E17</color>
+		<color name="green">FF01B005</color>
+		<color name="dialogheader">FF399EDA</color>
+		<color name="synopsiscolour1">FF399EDA</color>
+		<color name="synopsiscolour2">FFFFFFFF</color>
+</colors>

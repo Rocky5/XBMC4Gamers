@@ -1,0 +1,245 @@
+<window id="34">
+		<defaultcontrol always="true">2</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<controls>
+				<include>CommonBackground</include>
+				<control type="group">
+						<include>Window_OpenClose_Animation</include>
+						<control type="image">
+								<posx>0</posx>
+								<posy>445</posy>
+								<width>1280</width>
+								<height>200</height>
+								<texture>black-back.png</texture>
+						</control>
+						<control type="image">
+								<posx>80</posx>
+								<posy>470</posy>
+								<width>266</width>
+								<height>150</height>
+								<aspectratio>keep</aspectratio>
+								<texture fallback="unknown-user.png">$INFO[Container(2).Listitem.Icon]</texture>
+								<bordertexture border="5">white-back.png</bordertexture>
+								<bordersize>2</bordersize>
+								<fadetime>FanartCrossfadeTime</fadetime>
+						</control>
+						<control type="label">
+								<posx>360</posx>
+								<posy>500</posy>
+								<width>770</width>
+								<height>30</height>
+								<font>font18</font>
+								<textcolor>white</textcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$INFO[Container(2).ListItem.Label,[COLOR=blue]$LOCALIZE[20093] : [/COLOR]]</label>
+						</control>
+						<control type="label">
+								<posx>360</posx>
+								<posy>550</posy>
+								<width>770</width>
+								<height>30</height>
+								<font>font18</font>
+								<textcolor>white</textcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$INFO[Container(2).ListItem.Label2,[COLOR=blue]$LOCALIZE[31047] : [/COLOR]]</label>
+						</control>
+						<control type="list" id="2">
+								<posx>40</posx>
+								<posy>70</posy>
+								<width>1200</width>
+								<height>183</height>
+								<onleft>2</onleft>
+								<onright>2</onright>
+								<onup>60</onup>
+								<ondown>9001</ondown>
+								<viewtype label="31301">list</viewtype>
+								<pagecontrol>60</pagecontrol>
+								<scrolltime>200</scrolltime>
+								<preloaditems>2</preloaditems>
+								<orientation>horizontal</orientation>
+								<itemlayout height="185" width="200">
+										<control type="image">
+												<posx>1</posx>
+												<posy>1</posy>
+												<width>198</width>
+												<height>183</height>
+												<texture border="5">ThumbNF.png</texture>
+										</control>
+										<control type="image">
+												<posx>6</posx>
+												<posy>6</posy>
+												<width>188</width>
+												<height>150</height>
+												<texture background="true" fallback="unknown-user.png">$INFO[Listitem.Icon]</texture>
+												<bordertexture>black-back.png</bordertexture>
+												<bordersize>1</bordersize>
+										</control>
+										<control type="label">
+												<posx>100</posx>
+												<posy>158</posy>
+												<width>188</width>
+												<height>25</height>
+												<font>font11</font>
+												<textcolor>grey2</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>center</align>
+												<aligny>center</aligny>
+												<info>ListItem.Label</info>
+										</control>
+										<control type="image">
+												<posx>280</posx>
+												<posy>195</posy>
+												<width>35</width>
+												<height>35</height>
+												<aspectratio>keep</aspectratio>
+												<texture>$INFO[ListItem.Overlay]</texture>
+										</control>
+								</itemlayout>
+								<focusedlayout height="185" width="200">
+										<control type="image">
+												<posx>1</posx>
+												<posy>1</posy>
+												<width>198</width>
+												<height>183</height>
+												<texture border="5">ThumbNF.png</texture>
+												<visible>!Control.HasFocus(2)</visible>
+										</control>
+										<control type="image">
+												<posx>1</posx>
+												<posy>1</posy>
+												<width>198</width>
+												<height>183</height>
+												<texture border="5">ThumbFO.png</texture>
+												<visible>Control.HasFocus(2)</visible>
+										</control>
+										<control type="image">
+												<posx>6</posx>
+												<posy>6</posy>
+												<width>188</width>
+												<height>150</height>
+												<texture background="true" fallback="unknown-user.png">$INFO[Listitem.Icon]</texture>
+												<bordertexture>black-back.png</bordertexture>
+												<bordersize>1</bordersize>
+										</control>
+										<control type="label">
+												<posx>100</posx>
+												<posy>158</posy>
+												<width>188</width>
+												<height>25</height>
+												<font>font11</font>
+												<textcolor>grey2</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>center</align>
+												<aligny>center</aligny>
+												<info>ListItem.Label</info>
+												<visible>!Control.HasFocus(2)</visible>
+										</control>
+										<control type="label">
+												<posx>100</posx>
+												<posy>158</posy>
+												<width>188</width>
+												<height>25</height>
+												<font>font11</font>
+												<textcolor>black</textcolor>
+												<selectedcolor>blue2</selectedcolor>
+												<align>center</align>
+												<aligny>center</aligny>
+												<info>ListItem.Label</info>
+												<visible>Control.HasFocus(2)</visible>
+										</control>
+										<control type="image">
+												<posx>280</posx>
+												<posy>195</posy>
+												<width>35</width>
+												<height>35</height>
+												<aspectratio>keep</aspectratio>
+												<texture>$INFO[ListItem.Overlay]</texture>
+										</control>
+								</focusedlayout>
+						</control>
+						<control type="scrollbar" id="60">
+								<posx>40</posx>
+								<posy>55</posy>
+								<width>1200</width>
+								<height>10</height>
+								<texturesliderbackground border="2,2,2,2">black-back.png</texturesliderbackground>
+								<texturesliderbar border="16,2,16,2">scrollbar_bar-vertical.png</texturesliderbar>
+								<texturesliderbarfocus border="16,2,16,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
+								<textureslidernib>scrollbar_nib-vertical.png</textureslidernib>
+								<textureslidernibfocus>scrollbar_nib-vertical.png</textureslidernibfocus>
+								<onup>-</onup>
+								<ondown>2</ondown>
+								<showonepage>false</showonepage>
+								<orientation>horizontal</orientation>
+								<visible>Control.IsVisible(2)</visible>
+						</control>
+						<control type="radiobutton" id="9001">
+								<description>Default Button</description>
+								<posx>220</posx>
+								<posy>280</posy>
+								<width>840</width>
+								<height>50</height>
+								<onup>2</onup>
+								<font>font12</font>
+								<label>  $LOCALIZE[32026]</label>
+								<textcolor>white</textcolor>
+								<focusedcolor>black</focusedcolor>
+								<texturefocus border="5">ThumbFO.png</texturefocus>
+								<texturenofocus border="5">black-back.png</texturenofocus>
+								<onclick>Skin.ToggleSetting(UseProfiles)</onclick>
+								<selected>Skin.HasSetting(UseProfiles)</selected>
+						</control>
+						<control type="image">
+								<posx>220</posx>
+								<posy>330</posy>
+								<width>840</width>
+								<height>70</height>
+								<texture>black-back.png</texture>
+						</control>
+						<control type="image">
+								<posx>220</posx>
+								<posy>330</posy>
+								<width>840</width>
+								<height>2</height>
+								<texture>separator.png</texture>
+						</control>
+						<control type="textbox">
+								<posx>230</posx>
+								<posy>340</posy>
+								<width>820</width>
+								<height>105</height>
+								<font>font11</font>
+								<textcolor>grey2</textcolor>
+								<scroll>true</scroll>
+								<align>center</align>
+								<label>$LOCALIZE[32027]</label>
+						</control>
+				</control>
+				<include>WindowHeader</include>
+				<control type="image">
+						<posx>20</posx>
+						<posy>5</posy>
+						<width>40</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>icon_system.png</texture>
+				</control>
+				<control type="label">
+						<description>Header label</description>
+						<posx>70</posx>
+						<posy>5</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[10034]</label>
+				</control>
+				<include>WindowFooter</include>
+				<!-- Debug Info -->
+				<include>Debug</include>
+		</controls>
+</window>

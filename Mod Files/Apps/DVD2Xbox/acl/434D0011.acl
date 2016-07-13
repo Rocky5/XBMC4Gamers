@@ -1,0 +1,19 @@
+# Game: Pro Race Driver 2 / V8 Supercars 2 PAL/NTSC
+#
+# Description: Fixes a long string instance that isn't patched by
+# the default acl. Also removes FATX check.
+#
+# Submitted by Gigas
+
+CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+# Media patch long hex
+HR|*.xbe|1|744BE8CAFDFFFF85C07D0633C05050EB44F605|744BE8CAFDFFFF85C0EB0633C05050EB44F605|
+# Media patch short hex
+HR|*.xbe|1|E8CAFDFFFF85C07D|E8CAFDFFFF85C0EB|
+# Nuke long reference to shader file
+HR|${DEST}\default.xbe|1|73666F726D5368616465722E787675|2E7876750000000000000000000000|
+# Remove lowercase FATX check
+HR|${DEST}\default.xbe|2|643A5C|002E5C|
+
+# done in all.acl
+SM|${DEST}\default.xbe|400001FF|

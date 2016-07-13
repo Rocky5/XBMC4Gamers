@@ -1,0 +1,119 @@
+<window id="1111">
+		<defaultcontrol always="true">9001</defaultcontrol>
+		<controls>
+				<include>CommonBackground</include>
+				<control type="group">
+						<animation type="WindowOpen" reversible="false">
+								<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
+								<effect type="fade" start="0" end="100" time="300" delay="200" />
+						</animation>
+						<animation type="WindowClose" reversible="false">
+								<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+								<effect type="fade" start="100" end="0" time="300" />
+						</animation>
+						<!-- Start General Skin Settings -->
+						<control type="grouplist" id="9001">
+								<posx>50</posx>
+								<posy>90</posy>
+								<width>1230</width>
+								<height>540</height>
+								<itemgap>0</itemgap>
+								<pagecontrol>9061</pagecontrol>
+								<onleft>9000</onleft>
+								<onright>9061</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<control type="button" id="112">
+										<description>Startup Playback creation</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32042]</label>
+										<onclick>ActivateWindow(501)</onclick>
+								</control>
+								<control type="radiobutton" id="113">
+										<description>Startup Playback</description>
+										<include>CustomSettingsButtons</include>
+										<label>31137</label>
+										<onclick>Skin.ToggleSetting(Use_Startup_Playback)</onclick>
+										<selected>Skin.HasSetting(Use_Startup_Playback)</selected>
+								</control>
+								<control type="button" id="114">
+										<description>Startup Playback Path</description>
+										<include>CustomSettingsButtons</include>
+										<label> - $LOCALIZE[21801]</label>
+										<label2>[COLOR=blue2]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
+										<onclick>Skin.SetFile(Startup_Playback_Path,.m3u,special://profile/playlists/music/)</onclick>
+										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
+								</control>
+								<control type="radiobutton" id="115">
+										<description>Launcher toggle</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32043]</label>
+										<onclick>Skin.ToggleSetting(EmuButton)</onclick>
+										<selected>Skin.HasSetting(EmuButton)</selected>
+								</control>
+								<control type="button" id="116">
+										<description>Launcher Path</description>
+										<include>CustomSettingsButtons</include>
+										<label> - $LOCALIZE[32044]</label>
+										<label2>[COLOR=blue2]$INFO[Skin.String(Emulator_Path)][/COLOR]</label2>
+										<onclick>Skin.SetFile(Emulator_Path,,)</onclick>
+										<visible>Skin.HasSetting(EmuButton)</visible>
+								</control>
+								<control type="button" id="117">
+										<description>[B]Preview video[/B] settings</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32045]</label>
+										<onclick>ActivateWindow(1115)</onclick>
+								</control>
+								<control type="radiobutton" id="123">
+										<description>Time Display</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32048]</label>
+										<onclick>Skin.ToggleSetting(DisplayTime)</onclick>
+										<selected>Skin.HasSetting(DisplayTime)</selected>
+								</control>
+								<control type="radiobutton" id="127">
+										<description>Synopsis Display</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32055]</label>
+										<onclick>Skin.ToggleSetting(Synopsis)</onclick>
+										<selected>Skin.HasSetting(Synopsis)</selected>
+								</control>
+								<control type="radiobutton" id="140">
+										<description>Debug</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32049]</label>
+										<onclick>Skin.ToggleSetting(Debuginfo)</onclick>
+										<selected>Skin.HasSetting(Debuginfo)</selected>
+								</control>
+						</control>
+				</control>
+				<include>WindowHeader</include>
+				<control type="image">
+						<posx>20</posx>
+						<posy>5</posy>
+						<width>40</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>icon_system.png</texture>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>Header label</description>
+						<posx>70</posx>
+						<posy>5</posy>
+						<width>700</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[20077]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<include>WindowFooter</include>
+				<include>BehindDialogFadeOut</include>
+				<!-- Debug Info -->
+				<include>Debug</include>
+		</controls>
+</window>

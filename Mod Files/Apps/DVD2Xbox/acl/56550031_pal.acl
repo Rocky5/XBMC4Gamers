@@ -1,0 +1,6 @@
+# Game: Leisure Suit Larry:Magna Cum Laude (PAL)
+# Title ID: 56550031
+
+CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+SM|*.xbe|C00001FF|
+HR|${DEST}\default.xbe|1|3B819C05000074|3B819C050000EB|

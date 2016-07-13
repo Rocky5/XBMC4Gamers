@@ -1,0 +1,9 @@
+<includes>
+		<variable name="var-labelcolour">
+				<value condition="Skin.String(Background_Color,special://skin/media/backgrounds/2.png) | Skin.String(Background_Color,special://skin/media/backgrounds/14.png) | Skin.String(Background_Color,special://skin/media/backgrounds/15.png)">FF333333</value>
+				<value>FFFFFFFF</value>
+		</variable>
+		<variable name="var-bgcustcolour">
+				<value>FF$INFO[Skin.String(Background_Custom_Color)]</value>
+		</variable>
+</includes>

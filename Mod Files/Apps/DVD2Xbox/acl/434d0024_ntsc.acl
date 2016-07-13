@@ -1,0 +1,19 @@
+# Game: Indy Car Series 2005(NTSC)
+# Title ID: 434d0024
+# Size: 1162 MBytes(including xbl files but not necessary)
+# Submitted by: AgentEB
+
+# Fixes hdd dirty disk error with NTSC version of Indy Car Series 2005. Not sure if it works
+# with PAL version thanks to talon for sharing this with us on X-S. it can be located in the
+# default.xbe file in offset 00091358.
+
+
+CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+# Media patch long hex
+HR|*.xbe|1|744BE8CAFDFFFF85C07D0633C05050EB44F605|744BE8CAFDFFFF85C0EB0633C05050EB44F605|
+# Media patch short hex
+HR|*.xbe|1|E8CAFDFFFF85C07D|E8CAFDFFFF85C0EB|
+# Media check 1
+SM|*.xbe|C00001FF|
+# Indy Car patch
+HR|${DEST}\default.xbe|1|0BC2750AC705140B32000100|0BC2750AC705140B32000000|
