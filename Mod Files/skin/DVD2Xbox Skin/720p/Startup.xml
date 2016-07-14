@@ -85,7 +85,7 @@
 								<effect type="fade" start="100" end="0" delay="19000" time="1000" />
 						</animation>
 				</control>
-				<control type="label">
+				<control type="label.">
 						<posx>5</posx>
 						<posy>30r</posy>
 						<width>1280</width>
