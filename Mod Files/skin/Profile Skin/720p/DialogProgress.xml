@@ -139,7 +139,7 @@
 								<onright>10</onright>
 								<onup>10</onup>
 								<ondown>10</ondown>
-								<visible>!Window.IsActive(2999)</visible>
+								<visible>!Window.IsActive(2999) + !Window.IsActive(1111)</visible>
 						</control>
 				</control>
 				<!-- Debug Info -->

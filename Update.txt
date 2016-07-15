@@ -25,6 +25,7 @@
 24) Added a Preview Video Settings, you can select from common extensions or add your own.
 25) Added a new script, "CleanMyVideos34.db.py" removes bookmarks from preview videos.
 26) Added a new script, that reads a file named default.xml in the _Resources folder.
+26) Added a new script & option in the Skin settings menu to Clean the thumbnails.
 
 
 

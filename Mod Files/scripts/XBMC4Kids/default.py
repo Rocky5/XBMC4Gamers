@@ -101,15 +101,6 @@ if SkipScript == "false":
 	if 'Manage Profiles Skin.useprofiles">true<' in open(Master_Profile_GUISettings).read():
 
 
-########################################################################################################################################
-# Removes XBMC save folder, so I can rename UDATA.
-########################################################################################################################################
-		if os.path.isdir('E:/UDATA/0face008/'):
-			shutil.rmtree('E:/UDATA/0face008/')
-			print "| Removed XBMC save directory"
-		else:
-			print "| Already removed XBMC save directory"
-
 			
 ########################################################################################################################################
 # Check if UDATA exist if not make one.
@@ -119,6 +110,16 @@ if SkipScript == "false":
 			print "| UDATA created"
 		else:
 			print "| UDATA folder present"
+
+
+########################################################################################################################################
+# Removes XBMC save folder, so I can rename UDATA.
+########################################################################################################################################
+		if os.path.isdir('E:/UDATA/0face008/'):
+			shutil.rmtree('E:/UDATA/0face008/')
+			print "| Removed XBMC save directory"
+		else:
+			print "| Already removed XBMC save directory"
 
 			
 ########################################################################################################################################

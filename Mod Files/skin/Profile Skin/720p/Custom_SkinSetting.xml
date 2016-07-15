@@ -79,6 +79,12 @@
 										<onclick>Skin.ToggleSetting(Synopsis)</onclick>
 										<selected>Skin.HasSetting(Synopsis)</selected>
 								</control>
+								<control type="button" id="128">
+										<description>ThumbCleaner</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32058]</label>
+										<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/CleanThumbs.py</onclick>
+								</control>
 								<control type="radiobutton" id="140">
 										<description>Debug</description>
 										<include>CustomSettingsButtons</include>

@@ -800,3 +800,7 @@ msgstr ""
 msgctxt "#32057"
 msgid "Error Script is missing or is taking to long to finish. Please send me a copy of your [B]"xbmc.log"[/B] file."
 msgstr ""
+
+msgctxt "#32058"
+msgid "Clean Thumbnails"
+msgstr ""
