@@ -1,7 +1,7 @@
 <includes>
 		<include name="PanelView">
 				<control type="group">
-						<visible>Control.IsVisible(51) + !Control.IsVisible(50) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(51) + !Control.IsVisible(50) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
 						<control type="group">
 								<posx>2</posx>
 								<posy>-30</posy>
@@ -243,11 +243,11 @@
 										<width>254</width>
 										<height>315</height>
 										<onleft>117</onleft>
-										<onright>61</onright>
+										<onright>71</onright>
 										<onup>51</onup>
 										<ondown>51</ondown>
 										<viewtype label="Panels">Panel</viewtype>
-										<pagecontrol>61</pagecontrol>
+										<pagecontrol>71</pagecontrol>
 										<scrolltime>200</scrolltime>
 										<preloaditems>6</preloaditems>
 										<itemlayout height="110" width="84">
@@ -312,7 +312,7 @@
 												</control>
 										</focusedlayout>
 								</control>
-								<control type="scrollbar" id="61">
+								<control type="scrollbar" id="71">
 										<posx>504</posx>
 										<posy>288</posy>
 										<width>10</width>
@@ -326,7 +326,7 @@
 										<onright>51</onright>
 										<showonepage>false</showonepage>
 										<orientation>vertical</orientation>
-										<visible allowhiddenfocus="true">Control.HasFocus(61)</visible>
+										<visible allowhiddenfocus="true">Control.HasFocus(71)</visible>
 										<animation reversible="false" effect="fade" start="0" end="100" delay="" time="100">visible</animation>
 										<animation reversible="false" effect="fade" start="100" end="0" delay="" time="100">hidden</animation>
 								</control>

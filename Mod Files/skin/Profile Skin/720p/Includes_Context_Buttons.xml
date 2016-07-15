@@ -19,6 +19,15 @@
 								<aspectratio>keep</aspectratio>
 								<visible>!Skin.HasSetting(PreviewWindow)</visible>
 						</control>
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\a_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+						</control>
 						<control type="label">
 								<posx>0</posx>
 								<posy>0</posy>
@@ -29,6 +38,28 @@
 								<label>$LOCALIZE[32000]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
 								<visible>!Skin.HasSetting(PreviewWindow)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>font10</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32059]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + !Player.HasVideo</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>font10</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32004]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + Player.HasVideo</visible>
 						</control>
 						<!-- B Button -->
 						<control type="image">
@@ -70,7 +101,7 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32002]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>[!Skin.HasSetting(PreviewWindow) + Player.HasMedia]</visible>
+								<visible>[!Skin.HasSetting(PreviewWindow) + Player.HasAudio]</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -103,7 +134,7 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32004]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>Player.HasVideo</visible>
+								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + Player.HasVideo</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -114,7 +145,18 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32005]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>[!Player.HasVideo + Skin.HasSetting(PreviewWindow)]</visible>
+								<visible>Skin.HasSetting(PreviewWindow) + [!Player.HasVideo + !Skin.HasSetting(Synopsis)]</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>font10</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32005]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Skin.HasSetting(PreviewWindow) + Skin.HasSetting(Synopsis)</visible>
 						</control>
 						<!-- Y Button -->
 						<control type="image">
@@ -295,7 +337,7 @@
 								<height>25</height>
 								<texture>pad_buttons\dpad_up_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!Control.IsVisible(51) + !Skin.HasSetting(PreviewWindow) + ![Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1115) | Player.HasVideo]</visible>
+								<visible>!Skin.HasSetting(PreviewWindow) + ![Control.IsVisible(51) | Control.IsVisible(56) | Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1115) | Player.HasVideo]</visible>
 						</control>
 						<control type="image">
 								<posx>0</posx>
@@ -304,7 +346,7 @@
 								<height>25</height>
 								<texture>pad_buttons\dpad_left_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>Control.IsVisible(51) + !Skin.HasSetting(PreviewWindow) + ![Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1115) | Player.HasVideo] | Window.IsVisible(500)</visible>
+								<visible>!Skin.HasSetting(PreviewWindow) + [Control.IsVisible(51) | Control.IsVisible(56)] + ![Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1115) | Player.HasVideo] | Window.IsVisible(500)</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>

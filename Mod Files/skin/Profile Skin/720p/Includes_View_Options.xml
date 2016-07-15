@@ -78,20 +78,20 @@
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(fanartenabled)</onclick>
 												<icon>fanart_disabled.png</icon>
-												<visible>!Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(56)</visible>
+												<visible>!Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(60)</visible>
 										</item>
 										<item id="1">
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(fadefanart)</onclick>
 												<icon>fanart_faded.png</icon>
-												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(56)</visible>
+												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(60)</visible>
 										</item>
 										<item id="1">
 												<label>-</label>
 												<onclick>Skin.Reset(fanartenabled)</onclick>
 												<onclick>Skin.Reset(fadefanart)</onclick>
 												<icon>fanart.png</icon>
-												<visible>Skin.HasSetting(fadefanart) + Skin.HasSetting(fanartenabled) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(56)</visible>
+												<visible>Skin.HasSetting(fadefanart) + Skin.HasSetting(fanartenabled) + !Control.IsVisible(51) + !Control.IsVisible(54) + !Control.IsVisible(60)</visible>
 										</item>
 										<item id="2">
 												<label>-</label>
@@ -109,13 +109,13 @@
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(_recourcesenabled)</onclick>
 												<icon>_recources_enabled.png</icon>
-												<visible>Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(56)</visible>
+												<visible>Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(60)</visible>
 										</item>
 										<item id="3">
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(_recourcesenabled)</onclick>
 												<icon>_recources_disabled.png</icon>
-												<visible>!Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(56)</visible>
+												<visible>!Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(60)</visible>
 										</item>
 										<item id="4">
 												<label>-</label>

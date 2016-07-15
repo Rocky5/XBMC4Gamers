@@ -1,7 +1,7 @@
 <includes>
 		<include name="PosterView">
 				<control type="group">
-						<visible>Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
 						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
 						<control type="image">
@@ -54,9 +54,9 @@
 								<onleft>-</onleft>
 								<onright>-</onright>
 								<onup>117</onup>
-								<ondown>60</ondown>
+								<ondown>70</ondown>
 								<viewtype label="Posters">list</viewtype>
-								<pagecontrol>60</pagecontrol>
+								<pagecontrol>70</pagecontrol>
 								<scrolltime>200</scrolltime>
 								<focusposition>3</focusposition>
 								<movement>1</movement>
@@ -335,7 +335,7 @@
 								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(50).OnScrollNext">Conditional</animation>
 								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(50).OnScrollPrevious">Conditional</animation>
 						</control>
-						<control type="scrollbar" id="60">
+						<control type="scrollbar" id="70">
 								<posx>150</posx>
 								<posy>50r</posy>
 								<width>980</width>
@@ -349,7 +349,7 @@
 								<ondown>-</ondown>
 								<showonepage>false</showonepage>
 								<orientation>horizontal</orientation>
-								<visible allowhiddenfocus="true">Control.HasFocus(60)</visible>
+								<visible allowhiddenfocus="true">Control.HasFocus(70)</visible>
 								<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
 								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
 						</control>

@@ -25,7 +25,10 @@
 24) Added a Preview Video Settings, you can select from common extensions or add your own.
 25) Added a new script, "CleanMyVideos34.db.py" removes bookmarks from preview videos.
 26) Added a new script, that reads a file named default.xml in the _Resources folder.
-26) Added a new script & option in the Skin settings menu to Clean the thumbnails.
+27) Added a new script & option in the Skin settings menu to Clean the thumbnails.
+28) Added a new View BannerView, it will load banner.jpg from the "_resources\artwork" folder.
+29) Updated the synopsis script, & synopsis section in the skin as well.
+30) How video playback when in the synopsis screen has changed also, you now Press (A) to playback and stop the preview video.
 
 
 

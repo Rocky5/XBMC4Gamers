@@ -1,7 +1,7 @@
 <window id="1">
 		<defaultcontrol always="true">50</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
-		<views>50,52,51,53,55,54,56</views>
+		<views>50,52,51,56,53,55,54,60</views>
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">
@@ -19,6 +19,8 @@
 						<!-- view id = 55 -->
 						<include file="Viewtype_LandscapeView.xml">LandscapeView</include>
 						<!-- view id = 56 -->
+						<include file="Viewtype_BannerView.xml">BannerView</include>
+						<!-- view id = 60 -->
 						<include file="Viewtype_ResourcesView.xml">ResourcesView</include>
 				</control>
 				<control type="group">

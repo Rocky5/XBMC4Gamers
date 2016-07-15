@@ -1,7 +1,7 @@
 <includes>
 		<include name="FanartView">
 				<control type="group">
-						<visible>Control.IsVisible(54) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(54) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
 						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
 						<!-- <animation effect="zoom" reversable="true" start="135,76,1280,720" end="1,45,1620,857" time="250" condition="Control.HasFocus(64)">Conditional</animation> -->
@@ -13,7 +13,7 @@
 								<onleft>-</onleft>
 								<onright>-</onright>
 								<onup>117</onup>
-								<ondown>64</ondown>
+								<ondown>74</ondown>
 								<viewtype label="Fanarts">Panel</viewtype>
 								<pagecontrol>-</pagecontrol>
 								<scrolltime>300</scrolltime>
@@ -141,7 +141,7 @@
 								</focusedlayout>
 						</control>
 						<!-- Scroll bar fails to work due to the scrolltime being set to 200 :-/ -->
-						<control type="scrollbar" id="64">
+						<control type="scrollbar" id="74">
 								<posx>150</posx>
 								<posy>50r</posy>
 								<width>980</width>
@@ -155,11 +155,11 @@
 								<ondown>-</ondown>
 								<showonepage>false</showonepage>
 								<orientation>horizontal</orientation>
-								<visible allowhiddenfocus="true">Control.HasFocus(64)</visible>
+								<visible allowhiddenfocus="true">Control.HasFocus(74)</visible>
 								<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
 								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
 						</control>
-						<control type="scrollbar." id="64">
+						<control type="scrollbar." id="74">
 								<posx>150</posx>
 								<posy>50r</posy>
 								<width>980</width>
@@ -173,7 +173,7 @@
 								<ondown>-</ondown>
 								<showonepage>false</showonepage>
 								<orientation>horizontal</orientation>
-								<visible allowhiddenfocus="true">Control.HasFocus(64)</visible>
+								<visible allowhiddenfocus="true">Control.HasFocus(74)</visible>
 								<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
 								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
 						</control>

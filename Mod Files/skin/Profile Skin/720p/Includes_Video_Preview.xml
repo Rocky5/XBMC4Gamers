@@ -3,6 +3,28 @@
 				<!-- Display preview overlay -->
 				<control type="button" id="9004">
 						<posx>-500</posx>
+						<visible>!Skin.HasSetting(Synopsis)</visible>
+				</control>
+				<control type="button" id="9004">
+						<posx>-500</posx>
+						<onclick>xbmc.playmedia($INFO[ListItem.Path,,_resources\media\preview].xmv,1)</onclick>
+						<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + ![Skin.HasSetting(PreviewExtension) | Player.HasMedia]</visible>
+				</control>
+				<control type="button" id="9004">
+						<posx>-500</posx>
+						<onclick>xbmc.playmedia($INFO[ListItem.Path,,_resources\media\preview].$INFO[Skin.String(PreviewFileExtension)],1)</onclick>
+						<onclick>SetFocus(9005)</onclick>
+						<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewExtension) + Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+				</control>
+				<control type="button" id="9004">
+						<posx>-500</posx>
+						<onclick>Stop</onclick>
+						<onclick>SetFocus(9005)</onclick>
+						<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewExtension) + Skin.HasSetting(PreviewWindow) + Player.HasVideo</visible>
+				</control>
+				<control type="button" id="9005">
+						<posx>-500</posx>
+						<onfocus>SetFocus(9004)</onfocus>
 				</control>
 				<control type="group">
 						<control type="image">
@@ -13,8 +35,8 @@
 								<height>720</height>
 								<texture>black-back.png</texture>
 								<include>dialogeffect</include>
-								<visible>!Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-								<animation effect="fade" start="0" end="100" delay="0" time="100" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+								<animation effect="fade" start="0" end="100" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="image">
 								<posx>100</posx>
@@ -23,8 +45,8 @@
 								<height>608</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>thumbnf.png</texture>
-								<visible>!Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-								<animation effect="fade" start="0" end="100" delay="0" time="200" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+								<animation effect="fade" start="0" end="100" delay="0" time="200" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="label">
 								<posx>100</posx>
@@ -35,8 +57,8 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>No Preview Video Found</label>
-								<visible>!Skin.HasSetting(Synopsis) + Control.HasFocus(9004) + !Player.HasVideo</visible>
-								<animation effect="fade" start="0" end="40" delay="250" time="200" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + !Player.HasVideo</visible>
+								<animation effect="fade" start="0" end="40" delay="250" time="200" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="videowindow">
 								<description>video preview window</description>
@@ -44,8 +66,8 @@
 								<posy>68</posy>
 								<width>1080</width>
 								<height>608</height>
-								<visible>!Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-								<animation effect="fade" start="0" end="100" delay="500" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+								<animation effect="fade" start="0" end="100" delay="500" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="image">
 								<posx>100</posx>
@@ -56,8 +78,8 @@
 								<texture>glassoverlay.png</texture>
 								<bordertexture border="5">poster-border.png</bordertexture>
 								<bordersize>1</bordersize>
-								<visible>!Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-								<animation effect="fade" start="0" end="100" delay="250" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+								<animation effect="fade" start="0" end="100" delay="250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 				</control>
 				<control type="group">
@@ -101,8 +123,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_title)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis Developer</description>
@@ -115,8 +137,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis Publisher</description>
@@ -129,8 +151,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_publisher)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis ESRBb</description>
@@ -143,8 +165,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_esrb)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis ESRB Descriptors</description>
@@ -157,8 +179,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_esrb_descriptors)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis Offline</description>
@@ -171,8 +193,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_features_general)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis Online</description>
@@ -185,8 +207,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_features_online)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis Genre</description>
@@ -199,8 +221,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_genre)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis Release Date</description>
@@ -213,8 +235,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_release_date)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis Platform</description>
@@ -227,8 +249,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_platform)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis Exclusive</description>
@@ -241,8 +263,8 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_exclusive)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>Synopsis TitleId</description>
@@ -255,20 +277,20 @@
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_titleid)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>dummy label so the label bellows placement is correct</description>
 										<label>-</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="label">
 										<description>dummy label so the label bellows placement is correct</description>
 										<label>-</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 								<control type="textbox">
 										<description>Synopsis Description</description>
@@ -282,8 +304,8 @@
 										<scrolltime>200</scrolltime>
 										<autoscroll delay="10000" time="1000" repeat="10000">Control.HasFocus(9004)</autoscroll>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_overview)]</label>
-										<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-										<animation effect="fade" start="0" end="100" delay="0" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+										<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+										<animation effect="fade" start="0" end="100" delay="1250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 								</control>
 						</control>
 						<control type="image">
@@ -294,8 +316,8 @@
 								<height>2</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>separator.png</texture>
-								<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-								<animation effect="fade" start="0" end="100" delay="250" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+								<animation effect="fade" start="0" end="100" delay="250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="label">
 								<posx>760</posx>
@@ -306,8 +328,8 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>No Screenshots Found</label>
-								<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-								<animation effect="fade" start="0" end="10" delay="250" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+								<animation effect="fade" start="0" end="10" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="multiimage">
 								<description>Screenshots window</description>
@@ -322,8 +344,8 @@
 								<randomize>true</randomize>
 								<loop>yes</loop>
 								<aspectratio>stretch</aspectratio>
-								<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004)</visible>
-								<animation effect="fade" start="0" end="100" delay="0" time="750" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+								<animation effect="fade" start="0" end="100" delay="1000" time="750" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="image">
 								<posx>760</posx>
@@ -335,7 +357,19 @@
 								<bordertexture border="5">poster-border.png</bordertexture>
 								<bordersize>1</bordersize>
 								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-								<animation effect="fade" start="0" end="100" delay="250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+								<animation effect="fade" start="0" end="100" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+						</control>
+						<control type="label">
+								<posx>760</posx>
+								<posy>80</posy>
+								<width>480</width>
+								<height>270</height>
+								<font>font25</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>Preview Video Found</label>
+								<visible>Skin.HasSetting(PreviewWindow) + Skin.HasSetting(PreviewFound)</visible>
+								<animation effect="fade" start="0" end="10" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="label">
 								<posx>760</posx>
@@ -346,8 +380,8 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>No Preview Video Found</label>
-								<visible>Skin.HasSetting(Synopsis) + Control.HasFocus(9004) + !Player.HasVideo</visible>
-								<animation effect="fade" start="0" end="10" delay="250" time="1000" condition="Control.HasFocus(9004)">Conditional</animation>
+								<visible>Skin.HasSetting(PreviewWindow) + !Skin.HasSetting(PreviewFound)</visible>
+								<animation effect="fade" start="0" end="10" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="videowindow">
 								<description>video preview window</description>
@@ -368,7 +402,7 @@
 								<bordertexture border="5">poster-border.png</bordertexture>
 								<bordersize>1</bordersize>
 								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-								<animation effect="fade" start="0" end="100" delay="250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+								<animation effect="fade" start="0" end="100" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="image.">
 								<posx>760</posx>

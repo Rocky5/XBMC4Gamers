@@ -804,3 +804,7 @@ msgstr ""
 msgctxt "#32058"
 msgid "Clean Thumbnails"
 msgstr ""
+
+msgctxt "#32059"
+msgid "Play Preview"
+msgstr ""

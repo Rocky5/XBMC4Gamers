@@ -1,7 +1,7 @@
 <includes>
 		<include name="LandscapeView">
 				<control type="group">
-						<visible>Control.IsVisible(55) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(56) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(55) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
 						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
 						<control type="image">
@@ -55,9 +55,9 @@
 										<onleft>55</onleft>
 										<onright>55</onright>
 										<onup>117</onup>
-										<ondown>66</ondown>
+										<ondown>76</ondown>
 										<viewtype label="31028">list</viewtype>
-										<pagecontrol>66</pagecontrol>
+										<pagecontrol>76</pagecontrol>
 										<scrolltime>200</scrolltime>
 										<focusposition>2</focusposition>
 										<orientation>horizontal</orientation>
@@ -227,7 +227,7 @@
 										<label>$LOCALIZE[32031] $INFO[ListItem.ProgramCount,, $LOCALIZE[32033]]</label>
 										<visible>IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
 								</control>
-								<control type="scrollbar" id="66">
+								<control type="scrollbar" id="76">
 										<posx>150</posx>
 										<posy>70r</posy>
 										<width>980</width>
@@ -241,7 +241,7 @@
 										<ondown>-</ondown>
 										<showonepage>false</showonepage>
 										<orientation>horizontal</orientation>
-										<visible allowhiddenfocus="true">Control.HasFocus(66)</visible>
+										<visible allowhiddenfocus="true">Control.HasFocus(76)</visible>
 										<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
 										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
 								</control>
