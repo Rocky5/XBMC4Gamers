@@ -58,7 +58,7 @@
 								<aligny>center</aligny>
 								<label>No Preview Video Found</label>
 								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + !Player.HasVideo</visible>
-								<animation effect="fade" start="0" end="40" delay="250" time="200" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+								<animation effect="fade" start="0" end="10" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="videowindow">
 								<description>video preview window</description>
@@ -368,7 +368,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>Preview Video Found</label>
-								<visible>Skin.HasSetting(PreviewWindow) + Skin.HasSetting(PreviewFound)</visible>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + Skin.HasSetting(PreviewFound)</visible>
 								<animation effect="fade" start="0" end="10" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="label">
@@ -380,7 +380,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>No Preview Video Found</label>
-								<visible>Skin.HasSetting(PreviewWindow) + !Skin.HasSetting(PreviewFound)</visible>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + !Skin.HasSetting(PreviewFound)</visible>
 								<animation effect="fade" start="0" end="10" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="videowindow">
