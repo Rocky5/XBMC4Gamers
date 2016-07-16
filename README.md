@@ -6,7 +6,7 @@ This is a skin with custom python scripts (allow each profile to have there own 
 Setup/Installation:
 
 	1)	Download XBMC. *
-	2)	Place the XBMC folder inside the XBMC4Kids folder. **
+	2)	Place the XBMC folder inside the XBMC4Kids-master. **
 	3)	Double click "Build XBMC4Kids.bat"
 	4)	FTP the XBMC4Kids folder anywhere on your Xbox. ***
 		
