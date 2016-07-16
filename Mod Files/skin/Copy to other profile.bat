@@ -4,6 +4,7 @@ Set "ProfileSkin=%CD%\Profile Skin"
 Set "MasterSkin=%CD%\Manage Profiles Skin"
 Set "DVD2XboxSkin=%CD%\DVD2Xbox Skin"
 
+Copy /Y "%ProfileSkin%\720p\Custom_Controls.xml"					"%MasterSkin%\720p\"
 Copy /Y "%ProfileSkin%\720p\Defaults.xml"							"%MasterSkin%\720p\"
 Copy /Y "%ProfileSkin%\720p\DialogBusy.xml"							"%MasterSkin%\720p\"
 Copy /Y "%ProfileSkin%\720p\DialogContextMenu.xml"					"%MasterSkin%\720p\"
@@ -40,6 +41,7 @@ Copy /Y "%ProfileSkin%\720p\SettingsScreenCalibration.xml"			"%MasterSkin%\720p\
 Copy /Y "%ProfileSkin%\language\english\strings.po"					"%MasterSkin%\language\english\"
 Copy /Y "%ProfileSkin%\Media\Textures.xpr"							"%MasterSkin%\Media\"
 
+Copy /Y "%ProfileSkin%\720p\Custom_Controls.xml"					"%DVD2XboxSkin%\720p\"
 Copy /Y "%ProfileSkin%\720p\Defaults.xml"							"%DVD2XboxSkin%\720p\"
 Copy /Y "%ProfileSkin%\720p\DialogBusy.xml"							"%DVD2XboxSkin%\720p\"
 Copy /Y "%ProfileSkin%\720p\DialogContextMenu.xml"					"%DVD2XboxSkin%\720p\"

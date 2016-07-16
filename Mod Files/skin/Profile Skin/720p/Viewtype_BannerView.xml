@@ -215,6 +215,36 @@
 										<aligny>center</aligny>
 										<label>$INFO[ListItem.Path]</label>
 								</control>
+								<control type="grouplist">
+										<description>Control Info</description>
+										<posx>600</posx>
+										<posy>578</posy>
+										<width>570</width>
+										<height>30</height>
+										<itemgap>5</itemgap>
+										<orientation>Horizontal</orientation>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>30</width>
+												<height>30</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>overlay-watched.png</texture>
+												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
+												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>30</width>
+												<height>30</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[ListItem.Overlay]</texture>
+												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
+												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
+										</control>
+								</control>
 								<control type="list" id="56">
 										<posx>5</posx>
 										<posy>5</posy>
@@ -265,27 +295,6 @@
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 												</control>
-												<control type="image">
-														<posx>10</posx>
-														<posy>33</posy>
-														<width>25</width>
-														<height>25</height>
-														<aspectratio>stretch</aspectratio>
-														<texture>overlay-watched.png</texture>
-														<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
-														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
-														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
-												</control>
-												<control type="image">
-														<posx>10</posx>
-														<posy>55</posy>
-														<width>25</width>
-														<height>25</height>
-														<aspectratio>stretch</aspectratio>
-														<texture>$INFO[ListItem.Overlay]</texture>
-														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
-														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
-												</control>
 										</itemlayout>
 										<focusedlayout height="122" width="570">
 												<control type="image">
@@ -329,27 +338,6 @@
 														<aspectratio>stretch</aspectratio>
 														<colordiffuse>blue</colordiffuse>
 														<texture border="5">poster-border.png</texture>
-												</control>
-												<control type="image">
-														<posx>10</posx>
-														<posy>33</posy>
-														<width>25</width>
-														<height>25</height>
-														<aspectratio>stretch</aspectratio>
-														<texture>overlay-watched.png</texture>
-														<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
-														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
-														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
-												</control>
-												<control type="image">
-														<posx>10</posx>
-														<posy>55</posy>
-														<width>25</width>
-														<height>25</height>
-														<aspectratio>stretch</aspectratio>
-														<texture>$INFO[ListItem.Overlay]</texture>
-														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
-														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
 												</control>
 										</focusedlayout>
 								</control>

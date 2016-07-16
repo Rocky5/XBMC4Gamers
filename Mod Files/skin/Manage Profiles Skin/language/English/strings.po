@@ -808,3 +808,43 @@ msgstr ""
 msgctxt "#32059"
 msgid "Play Preview"
 msgstr ""
+
+msgctxt "#32060"
+msgid "Show Controls"
+msgstr ""
+
+msgctxt "#32061"
+msgid "Preview Video, Synopsis or Music Controls"
+msgstr ""
+
+msgctxt "#32062"
+msgid "Disabled"
+msgstr ""
+
+msgctxt "#32063"
+msgid "Options Dialogue"
+msgstr ""
+
+msgctxt "#32064"
+msgid "Previous Menu"
+msgstr ""
+
+msgctxt "#32065"
+msgid "Reload Skin[CR](Press)"
+msgstr ""
+
+msgctxt "#32066"
+msgid "Log Out[CR](Press)"
+msgstr ""
+
+msgctxt "#32067"
+msgid "Scroll Backwards Fast"
+msgstr ""
+
+msgctxt "#32068"
+msgid "Scroll Forward Fast"
+msgstr ""
+
+msgctxt "#32069"
+msgid "Navigate Menus"
+msgstr ""
