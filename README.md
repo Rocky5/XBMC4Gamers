@@ -58,35 +58,35 @@ Edit Mode:
 Controls:
 
 	Edit Mode Users profile:
-		1)	Press (A) select/play menus/games.
+		1)	Press (A) to select menus or play games.
 		2)	Press (Y) to take a Screenshot.
-		3)	Press the (Black) button clean the Xbox cache.
+		3)	Press the (Black) button opens the options dialogue.
 		4)	Press the (White) button opens the context menu. (certain menus)
 		5)	Press (Start) to launch a disc based game.
-		6)	Press (L) stick to take reload the skin.
+		6)	Press (L) stick to reload the skin.
 		7)	Press (R) stick logs out current user.
 		8)	all default controls of XBMC
 
 	User Mode Users profile:
-		1)	Press (A) select/play menus/games.
-		2)	Press the (Black) button load favourites.
-		3)	Press the (White) button opens the context menu. (certain menus)
+		1)	Press (A) to select menus or play games.
+		2)	Press the (Black) button loads favourites.
+		3)	Press the (White) button opens the context menu. (certain menus & limited functionality in usermode)
 		4)	Press (Start) to launch a disc based game.
 		5)	Press (R) stick logs out current user.
 		6)	all default controls of XBMC
 
 	Edit Mode Manage Profiles/DVD2Xbox profile:
-		1)	Press (A) select/play menus/games.
+		1)	Press (A) to select menus.
 		2)	Press (Y) to take a Screenshot.
 		3)	Press the (Black) button clean the Xbox cache.
 		4)	Press the (White) button opens the context menu. (certain menus)
 		5)	Press (Start) to launch a disc based game.
-		6)	Press (L) stick to take reload the skin.
+		6)	Press (L) stick to reload the skin.
 		7)	Press (R) stick logs out current user.
 		8)	all default controls of XBMC
 
 	User Mode Manage Profiles/DVD2Xbox profile:
-		1)	Press (A) select/play menus/games.
+		1)	Press (A) to select menus.
 		2)	Press the (Black) button clean the Xbox cache.
 		3)	Press (Start) to launch a disc based game.
 		4)	Press (R) stick logs out current user.
