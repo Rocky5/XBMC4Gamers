@@ -1,0 +1,5 @@
+Changed how the login screen works when launching a profile for the first time. It no longer asks to edit the info.
+
+Removed some of the functionality from the profile settings dialog. ALso copies the guisettings & sources automatically.
+
+Changed how the game save menu works, it now doesn't list "TitleMeta.xbx" files as files, there in the own directory like the rest.

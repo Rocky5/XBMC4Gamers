@@ -34,6 +34,7 @@ move "%foldername%\Confluence Lite" "%foldername%\skin\"
 ren "%foldername%" "XBMC4Kids"
 copy /y "Mod Files\system\backup\FileZilla Server.xml" "XBMC4Kids\system\FileZilla Server.xml"
 XCopy /s /e /i /h /r /y "Mod Files" "XBMC4Kids"
+copy /y "New XBMC xbe\default.xbe" "XBMC4Kids\default.xbe"
 rd /q /s "XBMC4Kids\Apps\FTP"
 del /q /s "XBMC4Kids\skin\*.bat"
 ) >NUL

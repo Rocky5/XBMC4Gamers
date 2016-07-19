@@ -30,6 +30,7 @@
 29) Updated the synopsis script, & synopsis section in the skin as well.
 30) How video playback when in the synopsis screen has changed also, you now Press (A) to playback and stop the preview video.
 31) Added a a Control layout overlay when in the login screen. (press Down)
+32) New SettingProfile.xml layout.
 
 
 

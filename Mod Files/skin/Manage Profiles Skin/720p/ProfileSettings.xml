@@ -107,7 +107,7 @@
 						<texturefocus border="3">button-focus.png</texturefocus>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
 				</control>
-				<control type="radiobutton" id="8">
+				<control type="radiobutton." id="8">
 						<description>Default RadioButton</description>
 						<height>35</height>
 						<font>font12</font>
@@ -116,7 +116,7 @@
 						<texturefocus border="3">button-focus.png</texturefocus>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
 				</control>
-				<control type="spincontrolex" id="9">
+				<control type="spincontrolex." id="9">
 						<description>Default spincontrolex</description>
 						<height>35</height>
 						<texturefocus border="3">button-focus.png</texturefocus>
