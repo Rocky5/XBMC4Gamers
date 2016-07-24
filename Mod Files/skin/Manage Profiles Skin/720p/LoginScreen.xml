@@ -307,6 +307,14 @@
 								<texture>controlpad.png</texture>
 								<include>Window_OpenClose_Animation</include>
 						</control>
+						<control type="image">
+								<posx>387</posx>
+								<posy>165</posy>
+								<width>505</width>
+								<height>390</height>
+								<texture>controlpad_overlay.png</texture>
+								<include>Window_OpenClose_Animation</include>
+						</control>
 						<control type="label">
 								<description>A Button</description>
 								<posx>900</posx>

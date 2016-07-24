@@ -246,8 +246,11 @@ if SkipScript == "false":
 ########################################################################################################################################
 # Change user skin & skin settings names.
 ########################################################################################################################################
+			time.sleep(0.5)
 			for line in fileinput.input(Current_Profile_GUISettings, inplace=True):
 				print(line.replace('Manage Profiles Skin', 'Profile skin'))
+				
+			print "================================================================================"
 
 			pDialog.update(100, 'Compleate' )
 			pDialog.update(100, 'Done')
@@ -257,27 +260,27 @@ if SkipScript == "false":
 			dialog.ok("That's everything setup","","I need to restart XBMC","so that the changes take affect.")
 			xbmc.executebuiltin("System.LogOff()")
 			xbmc.executebuiltin("RestartApp")
-			
-	else:
-		if "Manage Profiles Skin" in open(Current_Profile_GUISettings).read():
 
 
 ########################################################################################################################################
 # If the script is disabled in the Manage Profiles profile settings, edit current skin & log out.
 ########################################################################################################################################
+	else:
+		if "Manage Profiles Skin" in open(Current_Profile_GUISettings).read():
 			shutil.copy(Master_Profile_Sources, Current_Profile_Directory)
 			print "| Copied Sources.xml"
 			shutil.copy(Master_Profile_GUISettings, Current_Profile_Directory)
 			print "| Copied Guisettings.xml"
 			#shutil.copy(Master_Profile_AdvancedSettings, Current_Profile_Directory)
 			#print "| Copied AdvancedSettings.xml"
-			
+			time.sleep(0.5)
 			for line in fileinput.input(Current_Profile_GUISettings, inplace=True):
 				print(line.replace('Manage Profiles Skin', 'Profile skin'))
 				
+			print "================================================================================"
+
 			dialog = xbmcgui.Dialog()
 			dialog.ok("That's everything setup","","I need to restart XBMC","so that the changes take affect.")
-			print "================================================================================"
 			xbmc.executebuiltin("System.LogOff()")
 			xbmc.executebuiltin("RestartApp")
 			

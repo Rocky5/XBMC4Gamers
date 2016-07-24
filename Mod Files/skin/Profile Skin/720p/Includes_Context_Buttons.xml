@@ -230,7 +230,7 @@
 								<height>25</height>
 								<texture>pad_buttons\black_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!Skin.HasSetting(PreviewWindow) + !window.IsVisible(134) + Window.IsVisible(1) | Window.IsVisible(0) | Window.IsVisible(500) | Window.IsVisible(501)</visible>
+								<visible>!Skin.HasSetting(PreviewWindow) + !window.IsVisible(134) + !window.IsVisible(1112) + Window.IsVisible(1) | Window.IsVisible(0) | Window.IsVisible(500) | Window.IsVisible(501)</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -241,7 +241,7 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32010]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>!Skin.HasSetting(PreviewWindow) + !window.IsVisible(134) + Skin.HasSetting(EditMode) + Window.IsVisible(1)</visible>
+								<visible>!Skin.HasSetting(PreviewWindow) + !window.IsVisible(134) + !window.IsVisible(1112) + Skin.HasSetting(EditMode) + Window.IsVisible(1)</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
