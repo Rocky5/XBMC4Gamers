@@ -1,4 +1,4 @@
-**/06/2016
+25/07/2016
 1) Changed the PlayerControls screen, looks a lot better & matches the other dialogues.
 2) Added a toggle for the visualisation bars in the PlayerControls screen.
 3) Fixed the background images not setting when login into a profile.
