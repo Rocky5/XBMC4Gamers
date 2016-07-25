@@ -13,7 +13,7 @@ Setup/Installation:
 		*
 			https://drive.google.com/folderview?pli=1&ddrp=1&id=0B9zNhNcNUdDTRVFBbHcwc2JCZFE#list
 		**
-			If you got this from the git (Github) place the XBMC folder inside the trunk folder.
+			Place the XBMC folder inside the "XBMC4Kids-master" folder.
 		***
 			I would suggest leaving the "Enable individual save directories for each profile" disabled if you are using this as an application or only one profile.
 
