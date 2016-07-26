@@ -18,7 +18,7 @@
 				<lockpictures>false</lockpictures>
 				<lockprograms>false</lockprograms>
 				<lockmode>0</lockmode>
-				<lockcode>7e2c085d859a0bafd9f2abd8dc30ae84</lockcode>
+				<lockcode>-</lockcode>
 				<lastdate>Has Never Logged In</lastdate>
 		</profile>
 		<profile>
@@ -31,8 +31,8 @@
 				<canwritesources>true</canwritesources>
 				<useavpacksettings>false</useavpacksettings>
 				<lockaddonmanager>false</lockaddonmanager>
-				<locksettings>true</locksettings>
-				<lockfiles>true</lockfiles>
+				<locksettings>false</locksettings>
+				<lockfiles>false</lockfiles>
 				<lockmusic>false</lockmusic>
 				<lockvideo>false</lockvideo>
 				<lockpictures>false</lockpictures>
