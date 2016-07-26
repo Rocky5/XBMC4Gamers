@@ -7,6 +7,12 @@
 						<back>highlight</back>
 				</gamepad>
 		</MyPrograms>
+		<Profiles>
+				<gamepad>
+						<B>highlight</B>
+						<back>ActivateWindow(Settings)</back>
+				</gamepad>
+		</Profiles>
 		<global>
 				<gamepad>
 						<A>Select</A>

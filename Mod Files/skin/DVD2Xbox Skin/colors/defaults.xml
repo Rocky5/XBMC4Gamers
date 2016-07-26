@@ -9,4 +9,6 @@
 		<color name="orange">FFEB9E17</color>
 		<color name="green">FF01B005</color>
 		<color name="dialogheader">FF399EDA</color>
+		<color name="synopsiscolour1">FF399EDA</color>
+		<color name="synopsiscolour2">FFFFFFFF</color>
 </colors>

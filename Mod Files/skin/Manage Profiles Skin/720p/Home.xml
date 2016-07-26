@@ -7,6 +7,7 @@
 						<visible>Skin.HasSetting(UseProfiles)</visible>
 				</control>
 				<include>CommonBackground</include>
+				<!-- Disabled
 				<control type="group">
 						<include>Window_OpenClose_Animation</include>
 						<control type="panel" id="1">
@@ -214,6 +215,7 @@
 						<textcolor>white</textcolor>
 						<label>$INFO[system.profilename] Profile</label>
 				</control>
+				-->
 				<!-- Debug Info -->
 				<includes>Debug</includes>
 		</controls>

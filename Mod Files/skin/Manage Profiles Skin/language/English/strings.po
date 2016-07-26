@@ -848,3 +848,7 @@ msgstr ""
 msgctxt "#32069"
 msgid "Navigate Menus"
 msgstr ""
+
+msgctxt "#32070"
+msgid "[B]User Mode[/B] is enabled[CR]Press (A) to logout."
+msgstr ""

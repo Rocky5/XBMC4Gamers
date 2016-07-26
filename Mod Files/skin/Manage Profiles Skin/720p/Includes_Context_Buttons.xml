@@ -36,7 +36,7 @@
 								<height>25</height>
 								<texture>pad_buttons\b_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>[!Window.IsVisible(0) + Skin.HasSetting(editmode) | Window.IsVisible(4) | Window.IsVisible(34) |  Window.IsVisible(35) | Window.IsVisible(134) |  Window.IsVisible(1111) |  Window.IsVisible(1112)]</visible>
+								<visible>[!Window.IsVisible(0) + !Window.IsVisible(34) + Skin.HasSetting(editmode) | Window.IsVisible(4) |  Window.IsVisible(35) | Window.IsVisible(134) |  Window.IsVisible(1111) |  Window.IsVisible(1112)]</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -47,7 +47,7 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32001]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>[!Window.IsVisible(0) + Skin.HasSetting(editmode) | Window.IsVisible(4) | Window.IsVisible(34) |  Window.IsVisible(35) | Window.IsVisible(134) |  Window.IsVisible(1111) |  Window.IsVisible(1112)]</visible>
+								<visible>[!Window.IsVisible(0) + !Window.IsVisible(34) + Skin.HasSetting(editmode) | Window.IsVisible(4) |  Window.IsVisible(35) | Window.IsVisible(134) |  Window.IsVisible(1111) |  Window.IsVisible(1112)]</visible>
 						</control>
 						<!-- Y Button -->
 						<control type="image">
@@ -111,6 +111,27 @@
 								<label>$LOCALIZE[32012]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
 								<visible>[Window.IsVisible(0)]</visible>
+						</control>
+						<!-- Back Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\back_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>Window.IsVisible(34)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>font10</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32041]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(34)</visible>
 						</control>
 						<!-- Start Button -->
 						<control type="image">

@@ -10,6 +10,12 @@
 						<back>highlight</back>
 				</gamepad>
 		</Programs>
+		<Profiles>
+				<gamepad>
+						<B>highlight</B>
+						<back>ActivateWindow(Settings)</back>
+				</gamepad>
+		</Profiles>
 		<global>
 				<gamepad>
 						<A>Select</A>
