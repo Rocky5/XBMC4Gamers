@@ -100,11 +100,14 @@ void CGUIDialogProfileSettings::CreateSettings()
   m_settings.clear();
   
 // Rocky5 Edits // 
-  if (CGUIDialogKeyboard::ShowAndGetInput(m_strName,g_localizeStrings.Get(20093),false))
-    {
-      m_bNeedSave = true;
-      SET_CONTROL_LABEL(1000,m_strName);
-    }
+	if (m_strName.IsEmpty())
+	{
+		if (CGUIDialogKeyboard::ShowAndGetInput(m_strName,g_localizeStrings.Get(20093),false))
+		{
+			m_bNeedSave = true;
+			SET_CONTROL_LABEL(1000,m_strName);
+		}
+	}
 //  AddButton(1,20093);
   AddButton(2,20065);
   if (!m_bIsDefault && m_bShowDetails)
