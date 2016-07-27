@@ -99,7 +99,7 @@
 								<height>25</height>
 								<texture>pad_buttons\black_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>[!window.IsVisible(134) + Window.IsVisible(1) | Window.IsVisible(0) | Window.IsVisible(500) | Window.IsVisible(501)]</visible>
+								<visible>[!window.IsVisible(134) + Window.IsVisible(1) | Window.IsVisible(0) | Window.IsVisible(34) | Window.IsVisible(500) | Window.IsVisible(501)]</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -110,7 +110,7 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32012]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>[Window.IsVisible(0)]</visible>
+								<visible>Window.IsVisible(34)</visible>
 						</control>
 						<!-- Back Button -->
 						<control type="image">
