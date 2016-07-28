@@ -141,6 +141,16 @@
 								<ondown>10</ondown>
 								<visible>!Window.IsActive(2999) + !Window.IsActive(1111)</visible>
 						</control>
+						<control type="button" id="10">
+								<description>Cancel button</description>
+								<posx>-</posx>
+								<posy>-</posy>
+								<width>-</width>
+								<height>-</height>
+								<label>-</label>
+								<texturenofocus border="3">-</texturenofocus>
+								<texturefocus border="3">-</texturefocus>
+						</control>
 				</control>
 				<!-- Debug Info -->
 				<include>Debug</include>

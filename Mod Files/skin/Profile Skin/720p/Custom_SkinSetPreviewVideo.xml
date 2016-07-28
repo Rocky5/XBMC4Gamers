@@ -12,45 +12,58 @@
 								<effect type="fade" start="100" end="0" time="300" />
 						</animation>
 						<control type="image">
-								<posx>220</posx>
+								<posx>260</posx>
 								<posy>340</posy>
-								<width>840</width>
-								<height>120</height>
+								<width>760</width>
+								<height>115</height>
 								<texture>black-back.png</texture>
 						</control>
 						<control type="textbox">
-								<posx>220</posx>
+								<posx>260</posx>
 								<posy>360</posy>
-								<width>840</width>
+								<width>760</width>
 								<height>105</height>
 								<font>font11</font>
 								<textcolor>grey2</textcolor>
 								<scroll>true</scroll>
 								<align>center</align>
-								<label>$LOCALIZE[32053]$INFO[Skin.String(PreviewFileExtension)]$LOCALIZE[32054]$INFO[Skin.String(PreviewFileExtension)]</label>
+								<label>$LOCALIZE[32053]$INFO[Skin.String(PreviewFileExtension)]$LOCALIZE[32054]</label>
 								<visible>Skin.HasSetting(PreviewExtension)</visible>
 						</control>
 						<control type="textbox">
-								<posx>220</posx>
+								<posx>260</posx>
 								<posy>360</posy>
-								<width>840</width>
+								<width>760</width>
 								<height>105</height>
 								<font>font11</font>
 								<textcolor>grey2</textcolor>
 								<scroll>true</scroll>
 								<align>center</align>
-								<label>$LOCALIZE[32053]$INFO[Skin.String(PreviewFileExtension)]xmv$LOCALIZE[32054]$INFO[Skin.String(PreviewFileExtension)]xmv</label>
+								<label>$LOCALIZE[32053]$INFO[Skin.String(PreviewFileExtension)]xmv$LOCALIZE[32054]</label>
 								<visible>!Skin.HasSetting(PreviewExtension)</visible>
 						</control>
+						<control type="radiobutton" id="9002">
+								<posx>260</posx>
+								<posy>455</posy>
+								<width>760</width>
+								<height>50</height>
+								<onup>9001</onup>
+								<font>font12</font>
+								<label> $LOCALIZE[32055]</label>
+								<textcolor>white</textcolor>
+								<focusedcolor>black</focusedcolor>
+								<texturefocus border="5">ThumbFO.png</texturefocus>
+								<texturenofocus border="5">black-back.png</texturenofocus>
+								<onclick>Skin.ToggleSetting(Synopsis)</onclick>
+								<selected>Skin.HasSetting(Synopsis)</selected>
+						</control>
 						<control type="panel" id="9001">
-								<posx>165</posx>
+								<posx>260</posx>
 								<posy>240</posy>
-								<width>1280</width>
+								<width>760</width>
 								<height>100</height>
-								<onleft>9000</onleft>
-								<onright>60</onright>
 								<onup>50</onup>
-								<ondown>50</ondown>
+								<ondown>9002</ondown>
 								<viewtype label="535">list</viewtype>
 								<pagecontrol>60</pagecontrol>
 								<scrolltime>200</scrolltime>
@@ -141,14 +154,14 @@
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
 												<icon>flagging\video\mpegvideo.png</icon>
 										</item>
-										<item id="4">
+										<!-- <item id="4">
 												<label>$LOCALIZE[32052]</label>
 												<onclick>Skin.Reset(PreviewFileExtension)</onclick>
 												<onclick>Skin.SetString(PreviewFileExtension,ChangeMe)</onclick>
 												<onclick>Skin.SetString(PreviewFileExtension)</onclick>
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
 												<icon>flagging\video\custom.png</icon>
-										</item>
+										</item> -->
 								</content>
 						</control>
 				</control>

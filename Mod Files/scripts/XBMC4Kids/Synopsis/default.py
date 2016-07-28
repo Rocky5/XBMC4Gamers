@@ -3,6 +3,10 @@
 	Script by Rocky5
 	Extracts information from a file named default.xml located in the "_resources" folder.
 	
+	Updated: 28 July 2016
+	-- Rearranged the layout & now get the video file and pass it to the skin if found
+	   also cleaned up some left over stuff.
+	
 	Updated: 15 July 2016
 	-- Added a skin setting, to display info in the skin if there is a preview video found.
 	   Disabled the video playback code, no done by press (A) when in the synopsis screen.
@@ -37,38 +41,10 @@ HasSetting_PreviewExtension = xbmc.getCondVisibility( 'Skin.HasSetting(PreviewEx
 ##
 ThumbCache = xbmc.getCacheThumbName( xbmc.getInfoLabel('ListItem.FolderPath') )
 CurProfileGuiSettings = xbmc.translatePath( 'special://profile/guisettings.xml' )
-Video_Name = "Preview"
 ##
 GameFolder = xbmc.getInfoLabel('ListItem.FolderName')
 _Resources_Path = os.path.join( xbmc.getInfoLabel('ListItem.Path'), "_resources/default.xml" )
-_Resources_Preview_Ext1 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\media\Preview.xmv" )
-_Resources_Preview_Ext2 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\media\Preview.mp4" )
-_Resources_Preview_Ext3 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\media\Preview.wmv" )
-_Resources_Preview_Ext4 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\media\Preview.mpg" )
-_Resources_Preview_Ext5 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\media\Preview." + xbmc.getInfoLabel( 'Skin.String(PreviewFileExtension)' ) )
-
-if os.path.isfile( _Resources_Preview_Ext1 ):
-	xbmc.executebuiltin('Skin.SetBool(PreviewFound)')
-	print "| Found Preview.wmv" 
-
-elif os.path.exists( _Resources_Preview_Ext2 ):
-	xbmc.executebuiltin('Skin.SetBool(PreviewFound)')
-	print "| Found Preview.mp4" 
-	
-elif os.path.exists( _Resources_Preview_Ext3 ):
-	xbmc.executebuiltin('Skin.SetBool(PreviewFound)')
-	print "| Found Preview.wmv" 
-
-elif os.path.exists( _Resources_Preview_Ext4 ):
-	xbmc.executebuiltin('Skin.SetBool(PreviewFound)')
-	print "| Found Preview.mpg" 
-
-elif os.path.exists( _Resources_Preview_Ext5 ):
-	xbmc.executebuiltin('Skin.SetBool(PreviewFound)')
-	print ( "| Found Preview." + xbmc.getInfoLabel( 'Skin.String(PreviewFileExtension)' ) )
-else:
-	xbmc.executebuiltin('Skin.Reset(PreviewFound)')
-	print "| Found nothing"
+Preview_Video_Name = "Preview"
 
 
 ########################################################################################################################################
@@ -169,19 +145,43 @@ if xbmc.getCondVisibility( 'Skin.HasSetting(PreviewWindow)' ):
 		Current_Window.setProperty( "Synopsis_mediatype","" )
 		Current_Window.setProperty( "Synopsis_titleid","" )
 		Current_Window.setProperty( "Synopsis_overview","" )
-		Current_Window.setProperty( "Synopsis_overview","" )
 		Current_Window.setProperty( "Synopsis_thumb", "special://profile/Thumbnails/Programs/%s/%s" % ( ThumbCache[0], ThumbCache, ) )
 		xbmc.executebuiltin("SetFocus(9004)")
 		print "================================================================================"
+	
+
+########################################################################################################################################
+# Check for Preview file & set skin settings so they can be played.
+########################################################################################################################################
+_Resources_Preview_Ext1 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources/media/" + Preview_Video_Name + ".xmv" )
+_Resources_Preview_Ext2 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources/media/" + Preview_Video_Name + ".mp4" )
+_Resources_Preview_Ext3 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources/media/" + Preview_Video_Name + ".wmv" )
+_Resources_Preview_Ext4 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources/media/" + Preview_Video_Name + ".mpg" )
+
+if os.path.isfile( _Resources_Preview_Ext1 ):
+	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.xmv)')
+	print "| Found Preview.xmv" 
+elif os.path.exists( _Resources_Preview_Ext2 ):
+	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.mp4)')
+	print "| Found Preview.mp4" 
+elif os.path.exists( _Resources_Preview_Ext3 ):
+	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.wmv)')
+	print "| Found Preview.wmv" 
+elif os.path.exists( _Resources_Preview_Ext4 ):
+	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.mpg)')
+	print "| Found Preview.mpg" 
+else:
+	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Video )')
+	print "| Found nothing"
 
 	
 ########################################################################################################################################
-# Play Preview video
+# Play Preview video (not used anymore)
 ########################################################################################################################################
 '''if xbmc.getCondVisibility( 'Skin.HasSetting(PreviewWindow)' ):
 	time.sleep(0.5)
 	if HasSetting_PreviewExtension:
-		Preview_File = _Resources_Preview_Path + Video_Name + "." + xbmc.getInfoLabel("Skin.String(PreviewFileExtension)")
+		Preview_File = _Resources_Preview_Path + Preview_Video_Name + "." + xbmc.getInfoLabel("Skin.String(PreviewFileExtension)")
 		if os.path.isfile (Preview_File):
 			print "| " + Preview_File
 			Player = xbmc.Player( xbmc.PLAYER_CORE_MPLAYER )
@@ -189,7 +189,7 @@ if xbmc.getCondVisibility( 'Skin.HasSetting(PreviewWindow)' ):
 		else:
 			print "| Not found: " + Preview_File
 	else:		
-		Preview_File = _Resources_Preview_Path + Video_Name + ".xmv"
+		Preview_File = _Resources_Preview_Path + Preview_Video_Name + ".xmv"
 		if os.path.isfile (Preview_File):
 			print "| " + Preview_File
 			Player = xbmc.Player( xbmc.PLAYER_CORE_DVDPLAYER )

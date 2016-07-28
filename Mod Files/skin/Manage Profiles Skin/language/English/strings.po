@@ -676,7 +676,7 @@ msgid "Duration:"
 msgstr ""
 
 msgctxt "#32026"
-msgid "Enable individual save directories for each profile"
+msgid "Individual save directories for each profile"
 msgstr ""
 
 msgctxt "#32027"
@@ -752,7 +752,7 @@ msgid "Launcher Path"
 msgstr ""
 
 msgctxt "#32045"
-msgid "Preview videos Settings"
+msgid "Preview Videos Settings"
 msgstr ""
 
 msgctxt "#32046"
@@ -782,15 +782,15 @@ msgctxt "#32052"
 msgid "Custom"
 
 msgctxt "#32053"
-msgid "[B]Examples[/B][CR]Halo\\Preview."
+msgid "[B]Example[/B][CR]Halo\\Preview."
 msgstr ""
 
 msgctxt "#32054"
-msgid "[CR]Halo\\_resources\\media\\Preview."
+msgid "[CR]This option works separate from the [B]Synopsis mode[/B].[CR]Synopsis mode gets the video extension dynamical."
 msgstr ""
 
 msgctxt "#32055"
-msgid "Enable Synopsis View"
+msgid "Synopsis Mode"
 msgstr ""
 
 msgctxt "#32056"

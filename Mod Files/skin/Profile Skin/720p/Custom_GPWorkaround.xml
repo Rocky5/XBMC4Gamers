@@ -8,28 +8,10 @@
 								<posx>-500</posx>
 								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
 								<onfocus>PlayWith(dvdplayer)</onfocus>
-								<onfocus>xbmc.playmedia($INFO[ListItem.Path,,_resources\media\preview].xmv,1)</onfocus>
-								<onfocus>SetFocus(9004)</onfocus>
-								<onfocus>dialog.close(1113,true)</onfocus>
-								<visible>Skin.HasSetting(_recourcesenabled) + !Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
-						</control>
-						<control type="button" id="9000">
-								<posx>-500</posx>
-								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
-								<onfocus>PlayWith(mplayer)</onfocus>
-								<onfocus>xbmc.playmedia($INFO[ListItem.Path,,_resources\media\preview].$INFO[Skin.String(PreviewFileExtension)],1)</onfocus>
-								<onfocus>SetFocus(9004)</onfocus>
-								<onfocus>dialog.close(1113,true)</onfocus>
-								<visible>Skin.HasSetting(_recourcesenabled) + Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
-						</control>
-						<control type="button" id="9000">
-								<posx>-500</posx>
-								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
-								<onfocus>PlayWith(dvdplayer)</onfocus>
 								<onfocus>xbmc.playmedia($INFO[ListItem.Path,,preview].xmv,1)</onfocus>
 								<onfocus>SetFocus(9004)</onfocus>
 								<onfocus>dialog.close(1113,true)</onfocus>
-								<visible>!Skin.HasSetting(_recourcesenabled) + !Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+								<visible>!Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
 						</control>
 						<control type="button" id="9000">
 								<posx>-500</posx>
@@ -38,7 +20,7 @@
 								<onfocus>xbmc.playmedia($INFO[ListItem.Path,,preview].$INFO[Skin.String(PreviewFileExtension)],1)</onfocus>
 								<onfocus>SetFocus(9004)</onfocus>
 								<onfocus>dialog.close(1113,true)</onfocus>
-								<visible>!Skin.HasSetting(_recourcesenabled) + Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+								<visible>Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
 						</control>
 				</control>
 				<control type="group">
@@ -49,21 +31,14 @@
 								<onfocus>SetFocus(9004)</onfocus>
 								<onfocus>dialog.close(1113,true)</onfocus>
 								<onfocus>Special://xbmc/scripts/XBMC4Kids/Synopsis/default.py</onfocus>
-								<visible>!Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
-						</control>
-						<control type="button" id="9000">
-								<posx>-500</posx>
-								<onfocus>Skin.SetBool(PreviewWindow)</onfocus>
-								<onfocus>SetFocus(9004)</onfocus>
-								<onfocus>dialog.close(1113,true)</onfocus>
-								<onfocus>Special://xbmc/scripts/XBMC4Kids/Synopsis/default.py</onfocus>
-								<visible>Skin.HasSetting(PreviewExtension) + !Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
+								<visible>!Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
 						</control>
 				</control>
 				<!-- Close preview window if no video is playing -->
 				<control type="button" id="9000">
 						<posx>-500</posx>
 						<onfocus>Skin.Reset(PreviewWindow)</onfocus>
+						<onfocus>Skin.Reset(Synopsis_Video_Preview_Name)</onfocus>
 						<onfocus>dialog.close(1113,true)</onfocus>
 						<onfocus>SetFocus(50)</onfocus>
 						<onfocus>Stop</onfocus>
@@ -73,6 +48,7 @@
 				<control type="button" id="9000">
 						<posx>-500</posx>
 						<onfocus>Skin.Reset(PreviewWindow)</onfocus>
+						<onfocus>Skin.Reset(Synopsis_Video_Preview_Name)</onfocus>
 						<onfocus>Stop</onfocus>
 						<onfocus>dialog.close(1113,true)</onfocus>
 						<onfocus>SetFocus(50)</onfocus>
@@ -83,6 +59,7 @@
 				<control type="button" id="9000">
 						<posx>-500</posx>
 						<onfocus>Skin.Reset(PreviewWindow)</onfocus>
+						<onfocus>Skin.Reset(Synopsis_Video_Preview_Name)</onfocus>
 						<onfocus>dialog.close(1113,true)</onfocus>
 						<onfocus>ReplaceWindow(114)</onfocus>
 						<visible>Player.HasAudio</visible>

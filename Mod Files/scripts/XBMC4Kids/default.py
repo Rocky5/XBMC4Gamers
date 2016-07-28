@@ -74,6 +74,9 @@ Master_Profile_Sources = xbmc.translatePath( 'special://UserData/sources.xml' )
 ##
 LaunchMenuLoader = "ActivateWindow(1114)"
 ##
+pDialog = xbmcgui.DialogProgress()
+dialog = xbmcgui.Dialog()
+##
 
 
 ########################################################################################################################################
@@ -168,7 +171,6 @@ if SkipScript == "false":
 # Checks for the presence of the user UDATA folder & if not present creates it.
 ########################################################################################################################################
 		elif not os.path.isfile(Current_Profile_Save_Profile_Alt):
-			pDialog = xbmcgui.DialogProgress()
 			pDialog.create('Preping save directory for ' + Username)
 			pDialog.update(0, 'Please wait')
 			time.sleep(1.0)
@@ -255,7 +257,6 @@ if SkipScript == "false":
 			pDialog.update(100, 'Done')
 			time.sleep(1.0)
 			pDialog.close()
-			dialog = xbmcgui.Dialog()
 			dialog.ok("That's everything setup","","I need to restart XBMC","so that the changes take affect.")
 			xbmc.executebuiltin("System.LogOff()")
 			xbmc.executebuiltin("RestartApp")
@@ -278,7 +279,6 @@ if SkipScript == "false":
 				
 			print "================================================================================"
 
-			dialog = xbmcgui.Dialog()
 			dialog.ok("That's everything setup","","I need to restart XBMC","so that the changes take affect.")
 			xbmc.executebuiltin("System.LogOff()")
 			xbmc.executebuiltin("RestartApp")

@@ -120,8 +120,8 @@
 				<posy>200</posy>
 				<width>300</width>
 				<height>42</height>
-				<radiowidth>24</radiowidth>
-				<radioheight>24</radioheight>
+				<radiowidth>50</radiowidth>
+				<radioheight>25</radioheight>
 				<textureradioon>radiobutton-focus.png</textureradioon>
 				<textureradiooff>radiobutton-nofocus.png</textureradiooff>
 				<texturefocus>button-focus.png</texturefocus>

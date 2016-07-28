@@ -11,81 +11,111 @@
 								<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
 								<effect type="fade" start="100" end="0" time="300" />
 						</animation>
+						<control type="image">
+								<posx>55</posx>
+								<posy>100</posy>
+								<width>1170</width>
+								<height>518</height>
+								<texture>black-back.png</texture>
+						</control>
 						<!-- Start General Skin Settings -->
 						<control type="grouplist" id="9001">
-								<posx>50</posx>
-								<posy>90</posy>
+								<posx>55</posx>
+								<posy>100</posy>
 								<width>1230</width>
 								<height>540</height>
-								<itemgap>0</itemgap>
+								<itemgap>-1</itemgap>
 								<pagecontrol>9061</pagecontrol>
 								<onleft>9000</onleft>
 								<onright>9061</onright>
 								<onup>9001</onup>
 								<ondown>9001</ondown>
-								<control type="button" id="112">
+								<control type="label" id="1">
+										<description>Advanced Features</description>
+										<width>1170</width>
+										<height>40</height>
+										<font>font12</font>
+										<textcolor>white</textcolor>
+										<label> Music Options</label>
+										<align>center</align>
+										<aligny>center</aligny>
+								</control>
+								<control type="button" id="10">
 										<description>Startup Playback creation</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32042]</label>
 										<onclick>ActivateWindow(501)</onclick>
 								</control>
-								<control type="radiobutton" id="113">
+								<control type="radiobutton" id="11">
 										<description>Startup Playback</description>
 										<include>CustomSettingsButtons</include>
 										<label>31137</label>
 										<onclick>Skin.ToggleSetting(Use_Startup_Playback)</onclick>
 										<selected>Skin.HasSetting(Use_Startup_Playback)</selected>
 								</control>
-								<control type="button" id="114">
+								<control type="button" id="12">
 										<description>Startup Playback Path</description>
 										<include>CustomSettingsButtons</include>
 										<label> - $LOCALIZE[21801]</label>
-										<label2>[COLOR=blue2]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
+										<label2>[COLOR=blue]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
 										<onclick>Skin.SetFile(Startup_Playback_Path,.m3u,special://profile/playlists/music/)</onclick>
 										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
 								</control>
-								<control type="radiobutton" id="115">
+								<control type="label" id="2">
+										<description>Advanced Features</description>
+										<width>1170</width>
+										<height>40</height>
+										<font>font12</font>
+										<textcolor>white</textcolor>
+										<label> Other Toggles</label>
+										<align>center</align>
+										<aligny>center</aligny>
+								</control>
+								<control type="radiobutton" id="20">
 										<description>Launcher toggle</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32043]</label>
 										<onclick>Skin.ToggleSetting(EmuButton)</onclick>
 										<selected>Skin.HasSetting(EmuButton)</selected>
 								</control>
-								<control type="button" id="116">
+								<control type="button" id="21">
 										<description>Launcher Path</description>
 										<include>CustomSettingsButtons</include>
 										<label> - $LOCALIZE[32044]</label>
-										<label2>[COLOR=blue2]$INFO[Skin.String(Emulator_Path)][/COLOR]</label2>
+										<label2>[COLOR=blue]$INFO[Skin.String(Emulator_Path)][/COLOR]</label2>
 										<onclick>Skin.SetFile(Emulator_Path,,)</onclick>
 										<visible>Skin.HasSetting(EmuButton)</visible>
 								</control>
-								<control type="button" id="117">
-										<description>[B]Preview video[/B] settings</description>
-										<include>CustomSettingsButtons</include>
-										<label>$LOCALIZE[32045]</label>
-										<onclick>ActivateWindow(1115)</onclick>
-								</control>
-								<control type="radiobutton" id="123">
+								<control type="radiobutton" id="22">
 										<description>Time Display</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32048]</label>
 										<onclick>Skin.ToggleSetting(DisplayTime)</onclick>
 										<selected>Skin.HasSetting(DisplayTime)</selected>
 								</control>
-								<control type="radiobutton" id="127">
-										<description>Synopsis Display</description>
+								<control type="button" id="23">
+										<description>[B]Preview video[/B] settings</description>
 										<include>CustomSettingsButtons</include>
-										<label>$LOCALIZE[32055]</label>
-										<onclick>Skin.ToggleSetting(Synopsis)</onclick>
-										<selected>Skin.HasSetting(Synopsis)</selected>
+										<label>$LOCALIZE[32045]</label>
+										<onclick>ActivateWindow(1115)</onclick>
 								</control>
-								<control type="button" id="128">
+								<control type="label" id="3">
+										<description>Debug Stuff</description>
+										<width>1170</width>
+										<height>40</height>
+										<font>font12</font>
+										<textcolor>white</textcolor>
+										<label> Debug Stuff</label>
+										<align>center</align>
+										<aligny>center</aligny>
+								</control>
+								<control type="button" id="30">
 										<description>ThumbCleaner</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32058]</label>
 										<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/CleanThumbs.py</onclick>
 								</control>
-								<control type="radiobutton" id="140">
+								<control type="radiobutton" id="31">
 										<description>Debug</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32049]</label>

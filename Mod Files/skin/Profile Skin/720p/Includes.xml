@@ -9,13 +9,13 @@
 		<include file="includes_easter.xml" />
 		<constant name="FanartCrossfadeTime">200</constant>
 		<include name="CustomSettingsButtons">
-				<width>1175</width>
-				<height>40</height>
+				<width>1170</width>
+				<height>51</height>
 				<font>font12</font>
 				<textcolor>white</textcolor>
 				<focusedcolor>black</focusedcolor>
-				<texturefocus border="5">ThumbFO.png</texturefocus>
-				<texturenofocus border="5">ListNF.png</texturenofocus>
+				<texturefocus border="5">thumbfO.png</texturefocus>
+				<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
 		</include>
 		<include name="CommonBackground">
 				<control type="image">
