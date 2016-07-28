@@ -6,7 +6,7 @@
 						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
 						<control type="image">
 								<posx>690r</posx>
-								<posy>200</posy>
+								<posy>130</posy>
 								<width>640</width>
 								<height>360</height>
 								<aspectratio>stretch</aspectratio>
@@ -15,7 +15,7 @@
 						</control>
 						<control type="image">
 								<posx>690r</posx>
-								<posy>200</posy>
+								<posy>130</posy>
 								<width>640</width>
 								<height>360</height>
 								<aspectratio>scale</aspectratio>
@@ -23,6 +23,27 @@
 								<texture background="true" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
 								<bordertexture border="5">poster-border.png</bordertexture>
 								<bordersize>5</bordersize>
+						</control>
+						<!-- Banner.jpg -->
+						<control type="image">
+								<posx>690r</posx>
+								<posy>520</posy>
+								<width>570</width>
+								<height>120</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>black-back.png</texture>
+								<bordertexture border="5">-</bordertexture>
+								<bordersize>1</bordersize>
+						</control>
+						<control type="image">
+								<posx>690r</posx>
+								<posy>520</posy>
+								<width>570</width>
+								<height>120</height>
+								<aspectratio>stretch</aspectratio>
+								<texture background="true" fallback="no_banner.png">$INFO[ListItem.Path,,_resources\artwork\banner.jpg]</texture>
+								<bordertexture border="5">-</bordertexture>
+								<bordersize>1</bordersize>
 						</control>
 						<!-- Poster.jpg -->
 						<control type="group">
