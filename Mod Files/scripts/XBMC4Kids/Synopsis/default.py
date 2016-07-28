@@ -160,15 +160,19 @@ _Resources_Preview_Ext4 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_re
 
 if os.path.isfile( _Resources_Preview_Ext1 ):
 	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.xmv)')
+	xbmc.executebuiltin('Skin.SetString(Player_Type,DVDPlayer)')
 	print "| Found Preview.xmv" 
 elif os.path.exists( _Resources_Preview_Ext2 ):
 	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.mp4)')
+	xbmc.executebuiltin('Skin.SetString(Player_Type,MPlayer)')
 	print "| Found Preview.mp4" 
 elif os.path.exists( _Resources_Preview_Ext3 ):
 	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.wmv)')
+	xbmc.executebuiltin('Skin.SetString(Player_Type,MPlayer)')
 	print "| Found Preview.wmv" 
 elif os.path.exists( _Resources_Preview_Ext4 ):
 	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.mpg)')
+	xbmc.executebuiltin('Skin.SetString(Player_Type,MPlayer)')
 	print "| Found Preview.mpg" 
 else:
 	xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Video )')

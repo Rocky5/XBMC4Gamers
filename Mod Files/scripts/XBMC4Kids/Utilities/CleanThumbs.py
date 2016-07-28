@@ -29,7 +29,7 @@ print "=========================================================================
 print "| Scripts\XBMC4Kids\Utilities\CleanThumbs.py loaded."
 print "| ------------------------------------------------------------------------------"
 
-if dialog.yesno('Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?.','They will be reloaded when you enter the games section.') == 1:
+if dialog.yesno('Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?','They will be reloaded when you enter the games section.') == 1:
 	pDialog.create('Cleaning Thumbnails')
 	pDialog.update(0, 'Please wait')
 	time.sleep(0.1)
