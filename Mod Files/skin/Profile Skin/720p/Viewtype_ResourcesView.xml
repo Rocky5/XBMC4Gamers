@@ -10,7 +10,7 @@
 								<width>640</width>
 								<height>360</height>
 								<aspectratio>stretch</aspectratio>
-								<texture>black-back.png</texture>
+								<texture background="true">black-back.png</texture>
 								<bordersize>5</bordersize>
 						</control>
 						<control type="image">
@@ -31,7 +31,7 @@
 								<width>570</width>
 								<height>120</height>
 								<aspectratio>stretch</aspectratio>
-								<texture>black-back.png</texture>
+								<texture background="true">black-back.png</texture>
 								<bordertexture border="5">-</bordertexture>
 								<bordersize>1</bordersize>
 						</control>
@@ -55,7 +55,7 @@
 										<width>214</width>
 										<height>290</height>
 										<aspectratio>stretch</aspectratio>
-										<texture border="5">ThumbNF.png</texture>
+										<texture background="true" border="5">ThumbNF.png</texture>
 								</control>
 								<control type="image">
 										<posx>5</posx>
@@ -74,7 +74,7 @@
 										<width>214</width>
 										<height>290</height>
 										<aspectratio>stretch</aspectratio>
-										<texture border="5" flipy="true" diffuse="diffuse_mirror2.png">ThumbNF.png</texture>
+										<texture background="true" border="5" flipy="true" diffuse="diffuse_mirror2.png">ThumbNF.png</texture>
 								</control>
 								<control type="image">
 										<posx>5</posx>
@@ -97,7 +97,7 @@
 										<width>214</width>
 										<height>214</height>
 										<aspectratio>stretch</aspectratio>
-										<texture border="5">button-focus.png</texture>
+										<texture background="true" border="5">button-focus.png</texture>
 								</control>
 								<control type="image">
 										<posx>7</posx>
@@ -105,7 +105,7 @@
 										<width>204</width>
 										<height>204</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>black-back.png</texture>
+										<texture background="true">black-back.png</texture>
 								</control>
 								<control type="image">
 										<posx>7</posx>
@@ -122,7 +122,7 @@
 										<width>214</width>
 										<height>214</height>
 										<aspectratio>stretch</aspectratio>
-										<texture flipy="true" diffuse="diffuse_mirror.png">button-focus.png</texture>
+										<texture background="true" flipy="true" diffuse="diffuse_mirror.png">button-focus.png</texture>
 								</control>
 								<control type="image">
 										<posx>7</posx>
@@ -130,7 +130,7 @@
 										<width>204</width>
 										<height>204</height>
 										<aspectratio>stretch</aspectratio>
-										<texture flipy="true" diffuse="diffuse_mirror.png">black-back.png</texture>
+										<texture background="true" flipy="true" diffuse="diffuse_mirror.png">black-back.png</texture>
 								</control>
 								<control type="image">
 										<posx>7</posx>
@@ -151,7 +151,7 @@
 										<width>320</width>
 										<height>180</height>
 										<aspectratio>stretch</aspectratio>
-										<texture border="5">button-focus.png</texture>
+										<texture background="true" border="5">button-focus.png</texture>
 								</control>
 								<control type="image">
 										<posx>5</posx>
@@ -159,7 +159,7 @@
 										<width>310</width>
 										<height>170</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>black-back.png</texture>
+										<texture background="true">black-back.png</texture>
 								</control>
 								<control type="image">
 										<posx>5</posx>
