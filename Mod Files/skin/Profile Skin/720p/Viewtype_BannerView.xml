@@ -290,7 +290,7 @@
 														<width>570</width>
 														<height>120</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" fallback="no_poster.png">$INFO[ListItem.Path,,_resources\artwork\banner.jpg]</texture>
+														<texture background="true" fallback="no_banner.png">$INFO[ListItem.Path,,_resources\artwork\banner.jpg]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
@@ -325,7 +325,7 @@
 														<width>570</width>
 														<height>120</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" fallback="no_poster.png">$INFO[ListItem.Path,,_resources\artwork\banner.jpg]</texture>
+														<texture background="true" fallback="no_banner.png">$INFO[ListItem.Path,,_resources\artwork\banner.jpg]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
