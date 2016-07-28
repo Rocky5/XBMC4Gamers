@@ -35,8 +35,8 @@
 												<label>  $LOCALIZE[32026]</label>
 												<textcolor>white</textcolor>
 												<focusedcolor>black</focusedcolor>
-												<texturefocus border="5">ThumbFO.png</texturefocus>
-												<texturenofocus border="5">black-back.png</texturenofocus>
+												<texturefocus border="5">thumbfO.png</texturefocus>
+												<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
 												<onclick>Skin.ToggleSetting(UseProfiles)</onclick>
 												<selected>Skin.HasSetting(UseProfiles)</selected>
 										</control>
