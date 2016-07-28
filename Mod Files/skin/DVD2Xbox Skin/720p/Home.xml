@@ -4,7 +4,7 @@
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">
-						<include>Window_OpenClose_Animation</include>
+					<include>ViewVisibleEffect</include>
 						<control type="panel" id="1">
 								<posx>255</posx>
 								<posy>270</posy>

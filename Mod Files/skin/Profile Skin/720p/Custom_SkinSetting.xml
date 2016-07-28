@@ -3,19 +3,12 @@
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">
-						<animation type="WindowOpen" reversible="false">
-								<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
-								<effect type="fade" start="0" end="100" time="300" delay="200" />
-						</animation>
-						<animation type="WindowClose" reversible="false">
-								<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-								<effect type="fade" start="100" end="0" time="300" />
-						</animation>
+					<include>ViewVisibleEffect</include>
 						<control type="image">
 								<posx>55</posx>
 								<posy>100</posy>
 								<width>1170</width>
-								<height>518</height>
+								<height>520</height>
 								<texture>black-back.png</texture>
 						</control>
 						<!-- Start General Skin Settings -->
@@ -23,7 +16,7 @@
 								<posx>55</posx>
 								<posy>100</posy>
 								<width>1230</width>
-								<height>540</height>
+								<height>520</height>
 								<itemgap>-1</itemgap>
 								<pagecontrol>9061</pagecontrol>
 								<onleft>9000</onleft>
@@ -115,7 +108,13 @@
 										<label>$LOCALIZE[32058]</label>
 										<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/CleanThumbs.py</onclick>
 								</control>
-								<control type="radiobutton" id="31">
+								<control type="button" id="31">
+										<description>Clear Cache</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32012]</label>
+										<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/Clear Cache.py</onclick>
+								</control>
+								<control type="radiobutton" id="39">
 										<description>Debug</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32049]</label>
