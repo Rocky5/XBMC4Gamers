@@ -15,7 +15,7 @@
 						<posx>-500</posx>
 						<onclick>Stop</onclick>
 						<onclick>SetFocus(9005)</onclick>
-						<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewExtension) + Skin.HasSetting(PreviewWindow) + Player.HasVideo</visible>
+						<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + Player.HasVideo</visible>
 				</control>
 				<control type="button" id="9005">
 						<posx>-500</posx>
