@@ -27,7 +27,7 @@
 						<aspectratio>scale</aspectratio>
 				</control>
 				<control type="group">
-						<posx>524</posx>
+						<posx>523</posx>
 						<posy>252</posy>
 						<include>Window_OpenClose_Animation</include>
 						<control type="image">
