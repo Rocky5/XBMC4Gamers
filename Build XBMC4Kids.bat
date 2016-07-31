@@ -1,8 +1,8 @@
-:: Copyright of John Conn (Rocky5 Forums & JCRocky5 Twitter) 2013
+:: Copyright of John Conn (Rocky5 Forums & JCRocky5 Twitter) 2016
 :: Please don't re-release this as your own, if you make a better tool then I don't mind :-)
 
 :Start
-@Echo off & SetLocal EnableDelayedExpansion & mode con:cols=40 lines=8 & title XBMC Prep
+@Echo off & SetLocal EnableDelayedExpansion & mode con:cols=40 lines=8 & title XBMC4Kids Builder
 
 if exist "XBMC" Set "foldername=XBMC"
 if exist "Build" Set "foldername=Build"
@@ -36,6 +36,7 @@ copy /y "Mod Files\system\backup\FileZilla Server.xml" "XBMC4Kids\system\FileZil
 XCopy /s /e /i /h /r /y "Mod Files" "XBMC4Kids"
 copy /y "New XBMC xbe\default.xbe" "XBMC4Kids\default.xbe"
 rd /q /s "XBMC4Kids\Apps\FTP"
+rd /q /s "XBMC4Kids\Updater"
 del /q /s "XBMC4Kids\skin\*.bat"
 ) >NUL
 cls

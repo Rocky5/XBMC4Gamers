@@ -1,5 +1,5 @@
 <window id="29">
-		<defaultcontrol always="true">52</defaultcontrol>
+		<defaultcontrol always="true">51</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<coordinates>
 				<system>1</system>
@@ -7,6 +7,11 @@
 				<posy>0</posy>
 		</coordinates>
 		<controls>
+				<control type="button" id="51">
+						<posx>-500</posx>
+						<onfocus>SetFocus(52)</onfocus>
+						<onfocus>Special://xbmc/scripts/XBMC4Kids/Utilities/Updater.py</onfocus>
+				</control>
 				<include>CommonBackground</include>
 				<control type="label">
 						<description>Edit mode indicator</description>

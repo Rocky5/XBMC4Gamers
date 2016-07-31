@@ -1,3 +1,20 @@
+**/08/2016
+1) Updated the XBMC default.xbe, Now we have fullscreen splash! & a few other things I needed to streamline the experience.
+2) "Manage Profiles" Profile - Now load directory into the profiles window when selecting Manage Profiles
+3) "Manage Profiles" Profile - Now you use the Back button to enter settings.
+4) Updated the controlpad.png
+5) Updated the profiles script, added a slight delay.
+6) New skin settings layout.
+7) New RadioButton image.
+8) Updated the synopsis script, now passes the video to the skin.
+9) Added a Yes/No dialog to the Clean Thumbnails script & an OK dialog so the user can pick what they want to do. (has a description on what its going to do)
+10) Cleaned up the Includes_Video_Preview.xml as some buttons aren't needed anymore.
+11) Added Clear Cache button to skin settings.
+12) Fixed the banner view, forgot to add the no_banner.png image.
+13) Added a new updater script/XBMC combo.
+***) Probably more, to many changes to keep track :/
+
+
 25/07/2016
 1) Changed the PlayerControls screen, looks a lot better & matches the other dialogues.
 2) Added a toggle for the visualisation bars in the PlayerControls screen.
@@ -31,10 +48,6 @@
 30) How video playback when in the synopsis screen has changed also, you now Press (A) to playback and stop the preview video.
 31) Added a a Control layout overlay when in the login screen. (press Down)
 32) New SettingProfile.xml layout.
-
-
-
-
 ***) Probably more, to many changes to keep track :/
 
 

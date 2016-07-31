@@ -1,0 +1,74 @@
+<includes>
+		<include file="defaults.xml" />
+		<include name="ButtonCommonValues">
+				<height>44</height>
+				<width>280</width>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>10</textoffsetx>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<pulseonselect>true</pulseonselect>
+		</include>
+		<include name="ButtonHomeSubCommonValues">
+				<height>37</height>
+				<width>246</width>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>font12</font>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">-</texturenofocus>
+				<pulseonselect>true</pulseonselect>
+		</include>
+		<include name="ButtonInfoDialogsCommonValues">
+				<height>25</height>
+				<width>200</width>
+				<font>font12</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturefocus border="2">button-focus2.png</texturefocus>
+				<texturenofocus border="2">button-nofocus.png</texturenofocus>
+				<pulseonselect>no</pulseonselect>
+		</include>
+		<include name="Window_OpenClose_Animation">
+				<animation effect="fade" time="300">WindowOpen</animation>
+				<animation effect="fade" time="300">WindowClose</animation>
+		</include>
+		<include name="dialogeffect">
+				<animation effect="fade" time="200">WindowOpen</animation>
+				<animation effect="fade" time="200">WindowClose</animation>
+		</include>
+		<include name="DialogEffectZoom">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
+						<effect type="fade" start="0" end="100" time="300" delay="200" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+						<effect type="fade" start="100" end="0" time="300" />
+				</animation>
+		</include>
+		<include name="ViewVisibleEffect">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="200" />
+						<effect type="fade" start="0" end="100" time="200" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="200" />
+						<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+		</include>
+		<include name="VisibleFadeEffect">
+				<animation effect="fade" time="200">Visible</animation>
+				<animation effect="fade" time="200">Hidden</animation>
+		</include>
+</includes>
