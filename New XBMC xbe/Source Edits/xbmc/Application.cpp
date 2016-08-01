@@ -1175,7 +1175,7 @@ HRESULT CApplication::Create(HWND hWnd)
 
   m_splash = new CSplash("Q:\\media\\splash.png");
   m_splash->Start();
-  Sleep(2000); //Added this so the Splash stays on the screen longer
+  Sleep(4000); //Added this so the Splash stays on the screen longer
 
   int iResolution = g_graphicsContext.GetVideoResolution();
   CLog::Log(LOGINFO, "GUI format %ix%i %s",

@@ -31,6 +31,7 @@ if os.path.isfile(xbmc.translatePath("special://xbmc/Updater/default.xbe")):
 		pDialog.update(100,"", "Please wait")
 		pDialog.close()
 		dialog.ok("Done","","Thats you all updated :)")
+		xbmc.executebuiltin('Skin.SetBool(editmode)')
 	else:
 		if dialog.yesno("XBMC4Kids Updater","", "Update Folder found, would you like to install the update?") == 1:
 			xbmc.executebuiltin("XBMC.RunXBE(%sDefault.xbe)" % xbmc.translatePath("special://xbmc/Updater/"))
