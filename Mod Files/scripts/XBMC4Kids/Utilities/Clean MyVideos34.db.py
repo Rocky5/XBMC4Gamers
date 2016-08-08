@@ -23,7 +23,7 @@ CurVideoDB = xbmc.translatePath( 'special://Database/MyVideos34.db' )
 # Start markings for the log file.
 ########################################################################################################################################
 print "================================================================================"
-print "| Scripts\XBMC4Kids\Utilities\CleanMyVideos34.db.py loaded."
+print "| Scripts\XBMC4Kids\Utilities\Clean MyVideos34.db.py loaded."
 print "| ------------------------------------------------------------------------------"
 time.sleep(0.5)
 connection = sqlite3.connect(CurVideoDB)

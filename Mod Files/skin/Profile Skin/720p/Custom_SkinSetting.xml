@@ -106,7 +106,7 @@
 										<description>ThumbCleaner</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32058]</label>
-										<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/CleanThumbs.py</onclick>
+										<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py</onclick>
 								</control>
 								<control type="button" id="31">
 										<description>Clear Cache</description>

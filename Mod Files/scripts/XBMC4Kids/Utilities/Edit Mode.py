@@ -35,7 +35,7 @@ dialog = xbmcgui.Dialog()
 # Start markings for the log file.
 ########################################################################################################################################
 print "================================================================================"
-print "| Scripts\XBMC4Kids\Utilities\EditMode.py loaded."
+print "| Scripts\XBMC4Kids\Utilities\Edit Mode.py loaded."
 print "| ------------------------------------------------------------------------------"
 
 if os.path.isfile(Enabler):

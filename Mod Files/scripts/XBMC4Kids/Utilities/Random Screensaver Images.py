@@ -21,7 +21,7 @@ Pictures_Path = "C:/Images/Backgrounds/"
 # Start markings for the log file.
 ########################################################################################################################################
 print "================================================================================"
-print "| Scripts\XBMC4Kids\Utilities\RandomScreensaverImages.py loaded."
+print "| Scripts\XBMC4Kids\Utilities\Random Screensaver Images.py loaded."
 print "| ------------------------------------------------------------------------------"
 
 
