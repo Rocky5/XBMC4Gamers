@@ -23,7 +23,8 @@ import shutil
 UseGamesTBNFiles	= 0
 ThumbPath			= xbmc.translatePath( "special://profile/thumbnails/programs" )
 Sub_Directories		= [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f", "fanart" ]
-Games_Directories	= [ "E:/Games", "F:/Games", "G:/Games" ]
+Games_Directories	= [ "E:\\Games", "F:\\Games", "G:\\Games" ]
+Profile_Directory	= xbmc.translatePath( 'special://profile/' )
 pDialog				= xbmcgui.DialogProgress()
 dialog				= xbmcgui.Dialog()
 
@@ -66,15 +67,13 @@ if dialog.yesno( 'Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?
 				if os.path.isdir( Game_Directory ):
 					XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
 					for DefaultXBE in XBEFiles:
-						if os.path.isfile(DefaultXBE):
+						if os.path.isfile( DefaultXBE ):
 							ThumbCache = xbmc.getCacheThumbName( DefaultXBE )
-							ThumbPath = ( "special://profile/Thumbnails/Programs/" + ThumbCache[0] + "/" + ThumbCache )
+							ThumbPath = ( Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache )
 							TBNFiles = glob.glob( os.path.join( Game_Directory, "default.tbn" ) )
 					for DefaultTBN in TBNFiles:
-						if os.path.isfile( ThumbPath ):
-							pass
-						elif os.path.isfile( DefaultTBN ):
-								shutil.copy( DefaultTBN,ThumbPath )
+						if os.path.isfile( DefaultTBN ):
+								shutil.copy2( DefaultTBN,ThumbPath )
 	else:
 		pass
 

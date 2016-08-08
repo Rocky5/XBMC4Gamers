@@ -66,12 +66,15 @@ def XbeInfo(FileName): # Modified by me. Original by chunk_1970 - http://forum.k
         xbe.close()
         return {}
 
-
+		
+Current_Profile_Directory = xbmc.translatePath( 'special://profile/' )
 Game_Directories = [ "E:\\Games\\", "F:\\Games\\", "G:\\Games\\" ]
 Favourites_XML = xbmc.translatePath( "special://Profile/favourites.xml")
 pDialog = xbmcgui.DialogProgress()
 dialog = xbmcgui.Dialog()
-pDialog.update(0,'')
+progress = 0
+
+
 if os.path.isfile(Favourites_XML) == 1: os.remove(Favourites_XML)
 f=open(Favourites_XML,"w")
 f.write("<favourites>\n")
@@ -79,13 +82,13 @@ f.write("<favourites>\n")
 
 if Use_Game_Directory == 1:
 	pDialog.create('Building Favourites.xml','','Using the Games directory to build the favourites.xml')
-	time.sleep(3)
-	pDialog.update(20,'','Please wait...')
 	print "| Games Directory Used."
 	for Game_Directories in Game_Directories :
 		for Items in os.listdir( Game_Directories ):
 			if os.path.isdir(os.path.join( Game_Directories, Items)):
 				Game_Directory = os.path.join( Game_Directories, Items )
+				progress += 1
+				if progress == 1:	pDialog.update( 0,"Scanning Games","Processing." )
 				if os.path.isdir( Game_Directory ) :
 					XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
 					TBNFiles = glob.glob( os.path.join( Game_Directory, "default.tbn" ) )
@@ -93,11 +96,12 @@ if Use_Game_Directory == 1:
 						for Path in XBEFiles:
 							XBETitle = XbeInfo( Path )
 							ThumbCache = xbmc.getCacheThumbName( Path )
+							pDialog.update( int ( progress / float( len ( os.listdir( Game_Directories ) ) ) *100 ),"Scanning Games",Items )
 							if Use_Game_Directory_TBN == 1:
-								line='<favourite name="' + XBETitle.encode(encoding='UTF-8')+ '\" thumb=\"' + TBN + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
+								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + TBN + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 								f.write(line)
 							else:
-								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"special://profile/Thumbnails/Programs/' + ThumbCache[0] + "/" + ThumbCache + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
+								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 								f.write(line)
 	f.write("</favourites>")
 	f.close()
@@ -110,18 +114,19 @@ if Use_Game_Directory == 1:
 	f.close()
 else:
 	pDialog.create('Building Favourites.xml','','Using MyPrograms6.db to build the favourites.xml')
-	time.sleep(3)
-	pDialog.update(40,'','Please wait...')
 	print "| XBMC MyPrograms6.db Used."
 	cursor = sqlite3.connect(xbmc.translatePath( "special://Profile/Database/MyPrograms6.db" )).cursor()
 	sql = "SELECT * FROM files"
 	cursor.execute(sql)
 	rows = cursor.fetchall()
 	for row in rows:
+		progress += 1
+		if progress == 1:	pDialog.update( 0,"Scanning Games","Processing." )
 		title = row[3]
 		xbe_path = row[1].replace('\\','\\\\')
 		ThumbCache = xbmc.getCacheThumbName( row[1] )
-		line='<favourite name="' + title.encode(encoding='UTF-8') + '\" thumb=\"special://profile/Thumbnails/Programs/' + ThumbCache[0] + "/" + ThumbCache + '">RunXBE(&quot;' + xbe_path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
+		pDialog.update( int ( progress / float( len ( os.listdir( row[1][:9] ) ) ) *100 ),"Scanning Games",title )
+		line='<favourite name="' + title.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + xbe_path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 		f.write(line)
 	f.write("</favourites>")
 	f.close()
