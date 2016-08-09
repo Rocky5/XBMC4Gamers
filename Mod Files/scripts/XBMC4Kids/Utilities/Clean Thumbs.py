@@ -27,6 +27,7 @@ Games_Directories	= [ "E:\\Games", "F:\\Games", "G:\\Games" ]
 Profile_Directory	= xbmc.translatePath( 'special://profile/' )
 pDialog				= xbmcgui.DialogProgress()
 dialog				= xbmcgui.Dialog()
+pDialog.update( 0 )
 
 
 ########################################################################################################################################
@@ -60,10 +61,10 @@ if dialog.yesno( 'Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?
 	if UseGamesTBNFiles == 1:
 		progress = 0
 		for Folders in Games_Directories:
-			for Game_Folder in os.listdir( Folders ):
+			for Game_Folder in sorted( os.listdir( Folders ) ):
 				Game_Directory = os.path.join( Folders, Game_Folder)
 				progress += 1
-				pDialog.update( int ( progress / float( len ( os.listdir( Folders ) ) ) *100 ),"Generating Game Thumbnails",Game_Folder )
+				pDialog.update( int ( progress / float( len ( sorted( os.listdir( Folders ) ) ) ) *100 ),"Generating Game Thumbnails",Game_Folder )
 				if os.path.isdir( Game_Directory ):
 					XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
 					for DefaultXBE in XBEFiles:

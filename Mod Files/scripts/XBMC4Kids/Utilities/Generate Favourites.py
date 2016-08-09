@@ -11,6 +11,7 @@ import xbmcgui
 import time
 import os
 import sqlite3
+import re
 import glob
 import struct
 import operator
@@ -73,6 +74,7 @@ Favourites_XML = xbmc.translatePath( "special://Profile/favourites.xml")
 pDialog = xbmcgui.DialogProgress()
 dialog = xbmcgui.Dialog()
 progress = 0
+pDialog.update( 0 )
 
 
 if os.path.isfile(Favourites_XML) == 1: os.remove(Favourites_XML)
@@ -82,9 +84,10 @@ f.write("<favourites>\n")
 
 if Use_Game_Directory == 1:
 	pDialog.create('Building Favourites.xml','','Using the Games directory to build the favourites.xml')
+	time.sleep(2)
 	print "| Games Directory Used."
 	for Game_Directories in Game_Directories :
-		for Items in os.listdir( Game_Directories ):
+		for Items in sorted( os.listdir( Game_Directories ) ):
 			if os.path.isdir(os.path.join( Game_Directories, Items)):
 				Game_Directory = os.path.join( Game_Directories, Items )
 				progress += 1
@@ -96,24 +99,20 @@ if Use_Game_Directory == 1:
 						for Path in XBEFiles:
 							XBETitle = XbeInfo( Path )
 							ThumbCache = xbmc.getCacheThumbName( Path )
-							pDialog.update( int ( progress / float( len ( os.listdir( Game_Directories ) ) ) *100 ),"Scanning Games",Items )
+							pDialog.update( int ( progress / float( len ( sorted( os.listdir( Game_Directories ) ) ) ) *100 ),"Scanning Games",Items )
 							if Use_Game_Directory_TBN == 1:
+								Path = Path.replace("\\","\\\\")
 								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + TBN + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 								f.write(line)
 							else:
+								Path = Path.replace("\\","\\\\")
 								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 								f.write(line)
 	f.write("</favourites>")
 	f.close()
-	f = open(Favourites_XML,'r')
-	filedata = f.read()
-	f.close()
-	newdata = filedata.replace("\\","\\\\")
-	f = open(Favourites_XML,'w')
-	f.write(newdata)
-	f.close()
 else:
 	pDialog.create('Building Favourites.xml','','Using MyPrograms6.db to build the favourites.xml')
+	time.sleep(2)
 	print "| XBMC MyPrograms6.db Used."
 	cursor = sqlite3.connect(xbmc.translatePath( "special://Profile/Database/MyPrograms6.db" )).cursor()
 	sql = "SELECT * FROM files"

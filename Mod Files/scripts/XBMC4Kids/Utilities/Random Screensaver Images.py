@@ -35,7 +35,7 @@ print "| -----------------------------------------------------------------------
 #########################################################################################################
 # Get a random subdirectory of Pictures_Path.
 #########################################################################################################
-List_Root_Directory = os.listdir(Pictures_Path)
+List_Root_Directory = sorted(os.listdir(Pictures_Path))
 Directory_Name = random.choice(List_Root_Directory)
 New_Path = '<slideshowpath pathversion="1">' + Pictures_Path + Directory_Name + '/</slideshowpath>\n'
 GUISettings_Path = fileinput.input( xbmc.translatePath( 'special://profile/guisettings.xml' ), inplace=1)
