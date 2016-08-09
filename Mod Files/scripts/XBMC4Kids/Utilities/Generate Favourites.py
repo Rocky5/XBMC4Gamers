@@ -28,10 +28,18 @@ print "| -----------------------------------------------------------------------
 
 # Enabled if you want the games directory (ie, E:\Games\, F:\Games\, or G:\Games\) to be used to build the xml.
 # You can also enabled the TBN option, this will use the default.tbn files, instead of the cached versions XBMC has made. 
-# 1 = Enabled
-# 0 = Disabled
-Use_Game_Directory = 0
-Use_Game_Directory_TBN = 0
+# Use Games + default.tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,1,1 )
+# Use Games + cached tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,1,0 )
+# Disabled					= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,0,0 )
+# Disabled					= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py )
+try:
+	Use_Game_Directory = sys.argv[1][0]
+except:
+	Use_Game_Directory = "0"
+try:
+	Use_Game_Directory_TBN = sys.argv[2][0]
+except:
+	Use_Game_Directory_TBN = "0"
 
 
 def XbeInfo(FileName): # Modified by me. Original by chunk_1970 - http://forum.kodi.tv/showthread.php?tid=24666&pid=125356#pid125356
@@ -82,7 +90,7 @@ f=open(Favourites_XML,"w")
 f.write("<favourites>\n")
 
 
-if Use_Game_Directory == 1:
+if Use_Game_Directory == "1":
 	pDialog.create('Building Favourites.xml','','Using the Games directory to build the favourites.xml')
 	time.sleep(2)
 	print "| Games Directory Used."
@@ -99,13 +107,12 @@ if Use_Game_Directory == 1:
 						for Path in XBEFiles:
 							XBETitle = XbeInfo( Path )
 							ThumbCache = xbmc.getCacheThumbName( Path )
+							Path = Path.replace("\\","\\\\")
 							pDialog.update( int ( progress / float( len ( sorted( os.listdir( Game_Directories ) ) ) ) *100 ),"Scanning Games",Items )
-							if Use_Game_Directory_TBN == 1:
-								Path = Path.replace("\\","\\\\")
+							if Use_Game_Directory_TBN == "1":
 								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + TBN + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 								f.write(line)
 							else:
-								Path = Path.replace("\\","\\\\")
 								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 								f.write(line)
 	f.write("</favourites>")

@@ -12,6 +12,7 @@
 ########################################################################################################################################
 
 
+import sys
 import os
 import xbmc
 import xbmcgui
@@ -20,7 +21,13 @@ import time
 import shutil
 
 
-UseGamesTBNFiles	= 0
+# Remove tbn files & cache default.tbn		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,1 )
+# Remove tbn files only						= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0 )
+# Remove tbn files only						= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py )
+try:
+	UseGamesTBNFiles = sys.argv[1:][0]
+except:
+	UseGamesTBNFiles = "0"
 ThumbPath			= xbmc.translatePath( "special://profile/thumbnails/programs" )
 Sub_Directories		= [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f", "fanart" ]
 Games_Directories	= [ "E:\\Games", "F:\\Games", "G:\\Games" ]
@@ -37,8 +44,12 @@ print "=========================================================================
 print "| Scripts\XBMC4Kids\Utilities\Clean Thumbs.py loaded."
 print "| ------------------------------------------------------------------------------"
 
+if UseGamesTBNFiles == "1":
+	Mode = "They will be rescanned using the [B]default.tbn[/B] located inside\nthe [B]games install directory[/B]."
+else:
+	Mode = "They will be reloaded when you enter the games section."
 
-if dialog.yesno( 'Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?','They will be reloaded when you enter the games section.' ) == 1:
+if dialog.yesno( 'Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?',Mode ) == 1:
 	pDialog.create( 'Cleaning Thumbnails' )
 	
 	progress = 0
@@ -58,7 +69,7 @@ if dialog.yesno( 'Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?
 					os.remove(dds)
 					pDialog.update( int ( progress / float( len ( Sub_Directories ) ) *100 ),"Removing Game Thumbnails",dds )
 
-	if UseGamesTBNFiles == 1:
+	if UseGamesTBNFiles == "1":
 		progress = 0
 		for Folders in Games_Directories:
 			for Game_Folder in sorted( os.listdir( Folders ) ):

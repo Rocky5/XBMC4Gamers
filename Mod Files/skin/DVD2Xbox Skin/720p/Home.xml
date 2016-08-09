@@ -87,7 +87,7 @@
 								<content>
 										<item>
 												<label>Auto Install Game</label>
-												<onclick>Special://xbmc/scripts/XBMC4Kids/DVD2Xbox/default.py</onclick>
+												<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/DVD2Xbox/default.py )</onclick>
 												<icon>Special://xbmc/Apps/DVD2Xbox/icon.png</icon>
 										</item>
 										<item>

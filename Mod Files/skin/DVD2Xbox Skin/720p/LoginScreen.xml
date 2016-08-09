@@ -10,7 +10,7 @@
 				<control type="button" id="51">
 						<posx>-500</posx>
 						<onfocus>SetFocus(52)</onfocus>
-						<onfocus>Special://xbmc/scripts/XBMC4Kids/Utilities/Update Checker.py</onfocus>
+						<onfocus>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Update Checker.py )</onfocus>
 				</control>
 				<include>CommonBackground</include>
 				<control type="label">
@@ -103,7 +103,7 @@
 						<posx>-5000</posx>
 						<label>-</label>
 						<onclick>SetFocus(52)</onclick>
-						<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/Edit Mode.py</onclick>
+						<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Edit Mode.py )</onclick>
 						<onleft>52</onleft>
 						<onright>52</onright>
 						<onup>52</onup>

@@ -103,16 +103,16 @@
 										<aligny>center</aligny>
 								</control>
 								<control type="button" id="30">
-										<description>ThumbCleaner</description>
+										<description>ThumbCleaner - Change ,0 to a 1 to use the games default.tbn files.</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32058]</label>
-										<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py</onclick>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0 )</onclick>
 								</control>
 								<control type="button" id="31">
 										<description>Clear Cache</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32012]</label>
-										<onclick>Special://xbmc/scripts/XBMC4Kids/Utilities/Clear Cache.py</onclick>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clear Cache.py )</onclick>
 								</control>
 								<control type="radiobutton" id="39">
 										<description>Debug</description>
