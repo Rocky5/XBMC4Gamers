@@ -30,8 +30,8 @@ print "| -----------------------------------------------------------------------
 # You can also enabled the TBN option, this will use the default.tbn files, instead of the cached versions XBMC has made. 
 # Use Games + default.tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,1,1 )
 # Use Games + cached tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,1,0 )
-# Disabled					= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,0,0 )
-# Disabled					= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py )
+# Use MyPrograms6.db		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,0,0 )
+# Use MyPrograms6.db		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py )
 try:
 	Use_Game_Directory = sys.argv[1][0]
 except:
@@ -95,26 +95,27 @@ if Use_Game_Directory == "1":
 	time.sleep(2)
 	print "| Games Directory Used."
 	for Game_Directories in Game_Directories :
-		for Items in sorted( os.listdir( Game_Directories ) ):
-			if os.path.isdir(os.path.join( Game_Directories, Items)):
-				Game_Directory = os.path.join( Game_Directories, Items )
-				progress += 1
-				if progress == 1:	pDialog.update( 0,"Scanning Games","Processing." )
-				if os.path.isdir( Game_Directory ) :
-					XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
-					TBNFiles = glob.glob( os.path.join( Game_Directory, "default.tbn" ) )
-					for TBN in TBNFiles:
-						for Path in XBEFiles:
-							XBETitle = XbeInfo( Path )
-							ThumbCache = xbmc.getCacheThumbName( Path )
-							Path = Path.replace("\\","\\\\")
-							pDialog.update( int ( progress / float( len ( sorted( os.listdir( Game_Directories ) ) ) ) *100 ),"Scanning Games",Items )
-							if Use_Game_Directory_TBN == "1":
-								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + TBN + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
-								f.write(line)
-							else:
-								line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
-								f.write(line)
+		if os.path.isdir( Game_Directories ):
+			for Items in sorted( os.listdir( Game_Directories ) ):
+				if os.path.isdir(os.path.join( Game_Directories, Items)):
+					Game_Directory = os.path.join( Game_Directories, Items )
+					progress += 1
+					if progress == 1:	pDialog.update( 0,"Scanning Games","Processing." )
+					if os.path.isdir( Game_Directory ) :
+						XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
+						TBNFiles = glob.glob( os.path.join( Game_Directory, "default.tbn" ) )
+						for TBN in TBNFiles:
+							for Path in XBEFiles:
+								XBETitle = XbeInfo( Path )
+								ThumbCache = xbmc.getCacheThumbName( Path )
+								Path = Path.replace("\\","\\\\")
+								pDialog.update( int ( progress / float( len ( sorted( os.listdir( Game_Directories ) ) ) ) *100 ),"Scanning Games",Items )
+								if Use_Game_Directory_TBN == "1":
+									line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + TBN + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
+									f.write(line)
+								else:
+									line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
+									f.write(line)
 	f.write("</favourites>")
 	f.close()
 else:

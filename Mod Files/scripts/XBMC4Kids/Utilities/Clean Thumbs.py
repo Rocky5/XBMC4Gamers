@@ -72,20 +72,21 @@ if dialog.yesno( 'Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?
 	if UseGamesTBNFiles == "1":
 		progress = 0
 		for Folders in Games_Directories:
-			for Game_Folder in sorted( os.listdir( Folders ) ):
-				Game_Directory = os.path.join( Folders, Game_Folder)
-				progress += 1
-				pDialog.update( int ( progress / float( len ( sorted( os.listdir( Folders ) ) ) ) *100 ),"Generating Game Thumbnails",Game_Folder )
-				if os.path.isdir( Game_Directory ):
-					XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
-					for DefaultXBE in XBEFiles:
-						if os.path.isfile( DefaultXBE ):
-							ThumbCache = xbmc.getCacheThumbName( DefaultXBE )
-							ThumbPath = ( Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache )
-							TBNFiles = glob.glob( os.path.join( Game_Directory, "default.tbn" ) )
-					for DefaultTBN in TBNFiles:
-						if os.path.isfile( DefaultTBN ):
-								shutil.copy2( DefaultTBN,ThumbPath )
+			if os.path.isdir( Folders ):
+				for Game_Folder in sorted( os.listdir( Folders ) ):
+					Game_Directory = os.path.join( Folders, Game_Folder)
+					progress += 1
+					pDialog.update( int ( progress / float( len ( sorted( os.listdir( Folders ) ) ) ) *100 ),"Generating Game Thumbnails",Game_Folder )
+					if os.path.isdir( Game_Directory ):
+						XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
+						for DefaultXBE in XBEFiles:
+							if os.path.isfile( DefaultXBE ):
+								ThumbCache = xbmc.getCacheThumbName( DefaultXBE )
+								ThumbPath = ( Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache )
+								TBNFiles = glob.glob( os.path.join( Game_Directory, "default.tbn" ) )
+						for DefaultTBN in TBNFiles:
+							if os.path.isfile( DefaultTBN ):
+									shutil.copy2( DefaultTBN,ThumbPath )
 	else:
 		pass
 

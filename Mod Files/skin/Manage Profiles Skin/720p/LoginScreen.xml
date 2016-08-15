@@ -9,7 +9,6 @@
 		<controls>
 				<control type="button" id="51">
 						<posx>-500</posx>
-						<onfocus>SetFocus(52)</onfocus>
 						<onfocus>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Update Checker.py )</onfocus>
 				</control>
 				<include>CommonBackground</include>
