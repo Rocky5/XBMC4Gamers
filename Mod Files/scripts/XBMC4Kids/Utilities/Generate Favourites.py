@@ -2,6 +2,9 @@
 '''
 	Script by Rocky5 (original idea headphone)
 	Used to create a favourites.xml from all your games.
+	
+	Update: 21 August 2016
+	-- Updated the progress bars code & also fixed any issue of the script failing if no Games directory is found when reading the db.
 '''
 ########################################################################################################################################
 
@@ -11,7 +14,6 @@ import xbmcgui
 import time
 import os
 import sqlite3
-import re
 import glob
 import struct
 import operator
@@ -81,7 +83,7 @@ Game_Directories = [ "E:\\Games\\", "F:\\Games\\", "G:\\Games\\" ]
 Favourites_XML = xbmc.translatePath( "special://Profile/favourites.xml")
 pDialog = xbmcgui.DialogProgress()
 dialog = xbmcgui.Dialog()
-progress = 0
+CountList = 1
 pDialog.update( 0 )
 
 
@@ -99,8 +101,6 @@ if Use_Game_Directory == "1":
 			for Items in sorted( os.listdir( Game_Directories ) ):
 				if os.path.isdir(os.path.join( Game_Directories, Items)):
 					Game_Directory = os.path.join( Game_Directories, Items )
-					progress += 1
-					if progress == 1:	pDialog.update( 0,"Scanning Games","Processing." )
 					if os.path.isdir( Game_Directory ) :
 						XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
 						TBNFiles = glob.glob( os.path.join( Game_Directory, "default.tbn" ) )
@@ -109,13 +109,15 @@ if Use_Game_Directory == "1":
 								XBETitle = XbeInfo( Path )
 								ThumbCache = xbmc.getCacheThumbName( Path )
 								Path = Path.replace("\\","\\\\")
-								pDialog.update( int ( progress / float( len ( sorted( os.listdir( Game_Directories ) ) ) ) *100 ),"Scanning Games",Items )
+								pDialog.update( ( CountList * 100 ) / len( sorted( os.listdir( Game_Directories ) ) ),"Scanning Games",Items )
+								CountList = CountList + 1
 								if Use_Game_Directory_TBN == "1":
 									line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + TBN + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 									f.write(line)
 								else:
 									line='<favourite name="' + XBETitle.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + Path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
 									f.write(line)
+							time.sleep(0.05)
 	f.write("</favourites>")
 	f.close()
 else:
@@ -127,14 +129,16 @@ else:
 	cursor.execute(sql)
 	rows = cursor.fetchall()
 	for row in rows:
-		progress += 1
-		if progress == 1:	pDialog.update( 0,"Scanning Games","Processing." )
 		title = row[3]
 		xbe_path = row[1].replace('\\','\\\\')
 		ThumbCache = xbmc.getCacheThumbName( row[1] )
-		pDialog.update( int ( progress / float( len ( os.listdir( row[1][:9] ) ) ) *100 ),"Scanning Games",title )
-		line='<favourite name="' + title.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + xbe_path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
-		f.write(line)
+		if os.path.isdir( row[1][:9] ):
+			if os.path.isfile( row[1] ):
+				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Scanning Games",title )
+				line='<favourite name="' + title.encode(encoding='UTF-8') + '\" thumb=\"' + Current_Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache + '">RunXBE(&quot;' + xbe_path.encode(encoding='UTF-8') + '&quot;)</favourite>\n'
+				f.write(line)
+				CountList = CountList + 1
+				time.sleep(0.05)
 	f.write("</favourites>")
 	f.close()
 

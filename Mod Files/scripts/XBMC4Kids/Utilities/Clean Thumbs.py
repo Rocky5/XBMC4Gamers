@@ -3,9 +3,12 @@
 	Script by Rocky5
 	Removed all the .tbn/dds file inside the "thumbnail\programs\" directory for said profile.
 	
+	Update: 21 August 2016
+	-- Updated the progress bars code & .
+
 	Update: 08 August 2016
 	-- Added dynamic progress dialogues and improved the code.
-	
+
 	Update: 28 July 2016
 	-- Added a Yes No dialog and a OK dialog at the end, also cleaned it up a bit.
 '''
@@ -16,25 +19,30 @@ import sys
 import os
 import xbmc
 import xbmcgui
-import glob
 import time
 import shutil
+import sqlite3
 
 
-# Remove tbn files & cache default.tbn		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,1 )
-# Remove tbn files only						= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0 )
-# Remove tbn files only						= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py )
+# Remove unused cached thumbnails						= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py )
+# Remove all cached thumbnails							= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0,1 )
+# Remove all cached thumbnails & re-cache default.tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,1,0 )
 try:
 	UseGamesTBNFiles = sys.argv[1:][0]
+	RemoveThumbnails = sys.argv[2:][0]
 except:
 	UseGamesTBNFiles = "0"
-ThumbPath			= xbmc.translatePath( "special://profile/thumbnails/programs" )
-Sub_Directories		= [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f", "fanart" ]
-Games_Directories	= [ "E:\\Games", "F:\\Games", "G:\\Games" ]
-Profile_Directory	= xbmc.translatePath( 'special://profile/' )
-pDialog				= xbmcgui.DialogProgress()
-dialog				= xbmcgui.Dialog()
+	RemoveThumbnails = "0"
+
+
+rows					= sqlite3.connect(xbmc.translatePath( "special://Profile/Database/MyPrograms6.db" )).cursor().execute("SELECT * FROM files").fetchall()
+ThumbDirectory			= xbmc.translatePath( "special://profile/thumbnails/programs/" )
+Profile_Directory		= xbmc.translatePath( 'special://profile/' )
+Temp_Profile_Directory	= xbmc.translatePath( "special://profile/thumbnails/temp/" )
+pDialog					= xbmcgui.DialogProgress()
+dialog					= xbmcgui.Dialog()
 pDialog.update( 0 )
+pDialog.create( 'Thumbnail Cleaner' )
 
 
 ########################################################################################################################################
@@ -44,58 +52,62 @@ print "=========================================================================
 print "| Scripts\XBMC4Kids\Utilities\Clean Thumbs.py loaded."
 print "| ------------------------------------------------------------------------------"
 
-if UseGamesTBNFiles == "1":
-	Mode = "They will be rescanned using the [B]default.tbn[/B] located inside\nthe [B]games install directory[/B]."
-else:
-	Mode = "They will be reloaded when you enter the games section."
-
-if dialog.yesno( 'Thumbnail Cleaner','','Remove all the [B]Game[/B] Thumbsnails?',Mode ) == 1:
-	pDialog.create( 'Cleaning Thumbnails' )
 	
-	progress = 0
-	for TBN_Folders in Sub_Directories:
-		Thumbs_Directory = os.path.join( ThumbPath, TBN_Folders )
-		progress += 1
-		if progress == 1:	pDialog.update( 0,"Removing Game Thumbnails","Processing" )
-		if os.path.isdir( Thumbs_Directory ) :
-			TBNFiles = glob.glob( os.path.join( Thumbs_Directory, "*.tbn" ) )
-			for tbn in TBNFiles:
-				if os.path.isfile(tbn):
-					os.remove(tbn)
-					pDialog.update( int ( progress / float( len ( Sub_Directories ) ) *100 ),"Removing Game Thumbnails",tbn )
-			DDSFiles = glob.glob( os.path.join( Thumbs_Directory, "*.dds" ) )
-			for dds in DDSFiles:
-				if os.path.isfile(dds):
-					os.remove(dds)
-					pDialog.update( int ( progress / float( len ( Sub_Directories ) ) *100 ),"Removing Game Thumbnails",dds )
+if UseGamesTBNFiles == "0" and RemoveThumbnails == "0":
+	CountList = 1
+	for row in rows:
+		title = row[3]
+		ThumbCache = xbmc.getCacheThumbName( row[1] )
+		if os.path.isdir( row[1][:9] ):
+			if os.path.isfile( row[1] ):
+				if not os.path.isdir( Temp_Profile_Directory ): os.mkdir( Temp_Profile_Directory )
+				if not os.path.isdir( Temp_Profile_Directory + ThumbCache[0] ): os.mkdir( Temp_Profile_Directory + ThumbCache[0] )
+				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Cleaning Thumbnails",ThumbCache )
+				if os.path.isfile( ThumbDirectory + ThumbCache[0] + "\\" + ThumbCache ):
+					shutil.copy2( ThumbDirectory + ThumbCache[0] + "\\" + ThumbCache, Temp_Profile_Directory + ThumbCache[0] + "\\" + ThumbCache )
+				CountList = CountList + 1
+	if os.path.isdir( ThumbDirectory ): shutil.rmtree( ThumbDirectory )
+	os.rename( Temp_Profile_Directory[:-1], Temp_Profile_Directory[:-5] + "Programs" )
 
-	if UseGamesTBNFiles == "1":
-		progress = 0
-		for Folders in Games_Directories:
-			if os.path.isdir( Folders ):
-				for Game_Folder in sorted( os.listdir( Folders ) ):
-					Game_Directory = os.path.join( Folders, Game_Folder)
-					progress += 1
-					pDialog.update( int ( progress / float( len ( sorted( os.listdir( Folders ) ) ) ) *100 ),"Generating Game Thumbnails",Game_Folder )
-					if os.path.isdir( Game_Directory ):
-						XBEFiles = glob.glob( os.path.join( Game_Directory, "default.xbe" ) )
-						for DefaultXBE in XBEFiles:
-							if os.path.isfile( DefaultXBE ):
-								ThumbCache = xbmc.getCacheThumbName( DefaultXBE )
-								ThumbPath = ( Profile_Directory + "Thumbnails\\Programs\\" + ThumbCache[0] + "\\" + ThumbCache )
-								TBNFiles = glob.glob( os.path.join( Game_Directory, "default.tbn" ) )
-						for DefaultTBN in TBNFiles:
-							if os.path.isfile( DefaultTBN ):
-									shutil.copy2( DefaultTBN,ThumbPath )
-	else:
-		pass
+elif UseGamesTBNFiles == "0" and RemoveThumbnails == "1":
+	CountList = 1
+	for row in rows:
+		title = row[3]
+		ThumbCache = xbmc.getCacheThumbName( row[1] )
+		if os.path.isdir( row[1][:9] ):
+			if os.path.isfile( row[1] ):
+				if not os.path.isdir( Temp_Profile_Directory ): os.mkdir( Temp_Profile_Directory )
+				if not os.path.isdir( Temp_Profile_Directory + ThumbCache[0] ): os.mkdir( Temp_Profile_Directory + ThumbCache[0] )
+				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Removing all Thumbnails",ThumbCache )
+				if os.path.isfile( ThumbDirectory + ThumbCache[0] + "\\" + ThumbCache ):
+					shutil.copy2( ThumbDirectory + ThumbCache[0] + "\\" + ThumbCache, Temp_Profile_Directory + ThumbCache[0] + "\\" + ThumbCache )
+					os.remove( Temp_Profile_Directory + ThumbCache[0] + "\\" + ThumbCache )
+				CountList = CountList + 1
+	if os.path.isdir( ThumbDirectory ): shutil.rmtree( ThumbDirectory )
+	os.rename( Temp_Profile_Directory[:-1], Temp_Profile_Directory[:-5] + "Programs" )
 
+elif UseGamesTBNFiles == "1" and RemoveThumbnails == "0":
+	CountList = 1
+	for row in rows:
+		title = row[3]
+		DefaultTBN = row[1][:-11] + "default.tbn"
+		ThumbCache = xbmc.getCacheThumbName( row[1] )
+		if os.path.isdir( row[1][:9] ):
+			if os.path.isfile( row[1] ):
+				if not os.path.isdir( Temp_Profile_Directory ): os.mkdir( Temp_Profile_Directory )
+				if not os.path.isdir( Temp_Profile_Directory + ThumbCache[0] ): os.mkdir( Temp_Profile_Directory + ThumbCache[0] )
+				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Generating Thumbnails for",title )
+				if os.path.isfile( DefaultTBN ):
+					shutil.copy2( DefaultTBN, Temp_Profile_Directory + ThumbCache[0] + "\\" + ThumbCache )
+				CountList = CountList + 1
+	if os.path.isdir( ThumbDirectory ): shutil.rmtree( ThumbDirectory )
+	os.rename( Temp_Profile_Directory[:-1], Temp_Profile_Directory[:-5] + "Programs" )
 
-	print '| Removed all .tbn/dds files from "' + ThumbPath + '"'
-	print "================================================================================"
-
-	pDialog.close()
-	dialog.ok( "Thumbnail Cleaner","","That's it all done :)." )
 else:
-	print '| You picked no.'
-	print "================================================================================"
+	pass
+
+print '| Cleaned all thumbnails.'
+print "================================================================================"
+
+pDialog.close()
+dialog.ok( "Thumbnail Cleaner","","Process Complete" )

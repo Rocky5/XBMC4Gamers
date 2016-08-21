@@ -802,7 +802,7 @@ msgid "Error Script is missing or is taking to long to finish. Please send me a 
 msgstr ""
 
 msgctxt "#32058"
-msgid "Clean Thumbnails"
+msgid "Thumbnail Cleaner"
 msgstr ""
 
 msgctxt "#32059"
@@ -851,4 +851,28 @@ msgstr ""
 
 msgctxt "#32070"
 msgid "[B]User Mode[/B] is enabled[CR]Press (A) to logout."
+msgstr ""
+
+msgctxt "#32071"
+msgid " - [B]Clean[/B] thumbnails"
+msgstr ""
+
+msgctxt "#32072"
+msgid "[COLOR=blue]Removes unused thumbnails.[/COLOR]"
+msgstr ""
+
+msgctxt "#32073"
+msgid " - [B]Remove[/B] all thumbnails"
+msgstr ""
+
+msgctxt "#32074"
+msgid "[COLOR=blue]They will be re-cached upon re-entering the games menu.[/COLOR]"
+msgstr ""
+
+msgctxt "#32075"
+msgid " - [B]Generate[/B] new thumbnails using the [B]default.tbn[/B]"
+msgstr ""
+
+msgctxt "#32076"
+msgid "[COLOR=blue]Example: F:\\Games\\Halo\\default.tbn[/COLOR]"
 msgstr ""

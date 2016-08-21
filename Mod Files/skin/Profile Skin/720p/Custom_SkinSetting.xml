@@ -6,23 +6,24 @@
 					<include>ViewVisibleEffect</include>
 						<control type="image">
 								<posx>55</posx>
-								<posy>100</posy>
+								<posy>70</posy>
 								<width>1170</width>
-								<height>520</height>
+								<height>590</height>
 								<texture>black-back.png</texture>
 						</control>
 						<!-- Start General Skin Settings -->
 						<control type="grouplist" id="9001">
 								<posx>55</posx>
-								<posy>100</posy>
+								<posy>70</posy>
 								<width>1230</width>
-								<height>520</height>
+								<height>590</height>
 								<itemgap>-1</itemgap>
 								<pagecontrol>9061</pagecontrol>
 								<onleft>9000</onleft>
 								<onright>9061</onright>
 								<onup>9001</onup>
 								<ondown>9001</ondown>
+								<visible>!Container(9002).HasFocus()</visible>
 								<control type="label" id="1">
 										<description>Advanced Features</description>
 										<width>1170</width>
@@ -102,13 +103,40 @@
 										<align>center</align>
 										<aligny>center</aligny>
 								</control>
-								<control type="button" id="30">
+								<control type="radiobutton" id="30">
 										<description>ThumbCleaner - Change ,0 to a 1 to use the games default.tbn files.</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32058]</label>
-										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0 )</onclick>
+										<onclick>Skin.ToggleSetting(CleanThumbsToggle)</onclick>
+										<selected>Skin.HasSetting(CleanThumbsToggle)</selected>
 								</control>
-								<control type="button" id="31">
+								
+								<control type="button" id="32">
+										<description>ThumbCleaner - Clean thumbnails, removed none used thumbnails.</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32071]</label>
+										<label2>$LOCALIZE[32072]</label2>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py )</onclick>
+										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
+								</control>
+								<control type="button" id="33">
+										<description>ThumbCleaner - Remove thumbnails, removes all thumbnails.</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32073]</label>
+										<label2>$LOCALIZE[32074]</label2>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0,1 )</onclick>
+										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
+								</control>
+								<control type="button" id="34">
+										<description>ThumbCleaner - Generate new thumbnails, copies default.tbn files to the thumbs directory.</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32075]</label>
+										<label2>$LOCALIZE[32076]</label2>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,1,0 )</onclick>
+										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
+								</control>
+								
+								<control type="button" id="35">
 										<description>Clear Cache</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32012]</label>
