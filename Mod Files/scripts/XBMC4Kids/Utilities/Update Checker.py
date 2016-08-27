@@ -23,7 +23,6 @@ print "| -----------------------------------------------------------------------
 
 pDialog = xbmcgui.DialogProgress()
 dialog = xbmcgui.Dialog()
-progress = 0
 
 if os.path.isfile( xbmc.translatePath( "special://xbmc/Updater/default.xbe" ) ):
 	if os.path.isfile( xbmc.translatePath( "special://xbmc/Updater/update_complete" ) ):
@@ -32,6 +31,7 @@ if os.path.isfile( xbmc.translatePath( "special://xbmc/Updater/default.xbe" ) ):
 		pDialog.update(0,"Working","Please Wait..."," " )
 		
 		if os.path.exists(xbmc.translatePath("special://xbmc/Updater")):
+			pDialog.update(50,"Working","Please Wait..."," " )
 			shutil.rmtree( xbmc.translatePath( "special://xbmc/Updater" ) )
 			
 		pDialog.update(100," ","Done."," " )

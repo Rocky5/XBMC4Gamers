@@ -84,7 +84,7 @@
 														<posy>5</posy>
 														<width>204</width>
 														<height>204</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
 												</control>
@@ -93,7 +93,7 @@
 														<posy>5</posy>
 														<width>204</width>
 														<height>204</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 												</control>
@@ -102,7 +102,7 @@
 														<posy>5</posy>
 														<width>204</width>
 														<height>204</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 												</control>
@@ -198,7 +198,7 @@
 														<posy>5</posy>
 														<width>204</width>
 														<height>204</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
 														<animation reversible="false" effect="zoom" start="7,5,204,204" end="-3,-5,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,5,204,204" start="-3,-5,224,224" time="200">unfocus</animation>
@@ -209,7 +209,7 @@
 														<posy>5</posy>
 														<width>204</width>
 														<height>204</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
 														<animation reversible="false" effect="zoom" start="7,5,204,204" end="-3,-5,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,5,204,204" start="-3,-5,224,224" time="200">unfocus</animation>
@@ -220,7 +220,7 @@
 														<posy>5</posy>
 														<width>204</width>
 														<height>204</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
 														<animation reversible="false" effect="zoom" start="7,5,204,204" end="-3,-5,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,5,204,204" start="-3,-5,224,224" time="200">unfocus</animation>

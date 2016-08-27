@@ -1,7 +1,7 @@
 <window id="502">
 		<defaultcontrol always="true">50</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
-		<views>50,51,521,53,54,552</views>
+		<views>50</views>
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">

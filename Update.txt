@@ -1,4 +1,4 @@
-**/08/2016
+**/09/2016
 1) Updated the XBMC default.xbe, Now we have fullscreen splash! & a few other things I needed to streamline the experience.
 2) "Manage Profiles" Profile - Now load directory into the profiles window when selecting Manage Profiles
 3) "Manage Profiles" Profile - Now you use the Back button to enter settings.
@@ -12,6 +12,13 @@
 11) Added Clear Cache button to skin settings.
 12) Fixed the banner view, forgot to add the no_banner.png image.
 13) Added a new updater script/XBMC combo.
+14) Added two 3 New scripts.
+15) Rearranged the skin settings menu.
+16) Added a scripts menu to the skin settings menu.
+17) Updated some of the scripts adding a progress bar and code cleaning.
+18) New textures for the radiobutton and spincontrolex buttons.
+19) Added 3 new options to the skin settings menu, for cleaning, removing or generating thumbnails.
+20) Updated the login view.
 ***) Probably more, to many changes to keep track :/
 
 

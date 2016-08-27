@@ -42,7 +42,6 @@ Temp_Profile_Directory	= xbmc.translatePath( "special://profile/thumbnails/temp/
 pDialog					= xbmcgui.DialogProgress()
 dialog					= xbmcgui.Dialog()
 pDialog.update( 0 )
-pDialog.create( 'Thumbnail Cleaner' )
 
 
 ########################################################################################################################################
@@ -56,55 +55,56 @@ print "| -----------------------------------------------------------------------
 if UseGamesTBNFiles == "0" and RemoveThumbnails == "0":
 	CountList = 1
 	for row in rows:
-		title = row[3]
+		Game_Title = row[3]
 		ThumbCache = xbmc.getCacheThumbName( row[1] )
 		if os.path.isdir( row[1][:9] ):
 			if os.path.isfile( row[1] ):
 				if not os.path.isdir( Temp_Profile_Directory ): os.mkdir( Temp_Profile_Directory )
 				if not os.path.isdir( Temp_Profile_Directory + ThumbCache[0] ): os.mkdir( Temp_Profile_Directory + ThumbCache[0] )
-				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Cleaning Thumbnails",ThumbCache )
+				if CountList == 1: pDialog.create( "Cleaning Thumbnails" )
+				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Processing",Game_Title,ThumbCache )
 				if os.path.isfile( ThumbDirectory + ThumbCache[0] + "\\" + ThumbCache ):
 					shutil.copy2( ThumbDirectory + ThumbCache[0] + "\\" + ThumbCache, Temp_Profile_Directory + ThumbCache[0] + "\\" + ThumbCache )
 				CountList = CountList + 1
-	if os.path.isdir( ThumbDirectory ): shutil.rmtree( ThumbDirectory )
-	os.rename( Temp_Profile_Directory[:-1], Temp_Profile_Directory[:-5] + "Programs" )
 
 elif UseGamesTBNFiles == "0" and RemoveThumbnails == "1":
 	CountList = 1
 	for row in rows:
-		title = row[3]
+		Game_Title = row[3]
 		ThumbCache = xbmc.getCacheThumbName( row[1] )
 		if os.path.isdir( row[1][:9] ):
 			if os.path.isfile( row[1] ):
 				if not os.path.isdir( Temp_Profile_Directory ): os.mkdir( Temp_Profile_Directory )
 				if not os.path.isdir( Temp_Profile_Directory + ThumbCache[0] ): os.mkdir( Temp_Profile_Directory + ThumbCache[0] )
-				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Removing all Thumbnails",ThumbCache )
+				if CountList == 1: pDialog.create( "Remove Thumbnails" )
+				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Removing",ThumbCache )
 				if os.path.isfile( ThumbDirectory + ThumbCache[0] + "\\" + ThumbCache ):
 					shutil.copy2( ThumbDirectory + ThumbCache[0] + "\\" + ThumbCache, Temp_Profile_Directory + ThumbCache[0] + "\\" + ThumbCache )
 					os.remove( Temp_Profile_Directory + ThumbCache[0] + "\\" + ThumbCache )
 				CountList = CountList + 1
-	if os.path.isdir( ThumbDirectory ): shutil.rmtree( ThumbDirectory )
-	os.rename( Temp_Profile_Directory[:-1], Temp_Profile_Directory[:-5] + "Programs" )
 
 elif UseGamesTBNFiles == "1" and RemoveThumbnails == "0":
 	CountList = 1
 	for row in rows:
-		title = row[3]
+		Game_Title = row[3]
 		DefaultTBN = row[1][:-11] + "default.tbn"
 		ThumbCache = xbmc.getCacheThumbName( row[1] )
 		if os.path.isdir( row[1][:9] ):
 			if os.path.isfile( row[1] ):
 				if not os.path.isdir( Temp_Profile_Directory ): os.mkdir( Temp_Profile_Directory )
 				if not os.path.isdir( Temp_Profile_Directory + ThumbCache[0] ): os.mkdir( Temp_Profile_Directory + ThumbCache[0] )
-				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Generating Thumbnails for",title )
+				if CountList == 1: pDialog.create( "Generating Thumbnails" )
+				pDialog.update( ( CountList * 100 ) / len( os.listdir( row[1][:9] ) ),"Scanning Games",Game_Title,ThumbCache )
 				if os.path.isfile( DefaultTBN ):
 					shutil.copy2( DefaultTBN, Temp_Profile_Directory + ThumbCache[0] + "\\" + ThumbCache )
 				CountList = CountList + 1
-	if os.path.isdir( ThumbDirectory ): shutil.rmtree( ThumbDirectory )
-	os.rename( Temp_Profile_Directory[:-1], Temp_Profile_Directory[:-5] + "Programs" )
 
 else:
 	pass
+	
+
+if os.path.isdir( ThumbDirectory ): shutil.rmtree( ThumbDirectory )
+os.rename( Temp_Profile_Directory[:-1], Temp_Profile_Directory[:-5] + "Programs" )
 
 print '| Cleaned all thumbnails.'
 print "================================================================================"
