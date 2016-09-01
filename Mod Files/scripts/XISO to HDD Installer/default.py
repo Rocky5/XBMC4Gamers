@@ -11,11 +11,9 @@ import binascii, io, os, shutil, string, struct, sys, time, xbmcgui, glob
 from shutil import copyfile
 from struct import unpack
 from limpp import Get_image
+from xbe import *
 
 
-pDialog = xbmcgui.DialogProgress()
-dialog = xbmcgui.Dialog()
-pDialog.update( 0 )
 				
 ########################################################################################################################################
 # Start markings for the log file.
@@ -169,16 +167,23 @@ def prepare_attachxbe( iso_filename ):
 	attach_xbe_file.seek( loc + 8, 0 )
 	attach_xbe_file.write( xbe_certificate )
 	attach_xbe_file.close()
-	##
+	##	
 	try: # this is to move on if there is an error with extracting the image.
-		XBE( os.path.join( ISO_Directory,"default.xbe" ) ).image_png()
-		os.remove( os.path.join( ISO_Directory,"TitleImage.xbx" ) )
-		shutil.move( os.path.join( ISO_Directory,"default.png" ),os.path.join( iso_folder,"default.tbn" ) )
-		shutil.copy2( os.path.join( iso_folder,"default.tbn" ),os.path.join( iso_folder,"icon.png" ) )
+		XBE_Extract( os.path.join( ISO_Directory,"default.xbe" ) ).image_png()
 	except:
-		print "| Error: Cannot extract the Titleimage.xbx, haven't a clue why"
-	if os.path.isfile( os.path.join( ISO_Directory,"default.xbe" ) ): os.remove( os.path.join( ISO_Directory,"default.xbe" ) )
-	shutil.move( os.path.join( iso_folder,"attach.xbe" ),os.path.join( iso_folder,"default.xbe" ) )
+		print "| Error: Memory ran out when trying to extract TitleImage.xbx."
+		print "|        So using alternative way."
+		try: # if the memory runs out this one works.
+			XBE( os.path.join( ISO_Directory,"default.xbe" ) ).Get_title_image().Write_PNG( os.path.join( ISO_Directory,"default.png" ) )
+		except:
+			print "| Error: Cannot extract the default.png, haven't a clue why maybe its in DDS format?"
+	if os.path.isfile( os.path.join( ISO_Directory,"TitleImage.xbx" ) ): os.remove( os.path.join( ISO_Directory,"TitleImage.xbx" ) )
+	if os.path.isfile( os.path.join( ISO_Directory,"default.png" ) ): shutil.move( os.path.join( ISO_Directory,"default.png" ),os.path.join( iso_folder,"default.tbn" ) )
+	if os.path.isfile( os.path.join( iso_folder,"default.tbn" ) ): shutil.copy2( os.path.join( iso_folder,"default.tbn" ),os.path.join( iso_folder,"icon.png" ) )
+	os.remove( os.path.join( ISO_Directory,"default.xbe" ) )
+	os.rename( os.path.join( iso_folder,"attach.xbe" ),os.path.join( iso_folder,"default.xbe" ) )
+	
+	
 
 def search_tree():
 	CountList = 1
@@ -223,7 +228,7 @@ def search_tree():
 	Inspiration/code from:	https://github.com/LoveMHz/XBEpy
 	-----------------------------------------------------------------------------------
 '''			
-class XBE:
+class XBE_Extract:
 	m_file = None
 
 	def __init__(self, file):
@@ -401,24 +406,30 @@ class XBE_TLS(XBE):
 		
 intial_dir	= os.getcwd()
 ISO_Found = "False"
+pDialog = xbmcgui.DialogProgress()
+dialog = xbmcgui.Dialog()
+pDialog.update( 0 )
 Root_Directory = dialog.browse( 0,"Select a folder","files" )
 
-for Items in sorted( glob.glob( Root_Directory + "*.iso" ) ):
-	if os.path.isfile( Items ):
-		ISO_Directory = Root_Directory		
-		ISO_Found = "True"
-	
-try:
-	if ISO_Found == "True":
-		try:		
-			search_tree()
-			pDialog.close()
-			dialog.ok( "XISO to HDD Installer","","Everything is setup, just launch the game like any other game." )
-		except:
-			pDialog.close()
-			print "ERROR: Some shit went wrong!"
-			dialog.ok( "ERROR:","",'Some shit went wrong!\nlast entry = ' + Items )
-except:
-	pass
+if Root_Directory !="":
+	for Items in sorted( glob.glob( Root_Directory + "*.iso" ) ):
+		if os.path.isfile( Items ):
+			ISO_Directory = Root_Directory		
+			ISO_Found = "True"
+			try:
+				if ISO_Found == "True":
+					try:		
+						search_tree()
+						pDialog.close()
+						dialog.ok( "XISO to HDD Installer","","Everything is setup.","You just launch the game, or games like normal." )
+					except:
+						pDialog.close()
+						print "ERROR: Some shit went wrong!"
+						dialog.ok( "ERROR:","",'Some shit went wrong!\nlast entry = ' + Items )
+			except:
+				pass
 
-print "================================================================================"
+	if not ISO_Found == "True":
+		dialog.ok( "ERROR:","","No XISO files found" )
+
+	print "================================================================================"

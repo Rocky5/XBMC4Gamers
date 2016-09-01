@@ -234,7 +234,8 @@ class XBE:
             return 'Unknown'
 
     def Get_title_id(self):
-        hexst = str(hex(self.certificate['titleid'])).split('x')[1][:-1]
+        #hexst = str(hex(self.certificate['titleid'])).split('x')[1][:-1]
+        hexst = str(hex(self.certificate['titleid'])).split('x')[1]
         return '00000000'[0:8-len(hexst)] + hexst
     
     def Get_allowed_media_string(self):
