@@ -231,7 +231,7 @@ if Game_Path != "":
 			pass
 		try:
 			shutil.copy2( intial_dir + Loader, Game_Path + "loader_default.xbe" )
-			pDialog.create( "480p Game Loader","","Please wait..." )
+			pDialog.create( "Manual Installer","","Please wait..." )
 			time.sleep( 0.5 )
 			if Loader == Loader1: pDialog.update( 100,"Processing Game",Game_Title,"Loader Type = CDX" )
 			if Loader == Loader2: pDialog.update( 100,"Processing Game",Game_Title,"Loader Type = Evox" )
@@ -246,7 +246,7 @@ if Game_Path != "":
 			if Alt_Game:
 				Loader = Loader1
 				shutil.copy2( intial_dir + Loader, Game_Path + "loader_default.xbe" )
-				pDialog.create( "480p Game Loader","","Please wait..." )
+				pDialog.create( "Manual Installer","","Please wait..." )
 				time.sleep( 0.5 )
 				pDialog.update( 100,"Processing Game",Game_Title,"Loader Type = CDX" )
 				prepare_loaderxbe( os.path.join( Game_Path,"loader_default.xbe") )

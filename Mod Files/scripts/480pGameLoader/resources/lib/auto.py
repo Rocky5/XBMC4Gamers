@@ -176,7 +176,6 @@ if os.path.isfile( intial_dir + "loaders.zip" ):
 		zf.extractall( intial_dir )
 	os.remove( intial_dir + "loaders.zip" )
 
-pDialog.create( "480p Game Loader","","Please wait..." )
 Game_Directories 	= [ "E:\\Games\\", "F:\\Games\\", "G:\\Games\\" ]
 Loader1				= "loaders\cdx.xbe"
 Loader2				= "loaders\evo.xbe"
@@ -227,7 +226,7 @@ for Game_Directories in Game_Directories:
 							if TitleID == "4156000a": Loader = Loader3 # Wreckless - The Yakuza Missions
 							if TitleID == "4156000c": Loader = Loader3 # Wreckless - The Yakuza Missions alt
 							# Homebrew
-							#if TitleID == "00000000": Loader = Loader1 # Retroarch - though other homebrew will probably use 00000000
+							if TitleID == "00000000": Loader = Loader1 # Retroarch - though other homebrew will probably use 00000000
 							
 							# Cleanup
 							if os.path.isfile( Game_Path + "game_default.xbe" ):
@@ -249,6 +248,7 @@ for Game_Directories in Game_Directories:
 								pass
 								
 							if not ( pDialog.iscanceled() ):
+								if CountList == 1: pDialog.create( "Auto Installer","","Please wait..." )
 								if Loader == Loader1: pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Directories ) ),"Processing Game",Items,"Loader Type = CDX" )
 								if Loader == Loader2: pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Directories ) ),"Processing Game",Items,"Loader Type = Evox" )
 								if Loader == Loader3: pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Directories ) ),"Processing Game",Items,"Loader Type = PD1" )
