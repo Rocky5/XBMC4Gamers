@@ -5,6 +5,7 @@
 '''	
 import struct
 import string
+from limpp import *
 
 		
 class xbeinfo:
@@ -37,14 +38,14 @@ class xbeinfo:
 				data = section.data
 				type = struct.unpack('4s', data[0:4])[0]
 
-				newFile = open( Game_Path + 'TitleImage.xbx', "wb")
+				newFile = open( 'Z:\\TitleImage.xbx', "wb")
 				# write to file
 				newFile.write(data)
 				newFile.close()
 
 				if type == 'XPR0':
-					image = Get_image( file=Game_Path + 'TitleImage.xbx' )
-					image.Write_PNG( Game_Path + 'default.png' )
+					image = Get_image( file='Z:\\TitleImage.xbx' )
+					image.Write_PNG( 'Z:\\default.png' )
 		print 'done';
 
 class XBE_HEADER():
