@@ -2,8 +2,8 @@
 		<loglevel hide="false">-1</loglevel>
 		<powersave>false</powersave>
 		<nodvdrom>false</nodvdrom>
-		<thumbsize>256x364</thumbsize>
-		<fanartsize>853x480</fanartsize>
+		<thumbsize>404</thumbsize>
+		<fanartsize>540</fanartsize>
 		<!-- <bginfoloadermaxthreads>5</bginfoloadermaxthreads> -->
 		<video>
 				<ignoreatstart>14400</ignoreatstart>

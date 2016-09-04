@@ -1,23 +1,19 @@
-########################################################################################################################################
 '''
 	Script by Rocky5 (original idea DivideByZer0)
 	Used to select a random directory from a folder of directories, to use as the screenshot screensaver.
 
+	Usage:
+		This script uses arguments, so to use it you add characters/paths to the end of the RunScript command.
+		
+		Random Image Directory for the screensaver.
+			<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Random Screensaver Images.py,C:\Images\Backgrounds\)</onclick>
+		
+		Below will select a random directory for the screensaver and then build a playlist using the path and extension, in this case mp3.
+			<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Random Screensaver Images.py,C:\Images\Backgrounds\,1,G:\Music\My Music\,mp3)</onclick>
+		
+		Same as above but music playback is disabled.
+			<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Random Screensaver Images.py,C:\Images\Backgrounds\,0,G:\Music\My Music\,mp3)</onclick>
 '''
-# Usage
-'''
-	This script uses arguments, so to use it you add characters/paths to the end of the RunScript command.
-	
-	Random Image Directory for the screensaver.
-	<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Random Screensaver Images.py,C:\Images\Backgrounds\)</onclick>
-	
-	Below will select a random directory for the screensaver and then build a playlist using the path and extension, in this case mp3.
-	<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Random Screensaver Images.py,C:\Images\Backgrounds\,1,G:\Music\My Music\,mp3)</onclick>
-	
-	Same as above but music playback is disabled.
-	<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Random Screensaver Images.py,C:\Images\Backgrounds\,0,G:\Music\My Music\,mp3)</onclick>
-'''
-########################################################################################################################################
 
 
 import os
@@ -47,17 +43,14 @@ except:
 
 Playlist = xbmc.translatePath( "special://Profile/playlists/music/random.m3u")
 
-########################################################################################################################################
-# Start markings for the log file.
-########################################################################################################################################
+
+#####	Start markings for the log file.
 print "================================================================================"
 print "| Scripts\XBMC4Kids\Utilities\Random Screensaver Images.py loaded."
 print "| ------------------------------------------------------------------------------"
 
 
-#########################################################################################################
-# Play random music file
-#########################################################################################################
+#####	Play random music file
 if Music_Playback == "1":
 	if os.path.isdir( Music_Path ):
 		f=open(Playlist,"w")
@@ -75,9 +68,7 @@ else:
 	pass
 
 
-#########################################################################################################
-# Get a random subdirectory of Pictures_Path.
-#########################################################################################################
+#####	Get a random subdirectory of Pictures_Path.
 List_Root_Directory = sorted(os.listdir(Pictures_Path))
 Directory_Name = random.choice(List_Root_Directory)
 New_Path = '<slideshowpath pathversion="1">' + Pictures_Path + Directory_Name + '/</slideshowpath>\n'

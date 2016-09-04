@@ -1,0 +1,73 @@
+<window id="129">
+		<defaultcontrol always="false">3000</defaultcontrol>
+		<coordinates>
+				<system>1</system>
+				<posx>440</posx>
+				<posy>245</posy>
+		</coordinates>
+		<controls>
+				<control type="image">
+						<description>background image</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>400</width>
+						<height>220</height>
+						<texture>ContextMenu_Middle.png</texture>
+				</control>
+				<control type="image">
+						<description>Heading Background</description>
+						<posx>24</posx>
+						<posy>0</posy>
+						<width>350</width>
+						<height>40</height>
+						<texture border="5">ThumbFO.png</texture>
+				</control>
+				<control type="label">
+						<description>heading label</description>
+						<posx>24</posx>
+						<posy>0</posy>
+						<width>350</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>font18</font>
+						<label>480p Game loader</label>
+						<textcolor>black</textcolor>
+				</control>
+				<control type="grouplist">
+						<description>custom grouplist for context buttons</description>
+						<posx>48</posx>
+						<posy>65</posy>
+						<width>310</width>
+						<height>300</height>
+						<itemgap>0</itemgap>
+						<control type="button" id="3000">
+								<description>Action Button</description>
+								<font>font12</font>
+								<align>center</align>
+								<textcolor>white</textcolor>
+								<label>Auto Install</label>
+								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">button-nofocus.png</texturenofocus>
+						</control>
+						<control type="button" id="3001">
+								<description>Action Button</description>
+								<font>font12</font>
+								<align>center</align>
+								<textcolor>white</textcolor>
+								<label>Manual Install</label>
+								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">button-nofocus.png</texturenofocus>
+						</control>
+						<control type="button" id="3002">
+								<description>Action Button</description>
+								<font>font12</font>
+								<align>center</align>
+								<textcolor>white</textcolor>
+								<label>Uninstall</label>
+								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">button-nofocus.png</texturenofocus>
+						</control>
+				</control>
+		</controls>
+</window>

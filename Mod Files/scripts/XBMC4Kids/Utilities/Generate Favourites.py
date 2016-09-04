@@ -1,12 +1,17 @@
-########################################################################################################################################
 '''
 	Script by Rocky5 (original idea headphone)
 	Used to create a favourites.xml from all your games.
 	
 	Update: 21 August 2016
 	-- Updated the progress bars code & also fixed any issue of the script failing if no Games directory is found when reading the db.
+
+	Enabled if you want the games directory (ie, E:\Games\, F:\Games\, or G:\Games\) to be used to build the xml.
+ 		You can also enabled the TBN option, this will use the default.tbn files, instead of the cached versions XBMC has made. 
+			Use Games + default.tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,1,1 )
+			Use Games + cached tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,1,0 )
+ 			Use MyPrograms6.db		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,0,0 )
+			Use MyPrograms6.db		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py )
 '''
-########################################################################################################################################
 
 
 import xbmc
@@ -20,20 +25,12 @@ import operator
 import string
 
 
-########################################################################################################################################
-# Start markings for the log file.
-########################################################################################################################################
+#####	Start markings for the log file.
 print "================================================================================"
 print "| Scripts\XBMC4Kids\Utilities\Generate Favourites.py loaded."
 print "| ------------------------------------------------------------------------------"
 
 
-# Enabled if you want the games directory (ie, E:\Games\, F:\Games\, or G:\Games\) to be used to build the xml.
-# You can also enabled the TBN option, this will use the default.tbn files, instead of the cached versions XBMC has made. 
-# Use Games + default.tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,1,1 )
-# Use Games + cached tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,1,0 )
-# Use MyPrograms6.db		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py,0,0 )
-# Use MyPrograms6.db		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Favourites.py )
 try:
 	Use_Game_Directory = sys.argv[1][0]
 except:

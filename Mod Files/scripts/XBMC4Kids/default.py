@@ -1,4 +1,3 @@
-########################################################################################################################################
 '''
 	Script by Rocky5
 	Used to switch between save directories.
@@ -30,7 +29,6 @@
 	Now has a nice progress bar.
 	Refined the script
 '''
-########################################################################################################################################
 
 
 import os
@@ -42,17 +40,13 @@ import fileinput
 import time
 
 
-########################################################################################################################################
-# Start markings for the log file.
-########################################################################################################################################
+#####	Start markings for the log file.
 print "================================================================================"
 print "| Scripts\XBMC4Kids\default.py loaded."
 print "| ------------------------------------------------------------------------------"
 	
 
-########################################################################################################################################
-# Sets paths, for profiles names & locations.
-########################################################################################################################################
+#####	Sets paths, for profiles names & locations.
 Working_Directory = os.getcwd() + "\\"
 Dashboard_Path = xbmc.translatePath( 'special://xbmc/' )
 EditMode_Enabler = xbmc.translatePath( "special://xbmc/system/keymaps/Enabled" )
@@ -79,16 +73,12 @@ dialog = xbmcgui.Dialog()
 ##
 
 
-########################################################################################################################################
-# Check if editmode is enabled
-########################################################################################################################################
+#####	Check if editmode is enabled
 if os.path.isfile(EditMode_Enabler) == True: xbmc.executebuiltin('Skin.SetBool(editmode)')
 if os.path.isfile(EditMode_Enabler) == False: xbmc.executebuiltin('Skin.reset(editmode)')
 
 
-########################################################################################################################################
-# Check to see if the current profile loaded is the Manage Profiles or DVD2Xbox profile & do nothing.
-########################################################################################################################################
+#####	Check to see if the current profile loaded is the Manage Profiles or DVD2Xbox profile & do nothing.
 SkipScript = "false"
 if Username == "Manage Profiles":
 	SkipScript = "true"
@@ -97,17 +87,13 @@ if Username == "DVD2Xbox":
 	SkipScript = "true"
 	
 
-########################################################################################################################################
-# Check to see if script is enabled or disabled.
-########################################################################################################################################
+#####	Check to see if script is enabled or disabled.
 if SkipScript == "false":
 	if 'Manage Profiles Skin.useprofiles">true<' in open(Master_Profile_GUISettings).read():
 
 
 			
-########################################################################################################################################
-# Check if UDATA exist if not make one.
-########################################################################################################################################
+#####	Check if UDATA exist if not make one.
 		if not os.path.exists("E:/UDATA"):
 			os.mkdir("E:/UDATA")
 			print "| UDATA created"
@@ -115,9 +101,7 @@ if SkipScript == "false":
 			print "| UDATA folder present"
 
 
-########################################################################################################################################
-# Removes XBMC save folder, so I can rename UDATA.
-########################################################################################################################################
+#####	Removes XBMC save folder, so I can rename UDATA.
 		if os.path.isdir('E:/UDATA/0face008/'):
 			shutil.rmtree('E:/UDATA/0face008/')
 			print "| Removed XBMC save directory"
@@ -125,9 +109,7 @@ if SkipScript == "false":
 			print "| Already removed XBMC save directory"
 
 			
-########################################################################################################################################
-# Check if Backup.profile exist if not make one.
-########################################################################################################################################
+#####	Check if Backup.profile exist if not make one.
 		if not os.path.exists("E:/UDATA Backup"):
 			profile = open("E:\UDATA\Backup.profile","w")
 			profile.write(" ")
@@ -137,9 +119,7 @@ if SkipScript == "false":
 			print "| UDATA backup present"
 			
 
-########################################################################################################################################
-# Get current profile from UDATA folder.
-########################################################################################################################################
+#####	Get current profile from UDATA folder.
 		for TMPProfile in glob.glob(r'E:\UDATA\*.profile'):
 			dirname, TMPProfile = os.path.split(TMPProfile)
 			Previous_Profile_Save_Name, fileExtension = os.path.splitext(TMPProfile)
@@ -147,18 +127,14 @@ if SkipScript == "false":
 			Previous_Profile_Save_Profile = ('E:/UDATA/'  +  Previous_Profile_Save_Name  +  '.profile')
 
 
-########################################################################################################################################
-# Check to see if the current user is the current save folder.
-########################################################################################################################################
+#####	Check to see if the current user is the current save folder.
 		if os.path.isfile(Previous_Profile_Save_Profile) and os.path.isfile(Current_Profile_Save_Profile):
 			xbmc.executebuiltin(LaunchMenuLoader)
 			print "| " + Username + "'s save directory already loaded"
 			print "================================================================================"
 			
 
-########################################################################################################################################
-# If user created folder rename to UDATA, if not then create folder.
-########################################################################################################################################
+#####	If user created folder rename to UDATA, if not then create folder.
 		elif os.path.isfile(Current_Profile_Save_Profile_Alt) and os.path.isfile(Previous_Profile_Save_Profile):
 			os.rename('E:/UDATA' , Previous_Profile_Save_Directory)
 			os.rename(Current_Profile_Save_Directory , 'E:/UDATA')
@@ -167,12 +143,10 @@ if SkipScript == "false":
 			print "================================================================================"
 
 
-########################################################################################################################################
-# Checks for the presence of the user UDATA folder & if not present creates it.
-########################################################################################################################################
+#####	Checks for the presence of the user UDATA folder & if not present creates it.
 		elif not os.path.isfile(Current_Profile_Save_Profile_Alt):
 			pDialog.create('Preping save directory for ' + Username)
-			pDialog.update(0, 'Please wait')
+			pDialog.update(0, '', 'Please wait')
 			time.sleep(1.0)
 			os.mkdir("E:/UDATA "  +  Username)
 			print "| " + Username + "'s"" UDATA created"
@@ -183,11 +157,9 @@ if SkipScript == "false":
 			os.rename(Current_Profile_Save_Directory , 'E:/UDATA')
 			
 
-########################################################################################################################################
-# Prepare the new users save directory & copy a few saves/tools if they exist.
-########################################################################################################################################
+#####	Prepare the new users save directory & copy a few saves/tools if they exist.
 			if os.path.exists("E:/UDATA Backup/4541000d"):
-				pDialog.update(5, 'Copying 007 Save')
+				pDialog.update(5, '', 'Copying 007 Save')
 				shutil.copytree("E:/UDATA Backup/4541000d", "E:/UDATA/4541000d")
 				print "| Copied 007 save folder"
 				time.sleep(0.1)
@@ -195,7 +167,7 @@ if SkipScript == "false":
 				print "| No 007 save folder found"
 				
 			if os.path.exists("E:/UDATA Backup/4d530017"):
-				pDialog.update(15, 'Copying Mechassault Save.')
+				pDialog.update(15, '', 'Copying Mechassault Save.')
 				shutil.copytree("E:/UDATA Backup/4d530017", "E:/UDATA/4d530017")
 				print "| Copied Mechassault save folder"
 				time.sleep(0.1)
@@ -203,7 +175,7 @@ if SkipScript == "false":
 				print "| No Mechassault save folder found"
 				
 			if os.path.exists("E:/UDATA Backup/5553000c"):
-				pDialog.update(30, 'Copying Splinter cell Save')
+				pDialog.update(30, '', 'Copying Splinter cell Save')
 				shutil.copytree("E:/UDATA Backup/5553000c", "E:/UDATA/5553000c")
 				print "| Copied Splinter cell save folder"
 				time.sleep(0.1)
@@ -211,7 +183,7 @@ if SkipScript == "false":
 				print "| No Splinter cell save folder found"
 				
 			if os.path.exists("E:/UDATA Backup/21585554"):
-				pDialog.update(45, 'Copying Softmod files Save')
+				pDialog.update(45, '', 'Copying Softmod files Save')
 				shutil.copytree("E:/UDATA Backup/21585554", "E:/UDATA/21585554")
 				print "| Copied Softmod save folder"
 				time.sleep(0.1)
@@ -219,7 +191,7 @@ if SkipScript == "false":
 				print "| No Softmod save folder found"
 				
 			if os.path.exists("E:/UDATA Backup/rescuedash"):
-				pDialog.update(75, 'Copying Rescue Dashboard folder')
+				pDialog.update(75, '', 'Copying Rescue Dashboard folder')
 				shutil.copytree("E:/UDATA Backup/rescuedash", "E:/UDATA/rescuedash")
 				print "| Copied Rescue Dashboard folder"
 				time.sleep(0.1)
@@ -227,11 +199,11 @@ if SkipScript == "false":
 				print "| No Rescue Dashboard folder found"
 				
 			if os.path.exists(Master_Profile):
-				pDialog.update(95, 'Copying Sources.xml')
+				pDialog.update(95, '', 'Copying Sources.xml')
 				shutil.copy(Master_Profile_Sources, Current_Profile_Directory)
 				print "| Copied Sources.xml"
 				time.sleep(0.1)
-				pDialog.update(97, 'Copying Guisettings.xml')
+				pDialog.update(97, '', 'Copying Guisettings.xml')
 				shutil.copy(Master_Profile_GUISettings, Current_Profile_Directory)
 				print "| Copied Guisettings.xml"
 				time.sleep(0.1)
@@ -245,16 +217,14 @@ if SkipScript == "false":
 				print "| No Guisettings.xml file found"
 
 
-########################################################################################################################################
-# Change user skin & skin settings names.
-########################################################################################################################################
+#####	Change user skin & skin settings names.
 			for line in fileinput.input(Current_Profile_GUISettings, inplace=True):
 				print(line.replace('Manage Profiles Skin', 'Profile skin'))
 				
 			print "================================================================================"
 
-			pDialog.update(100, 'Compleate' )
-			pDialog.update(100, 'Done')
+			pDialog.update(100, '', 'Compleate' )
+			pDialog.update(100, '', 'Done')
 			time.sleep(1.0)
 			pDialog.close()
 			dialog.ok("That's everything setup","","I need to restart XBMC","so that the changes take affect.")
@@ -262,9 +232,7 @@ if SkipScript == "false":
 			xbmc.executebuiltin("RestartApp")
 
 
-########################################################################################################################################
-# If the script is disabled in the Manage Profiles profile settings, edit current skin & log out.
-########################################################################################################################################
+#####	If the script is disabled in the Manage Profiles profile settings, edit current skin & log out.
 	else:
 		if "Manage Profiles Skin" in open(Current_Profile_GUISettings).read():
 			time.sleep(2.0)

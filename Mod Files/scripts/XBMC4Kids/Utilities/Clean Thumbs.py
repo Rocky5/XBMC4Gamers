@@ -1,4 +1,3 @@
-########################################################################################################################################
 '''
 	Script by Rocky5
 	Removes all the .tbn/dds file inside the "thumbnail\programs\" directory that no longer in use.
@@ -14,8 +13,12 @@
 
 	Update: 28 July 2016
 	-- Added a Yes No dialog and a OK dialog at the end, also cleaned it up a bit.
+	
+	Useage:
+		Remove unused cached thumbnails							= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py )
+		Remove all cached thumbnails							= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0,1 )
+		Remove all cached thumbnails & re-cache default.tbn		= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,1,0 )
 '''
-########################################################################################################################################
 
 
 import sys
@@ -27,9 +30,6 @@ import shutil
 import sqlite3
 
 
-# Remove unused cached thumbnails						= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py )
-# Remove all cached thumbnails							= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0,1 )
-# Remove all cached thumbnails & re-cache default.tbn	= RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,1,0 )
 try:
 	UseGamesTBNFiles = sys.argv[1:][0]
 	RemoveThumbnails = sys.argv[2:][0]
@@ -47,9 +47,7 @@ dialog					= xbmcgui.Dialog()
 pDialog.update( 0 )
 
 
-########################################################################################################################################
-# Start markings for the log file.
-########################################################################################################################################
+#####	Start markings for the log file.
 print "================================================================================"
 print "| Scripts\XBMC4Kids\Utilities\Clean Thumbs.py loaded."
 print "| ------------------------------------------------------------------------------"

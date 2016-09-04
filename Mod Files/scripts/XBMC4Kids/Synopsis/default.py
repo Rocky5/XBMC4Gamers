@@ -1,4 +1,3 @@
-########################################################################################################################################
 '''
 	Script by Rocky5
 	Extracts information from a file named default.xml located in the "_resources" folder.
@@ -12,7 +11,6 @@
 	   Disabled the video playback code, no done by press (A) when in the synopsis screen.
 	
 '''
-########################################################################################################################################
 
 
 import os
@@ -25,31 +23,23 @@ import time
 from BeautifulSoup import *
 
 
-########################################################################################################################################
-# Start markings for the log file.
-########################################################################################################################################
+#####	Start markings for the log file.
 print "================================================================================"
 print "| Scripts\XBMC4Kids\Synopsis\default.py loaded."
 print "| ------------------------------------------------------------------------------"
 	
 
-########################################################################################################################################
-# Sets paths & other crap.
-########################################################################################################################################
-Current_Window = xbmcgui.Window(xbmcgui.getCurrentWindowId())
-HasSetting_PreviewExtension = xbmc.getCondVisibility( 'Skin.HasSetting(PreviewExtension)' )
-##
-ThumbCache = xbmc.getCacheThumbName( xbmc.getInfoLabel('ListItem.FolderPath') )
-CurProfileGuiSettings = xbmc.translatePath( 'special://profile/guisettings.xml' )
-##
-GameFolder = xbmc.getInfoLabel('ListItem.FolderName')
-_Resources_Path = os.path.join( xbmc.getInfoLabel('ListItem.Path'), "_resources/default.xml" )
-Preview_Video_Name = "Preview"
+#####	Sets paths & other crap.
+Current_Window					= xbmcgui.Window(xbmcgui.getCurrentWindowId())
+HasSetting_PreviewExtension		= xbmc.getCondVisibility( 'Skin.HasSetting(PreviewExtension)' )
+ThumbCache						= xbmc.getCacheThumbName( xbmc.getInfoLabel('ListItem.FolderPath') )
+CurProfileGuiSettings			= xbmc.translatePath( 'special://profile/guisettings.xml' )
+GameFolder						= xbmc.getInfoLabel('ListItem.FolderName')
+_Resources_Path					= os.path.join( xbmc.getInfoLabel('ListItem.Path'), "_resources/default.xml" )
+Preview_Video_Name				= "Preview"
 
 
-########################################################################################################################################
-# Read XML & set
-########################################################################################################################################
+#####	Read XML & set
 if xbmc.getCondVisibility( 'Skin.HasSetting(PreviewWindow)' ):
 	if os.path.isfile ( _Resources_Path ):
 		print "| Found default.xml"
@@ -150,9 +140,7 @@ if xbmc.getCondVisibility( 'Skin.HasSetting(PreviewWindow)' ):
 		print "================================================================================"
 	
 
-########################################################################################################################################
-# Check for Preview file & set skin settings so they can be played.
-########################################################################################################################################
+#####	Check for Preview file & set skin settings so they can be played.
 _Resources_Preview_Ext1 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources/media/" + Preview_Video_Name + ".xmv" )
 _Resources_Preview_Ext2 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources/media/" + Preview_Video_Name + ".mp4" )
 _Resources_Preview_Ext3 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources/media/" + Preview_Video_Name + ".wmv" )
@@ -179,9 +167,7 @@ else:
 	print "| Found nothing"
 
 	
-########################################################################################################################################
-# Play Preview video (not used anymore)
-########################################################################################################################################
+#####	Play Preview video (not used anymore)
 '''if xbmc.getCondVisibility( 'Skin.HasSetting(PreviewWindow)' ):
 	time.sleep(0.5)
 	if HasSetting_PreviewExtension:
