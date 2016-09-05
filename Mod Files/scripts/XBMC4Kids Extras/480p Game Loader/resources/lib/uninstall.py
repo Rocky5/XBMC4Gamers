@@ -30,7 +30,7 @@ except:
 	RollBack	= 0
 
 if Select == 0:
-	Select = dialog.yesno( "Unisntaller","","Would you like to use the Auto Uninstall?","Note: Auto mode uninstalls loaders from E,F & G:\Games" )
+	Select = dialog.yesno( "Uninstaller","","Would you like to use the Auto Uninstall?","Note: Auto mode uninstalls loaders from E,F & G:\Games" )
 Cleaned	= ""
 Install	= ""
 
@@ -48,7 +48,7 @@ if Select:
 							if os.path.isfile( Default ):
 								try:
 									if os.path.isfile( Game_Path + "game_default.xbe" ):
-										if CountList == 1: pDialog.create( "Unisntaller","","Please wait..." )
+										if CountList == 1: pDialog.create( "Uninstaller","","Please wait..." )
 										if RollBack == 1:
 											pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Directories ) ),"","Rolling back changes." )
 										else:
@@ -79,7 +79,7 @@ else:
 			try:
 				if os.path.isfile( Game_Path + "game_default.xbe" ):
 					Game_Title	= XBE( Game_Path + "game_default.xbe" ).Get_title()
-					if CountList == 1: pDialog.create( "Unisntaller","","Please wait..." )
+					if CountList == 1: pDialog.create( "Uninstaller","","Please wait..." )
 					pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Path ) ),"Uninstalling Game loaders",Items )
 					CountList = CountList + 1
 					Cleaned = "True"
@@ -101,8 +101,9 @@ else:
 				pass
 
 pDialog.close()										
-if Cleaned == "True" and Select == 1: dialog.ok( "Unisntaller","","All loaders have been uninstalled." )
-if Cleaned == "True" and Select == 0: dialog.ok( "Unisntaller","","Loader for [B]" + Game_Title + "[/B] uninstalled." )
+if Cleaned == "True" and Select == 1: dialog.ok( "Uninstaller","","All loaders have been uninstalled." )
+if Cleaned == "True" and Select == 0: dialog.ok( "Uninstaller","","Loader for [B]" + Game_Title + "[/B] uninstalled." )
+if RollBack == 1: dialog.ok( "Uninstaller","","Roll back complete." )
 if Install == "" and Cleaned == "" and not Game_Path == "": dialog.ok( "Error","","No games needing cleaned." )
 
 print "================================================================================"

@@ -255,9 +255,6 @@ for Game_Directories in Game_Directories:
 pDialog.close()										
 if Install == "True" and Cancelled == "": dialog.ok( "480p Game Loader","","Everything is setup.","You just launch the game, or games like normal." )
 if Install == "": dialog.ok( "Error","","No games found." )
-if Cancelled == "True":
-	dialog.ok( "480p Game Loader","","Installation cancelled." )
-	xbmc.executebuiltin( "RunScript(" + Working_Directory + "uninstall.py,1)" )
-	
+if Cancelled == "True":	xbmc.executebuiltin( "RunScript(" + Working_Directory + "uninstall.py,1)" )
 
 print "================================================================================"
