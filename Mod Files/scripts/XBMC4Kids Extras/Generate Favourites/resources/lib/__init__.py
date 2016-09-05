@@ -1,7 +1,7 @@
 import os, sys
 import xbmc, xbmcgui
 
-intial_dir	= os.getcwd() + "\\"
+Working_Directory	= os.getcwd() + "\\"
 
 getLocalizedString = sys.modules['__main__'].getLocalizedString
 
@@ -51,7 +51,7 @@ class GUI(xbmcgui.WindowXMLDialog):
 #			three()
 		
 def one():
-	xbmc.executebuiltin( "RunScript(" + intial_dir + "\\resources\\lib\\default.py)" )
+	xbmc.executebuiltin( "RunScript(" + Working_Directory + "\\resources\\lib\\default.py)" )
 	
 def two():
 	os.remove( xbmc.translatePath( "special://profile/favourites.xml" ) )

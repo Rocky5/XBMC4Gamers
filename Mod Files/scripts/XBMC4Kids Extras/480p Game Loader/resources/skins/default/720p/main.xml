@@ -3,7 +3,7 @@
 		<coordinates>
 				<system>1</system>
 				<posx>440</posx>
-				<posy>245</posy>
+				<posy>230</posy>
 		</coordinates>
 		<controls>
 				<control type="image">
@@ -11,7 +11,7 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>400</width>
-						<height>220</height>
+						<height>260</height>
 						<texture>ContextMenu_Middle.png</texture>
 				</control>
 				<control type="image">
@@ -46,7 +46,7 @@
 								<font>font12</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
-								<label>Auto Install</label>
+								<label>Info</label>
 								<texturefocus border="3">button-focus2.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
@@ -55,11 +55,20 @@
 								<font>font12</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
-								<label>Manual Install</label>
+								<label>Auto Install</label>
 								<texturefocus border="3">button-focus2.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
 						<control type="button" id="3002">
+								<description>Action Button</description>
+								<font>font12</font>
+								<align>center</align>
+								<textcolor>white</textcolor>
+								<label>Manual Install</label>
+								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">button-nofocus.png</texturenofocus>
+						</control>
+						<control type="button" id="3003">
 								<description>Action Button</description>
 								<font>font12</font>
 								<align>center</align>

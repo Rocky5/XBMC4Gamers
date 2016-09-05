@@ -160,7 +160,7 @@ MenuColor2		= 0x4a4a56'
 ################################################################################################################################
 
 
-intial_dir	= os.getcwd() + "\\"
+Working_Directory	= os.getcwd() + "\\"
 pDialog = xbmcgui.DialogProgress()
 dialog = xbmcgui.Dialog()
 pDialog.update( 0 )
@@ -225,7 +225,7 @@ if Game_Path != "":
 		else:
 			pass		
 		try:
-			shutil.copy2( intial_dir + Loader, Game_Path + "loader_default.xbe" )
+			shutil.copy2( Working_Directory + Loader, Game_Path + "loader_default.xbe" )
 			pDialog.create( "Manual Installer","","Please wait..." )
 			time.sleep( 0.5 )
 			if Loader == Loader1: pDialog.update( 100,"Processing Game",Game_Title,"Loader Type = CDX" )
@@ -240,7 +240,7 @@ if Game_Path != "":
 			Alt_Game = dialog.yesno( "480p Game Loader","","You have selected a game that probably doesn't need patching","would you like to proceed?" )
 			if Alt_Game:
 				Loader = Loader1
-				shutil.copy2( intial_dir + Loader, Game_Path + "loader_default.xbe" )
+				shutil.copy2( Working_Directory + Loader, Game_Path + "loader_default.xbe" )
 				pDialog.create( "Manual Installer","","Please wait..." )
 				time.sleep( 0.5 )
 				pDialog.update( 100,"Processing Game",Game_Title,"Loader Type = CDX" )

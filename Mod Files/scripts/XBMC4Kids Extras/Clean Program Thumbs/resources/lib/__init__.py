@@ -1,7 +1,7 @@
 import os, sys
 import xbmc, xbmcgui
 
-intial_dir	= os.getcwd() + "\\"
+Working_Directory	= os.getcwd() + "\\"
 
 getLocalizedString = sys.modules['__main__'].getLocalizedString
 
@@ -51,10 +51,10 @@ class GUI(xbmcgui.WindowXMLDialog):
 			uninstall()
 		
 def auto():
-	xbmc.executebuiltin( "RunScript(" + intial_dir + "\\resources\\lib\\default.py)" )
+	xbmc.executebuiltin( "RunScript(" + Working_Directory + "\\resources\\lib\\default.py)" )
 	
 def manual():
-	xbmc.executebuiltin( "RunScript(" + intial_dir + "\\resources\\lib\\default.py,1,0)" )
+	xbmc.executebuiltin( "RunScript(" + Working_Directory + "\\resources\\lib\\default.py,1,0)" )
 	
 def uninstall():
-	xbmc.executebuiltin( "RunScript(" + intial_dir + "\\resources\\lib\\default.py,0,1)" )
+	xbmc.executebuiltin( "RunScript(" + Working_Directory + "\\resources\\lib\\default.py,0,1)" )

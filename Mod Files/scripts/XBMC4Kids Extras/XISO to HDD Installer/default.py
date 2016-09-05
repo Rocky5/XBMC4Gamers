@@ -121,7 +121,7 @@ def prepare_attachxbe( iso_filename ):
 	
 	print iso_folder
 
-	copyfile( os.path.join( intial_dir,"attach.xbe" ), os.path.join( iso_folder,"attach.xbe" ) )
+	copyfile( os.path.join( Working_Directory,"attach.xbe" ), os.path.join( iso_folder,"attach.xbe" ) )
 
 	## DEFAULT XBE TITLE
 	default_xbe_file = open( os.path.join( ISO_Directory,'default.xbe' ),'rb' )
@@ -222,7 +222,7 @@ def search_tree():
 					dialog.ok( "ERROR: 2 ","Not a valid XISO?","Could not extract the [B]Default.xbe[/B]",current_iso )
 
 		
-intial_dir	= os.getcwd()
+Working_Directory	= os.getcwd()
 ISO_Found = "False"
 pDialog = xbmcgui.DialogProgress()
 dialog = xbmcgui.Dialog()

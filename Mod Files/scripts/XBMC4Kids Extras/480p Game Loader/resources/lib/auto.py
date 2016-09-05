@@ -159,17 +159,10 @@ MenuColor2		= 0x4a4a56'
 ################################################################################################################################
 
 	
-intial_dir	= os.getcwd() + "\\"
+Working_Directory	= os.getcwd() + "\\"
 pDialog = xbmcgui.DialogProgress()
 dialog = xbmcgui.Dialog()
 pDialog.update( 0 )
-
-# extract the loaders.zip on first run.
-if os.path.isfile( intial_dir + "loaders.zip" ): 
-	dialog.ok( "Set-up","","I need to extract the loader xbe files before I can do anything.","This only happens once." )
-	with zipfile.ZipFile( intial_dir + "loaders.zip" ) as zf:
-		zf.extractall( intial_dir )
-	os.remove( intial_dir + "loaders.zip" )
 
 Game_Directories 	= [ "E:\\Games\\", "F:\\Games\\", "G:\\Games\\" ]
 Loader1				= "loaders\cdx.xbe"
@@ -186,63 +179,63 @@ for Game_Directories in Game_Directories:
 				Game_Path = os.path.join( Game_Directories, Items ) + "\\"
 				if os.path.isdir( Game_Path ):
 					XBEFiles = glob.glob( os.path.join( Game_Path, "default.xbe" ) )
-					for Default in XBEFiles:
-						if os.path.isfile( Default ):
-							Game_Title	= XBE( Default ).Get_title()
-							TitleID		= XBE( Default ).Get_title_id()
-							Loader = " " # Blank used to skip a directory
-							if TitleID == "4d570002": Loader = Loader1 # Arctic Thunder
-							if TitleID == "49470010": Loader = Loader1 # Battle Engine Aquila
-							if TitleID == "45530008": Loader = Loader1 # Commandos 2
-							if TitleID == "54510004": Loader = Loader1 # Dark Summit
-							if TitleID == "41540004": Loader = Loader1 # Galleon
-							if TitleID == "5343000b": Loader = Loader1 # Galleon alt
-							if TitleID == "4d4a0003": Loader = Loader1 # Gunmetal
-							if TitleID == "52410008": Loader = Loader1 # Gunmetal alt
-							if TitleID == "5655002d": Loader = Loader1 # Hunter The Reckoning Redeemer
-							if TitleID == "5345000a": Loader = Loader1 # Jet Set Radio Future
-							if TitleID == "49470018": Loader = Loader1 # Jet Set Radio Future alt
-							if TitleID == "4947001f": Loader = Loader1 # Mission Impossible Operation Surma
-							if TitleID == "4d570008": Loader = Loader1 # MLB SlugFest 20-03
-							if TitleID == "4d530008": Loader = Loader1 # Nightcaster
-							if TitleID == "41560058": Loader = Loader1 # Over the Hedge
-							if TitleID == "4d530015": Loader = Loader1 # Quantum Redshift
-							if TitleID == "54540004": Loader = Loader1 # Serious Sam
-							if TitleID == "5451000a": Loader = Loader1 # Tetris Worlds
-							if TitleID == "4541038b": Loader = Loader1 # The Sims 2
-							if TitleID == "41560004": Loader = Loader1 # Tony Hawk's Pro Skater 3
-							if TitleID == "4d53005f": Loader = Loader1 # Voodoo Vince
-							if TitleID == "4d53000d": Loader = Loader2 # Fable
-							if TitleID == "5345000b": Loader = Loader3 # Gunvalkrye
-							if TitleID == "49470017": Loader = Loader3 # Gunvalkrye alt
-							if TitleID == "56550019": Loader = Loader3 # Men of Valor
-							if TitleID == "53450007": Loader = Loader3 # Panzer Dragoon Orta
-							if TitleID == "4947002b": Loader = Loader3 # Panzer Dragoon Orta alt
-							if TitleID == "4156000a": Loader = Loader3 # Wreckless - The Yakuza Missions
-							if TitleID == "4156000c": Loader = Loader3 # Wreckless - The Yakuza Missions alt
-							# Homebrew
-							if TitleID == "00000000": Loader = Loader1 # Retroarch - though other homebrew will probably use 00000000
-							
-							# Cleanup
-							if os.path.isfile( Game_Path + "game_default.xbe" ):
-								if os.path.isdir( Game_Path + "cdxmedia" ): shutil.rmtree( Game_Path + "cdxmedia" )
-								if os.path.isdir( Game_Path + "skin" ): shutil.rmtree( Game_Path + "skin" )
-								if os.path.isfile( Game_Path + "default.tbn" ): os.remove( Game_Path + "default.tbn" )
-								if os.path.isfile( Game_Path + "icon.png" ): os.remove( Game_Path + "icon.png" )
-								if os.path.isfile( Game_Path + "default.xbe" ): os.remove( Game_Path + "default.xbe" )
-								if os.path.isfile( Game_Path + "evox.ini" ): os.remove( Game_Path + "evox.ini" )
-								if os.path.isfile( Game_Path + "cdxmedia_cdx.xsb" ): os.remove( Game_Path + "cdxmedia_cdx.xsb" ) 
-								if os.path.isfile( Game_Path + "cdxmedia_cdx.xpr" ): os.remove( Game_Path + "cdxmedia_cdx.xpr" )
-								if os.path.isfile( Game_Path + "cdxmedia_cdx.inx" ): os.remove( Game_Path + "cdxmedia_cdx.inx" ) 
-								if os.path.isfile( Game_Path + "cdxmedia_ArialUni.ttf" ): os.remove( Game_Path + "cdxmedia_ArialUni.ttf" )
-								if os.path.isfile( Game_Path + "loader_default.xbe" ): os.remove( Game_Path + "loader_default.xbe" )
-								os.rename( Game_Path + "game_default.xbe",Game_Path + "default.xbe" )
-							elif os.path.isfile( Game_Path + "loader_default.xbe" ): 
-								if os.path.isfile( Game_Path + "loader_default.xbe" ): os.remove( Game_Path + "loader_default.xbe" )
-							else:
-								pass
+					if not ( pDialog.iscanceled() ):
+						for Default in XBEFiles:
+							if os.path.isfile( Default ):
+								Game_Title	= XBE( Default ).Get_title()
+								TitleID		= XBE( Default ).Get_title_id()
+								Loader = " " # Blank used to skip a directory
+								if TitleID == "4d570002": Loader = Loader1 # Arctic Thunder
+								if TitleID == "49470010": Loader = Loader1 # Battle Engine Aquila
+								if TitleID == "45530008": Loader = Loader1 # Commandos 2
+								if TitleID == "54510004": Loader = Loader1 # Dark Summit
+								if TitleID == "41540004": Loader = Loader1 # Galleon
+								if TitleID == "5343000b": Loader = Loader1 # Galleon alt
+								if TitleID == "4d4a0003": Loader = Loader1 # Gunmetal
+								if TitleID == "52410008": Loader = Loader1 # Gunmetal alt
+								if TitleID == "5655002d": Loader = Loader1 # Hunter The Reckoning Redeemer
+								if TitleID == "5345000a": Loader = Loader1 # Jet Set Radio Future
+								if TitleID == "49470018": Loader = Loader1 # Jet Set Radio Future alt
+								if TitleID == "4947001f": Loader = Loader1 # Mission Impossible Operation Surma
+								if TitleID == "4d570008": Loader = Loader1 # MLB SlugFest 20-03
+								if TitleID == "4d530008": Loader = Loader1 # Nightcaster
+								if TitleID == "41560058": Loader = Loader1 # Over the Hedge
+								if TitleID == "4d530015": Loader = Loader1 # Quantum Redshift
+								if TitleID == "54540004": Loader = Loader1 # Serious Sam
+								if TitleID == "5451000a": Loader = Loader1 # Tetris Worlds
+								if TitleID == "4541038b": Loader = Loader1 # The Sims 2
+								if TitleID == "41560004": Loader = Loader1 # Tony Hawk's Pro Skater 3
+								if TitleID == "4d53005f": Loader = Loader1 # Voodoo Vince
+								if TitleID == "4d53000d": Loader = Loader2 # Fable
+								if TitleID == "5345000b": Loader = Loader3 # Gunvalkrye
+								if TitleID == "49470017": Loader = Loader3 # Gunvalkrye alt
+								if TitleID == "56550019": Loader = Loader3 # Men of Valor
+								if TitleID == "53450007": Loader = Loader3 # Panzer Dragoon Orta
+								if TitleID == "4947002b": Loader = Loader3 # Panzer Dragoon Orta alt
+								if TitleID == "4156000a": Loader = Loader3 # Wreckless - The Yakuza Missions
+								if TitleID == "4156000c": Loader = Loader3 # Wreckless - The Yakuza Missions alt
+								# Homebrew
+								if TitleID == "00000000": Loader = Loader1 # Retroarch - though other homebrew will probably use 00000000
 								
-							if not ( pDialog.iscanceled() ):
+								# Cleanup
+								if os.path.isfile( Game_Path + "game_default.xbe" ):
+									if os.path.isdir( Game_Path + "cdxmedia" ): shutil.rmtree( Game_Path + "cdxmedia" )
+									if os.path.isdir( Game_Path + "skin" ): shutil.rmtree( Game_Path + "skin" )
+									if os.path.isfile( Game_Path + "default.tbn" ): os.remove( Game_Path + "default.tbn" )
+									if os.path.isfile( Game_Path + "icon.png" ): os.remove( Game_Path + "icon.png" )
+									if os.path.isfile( Game_Path + "default.xbe" ): os.remove( Game_Path + "default.xbe" )
+									if os.path.isfile( Game_Path + "evox.ini" ): os.remove( Game_Path + "evox.ini" )
+									if os.path.isfile( Game_Path + "cdxmedia_cdx.xsb" ): os.remove( Game_Path + "cdxmedia_cdx.xsb" ) 
+									if os.path.isfile( Game_Path + "cdxmedia_cdx.xpr" ): os.remove( Game_Path + "cdxmedia_cdx.xpr" )
+									if os.path.isfile( Game_Path + "cdxmedia_cdx.inx" ): os.remove( Game_Path + "cdxmedia_cdx.inx" ) 
+									if os.path.isfile( Game_Path + "cdxmedia_ArialUni.ttf" ): os.remove( Game_Path + "cdxmedia_ArialUni.ttf" )
+									if os.path.isfile( Game_Path + "loader_default.xbe" ): os.remove( Game_Path + "loader_default.xbe" )
+									os.rename( Game_Path + "game_default.xbe",Game_Path + "default.xbe" )
+								elif os.path.isfile( Game_Path + "loader_default.xbe" ): 
+									if os.path.isfile( Game_Path + "loader_default.xbe" ): os.remove( Game_Path + "loader_default.xbe" )
+								else:
+									pass
+									
 								if CountList == 1: pDialog.create( "Auto Installer","","Please wait..." )
 								if Loader == Loader1: pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Directories ) ),"Processing Game",Items,"Loader Type = CDX" )
 								if Loader == Loader2: pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Directories ) ),"Processing Game",Items,"Loader Type = Evox" )
@@ -251,17 +244,20 @@ for Game_Directories in Game_Directories:
 							
 								try:
 									Install = "True"
-									shutil.copy2( intial_dir + Loader, Game_Path + "loader_default.xbe" )
+									shutil.copy2( Working_Directory + Loader, Game_Path + "loader_default.xbe" )
 									prepare_loaderxbe( os.path.join( Game_Path,"loader_default.xbe") )
 								except:
 									pass
-							else:
-								Cancelled = "True"
-								break
+					else:
+						Cancelled = "True"
+						pass
 
 pDialog.close()										
 if Install == "True" and Cancelled == "": dialog.ok( "480p Game Loader","","Everything is setup.","You just launch the game, or games like normal." )
 if Install == "": dialog.ok( "Error","","No games found." )
-if Cancelled == "True":	dialog.ok( "480p Game Loader","","Process cancelled.","Note: some games may have already been patched." )
+if Cancelled == "True":
+	dialog.ok( "480p Game Loader","","Installation cancelled." )
+	xbmc.executebuiltin( "RunScript(" + Working_Directory + "uninstall.py,1)" )
+	
 
 print "================================================================================"
