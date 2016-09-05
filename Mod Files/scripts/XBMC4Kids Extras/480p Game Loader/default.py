@@ -14,7 +14,7 @@ import xbmcgui, xbmcaddon
 import zipfile
 
 
-Addon = xbmcaddon.Addon('480pGameLoader')
+Addon = xbmcaddon.Addon('480p Game Loader')
 
 #####	Script constants
 __scriptname__ = Addon.getAddonInfo('name')
@@ -39,7 +39,7 @@ if os.path.isfile( __path__ + "\\resources\\lib\\loaders.zip" ):
 if os.path.isdir( __path__ + "\\resources\\lib\\loaders" ): 
 	if (__name__ == "__main__"):
 		import resources.lib.__init__ as __init__
-		ui = __init__.GUI('script-%s-main.xml' % __scriptname__, __path__, 'default')
+		ui = __init__.GUI('%s.xml' % "main", __path__, 'default')
 		ui.doModal()
 		print '[SCRIPT][%s] version %s exited!' % (__scriptname__, __version__)
 		del ui

@@ -27,19 +27,18 @@ Playlist = xbmc.translatePath( "special://Profile/playlists/music/random.m3u" )
 
 for Music_Dir in Music_Path:
 	if os.path.isdir( Music_Dir ):
+		f=open( Playlist,"w" )
 		for Music_Extension in Music_Extension:
 			Music_Files = glob.glob( os.path.join( Music_Dir, "*." + Music_Extension ) )
 			for Files in Music_Files:
 				if os.path.isfile( Files ):
-					f=open( Playlist,"w" )
 					f.write( "#EXTM3U\n" )
 					FileExt = Files.replace( Music_Dir,"" )
 					line = '#EXTINF:0,' + FileExt[:-4] + '\n' + Files + '\n'
 					f.write(line)
-					f.close()
-					time.sleep(1)
-					xbmc.executebuiltin( "PlayMedia(" + Playlist + ")" )
-					xbmc.PlayList( 0 ).shuffle()
-					xbmc.executebuiltin( "playercontrol(RepeatAll)" )
+		f.close()
+		xbmc.executebuiltin( "PlayMedia(" + Playlist + ")" )
+		xbmc.PlayList( 0 ).shuffle()
+		xbmc.executebuiltin( "playercontrol(RepeatAll)" )
 	else:
 		print "Error: " + Music_Dir + " path not found."

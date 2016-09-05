@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
-<addon id="480pGameLoader" name="480p Game Loader" version="0.7.0" provider-name="Rocky5">
+<addon id="480p Game Loader" name="480p Game Loader" version="0.7.0" provider-name="Rocky5">
 		<requires>
 				<import addon="xbmc.python" version="1.0" />
 		</requires>
