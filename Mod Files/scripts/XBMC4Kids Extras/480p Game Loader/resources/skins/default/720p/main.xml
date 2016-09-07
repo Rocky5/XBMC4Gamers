@@ -12,7 +12,7 @@
 						<posy>0</posy>
 						<width>400</width>
 						<height>260</height>
-						<texture>ContextMenu_Middle.png</texture>
+						<texture>background.png</texture>
 				</control>
 				<control type="image">
 						<description>Heading Background</description>
@@ -20,7 +20,7 @@
 						<posy>0</posy>
 						<width>350</width>
 						<height>40</height>
-						<texture border="5">ThumbFO.png</texture>
+						<texture border="5">header.png</texture>
 				</control>
 				<control type="label">
 						<description>heading label</description>
@@ -47,7 +47,7 @@
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>Info</label>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturefocus border="3">button-focus.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
 						<control type="button" id="3001">
@@ -56,7 +56,7 @@
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>Auto Install</label>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturefocus border="3">button-focus.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
 						<control type="button" id="3002">
@@ -65,7 +65,7 @@
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>Manual Install</label>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturefocus border="3">button-focus.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
 						<control type="button" id="3003">
@@ -74,7 +74,7 @@
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>Uninstall</label>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturefocus border="3">button-focus.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
 				</control>

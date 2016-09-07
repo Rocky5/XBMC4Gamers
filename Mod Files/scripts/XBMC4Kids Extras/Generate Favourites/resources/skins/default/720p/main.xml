@@ -3,7 +3,7 @@
 		<coordinates>
 				<system>1</system>
 				<posx>440</posx>
-				<posy>245</posy>
+				<posy>230</posy>
 		</coordinates>
 		<controls>
 				<control type="image">
@@ -11,8 +11,8 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<width>400</width>
-						<height>180</height>
-						<texture>ContextMenu_Middle.png</texture>
+						<height>260</height>
+						<texture>background.png</texture>
 				</control>
 				<control type="image">
 						<description>Heading Background</description>
@@ -20,7 +20,7 @@
 						<posy>0</posy>
 						<width>350</width>
 						<height>40</height>
-						<texture border="5">ThumbFO.png</texture>
+						<texture border="5">header.png</texture>
 				</control>
 				<control type="label">
 						<description>heading label</description>
@@ -46,8 +46,8 @@
 								<font>font12</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
-								<label>Generate</label>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<label>Info</label>
+								<texturefocus border="3">button-focus.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
 						<control type="button" id="3001">
@@ -55,17 +55,26 @@
 								<font>font12</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
-								<label>Remove</label>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<label>MyPrograms6.db</label>
+								<texturefocus border="3">button-focus.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
-						<control type="button." id="3002">
+						<control type="button" id="3002">
 								<description>Action Button</description>
 								<font>font12</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
-								<label>-</label>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<label>Games Directories</label>
+								<texturefocus border="3">button-focus.png</texturefocus>
+								<texturenofocus border="3">button-nofocus.png</texturenofocus>
+						</control>
+						<control type="button" id="3003">
+								<description>Action Button</description>
+								<font>font12</font>
+								<align>center</align>
+								<textcolor>white</textcolor>
+								<label>Remove</label>
+								<texturefocus border="3">button-focus.png</texturefocus>
 								<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						</control>
 				</control>
