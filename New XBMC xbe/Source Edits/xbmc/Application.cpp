@@ -1172,10 +1172,9 @@ HRESULT CApplication::Create(HWND hWnd)
   
   // set GUI res and force the clear of the screen
   g_graphicsContext.SetVideoResolution(g_guiSettings.m_LookAndFeelResolution, TRUE, true);
-
+  
   m_splash = new CSplash("Q:\\media\\splash.png");
   m_splash->Start();
-  Sleep(4000); //Added this so the Splash stays on the screen longer
 
   int iResolution = g_graphicsContext.GetVideoResolution();
   CLog::Log(LOGINFO, "GUI format %ix%i %s",
@@ -1252,7 +1251,7 @@ HRESULT CApplication::Initialize()
   /* setup network based on our settings */
   /* network will start it's init procedure */
   m_network.SetupNetwork();
-
+  
   StartServices();
 
   g_windowManager.Add(new CGUIWindowHome);                     // window id = 0

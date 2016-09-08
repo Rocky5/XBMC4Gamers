@@ -55,7 +55,7 @@ void CSplash::Process()
   float w = g_graphicsContext.GetWidth();
   float h = g_graphicsContext.GetHeight();
   CGUIImage* image = new CGUIImage(0, 0, 0, 0, w, h, m_ImageName);
-  image->SetAspectRatio(CAspectRatio::AR_KEEP);
+  image->SetAspectRatio(CAspectRatio::AR_STRETCH);
   image->AllocResources();
 
   // Store the old gamma ramp
@@ -89,7 +89,6 @@ void CSplash::Process()
   {
     if (fade <= 1.f)
     {
-      Sleep(1);
       for (int i = 0; i < 256; i++)
       {
         newRamp.red[i] = (int)((float)oldRamp.red[i] * fade);
@@ -97,6 +96,7 @@ void CSplash::Process()
         newRamp.blue[i] = (int)((float)oldRamp.blue[i] * fade);
       }
       g_graphicsContext.Lock();
+	  Sleep(3);
       g_graphicsContext.Get3DDevice()->SetGammaRamp(GAMMA_RAMP_FLAG, &newRamp);
       g_graphicsContext.Unlock();
       fade += 0.01f;
@@ -117,7 +117,7 @@ void CSplash::Process()
       newRamp.green[i] = (int)((float)oldRamp.green[i] * fadeout);
       newRamp.blue[i] = (int)((float)oldRamp.blue[i] * fadeout);
     }
-    Sleep(1);
+	Sleep(3);
     g_graphicsContext.Get3DDevice()->SetGammaRamp(GAMMA_RAMP_FLAG, &newRamp);
   }
   //restore original gamma ramp
@@ -135,6 +135,7 @@ bool CSplash::Start()
     return false;
   }
   Create();
+  Sleep(3000);
   return true;
 }
 

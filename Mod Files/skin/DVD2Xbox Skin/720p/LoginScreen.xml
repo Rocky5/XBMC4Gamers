@@ -6,10 +6,11 @@
 				<posx>0</posx>
 				<posy>0</posy>
 		</coordinates>
+		<onload>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Update Checker.py )</onload>
 		<controls>
 				<control type="button" id="51">
 						<posx>-500</posx>
-						<onfocus>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Update Checker.py )</onfocus>
+						<onfocus>-</onfocus>
 				</control>
 				<include>CommonBackground</include>
 				<control type="label">

@@ -40,7 +40,6 @@
 #include "utils/CharsetConverter.h"
 
 using namespace XFILE;
-using namespace XFILE;
 
 #define CONTROL_BTNVIEWASICONS     2
 #define CONTROL_BTNSORTBY          3
@@ -174,7 +173,7 @@ bool CGUIWindowGameSaves::OnPlayMedia(int iItem)
   return true;
 }
 
-bool CGUIWindowGameSaves::GetDirectory(const CStdString& strDirectory, CFileItemList& items)
+bool CGUIWindowGameSaves::GetDirectory(const CStdString & strDirectory, CFileItemList & items)
 {
   if (!m_rootDir.GetDirectory(strDirectory,items,false))
     return false;
@@ -200,7 +199,7 @@ bool CGUIWindowGameSaves::GetDirectory(const CStdString& strDirectory, CFileItem
   {
     CFileItemPtr item = items[i];
 
-    if (!bProgressVisible && timeGetTime()-dwTick>1500 && m_dlgProgress)
+    if (!bProgressVisible && timeGetTime()-dwTick>2000 && m_dlgProgress)
     { // tag loading takes more then 1.5 secs, show a progress dialog
       m_dlgProgress->SetHeading(189);
       m_dlgProgress->SetLine(0, 20120);
@@ -278,11 +277,11 @@ bool CGUIWindowGameSaves::GetDirectory(const CStdString& strDirectory, CFileItem
                 break;
             }
           }
-          /*if (j == items2.Size())
+          if (j == items2.Size())
           {
-            item->m_bIsFolder = false;
-            item->SetPath(titlemetaXBX);
-          }*/
+            /*item->m_bIsFolder = false;
+            item->SetPath(titlemetaXBX);*/
+          }
         }
         else
         {

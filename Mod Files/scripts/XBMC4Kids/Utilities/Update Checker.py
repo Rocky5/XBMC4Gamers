@@ -40,7 +40,7 @@ if os.path.isfile( xbmc.translatePath( "special://xbmc/Updater/default.xbe" ) ):
 		if dialog.yesno( "XBMC4Kids Updater","", "Update Folder found, would you like to install the update?" ) == 1:
 			xbmc.executebuiltin( "XBMC.RunXBE( %sDefault.xbe )" % xbmc.translatePath( "special://xbmc/Updater/" ) )
 		else:
-			pass
+			xbmc.executebuiltin( "SetFocus(52)" )
 else:
 	xbmc.executebuiltin( "SetFocus(52)" )
 print "================================================================================"
