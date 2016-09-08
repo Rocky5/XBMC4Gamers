@@ -4,7 +4,7 @@
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">
-					<include>ViewVisibleEffect</include>
+						<include>ViewVisibleEffect</include>
 						<control type="panel" id="50">
 								<posx>250</posx>
 								<posy>200</posy>

@@ -3,7 +3,7 @@
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">
-					<include>ViewVisibleEffect</include>
+						<include>ViewVisibleEffect</include>
 						<control type="image">
 								<posx>55</posx>
 								<posy>70</posy>

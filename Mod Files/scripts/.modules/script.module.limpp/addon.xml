@@ -1,18 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<addon id="script.module.limpp"
-	   name="limpp"
-	   version="1.0.0"
-	   provider-name="ruuk (https://github.com/ruuk/limpp)">
-	<requires>
-		<import addon="xbmc.python" 
-    		version="1.0"/>
-	</requires>
-	<extension point="xbmc.python.module"
-             library="lib" />
-	<extension point="xbmc.addon.metadata">
-		<summary lang="en">Library of Image Manipulation in Pure Python</summary>
-		<description lang="en">L.I.M.P.P. - Pure python method to handle various icon formats in a script for XBMC on XBox. Reads PNG, BMP, JPG, ICO, TGA, XPM, XBM and DXTC textures. Writes in PNG, BMP, TGA, XPM and XBM.</description>
-		<license>BSD</license>
-		<platform>all</platform>
-	</extension>
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<addon id="script.module.limpp" name="limpp" version="1.0.0" provider-name="ruuk (https://github.com/ruuk/limpp)">
+		<requires>
+				<import addon="xbmc.python" version="1.0" />
+		</requires>
+		<extension point="xbmc.python.module" library="lib" />
+		<extension point="xbmc.addon.metadata">
+				<summary lang="en">Library of Image Manipulation in Pure Python</summary>
+				<description lang="en">L.I.M.P.P. - Pure python method to handle various icon formats in a script for XBMC on XBox. Reads PNG, BMP, JPG, ICO, TGA, XPM, XBM and DXTC textures. Writes in PNG, BMP, TGA, XPM and XBM.</description>
+				<license>BSD</license>
+				<platform>all</platform>
+		</extension>
 </addon>

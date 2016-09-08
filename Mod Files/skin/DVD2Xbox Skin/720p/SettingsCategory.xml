@@ -35,7 +35,7 @@
 						</control>
 				</control>
 				<control type="group">
-					<include>ViewVisibleEffect</include>
+						<include>ViewVisibleEffect</include>
 						<posx>40</posx>
 						<posy>45</posy>
 						<control type="image">
