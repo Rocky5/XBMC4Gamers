@@ -49,7 +49,7 @@ pDialog.update( 0 )
 
 #####	Start markings for the log file.
 print "================================================================================"
-print "| Scripts\XBMC4Kids\Utilities\Clean Thumbs.py loaded."
+print "| Scripts\XBMC4Kids Extras\Clean Program Thumbs\resources\lib\default.py loaded."
 print "| ------------------------------------------------------------------------------"
 
 if os.path.isfile( MyPrograms6_db ):

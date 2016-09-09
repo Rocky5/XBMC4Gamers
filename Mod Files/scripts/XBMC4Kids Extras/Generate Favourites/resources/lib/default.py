@@ -17,7 +17,7 @@ import glob, operator, os, sqlite3, string, struct, time, xbmc, xbmcgui
 
 #####	Start markings for the log file.
 print "================================================================================"
-print "| Scripts\XBMC4Kids\Utilities\Generate Favourites.py loaded."
+print "| Scripts\XBMC4Kids Extras\Generate Favourites\resources\lib\default.py loaded."
 print "| ------------------------------------------------------------------------------"
 
 

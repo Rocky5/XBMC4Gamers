@@ -15,7 +15,7 @@ from xbeinfo import *
 
 #####	Start markings for the log file.
 print "================================================================================"
-print "| Scripts\XISO to HDD Installer\default.py loaded."
+print "| Scripts\XBMC4Kids Extras\XISO to HDD Installer\default.py loaded."
 print "| ------------------------------------------------------------------------------"
 
 

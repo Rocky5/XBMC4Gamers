@@ -12,7 +12,7 @@ from xbeinfo import *
 			
 #####	Start markings for the log file.
 print "================================================================================"
-print "| Scripts\\480p Game Loader\resources\\lib\auto.py loaded."
+print "| Scripts\XBMC4Kids Extras\\480p Game Loaders\resources\\lib\auto.py loaded."
 print "| ------------------------------------------------------------------------------"
 
 

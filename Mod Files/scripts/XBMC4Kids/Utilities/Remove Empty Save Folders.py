@@ -24,15 +24,14 @@ for Save_Directories in Save_Directories:
 			if os.path.isdir( Save_Path ):
 				pDialog.update( ( CountList * 100 ) / len( os.listdir( Save_Directories ) ),"Processing",Save_Directories,Save_Dir )
 				try:
-					if not os.walk( Save_Path ).next()[1]:
-						shutil.rmtree( Save_Path )
-						print "Removed " + Save_Path
-					else:
-						print Save_Path + " is not empty"
+					if os.walk( Save_Path ).next()[1]:
+						print Save_Path + "\\ is not empty."
 						CountList = CountList + 1
+					else:
+						shutil.rmtree( Save_Path )
+						print "Removed " + Save_Path + "\\"
 				except:
-					pass
-				
+					print Save_Path + "\\ is write protected."
 pDialog.close()
 dialog.ok( "Cleaning Save Folders","","Process Complete" )
 print "================================================================================"
