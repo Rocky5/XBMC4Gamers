@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<addon id="480p Game Loaders" name="480p Game Loaders" version="0.7.0" provider-name="Rocky5">
+		<requires>
+				<import addon="xbmc.python" version="1.0" />
+		</requires>
+		<extension point="xbmc.python.script" library="default.py" />
+		<extension point="xbmc.addon.metadata">
+				<platform>all</platform>
+				<summary lang="en">480p Game Loaders Script</summary>
+				<description lang="en">This script is used to apply patches to stubborn games that display scrambled on v1.6 Xbox in progressive mode (480p)</description>
+		</extension>
+</addon>

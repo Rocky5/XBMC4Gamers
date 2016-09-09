@@ -2,57 +2,51 @@
 		<defaultcontrol always="false">3000</defaultcontrol>
 		<coordinates>
 				<system>1</system>
-				<posx>460</posx>
-				<posy>230</posy>
+				<posx>0</posx>
+				<posy>0</posy>
 		</coordinates>
 		<controls>
 				<control type="image">
 						<description>underlay image</description>
-						<posx>-460</posx>
-						<posy>-230</posy>
+						<posx>0</posx>
+						<posy>0</posy>
 						<width>1280</width>
 						<height>720</height>
-						<texture border="5">main-underlay.png</texture>
+						<texture>main-underlay.png</texture>
 						<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				</control>
 				<control type="group">
-						<animation effect="fade" start="0" end="100" time="500">WindowOpen</animation>
+						<posx>447</posx>
+						<posy>215</posy>
+						<animation effect="fade" start="0" end="100" delay="200" time="500">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" time="500">WindowClose</animation>
 						<control type="image">
 								<description>background image</description>
 								<posx>0</posx>
 								<posy>0</posy>
-								<width>350</width>
-								<height>260</height>
-								<texture border="5">main-background.png</texture>
-						</control>
-						<control type="image">
-								<description>Heading Background</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>350</width>
-								<height>40</height>
-								<texture border="5">main-header.png</texture>
+								<width>386</width>
+								<height>290</height>
+								<texture>main-background.png</texture>
+								<aspectratio>stretch</aspectratio>
 						</control>
 						<control type="label">
 								<description>heading label</description>
 								<posx>0</posx>
-								<posy>0</posy>
-								<width>350</width>
-								<height>40</height>
+								<posy>26</posy>
+								<width>386</width>
+								<height>0</height>
 								<align>center</align>
-								<aligny>center</aligny>
-								<font>font18</font>
+								<font>font20</font>
 								<label>Generate Favourites</label>
 								<textcolor>black</textcolor>
 						</control>
 						<control type="grouplist">
 								<description>custom grouplist for context buttons</description>
-								<posx>25</posx>
-								<posy>65</posy>
-								<width>350</width>
-								<height>300</height>
+								<posx>43</posx>
+								<posy>84</posy>
+								<width>386</width>
+								<height>290</height>
 								<itemgap>0</itemgap>
 								<control type="button" id="3000">
 										<description>Action Button</description>

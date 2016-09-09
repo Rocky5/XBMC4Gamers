@@ -1,0 +1,90 @@
+<window id="129">
+		<defaultcontrol always="false">3000</defaultcontrol>
+		<coordinates>
+				<system>1</system>
+				<posx>0</posx>
+				<posy>0</posy>
+		</coordinates>
+		<controls>
+				<control type="image">
+						<description>underlay image</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>main-underlay.png</texture>
+						<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+				</control>
+				<control type="group">
+						<posx>447</posx>
+						<posy>215</posy>
+						<animation effect="fade" start="0" end="100" delay="200" time="500">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="500">WindowClose</animation>
+						<control type="image">
+								<description>background image</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>386</width>
+								<height>290</height>
+								<texture>main-background.png</texture>
+								<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+								<description>heading label</description>
+								<posx>0</posx>
+								<posy>26</posy>
+								<width>386</width>
+								<height>0</height>
+								<align>center</align>
+								<font>font20</font>
+								<label>480p Game loaders</label>
+								<textcolor>black</textcolor>
+						</control>
+						<control type="grouplist">
+								<description>custom grouplist for context buttons</description>
+								<posx>43</posx>
+								<posy>84</posy>
+								<width>386</width>
+								<height>290</height>
+								<itemgap>0</itemgap>
+								<control type="button" id="3000">
+										<description>Action Button</description>
+										<font>font12</font>
+										<align>center</align>
+										<textcolor>white</textcolor>
+										<label>Info</label>
+										<texturefocus border="3">main-button-focus.png</texturefocus>
+										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
+								</control>
+								<control type="button" id="3001">
+										<description>Action Button</description>
+										<font>font12</font>
+										<align>center</align>
+										<textcolor>white</textcolor>
+										<label>Auto Install</label>
+										<texturefocus border="3">main-button-focus.png</texturefocus>
+										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
+								</control>
+								<control type="button" id="3002">
+										<description>Action Button</description>
+										<font>font12</font>
+										<align>center</align>
+										<textcolor>white</textcolor>
+										<label>Manual Install</label>
+										<texturefocus border="3">main-button-focus.png</texturefocus>
+										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
+								</control>
+								<control type="button" id="3003">
+										<description>Action Button</description>
+										<font>font12</font>
+										<align>center</align>
+										<textcolor>white</textcolor>
+										<label>Uninstall</label>
+										<texturefocus border="3">main-button-focus.png</texturefocus>
+										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
+								</control>
+						</control>
+				</control>
+		</controls>
+</window>
