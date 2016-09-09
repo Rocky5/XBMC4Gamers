@@ -33,7 +33,7 @@
 						<control type="label">
 								<description>heading label</description>
 								<posx>0</posx>
-								<posy>26</posy>
+								<posy>28</posy>
 								<width>386</width>
 								<height>0</height>
 								<align>center</align>
