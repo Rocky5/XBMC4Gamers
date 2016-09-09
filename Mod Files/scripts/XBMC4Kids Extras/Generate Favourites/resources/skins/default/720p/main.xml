@@ -59,6 +59,7 @@
 										<texturefocus border="3">main-button-focus.png</texturefocus>
 										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
 										<aspectratio>stretch</aspectratio>
+								</control>
 								<control type="button" id="3001">
 										<description>Action Button</description>
 										<width>300</width>
