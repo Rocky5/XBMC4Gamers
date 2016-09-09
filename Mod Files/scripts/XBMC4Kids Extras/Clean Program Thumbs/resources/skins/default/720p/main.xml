@@ -50,30 +50,39 @@
 								<itemgap>0</itemgap>
 								<control type="button" id="3000">
 										<description>Action Button</description>
+										<width>300</width>
+										<height>42</height>
 										<font>font12</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Clean Thumbs</label>
 										<texturefocus border="3">main-button-focus.png</texturefocus>
 										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
+										<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="button" id="3001">
 										<description>Action Button</description>
+										<width>300</width>
+										<height>42</height>
 										<font>font12</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Generate Thumbs</label>
 										<texturefocus border="3">main-button-focus.png</texturefocus>
 										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
+										<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="button" id="3002">
 										<description>Action Button</description>
+										<width>300</width>
+										<height>42</height>
 										<font>font12</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Remove Thumbs</label>
 										<texturefocus border="3">main-button-focus.png</texturefocus>
 										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
+										<aspectratio>stretch</aspectratio>
 								</control>
 						</control>
 				</control>
