@@ -29,9 +29,9 @@ for Save_Directories in Save_Directories:
 						CountList = CountList + 1
 					else:
 						if Save_Path == Save_Path[:-8] + "0facfac0":
-							print "Kept " + Save_Path + "\\ - ( DVD2Xbox settings are stored here )"
-						#elif Save_Path == Save_Path[:-8] + "":
-						#	pass
+							print "Kept " + Save_Path + "\\ - ( DVD2Xbox stores its settings here )"
+						elif Save_Path == Save_Path[:-8] + "54540003":
+							print "Kept " + Save_Path + "\\ - ( Max Payne stores its settings here )"
 						else:
 							shutil.rmtree( Save_Path )
 							print "Removed " + Save_Path + "\\"
