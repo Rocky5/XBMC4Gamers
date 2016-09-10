@@ -56,9 +56,8 @@
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Info</label>
-										<texturefocus border="3">main-button-focus.png</texturefocus>
-										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
-										<aspectratio>stretch</aspectratio>
+										<texturefocus border="2">main-button-focus.png</texturefocus>
+										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
 								</control>
 								<control type="button" id="3001">
 										<description>Action Button</description>
@@ -68,9 +67,8 @@
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Auto Install</label>
-										<texturefocus border="3">main-button-focus.png</texturefocus>
-										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
-										<aspectratio>stretch</aspectratio>
+										<texturefocus border="2">main-button-focus.png</texturefocus>
+										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
 								</control>
 								<control type="button" id="3002">
 										<description>Action Button</description>
@@ -80,9 +78,8 @@
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Manual Install</label>
-										<texturefocus border="3">main-button-focus.png</texturefocus>
-										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
-										<aspectratio>stretch</aspectratio>
+										<texturefocus border="2">main-button-focus.png</texturefocus>
+										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
 								</control>
 								<control type="button" id="3003">
 										<description>Action Button</description>
@@ -92,9 +89,8 @@
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Uninstall</label>
-										<texturefocus border="3">main-button-focus.png</texturefocus>
-										<texturenofocus border="3">main-button-nofocus.png</texturenofocus>
-										<aspectratio>stretch</aspectratio>
+										<texturefocus border="2">main-button-focus.png</texturefocus>
+										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
 								</control>
 						</control>
 				</control>
