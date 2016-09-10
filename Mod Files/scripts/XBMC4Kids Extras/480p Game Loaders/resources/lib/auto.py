@@ -218,19 +218,19 @@ for Game_Directories in Game_Directories:
 								if TitleID == "00000000": Loader = Loader1 # Retroarch - though other homebrew will probably use 00000000
 								
 								# Cleanup
-								if os.path.isfile( Game_Path + "default.xbe" ) and os.path.isfile( Game_Path + "game_default.xbe" ):
-									if os.path.isdir( Game_Path + "480loadr" ): shutil.rmtree( Game_Path + "480loadr" )
-									if os.path.isdir( Game_Path + "skin" ): shutil.rmtree( Game_Path + "skin" )
-									if os.path.isfile( Game_Path + "evox.ini" ): os.remove( Game_Path + "evox.ini" )
-									if os.path.isfile( Game_Path + "default.tbn" ): os.remove( Game_Path + "default.tbn" )
-									if os.path.isfile( Game_Path + "icon.png" ): os.remove( Game_Path + "icon.png" )
-									if os.path.isfile( Game_Path + "default.xbe" ): os.remove( Game_Path + "default.xbe" )
-									if os.path.isfile( Game_Path + "loader_default.xbe" ): os.remove( Game_Path + "loader_default.xbe" )
-									os.rename( Game_Path + "game_default.xbe",Game_Path + "default.xbe" )		
-								elif os.path.isfile( Game_Path + "loader_default.xbe" ): 
-									if os.path.isfile( Game_Path + "loader_default.xbe" ): os.remove( Game_Path + "loader_default.xbe" )
+								if os.path.isfile( os.path.join( Game_Path, "default.xbe" ) ) and os.path.isfile( os.path.join( Game_Path, "game_default.xbe" ) ):
+									if os.path.isdir( os.path.join( Game_Path, "480loadr" ) ): shutil.rmtree( os.path.join( Game_Path, "480loadr" ) )
+									if os.path.isdir( os.path.join( Game_Path, "skin" ) ): shutil.rmtree( os.path.join( Game_Path, "skin" ) )
+									if os.path.isfile( os.path.join( Game_Path, "evox.ini" ) ): os.remove( os.path.join( Game_Path, "evox.ini" ) )
+									if os.path.isfile( os.path.join( Game_Path, "default.tbn" ) ): os.remove( os.path.join( Game_Path, "default.tbn" ) )
+									if os.path.isfile( os.path.join( Game_Path, "icon.png" ) ): os.remove( os.path.join( Game_Path, "icon.png" ) )
+									if os.path.isfile( os.path.join( Game_Path, "default.xbe" ) ): os.remove( os.path.join( Game_Path, "default.xbe" ) )
+									if os.path.isfile( os.path.join( Game_Path, "loader_default.xbe" ) ): os.remove( os.path.join( Game_Path, "loader_default.xbe" ) )
+									os.rename( os.path.join( Game_Path, "game_default.xbe" ), os.path.join( Game_Path, "default.xbe" ) )
+								elif os.path.isfile( os.path.join( Game_Path, "loader_default.xbe" ) ): 
+									os.remove( os.path.join( Game_Path, "loader_default.xbe" ) )
 								else:
-									pass	
+									pass
 									
 								if CountList == 1: pDialog.create( "Auto Installer","","Please wait..." )
 								if Loader == Loader1: pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Directories ) ),"Processing Game",Items,"Loader Type = CDX" )
