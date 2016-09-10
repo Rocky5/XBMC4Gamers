@@ -185,6 +185,7 @@ if Game_Path != "":
 		if TitleID == "5655002d": Loader = Loader1 # Hunter The Reckoning Redeemer
 		if TitleID == "5345000a": Loader = Loader1 # Jet Set Radio Future
 		if TitleID == "49470018": Loader = Loader1 # Jet Set Radio Future alt
+		if TitleID == "534e0002": Loader = Loader1 # Metal Slug 3 (480p patched)
 		if TitleID == "4947001f": Loader = Loader1 # Mission Impossible Operation Surma
 		if TitleID == "4d570008": Loader = Loader1 # MLB SlugFest 20-03
 		if TitleID == "4d530008": Loader = Loader1 # Nightcaster
