@@ -2,6 +2,10 @@
 	Script by Rocky5
 	This is used to add a workaround to stubborn games that will not display properly in 480p on v1.6 Xbox.
 	
+	Update: 10 September 2016
+	-- Added Metal Slug 3
+	   Updated the Clean up code and changed the Evox skin background to reduce the size, this reduces the patching time. ( 16kb now )
+	   
 	Update: 03 September 2016
 	-- New front end for the scripts, it's a nice little menu for Auto Install, Manual Install or Unisntall.
 	   Also updated the error logging and the all round functionality.
