@@ -28,8 +28,13 @@ for Save_Directories in Save_Directories:
 						print Save_Path + "\\ is not empty."
 						CountList = CountList + 1
 					else:
-						shutil.rmtree( Save_Path )
-						print "Removed " + Save_Path + "\\"
+						if Save_Path == Save_Path[:-8] + "0facfac0":
+							print "Kept " + Save_Path + "\\ - ( DVD2Xbox settings are stored here )"
+						#elif Save_Path == Save_Path[:-8] + "":
+						#	pass
+						else:
+							shutil.rmtree( Save_Path )
+							print "Removed " + Save_Path + "\\"
 				except:
 					print Save_Path + "\\ is write protected."
 pDialog.close()
