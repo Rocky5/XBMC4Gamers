@@ -10,6 +10,7 @@ Please patch your games via DVD2Xbox, either after installing one of the loaders
 	-	Gun Metal
 	-	Hunter The Reckoning: Redemption
 	-	Jet Set Radio Future
+	-	Metal Slug 3 ( must be patched - Hex search = 8B5728508B4730508B472C518B4F0452 - Replace with = 508B4730508B472C518B4F04906A0090 )
 	-	Mission Impossible
 	-	MLB Slugfest 20-03
 	-	Night Caster
@@ -38,7 +39,7 @@ Please patch your games via DVD2Xbox, either after installing one of the loaders
 -- Graphical Issues
 	-	Hello Kitty - Screen is undersized in places.
 	-	Jacked - Screen is undersized in places.
-	-	Max Payne - Screen is oversized.
+	-	Max Payne - Screen is oversized. ( works fine if screen size is set to normal )
 
 -- Other Issues
 	-	Men of Valor - Restarts the game when selecting a mission.
