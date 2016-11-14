@@ -76,7 +76,7 @@ else:
 				if os.path.isfile( os.path.join( Game_Path, "default.xbe" ) ) and os.path.isfile( os.path.join( Game_Path, "game_default.xbe" ) ):
 					Game_Title	= XBE( os.path.join( Game_Path, "game_default.xbe" ) ).Get_title()
 					if CountList == 1: pDialog.create( "Uninstaller","","Please wait..." )
-					pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Path ) ),"Uninstalling Game loaders",Items )
+					pDialog.update( ( CountList * 100 ) / len( os.listdir( Game_Path ) ),"Uninstalling Game loader" )
 					CountList = CountList + 1
 					Cleaned = "True"
 					if os.path.isdir( os.path.join( Game_Path, "480loadr" ) ): shutil.rmtree( os.path.join( Game_Path, "480loadr" ) )
