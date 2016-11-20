@@ -179,6 +179,7 @@ for Game_Directories in Game_Directories:
 								Game_Title	= XBE( Default ).Get_title()
 								TitleID		= XBE( Default ).Get_title_id()
 								Loader = " " # Blank used to skip a directory
+								# Loader 1
 								if TitleID == "4d570002": Loader = Loader1 # Arctic Thunder
 								if TitleID == "49470010": Loader = Loader1 # Battle Engine Aquila
 								if TitleID == "45530008": Loader = Loader1 # Commandos 2
@@ -201,7 +202,9 @@ for Game_Directories in Game_Directories:
 								if TitleID == "4541038b": Loader = Loader1 # The Sims 2
 								if TitleID == "41560004": Loader = Loader1 # Tony Hawk's Pro Skater 3
 								if TitleID == "4d53005f": Loader = Loader1 # Voodoo Vince
+								# Loader 2
 								if TitleID == "4d53000d": Loader = Loader2 # Fable
+								# Loader 3							
 								if TitleID == "5345000b": Loader = Loader3 # Gunvalkrye
 								if TitleID == "49470017": Loader = Loader3 # Gunvalkrye alt
 								if TitleID == "56550019": Loader = Loader3 # Men of Valor
@@ -209,8 +212,6 @@ for Game_Directories in Game_Directories:
 								if TitleID == "4947002b": Loader = Loader3 # Panzer Dragoon Orta alt
 								if TitleID == "4156000a": Loader = Loader3 # Wreckless - The Yakuza Missions
 								if TitleID == "4156000c": Loader = Loader3 # Wreckless - The Yakuza Missions alt
-								# Homebrew
-								if TitleID == "00000000": Loader = Loader1 # Retroarch - though other homebrew will probably use 00000000
 								
 								# Cleanup
 								if os.path.isfile( os.path.join( Game_Path, "default.xbe" ) ) and os.path.isfile( os.path.join( Game_Path, "game_default.xbe" ) ):
