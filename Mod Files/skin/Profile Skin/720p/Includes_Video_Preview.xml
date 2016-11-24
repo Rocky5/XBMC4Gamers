@@ -8,7 +8,7 @@
 				<control type="button" id="9004">
 						<posx>-500</posx>
 						<onclick>PlayWith($INFO[Skin.String(Player_Type)])</onclick>
-						<onclick>xbmc.playmedia($INFO[ListItem.Path,,_resources\media\]$INFO[Skin.String(Synopsis_Video_Preview_Name)],1)</onclick>
+						<onclick>xbmc.playmedia($INFO[ListItem.Path,,_resources\media\]$INFO[Skin.String(Synopsis_Video_Preview_Name)],1,noresume)</onclick>
 						<onclick>SetFocus(9005)</onclick>
 						<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + !Player.HasMedia</visible>
 				</control>
