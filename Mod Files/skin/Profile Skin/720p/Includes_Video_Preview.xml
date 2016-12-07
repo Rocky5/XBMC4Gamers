@@ -32,17 +32,28 @@
 				<texture>black-back.png</texture>
 				<include>dialogeffect</include>
 				<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-				<animation effect="fade" start="0" end="100" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+				<animation effect="fade" start="0" end="70" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 			</control>
 			<control type="image">
 				<posx>100</posx>
-				<posy>68</posy>
+				<posy>59</posy>
 				<width>1080</width>
-				<height>608</height>
+				<height>614</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>thumbnf.png</texture>
+				<texture background="true" diffuse="synopsis_diffuse.png" >$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
 				<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-				<animation effect="fade" start="0" end="100" delay="0" time="200" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+				<animation effect="fade" start="0" end="100" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+			</control>
+			<control type="image">
+				<description>background image</description>
+				<posx>100</posx>
+				<posy>59</posy>
+				<width>1080</width>
+				<height>614</height>
+				<texture>synopsis_background_alt.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
+				<animation effect="fade" start="0" end="100" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 			</control>
 			<control type="label">
 				<posx>100</posx>
@@ -54,28 +65,16 @@
 				<aligny>center</aligny>
 				<label>No Preview Video Found</label>
 				<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow) + !Player.HasVideo</visible>
-				<animation effect="fade" start="0" end="10" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+				<animation effect="fade" start="0" end="20" delay="750" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 			</control>
 			<control type="videowindow">
 				<description>video preview window</description>
 				<posx>100</posx>
-				<posy>68</posy>
+				<posy>71</posy>
 				<width>1080</width>
-				<height>608</height>
+				<height>589</height>
 				<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
 				<animation effect="fade" start="0" end="100" delay="500" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
-			</control>
-			<control type="image">
-				<posx>100</posx>
-				<posy>68</posy>
-				<width>1080</width>
-				<height>608</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>glassoverlay.png</texture>
-				<bordertexture border="5">poster-border.png</bordertexture>
-				<bordersize>1</bordersize>
-				<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-				<animation effect="fade" start="0" end="100" delay="250" time="1000" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 			</control>
 		</control>
 
