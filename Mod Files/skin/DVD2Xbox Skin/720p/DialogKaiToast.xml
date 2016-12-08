@@ -24,7 +24,7 @@
 								<width>40</width>
 								<height>40</height>
 								<aspectratio>keep</aspectratio>
-								<texture>DefaultFile.png</texture>
+								<texture>defaultfile.png</texture>
 						</control>
 						<control type="fadelabel" id="401">
 								<description>Line 1 Label</description>
@@ -59,7 +59,7 @@
 								<height>40</height>
 								<aspectratio>keep</aspectratio>
 								<visible>false</visible>
-								<texture>DefaultIconInfo.png</texture>
+								<texture>defaulticoninfo.png</texture>
 						</control>
 						<control type="image" id="404">
 								<description>avatar</description>
@@ -69,7 +69,7 @@
 								<height>40</height>
 								<aspectratio>keep</aspectratio>
 								<visible>false</visible>
-								<texture>DefaultIconWarning.png</texture>
+								<texture>defaulticonwarning.png</texture>
 						</control>
 						<control type="image" id="405">
 								<description>avatar</description>
@@ -79,7 +79,7 @@
 								<height>40</height>
 								<aspectratio>keep</aspectratio>
 								<visible>false</visible>
-								<texture>DefaultIconError.png</texture>
+								<texture>defaulticonerror.png</texture>
 						</control>
 				</control>
 				<!-- Debug Info -->

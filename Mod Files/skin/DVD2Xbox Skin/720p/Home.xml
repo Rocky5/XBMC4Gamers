@@ -26,7 +26,7 @@
 												<posy>2</posy>
 												<width>252</width>
 												<height>126</height>
-												<texture>ThumbNF.png</texture>
+												<texture>thumbnf.png</texture>
 												<aspectratio>scale</aspectratio>
 										</control>
 										<control type="image">
@@ -34,7 +34,7 @@
 												<posy>7</posy>
 												<width>242</width>
 												<height>90</height>
-												<texture>$INFO[Listitem.Icon]</texture>
+												<texture>$INFO[listitem.icon]</texture>
 												<bordertexture border="5">black-back.png</bordertexture>
 												<bordersize>1</bordersize>
 												<aspectratio>scale</aspectratio>
@@ -58,7 +58,7 @@
 												<posy>2</posy>
 												<width>252</width>
 												<height>126</height>
-												<texture>ThumbFO.png</texture>
+												<texture>thumbfo.png</texture>
 												<aspectratio>scale</aspectratio>
 										</control>
 										<control type="image">
@@ -66,7 +66,7 @@
 												<posy>7</posy>
 												<width>242</width>
 												<height>90</height>
-												<texture>$INFO[Listitem.Icon]</texture>
+												<texture>$INFO[listitem.icon]</texture>
 												<bordertexture border="5">black-back.png</bordertexture>
 												<bordersize>1</bordersize>
 												<aspectratio>scale</aspectratio>
@@ -116,7 +116,7 @@
 								<posy>0</posy>
 								<width>700</width>
 								<height>300</height>
-								<texture border="40">DialogBack.png</texture>
+								<texture border="40">dialogback.png</texture>
 						</control>
 						<control type="image">
 								<description>Heading Background</description>
@@ -124,7 +124,7 @@
 								<posy>34</posy>
 								<width>640</width>
 								<height>40</height>
-								<texture border="5">ThumbFO.png</texture>
+								<texture border="5">thumbfo.png</texture>
 						</control>
 						<control type="label">
 								<description>heading label</description>

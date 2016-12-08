@@ -24,14 +24,14 @@
 												<posy>2</posy>
 												<width>252</width>
 												<height>126</height>
-												<texture>ThumbNF.png</texture>
+												<texture>thumbnf.png</texture>
 										</control>
 										<control type="image">
 												<posx>7</posx>
 												<posy>7</posy>
 												<width>242</width>
 												<height>90</height>
-												<texture>$INFO[Listitem.Icon]</texture>
+												<texture>$INFO[listitem.icon]</texture>
 												<bordertexture border="5">black-back.png</bordertexture>
 												<bordersize>1</bordersize>
 												<aspectratio>stretch</aspectratio>
@@ -55,14 +55,14 @@
 												<posy>2</posy>
 												<width>252</width>
 												<height>126</height>
-												<texture>ThumbFO.png</texture>
+												<texture>thumbfo.png</texture>
 										</control>
 										<control type="image">
 												<posx>7</posx>
 												<posy>7</posy>
 												<width>242</width>
 												<height>90</height>
-												<texture>$INFO[Listitem.Icon]</texture>
+												<texture>$INFO[listitem.icon]</texture>
 												<bordertexture border="5">black-back.png</bordertexture>
 												<bordersize>1</bordersize>
 												<aspectratio>stretch</aspectratio>

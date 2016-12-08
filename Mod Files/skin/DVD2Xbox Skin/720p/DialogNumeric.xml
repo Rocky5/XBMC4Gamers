@@ -12,7 +12,7 @@
 						<posy>0</posy>
 						<width>290</width>
 						<height>385</height>
-						<texture border="40">DialogBack.png</texture>
+						<texture border="40">dialogback.png</texture>
 				</control>
 				<control type="image">
 						<description>Heading Background</description>
@@ -20,7 +20,7 @@
 						<posy>34</posy>
 						<width>230</width>
 						<height>40</height>
-						<texture border="5">ThumbFO.png</texture>
+						<texture border="5">thumbfo.png</texture>
 				</control>
 				<control type="fadelabel" id="1">
 						<description>dialog Heading</description>

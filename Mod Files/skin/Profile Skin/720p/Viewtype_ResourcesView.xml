@@ -14,7 +14,7 @@
 										<width>214</width>
 										<height>290</height>
 										<aspectratio>stretch</aspectratio>
-										<texture border="5">ThumbNF.png</texture>
+										<texture border="5">thumbnf.png</texture>
 								</control>
 								<control type="image">
 										<posx>5</posx>
@@ -22,7 +22,7 @@
 										<width>205</width>
 										<height>280</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true" fallback="no_poster.png">$INFO[ListItem.Path,,_resources\artwork\poster.jpg]</texture>
+										<texture background="true" fallback="no_poster.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
 										<bordertexture border="5">-</bordertexture>
 										<bordersize>1</bordersize>
 								</control>
@@ -53,7 +53,7 @@
 										<width>310</width>
 										<height>170</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true" fallback="no_thumb.png">$INFO[ListItem.Path,,_resources\artwork\thumb.jpg]</texture>
+										<texture background="true" fallback="no_thumb.png">$INFO[listitem.path,,_resources\artwork\thumb.jpg]</texture>
 								</control>
 						</control>
 						<!-- Icon.jpg -->
@@ -82,7 +82,7 @@
 										<width>204</width>
 										<height>204</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
+										<texture background="true" fallback="no_icon.png">$INFO[listitem.path,,_resources\artwork\icon.jpg]</texture>
 								</control>
 						</control>
 						<!-- Fanart.jpg -->
@@ -104,7 +104,7 @@
 										<width>640</width>
 										<height>360</height>
 										<aspectratio>scale</aspectratio>
-										<texture background="true" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+										<texture background="true" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 										<bordersize>5</bordersize>
 								</control>
 								<control type="image">
@@ -136,7 +136,7 @@
 										<width>570</width>
 										<height>120</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true" fallback="no_banner.png">$INFO[ListItem.Path,,_resources\artwork\banner.jpg]</texture>
+										<texture background="true" fallback="no_banner.png">$INFO[listitem.path,,_resources\artwork\banner.jpg]</texture>
 										<bordertexture border="5">-</bordertexture>
 										<bordersize>1</bordersize>
 								</control>

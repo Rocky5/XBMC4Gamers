@@ -25,7 +25,7 @@
 								<posy>0</posy>
 								<width>640</width>
 								<height>700</height>
-								<texture border="40,40,40,40">DialogBack.png</texture>
+								<texture border="40,40,40,40">dialogback.png</texture>
 						</control>
 						<control type="image">
 								<description>Heading Background</description>
@@ -33,7 +33,7 @@
 								<posy>35</posy>
 								<width>580</width>
 								<height>40</height>
-								<texture border="5">ThumbFO.png</texture>
+								<texture border="5">thumbfo.png</texture>
 						</control>
 						<control type="label">
 								<description>Heading label</description>
@@ -82,7 +82,7 @@
 								<posy>0</posy>
 								<width>640</width>
 								<height>700</height>
-								<texture border="40">DialogBack.png</texture>
+								<texture border="40">dialogback.png</texture>
 						</control>
 						<control type="image">
 								<description>Heading Background</description>
@@ -90,7 +90,7 @@
 								<posy>35</posy>
 								<width>580</width>
 								<height>40</height>
-								<texture border="5">ThumbFO.png</texture>
+								<texture border="5">thumbfo.png</texture>
 						</control>
 						<control type="label" id="411">
 								<description>Heading label</description>
@@ -155,7 +155,7 @@
 												<posy>2</posy>
 												<width>31</width>
 												<height>31</height>
-												<texture>$INFO[ListItem.Icon]</texture>
+												<texture>$INFO[listitem.icon]</texture>
 										</control>
 										<control type="label">
 												<posx>45</posx>
@@ -191,7 +191,7 @@
 												<posy>2</posy>
 												<width>31</width>
 												<height>31</height>
-												<texture>$INFO[ListItem.Icon]</texture>
+												<texture>$INFO[listitem.icon]</texture>
 										</control>
 										<control type="label">
 												<posx>45</posx>
@@ -231,7 +231,7 @@
 												<posy>2</posy>
 												<width>31</width>
 												<height>31</height>
-												<texture>$INFO[ListItem.Icon]</texture>
+												<texture>$INFO[listitem.icon]</texture>
 										</control>
 										<control type="label">
 												<posx>45</posx>
@@ -267,7 +267,7 @@
 												<posy>2</posy>
 												<width>31</width>
 												<height>31</height>
-												<texture>$INFO[ListItem.Icon]</texture>
+												<texture>$INFO[listitem.icon]</texture>
 										</control>
 										<control type="label">
 												<posx>45</posx>

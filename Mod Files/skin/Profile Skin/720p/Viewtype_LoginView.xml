@@ -11,7 +11,7 @@
 								<height>675</height>
 								<aspectratio>scale</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[ListItem.Path,,fanart.jpg]</texture>
+								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
 								<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Skin.HasSetting(_recourcesenabled)</visible>
 								<animation effect="fade" reversable="false" start="0" end="75" time="0" condition="Control.IsVisible(52)">Conditional</animation>
 						</control>
@@ -22,7 +22,7 @@
 								<height>675</height>
 								<aspectratio>scale</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 								<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + Skin.HasSetting(_recourcesenabled)</visible>
 								<animation effect="fade" reversable="false" start="0" end="75" time="0" condition="Control.IsVisible(52)">Conditional</animation>
 						</control>
@@ -33,7 +33,7 @@
 								<height>675</height>
 								<aspectratio>scale</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[ListItem.Path,,fanart.jpg]</texture>
+								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
 								<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + !Skin.HasSetting(_recourcesenabled)</visible>
 						</control>
 						<control type="image">
@@ -43,7 +43,7 @@
 								<height>675</height>
 								<aspectratio>scale</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 								<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + Skin.HasSetting(_recourcesenabled)</visible>
 						</control>
 						<control type="group">
@@ -85,7 +85,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="no_icon.png">$INFO[listitem.icon]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
@@ -94,7 +94,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="no_icon.png">$INFO[listitem.icon]</texture>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 												</control>
 												<control type="image">
@@ -103,7 +103,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
+														<texture background="true" fallback="no_icon.png">$INFO[listitem.path,,_resources\artwork\icon.jpg]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
@@ -112,7 +112,7 @@
 														<width>25</width>
 														<height>25</height>
 														<aspectratio>stretch</aspectratio>
-														<texture>$INFO[ListItem.Overlay]</texture>
+														<texture>$INFO[listitem.overlay]</texture>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(53).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(53).OnScrollPrevious">Conditional</animation>
 												</control>
@@ -139,7 +139,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[listitem.icon]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
@@ -148,7 +148,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[listitem.icon]</texture>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 												</control>
 												<control type="image">
@@ -157,7 +157,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
+														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[listitem.path,,_resources\artwork\icon.jpg]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 												</control>
 										</itemlayout>
@@ -199,7 +199,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="no_icon.png">$INFO[listitem.icon]</texture>
 														<animation reversible="false" effect="zoom" start="7,5,204,204" end="-3,-5,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,5,204,204" start="-3,-5,224,224" time="200">unfocus</animation>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -210,7 +210,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="no_icon.png">$INFO[listitem.icon]</texture>
 														<animation reversible="false" effect="zoom" start="7,5,204,204" end="-3,-5,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,5,204,204" start="-3,-5,224,224" time="200">unfocus</animation>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
@@ -221,7 +221,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
+														<texture background="true" fallback="no_icon.png">$INFO[listitem.path,,_resources\artwork\icon.jpg]</texture>
 														<animation reversible="false" effect="zoom" start="7,5,204,204" end="-3,-5,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,5,204,204" start="-3,-5,224,224" time="200">unfocus</animation>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
@@ -232,7 +232,7 @@
 														<width>25</width>
 														<height>25</height>
 														<aspectratio>stretch</aspectratio>
-														<texture>$INFO[ListItem.Overlay]</texture>
+														<texture>$INFO[listitem.overlay]</texture>
 														<animation reversible="false" effect="zoom" start="10,8,25,25" end="0,-3,30,30" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="10,8,25,25" start="0,-3,30,30" time="200">unfocus</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(53).OnScrollNext">Conditional</animation>
@@ -265,7 +265,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[listitem.icon]</texture>
 														<animation reversible="false" effect="zoom" start="7,214,204,204" end="-3,229,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,214,204,204" start="-3,229,224,224" time="200">unfocus</animation>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -276,7 +276,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[listitem.icon]</texture>
 														<animation reversible="false" effect="zoom" start="7,214,204,204" end="-3,229,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,214,204,204" start="-3,229,224,224" time="200">unfocus</animation>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
@@ -287,7 +287,7 @@
 														<width>204</width>
 														<height>204</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[ListItem.Path,,_resources\artwork\icon.jpg]</texture>
+														<texture background="true" flipy="true" diffuse="diffuse_mirror.png" fallback="no_icon.png">$INFO[listitem.path,,_resources\artwork\icon.jpg]</texture>
 														<animation reversible="false" effect="zoom" start="7,214,204,204" end="-3,229,224,224" time="200">focus</animation>
 														<animation reversible="false" effect="zoom" end="7,214,204,204" start="-3,229,224,224" time="200">unfocus</animation>v
 							<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible></control>

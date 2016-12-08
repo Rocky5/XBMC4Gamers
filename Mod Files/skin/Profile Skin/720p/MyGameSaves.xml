@@ -27,7 +27,7 @@
 										<posy>0</posy>
 										<width>230</width>
 										<height>45</height>
-										<texture border="8">SubBack.png</texture>
+										<texture border="8">subback.png</texture>
 								</control>
 								<control type="button" id="3">
 										<description>Sort by button</description>

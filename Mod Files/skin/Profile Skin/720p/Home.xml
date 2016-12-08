@@ -7,7 +7,7 @@
 						<posy>0</posy>
 						<width>1280</width>
 						<height>720</height>
-						<texture fallback="Background.png">$INFO[Skin.String(Background_Color)]</texture>
+						<texture fallback="Background.png">$INFO[skin.string(background_color)]</texture>
 						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="image">
@@ -24,7 +24,7 @@
 						<posy>0</posy>
 						<width>1280</width>
 						<height>720</height>
-						<texture>$INFO[Skin.String(Background_Image)]</texture>
+						<texture>$INFO[skin.string(background_image)]</texture>
 						<aspectratio>scale</aspectratio>
 				</control>
 				<!-- Debug Info -->

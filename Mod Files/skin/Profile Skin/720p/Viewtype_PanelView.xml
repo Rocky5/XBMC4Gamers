@@ -37,7 +37,7 @@
 										<width>216</width>
 										<height>316</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">$INFO[ListItem.Icon]</texture>
+										<texture background="true">$INFO[listitem.icon]</texture>
 										<bordertexture>-</bordertexture>
 										<bordersize>5</bordersize>
 										<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -48,7 +48,7 @@
 										<width>216</width>
 										<height>316</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">$INFO[ListItem.Icon]</texture>
+										<texture background="true">$INFO[listitem.icon]</texture>
 										<bordertexture>-</bordertexture>
 										<bordersize>5</bordersize>
 										<visible>!Skin.HasSetting(_recourcesenabled)</visible>
@@ -59,7 +59,7 @@
 										<width>216</width>
 										<height>316</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true" fallback="no_poster.png">$INFO[ListItem.Path,,_resources\artwork\poster.jpg]</texture>
+										<texture background="true" fallback="no_poster.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
 										<bordertexture>-</bordertexture>
 										<bordersize>5</bordersize>
 										<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
@@ -70,7 +70,7 @@
 										<width>30</width>
 										<height>30</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>$INFO[ListItem.Overlay]</texture>
+										<texture>$INFO[listitem.overlay]</texture>
 								</control>
 								<control type="image">
 										<posx>506</posx>
@@ -98,7 +98,7 @@
 										<width>410</width>
 										<height>316</height>
 										<aspectratio>scale</aspectratio>
-										<texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+										<texture background="true">$INFO[listitem.path,,fanart.jpg]</texture>
 										<bordertexture>-</bordertexture>
 										<bordersize>5</bordersize>
 										<fadetime>FanartCrossfadeTime</fadetime>
@@ -110,7 +110,7 @@
 										<width>410</width>
 										<height>316</height>
 										<aspectratio>scale</aspectratio>
-										<texture background="true">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+										<texture background="true">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 										<bordertexture>-</bordertexture>
 										<bordersize>5</bordersize>
 										<fadetime>FanartCrossfadeTime</fadetime>
@@ -257,7 +257,7 @@
 														<width>68</width>
 														<height>96</height>
 														<aspectratio>stretch</aspectratio>
-														<texture>ThumbNF.png</texture>
+														<texture>thumbnf.png</texture>
 												</control>
 												<control type="image">
 														<posx>0</posx>
@@ -265,7 +265,7 @@
 														<width>68</width>
 														<height>96</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true">$INFO[ListItem.Icon]</texture>
+														<texture background="true">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">black-back.png</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>!Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -276,7 +276,7 @@
 														<width>68</width>
 														<height>96</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true">$INFO[ListItem.Icon]</texture>
+														<texture background="true">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">black-back.png</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
@@ -287,7 +287,7 @@
 														<width>68</width>
 														<height>96</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" fallback="no_poster.png">$INFO[ListItem.Path,,_resources\artwork\poster.jpg]</texture>
+														<texture background="true" fallback="no_poster.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
 														<bordertexture border="5">black-back.png</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
@@ -300,7 +300,7 @@
 														<width>68</width>
 														<height>96</height>
 														<aspectratio>stretch</aspectratio>
-														<texture>ThumbNF.png</texture>
+														<texture>thumbnf.png</texture>
 												</control>
 												<control type="image">
 														<posx>0</posx>

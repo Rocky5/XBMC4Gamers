@@ -11,7 +11,7 @@
 								<height>675</height>
 								<aspectratio>scale</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_thumb.png" fallback="no_fanart.png">$INFO[ListItem.Path,,fanart.jpg]</texture>
+								<texture background="true" diffuse="fanart_diffuse_thumb.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
 								<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Skin.HasSetting(_recourcesenabled)</visible>
 								<animation effect="fade" reversable="false" start="0" end="75" time="0" condition="Control.IsVisible(52)">Conditional</animation>
 						</control>
@@ -22,7 +22,7 @@
 								<height>675</height>
 								<aspectratio>scale</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_thumb.png" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+								<texture background="true" diffuse="fanart_diffuse_thumb.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 								<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + Skin.HasSetting(_recourcesenabled)</visible>
 								<animation effect="fade" reversable="false" start="0" end="75" time="0" condition="Control.IsVisible(52)">Conditional</animation>
 						</control>
@@ -33,7 +33,7 @@
 								<height>675</height>
 								<aspectratio>scale</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_thumb.png" fallback="no_fanart.png">$INFO[ListItem.Path,,fanart.jpg]</texture>
+								<texture background="true" diffuse="fanart_diffuse_thumb.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
 								<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + !Skin.HasSetting(_recourcesenabled)</visible>
 						</control>
 						<control type="image">
@@ -43,7 +43,7 @@
 								<height>675</height>
 								<aspectratio>scale</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_thumb.png" fallback="no_fanart.png">$INFO[ListItem.Path,,_resources\artwork\fanart.jpg]</texture>
+								<texture background="true" diffuse="fanart_diffuse_thumb.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 								<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + Skin.HasSetting(_recourcesenabled)</visible>
 						</control>
 						<control type="group">
@@ -85,7 +85,7 @@
 														<width>310</width>
 														<height>170</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_thumb.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="no_thumb.png">$INFO[listitem.icon]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
@@ -94,7 +94,7 @@
 														<width>310</width>
 														<height>170</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_thumb.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="no_thumb.png">$INFO[listitem.icon]</texture>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 												</control>
 												<control type="image">
@@ -103,7 +103,7 @@
 														<width>310</width>
 														<height>170</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" fallback="no_thumb.png">$INFO[ListItem.Path,,_resources\artwork\thumb.jpg]</texture>
+														<texture background="true" fallback="no_thumb.png">$INFO[listitem.path,,_resources\artwork\thumb.jpg]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
@@ -112,7 +112,7 @@
 														<width>25</width>
 														<height>25</height>
 														<aspectratio>stretch</aspectratio>
-														<texture>$INFO[ListItem.Overlay]</texture>
+														<texture>$INFO[listitem.overlay]</texture>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(55).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(55).OnScrollPrevious">Conditional</animation>
 												</control>
@@ -141,7 +141,7 @@
 														<width>310</width>
 														<height>170</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_thumb.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="no_thumb.png">$INFO[listitem.icon]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
@@ -150,7 +150,7 @@
 														<width>310</width>
 														<height>170</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true" fallback="no_thumb.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="no_thumb.png">$INFO[listitem.icon]</texture>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 												</control>
 												<control type="image">
@@ -159,7 +159,7 @@
 														<width>310</width>
 														<height>170</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" fallback="no_thumb.png">$INFO[ListItem.Path,,_resources\artwork\thumb.jpg]</texture>
+														<texture background="true" fallback="no_thumb.png">$INFO[listitem.path,,_resources\artwork\thumb.jpg]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
@@ -168,7 +168,7 @@
 														<width>25</width>
 														<height>25</height>
 														<aspectratio>stretch</aspectratio>
-														<texture>$INFO[ListItem.Overlay]</texture>
+														<texture>$INFO[listitem.overlay]</texture>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(55).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(55).OnScrollPrevious">Conditional</animation>
 												</control>

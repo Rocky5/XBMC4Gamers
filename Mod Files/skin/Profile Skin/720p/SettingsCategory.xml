@@ -60,7 +60,7 @@
 								<posy>25</posy>
 								<width>290</width>
 								<height>415</height>
-								<texture border="8">SubBack.png</texture>
+								<texture border="8">subback.png</texture>
 						</control>
 						<control type="image">
 								<description>Overlay image</description>
@@ -68,14 +68,14 @@
 								<posy>25</posy>
 								<width>200</width>
 								<height>310</height>
-								<texture>GlassOverlay.png</texture>
+								<texture>glassoverlay.png</texture>
 						</control>
 						<control type="image">
 								<posx>0</posx>
 								<posy>25</posy>
 								<width>290</width>
 								<height>40</height>
-								<texture>HorizontalGlow.png</texture>
+								<texture>horizontalglow.png</texture>
 						</control>
 						<control type="grouplist" id="3">
 								<description>button area</description>

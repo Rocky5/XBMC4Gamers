@@ -68,14 +68,14 @@
 												<posy>0</posy>
 												<width>190</width>
 												<height>100</height>
-												<texture border="5">ListNF.png</texture>
+												<texture border="5">listnf.png</texture>
 										</control>
 										<control type="image">
 												<posx>20</posx>
 												<posy>-25</posy>
 												<width>150</width>
 												<height>150</height>
-												<texture background="true">$INFO[ListItem.Icon]</texture>
+												<texture background="true">$INFO[listitem.icon]</texture>
 												<bordertexture border="5">white-back.png</bordertexture>
 												<bordersize>1</bordersize>
 										</control>
@@ -98,14 +98,14 @@
 												<posy>0</posy>
 												<width>190</width>
 												<height>100</height>
-												<texture border="5">ThumbFO.png</texture>
+												<texture border="5">thumbfo.png</texture>
 										</control>
 										<control type="image">
 												<posx>20</posx>
 												<posy>-25</posy>
 												<width>150</width>
 												<height>150</height>
-												<texture background="true">$INFO[ListItem.Icon]</texture>
+												<texture background="true">$INFO[listitem.icon]</texture>
 												<bordertexture border="5">white-back.png</bordertexture>
 												<bordersize>1</bordersize>
 										</control>

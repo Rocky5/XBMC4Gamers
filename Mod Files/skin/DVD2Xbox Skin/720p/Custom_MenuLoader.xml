@@ -35,7 +35,7 @@
 								<width>224</width>
 								<height>224</height>
 								<aspectratio>stretch</aspectratio>
-								<texture>$INFO[System.ProfileThumb]</texture>
+								<texture>$INFO[system.profilethumb]</texture>
 						</control>
 						<!-- Flipped images -->
 						<control type="image">
@@ -60,7 +60,7 @@
 								<width>224</width>
 								<height>224</height>
 								<aspectratio>stretch</aspectratio>
-								<texture flipy="true" diffuse="diffuse_mirror.png">$INFO[System.ProfileThumb]</texture>
+								<texture flipy="true" diffuse="diffuse_mirror.png">$INFO[system.profilethumb]</texture>
 						</control>
 				</control>
 				<control type="label">

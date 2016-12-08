@@ -81,7 +81,7 @@
 										<height>320</height>
 										<aspectratio>stretch</aspectratio>
 										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture fallback="unknown-user.png">$INFO[Container(2).Listitem.Icon]</texture>
+										<texture fallback="unknown-user.png">$INFO[container(2).listitem.icon]</texture>
 								</control>
 								<control type="panel" id="2">
 										<posx>5</posx>
@@ -102,14 +102,14 @@
 														<posy>0</posy>
 														<width>1200</width>
 														<height>90</height>
-														<texture border="5">ListNF.png</texture>
+														<texture border="5">listnf.png</texture>
 												</control>
 												<control type="image">
 														<posx>10</posx>
 														<posy>10</posy>
 														<width>70</width>
 														<height>70</height>
-														<texture background="true" fallback="unknown-user.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="unknown-user.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">white-back.png</bordertexture>
 														<bordersize>1</bordersize>
 												</control>
@@ -144,14 +144,14 @@
 														<posy>0</posy>
 														<width>1175</width>
 														<height>90</height>
-														<texture border="5">ThumbFO.png</texture>
+														<texture border="5">thumbfo.png</texture>
 												</control>
 												<control type="image">
 														<posx>10</posx>
 														<posy>10</posy>
 														<width>70</width>
 														<height>70</height>
-														<texture background="true" fallback="unknown-user.png">$INFO[ListItem.Icon]</texture>
+														<texture background="true" fallback="unknown-user.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">white-back.png</bordertexture>
 														<bordersize>1</bordersize>
 												</control>

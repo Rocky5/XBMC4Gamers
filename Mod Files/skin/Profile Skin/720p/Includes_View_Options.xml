@@ -27,14 +27,14 @@
 												<posy>0</posy>
 												<width>110</width>
 												<height>45</height>
-												<texture border="5">ListNF.png</texture>
+												<texture border="5">listnf.png</texture>
 										</control>
 										<control type="image">
 												<posx>5</posx>
 												<posy>5</posy>
 												<width>100</width>
 												<height>35</height>
-												<texture>$INFO[Listitem.ActualIcon]</texture>
+												<texture>$INFO[listitem.actualicon]</texture>
 												<bordertexture>black-back.png</bordertexture>
 												<bordersize>1</bordersize>
 												<aspectratio>scale</aspectratio>
@@ -46,7 +46,7 @@
 												<posy>0</posy>
 												<width>110</width>
 												<height>45</height>
-												<texture border="5">ListNF.png</texture>
+												<texture border="5">listnf.png</texture>
 												<visible>!Control.HasFocus(117)</visible>
 										</control>
 										<control type="image">
@@ -54,7 +54,7 @@
 												<posy>0</posy>
 												<width>110</width>
 												<height>45</height>
-												<texture border="5">ThumbFO.png</texture>
+												<texture border="5">thumbfo.png</texture>
 												<visible>Control.HasFocus(117)</visible>
 										</control>
 										<control type="image">
@@ -62,7 +62,7 @@
 												<posy>5</posy>
 												<width>100</width>
 												<height>35</height>
-												<texture>$INFO[Listitem.ActualIcon]</texture>
+												<texture>$INFO[listitem.actualicon]</texture>
 												<bordertexture>black-back.png</bordertexture>
 												<bordersize>1</bordersize>
 												<aspectratio>scale</aspectratio>
