@@ -101,43 +101,33 @@ if os.path.isfile( Working_Directory + "default.xbe" ):
 		if os.path.isdir( Profiles + Profile_Directory[0] ):
 			Profile1 = Profile_Data % ( Profile_Directory[0],"profiles/" + Profile_Directory[0],"" )
 			WriteXML.write( Profile1 )
-
 		if os.path.isdir( Profiles + Profile_Directory[1] ):
 			Profile2 = Profile_Data % ( Profile_Directory[1],"profiles/" + Profile_Directory[1],"" )
 			WriteXML.write( Profile2 )
-
 		if os.path.isdir( Profiles + Profile_Directory[2] ):
 			Profile3 = Profile_Data % ( Profile_Directory[2],"profiles/" + Profile_Directory[2],"" )
 			WriteXML.write( Profile3 )
-
 		if os.path.isdir( Profiles + Profile_Directory[3] ):
 			Profile4 = Profile_Data % ( Profile_Directory[3],"profiles/" + Profile_Directory[3],"" )
 			WriteXML.write( Profile4 )
-
 		if os.path.isdir( Profiles + Profile_Directory[4] ):
 			Profile5 = Profile_Data % ( Profile_Directory[4],"profiles/" + Profile_Directory[4],"" )
 			WriteXML.write( Profile5 )
-
 		if os.path.isdir( Profiles + Profile_Directory[5] ):
 			Profile6 = Profile_Data % ( Profile_Directory[5],"profiles/" + Profile_Directory[5],"" )
 			WriteXML.write( Profile6 )
-
 		if os.path.isdir( Profiles + Profile_Directory[6] ):
 			Profile7 = Profile_Data % ( Profile_Directory[6],"profiles/" + Profile_Directory[6],"" )
 			WriteXML.write( Profile7 )
-
 		if os.path.isdir( Profiles + Profile_Directory[7] ):
 			Profile8 = Profile_Data % ( Profile_Directory[7],"profiles/" + Profile_Directory[7],"" )
 			WriteXML.write( Profile8 )
-
 		if os.path.isdir( Profiles + Profile_Directory[8] ):
 			Profile9 = Profile_Data % ( Profile_Directory[8],"profiles/" + Profile_Directory[8],"" )
 			WriteXML.write( Profile9 )
-
 		if os.path.isdir( Profiles + Profile_Directory[9] ):
 			Profile10 = Profile_Data % ( Profile_Directory[9],"profiles/" + Profile_Directory[9],"" )
 			WriteXML.write( Profile10 )
-
 	except:
 		pass
 
@@ -155,18 +145,61 @@ if os.path.isfile( Working_Directory + "default.xbe" ):
 		progress += 1
 		pDialog.update( int ( progress / float( len ( os.listdir( Profiles ) ) ) *100 ),"Copying Profiles",Items )
 		if os.path.isdir( CopyFrom ):
-			shutil.copytree( CopyFrom, CopyTo )
+			try:
+				shutil.copytree( CopyFrom, CopyTo )
+			except:
+				pass
 		else:
-			shutil.copy2( CopyFrom, CopyTo )
+			try:
+				shutil.copy2( CopyFrom, CopyTo )
+			except:
+				pass
 	
 	# Remove old files.
-	try:
-		pDialog.update(0,"Removing Old Files/Folders","Please Wait..." )
-		if os.path.exists( Working_Directory ):
-			shutil.rmtree( Working_Directory )
-			pDialog.update(100,"Removing Old Files/Folders","Please Wait..." )
-	except:
-		pass
+	pDialog.update(0,"Removing Old Folders","Please Wait..." )
+	pDialog.update(2,"Removing","Apps" )
+	if os.path.exists( os.path.join( Working_Directory, "Apps" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "Apps" ) )
+		pDialog.update(5,"Removing","language" )
+	if os.path.exists( os.path.join( Working_Directory, "language" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "language" ) )
+		pDialog.update(10,"Removing","media" )
+	if os.path.exists( os.path.join( Working_Directory, "media" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "media" ) )
+		pDialog.update(20,"Removing","plugins" )
+	if os.path.exists( os.path.join( Working_Directory, "plugins" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "plugins" ) )
+		pDialog.update(25,"Removing","screensavers" )
+	if os.path.exists( os.path.join( Working_Directory, "screensavers" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "screensavers" ) )
+		pDialog.update(30,"Removing","scripts" )
+	if os.path.exists( os.path.join( Working_Directory, "scripts" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "scripts" ) )
+		pDialog.update(40,"Removing","skin" )
+	if os.path.exists( os.path.join( Working_Directory, "skin" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "skin" ) )
+		pDialog.update(55,"Removing","sounds" )
+	if os.path.exists( os.path.join( Working_Directory, "sounds" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "sounds" ) )
+		pDialog.update(60,"Removing","system" )
+	if os.path.exists( os.path.join( Working_Directory, "system" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "system" ) )
+		pDialog.update(70,"Removing","UserData" )
+	if os.path.exists( os.path.join( Working_Directory, "UserData" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "UserData" ) )
+		pDialog.update(80,"Removing","visualisations" )
+	if os.path.exists( os.path.join( Working_Directory, "visualisations" ) ):
+		shutil.rmtree( os.path.join( Working_Directory, "visualisations" ) )
+		pDialog.update(85,"Removing","xbmc.log" )
+	if os.path.isfile( os.path.join( Working_Directory, "xbmc.log" ) ):
+		os.remove( os.path.join( Working_Directory, "xbmc.log" ) )
+		pDialog.update(90,"Removing","xbmc.old.log" )
+	if os.path.isfile( os.path.join( Working_Directory, "xbmc.old.log" ) ):
+		os.remove( os.path.join( Working_Directory, "xbmc.old.log" ) )
+		pDialog.update(95,"Removing","default.xbe" )
+	if os.path.isfile( os.path.join( Working_Directory, "default.xbe" ) ):
+		os.remove( os.path.join( Working_Directory, "default.xbe" ) )
+		pDialog.update(100,"","Done" )
 
 	# Copy new files over.
 	progress = 0
@@ -176,9 +209,15 @@ if os.path.isfile( Working_Directory + "default.xbe" ):
 		progress += 1
 		pDialog.update( int ( progress / float( len ( os.listdir( XBMC4Kids_Update_Path ) ) ) *100 ),"Installing Update Files",Items )
 		if os.path.isdir( CopyFrom ):
-			shutil.copytree( CopyFrom, CopyTo )
+			try:
+				shutil.copytree( CopyFrom, CopyTo )
+			except:
+				pass
 		else:
-			shutil.copy2(  CopyFrom, CopyTo )			
+			try:
+				shutil.copy2(  CopyFrom, CopyTo )
+			except:
+				pass			
 
 	Success_File = open( Working_Directory + "Updater/update_complete",'w' )
 	Success_File.write( " " )
