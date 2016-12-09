@@ -11,6 +11,11 @@
 						<size>17</size>
 				</font>
 				<font>
+						<name>font12a</name>
+						<filename>arial.ttf</filename>
+						<size>18</size>
+				</font>
+				<font>
 						<name>font12</name>
 						<filename>arial.ttf</filename>
 						<size>20</size>
@@ -72,6 +77,11 @@
 						<name>font11</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>17</size>
+				</font>
+				<font>
+						<name>font12a</name>
+						<filename>Roboto-Regular.ttf</filename>
+						<size>18</size>
 				</font>
 				<font>
 						<name>font12</name>
