@@ -3,6 +3,10 @@
 	Script by Rocky5
 	Used to update XBMC4Kids & migrate profiles
 	
+	Update: 10 December 2016
+	-- Gets the xbe name dynamically now, this will allow installations to work with custom xbe names.
+	-- Added some error handling.
+	
 	Update: 08 August 2016
 	-- Added dynamic progress dialogues and improved the code.
 '''
@@ -36,19 +40,21 @@ with open( xbmc.translatePath( "special://xbmc" ) + "xbmc.log", "r" ) as XBMCLOG
 		if sep:
 			Working_Directory = ( right[:CharCount] )
 			Working_Directory = Working_Directory[:-20] # Removed Updater\default.xbe
-		
-XBMC4Kids_Update_Path			= os.path.join( Working_Directory,"Updater\\Update Files\\" )
-XBMC4Kids_Update_Path_Profiles	= os.path.join( XBMC4Kids_Update_Path,"UserData\\Profiles\\" )
-Profiles						= os.path.join( Working_Directory,"UserData\\Profiles\\" )
-pDialog							= xbmcgui.DialogProgress()
-dialog							= xbmcgui.Dialog()
-##
+			for XBE in os.listdir( Working_Directory ):
+				if XBE.endswith( ".xbe" ):
+					XBMC4KidsXBE = XBE
 
+XBMC4Kids_Update_Path				= os.path.join( Working_Directory,"Updater\\Update Files\\" )
+XBMC4Kids_Update_Path_Profiles		= os.path.join( XBMC4Kids_Update_Path,"UserData\\Profiles\\" )
+Profiles							= os.path.join( Working_Directory,"UserData\\Profiles\\" )
+pDialog								= xbmcgui.DialogProgress()
+dialog								= xbmcgui.Dialog()
+##
 
 ########################################################################################################################################
 # Get list of directories and then parse them so I can id each directory then remove everything & then copy the new stuff over.
 ########################################################################################################################################
-if os.path.isfile( Working_Directory + "default.xbe" ):
+if os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
 
 	dialog.ok( "XBMC4Kids Updater","","Welcome to the XBMC4Kids Updater","Press (A) to proceed with the update." )
 
@@ -135,7 +141,6 @@ if os.path.isfile( Working_Directory + "default.xbe" ):
 	WriteXML.write( Footer_Data )
 	WriteXML.close()
 
-	
 	# Copy profile directories over.
 	progress = 0
 	pDialog.update( 0,"Removing Game Thumbnails","Processing" )
@@ -154,7 +159,7 @@ if os.path.isfile( Working_Directory + "default.xbe" ):
 				shutil.copy2( CopyFrom, CopyTo )
 			except:
 				pass
-	
+
 	# Remove old files.
 	pDialog.update(0,"Removing Old Folders","Please Wait..." )
 	pDialog.update(2,"Removing","Apps" )
@@ -196,9 +201,9 @@ if os.path.isfile( Working_Directory + "default.xbe" ):
 		pDialog.update(90,"Removing","xbmc.old.log" )
 	if os.path.isfile( os.path.join( Working_Directory, "xbmc.old.log" ) ):
 		os.remove( os.path.join( Working_Directory, "xbmc.old.log" ) )
-		pDialog.update(95,"Removing","default.xbe" )
-	if os.path.isfile( os.path.join( Working_Directory, "default.xbe" ) ):
-		os.remove( os.path.join( Working_Directory, "default.xbe" ) )
+		pDialog.update(95,"Removing",XBMC4KidsXBE )
+	if os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
+		os.remove( os.path.join( Working_Directory, XBMC4KidsXBE ) )
 		pDialog.update(100,"","Done" )
 
 	# Copy new files over.
@@ -223,12 +228,15 @@ if os.path.isfile( Working_Directory + "default.xbe" ):
 	Success_File.write( " " )
 	Success_File.close()
 
+	# Rename xbe back to what it was before the updater was run.
+	if not os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
+		os.rename( os.path.join( Working_Directory, "default.xbe" ), os.path.join( Working_Directory, XBMC4KidsXBE ) )
+	else:
+		pass
+
 	pDialog.close()
 	dialog.ok( "XBMC4Kids Updater","","Done, XBMC will now reload." )
-
-	xbmc.executebuiltin( "XBMC.RunXBE(%sDefault.xbe)" % Working_Directory )
+	
+	xbmc.executebuiltin( "XBMC.RunXBE(%s)" % os.path.join( Working_Directory, XBMC4KidsXBE ) )
 else:
 	dialog.ok( "Error","","Have you placed the [B]Updater[/B] folder","inside your [B]XBMC4Kids[/B] directory?" )
-
-
-

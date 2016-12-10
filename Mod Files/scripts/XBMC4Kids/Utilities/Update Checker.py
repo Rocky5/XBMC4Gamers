@@ -37,7 +37,7 @@ if os.path.isfile( xbmc.translatePath( "special://xbmc/Updater/default.xbe" ) ):
 		xbmc.executebuiltin( "Skin.SetBool(editmode)" )
 		xbmc.executebuiltin( "SetFocus(52)" )
 	else:
-		if dialog.yesno( "XBMC4Kids Updater","", "Update Folder found, would you like to install the update?" ) == 1:
+		if dialog.yesno( "XBMC4Kids Updater","", "Update Folder found, would you like to install the update?","","Update Later","Update Now" ) == 1:
 			xbmc.executebuiltin( "XBMC.RunXBE( %sDefault.xbe )" % xbmc.translatePath( "special://xbmc/Updater/" ) )
 		else:
 			xbmc.executebuiltin( "SetFocus(52)" )
