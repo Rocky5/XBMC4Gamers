@@ -15,6 +15,7 @@
 						<height>720</height>
 						<texture fallback="Background.png">$INFO[skin.string(background_color)]</texture>
 						<aspectratio>stretch</aspectratio>
+						<visible>!IsEmpty.($INFO[Skin.String(Background_Custom_Color)])</visible>
 				</control>
 				<control type="image">
 						<posx>0</posx>
@@ -95,7 +96,7 @@
 						<texture>scroll-up.png</texture>
 						<colordiffuse>$VAR[var-labelcolour]</colordiffuse>
 						<visible>!ControlGroup(9002).HasFocus</visible>
-						<animation type="Conditional" condition="true" loop="true" reversable="true">
+						<animation type="Conditional" condition="System.IdleTime(5)" loop="true" reversable="false">
 								<effect type="slide" start="0,0" end="0,-12" time="1000" tween="cubic" easing="inout" delay="3000" />
 								<effect type="slide" start="0,0" end="0,12" time="1000" tween="cubic" easing="inout" delay="3500" />
 						</animation>
