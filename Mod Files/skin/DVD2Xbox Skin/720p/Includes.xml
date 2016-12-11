@@ -3,8 +3,6 @@
 		<include file="includes_context_buttons.xml" />
 		<include file="includes_variables.xml" />
 		<include file="includes_debug.xml" />
-		<include file="includes_snow.xml" />
-		<include file="includes_easter.xml" />
 		<constant name="FanartCrossfadeTime">200</constant>
 		<include name="CommonBackground">
 				<control type="image">

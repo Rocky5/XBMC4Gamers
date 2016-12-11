@@ -1,0 +1,156 @@
+<includes>
+		<include name="CardView">
+				<control type="group">
+						<visible>Control.IsVisible(57) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
+						<include>Window_OpenClose_Animation</include>
+						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
+						<control type="panel" id="57">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>720</height>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>117</onup>
+								<ondown>-</ondown>
+								<viewtype label="Card">Panel</viewtype>
+								<pagecontrol>-</pagecontrol>
+								<scrolltime>200</scrolltime>
+								<focusposition>0</focusposition>
+								<movement>0</movement>
+								<orientation>horizontal</orientation>
+								<preloaditems>2</preloaditems>
+								<itemlayout width="1280" height="720">
+										<control type="image">
+												<posx>40</posx>
+												<posy>100</posy>
+												<width>1200</width>
+												<height>500</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>synopsis_background_alt.png</texture>
+										</control>
+										<control type="image">
+												<posx>50</posx>
+												<posy>110</posy>
+												<width>340</width>
+												<height>480</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="synopsis_diffuse_alt_thumb.png">$INFO[listitem.icon]</texture>
+										</control>
+										<control type="image">
+												<posx>400</posx>
+												<posy>160</posy>
+												<width>830</width>
+												<height>390</height>
+												<aspectratio scalediffuse="false">scale</aspectratio>
+												<texture background="true" scalediffuse="false" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
+												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>400</posx>
+												<posy>160</posy>
+												<width>830</width>
+												<height>390</height>
+												<aspectratio scalediffuse="false">scale</aspectratio>
+												<texture background="true" scalediffuse="false" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<visible>Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>415</posx>
+												<posy>175r</posy>
+												<width>40</width>
+												<height>40</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>overlay-watched.png</texture>
+												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+										</control>
+										<control type="image">
+												<posx>415</posx>
+												<posy>175r</posy>
+												<width>40</width>
+												<height>40</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[listitem.overlay]</texture>
+												<animation reversible="false" effect="slide" start="0,0" end="45,0" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+										</control>
+										<control type="label">
+												<posx>410</posx>
+												<posy>110</posy>
+												<width>790</width>
+												<height>20</height>
+												<font>font25</font>
+												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<scroll>true</scroll>
+												<align>left</align>
+												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										</control>
+								</itemlayout>
+								<focusedlayout width="1280" height="720">
+										<control type="image">
+												<posx>40</posx>
+												<posy>100</posy>
+												<width>1200</width>
+												<height>500</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>synopsis_background_alt.png</texture>
+										</control>
+										<control type="image">
+												<posx>50</posx>
+												<posy>110</posy>
+												<width>340</width>
+												<height>480</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="synopsis_diffuse_alt_thumb.png">$INFO[listitem.icon]</texture>
+										</control>
+										<control type="image">
+												<posx>400</posx>
+												<posy>160</posy>
+												<width>830</width>
+												<height>390</height>
+												<aspectratio scalediffuse="false">scale</aspectratio>
+												<texture background="true" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
+												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>400</posx>
+												<posy>160</posy>
+												<width>830</width>
+												<height>390</height>
+												<aspectratio scalediffuse="false">scale</aspectratio>
+												<texture background="true" scalediffuse="false" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<visible>Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>415</posx>
+												<posy>175r</posy>
+												<width>40</width>
+												<height>40</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>overlay-watched.png</texture>
+												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+										</control>
+										<control type="image">
+												<posx>415</posx>
+												<posy>175r</posy>
+												<width>40</width>
+												<height>40</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[listitem.overlay]</texture>
+												<animation reversible="false" effect="slide" start="0,0" end="45,0" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+										</control>
+										<control type="label">
+												<posx>410</posx>
+												<posy>110</posy>
+												<width>790</width>
+												<height>20</height>
+												<font>font25</font>
+												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<scroll>true</scroll>
+												<align>left</align>
+												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										</control>
+								</focusedlayout>
+						</control>
+				</control>
+		</include>
+</includes>

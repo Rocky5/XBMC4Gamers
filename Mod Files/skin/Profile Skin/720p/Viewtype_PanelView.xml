@@ -5,7 +5,7 @@
 						<control type="group">
 								<posx>2</posx>
 								<posy>-30</posy>
-								<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
+								<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
 								<include>Window_OpenClose_Animation</include>
 								<control type="label">
 										<posx>36</posx>
@@ -66,7 +66,7 @@
 								</control>
 								<control type="image">
 										<posx>43</posx>
-										<posy>323</posy>
+										<posy>325</posy>
 										<width>30</width>
 										<height>30</height>
 										<aspectratio>stretch</aspectratio>

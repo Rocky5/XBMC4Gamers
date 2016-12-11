@@ -3,7 +3,7 @@
 				<control type="group">
 						<visible>Control.IsVisible(53) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
-						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
+						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
 						<control type="image">
 								<posx>0</posx>
 								<posy>45</posy>

@@ -3,7 +3,7 @@
 				<control type="group">
 						<visible>Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
-						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117) | Control.HasFocus(118)">Conditional</animation>
+						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
 						<control type="image">
 								<posx>0</posx>
 								<posy>45</posy>
@@ -117,11 +117,12 @@
 										</control>
 										<control type="image">
 												<posx>10</posx>
-												<posy>55</posy>
+												<posy>35</posy>
 												<width>25</width>
 												<height>25</height>
 												<aspectratio>stretch</aspectratio>
 												<texture>$INFO[listitem.overlay]</texture>
+												<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
 										</control>
@@ -237,13 +238,14 @@
 										</control>
 										<control type="image">
 												<posx>10</posx>
-												<posy>55</posy>
+												<posy>35</posy>
 												<width>25</width>
 												<height>25</height>
 												<aspectratio>stretch</aspectratio>
 												<texture>$INFO[listitem.overlay]</texture>
 												<animation reversible="false" effect="zoom" start="10,55,25,25" end="0,26,30,30" time="100">focus</animation>
 												<animation reversible="false" effect="zoom" end="10,55,25,25" start="0,26,30,30" time="100">unfocus</animation>
+												<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
 										</control>

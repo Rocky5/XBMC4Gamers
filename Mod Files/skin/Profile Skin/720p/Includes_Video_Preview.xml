@@ -30,9 +30,8 @@
 								<width>1280</width>
 								<height>720</height>
 								<texture>black-back.png</texture>
-								<include>dialogeffect</include>
 								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-								<animation effect="fade" start="0" end="70" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+								<animation effect="fade" start="0" end="70" delay="0" time="500" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="image">
 								<posx>100</posx>
@@ -40,9 +39,9 @@
 								<width>1080</width>
 								<height>614</height>
 								<aspectratio>stretch</aspectratio>
-								<texture background="true" diffuse="synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+								<texture diffuse="synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 								<visible>!Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-								<animation effect="fade" start="0" end="100" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+								<animation effect="fade" start="0" end="100" delay="700" time="500" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="image">
 								<description>background image</description>
@@ -85,9 +84,8 @@
 								<width>1280</width>
 								<height>720</height>
 								<texture>black-back.png</texture>
-								<include>dialogeffect</include>
 								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-								<animation effect="fade" start="0" end="70" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+								<animation effect="fade" start="0" end="70" delay="0" time="500" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="image">
 								<posx>39</posx>
@@ -95,9 +93,9 @@
 								<width>1202</width>
 								<height>614</height>
 								<aspectratio>stretch</aspectratio>
-								<texture background="true" diffuse="synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+								<texture diffuse="synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(PreviewWindow)</visible>
-								<animation effect="fade" start="0" end="100" delay="0" time="100" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
+								<animation effect="fade" start="0" end="100" delay="700" time="500" condition="Skin.HasSetting(PreviewWindow)">Conditional</animation>
 						</control>
 						<control type="image">
 								<description>background image</description>

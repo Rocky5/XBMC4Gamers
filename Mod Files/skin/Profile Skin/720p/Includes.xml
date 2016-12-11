@@ -5,8 +5,6 @@
 		<include file="includes_view_options.xml" />
 		<include file="includes_debug.xml" />
 		<include file="includes_variables.xml" />
-		<include file="includes_snow.xml" />
-		<include file="includes_easter.xml" />
 		<constant name="FanartCrossfadeTime">200</constant>
 		<include name="CustomSettingsButtons">
 				<width>1170</width>
