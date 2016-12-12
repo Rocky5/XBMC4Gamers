@@ -134,7 +134,7 @@
 				<height>42</height>
 				<align>center</align>
 				<aligny>center</aligny>
-		</include>		
+		</include>
 		<include name="BirthdayButtons">
 				<width>280</width>
 				<height>42</height>

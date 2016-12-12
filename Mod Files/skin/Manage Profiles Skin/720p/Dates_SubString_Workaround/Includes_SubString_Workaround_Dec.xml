@@ -1,5 +1,5 @@
 <includes>
-		<include name="Dec">				
+		<include name="Dec">
 				<!-- used to workout every bloody damn day in the year! because SubString doesn't work with $INFO labels! -->
 				<!-- Structure Date Month for every one bar USA and Canada :/ -->
 				<!-- December -->

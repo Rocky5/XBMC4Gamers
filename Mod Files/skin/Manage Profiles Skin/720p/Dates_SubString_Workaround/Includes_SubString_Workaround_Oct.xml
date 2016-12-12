@@ -13,8 +13,8 @@
 								<include>birthday</include>
 								<visible>[SubString(System.Date,2 Oct) + StringCompare(Skin.String(BirthdayDate1),2) + StringCompare(Skin.String(BirthdayMonth1),Oct)] | [SubString(System.Date,2 Oct) + StringCompare(Skin.String(BirthdayDate2),2) + StringCompare(Skin.String(BirthdayMonth2),Oct)] | [SubString(System.Date,2 Oct) + StringCompare(Skin.String(BirthdayDate3),2) + StringCompare(Skin.String(BirthdayMonth3),Oct)] | [SubString(System.Date,2 Oct) + StringCompare(Skin.String(BirthdayDate4),2) + StringCompare(Skin.String(BirthdayMonth4),Oct)] | [SubString(System.Date,2 Oct) + StringCompare(Skin.String(BirthdayDate5),2) + StringCompare(Skin.String(BirthdayMonth5),Oct)]</visible>
 						</control>
-								<control type="group">
-						<include>birthday</include>
+						<control type="group">
+								<include>birthday</include>
 								<visible>[SubString(System.Date,3 Oct) + StringCompare(Skin.String(BirthdayDate1),3) + StringCompare(Skin.String(BirthdayMonth1),Oct)] | [SubString(System.Date,3 Oct) + StringCompare(Skin.String(BirthdayDate2),3) + StringCompare(Skin.String(BirthdayMonth2),Oct)] | [SubString(System.Date,3 Oct) + StringCompare(Skin.String(BirthdayDate3),3) + StringCompare(Skin.String(BirthdayMonth3),Oct)] | [SubString(System.Date,3 Oct) + StringCompare(Skin.String(BirthdayDate4),3) + StringCompare(Skin.String(BirthdayMonth4),Oct)] | [SubString(System.Date,3 Oct) + StringCompare(Skin.String(BirthdayDate5),3) + StringCompare(Skin.String(BirthdayMonth5),Oct)]</visible>
 						</control>
 						<control type="group">

@@ -52,7 +52,6 @@
 												<align>center</align>
 												<label>$LOCALIZE[32027]</label>
 										</control>
-										
 										<control type="button" id="9002">
 												<description>Default Button</description>
 												<posx>595</posx>
