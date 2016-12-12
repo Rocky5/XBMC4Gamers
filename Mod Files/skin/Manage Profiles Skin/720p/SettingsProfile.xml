@@ -27,10 +27,11 @@
 										<control type="radiobutton" id="9001">
 												<description>Default Button</description>
 												<posx>595</posx>
-												<posy>400</posy>
+												<posy>370</posy>
 												<width>570</width>
 												<height>70</height>
 												<onleft>2</onleft>
+												<ondown>9002</ondown>
 												<font>font12</font>
 												<label>  $LOCALIZE[32026]</label>
 												<textcolor>white</textcolor>
@@ -40,30 +41,33 @@
 												<onclick>Skin.ToggleSetting(UseProfiles)</onclick>
 												<selected>Skin.HasSetting(UseProfiles)</selected>
 										</control>
-										<control type="image">
-												<posx>595</posx>
-												<posy>400</posy>
-												<width>570</width>
-												<height>2</height>
-												<texture>separator.png</texture>
-										</control>
-										<control type="image">
-												<posx>595</posx>
-												<posy>470</posy>
-												<width>570</width>
-												<height>2</height>
-												<texture>separator.png</texture>
-										</control>
 										<control type="textbox">
 												<posx>595</posx>
-												<posy>505</posy>
+												<posy>455</posy>
 												<width>570</width>
-												<height>321</height>
+												<height>70</height>
 												<font>font11</font>
 												<textcolor>grey2</textcolor>
 												<scroll>true</scroll>
 												<align>center</align>
 												<label>$LOCALIZE[32027]</label>
+										</control>
+										
+										<control type="button" id="9002">
+												<description>Default Button</description>
+												<posx>595</posx>
+												<posy>515</posy>
+												<width>570</width>
+												<height>70</height>
+												<onleft>2</onleft>
+												<onup>9001</onup>
+												<font>font12</font>
+												<label>  $LOCALIZE[32077]</label>
+												<textcolor>white</textcolor>
+												<focusedcolor>black</focusedcolor>
+												<texturefocus border="5">thumbfO.png</texturefocus>
+												<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
+												<onclick>ActivateWindow(1115)</onclick>
 										</control>
 								</control>
 								<control type="image">

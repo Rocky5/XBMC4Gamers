@@ -876,3 +876,11 @@ msgstr ""
 msgctxt "#32076"
 msgid "[COLOR=blue]Example: F:\\Games\\Halo\\default.tbn[/COLOR]"
 msgstr ""
+
+msgctxt "#32077"
+msgid "Setup Birthday dates."
+msgstr ""
+
+msgctxt "#32078"
+msgid "Welcome. [CR]In this menu you will be able to set up to 5 different birthdays. [CR]These will show on the login-screen when the date arrives."
+msgstr ""

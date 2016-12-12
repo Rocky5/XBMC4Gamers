@@ -34,7 +34,7 @@
 						<posy>340</posy>
 						<width>295</width>
 						<height>436</height>
-						<texture>balloons.png</texture>
+						<texture>birthday\balloons.png</texture>
 						<aspectratio>stretch</aspectratio>
 						<animation type="Conditional" condition="true" reversible="true" loop="true">
 								<effect type="slide" tween="sine" easing="inout" start="0,0" end="0,-40" time="2000" />

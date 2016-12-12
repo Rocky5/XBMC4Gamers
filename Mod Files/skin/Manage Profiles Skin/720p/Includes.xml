@@ -129,6 +129,18 @@
 						<texture>horizontalglow.png</texture>
 				</control>
 		</include>
+		<include name="BirthdayMonthDateButtons">
+				<width>70</width>
+				<height>42</height>
+				<align>center</align>
+				<aligny>center</aligny>
+		</include>		
+		<include name="BirthdayButtons">
+				<width>280</width>
+				<height>42</height>
+				<align>left</align>
+				<aligny>center</aligny>
+		</include>
 		<include name="ButtonCommonValues">
 				<height>44</height>
 				<width>280</width>
