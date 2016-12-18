@@ -3,6 +3,7 @@ Please patch your games via DVD2Xbox, either after installing one of the loaders
 
 
 -- 480p Game Loader (CDX)
+	-	Arctic Thunder
 	-	Battle Engine Aquila
 	-	Commandos 2
 	-	Dark Summit
@@ -42,8 +43,9 @@ Please patch your games via DVD2Xbox, either after installing one of the loaders
 	-	Max Payne - Screen is oversized. ( works fine if screen size is set to normal )
 
 -- Other Issues
+	-	Dennou Taisen DroneZ - Won't unscramble in HD.
 	-	Men of Valor - Restarts the game when selecting a mission.
-	-	Pirates of the Carribean - Won't unscramble in HD even when launched from evox.
+	-	Pirates of the Caribbean - Won't unscramble.
 
 -- Freezing on Load
 	-	Curse: The Eye of Isis - Freezes on load.
