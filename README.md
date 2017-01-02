@@ -30,17 +30,18 @@ Creating Profiles:
 	5) And Log out. (R) Stick pushed in.
 	6) Disable Edit Mode if you wish.
 
-Alt information:
+Individual save script information:
 
-	1) If using the "individual save directories for each profile" a backup is created of your orignal UDATA directory.
-	2) Any softmod or exsploit saves are transfered to a new profile if using the "individual save directories for each profile".
-	3) To transfer saves over to a new profile, change the folder name & the *.profile file inside the directory. *
+	1) A backup is created of your orignal UDATA directory. ( named UDATA Backup )
+	2) Any softmod or exploit saves are automatically transferred to a new profile.
+	3) To transfer saves over to a new profile name, change the folder name & the *.profile file inside the directory. *
 
 		*
 			Example:
-			Old profile name = Connxtion, but I want to change it to Rocky5 & keep my saves.
-			I find the "UDATA Connxtion" folder in "E:\" & I rename it to "UDATA Rocky5"
-			I now also rename the "Connxtion.profile" file inside the now named "UDATA Rocky5" folder to "Rocky5.profile". Done!
+			Old profile = Connxtion
+			New profile = Rocky5
+			Find the "UDATA Connxtion" folder in "E:\" & I rename it to "UDATA Rocky5"
+			Now also rename the "Connxtion.profile" file inside the now named "UDATA Rocky5" folder to "Rocky5.profile". Done!
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
