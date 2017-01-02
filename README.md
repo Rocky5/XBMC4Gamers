@@ -1,20 +1,22 @@
 # XBMC4Kids
-This is a skin with custom python scripts (allow each profile to have there own saves) for people that want a fancy UI for just there games.
+This is a skin for XBMC4Xbox v3.5.3+ that utilises custom python scripts that I created to do specific tasks.
+
+The main objective of this project was to allow my kids to use the same Xbox but also have there own saves, so to stop fighting lol. Now the original Xbox doesn't allow this by default, so I had to think outside of the box and learn and create some Python script to do the job. It works quite well.
+
+Now since the above, I have added scripts that fixes scrambled screen games on v.1.6 Xbox ( 480p video mode ) clean save directories of blank saves, clean program thumbnails or refresh them as well as others to do other tasks. It's a jack of all trades lol.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Setup/Installation:
 
 	1)	Download XBMC. *
-	2)	Place the XBMC folder inside the XBMC4Kids-master. **
+	2)	Place the XBMC folder inside the XBMC4Kids-master folder.
 	3)	Double click "Build XBMC4Kids.bat"
-	4)	FTP the XBMC4Kids folder anywhere on your Xbox. ***
+	4)	FTP the XBMC4Kids folder anywhere on your Xbox. **
 		
 		*
 			https://drive.google.com/folderview?pli=1&ddrp=1&id=0B9zNhNcNUdDTRVFBbHcwc2JCZFE#list
 		**
-			Place the XBMC folder inside the "XBMC4Kids-master" folder.
-		***
 			I would suggest leaving the "Enable individual save directories for each profile" disabled if you are using this as an application or only one profile.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -22,25 +24,23 @@ Setup/Installation:
 Creating Profiles:
 
 	1) Load the "Manage Profiles" profile.
-	2) Select "Manage Profiles".
-	3) Select Add Profile...
-	4) Enter your desired name.
-	5) Now select OK
-	6) Again select OK
-	7) Now select start fresh, for both options.
-	8) And Log out. (R) Stick pushed in.
-	10) Disable Edit Mode if you wish.
+	2) Select Add Profile...
+	3) Enter your desired name.
+	4) Now select an profile image.
+	5) And Log out. (R) Stick pushed in.
+	6) Disable Edit Mode if you wish.
 
-What not to do:
+Alt information:
 
-	1) Change profile names after creation, will will break my script. (it will create a new save folder)
-	2) To transfer saves over to a new profile, change the folder name & the *.profile file inside the directory. *
+	1) If using the "individual save directories for each profile" a backup is created of your orignal UDATA directory.
+	2) Any softmod or exsploit saves are transfered to a new profile if using the "individual save directories for each profile".
+	3) To transfer saves over to a new profile, change the folder name & the *.profile file inside the directory. *
 
 		*
 			Example:
-			Profile name Connxtion, but I want to change it to Rocky5 & keep my saves.
+			Old profile name = Connxtion, but I want to change it to Rocky5 & keep my saves.
 			I find the "UDATA Connxtion" folder in "E:\" & I rename it to "UDATA Rocky5"
-			I now also rename the "Connxtion.profile" file inside to "Rocky5.profile". Done!
+			I now also rename the "Connxtion.profile" file inside the now named "UDATA Rocky5" folder to "Rocky5.profile". Done!
 
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -50,7 +50,7 @@ Edit Mode:
 	Enter key combination at the login screen:
 		Up, UP, DOWN, DOWN, LEFT, LEFT, RIGHT, RIGHT & A
 
-	The above combination will also enable the Edit mode if its disabled.
+	The above combination will also enable "Edit mode" if its disabled.
 	Remember to disable after changing stuff.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -72,7 +72,7 @@ Controls: (can be viewed at the login screen)
 		1)	(A) button will select menus or play games.
 		2)	(X) button will open the game preview/synopsis or music controls.
 		3)	(Black) button will load your favourites.
-		4)	(White) button opens the context menu. (certain menus & limited functionality in usermode)
+		4)	(White) button opens the context menu. (certain menus &amp; limited functionality in usermode)
 		5)	(Start) button will launch a disc based game.
 		6)	(R) stick pressed in logs out current user.
 		7)	all default controls of XBMC
