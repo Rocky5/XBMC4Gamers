@@ -1,7 +1,7 @@
 <includes>
 		<include name="FanartView">
 				<control type="group">
-						<visible>Control.IsVisible(57) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(57) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
 						<control type="panel" id="57">
 								<posx>0</posx>

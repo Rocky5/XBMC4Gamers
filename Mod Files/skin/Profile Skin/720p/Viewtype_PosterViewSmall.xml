@@ -1,7 +1,7 @@
 <includes>
 		<include name="PosterViewSmall">
 				<control type="group">
-						<visible>Control.IsVisible(51) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(51) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
 						<include>Fanart</include>
 						<control type="group">

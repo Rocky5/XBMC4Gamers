@@ -1,7 +1,7 @@
 <includes>
 		<include name="CardView">
 				<control type="group">
-						<visible>Control.IsVisible(56) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(56) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
 						<control type="panel" id="56">
 								<posx>0</posx>
