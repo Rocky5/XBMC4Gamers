@@ -143,7 +143,7 @@ if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ) == 1:
 		try: # Features General
 			Current_Window.setProperty( "Synopsis_features_general","[COLOR=FF399EDA]General Features: [/COLOR]" + Output.features_general.string )
 		except(TypeError, KeyError, AttributeError):
-			Current_Window.setProperty( "Synopsis_features_general","[COLOR=FF399EDA]General Features: [/COLOR][/COLOR]" )
+			Current_Window.setProperty( "Synopsis_features_general","[COLOR=FF399EDA]General Features: [/COLOR]" )
 		try: #  Features Online
 			Current_Window.setProperty( "Synopsis_features_online","[COLOR=FF399EDA]Online Features: [/COLOR]" + Output.features_online.string )
 		except(TypeError, KeyError, AttributeError):
@@ -168,7 +168,7 @@ if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ) == 1:
 			Current_Window.setProperty( "Synopsis_rating","[COLOR=FF399EDA]Rating: [/COLOR]" + Output.rating.string )
 			Current_Window.setProperty( "Synopsis_rating_alt",Output.rating.string )
 		except(TypeError, KeyError, AttributeError):
-			Current_Window.setProperty( "Synopsis_rating","[COLOR=FF399EDA]Rating: [/COLOR]0[/COLOR]" )
+			Current_Window.setProperty( "Synopsis_rating","[COLOR=FF399EDA]Rating: [/COLOR]0" )
 			Current_Window.setProperty( "Synopsis_rating_alt", "0" )
 		try: # Platform
 			Current_Window.setProperty( "Synopsis_platform","[COLOR=FF399EDA]Platform: [/COLOR]" + Output.platform.string )
