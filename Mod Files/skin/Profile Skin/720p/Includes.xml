@@ -1,7 +1,6 @@
 <includes>
 		<include file="defaults.xml" />
 		<include file="includes_context_buttons.xml" />
-		<include file="includes_video_preview.xml" />
 		<include file="includes_view_options.xml" />
 		<include file="includes_debug.xml" />
 		<include file="includes_variables.xml" />
@@ -40,6 +39,90 @@
 						<height>720</height>
 						<texture>$INFO[skin.string(background_image)]</texture>
 						<aspectratio>scale</aspectratio>
+				</control>
+		</include>
+		<include name="Fanart">
+				<control type="group">
+						<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart)</visible>
+						<animation effect="fade" reversable="true" start="0" end="75" time="0" condition="!Skin.HasSetting(fadefanart)">Conditional</animation>
+						<control type="image">
+								<posx>0</posx>
+								<posy>45</posy>
+								<width>1280</width>
+								<height>675</height>
+								<aspectratio>scale</aspectratio>
+								<fadetime>FanartCrossfadeTime</fadetime>
+								<texture background="true" diffuse="fanart_diffuse_Poster.png">$INFO[listitem.path,,fanart.jpg]</texture>
+								<visible>!Skin.HasSetting(_recourcesenabled)</visible>
+						</control>
+						<control type="image">
+								<posx>0</posx>
+								<posy>45</posy>
+								<width>1280</width>
+								<height>675</height>
+								<aspectratio>scale</aspectratio>
+								<fadetime>FanartCrossfadeTime</fadetime>
+								<texture background="true" diffuse="fanart_diffuse_Poster.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+								<visible>Skin.HasSetting(_recourcesenabled)</visible>
+						</control>
+				</control>
+				<control type="group">
+						<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart)</visible>
+						<control type="image">
+								<posx>0</posx>
+								<posy>45</posy>
+								<width>1280</width>
+								<height>675</height>
+								<aspectratio>scale</aspectratio>
+								<fadetime>FanartCrossfadeTime</fadetime>
+								<texture background="true" diffuse="fanart_diffuse_Poster.png">$INFO[listitem.path,,fanart.jpg]</texture>
+								<visible>!Skin.HasSetting(_recourcesenabled)</visible>
+						</control>
+						<control type="image">
+								<posx>0</posx>
+								<posy>45</posy>
+								<width>1280</width>
+								<height>675</height>
+								<aspectratio>scale</aspectratio>
+								<fadetime>FanartCrossfadeTime</fadetime>
+								<texture background="true" diffuse="fanart_diffuse_Poster.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+								<visible>Skin.HasSetting(_recourcesenabled)</visible>
+						</control>
+				</control>
+		</include>
+		<include name="BusyDialog">
+				<control type="group">
+						<posx>1130</posx>
+						<posy>640</posy>
+						<control type="image">
+								<description>background image</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>140</width>
+								<height>70</height>
+								<texture border="5">view_background_alt.png</texture>
+						</control>
+						<control type="image">
+								<description>Busy animation</description>
+								<posx>20</posx>
+								<posy>20</posy>
+								<width>32</width>
+								<height>32</height>
+								<texture>busy.png</texture>
+								<aspectratio>keep</aspectratio>
+								<animation effect="rotate" start="0" end="360" center="36,36" time="1200" loop="true" condition="true">conditional</animation>
+						</control>
+						<control type="label">
+								<description>Busy label</description>
+								<posx>30</posx>
+								<posy>20</posy>
+								<width>120</width>
+								<height>32</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>$LOCALIZE[503]</label>
+								<font>font12</font>
+						</control>
 				</control>
 		</include>
 		<include name="WindowHeader">

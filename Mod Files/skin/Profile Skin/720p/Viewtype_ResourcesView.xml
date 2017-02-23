@@ -1,9 +1,8 @@
 <includes>
 		<include name="ResourcesView">
 				<control type="group">
-						<visible>Control.IsVisible(60) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(60) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
-						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
 						<!-- Poster.jpg -->
 						<control type="group">
 								<posx>30</posx>
@@ -159,7 +158,7 @@
 								<onright>-</onright>
 								<onup>117</onup>
 								<ondown>-</ondown>
-								<viewtype label="Posters">list</viewtype>
+								<viewtype label="Resources">list</viewtype>
 								<pagecontrol>-</pagecontrol>
 								<scrolltime>0</scrolltime>
 								<focusposition>1</focusposition>

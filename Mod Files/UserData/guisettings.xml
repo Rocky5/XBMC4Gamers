@@ -508,10 +508,10 @@
 		<network>
 				<assignment>1</assignment>
 				<bandwidth>0</bandwidth>
-				<dns>192.168.1.1</dns>
+				<dns>192.168.0.1</dns>
 				<dnssuffix>
 				</dnssuffix>
-				<gateway>192.168.1.1</gateway>
+				<gateway>192.168.0.1</gateway>
 				<httpproxypassword>
 				</httpproxypassword>
 				<httpproxyport>8080</httpproxyport>
@@ -519,7 +519,7 @@
 				</httpproxyserver>
 				<httpproxyusername>
 				</httpproxyusername>
-				<ipaddress>192.168.1.6</ipaddress>
+				<ipaddress>192.168.0.6</ipaddress>
 				<sep1>
 				</sep1>
 				<subnet>255.255.255.0</subnet>
@@ -552,7 +552,7 @@
 		</scrapers>
 		<screensaver>
 				<dimlevel>20</dimlevel>
-				<mode>Stars.xbs</mode>
+				<mode>Planestate.xbs</mode>
 				<preview>
 				</preview>
 				<sep1>

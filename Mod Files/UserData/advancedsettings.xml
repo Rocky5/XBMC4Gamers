@@ -2,13 +2,10 @@
 		<loglevel hide="false">-1</loglevel>
 		<powersave>false</powersave>
 		<nodvdrom>false</nodvdrom>
-		<thumbsize>404</thumbsize>
-		<fanartsize>540</fanartsize>
-		<!-- <bginfoloadermaxthreads>5</bginfoloadermaxthreads> -->
-		<video>
-				<ignoreatstart>14400</ignoreatstart>
-				<!-- <fullscreenonmoviestart>false</fullscreenonmoviestart> -->
-		</video>
+		<!-- this value gives the best quality and doesn't run out of ram -->
+		<!-- Note: its slower to draw the images when scrolling fast ( triggers ) -->
+		<thumbsize>308</thumbsize>
+		<bginfoloadermaxthreads>2</bginfoloadermaxthreads>
 		<myprograms>
 				<trainerpath>Q:\trainers\</trainerpath>
 		</myprograms>

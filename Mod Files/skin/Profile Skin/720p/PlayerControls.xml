@@ -2,10 +2,9 @@
 		<defaultcontrol always="true">605</defaultcontrol>
 		<include>dialogeffect</include>
 		<controls>
-				<control type="button" id="603">
+				<control type="button" id="605">
 						<posx>-500</posx>
 						<onfocus>dialog.close(114,true)</onfocus>
-						<onfocus>SetFocus(50)</onfocus>
 						<visible>!Player.HasMedia</visible>
 				</control>
 				<control type="image">
@@ -131,7 +130,6 @@
 										<label>-</label>
 										<texturefocus>-</texturefocus>
 										<texturenofocus>-</texturenofocus>
-										<onclick>SetFocus(603)</onclick>
 										<onclick>XBMC.PlayerControl(Play)</onclick>
 										<onleft>600</onleft>
 										<onright>601</onright>

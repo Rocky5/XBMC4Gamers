@@ -11,10 +11,6 @@ if not exist "%foldername%" Exit
 cls
 Echo: & Echo: & Echo: & Echo   Please wait...
 
-(
-move "%foldername%\language\english" "%foldername%"
-rd /q /s "%foldername%\language"
-md "%foldername%\language" &  move "%foldername%\english" "%foldername%\language\"
 rd /q /s "%foldername%\plugins"
 rd /q /s "%foldername%\sounds"
 rd /q /s "%foldername%\userdata"

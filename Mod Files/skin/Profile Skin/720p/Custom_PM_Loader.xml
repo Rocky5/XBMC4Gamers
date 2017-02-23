@@ -1,0 +1,24 @@
+<window type="dialog" id="1113">
+		<defaultcontrol always="true">9000</defaultcontrol>
+		<include>dialogeffect</include>
+		<controls>
+				<!-- Close preview window if no audio is playing -->
+				<control type="group">
+						<visible>!Player.HasAudio</visible>
+						<include>BusyDialog</include>
+						<control type="button" id="9000">
+								<posx>-500</posx>
+								<onfocus>RunScript( Special://xbmc/scripts/XBMC4Kids/Synopsis/default.py )</onfocus>
+						</control>
+				</control>
+				<!-- Open PlayerControlles dialog if audio is playing -->
+				<control type="button" id="9000">
+						<posx>-500</posx>
+						<onfocus>dialog.close(1113,true)</onfocus>
+						<onfocus>ReplaceWindow(114)</onfocus>
+						<visible>Player.HasAudio</visible>
+				</control>
+				<!-- Debug Info -->
+				<include>Debug</include>
+		</controls>
+</window>

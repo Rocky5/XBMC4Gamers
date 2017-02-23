@@ -1,0 +1,236 @@
+<window id="1115">
+		<defaultcontrol always="true">9001</defaultcontrol>
+		<controls>
+				<include>CommonBackground</include>
+				<control type="group">
+						<include>ViewVisibleEffect</include>
+						<control type="image">
+								<posx>260</posx>
+								<posy>290</posy>
+								<width>760</width>
+								<height>115</height>
+								<texture>black-back.png</texture>
+						</control>
+						<control type="textbox">
+								<posx>260</posx>
+								<posy>310</posy>
+								<width>760</width>
+								<height>105</height>
+								<font>font11</font>
+								<textcolor>grey2</textcolor>
+								<scroll>true</scroll>
+								<align>center</align>
+								<label>$LOCALIZE[32053]$INFO[Skin.String(PreviewFileExtension)]$LOCALIZE[32054]</label>
+								<visible>Skin.HasSetting(PreviewExtension)</visible>
+						</control>
+						<control type="textbox">
+								<posx>260</posx>
+								<posy>310</posy>
+								<width>760</width>
+								<height>105</height>
+								<font>font11</font>
+								<textcolor>grey2</textcolor>
+								<scroll>true</scroll>
+								<align>center</align>
+								<label>$LOCALIZE[32053]$INFO[Skin.String(PreviewFileExtension)]xmv$LOCALIZE[32054]</label>
+								<visible>!Skin.HasSetting(PreviewExtension)</visible>
+						</control>
+						<control type="grouplist">
+								<posx>260</posx>
+								<posy>405</posy>
+								<width>760</width>
+								<height>200</height>
+								<itemgap>0</itemgap>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<control type="radiobutton" id="9002">
+										<width>760</width>
+										<height>50</height>
+										<font>font12</font>
+										<label> $LOCALIZE[32055]</label>
+										<textcolor>white</textcolor>
+										<focusedcolor>black</focusedcolor>
+										<texturefocus border="5">ThumbFO.png</texturefocus>
+										<texturenofocus border="5">black-back.png</texturenofocus>
+										<onclick>Skin.ToggleSetting(SynopsisMode)</onclick>
+										<onclick>Skin.SetBool(Synopsis)</onclick>
+										<onclick>Skin.Reset(Synopsis_alt_view)</onclick>
+										<selected>Skin.HasSetting(SynopsisMode)</selected>
+								</control>
+								<control type="radiobutton" id="9003">
+										<width>760</width>
+										<height>50</height>
+										<font>font12</font>
+										<label> $LOCALIZE[32091]</label>
+										<textcolor>white</textcolor>
+										<focusedcolor>black</focusedcolor>
+										<texturefocus border="5">ThumbFO.png</texturefocus>
+										<texturenofocus border="5">black-back.png</texturenofocus>
+										<selected>Skin.HasSetting(Synopsis)</selected>
+										<enable>Skin.HasSetting(SynopsisMode)</enable>
+								</control>
+								<control type="radiobutton" id="9004">
+										<width>760</width>
+										<height>50</height>
+										<font>font12</font>
+										<label> $LOCALIZE[32092]</label>
+										<textcolor>white</textcolor>
+										<focusedcolor>black</focusedcolor>
+										<texturefocus border="5">ThumbFO.png</texturefocus>
+										<texturenofocus border="5">black-back.png</texturenofocus>
+										<onclick>Skin.ToggleSetting(Synopsis)</onclick>
+										<onclick>Skin.ToggleSetting(Synopsis_alt_view)</onclick>
+										<selected>Skin.HasSetting(Synopsis_alt_view)</selected>
+										<enable>Skin.HasSetting(SynopsisMode)</enable>
+								</control>
+								<control type="radiobutton" id="9005">
+										<width>760</width>
+										<height>50</height>
+										<font>font12</font>
+										<label> - $LOCALIZE[32089]</label>
+										<textcolor>white</textcolor>
+										<focusedcolor>black</focusedcolor>
+										<texturefocus border="5">ThumbFO.png</texturefocus>
+										<texturenofocus border="5">black-back.png</texturenofocus>
+										<onclick>Skin.ToggleSetting(Synopsis_Autoplay)</onclick>
+										<selected>Skin.HasSetting(Synopsis_Autoplay)</selected>
+										<enable>Skin.HasSetting(Synopsis_alt_view)</enable>
+								</control>
+						</control>
+						<control type="panel" id="9001">
+								<posx>260</posx>
+								<posy>190</posy>
+								<width>760</width>
+								<height>100</height>
+								<onup>50</onup>
+								<ondown>9002</ondown>
+								<viewtype label="535">list</viewtype>
+								<pagecontrol>60</pagecontrol>
+								<scrolltime>200</scrolltime>
+								<preloaditems>3</preloaditems>
+								<orientation>horizontal</orientation>
+								<itemlayout height="100" width="190">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>190</width>
+												<height>100</height>
+												<texture border="5">listnf.png</texture>
+										</control>
+										<control type="image">
+												<posx>20</posx>
+												<posy>-25</posy>
+												<width>150</width>
+												<height>150</height>
+												<texture background="true">$INFO[listitem.icon]</texture>
+												<bordertexture border="5">white-back.png</bordertexture>
+												<bordersize>1</bordersize>
+										</control>
+										<control type="label.">
+												<posx>90</posx>
+												<posy>10</posy>
+												<width>250</width>
+												<height>45</height>
+												<font>font25</font>
+												<textcolor>grey2</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>$INFO[ListItem.Label]</label>
+										</control>
+								</itemlayout>
+								<focusedlayout height="100" width="190">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>190</width>
+												<height>100</height>
+												<texture border="5">thumbfo.png</texture>
+										</control>
+										<control type="image">
+												<posx>20</posx>
+												<posy>-25</posy>
+												<width>150</width>
+												<height>150</height>
+												<texture background="true">$INFO[listitem.icon]</texture>
+												<bordertexture border="5">white-back.png</bordertexture>
+												<bordersize>1</bordersize>
+										</control>
+										<control type="label.">
+												<posx>90</posx>
+												<posy>10</posy>
+												<width>250</width>
+												<height>45</height>
+												<font>font25</font>
+												<textcolor>black</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>$INFO[ListItem.Label]</label>
+										</control>
+								</focusedlayout>
+								<content>
+										<item id="0">
+												<label>xmv</label>
+												<onclick>Skin.Reset(PreviewFileExtension)</onclick>
+												<onclick>Skin.Reset(PreviewExtension)</onclick>
+												<icon>flagging\xmv.png</icon>
+										</item>
+										<item id="1">
+												<label>wmv</label>
+												<onclick>Skin.SetString(PreviewFileExtension,wmv)</onclick>
+												<onclick>Skin.SetBool(PreviewExtension)</onclick>
+												<icon>flagging\wmv.png</icon>
+										</item>
+										<item id="2">
+												<label>mp4</label>
+												<onclick>Skin.SetString(PreviewFileExtension,mp4)</onclick>
+												<onclick>Skin.SetBool(PreviewExtension)</onclick>
+												<icon>flagging\h264.png</icon>
+										</item>
+										<item id="3">
+												<label>mpg</label>
+												<onclick>Skin.SetString(PreviewFileExtension,mpg)</onclick>
+												<onclick>Skin.SetBool(PreviewExtension)</onclick>
+												<icon>flagging\mpegvideo.png</icon>
+										</item>
+										<!-- <item id="4">
+						<label>$LOCALIZE[32052]</label>
+						<onclick>Skin.Reset(PreviewFileExtension)</onclick>
+						<onclick>Skin.SetString(PreviewFileExtension,ChangeMe)</onclick>
+						<onclick>Skin.SetString(PreviewFileExtension)</onclick>
+						<onclick>Skin.SetBool(PreviewExtension)</onclick>
+						<icon>flagging\custom.png</icon>
+					</item>  -->
+								</content>
+						</control>
+				</control>
+				<include>WindowHeader</include>
+				<control type="image">
+						<posx>20</posx>
+						<posy>5</posy>
+						<width>40</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>icon_system.png</texture>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>Header label</description>
+						<posx>70</posx>
+						<posy>5</posy>
+						<width>700</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font12</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32045]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<include>WindowFooter</include>
+				<include>BehindDialogFadeOut</include>
+				<!-- Debug Info -->
+				<include>Debug</include>
+		</controls>
+</window>

@@ -1,0 +1,86 @@
+<window type="window" id="1118">
+		<defaultcontrol always="true">9000</defaultcontrol>
+		<controls>
+				<visible>!Skin.HasSetting(SynopsisMode)</visible>
+				<include>CommonBackground</include>
+				<!-- Display preview overlay -->
+				<control type="button" id="9000">
+						<posx>-500</posx>
+						<onfocus>PlayWith(dvdplayer)</onfocus>
+						<onfocus>xbmc.playmedia($INFO[Window(MyPrograms).Property(Preview_default)],1,noresume)</onfocus>
+						<onfocus>SetFocus(9001)</onfocus>
+						<visible>!Skin.HasSetting(PreviewExtension)</visible>
+						<animation effect="fade" start="0" end="20" delay="3000" time="1000">WindowOpen</animation>
+				</control>
+				<control type="button" id="9000">
+						<posx>-500</posx>
+						<onfocus>PlayWith(mplayer)</onfocus>
+						<onfocus>xbmc.playmedia($INFO[Window(MyPrograms).Property(Preview_alt)],1,noresume)</onfocus>
+						<onfocus>SetFocus(9001)</onfocus>
+						<visible>Skin.HasSetting(PreviewExtension)</visible>
+						<animation effect="fade" start="0" end="20" delay="3000" time="1000">WindowOpen</animation>
+				</control>
+				<control type="button" id="9001">
+						<posx>-500</posx>
+				</control>
+				<!--            -->
+				<!-- Video mode -->
+				<!--            -->
+				<control type="image">
+						<description>background image</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>synopsis\synopsis_black-back.png</texture>
+						<animation effect="fade" start="0" end="70" delay="0" time="500">WindowOpen</animation>
+						<animation effect="fade" start="70" end="0" delay="100" time="100">WindowClose</animation>
+				</control>
+				<control type="image">
+						<posx>100</posx>
+						<posy>59</posy>
+						<width>1080</width>
+						<height>614</height>
+						<aspectratio>stretch</aspectratio>
+						<texture diffuse="synopsis\synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+						<animation effect="fade" start="0" end="100" delay="700" time="500">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+				</control>
+				<control type="image">
+						<description>background image</description>
+						<posx>100</posx>
+						<posy>59</posy>
+						<width>1080</width>
+						<height>614</height>
+						<texture>synopsis\synopsis_background_alt.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<animation effect="fade" start="0" end="98" delay="0" time="100">WindowOpen</animation>
+						<animation effect="fade" start="98" end="0" delay="0" time="100">WindowClose</animation>
+				</control>
+				<control type="label">
+						<posx>100</posx>
+						<posy>68</posy>
+						<width>1080</width>
+						<height>608</height>
+						<font>font25</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$LOCALIZE[32087][/B]</label>
+						<visible>!Player.HasVideo</visible>
+						<animation effect="fade" start="0" end="20" delay="750" time="1000">WindowOpen</animation>
+						<animation effect="fade" start="20" end="0" delay="0" time="100">WindowClose</animation>
+				</control>
+				<control type="videowindow">
+						<description>video preview window</description>
+						<posx>110</posx>
+						<posy>74</posy>
+						<width>1058</width>
+						<height>586</height>
+						<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+				</control>
+				<include>Context_Buttons</include>
+				<!-- Debug Info -->
+				<include>Debug</include>
+		</controls>
+</window>

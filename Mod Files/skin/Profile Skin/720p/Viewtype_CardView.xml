@@ -1,10 +1,9 @@
 <includes>
 		<include name="CardView">
 				<control type="group">
-						<visible>Control.IsVisible(57) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(56) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
-						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
-						<control type="panel" id="57">
+						<control type="panel" id="56">
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>1280</width>
@@ -15,11 +14,11 @@
 								<ondown>-</ondown>
 								<viewtype label="Card">Panel</viewtype>
 								<pagecontrol>-</pagecontrol>
-								<scrolltime>200</scrolltime>
+								<scrolltime>300</scrolltime>
 								<focusposition>0</focusposition>
 								<movement>0</movement>
 								<orientation>horizontal</orientation>
-								<preloaditems>2</preloaditems>
+								<preloaditems>4</preloaditems>
 								<itemlayout width="1280" height="720">
 										<control type="image">
 												<posx>40</posx>
@@ -27,7 +26,7 @@
 												<width>1200</width>
 												<height>500</height>
 												<aspectratio>stretch</aspectratio>
-												<texture>synopsis_background_alt.png</texture>
+												<texture>view_background_alt.png</texture>
 										</control>
 										<control type="image">
 												<posx>50</posx>
@@ -35,7 +34,17 @@
 												<width>340</width>
 												<height>480</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true" diffuse="synopsis_diffuse_alt_thumb.png">$INFO[listitem.icon]</texture>
+												<texture background="true" diffuse="view_diffuse_alt_thumb.png" fallback="no_poster.png">$INFO[listitem.icon]</texture>
+												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>50</posx>
+												<posy>110</posy>
+												<width>340</width>
+												<height>480</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse_alt_thumb.png" fallback="no_poster.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+												<visible>Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
 												<posx>400</posx>
@@ -43,7 +52,7 @@
 												<width>830</width>
 												<height>390</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
-												<texture background="true" scalediffuse="false" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
+												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
 												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
@@ -52,7 +61,7 @@
 												<width>830</width>
 												<height>390</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
-												<texture background="true" scalediffuse="false" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<texture background="true" scalediffuse="false" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 												<visible>Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
@@ -92,7 +101,7 @@
 												<width>1200</width>
 												<height>500</height>
 												<aspectratio>stretch</aspectratio>
-												<texture>synopsis_background_alt.png</texture>
+												<texture>view_background_alt.png</texture>
 										</control>
 										<control type="image">
 												<posx>50</posx>
@@ -100,7 +109,17 @@
 												<width>340</width>
 												<height>480</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true" diffuse="synopsis_diffuse_alt_thumb.png">$INFO[listitem.icon]</texture>
+												<texture background="true" diffuse="view_diffuse_alt_thumb.png" fallback="no_poster.png">$INFO[listitem.icon]</texture>
+												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>50</posx>
+												<posy>110</posy>
+												<width>340</width>
+												<height>480</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse_alt_thumb.png" fallback="no_poster.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+												<visible>Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
 												<posx>400</posx>
@@ -108,7 +127,7 @@
 												<width>830</width>
 												<height>390</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
-												<texture background="true" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
+												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
 												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
@@ -117,7 +136,7 @@
 												<width>830</width>
 												<height>390</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
-												<texture background="true" scalediffuse="false" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<texture background="true" scalediffuse="false" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 												<visible>Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">

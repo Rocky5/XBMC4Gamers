@@ -73,5 +73,3 @@ Copy /Y "%ProfileSkin%\720p\SettingsCategory.xml"					"%DVD2XboxSkin%\720p\"
 Copy /Y "%ProfileSkin%\720p\SettingsScreenCalibration.xml"			"%DVD2XboxSkin%\720p\"
 Copy /Y "%ProfileSkin%\language\english\strings.po"					"%DVD2XboxSkin%\language\english\"
 Copy /Y "%ProfileSkin%\Media\Textures.xpr"							"%DVD2XboxSkin%\Media\"
-
-pause

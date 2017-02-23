@@ -584,7 +584,7 @@ msgid "Media Controls"
 msgstr ""
 
 msgctxt "#32003"
-msgid "Game Preview"
+msgid "Preview Video"
 msgstr ""
 
 msgctxt "#32004"
@@ -794,7 +794,7 @@ msgid "Synopsis Mode"
 msgstr ""
 
 msgctxt "#32056"
-msgid "Game Synopsis"
+msgid "Synopsis"
 msgstr ""
 
 msgctxt "#32057"
@@ -883,4 +883,68 @@ msgstr ""
 
 msgctxt "#32078"
 msgid "Welcome. [CR]In this menu you will be able to set up to 5 different birthdays. [CR]These will show on the login-screen when the date arrives."
+msgstr ""
+
+msgctxt "#32079"
+msgid "No Fanart.jpg Found"
+msgstr ""
+
+msgctxt "#32080"
+msgid "No Poster.jpg Found"
+msgstr ""
+
+msgctxt "#32081"
+msgid "No Icon.jpg Found"
+msgstr ""
+
+msgctxt "#32082"
+msgid "No Thumb.jpg Found"
+msgstr ""
+
+msgctxt "#32083"
+msgid "No Banner.jpg Found"
+msgstr ""
+
+msgctxt "#32084"
+msgid "No Poster Found"
+msgstr ""
+
+msgctxt "#32085"
+msgid "No Screenshots Found"
+msgstr ""
+
+msgctxt "#32086"
+msgid "Found"
+msgstr ""
+
+msgctxt "#32087"
+msgid "No Preview Video Found"
+msgstr ""
+
+msgctxt "#32088"
+msgid "Restart Preview"
+msgstr ""
+
+msgctxt "#32089"
+msgid "Autoplay preview video"
+msgstr ""
+
+msgctxt "#32090"
+msgid " - [B]Generate[/B] random playlist"
+msgstr ""
+
+msgctxt "#32091"
+msgid "Default layout"
+msgstr ""
+
+msgctxt "#32092"
+msgid "Alternative layout"
+msgstr ""
+
+msgctxt "#32093"
+msgid ""
+msgstr ""
+
+msgctxt "#32094"
+msgid ""
 msgstr ""

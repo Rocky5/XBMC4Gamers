@@ -1,11 +1,10 @@
 <includes>
 		<include name="PanelView">
 				<control type="group">
-						<visible>Control.IsVisible(51) + !Control.IsVisible(50) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(54) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
 						<control type="group">
 								<posx>2</posx>
 								<posy>-30</posy>
-								<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
 								<include>Window_OpenClose_Animation</include>
 								<control type="label">
 										<posx>36</posx>
@@ -18,8 +17,6 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(51).OnScrollNext">Conditional</animation>
-										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(51).OnScrollPrevious">Conditional</animation>
 								</control>
 								<control type="image">
 										<posx>36</posx>
@@ -37,7 +34,7 @@
 										<width>216</width>
 										<height>316</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">$INFO[listitem.icon]</texture>
+										<texture background="true" fallback="no_poster.png">$INFO[listitem.icon]</texture>
 										<bordertexture>-</bordertexture>
 										<bordersize>5</bordersize>
 										<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -48,7 +45,7 @@
 										<width>216</width>
 										<height>316</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">$INFO[listitem.icon]</texture>
+										<texture background="true" fallback="no_poster.png">$INFO[listitem.icon]</texture>
 										<bordertexture>-</bordertexture>
 										<bordersize>5</bordersize>
 										<visible>!Skin.HasSetting(_recourcesenabled)</visible>
@@ -237,7 +234,7 @@
 										<aligny>center</aligny>
 										<label>$INFO[ListItem.Path]</label>
 								</control>
-								<control type="panel" id="51">
+								<control type="panel" id="54">
 										<posx>260</posx>
 										<posy>288</posy>
 										<width>254</width>
@@ -246,9 +243,9 @@
 										<onright>71</onright>
 										<onup>51</onup>
 										<ondown>51</ondown>
-										<viewtype label="Panels">Panel</viewtype>
+										<viewtype label="Panel">Panel</viewtype>
 										<pagecontrol>71</pagecontrol>
-										<scrolltime>200</scrolltime>
+										<scrolltime>350</scrolltime>
 										<preloaditems>6</preloaditems>
 										<itemlayout height="110" width="84">
 												<control type="image">
@@ -265,8 +262,7 @@
 														<width>68</width>
 														<height>96</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<bordertexture border="5">black-back.png</bordertexture>
+														<texture background="true" fallback="no_poster.png">$INFO[listitem.icon]</texture>
 														<bordersize>1</bordersize>
 														<visible>!Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
 												</control>
@@ -276,8 +272,7 @@
 														<width>68</width>
 														<height>96</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<bordertexture border="5">black-back.png</bordertexture>
+														<texture background="true" fallback="no_poster.png">$INFO[listitem.icon]</texture>
 														<bordersize>1</bordersize>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 												</control>
@@ -288,7 +283,6 @@
 														<height>96</height>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true" fallback="no_poster.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
-														<bordertexture border="5">black-back.png</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 												</control>

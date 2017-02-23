@@ -16,7 +16,7 @@
 						<posy>96r</posy>
 						<width>1280</width>
 						<font>font11</font>
-						<label>$LOCALIZE[31994] $INFO[System.FPS] - $LOCALIZE[31992] $INFO[System.FreeMemory]</label>
+						<label>FPS: $INFO[System.FPS] - FreeMemory: $INFO[System.FreeMemory]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>
 				<!-- Info Lables Underlay for Current Window info -->
@@ -35,7 +35,7 @@
 						<posy>75r</posy>
 						<width>1280</width>
 						<font>font11</font>
-						<label>$LOCALIZE[31995] $INFO[System.CurrentWindow]</label>
+						<label>CurrentWindow: $INFO[System.CurrentWindow]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>
 				<!-- Info Lables Underlay for Current Control info -->
@@ -54,7 +54,7 @@
 						<posy>53r</posy>
 						<width>1280</width>
 						<font>font11</font>
-						<label>$LOCALIZE[31996] $INFO[System.CurrentControl]</label>
+						<label>CurrentControl: $INFO[System.CurrentControl]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>
 				<!-- Info Lables Underlay for Current View info -->
@@ -73,7 +73,7 @@
 						<posy>32r</posy>
 						<width>1280</width>
 						<font>font11</font>
-						<label>$LOCALIZE[31997] $INFO[Container.Viewmode]</label>
+						<label>Viewmode: $INFO[Container.Viewmode]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>
 				<!-- Grid -->

@@ -1,71 +1,83 @@
 <window id="1">
-		<defaultcontrol always="true">50</defaultcontrol>
+		<defaultcontrol always="true">49</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
-		<views>50,52,54,57,51,53,55,56,60</views>
+		<views>50,51,52,53,54,58,55,56,57,60</views>
+		<onload>Skin.Reset(Synopsis_Video_Preview_Path)</onload>
+		<onload>Skin.Reset(Synopsis_Video_Preview_Name)</onload>
 		<controls>
+				<control type="button" id="49">
+						<posx>-500</posx>
+						<onfocus>Stop</onfocus>
+						<onfocus>SetFocus(50)</onfocus>
+						<visible>Player.HasVideo</visible>
+				</control>
+				<control type="button" id="49">
+						<posx>-500</posx>
+						<onfocus>SetFocus(50)</onfocus>
+						<visible>!Player.HasVideo</visible>
+				</control>
 				<include>CommonBackground</include>
 				<control type="group">
 						<include>ViewVisibleEffect</include>
 						<!-- view id = 50 -->
 						<include file="Viewtype_PosterView.xml">PosterView</include>
 						<!-- view id = 51 -->
-						<include file="Viewtype_PanelView.xml">PanelView</include>
-						<!-- view id = 52 -->
 						<include file="Viewtype_PosterViewSmall.xml">PosterViewSmall</include>
-						<!-- view id = 53 -->
+						<!-- view id = 52 -->
 						<include file="Viewtype_LoginView.xml">LoginView</include>
-						<!-- view id = 54 -->
-						<include file="Viewtype_FanartView.xml">FanartView</include>
-						<!-- view id = 55 -->
+						<!-- view id = 53 -->
 						<include file="Viewtype_LandscapeView.xml">LandscapeView</include>
-						<!-- view id = 56 -->
+						<!-- view id = 54 -->
+						<include file="Viewtype_PanelView.xml">PanelView</include>
+						<!-- view id = 55 -->
 						<include file="Viewtype_BannerView.xml">BannerView</include>
-						<!-- view id = 57 -->
+						<!-- view id = 56 -->
 						<include file="Viewtype_CardView.xml">CardView</include>
+						<!-- view id = 57 -->
+						<include file="Viewtype_FanartView.xml">FanartView</include>
+						<!-- view id = 58 -->
+						<include file="Viewtype_ListView.xml">ListView</include>
 						<!-- view id = 60 -->
 						<include file="Viewtype_ResourcesView.xml">ResourcesView</include>
 				</control>
-				<control type="group">
-						<include>WindowHeader</include>
-						<control type="image">
-								<posx>20</posx>
-								<posy>5</posy>
-								<width>40</width>
-								<height>35</height>
-								<aspectratio>keep</aspectratio>
-								<texture>icon_addons.png</texture>
-						</control>
-						<control type="label">
-								<description>Header label</description>
-								<posx>70</posx>
-								<posy>5</posy>
-								<width>700</width>
-								<height>35</height>
-								<align>left</align>
-								<aligny>center</aligny>
-								<font>font13</font>
-								<textcolor>white</textcolor>
-								<label>$LOCALIZE[32021]</label>
-								<visible>!Window.IsVisible(134)</visible>
-						</control>
-						<control type="label">
-								<description>Header label</description>
-								<posx>70</posx>
-								<posy>5</posy>
-								<width>700</width>
-								<height>35</height>
-								<align>left</align>
-								<aligny>center</aligny>
-								<font>font13</font>
-								<textcolor>white</textcolor>
-								<label>$LOCALIZE[32011]</label>
-								<visible>Window.IsVisible(134)</visible>
-						</control>
-						<include>ScrollOffsetLabel</include>
-						<include>View_Options</include>
-						<include>Video_Preview</include>
-						<include>WindowFooter</include>
+				<include>WindowHeader</include>
+				<control type="image">
+						<posx>20</posx>
+						<posy>5</posy>
+						<width>40</width>
+						<height>35</height>
+						<aspectratio>keep</aspectratio>
+						<texture>icon_addons.png</texture>
 				</control>
+				<control type="label">
+						<description>Header label</description>
+						<posx>70</posx>
+						<posy>5</posy>
+						<width>700</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32021]</label>
+						<visible>!Window.IsVisible(134)</visible>
+				</control>
+				<control type="label">
+						<description>Header label</description>
+						<posx>70</posx>
+						<posy>5</posy>
+						<width>700</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>font13</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32011]</label>
+						<visible>Window.IsVisible(134)</visible>
+				</control>
+				<include>ScrollOffsetLabel</include>
+				<include>View_Options</include>
+				<include>WindowFooter</include>
 				<!-- Debug Info -->
 				<include>Debug</include>
 		</controls>

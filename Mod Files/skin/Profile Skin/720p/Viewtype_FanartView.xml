@@ -1,11 +1,9 @@
 <includes>
 		<include name="FanartView">
 				<control type="group">
-						<visible>Control.IsVisible(54) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(57) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
-						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
-						<!-- <animation effect="zoom" reversable="true" start="135,76,1280,720" end="1,45,1620,857" time="250" condition="Control.HasFocus(64)">Conditional</animation> -->
-						<control type="panel" id="54">
+						<control type="panel" id="57">
 								<posx>0</posx>
 								<posy>0</posy>
 								<width>1280</width>
@@ -14,13 +12,13 @@
 								<onright>-</onright>
 								<onup>117</onup>
 								<ondown>-</ondown>
-								<viewtype label="Fanarts">Panel</viewtype>
+								<viewtype label="Fanart">Panel</viewtype>
 								<pagecontrol>74</pagecontrol>
-								<scrolltime>250</scrolltime>
+								<scrolltime>300</scrolltime>
 								<focusposition>0</focusposition>
 								<movement>0</movement>
 								<orientation>horizontal</orientation>
-								<preloaditems>2</preloaditems>
+								<preloaditems>4</preloaditems>
 								<itemlayout width="1280" height="720">
 										<control type="image">
 												<description>background image</description>
@@ -28,7 +26,7 @@
 												<posy>59</posy>
 												<width>1080</width>
 												<height>614</height>
-												<texture>synopsis_background_alt.png</texture>
+												<texture>view_background_alt.png</texture>
 												<aspectratio>stretch</aspectratio>
 										</control>
 										<control type="image">
@@ -37,7 +35,7 @@
 												<width>1080</width>
 												<height>614</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
+												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
 												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
@@ -46,7 +44,7 @@
 												<width>1080</width>
 												<height>614</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 												<visible>Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
@@ -55,9 +53,8 @@
 												<width>1080</width>
 												<height>614</height>
 												<aspectratio>stretch</aspectratio>
-												<texture diffuse="synopsis_diffuse_alt.png">black-back.png</texture>
-												<!-- <animation reversible="true" effect="fade" start="0" end="100" delay="500" time="500">Focus</animation> -->
-												<visible>!Skin.HasSetting(fanartoverlayenabled) + [!Container(54).OnNext | !Container(54).OnPrevious]</visible>
+												<texture diffuse="view_diffuse_alt.png">black-back.png</texture>
+												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
 										</control>
 										<control type="label">
 												<posx>640</posx>
@@ -70,8 +67,7 @@
 												<align>center</align>
 												<aligny>center</aligny>
 												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-												<!-- <animation reversible="true" effect="fade" start="0" end="100" delay="500" time="500">Focus</animation> -->
-												<visible>!Skin.HasSetting(fanartoverlayenabled) + [!Container(54).OnNext | !Container(54).OnPrevious]</visible>
+												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
 										</control>
 										<control type="image">
 												<posx>113</posx>
@@ -100,7 +96,7 @@
 												<posy>59</posy>
 												<width>1080</width>
 												<height>614</height>
-												<texture>synopsis_background_alt.png</texture>
+												<texture>view_background_alt.png</texture>
 												<aspectratio>stretch</aspectratio>
 										</control>
 										<control type="image">
@@ -109,7 +105,7 @@
 												<width>1080</width>
 												<height>614</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
+												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
 												<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
@@ -118,7 +114,7 @@
 												<width>1080</width>
 												<height>614</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true" diffuse="synopsis_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 												<visible>Skin.HasSetting(_recourcesenabled)</visible>
 										</control>
 										<control type="image">
@@ -127,9 +123,8 @@
 												<width>1080</width>
 												<height>614</height>
 												<aspectratio>stretch</aspectratio>
-												<texture diffuse="synopsis_diffuse_alt.png">black-back.png</texture>
-												<!-- <animation reversible="true" effect="fade" start="0" end="100" delay="500" time="500">Focus</animation> -->
-												<visible>!Skin.HasSetting(fanartoverlayenabled) + [!Container(54).OnNext | !Container(54).OnPrevious]</visible>
+												<texture diffuse="view_diffuse_alt.png">black-back.png</texture>
+												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
 										</control>
 										<control type="label">
 												<posx>640</posx>
@@ -142,8 +137,7 @@
 												<align>center</align>
 												<aligny>center</aligny>
 												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-												<!-- <animation reversible="true" effect="fade" start="0" end="100" delay="500" time="500">Focus</animation> -->
-												<visible>!Skin.HasSetting(fanartoverlayenabled) + [!Container(54).OnNext | !Container(54).OnPrevious]</visible>
+												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
 										</control>
 										<control type="image">
 												<posx>113</posx>

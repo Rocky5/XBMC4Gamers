@@ -1,56 +1,14 @@
 <includes>
 		<include name="PosterViewSmall">
 				<control type="group">
-						<visible>Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(51) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
-						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
-						<control type="image">
-								<posx>0</posx>
-								<posy>45</posy>
-								<width>1280</width>
-								<height>675</height>
-								<aspectratio>scale</aspectratio>
-								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_PosterSmall.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
-								<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Skin.HasSetting(_recourcesenabled)</visible>
-								<animation effect="fade" reversable="false" start="0" end="75" time="0" condition="Control.IsVisible(52)">Conditional</animation>
-						</control>
-						<control type="image">
-								<posx>0</posx>
-								<posy>45</posy>
-								<width>1280</width>
-								<height>675</height>
-								<aspectratio>scale</aspectratio>
-								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_PosterSmall.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-								<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + Skin.HasSetting(_recourcesenabled)</visible>
-								<animation effect="fade" reversable="false" start="0" end="75" time="0" condition="Control.IsVisible(52)">Conditional</animation>
-						</control>
-						<control type="image">
-								<posx>0</posx>
-								<posy>45</posy>
-								<width>1280</width>
-								<height>675</height>
-								<aspectratio>scale</aspectratio>
-								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_PosterSmall.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
-								<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + !Skin.HasSetting(_recourcesenabled)</visible>
-						</control>
-						<control type="image">
-								<posx>0</posx>
-								<posy>45</posy>
-								<width>1280</width>
-								<height>675</height>
-								<aspectratio>scale</aspectratio>
-								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_PosterSmall.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-								<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + Skin.HasSetting(_recourcesenabled)</visible>
-						</control>
+						<include>Fanart</include>
 						<control type="group">
-								<animation effect="zoom" reversable="true" start="0" end="80" time="0" condition="Control.IsVisible(52)">Conditional</animation>
+								<animation effect="zoom" reversable="true" start="0" end="80" time="0" condition="Control.IsVisible(51)">Conditional</animation>
 								<posx>160</posx>
 								<posy>480r</posy>
-								<control type="fixedlist" id="52">
+								<control type="fixedlist" id="51">
 										<posx>-324</posx>
 										<posy>240</posy>
 										<width>1860</width>
@@ -59,11 +17,11 @@
 										<onright>-</onright>
 										<onup>117</onup>
 										<ondown>72</ondown>
-										<viewtype label="Posters">list</viewtype>
+										<viewtype label="Postersmall">list</viewtype>
 										<pagecontrol>72</pagecontrol>
 										<scrolltime>200</scrolltime>
 										<focusposition>4</focusposition>
-										<movement>1</movement>
+										<movement>0</movement>
 										<orientation>horizontal</orientation>
 										<preloaditems>6</preloaditems>
 										<itemlayout height="290" width="214">
@@ -81,7 +39,7 @@
 														<width>205</width>
 														<height>280</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
+														<texture fallback="no_poster.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -92,7 +50,7 @@
 														<width>205</width>
 														<height>280</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
+														<texture background="true" fallback="no_poster.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
@@ -138,7 +96,7 @@
 														<width>214</width>
 														<height>290</height>
 														<aspectratio>stretch</aspectratio>
-														<texture border="5" flipy="true" diffuse="diffuse_mirror2.png">thumbnf.png</texture>
+														<texture border="5" flipy="true" diffuse="diffuse_mirror3.png">thumbnf.png</texture>
 												</control>
 												<control type="image">
 														<posx>5</posx>
@@ -146,7 +104,7 @@
 														<width>205</width>
 														<height>280</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[listitem.icon]</texture>
+														<texture flipy="true" diffuse="diffuse_mirror2.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -168,7 +126,7 @@
 														<width>205</width>
 														<height>280</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" flipy="true" diffuse="diffuse_mirror2.png" fallback="no_poster.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+														<texture background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
@@ -191,7 +149,7 @@
 														<width>204</width>
 														<height>280</height>
 														<aspectratio>stretch</aspectratio>
-														<texture border="5" background="true">$INFO[listitem.icon]</texture>
+														<texture border="5" fallback="no_poster.png">$INFO[listitem.icon]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
 														<animation reversible="false" effect="zoom" start="5,5,204,280" end="-5,-31,224,320" time="100">focus</animation>
 														<animation reversible="false" effect="zoom" end="5,5,204,280" start="-5,-31,224,320" time="100">unfocus</animation>
@@ -202,7 +160,7 @@
 														<width>204</width>
 														<height>280</height>
 														<aspectratio>stretch</aspectratio>
-														<texture border="5" background="true">$INFO[listitem.icon]</texture>
+														<texture border="5" background="true" fallback="no_poster.png">$INFO[listitem.icon]</texture>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 														<animation reversible="false" effect="zoom" start="5,5,204,280" end="-5,-31,224,320" time="100">focus</animation>
 														<animation reversible="false" effect="zoom" end="5,5,204,280" start="-5,-31,224,320" time="100">unfocus</animation>
@@ -261,7 +219,7 @@
 														<width>214</width>
 														<height>290</height>
 														<aspectratio>stretch</aspectratio>
-														<texture border="5" background="true" flipy="true" diffuse="diffuse_mirror2.png">thumbnf.png</texture>
+														<texture border="5" background="true" flipy="true" diffuse="diffuse_mirror3.png">thumbnf.png</texture>
 														<animation reversible="false" effect="zoom" start="0,290,214,290" end="-10,294,234,330" time="100">focus</animation>
 														<animation reversible="false" effect="zoom" end="0,290,214,290" start="-10,294,234,330" time="100">unfocus</animation>
 												</control>
@@ -271,7 +229,7 @@
 														<width>205</width>
 														<height>280</height>
 														<aspectratio>stretch</aspectratio>
-														<texture border="5" background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[listitem.icon]</texture>
+														<texture border="5" flipy="true" diffuse="diffuse_mirror2.png">$INFO[listitem.icon]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
 														<animation reversible="false" effect="zoom" start="5,294,205,280" end="-5,300,224,320" time="100">focus</animation>
 														<animation reversible="false" effect="zoom" start="-5,300,224,320" end="5,294,205,280" time="100">unfocus</animation>
@@ -293,7 +251,7 @@
 														<width>205</width>
 														<height>280</height>
 														<aspectratio>stretch</aspectratio>
-														<texture border="5" background="true" flipy="true" diffuse="diffuse_mirror2.png" fallback="no_poster.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+														<texture border="5" background="true" flipy="true" diffuse="diffuse_mirror2.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
 														<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 														<animation reversible="false" effect="zoom" start="5,294,205,280" end="-5,300,224,320" time="100">focus</animation>
 														<animation reversible="false" effect="zoom" start="-5,300,224,320" end="5,294,205,280" time="100">unfocus</animation>
@@ -321,8 +279,8 @@
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(52).OnScrollNext">Conditional</animation>
-										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(52).OnScrollPrevious">Conditional</animation>
+										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(51).OnScrollNext">Conditional</animation>
+										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(51).OnScrollPrevious">Conditional</animation>
 								</control>
 								<control type="label">
 										<posx>0</posx>
@@ -335,12 +293,12 @@
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-										<animation type="Conditional" condition="Control.IsVisible(52)" reversible="false">
+										<animation type="Conditional" condition="Control.IsVisible(51)" reversible="false">
 												<effect type="zoom" end="100,-75" center="auto" delay="" time="0" />
 												<effect type="fade" end="2" delay="" time="0" />
 										</animation>
-										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(52).OnScrollNext">Conditional</animation>
-										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(52).OnScrollPrevious">Conditional</animation>
+										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(51).OnScrollNext">Conditional</animation>
+										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(51).OnScrollPrevious">Conditional</animation>
 								</control>
 								<control type="scrollbar" id="72">
 										<posx>150</posx>

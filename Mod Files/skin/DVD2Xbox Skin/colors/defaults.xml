@@ -1,8 +1,8 @@
 <colors>
 		<color name="white">FFFFFFFF</color>
-		<color name="grey">66FFFFFF</color>
-		<color name="grey2">88FFFFFF</color>
-		<color name="grey3">33FFFFFF</color>
+		<color name="grey">FF737373</color>
+		<color name="grey2">FF969696</color>
+		<color name="grey3">FF7a7c7d</color>
 		<color name="black">FF000000</color>
 		<color name="blue">FF399EDA</color>
 		<color name="blue2">FF0059AB</color>

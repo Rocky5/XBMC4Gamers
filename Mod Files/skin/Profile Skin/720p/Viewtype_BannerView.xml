@@ -1,51 +1,8 @@
 <includes>
 		<include name="BannerView">
 				<control type="group">
-						<visible>Control.IsVisible(56) + !Control.IsVisible(50) + !Control.IsVisible(51) + !Control.IsVisible(52) + !Control.IsVisible(53) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(60) + !Window.IsVisible(134)</visible>
+						<visible>Control.IsVisible(55) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
 						<include>Window_OpenClose_Animation</include>
-						<animation effect="fade" reversable="true" start="100" end="10" time="500" condition="Control.HasFocus(117)">Conditional</animation>
-						<control type="image">
-								<posx>0</posx>
-								<posy>45</posy>
-								<width>1280</width>
-								<height>675</height>
-								<aspectratio>scale</aspectratio>
-								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
-								<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Skin.HasSetting(_recourcesenabled)</visible>
-								<animation effect="fade" reversable="false" start="0" end="75" time="0" condition="Control.IsVisible(56)">Conditional</animation>
-						</control>
-						<control type="image">
-								<posx>0</posx>
-								<posy>45</posy>
-								<width>1280</width>
-								<height>675</height>
-								<aspectratio>scale</aspectratio>
-								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-								<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + Skin.HasSetting(_recourcesenabled)</visible>
-								<animation effect="fade" reversable="false" start="0" end="75" time="0" condition="Control.IsVisible(56)">Conditional</animation>
-						</control>
-						<control type="image">
-								<posx>0</posx>
-								<posy>45</posy>
-								<width>1280</width>
-								<height>675</height>
-								<aspectratio>scale</aspectratio>
-								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[listitem.path,,fanart.jpg]</texture>
-								<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + !Skin.HasSetting(_recourcesenabled)</visible>
-						</control>
-						<control type="image">
-								<posx>0</posx>
-								<posy>45</posy>
-								<width>1280</width>
-								<height>675</height>
-								<aspectratio>scale</aspectratio>
-								<fadetime>FanartCrossfadeTime</fadetime>
-								<texture background="true" diffuse="fanart_diffuse_Poster.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-								<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + Skin.HasSetting(_recourcesenabled)</visible>
-						</control>
 						<control type="group">
 								<posx>55</posx>
 								<posy>55</posy>
@@ -231,8 +188,6 @@
 												<aspectratio>stretch</aspectratio>
 												<texture>overlay-watched.png</texture>
 												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
-												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
-												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
 										</control>
 										<control type="image">
 												<posx>0</posx>
@@ -241,11 +196,9 @@
 												<height>30</height>
 												<aspectratio>stretch</aspectratio>
 												<texture>$INFO[listitem.overlay]</texture>
-												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollNext">Conditional</animation>
-												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(50).OnScrollPrevious">Conditional</animation>
 										</control>
 								</control>
-								<control type="list" id="56">
+								<control type="list" id="55">
 										<posx>5</posx>
 										<posy>5</posy>
 										<width>570</width>
@@ -254,7 +207,7 @@
 										<onright>75</onright>
 										<onup>-</onup>
 										<ondown>-</ondown>
-										<viewtype label="Posters">list</viewtype>
+										<viewtype label="Banner">list</viewtype>
 										<pagecontrol>75</pagecontrol>
 										<scrolltime>200</scrolltime>
 										<focusposition>3</focusposition>
@@ -268,7 +221,7 @@
 														<width>570</width>
 														<height>120</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
+														<texture fallback="no_banner.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -279,7 +232,7 @@
 														<width>570</width>
 														<height>120</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
+														<texture background="true" fallback="no_banner.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
@@ -303,7 +256,7 @@
 														<width>570</width>
 														<height>120</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
+														<texture fallback="no_banner.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>Skin.HasSetting(_recourcesenabled) + ListItem.IsFolder</visible>
@@ -314,7 +267,7 @@
 														<width>570</width>
 														<height>120</height>
 														<aspectratio>scale</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
+														<texture background="true" fallback="no_banner.png">$INFO[listitem.icon]</texture>
 														<bordertexture border="5">-</bordertexture>
 														<bordersize>1</bordersize>
 														<visible>!Skin.HasSetting(_recourcesenabled)</visible>

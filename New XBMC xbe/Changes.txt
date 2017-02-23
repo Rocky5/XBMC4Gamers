@@ -5,3 +5,4 @@
 3) Changed how the game save menu works, it now doesn't list "TitleMeta.xbx" files as files, there in the own directory like the rest.
 4) Increased the Splash screen display time, no point having a nice splash if you dont get to see it.
 5) Fullscreen Splashscreen!
+6) Faster loading of your games library. ( disables the directory check/scan when entering the games menu )

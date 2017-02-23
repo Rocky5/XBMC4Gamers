@@ -9,9 +9,11 @@
 				</source>
 				<source>
 						<name>Applications</name>
+						<path pathversion="1">C:\Applications\</path>
 						<path pathversion="1">E:\Applications\</path>
 						<path pathversion="1">F:\Applications\</path>
 						<path pathversion="1">G:\Applications\</path>
+						<path pathversion="1">C:\Apps\</path>
 						<path pathversion="1">E:\Apps\</path>
 						<path pathversion="1">F:\Apps\</path>
 						<path pathversion="1">G:\Apps\</path>

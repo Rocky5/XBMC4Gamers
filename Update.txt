@@ -1,4 +1,4 @@
-**/09/2016
+23/02/2017
 1) Updated the XBMC default.xbe, Now we have fullscreen splash! & a few other things I needed to streamline the experience.
 2) "Manage Profiles" Profile - Now load directory into the profiles window when selecting Manage Profiles
 3) "Manage Profiles" Profile - Now you use the Back button to enter settings.
@@ -19,6 +19,28 @@
 18) New textures for the radiobutton and spincontrolex buttons.
 19) Added 3 new options to the skin settings menu, for cleaning, removing or generating thumbnails.
 20) Updated the login view.
+21) Updated static network IP.
+22) Updated the modified default.xbe.
+   ( Disabled the folder scanning when entering the programs menu )
+23) Updated the Fonts.xml.
+24) Moved the the synopsis screen to a window and fixed a few things.
+25) Updated the synopsis.py script, now test all variables for the synopsis window.
+26) New Card view.
+27) New List view.
+28) Rearranged the view order.
+29) Updated all view and other stuff.
+30) Added an auto play synopsis video toggle to the Preview settings menu.
+31) I done most of these edits months ago and now I have forgot what most of the it was lol, so there are probably more changes.
+    ( well I know there are more )
+32) New script to generate a random.m3u playlist.
+	( saves having to use the playlist menu, it looks for a music folder in E, F or G )
+33) New birthday menu in the "Manage Profiles" profile.
+	( what a pain in the arse hole this was to do, I had to create 12 xml files to compare every single day of the year :@ )
+34) Added a shutdown button to the options dialog
+	( Black button )
+35) New synopsis view, based off of the Xbox 360 Aurora dashboard skin.
+36) Updated the Synopsis script to accommodate the above changes.
+37) New xml files to further optimize and make it clearer to edit stuff.
 ***) Probably more, to many changes to keep track :/
 
 

@@ -1,6 +1,11 @@
 <fonts>
 		<fontset id="Default" unicode="true">
 				<font>
+						<name>font8</name>
+						<filename>arial.ttf</filename>
+						<size>8</size>
+				</font>
+				<font>
 						<name>font10</name>
 						<filename>arial.ttf</filename>
 						<size>15</size>
