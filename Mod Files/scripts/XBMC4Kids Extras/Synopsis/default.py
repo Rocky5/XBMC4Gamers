@@ -6,7 +6,6 @@
 
 import os, sys
 import xbmcgui, xbmcaddon
-import zipfile
 
 Addon = xbmcaddon.Addon('Synopsis Script')
 

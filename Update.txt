@@ -1,3 +1,10 @@
+26/02/2017
+1) Updated the Synopsis script readme file.
+   ( forgot to do it yesterday :$ )
+2) Forgot to change the Skin.SetString to SetProperty in the Synopsis script, fixed now.
+3) You can now call the synopsis script in dialog mode or window mode, example is in the readme.txt
+
+
 25/02/2017
 1) Updated the Busy dialog
 2) Updated the busy.png

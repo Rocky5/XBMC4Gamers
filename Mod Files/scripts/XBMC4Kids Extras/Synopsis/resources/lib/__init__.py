@@ -2,6 +2,12 @@
 	Script by Rocky5
 	Extracts information from a file named default.xml located in the "_resources" folder.
 	
+	Updated: 26 February 2017
+	-- Forgot to move all skin.SetStrings to setProperty.
+	   Added a dialog argument that you add to the end of the RunScript string.
+	   This will run the synopsis script window in dialog mode instead of windowed.
+	   example: RunScript( Special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py,dialog )
+	
 	Updated: 25 February 2017
 	-- Moved the script to its own contained structure, so its separate from the skins now.
 	   Added support for stopping playback and focusing when exiting the script.
@@ -43,7 +49,18 @@ import shutil
 import glob
 import fileinput
 import time
+import sys
 from BeautifulSoup import *
+
+try:
+	UseDialog = sys.argv[1:][0]
+except:
+	UseDialog = "0"
+	
+if UseDialog == "dialog":
+	windowdialog = xbmcgui.WindowXMLDialog
+else:
+	windowdialog = xbmcgui.WindowXML
 
 #################################################################################
 #####	Start markings for the log file.
@@ -74,13 +91,13 @@ _Resources_Preview_Ext1			= os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_
 _Resources_Preview_Ext2 		= os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".mp4" )
 _Resources_Preview_Ext3 		= os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".wmv" )
 _Resources_Preview_Ext4 		= os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".mpg" )
+	
+class GUI(windowdialog):
+							 
 
-#class GUI(xbmcgui.WindowXMLDialog):
-class GUI(xbmcgui.WindowXML):
-
-	def __init__(self, *args, **kwargs):
-		#xbmcgui.WindowXMLDialog.__init__(self, *args, **kwargs)
-		xbmcgui.WindowXML.__init__(self, *args, **kwargs)
+									 
+														  
+												   
 
 	def onInit(self):
 		self.action_exitkeys_id = [10, 92]
@@ -88,9 +105,10 @@ class GUI(xbmcgui.WindowXML):
 	def onAction(self, action):
 		if action in self.action_exitkeys_id:
 			xbmc.executebuiltin('PlayerControl(stop)')
+			xbmc.executebuiltin('SetFocus(50)')
 			self.close()
-			#time.sleep(0.1)
-			#xbmc.executebuiltin('SetFocus(50)')
+				   
+									   
 	
 	def onFocus(self, action):
 		pass
@@ -102,28 +120,28 @@ if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ) == 1:
 	#####	Check for Preview file & set skin settings so they can be played.
 	#################################################################################
 	if os.path.isfile( _Resources_Preview_Ext1 ):
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Path,' + _Resources_Preview_Ext1 + ')')
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.xmv )')
-		xbmc.executebuiltin('Skin.SetString(Player_Type,DVDPlayer)')
+		Current_Window.setProperty( "Synopsis_Video_Preview_Path", _Resources_Preview_Ext1 )
+		Current_Window.setProperty( "Synopsis_Video_Preview_Name", Preview_Video_Name + ".xmv" )
+		Current_Window.setProperty( "Player_Type,DVDPlayer)" )
 		print "| Found " + Preview_Video_Name + ".xmv" 
 	elif os.path.exists( _Resources_Preview_Ext2 ):
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Path,' + _Resources_Preview_Ext2 + ')')
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.mp4 )')
-		xbmc.executebuiltin('Skin.SetString(Player_Type,MPlayer)')
+		Current_Window.setProperty( "Synopsis_Video_Preview_Path", _Resources_Preview_Ext2 )
+		Current_Window.setProperty( "Synopsis_Video_Preview_Name", Preview_Video_Name + ".mp4" )
+		Current_Window.setProperty( "Player_Type", "MPlayer" )
 		print "| Found " + Preview_Video_Name + ".mp4" 
 	elif os.path.exists( _Resources_Preview_Ext3 ):
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Path,' + _Resources_Preview_Ext3 + ')')
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.wmv )')
-		xbmc.executebuiltin('Skin.SetString(Player_Type,MPlayer)')
+		Current_Window.setProperty( "Synopsis_Video_Preview_Path", _Resources_Preview_Ext3)
+		Current_Window.setProperty( "Synopsis_Video_Preview_Name", Preview_Video_Name + ".wmv" )
+		Current_Window.setProperty( "Player_Type", "MPlayer" )
 		print "| Found " + Preview_Video_Name + ".wmv" 
 	elif os.path.exists( _Resources_Preview_Ext4 ):
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Path,' + _Resources_Preview_Ext4 + ')')
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.mpg )')
-		xbmc.executebuiltin('Skin.SetString(Player_Type,MPlayer)')
+		Current_Window.setProperty( "Synopsis_Video_Preview_Path", _Resources_Preview_Ext4 )
+		Current_Window.setProperty( "Synopsis_Video_Preview_Name", Preview_Video_Name + ".mpg" )
+		Current_Window.setProperty( "Player_Type", "MPlayer" )
 		print "| Found " + Preview_Video_Name + ".mpg" 
 	else:
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Preview Video Found )')
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Path,"")')
+		Current_Window.setProperty( "Synopsis_Video_Preview_Name", "No Preview Video Found" )
+		Current_Window.setProperty( "Synopsis_Video_Preview_Path","" )
 		print "| No " + Preview_Video_Name + " video found"
 	#################################################################################
 	#####	Get _resources assets
@@ -250,7 +268,7 @@ else:
 			print "| Found " + Preview_default
 			Current_Window.setProperty( "Preview_default", Preview_default )
 		else:
-			xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Preview Video Found )')
+			Current_Window.setProperty( "Synopsis_Video_Preview_Name", "No Preview Video Found" )
 			print "| No " + Preview_Video_Name + " found"
 			Current_Window.setProperty( "Preview_default", "" )
 	else:
@@ -258,7 +276,7 @@ else:
 			print "| Found " + Preview_alt
 			Current_Window.setProperty( "Preview_alt", Preview_alt )
 		else:
-			xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Preview Video Found )')
+			Current_Window.setProperty( "Synopsis_Video_Preview_Name", "No Preview Video Found" )
 			print "| No " + Preview_Video_Name + " found"
 			Current_Window.setProperty( "Preview_alt", "" )
 			

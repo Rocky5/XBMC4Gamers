@@ -448,10 +448,10 @@
 										<description>Synopsis Video</description>
 										<width>80</width>
 										<height>80</height>
-										<onclick>PlayWith($INFO[Skin.String(Player_Type)])</onclick>
-										<onclick>playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
-										<onfocus>PlayWith($INFO[Skin.String(Player_Type)])</onfocus>
-										<onfocus>playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
+										<onclick>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onclick>
+										<onclick>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
+										<onfocus>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onfocus>
+										<onfocus>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>synopsis\synopsis_button-focus.png</texturefocus>
 								</control>
@@ -722,7 +722,7 @@
 										<font>font25</font>
 										<align>center</align>
 										<aligny>center</aligny>
-										<label>[B]$INFO[Skin.String(Synopsis_Video_Preview_Name)][/B]</label>
+										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>
 										<animation effect="fade" reversible="true" start="0" end="20" delay="500" time="1000">WindowOpen</animation>
 										<animation effect="fade" reversible="true" start="20" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
@@ -930,8 +930,8 @@
 								<control type="button" id="1">
 										<width>80</width>
 										<height>80</height>
-										<onclick>PlayWith($INFO[Skin.String(Player_Type)])</onclick>
-										<onclick>Playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
+										<onclick>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onclick>
+										<onclick>Playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
 										<onclick>SetFocus(2)</onclick>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
@@ -940,8 +940,8 @@
 								<control type="button" id="1">
 										<width>80</width>
 										<height>80</height>
-										<onfocus>PlayWith($INFO[Skin.String(Player_Type)])</onfocus>
-										<onfocus>Playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
+										<onfocus>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onfocus>
+										<onfocus>Playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
 										<onfocus>SetFocus(2)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
@@ -1131,8 +1131,9 @@
 								<font>font25</font>
 								<align>center</align>
 								<aligny>center</aligny>
-								<label>[B]$INFO[Skin.String(Synopsis_Video_Preview_Name)][/B]</label>
+								<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>
 								<visible>!Player.HasVideo</visible>
+								<animation effect="fade" start="0" end="0" delay="0" time="0">Visible</animation>
 								<animation effect="fade" start="0" end="20" delay="750" time="1000">WindowOpen</animation>
 								<animation effect="fade" start="20" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
@@ -1142,7 +1143,7 @@
 								<posy>74</posy>
 								<width>1058</width>
 								<height>586</height>
-								<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+								<animation effect="fade" start="0" end="100" delay="1000" time="1000">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
 						<control type="grouplist" id="9001">
