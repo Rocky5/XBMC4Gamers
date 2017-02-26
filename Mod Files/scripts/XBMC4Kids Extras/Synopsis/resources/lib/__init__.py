@@ -2,6 +2,18 @@
 	Script by Rocky5
 	Extracts information from a file named default.xml located in the "_resources" folder.
 	
+	Updated: 25 February 2017
+	-- Moved the script to its own contained structure, so its separate from the skins now.
+	   Added support for stopping playback and focusing when exiting the script.
+	   There are still some things its dependent on.
+	   Skin settings:
+	    Skin.HasSetting(SynopsisMode) - Will show the synopsis window.
+		Skin>Has Setting(Synopsis) - Will show the default view.
+		Skin>Has Setting(Synopsis_alt_view) - Will show the alt view.
+		Skin>Has Setting(Synopsis_Autoplay) - Will auto play the preview in the alt view only.
+		
+	   If Skin.HasSetting(SynopsisMode) is disbaled, it will default to the preview video window.
+	
 	Updated: 23 February 2017
 	-- Added a few more lines of code for the likes of Rating and gamexbe path eg...
 	   This was done for the new synopsis layout.
@@ -33,18 +45,20 @@ import fileinput
 import time
 from BeautifulSoup import *
 
-
+#################################################################################
 #####	Start markings for the log file.
+#################################################################################
 print "================================================================================"
-print "| Scripts\XBMC4Kids\Synopsis\default.py loaded."
+print "| Scripts\XBMC4Kids Extras\Synopsis\default.py loaded."
 print "| ------------------------------------------------------------------------------"
-	
 
+#################################################################################
 #####	Sets paths & other crap.
+#################################################################################
 Current_Window					= xbmcgui.Window(xbmcgui.getCurrentWindowId())
+Preview_Video_Name				= "Preview"
 HasSetting_PreviewExtension		= xbmc.getCondVisibility( 'Skin.HasSetting(PreviewExtension)' )
 ThumbCache						= xbmc.getCacheThumbName( xbmc.getInfoLabel('ListItem.FolderPath') )
-CurProfileGuiSettings			= xbmc.translatePath( 'special://profile/guisettings.xml' )
 GameName						= xbmc.getInfoLabel('ListItem.Label')
 GameFolder						= xbmc.getInfoLabel('ListItem.FolderName')
 GameXBE							= xbmc.getInfoLabel('listitem.FileNameAndPath')
@@ -55,19 +69,38 @@ _Resources_Fanart				= xbmc.getInfoLabel('ListItem.Path') + '_resources\\artwork
 _Resources_Banner				= xbmc.getInfoLabel('ListItem.Path') + '_resources\\artwork\\banner.jpg'
 Preview_default					= xbmc.getInfoLabel('ListItem.Path') + 'preview.xmv'
 Preview_ext						= xbmc.getInfoLabel('Skin.String(PreviewFileExtension)')
-Preview_alt						= xbmc.getInfoLabel('ListItem.Path') + 'preview.' + Preview_ext
-Preview_Video_Name				= "Preview"
+Preview_alt						= xbmc.getInfoLabel('ListItem.Path') + Preview_Video_Name + "." + Preview_ext
+_Resources_Preview_Ext1			= os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".xmv" )
+_Resources_Preview_Ext2 		= os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".mp4" )
+_Resources_Preview_Ext3 		= os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".wmv" )
+_Resources_Preview_Ext4 		= os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".mpg" )
 
+#class GUI(xbmcgui.WindowXMLDialog):
+class GUI(xbmcgui.WindowXML):
+
+	def __init__(self, *args, **kwargs):
+		#xbmcgui.WindowXMLDialog.__init__(self, *args, **kwargs)
+		xbmcgui.WindowXML.__init__(self, *args, **kwargs)
+
+	def onInit(self):
+		self.action_exitkeys_id = [10, 92]
+	
+	def onAction(self, action):
+		if action in self.action_exitkeys_id:
+			xbmc.executebuiltin('PlayerControl(stop)')
+			self.close()
+			#time.sleep(0.1)
+			#xbmc.executebuiltin('SetFocus(50)')
+	
+	def onFocus(self, action):
+		pass
+	def onClick(self, action):
+		pass
 
 if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ) == 1:
 	#################################################################################
 	#####	Check for Preview file & set skin settings so they can be played.
 	#################################################################################
-	_Resources_Preview_Ext1 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".xmv" )
-	_Resources_Preview_Ext2 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".mp4" )
-	_Resources_Preview_Ext3 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".wmv" )
-	_Resources_Preview_Ext4 = os.path.join( xbmc.getInfoLabel("ListItem.Path"), "_resources\\media\\" + Preview_Video_Name + ".mpg" )
-
 	if os.path.isfile( _Resources_Preview_Ext1 ):
 		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Path,' + _Resources_Preview_Ext1 + ')')
 		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name,' + Preview_Video_Name + '.xmv )')
@@ -89,7 +122,8 @@ if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ) == 1:
 		xbmc.executebuiltin('Skin.SetString(Player_Type,MPlayer)')
 		print "| Found " + Preview_Video_Name + ".mpg" 
 	else:
-		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Preview Video )')
+		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Preview Video Found )')
+		xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Path,"")')
 		print "| No " + Preview_Video_Name + " video found"
 	#################################################################################
 	#####	Get _resources assets
@@ -210,22 +244,23 @@ if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ) == 1:
 		Current_Window.setProperty( "Synopsis_titleid_alt","Null" )
 		Current_Window.setProperty( "Synopsis_overview","" )
 		Current_Window.setProperty( "Synopsis_overview_alt","No synopsis information found." )
-
-	xbmc.executebuiltin("ActivateWindow(1117)")
 else:
 	if xbmc.getCondVisibility( 'Skin.HasSetting(PreviewExtension)' ) == 0:
-		try: # Preview default xmv extension
+		if os.path.isfile( Preview_default ):
+			print "| Found " + Preview_default
 			Current_Window.setProperty( "Preview_default", Preview_default )
-		except(TypeError, KeyError, AttributeError):
+		else:
+			xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Preview Video Found )')
+			print "| No " + Preview_Video_Name + " found"
 			Current_Window.setProperty( "Preview_default", "" )
 	else:
-		try: # Preview alt extension
+		if os.path.isfile( Preview_alt ):
+			print "| Found " + Preview_alt
 			Current_Window.setProperty( "Preview_alt", Preview_alt )
-		except(TypeError, KeyError, AttributeError):
+		else:
+			xbmc.executebuiltin('Skin.SetString(Synopsis_Video_Preview_Name, No Preview Video Found )')
+			print "| No " + Preview_Video_Name + " found"
 			Current_Window.setProperty( "Preview_alt", "" )
-	
-	xbmc.executebuiltin("ActivateWindow(1118)")
-
-
+			
 xbmc.executebuiltin("dialog.close(1113,true)")
 print "================================================================================"

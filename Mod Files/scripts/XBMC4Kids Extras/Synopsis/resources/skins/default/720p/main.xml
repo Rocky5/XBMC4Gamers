@@ -1,16 +1,22 @@
-<window type="window" id="1117">
+<window id="1117">
+		<!-- Label Colours =  FF969696 -->
 		<defaultcontrol always="true">9000</defaultcontrol>
+		<coordinates>
+				<system>1</system>
+				<posx>0</posx>
+				<posy>0</posy>
+		</coordinates>
 		<controls>
+				<control type="button" id="9000">
+						<posx>-500</posx>
+						<onfocus>SetFocus(1)</onfocus>
+				</control>
 				<include>CommonBackground</include>
 				<!--                   -->
 				<!-- New Synopsis view -->
 				<!--                   -->
 				<control type="group">
-						<visible>Skin.HasSetting(Synopsis)</visible>
-						<control type="button" id="9000">
-								<posx>-500</posx>
-								<onfocus>SetFocus(1)</onfocus>
-						</control>
+						<visible>Skin.HasSetting(SynopsisMode) + Skin.HasSetting(Synopsis)</visible>
 						<control type="image">
 								<description>background image</description>
 								<posx>0</posx>
@@ -40,7 +46,14 @@
 								<height>570</height>
 								<texture>synopsis\synopsis_overlay.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<include>DialogEffectZoom</include>
+								<animation type="WindowOpen" reversible="false">
+										<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
+										<effect type="fade" start="0" end="100" time="300" delay="200" />
+								</animation>
+								<animation type="WindowClose" reversible="false">
+										<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+										<effect type="fade" start="100" end="0" time="300" />
+								</animation>
 						</control>
 						<control type="image">
 								<description>background overlay</description>
@@ -50,7 +63,14 @@
 								<height>570</height>
 								<texture>synopsis\synopsis_black-back.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<include>DialogEffectZoom</include>
+								<animation type="WindowOpen" reversible="false">
+										<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
+										<effect type="fade" start="0" end="100" time="300" delay="200" />
+								</animation>
+								<animation type="WindowClose" reversible="false">
+										<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+										<effect type="fade" start="100" end="0" time="300" />
+								</animation>
 						</control>
 						<!-- Poster image -->
 						<control type="image">
@@ -61,7 +81,14 @@
 								<height>570</height>
 								<texture>synopsis\synopsis_overlay.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<include>DialogEffectZoom</include>
+								<animation type="WindowOpen" reversible="false">
+										<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
+										<effect type="fade" start="0" end="100" time="300" delay="200" />
+								</animation>
+								<animation type="WindowClose" reversible="false">
+										<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+										<effect type="fade" start="100" end="0" time="300" />
+								</animation>
 						</control>
 						<control type="image">
 								<description>Poster image</description>
@@ -87,7 +114,7 @@
 										<width>650</width>
 										<height>0</height>
 										<font>font25</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_title_alt)][/B]</label>
 								</control>
@@ -98,7 +125,7 @@
 										<width>650</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<label>Title ID: $INFO[Window(MyPrograms).Property(Synopsis_titleid_alt)]</label>
 								</control>
@@ -109,7 +136,7 @@
 										<width>650</width>
 										<height>0</height>
 										<font>font22</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<label>Synopsis</label>
 								</control>
@@ -120,7 +147,7 @@
 										<width>650</width>
 										<height>215</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<scrolltime>200</scrolltime>
 										<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(1)">Conditional</autoscroll>
@@ -133,7 +160,7 @@
 										<width>325</width>
 										<height>0</height>
 										<font>font22</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<label>Game Rating</label>
 								</control>
@@ -153,7 +180,7 @@
 										<width>50</width>
 										<height>0</height>
 										<font>font18</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<label>/ 5</label>
 								</control>
@@ -184,7 +211,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_title)]</label>
@@ -196,7 +223,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
@@ -208,7 +235,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_publisher)]</label>
@@ -220,7 +247,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_esrb)]</label>
@@ -232,7 +259,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_esrb_descriptors)]</label>
@@ -244,7 +271,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_features_general)]</label>
@@ -256,7 +283,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_features_online)]</label>
@@ -268,7 +295,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_genre)]</label>
@@ -280,7 +307,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_release_date)]</label>
@@ -292,7 +319,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_rating)]</label>
@@ -304,7 +331,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_platform)]</label>
@@ -316,7 +343,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_exclusive)]</label>
@@ -328,7 +355,7 @@
 										<width>670</width>
 										<height>0</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_titleid)]</label>
@@ -341,7 +368,7 @@
 								<width>670</width>
 								<height>215</height>
 								<font>font12a</font>
-								<textcolor>grey2</textcolor>
+								<textcolor>FF969696</textcolor>
 								<align>left</align>
 								<scrolltime>200</scrolltime>
 								<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(2)">Conditional</autoscroll>
@@ -421,8 +448,10 @@
 										<description>Synopsis Video</description>
 										<width>80</width>
 										<height>80</height>
-										<onclick>xbmc.playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
-										<onfocus>xbmc.playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
+										<onclick>PlayWith($INFO[Skin.String(Player_Type)])</onclick>
+										<onclick>playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
+										<onfocus>PlayWith($INFO[Skin.String(Player_Type)])</onfocus>
+										<onfocus>playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>synopsis\synopsis_button-focus.png</texturefocus>
 								</control>
@@ -472,37 +501,136 @@
 								<animation effect="fade" reversible="true" start="0" end="100" delay="500" time="750">WindowOpen</animation>
 								<animation effect="fade" reversible="true" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
+						<!-- context buttons -->
+						<control type="grouplist">
+								<description>Control Info</description>
+								<posx>10</posx>
+								<posy>32r</posy>
+								<width>1280</width>
+								<height>80</height>
+								<itemgap>5</itemgap>
+								<orientation>Horizontal</orientation>
+								<!-- A button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\a_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>ControlGroup(9001).HasFocus(1) | ControlGroup(9001).HasFocus(4)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[518] Game</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>ControlGroup(9001).HasFocus(1)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32088]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>ControlGroup(9001).HasFocus(4)</visible>
+								</control>
+								<!-- B button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\b_button.png</texture>
+										<aspectratio>keep</aspectratio>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32001]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								</control>
+								<!-- Y Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\y_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32006]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<!-- R Stick Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\r_stick_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32019]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								</control>
+								<!-- L Stick Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\l_stick_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32020]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+						</control>
 				</control>
 				<!--                   -->
 				<!-- Old Synopsis view -->
 				<!--                   -->
 				<control type="group">
-						<visible>Skin.HasSetting(Synopsis_alt_view)</visible>
-						<!-- Display Synopsis preview overlay -->
-						<control type="group">
-								<control type="button" id="9000">
-										<posx>-500</posx>
-										<onclick>PlayWith($INFO[Skin.String(Player_Type)])</onclick>
-										<onclick>xbmc.playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
-										<onclick>SetFocus(9001)</onclick>
-										<visible>!Skin.HasSetting(Synopsis_Autoplay)</visible>
-								</control>
-								<control type="button" id="9000">
-										<posx>-500</posx>
-										<onfocus>PlayWith($INFO[Skin.String(Player_Type)])</onfocus>
-										<onfocus>xbmc.playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
-										<onfocus>SetFocus(9001)</onfocus>
-										<visible>Skin.HasSetting(Synopsis_Autoplay)</visible>
-								</control>
-								<control type="button" id="9001">
-										<posx>-500</posx>
-										<onclick>Stop</onclick>
-										<onclick>SetFocus(9000)</onclick>
-								</control>
-						</control>
-						<!--               -->
-						<!-- Synopsis mode -->
-						<!--               -->
+						<visible>Skin.HasSetting(SynopsisMode) + Skin.HasSetting(Synopsis_alt_view)</visible>
 						<control type="group">
 								<control type="image">
 										<description>background image</description>
@@ -543,7 +671,7 @@
 										<font>font11</font>
 										<align>center</align>
 										<aligny>center</aligny>
-										<label>[B]$LOCALIZE[32084][/B]</label>
+										<label>[B]No Poster Found[/B]</label>
 										<animation effect="fade" reversible="true" start="0" end="20" delay="500" time="1000">WindowOpen</animation>
 										<animation effect="fade" reversible="true" start="20" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
@@ -566,7 +694,7 @@
 										<font>font25</font>
 										<align>center</align>
 										<aligny>center</aligny>
-										<label>[B]$LOCALIZE[32085][/B]</label>
+										<label>[B]No Screenshots Found[/B]</label>
 										<animation effect="fade" reversible="true" start="0" end="20" delay="500" time="1000">WindowOpen</animation>
 										<animation effect="fade" reversible="true" start="20" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
@@ -594,7 +722,7 @@
 										<font>font25</font>
 										<align>center</align>
 										<aligny>center</aligny>
-										<label>[B]$INFO[Skin.String(Synopsis_Video_Preview_Name)] $LOCALIZE[32086][/B]</label>
+										<label>[B]$INFO[Skin.String(Synopsis_Video_Preview_Name)][/B]</label>
 										<animation effect="fade" reversible="true" start="0" end="20" delay="500" time="1000">WindowOpen</animation>
 										<animation effect="fade" reversible="true" start="20" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
@@ -622,7 +750,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_title)]</label>
@@ -634,7 +762,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
@@ -646,7 +774,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_publisher)]</label>
@@ -658,7 +786,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_esrb)]</label>
@@ -670,7 +798,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_esrb_descriptors)]</label>
@@ -682,7 +810,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_features_general)]</label>
@@ -694,7 +822,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_features_online)]</label>
@@ -706,7 +834,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_genre)]</label>
@@ -718,7 +846,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_release_date)]</label>
@@ -730,7 +858,7 @@
 												<width>670</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_rating)]</label>
@@ -742,7 +870,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_platform)]</label>
@@ -754,7 +882,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_exclusive)]</label>
@@ -766,7 +894,7 @@
 												<width>567</width>
 												<height>0</height>
 												<font>font12a</font>
-												<textcolor>grey2</textcolor>
+												<textcolor>FF969696</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
 												<label>$INFO[Window(MyPrograms).Property(Synopsis_titleid)]</label>
@@ -779,7 +907,7 @@
 										<width>567</width>
 										<height>298</height>
 										<font>font12a</font>
-										<textcolor>grey2</textcolor>
+										<textcolor>FF969696</textcolor>
 										<align>left</align>
 										<scrolltime>200</scrolltime>
 										<autoscroll delay="10000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
@@ -788,9 +916,359 @@
 										<animation effect="fade" reversible="true" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
 						</control>
+						<control type="grouplist" id="9001">
+								<posx>-500</posx>
+								<posy>195</posy>
+								<width>80</width>
+								<height>400</height>
+								<itemgap>0</itemgap>
+								<pagecontrol>-</pagecontrol>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>-</onup>
+								<ondown>-</ondown>
+								<control type="button" id="1">
+										<width>80</width>
+										<height>80</height>
+										<onclick>PlayWith($INFO[Skin.String(Player_Type)])</onclick>
+										<onclick>Playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
+										<onclick>SetFocus(2)</onclick>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+										<visible>!Skin.HasSetting(Synopsis_Autoplay)</visible>
+								</control>
+								<control type="button" id="1">
+										<width>80</width>
+										<height>80</height>
+										<onfocus>PlayWith($INFO[Skin.String(Player_Type)])</onfocus>
+										<onfocus>Playmedia($INFO[Skin.String(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
+										<onfocus>SetFocus(2)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+										<visible>Skin.HasSetting(Synopsis_Autoplay)</visible>
+								</control>
+								<control type="button" id="2">
+										<onclick>Stop</onclick>
+										<onclick>SetFocus(1)</onclick>
+								</control>
+						</control>
+						<!-- context buttons -->
+						<control type="grouplist">
+								<description>Control Info</description>
+								<posx>10</posx>
+								<posy>32r</posy>
+								<width>1280</width>
+								<height>80</height>
+								<itemgap>5</itemgap>
+								<orientation>Horizontal</orientation>
+								<!-- A button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\a_button.png</texture>
+										<aspectratio>keep</aspectratio>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32059]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>!Player.HasVideo</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32004]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>Player.HasVideo + !Skin.HasSetting(Synopsis_AutoPlay)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32088]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>Player.HasVideo + Skin.HasSetting(Synopsis_AutoPlay)</visible>
+								</control>
+								<!-- B button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\b_button.png</texture>
+										<aspectratio>keep</aspectratio>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32001]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								</control>
+								<!-- Y Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\y_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32006]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<!-- R Stick Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\r_stick_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32019]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								</control>
+								<!-- L Stick Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\l_stick_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32020]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+						</control>
 				</control>
-				<include>Context_Buttons</include>
-				<!-- Debug Info -->
-				<include>Debug</include>
+				<!--            -->
+				<!-- Video mode -->
+				<!--            -->
+				<control type="group">
+						<visible>!Skin.HasSetting(SynopsisMode)</visible>
+						<control type="image">
+								<description>background image</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>720</height>
+								<texture>synopsis\synopsis_black-back.png</texture>
+								<animation effect="fade" start="0" end="70" delay="0" time="500">WindowOpen</animation>
+								<animation effect="fade" start="70" end="0" delay="100" time="100">WindowClose</animation>
+						</control>
+						<control type="image">
+								<posx>100</posx>
+								<posy>59</posy>
+								<width>1080</width>
+								<height>614</height>
+								<aspectratio>stretch</aspectratio>
+								<texture diffuse="synopsis\synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+								<animation effect="fade" start="0" end="100" delay="700" time="500">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+						</control>
+						<control type="image">
+								<description>background image</description>
+								<posx>100</posx>
+								<posy>59</posy>
+								<width>1080</width>
+								<height>614</height>
+								<texture>synopsis\synopsis_background_alt.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<animation effect="fade" start="0" end="98" delay="0" time="100">WindowOpen</animation>
+								<animation effect="fade" start="98" end="0" delay="0" time="100">WindowClose</animation>
+						</control>
+						<control type="label">
+								<posx>100</posx>
+								<posy>68</posy>
+								<width>1080</width>
+								<height>608</height>
+								<font>font25</font>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>[B]$INFO[Skin.String(Synopsis_Video_Preview_Name)][/B]</label>
+								<visible>!Player.HasVideo</visible>
+								<animation effect="fade" start="0" end="20" delay="750" time="1000">WindowOpen</animation>
+								<animation effect="fade" start="20" end="0" delay="0" time="100">WindowClose</animation>
+						</control>
+						<control type="videowindow">
+								<description>video preview window</description>
+								<posx>110</posx>
+								<posy>74</posy>
+								<width>1058</width>
+								<height>586</height>
+								<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+						</control>
+						<control type="grouplist" id="9001">
+								<posx>-500</posx>
+								<posy>195</posy>
+								<width>80</width>
+								<height>400</height>
+								<itemgap>0</itemgap>
+								<pagecontrol>-</pagecontrol>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>-</onup>
+								<ondown>-</ondown>
+								<control type="button" id="1">
+										<width>80</width>
+										<height>80</height>
+										<onfocus>PlayWith(dvdplayer)</onfocus>
+										<onfocus>Playmedia($INFO[Window(MyPrograms).Property(Preview_default)],1,noresume)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+										<visible>!Skin.HasSetting(PreviewExtension)</visible>
+										<animation effect="fade" start="0" end="20" delay="3000" time="1000">Visible</animation>
+								</control>
+								<control type="button" id="1">
+										<width>80</width>
+										<height>80</height>
+										<onfocus>PlayWith(mplayer)</onfocus>
+										<onfocus>Playmedia($INFO[Window(MyPrograms).Property(Preview_alt)],1,noresume)</onfocus>
+										<texturenofocus>-</texturenofocus>
+										<texturefocus>-</texturefocus>
+										<visible>Skin.HasSetting(PreviewExtension)</visible>
+										<animation effect="fade" start="0" end="20" delay="3000" time="1000">Visible</animation>
+								</control>
+						</control>
+						<!-- context buttons -->
+						<control type="grouplist">
+								<description>Control Info</description>
+								<posx>10</posx>
+								<posy>32r</posy>
+								<width>1280</width>
+								<height>80</height>
+								<itemgap>5</itemgap>
+								<orientation>Horizontal</orientation>
+								<!-- B button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\b_button.png</texture>
+										<aspectratio>keep</aspectratio>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32001]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								</control>
+								<!-- Y Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\y_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32006]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<!-- R Stick Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\r_stick_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32019]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								</control>
+								<!-- L Stick Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>25</width>
+										<height>25</height>
+										<texture>synopsis\pad_buttons\l_stick_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="40" max="250">auto</width>
+										<height>20</height>
+										<font>font10</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<label>$LOCALIZE[32020]</label>
+										<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+						</control>
+				</control>
 		</controls>
 </window>

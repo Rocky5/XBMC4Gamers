@@ -8,7 +8,7 @@
 						<include>BusyDialog</include>
 						<control type="button" id="9000">
 								<posx>-500</posx>
-								<onfocus>RunScript( Special://xbmc/scripts/XBMC4Kids/Synopsis/default.py )</onfocus>
+								<onfocus>RunScript( Special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py )</onfocus>
 						</control>
 				</control>
 				<!-- Open PlayerControlles dialog if audio is playing -->

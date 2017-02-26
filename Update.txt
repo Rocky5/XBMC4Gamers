@@ -1,3 +1,12 @@
+25/02/2017
+1) Updated the Busy dialog
+2) Updated the busy.png
+3) Fixed the view options direction buttons images to match the views
+4) Fixed the DialogSeekBar.xml text colour
+5) Moved the Synopsis script into its own plugin/script
+6) Cleaned up everything that used the synopsis xmls or contextual buttons as they are now part of the script itself.
+
+
 23/02/2017
 1) Updated the XBMC default.xbe, Now we have fullscreen splash! & a few other things I needed to streamline the experience.
 2) "Manage Profiles" Profile - Now load directory into the profiles window when selecting Manage Profiles
