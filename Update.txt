@@ -1,3 +1,10 @@
+27/02/2017
+1) Fixed the Synopsis script crashing hanging XBMC if you try to launch the xbe file
+2) Localized the synopsis xml so now you can translate it without modifying the script.
+3) Removed some code that setfocus in myprograms.xml ( not needed anymore )
+4) Added back the context buttons for the synopsis to the Includes_Context_Buttons.xml
+
+
 26/02/2017
 1) Updated the Synopsis script readme file.
    ( forgot to do it yesterday :$ )

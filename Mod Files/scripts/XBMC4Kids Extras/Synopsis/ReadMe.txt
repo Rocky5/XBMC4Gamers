@@ -104,7 +104,82 @@ Here is a list of the variables you can use.
 			PlayMedia($INFO[Window(MyPrograms).Property(Preview_default)],1,noresume)
 			PlayMedia($INFO[Window(MyPrograms).Property(Preview_alt)],1,noresume)
 
+	Colours:
+		<color name="synopsiscolour1">FF399EDA</color>
+		<color name="synopsiscolour2">FF969696</color>
+			
+	Text Labels:
+		msgctxt "#32200"
+		msgid "Title ID:"
+		msgstr ""
 
+		msgctxt "#32201"
+		msgid "Synopsis"
+		msgstr ""
+
+		msgctxt "#32202"
+		msgid "Game Rating"
+		msgstr ""
+
+		msgctxt "#32203"
+		msgid "/ 5"
+		msgstr ""
+
+		msgctxt "#32204"
+		msgid "Title:"
+		msgstr ""
+
+		msgctxt "#32205"
+		msgid "Developer:"
+		msgstr ""
+
+		msgctxt "#32206"
+		msgid "Publisher: "
+		msgstr ""
+
+		msgctxt "#32207"
+		msgid "General Features:"
+		msgstr ""
+
+		msgctxt "#32208"
+		msgid "Online Features:"
+		msgstr ""
+
+		msgctxt "#32209"
+		msgid "ESRB:"
+		msgstr ""
+
+		msgctxt "#32210"
+		msgid "ESRB Descriptor:"
+		msgstr ""
+
+		msgctxt "#32211"
+		msgid "Genre:"
+		msgstr ""
+
+		msgctxt "#32212"
+		msgid "Release Date:"
+		msgstr ""
+
+		msgctxt "#32213"
+		msgid "Rating:"
+		msgstr ""
+
+		msgctxt "#32214"
+		msgid "Platform:"
+		msgstr ""
+
+		msgctxt "#32215"
+		msgid "Exclusive:"
+		msgstr ""
+
+		msgctxt "#32216"
+		msgid "Title ID:"
+		msgstr ""
+
+		msgctxt "#32217"
+		msgid "Overview:"
+		msgstr ""
 
 
 
