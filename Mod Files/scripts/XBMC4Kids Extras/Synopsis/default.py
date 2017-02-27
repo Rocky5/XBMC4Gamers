@@ -155,7 +155,7 @@ if (__name__ == "__main__"):
 		try: # Thumb
 			Current_Window.setProperty( "Synopsis_thumb", "special://profile/Thumbnails/Programs/%s/%s" % ( ThumbCache[0], ThumbCache, ) )
 		except(TypeError, KeyError, AttributeError):
-			Current_Window.setProperty( "Thumb", "" )
+			Current_Window.setProperty( "Synopsis_thumb", "" )
 		#################################################################################
 		#####	Read XML & set
 		if os.path.isfile ( _Resources_Default_xml ):
