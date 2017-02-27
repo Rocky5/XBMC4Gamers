@@ -160,6 +160,7 @@ if (__name__ == "__main__"):
 		#####	Read XML & set
 		if os.path.isfile ( _Resources_Default_xml ):
 			print "| Found " + _Resources_Default_xml
+			xbmc.executebuiltin('Skin.Reset(nodefaultxml)')
 			Synopsis_XML = open( _Resources_Default_xml, "r" ).read()
 			Output = BeautifulSoup( Synopsis_XML )
 			try: # Title
@@ -228,10 +229,11 @@ if (__name__ == "__main__"):
 				Current_Window.setProperty( "Synopsis_overview_alt","" )
 		else:
 			print "| No " + _Resources_Default_xml + " found"
-			Current_Window.setProperty( "Synopsis_title","[COLOR=synopsiscolour1]Could not find:[/COLOR]" )
+			xbmc.executebuiltin('Skin.SetBool(nodefaultxml)')
+			Current_Window.setProperty( "Synopsis_title","Could not find:" )
 			Current_Window.setProperty( "Synopsis_title_alt",GameName )
-			Current_Window.setProperty( "Synopsis_publisher","" )
 			Current_Window.setProperty( "Synopsis_developer","" + GameFolder + "/_resources/default.xml" )
+			Current_Window.setProperty( "Synopsis_publisher","" )
 			Current_Window.setProperty( "Synopsis_features_general","" )
 			Current_Window.setProperty( "Synopsis_features_online","" )
 			Current_Window.setProperty( "Synopsis_esrb","" )

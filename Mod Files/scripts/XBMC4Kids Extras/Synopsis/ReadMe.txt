@@ -33,7 +33,7 @@ The synopsis script looks for specific files in a specific folder structure.
 					collection of images
 			default.xml
 			
-Now the default.xml must have specific tags or the script will fail.
+Now the default.xml must have specific tags.
 
 	default.xml:
 		<synopsis>
@@ -57,7 +57,7 @@ Now to use the scrip there are a couple things you need to do first, there is a 
 
 	The script uses 4 skin settings:
 
-		SynopsisMode		= If this is enables the bellow options become accessible, without this setting enabled it will default to the game preview window.
+		SynopsisMode		= If this is enables the below options become accessible, without this setting enabled it will default to the game preview window.
 		Synopsis			= This enables the default view.
 		Synopsis_alt_view	= This enables the old/alternative view.
 		Synopsis_Autoplay	= This enables auto play of the preview video if found, for the alt view only.
@@ -104,82 +104,84 @@ Here is a list of the variables you can use.
 			PlayMedia($INFO[Window(MyPrograms).Property(Preview_default)],1,noresume)
 			PlayMedia($INFO[Window(MyPrograms).Property(Preview_alt)],1,noresume)
 
-	Colours:
-		<color name="synopsiscolour1">FF399EDA</color>
-		<color name="synopsiscolour2">FF969696</color>
+	Other:
 			
-	Text Labels:
-		msgctxt "#32200"
-		msgid "Title ID:"
-		msgstr ""
+		Colours: ( Add to your color.xml )
+			<color name="synopsiscolour1">FF399EDA</color>
+			<color name="synopsiscolour2">FF969696</color>
+				
+		Text Labels: ( Add to your language file and translate if need be )
+			msgctxt "#32200"
+			msgid "Title ID:"
+			msgstr ""
 
-		msgctxt "#32201"
-		msgid "Synopsis"
-		msgstr ""
+			msgctxt "#32201"
+			msgid "Synopsis"
+			msgstr ""
 
-		msgctxt "#32202"
-		msgid "Game Rating"
-		msgstr ""
+			msgctxt "#32202"
+			msgid "Game Rating"
+			msgstr ""
 
-		msgctxt "#32203"
-		msgid "/ 5"
-		msgstr ""
+			msgctxt "#32203"
+			msgid "/ 5"
+			msgstr ""
 
-		msgctxt "#32204"
-		msgid "Title:"
-		msgstr ""
+			msgctxt "#32204"
+			msgid "Title:"
+			msgstr ""
 
-		msgctxt "#32205"
-		msgid "Developer:"
-		msgstr ""
+			msgctxt "#32205"
+			msgid "Developer:"
+			msgstr ""
 
-		msgctxt "#32206"
-		msgid "Publisher: "
-		msgstr ""
+			msgctxt "#32206"
+			msgid "Publisher: "
+			msgstr ""
 
-		msgctxt "#32207"
-		msgid "General Features:"
-		msgstr ""
+			msgctxt "#32207"
+			msgid "General Features:"
+			msgstr ""
 
-		msgctxt "#32208"
-		msgid "Online Features:"
-		msgstr ""
+			msgctxt "#32208"
+			msgid "Online Features:"
+			msgstr ""
 
-		msgctxt "#32209"
-		msgid "ESRB:"
-		msgstr ""
+			msgctxt "#32209"
+			msgid "ESRB:"
+			msgstr ""
 
-		msgctxt "#32210"
-		msgid "ESRB Descriptor:"
-		msgstr ""
+			msgctxt "#32210"
+			msgid "ESRB Descriptor:"
+			msgstr ""
 
-		msgctxt "#32211"
-		msgid "Genre:"
-		msgstr ""
+			msgctxt "#32211"
+			msgid "Genre:"
+			msgstr ""
 
-		msgctxt "#32212"
-		msgid "Release Date:"
-		msgstr ""
+			msgctxt "#32212"
+			msgid "Release Date:"
+			msgstr ""
 
-		msgctxt "#32213"
-		msgid "Rating:"
-		msgstr ""
+			msgctxt "#32213"
+			msgid "Rating:"
+			msgstr ""
 
-		msgctxt "#32214"
-		msgid "Platform:"
-		msgstr ""
+			msgctxt "#32214"
+			msgid "Platform:"
+			msgstr ""
 
-		msgctxt "#32215"
-		msgid "Exclusive:"
-		msgstr ""
+			msgctxt "#32215"
+			msgid "Exclusive:"
+			msgstr ""
 
-		msgctxt "#32216"
-		msgid "Title ID:"
-		msgstr ""
+			msgctxt "#32216"
+			msgid "Title ID:"
+			msgstr ""
 
-		msgctxt "#32217"
-		msgid "Overview:"
-		msgstr ""
+			msgctxt "#32217"
+			msgid "Overview:"
+			msgstr ""
 
 
 

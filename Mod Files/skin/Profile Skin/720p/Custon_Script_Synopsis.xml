@@ -190,7 +190,30 @@
 						</control>
 						<!-- Full Synopsis -->
 						<control type="grouplist">
-								<visible>ControlGroup(9001).HasFocus(11)</visible>
+								<visible>ControlGroup(9001).HasFocus(11) + Skin.HasSetting(nodefaultxml)</visible>
+								<posx>552</posx>
+								<posy>95</posy>
+								<width>670</width>
+								<height>500</height>
+								<itemgap>23</itemgap>
+								<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+									<control type="label">
+											<description>Synopsis No default.xml found</description>
+											<posx>0</posx>
+											<posy>0</posy>
+											<width>670</width>
+											<height>0</height>
+											<font>font12a</font>
+											<textcolor>synopsiscolour2</textcolor>
+											<align>left</align>
+											<aligny>left</aligny>
+											<label>[COLOR=synopsiscolour1]$INFO[Window(MyPrograms).Property(Synopsis_title)][/COLOR][CR]$INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
+											<visible>Skin.HasSetting(nodefaultxml)</visible>
+									</control>
+								</control>
+						<control type="grouplist">
+								<visible>ControlGroup(9001).HasFocus(11) + !Skin.HasSetting(nodefaultxml)</visible>
 								<posx>552</posx>
 								<posy>95</posy>
 								<width>670</width>
@@ -367,7 +390,7 @@
 								<scrolltime>200</scrolltime>
 								<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(2)">Conditional</autoscroll>
 								<label>[COLOR=synopsiscolour1]$LOCALIZE[32217][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_overview)]</label>
-								<visible>ControlGroup(9001).HasFocus(11)</visible>
+								<visible>ControlGroup(9001).HasFocus(11) + !Skin.HasSetting(nodefaultxml)</visible>
 								<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
@@ -397,7 +420,7 @@
 								<height>550</height>
 								<visible>ControlGroup(9001).HasFocus(13)</visible>
 								<animation effect="fade" start="0" end="100" delay="0" time="750">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="50">WindowClose</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 						</control>
 						<!--  Side buttons -->
 						<control type="grouplist" id="9001">
@@ -607,9 +630,33 @@
 										<width>457</width>
 										<height>252</height>
 										<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
-										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 								</control>
 								<control type="grouplist">
+										<visible>Skin.HasSetting(nodefaultxml)</visible>
+										<posx>69</posx>
+										<posy>355</posy>
+										<width>1202</width>
+										<height>300</height>
+										<itemgap>23</itemgap>
+										<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+										<control type="label">
+												<description>Synopsis No default.xml found</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>567</width>
+												<height>0</height>
+												<font>font12a</font>
+												<textcolor>synopsiscolour2</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=synopsiscolour1]$INFO[Window(MyPrograms).Property(Synopsis_title)][/COLOR][CR]$INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
+												<visible>Skin.HasSetting(nodefaultxml)</visible>
+										</control>
+									</control>
+								<control type="grouplist">
+										<visible>!Skin.HasSetting(nodefaultxml)</visible>
 										<posx>69</posx>
 										<posy>355</posy>
 										<width>1202</width>
@@ -788,6 +835,7 @@
 										<label>[COLOR=synopsiscolour1]$LOCALIZE[32217][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_overview)]</label>
 										<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+										<visible>!Skin.HasSetting(nodefaultxml)</visible>
 								</control>
 						</control>
 						<control type="grouplist" id="9001">
@@ -840,7 +888,7 @@
 								<height>720</height>
 								<texture>synopsis\synopsis_black-back.png</texture>
 								<animation effect="fade" start="0" end="70" delay="0" time="500">WindowOpen</animation>
-								<animation effect="fade" start="70" end="0" delay="100" time="100">WindowClose</animation>
+								<animation effect="fade" start="70" end="0" delay="300" time="100">WindowClose</animation>
 						</control>
 						<control type="image">
 								<posx>100</posx>
@@ -850,7 +898,7 @@
 								<aspectratio>stretch</aspectratio>
 								<texture diffuse="synopsis\synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 								<animation effect="fade" start="0" end="100" delay="700" time="500">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+								<animation effect="fade" start="100" end="0" delay="400" time="0">WindowClose</animation>
 						</control>
 						<control type="image">
 								<description>background image</description>
@@ -861,7 +909,7 @@
 								<texture>synopsis\synopsis_background_alt.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<animation effect="fade" start="0" end="98" delay="0" time="100">WindowOpen</animation>
-								<animation effect="fade" start="98" end="0" delay="0" time="100">WindowClose</animation>
+								<animation effect="fade" start="98" end="0" delay="400" time="100">WindowClose</animation>
 						</control>
 						<control type="label">
 								<posx>100</posx>
@@ -875,7 +923,7 @@
 								<visible>!Player.HasVideo</visible>
 								<animation effect="fade" start="0" end="0" delay="0" time="0">Visible</animation>
 								<animation effect="fade" start="0" end="20" delay="750" time="1000">WindowOpen</animation>
-								<animation effect="fade" start="20" end="0" delay="0" time="100">WindowClose</animation>
+								<animation effect="fade" start="20" end="0" delay="400" time="100">WindowClose</animation>
 						</control>
 						<control type="videowindow">
 								<description>video preview window</description>
@@ -884,7 +932,7 @@
 								<width>1058</width>
 								<height>586</height>
 								<animation effect="fade" start="0" end="100" delay="1000" time="1000">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 						</control>
 						<control type="grouplist" id="9001">
 								<posx>-500</posx>

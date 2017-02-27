@@ -3,6 +3,7 @@
 2) Localized the synopsis xml so now you can translate it without modifying the script.
 3) Removed some code that setfocus in myprograms.xml ( not needed anymore )
 4) Added back the context buttons for the synopsis to the Includes_Context_Buttons.xml
+5) Fixed the info shown when no default.xml is found.
 
 
 26/02/2017
