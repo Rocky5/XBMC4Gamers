@@ -38,7 +38,16 @@
 								<height>25</height>
 								<texture>pad_buttons\a_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(SynopsisMode) + Window.IsVisible(3000) + ControlGroup(9001).HasFocus(10) | ControlGroup(9001).HasFocus(13)</visible>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(SynopsisMode) + Window.IsVisible(3000) + ControlGroup(9001).HasFocus(10)</visible>
+						</control>
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\a_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(SynopsisMode) + Window.IsVisible(3000) + ControlGroup(9001).HasFocus(13) + Player.HasVideo</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -60,7 +69,7 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32088]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(SynopsisMode) + Window.IsVisible(3000) + ControlGroup(9001).HasFocus(13)</visible>
+								<visible>Skin.HasSetting(Synopsis) + Skin.HasSetting(SynopsisMode) + Window.IsVisible(3000) + ControlGroup(9001).HasFocus(13) + Player.HasVideo</visible>
 						</control>
 						<!-- Synopsis Alt View -->
 						<control type="image">
