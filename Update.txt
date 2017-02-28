@@ -2,6 +2,7 @@
 1) Added more logging info and cleaned the synopsis script up a tad.
    ( Now outputs what files it finds so )
 2) Made the restart preview context button, only show when a video is playing.
+3) Added .strm support for the preview videos for the synopsis. ( Preview.strm )
 
 27/02/2017
 1) Fixed the Synopsis script crashing hanging XBMC if you try to launch the xbe file

@@ -4,6 +4,7 @@
 	
 	Updated: 28 February 2017
 	-- Added more logging info and cleaned the script up a tad.	
+	   Added .strm support for the preview videos. ( Preview.strm )
 	
 	Updated: 27 February 2017
 	-- Fixed the launch game feature crashing XBMC.
@@ -95,6 +96,7 @@ if (__name__ == '__main__'):
 	_Resources_Preview_Ext2 		= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.mp4')
 	_Resources_Preview_Ext3 		= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.wmv')
 	_Resources_Preview_Ext4 		= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.mpg')
+	_Resources_Preview_Ext5 		= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.strm')
 	Preview_default					= xbmc.getInfoLabel('ListItem.Path') + 'preview.xmv'
 	Preview_ext						= xbmc.getInfoLabel('Skin.String(PreviewFileExtension)')
 	Preview_alt						= xbmc.getInfoLabel('ListItem.Path') + Preview_Video_Name + '.' + Preview_ext
@@ -114,7 +116,7 @@ if (__name__ == '__main__'):
 			Current_Window.setProperty( 'Player_Type', 'MPlayer' )
 			print '|   Found ' + Preview_Video_Name + '.mp4' 
 		elif os.path.exists( _Resources_Preview_Ext3 ):
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Path', _Resources_Preview_Ext3)
+			Current_Window.setProperty( 'Synopsis_Video_Preview_Path', _Resources_Preview_Ext3 )
 			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', Preview_Video_Name + '.wmv' )
 			Current_Window.setProperty( 'Player_Type', 'MPlayer' )
 			print '|   Found ' + Preview_Video_Name + '.wmv' 
@@ -123,6 +125,11 @@ if (__name__ == '__main__'):
 			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', Preview_Video_Name + '.mpg' )
 			Current_Window.setProperty( 'Player_Type', 'MPlayer' )
 			print '|   Found ' + Preview_Video_Name + '.mpg' 
+		elif os.path.exists( _Resources_Preview_Ext5 ):
+			Current_Window.setProperty( 'Synopsis_Video_Preview_Path', _Resources_Preview_Ext5 )
+			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', Preview_Video_Name + '.strm' )
+			Current_Window.setProperty( 'Player_Type', 'MPlayer' )
+			print '|   Found ' + Preview_Video_Name + '.strm' 
 		else:
 			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', 'No Preview Video Found' )
 			Current_Window.setProperty( 'Synopsis_Video_Preview_Path','' )
