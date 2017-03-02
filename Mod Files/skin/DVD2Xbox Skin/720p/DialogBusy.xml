@@ -1,4 +1,4 @@
-<window id="136">
+<window id="138">
 		<animation effect="fade" time="100">WindowOpen</animation>
 		<animation effect="fade" time="200">WindowClose</animation>
 		<coordinates>
@@ -7,6 +7,62 @@
 				<posy>0</posy>
 		</coordinates>
 		<controls>
-				<include>BusyDialog</include>
+				<!-- fullscreen -->
+				<control type="group">
+						<control type="image">
+								<description>Busy animation</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>720</height>
+								<texture>black-back.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>88000000</colordiffuse>
+						</control>
+						<control type="image">
+								<description>Busy animation</description>
+								<posx>555</posx>
+								<posy>275</posy>
+								<width>170</width>
+								<height>170</height>
+								<texture>busy.png</texture>
+								<aspectratio>keep</aspectratio>
+								<colordiffuse>AAFFFFFF</colordiffuse>
+								<animation effect="rotate" start="0" end="360" center="auto" time="500" loop="true" condition="true">conditional</animation>
+						</control>
+				</control>
+				<!-- lower right popup -->
+				<control type="group.">
+						<animation effect="slide" start="0,0" end="0,-70" delay="0" time="250">WindowOpen</animation>
+						<animation effect="slide" start="0,-70" end="0,0" delay="100" time="100">WindowClose</animation>
+						<control type="image">
+								<posx>70r</posx>
+								<posy>0r</posy>
+								<width>70</width>
+								<height>70</height>
+								<texture border="20,20,20,2">thumbfo.png</texture>
+						</control>
+						<control type="label.">
+								<posx>70r</posx>
+								<posy>-45r</posy>
+								<width>70</width>
+								<height>70</height>
+								<font>font12a</font>
+								<textcolor>grey</textcolor>
+								<label>$LOCALIZE[503]</label>
+								<align>center</align>
+						</control>
+						<control type="image">
+								<description>Busy animation</description>
+								<posx>65r</posx>
+								<posy>-5r</posy>
+								<width>60</width>
+								<height>60</height>
+								<texture>busy.png</texture>
+								<aspectratio>keep</aspectratio>
+								<colordiffuse>AA000000</colordiffuse>
+								<animation effect="rotate" start="0" end="360" center="auto" time="250" loop="true" condition="true">conditional</animation>
+						</control>
+				</control>
 		</controls>
 </window>

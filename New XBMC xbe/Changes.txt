@@ -6,3 +6,5 @@
 4) Increased the Splash screen display time, no point having a nice splash if you dont get to see it.
 5) Fullscreen Splashscreen!
 6) Faster loading of your games library. ( disables the directory check/scan when entering the games menu )
+7) Added my Synopsis script to the context menu for the MyPrograms windows
+8) Added a new custom window _script*.xml will now be automatically parsed like Custom*.xml

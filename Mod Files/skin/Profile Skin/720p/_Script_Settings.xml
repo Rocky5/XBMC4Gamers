@@ -1,4 +1,4 @@
-<window id="1115">
+<window type="window" id="1102">
 		<defaultcontrol always="true">9001</defaultcontrol>
 		<controls>
 				<include>CommonBackground</include>
@@ -6,38 +6,38 @@
 						<include>ViewVisibleEffect</include>
 						<control type="image">
 								<posx>260</posx>
-								<posy>290</posy>
+								<posy>270</posy>
 								<width>760</width>
 								<height>115</height>
-								<texture>black-back.png</texture>
+								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texture>
 						</control>
 						<control type="textbox">
 								<posx>260</posx>
-								<posy>310</posy>
+								<posy>290</posy>
 								<width>760</width>
 								<height>105</height>
 								<font>font11</font>
 								<textcolor>grey2</textcolor>
 								<scroll>true</scroll>
 								<align>center</align>
-								<label>$LOCALIZE[32053]$INFO[Skin.String(PreviewFileExtension)]$LOCALIZE[32054]</label>
+								<label>$INFO[Window(MyPrograms).Property(Synopsis_label_21)]$INFO[Skin.String(PreviewFileExtension)]$INFO[Window(MyPrograms).Property(Synopsis_label_22)]</label>
 								<visible>Skin.HasSetting(PreviewExtension)</visible>
 						</control>
 						<control type="textbox">
 								<posx>260</posx>
-								<posy>310</posy>
+								<posy>290</posy>
 								<width>760</width>
 								<height>105</height>
 								<font>font11</font>
 								<textcolor>grey2</textcolor>
 								<scroll>true</scroll>
 								<align>center</align>
-								<label>$LOCALIZE[32053]$INFO[Skin.String(PreviewFileExtension)]xmv$LOCALIZE[32054]</label>
+								<label>$INFO[Window(MyPrograms).Property(Synopsis_label_21)]$INFO[Skin.String(PreviewFileExtension)]xmv$INFO[Window(MyPrograms).Property(Synopsis_label_22)]</label>
 								<visible>!Skin.HasSetting(PreviewExtension)</visible>
 						</control>
 						<control type="grouplist">
 								<posx>260</posx>
-								<posy>405</posy>
+								<posy>385</posy>
 								<width>760</width>
 								<height>200</height>
 								<itemgap>0</itemgap>
@@ -47,11 +47,11 @@
 										<width>760</width>
 										<height>50</height>
 										<font>font12</font>
-										<label> $LOCALIZE[32055]</label>
+										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_23)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
-										<texturefocus border="5">ThumbFO.png</texturefocus>
-										<texturenofocus border="5">black-back.png</texturenofocus>
+										<texturefocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
+										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
 										<onclick>Skin.ToggleSetting(SynopsisMode)</onclick>
 										<onclick>Skin.SetBool(Synopsis)</onclick>
 										<onclick>Skin.Reset(Synopsis_alt_view)</onclick>
@@ -61,11 +61,11 @@
 										<width>760</width>
 										<height>50</height>
 										<font>font12</font>
-										<label> $LOCALIZE[32091]</label>
+										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_24)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
-										<texturefocus border="5">ThumbFO.png</texturefocus>
-										<texturenofocus border="5">black-back.png</texturenofocus>
+										<texturefocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
+										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
 										<selected>Skin.HasSetting(Synopsis)</selected>
 										<enable>Skin.HasSetting(SynopsisMode)</enable>
 								</control>
@@ -73,11 +73,11 @@
 										<width>760</width>
 										<height>50</height>
 										<font>font12</font>
-										<label> $LOCALIZE[32092]</label>
+										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_25)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
-										<texturefocus border="5">ThumbFO.png</texturefocus>
-										<texturenofocus border="5">black-back.png</texturenofocus>
+										<texturefocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
+										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
 										<onclick>Skin.ToggleSetting(Synopsis)</onclick>
 										<onclick>Skin.ToggleSetting(Synopsis_alt_view)</onclick>
 										<selected>Skin.HasSetting(Synopsis_alt_view)</selected>
@@ -87,11 +87,11 @@
 										<width>760</width>
 										<height>50</height>
 										<font>font12</font>
-										<label> - $LOCALIZE[32089]</label>
+										<label> - $INFO[Window(MyPrograms).Property(Synopsis_label_26)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
-										<texturefocus border="5">ThumbFO.png</texturefocus>
-										<texturenofocus border="5">black-back.png</texturenofocus>
+										<texturefocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
+										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
 										<onclick>Skin.ToggleSetting(Synopsis_Autoplay)</onclick>
 										<selected>Skin.HasSetting(Synopsis_Autoplay)</selected>
 										<enable>Skin.HasSetting(Synopsis_alt_view)</enable>
@@ -99,7 +99,7 @@
 						</control>
 						<control type="panel" id="9001">
 								<posx>260</posx>
-								<posy>190</posy>
+								<posy>170</posy>
 								<width>760</width>
 								<height>100</height>
 								<onup>50</onup>
@@ -115,7 +115,7 @@
 												<posy>0</posy>
 												<width>190</width>
 												<height>100</height>
-												<texture border="5">listnf.png</texture>
+												<texture border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texture>
 										</control>
 										<control type="image">
 												<posx>20</posx>
@@ -123,7 +123,7 @@
 												<width>150</width>
 												<height>150</height>
 												<texture background="true">$INFO[listitem.icon]</texture>
-												<bordertexture border="5">white-back.png</bordertexture>
+												<bordertexture border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/white-back.png</bordertexture>
 												<bordersize>1</bordersize>
 										</control>
 										<control type="label.">
@@ -145,7 +145,7 @@
 												<posy>0</posy>
 												<width>190</width>
 												<height>100</height>
-												<texture border="5">thumbfo.png</texture>
+												<texture border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/thumbfo.png</texture>
 										</control>
 										<control type="image">
 												<posx>20</posx>
@@ -153,7 +153,7 @@
 												<width>150</width>
 												<height>150</height>
 												<texture background="true">$INFO[listitem.icon]</texture>
-												<bordertexture border="5">white-back.png</bordertexture>
+												<bordertexture border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/white-back.png</bordertexture>
 												<bordersize>1</bordersize>
 										</control>
 										<control type="label.">
@@ -174,63 +174,37 @@
 												<label>xmv</label>
 												<onclick>Skin.Reset(PreviewFileExtension)</onclick>
 												<onclick>Skin.Reset(PreviewExtension)</onclick>
-												<icon>flagging\xmv.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/xmv.png</icon>
 										</item>
 										<item id="1">
 												<label>wmv</label>
 												<onclick>Skin.SetString(PreviewFileExtension,wmv)</onclick>
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
-												<icon>flagging\wmv.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/wmv.png</icon>
 										</item>
 										<item id="2">
 												<label>mp4</label>
 												<onclick>Skin.SetString(PreviewFileExtension,mp4)</onclick>
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
-												<icon>flagging\h264.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/h264.png</icon>
 										</item>
 										<item id="3">
 												<label>mpg</label>
 												<onclick>Skin.SetString(PreviewFileExtension,mpg)</onclick>
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
-												<icon>flagging\mpegvideo.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/mpegvideo.png</icon>
 										</item>
 										<!-- <item id="4">
-						<label>$LOCALIZE[32052]</label>
-						<onclick>Skin.Reset(PreviewFileExtension)</onclick>
-						<onclick>Skin.SetString(PreviewFileExtension,ChangeMe)</onclick>
-						<onclick>Skin.SetString(PreviewFileExtension)</onclick>
-						<onclick>Skin.SetBool(PreviewExtension)</onclick>
-						<icon>flagging\custom.png</icon>
-					</item>  -->
+												<label>$LOCALIZE[32052]</label>
+												<onclick>Skin.Reset(PreviewFileExtension)</onclick>
+												<onclick>Skin.SetString(PreviewFileExtension,ChangeMe)</onclick>
+												<onclick>Skin.SetString(PreviewFileExtension)</onclick>
+												<onclick>Skin.SetBool(PreviewExtension)</onclick>
+												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/custom.png</icon>
+											</item>  -->
 								</content>
 						</control>
 				</control>
-				<include>WindowHeader</include>
-				<control type="image">
-						<posx>20</posx>
-						<posy>5</posy>
-						<width>40</width>
-						<height>35</height>
-						<aspectratio>keep</aspectratio>
-						<texture>icon_system.png</texture>
-						<include>Window_OpenClose_Animation</include>
-				</control>
-				<control type="label">
-						<description>Header label</description>
-						<posx>70</posx>
-						<posy>5</posy>
-						<width>700</width>
-						<height>35</height>
-						<align>left</align>
-						<aligny>center</aligny>
-						<font>font12</font>
-						<textcolor>white</textcolor>
-						<label>$LOCALIZE[32045]</label>
-						<include>Window_OpenClose_Animation</include>
-				</control>
 				<include>WindowFooter</include>
-				<include>BehindDialogFadeOut</include>
-				<!-- Debug Info -->
-				<include>Debug</include>
 		</controls>
 </window>

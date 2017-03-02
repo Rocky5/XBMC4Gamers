@@ -782,15 +782,15 @@ msgctxt "#32052"
 msgid "Custom"
 
 msgctxt "#32053"
-msgid "[B]Example[/B][CR]Halo\\Preview."
+msgid ""
 msgstr ""
 
 msgctxt "#32054"
-msgid "[CR]This option works separate from the [B]Synopsis mode[/B].[CR]Synopsis mode gets the video extension dynamical."
+msgid ""
 msgstr ""
 
 msgctxt "#32055"
-msgid "Synopsis Mode"
+msgid ""
 msgstr ""
 
 msgctxt "#32056"
@@ -906,11 +906,11 @@ msgid "No Banner.jpg Found"
 msgstr ""
 
 msgctxt "#32084"
-msgid "No Poster Found"
+msgid ""
 msgstr ""
 
 msgctxt "#32085"
-msgid "No Screenshots Found"
+msgid ""
 msgstr ""
 
 msgctxt "#32086"
@@ -918,15 +918,15 @@ msgid "Found"
 msgstr ""
 
 msgctxt "#32087"
-msgid "No Preview Video Found"
+msgid ""
 msgstr ""
 
 msgctxt "#32088"
-msgid "Restart Preview"
+msgid ""
 msgstr ""
 
 msgctxt "#32089"
-msgid "Autoplay preview video"
+msgid ""
 msgstr ""
 
 msgctxt "#32090"
@@ -934,11 +934,11 @@ msgid " - [B]Generate[/B] random playlist"
 msgstr ""
 
 msgctxt "#32091"
-msgid "Default layout"
+msgid ""
 msgstr ""
 
 msgctxt "#32092"
-msgid "Alternative layout"
+msgid ""
 msgstr ""
 
 msgctxt "#32093"
@@ -947,79 +947,4 @@ msgstr ""
 
 msgctxt "#32094"
 msgid ""
-msgstr ""
-
-
-# Synopsis labels
-
-msgctxt "#32200"
-msgid "Title ID:"
-msgstr ""
-
-msgctxt "#32201"
-msgid "Synopsis"
-msgstr ""
-
-msgctxt "#32202"
-msgid "Game Rating"
-msgstr ""
-
-msgctxt "#32203"
-msgid "/ 5"
-msgstr ""
-
-msgctxt "#32204"
-msgid "Title:"
-msgstr ""
-
-msgctxt "#32205"
-msgid "Developer:"
-msgstr ""
-
-msgctxt "#32206"
-msgid "Publisher: "
-msgstr ""
-
-msgctxt "#32207"
-msgid "General Features:"
-msgstr ""
-
-msgctxt "#32208"
-msgid "Online Features:"
-msgstr ""
-
-msgctxt "#32209"
-msgid "ESRB:"
-msgstr ""
-
-msgctxt "#32210"
-msgid "ESRB Descriptor:"
-msgstr ""
-
-msgctxt "#32211"
-msgid "Genre:"
-msgstr ""
-
-msgctxt "#32212"
-msgid "Release Date:"
-msgstr ""
-
-msgctxt "#32213"
-msgid "Rating:"
-msgstr ""
-
-msgctxt "#32214"
-msgid "Platform:"
-msgstr ""
-
-msgctxt "#32215"
-msgid "Exclusive:"
-msgstr ""
-
-msgctxt "#32216"
-msgid "Title ID:"
-msgstr ""
-
-msgctxt "#32217"
-msgid "Overview:"
 msgstr ""

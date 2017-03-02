@@ -2,173 +2,336 @@
 	Script by Rocky5
 	Extracts information from a file named default.xml located in the '_resources' folder.
 	
-	Updated: 28 February 2017
-	-- Added more logging info and cleaned the script up a tad.	
-	   Added .strm support for the preview videos. ( Preview.strm )
-	
-	Updated: 27 February 2017
-	-- Fixed the launch game feature crashing XBMC.
-	
-	Updated: 26 February 2017
-	-- Forgot to move all skin.SetStrings to setProperty.
-	   Added a dialog argument that you add to the end of the RunScript string.
-	   This will run the synopsis script window in dialog mode instead of windowed.
-	   example: RunScript( Special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py,dialog )
-	
-	Updated: 25 February 2017
-	-- Moved the script to its own contained structure, so its separate from the skins now.
-	   Added support for stopping playback and focusing when exiting the script.
-	   There are still some things its dependent on.
-	   Skin settings:
-	    Skin.HasSetting(SynopsisMode) - Will show the synopsis window.
-		Skin>Has Setting(Synopsis) - Will show the default view.
-		Skin>Has Setting(Synopsis_alt_view) - Will show the alt view.
-		Skin>Has Setting(Synopsis_Autoplay) - Will auto play the preview in the alt view only.
-		
-	   If Skin.HasSetting(SynopsisMode) is disbaled, it will default to the preview video window.
-	
-	Updated: 23 February 2017
-	-- Added a few more lines of code for the likes of Rating and gamexbe path eg...
-	   This was done for the new synopsis layout.
-	   Updated the code to optimize reading of the default.xml
-	   Reorganised the code.
-	
-	Updated: 18 February 2017
-	-- Changed the video path code and added a new var for the names.
-	   Added code to get the poster.jp, fanart.jpg and screenshots folder for the synopsis window.
-	   Added code to get the preview video for the non synopsis mode.
-	   
-	Updated: 28 July 2016
-	-- Rearranged the layout & now get the video file and pass it to the skin if found
-	   also cleaned up some left over stuff.
-	
-	Updated: 15 July 2016
-	-- Added a skin setting, to display info in the skin if there is a preview video found.
-	   Disabled the video playback code, no done by press (A) when in the synopsis screen.
-	
 '''
-import os, sys, xbmc, xbmcgui
+
+
+import os, sys, time, xbmc, xbmcgui, glob
 from BeautifulSoup import *
+
+
 #####	Check args for dialog and set the window output.
 try:
 	UseDialog = sys.argv[1]
 except:
 	UseDialog = 'window'
-
 if UseDialog == 'dialog':
 	windowdialog = xbmcgui.WindowXMLDialog
 else:
 	windowdialog = xbmcgui.WindowXML
+	
+	
+#####	Sets paths & other crap.
+Current_Window					= xbmcgui.Window(xbmcgui.getCurrentWindowId())
+Working_Directory				= os.getcwd() + '\\resources\\'
+GetInfoPath						= xbmc.getInfoLabel('ListItem.Path')
+Colour_xml						= os.path.join(Working_Directory, 'colours.xml')
+Labels_xml						= os.path.join(Working_Directory, 'labels.xml')
+GameName						= xbmc.getInfoLabel('ListItem.Label')
+GameXBE							= xbmc.getInfoLabel('listitem.FileNameAndPath')
+_Resources_Path					= GetInfoPath + '_resources'
+_Resources_Default_xml			= os.path.join(_Resources_Path, 'default.xml')
+_Resources_Screenshots			= os.path.join(_Resources_Path, 'screenshots')
+_Resources_Preview				= os.path.join(_Resources_Path, 'media' )
+_Resources_Artwork				= os.path.join(_Resources_Path, 'artwork' )
+Preview_default					= GetInfoPath + 'preview.xmv'
+Preview_ext						= xbmc.getInfoLabel('Skin.String(PreviewFileExtension)')
+Preview_alt						= GetInfoPath + 'Preview.' + Preview_ext
+CachedThumb						= xbmc.translatePath('special://profile/Thumbnails/Programs/%s/%s' % ( xbmc.getCacheThumbName(xbmc.getInfoLabel('ListItem.FolderPath'))[0], xbmc.getCacheThumbName(xbmc.getInfoLabel('ListItem.FolderPath')) ) )
+
+
+def colours():
+	#####	Read colour XML & set
+	if os.path.isfile ( Colour_xml ):
+		print '|   Parsing colours.xml'
+		xbmc.executebuiltin('Skin.Reset(nodefaultxml)')
+		Colour_XML = open( Colour_xml, 'r' ).read()
+		Output = BeautifulSoup( Colour_XML )
+		try: # Colour 1
+			Current_Window.setProperty( 'Synopsis_colour_1', Output.colour_1.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_colour_1','FF399EDA' )
+		try: # Colour 2
+			Current_Window.setProperty( 'Synopsis_colour_2', Output.colour_2.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_colour_2','FF969696' )
+		try: # Colour 3
+			Current_Window.setProperty( 'Synopsis_colour_3', Output.colour_3.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_colour_3','FF969696' )
+		try: # Colour 4
+			Current_Window.setProperty( 'Synopsis_colour_4', Output.colour_4.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_colour_4','FF969696' )
+		try: # Colour 5
+			Current_Window.setProperty( 'Synopsis_colour_5', Output.colour_5.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_colour_5','FF969696' )
+	else:
+		print '|   No colour.xml found'
+		Current_Window.setProperty( 'Synopsis_colour_1','FF399EDA' )
+		Current_Window.setProperty( 'Synopsis_colour_2','FF399EDA' )	
+		Current_Window.setProperty( 'Synopsis_colour_3','FF399EDA' )	
+		Current_Window.setProperty( 'Synopsis_colour_4','FF399EDA' )	
+		Current_Window.setProperty( 'Synopsis_colour_5','FF399EDA' )	
+
+
+def labels():
+	#####	Read labels XML & set
+	if os.path.isfile ( Labels_xml ):
+		print '|   Parsing labels.xml'
+		xbmc.executebuiltin('Skin.Reset(nodefaultxml)')
+		Labels_XML = open( Labels_xml, 'r' ).read()
+		Output = BeautifulSoup( Labels_XML )
+		try: # label 1
+			Current_Window.setProperty( 'Synopsis_label_1', Output.label_1.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_1','Title ID:' )
+		try: # label 2
+			Current_Window.setProperty( 'Synopsis_label_2', Output.label_2.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_2','Synopsis' )
+		try: # label 3
+			Current_Window.setProperty( 'Synopsis_label_3', Output.label_3.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_3','Game Rating' )
+		try: # label 4
+			Current_Window.setProperty( 'Synopsis_label_4', Output.label_4.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_4','/ 5' )
+		try: # label 5
+			Current_Window.setProperty( 'Synopsis_label_5', Output.label_5.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_5','Title:' )
+		try: # label 6
+			Current_Window.setProperty( 'Synopsis_label_6', Output.label_6.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_6','Developer:' )
+		try: # label 7
+			Current_Window.setProperty( 'Synopsis_label_7', Output.label_7.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_7','Publisher:' )
+		try: # label 8
+			Current_Window.setProperty( 'Synopsis_label_8', Output.label_8.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_8','General Features:' )
+		try: # label 9
+			Current_Window.setProperty( 'Synopsis_label_9', Output.label_9.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_9','Online Features:' )
+		try: # label 10
+			Current_Window.setProperty( 'Synopsis_label_10', Output.label_10.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_10','ESRB:' )
+		try: # label 11
+			Current_Window.setProperty( 'Synopsis_label_11', Output.label_11.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_11','ESRB Descriptor:' )
+		try: # label 12
+			Current_Window.setProperty( 'Synopsis_label_12', Output.label_12.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_12','Genre:' )
+		try: # label 13
+			Current_Window.setProperty( 'Synopsis_label_13', Output.label_13.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_13','Release Date:' )
+		try: # label 14
+			Current_Window.setProperty( 'Synopsis_label_14', Output.label_14.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_14','Rating:' )
+		try: # label 15
+			Current_Window.setProperty( 'Synopsis_label_15', Output.label_15.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_15','Platform:' )
+		try: # label 16
+			Current_Window.setProperty( 'Synopsis_label_16', Output.label_16.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_16','Exclusive:' )
+		try: # label 17
+			Current_Window.setProperty( 'Synopsis_label_17', Output.label_17.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_17','Title ID:' )
+		try: # label 18
+			Current_Window.setProperty( 'Synopsis_label_18', Output.label_18.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_18','Overview:' )
+		try: # label 19
+			Current_Window.setProperty( 'Synopsis_label_19', Output.label_19.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_19','No Poster Found' )
+		try: # label 20
+			Current_Window.setProperty( 'Synopsis_label_20', Output.label_20.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_20','No Screenshots Found' )
+		try: # label 21
+			Current_Window.setProperty( 'Synopsis_label_21', Output.label_21.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_21','[B]Example[/B][CR]Halo\Preview.' )
+		try: # label 22
+			Current_Window.setProperty( 'Synopsis_label_22', Output.label_22.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_22','[CR]This option works separate from the [B]Synopsis mode[/B].[CR]Synopsis mode gets the video extension dynamical.' )
+		try: # label 23
+			Current_Window.setProperty( 'Synopsis_label_23', Output.label_23.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_23','Synopsis Mode' )
+		try: # label 24
+			Current_Window.setProperty( 'Synopsis_label_24', Output.label_24.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_24','Default layout' )
+		try: # label 25
+			Current_Window.setProperty( 'Synopsis_label_25', Output.label_25.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_25','Alternative layout' )
+		try: # label 26
+			Current_Window.setProperty( 'Synopsis_label_26', Output.label_26.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_26','Autoplay preview video' )
+		try: # label 27
+			Current_Window.setProperty( 'Synopsis_label_27', Output.label_27.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_27','' )
+		try: # label 28
+			Current_Window.setProperty( 'Synopsis_label_28', Output.label_28.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_28','' )
+		try: # label 29
+			Current_Window.setProperty( 'Synopsis_label_29', Output.label_29.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_29','' )
+		try: # label 30
+			Current_Window.setProperty( 'Synopsis_label_30', Output.label_30.string )
+		except(TypeError, KeyError, AttributeError):
+			Current_Window.setProperty( 'Synopsis_label_30','' )
+	else:
+		print '|   No label.xml found'
+		Current_Window.setProperty( 'Synopsis_label_1','Title ID:' )
+		Current_Window.setProperty( 'Synopsis_label_2','Synopsis' )
+		Current_Window.setProperty( 'Synopsis_label_3','Game Rating' )
+		Current_Window.setProperty( 'Synopsis_label_4','/ 5' )
+		Current_Window.setProperty( 'Synopsis_label_5','Title:' )
+		Current_Window.setProperty( 'Synopsis_label_6','Developer:' )
+		Current_Window.setProperty( 'Synopsis_label_7','Publisher:' )
+		Current_Window.setProperty( 'Synopsis_label_8','General Features:' )
+		Current_Window.setProperty( 'Synopsis_label_9','Online Features:' )
+		Current_Window.setProperty( 'Synopsis_label_10','ESRB:' )
+		Current_Window.setProperty( 'Synopsis_label_11','ESRB Descriptor:' )
+		Current_Window.setProperty( 'Synopsis_label_12','Genre:' )
+		Current_Window.setProperty( 'Synopsis_label_13','Release Date:' )
+		Current_Window.setProperty( 'Synopsis_label_14','Rating:' )
+		Current_Window.setProperty( 'Synopsis_label_15','Platform:' )
+		Current_Window.setProperty( 'Synopsis_label_16','Exclusive:' )
+		Current_Window.setProperty( 'Synopsis_label_17','Title ID:' )
+		Current_Window.setProperty( 'Synopsis_label_18','Overview:' )
+		Current_Window.setProperty( 'Synopsis_label_19','No Poster Found' )
+		Current_Window.setProperty( 'Synopsis_label_20','No Screenshots Found' )
+		Current_Window.setProperty( 'Synopsis_label_21','[B]Example[/B][CR]Halo\Preview.' )
+		Current_Window.setProperty( 'Synopsis_label_22','[CR]This option works separate from the [B]Synopsis mode[/B].[CR]Synopsis mode gets the video extension dynamical.' )
+		Current_Window.setProperty( 'Synopsis_label_23','Synopsis Mode' )
+		Current_Window.setProperty( 'Synopsis_label_24','Default layout' )
+		Current_Window.setProperty( 'Synopsis_label_25','Alternative layout' )
+		Current_Window.setProperty( 'Synopsis_label_26','Autoplay preview video' )
+		Current_Window.setProperty( 'Synopsis_label_27','' )
+		Current_Window.setProperty( 'Synopsis_label_28','' )
+		Current_Window.setProperty( 'Synopsis_label_29','' )
+		Current_Window.setProperty( 'Synopsis_label_30','' )
+	print '================================================================================'
+
+
 #####	load window xml and check key presses/movement.
 class GUI(windowdialog):
-	
 	def onInit(self):
 		pass
+
+		
 	def onAction(self, action):
 		if action.getButtonCode() == 257 or action.getButtonCode() == 275:
 			if xbmc.getCondVisibility( 'Player.HasMedia' ): xbmc.executebuiltin('PlayerControl(stop)')
 			self.close()
+		if action.getButtonCode() == 260:
+			if xbmc.getCondVisibility( 'Player.HasMedia' ): xbmc.executebuiltin('PlayerControl(stop)')
+			xbmc.executebuiltin('ActivateWindow(1102)')
+			if UseDialog == 'dialog': self.close()
+			
 	def onClick(self, controlID):
 		if (controlID == 10 and xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ) and xbmc.getCondVisibility( 'Skin.HasSetting(Synopsis)' ) ):
 			self.close()
+
+			
 	def onFocus(self, controlID):
-		# print 'onFocus(): control %i' % controlID
 		pass
+
+		
 #####	Start of the scrip.
 if (__name__ == '__main__'):
+	
+	
 	#####	Start markings for the log file.
 	print '================================================================================'
 	print '| Scripts\XBMC4Kids Extras\Synopsis\default.py loaded.'
 	print '| ------------------------------------------------------------------------------'
-	#####	Sets paths & other crap.
-	Current_Window					= xbmcgui.Window(xbmcgui.getCurrentWindowId())
-	Preview_Video_Name				= 'Preview'
-	GameName						= xbmc.getInfoLabel('ListItem.Label')
-	GameFolder						= xbmc.getInfoLabel('ListItem.FolderName')
-	GameXBE							= xbmc.getInfoLabel('listitem.FileNameAndPath')
-	_Resources_Path					= xbmc.getInfoLabel('ListItem.Path') + '_resources'
-	_Resources_Default_xml			= os.path.join(_Resources_Path, 'default.xml')
-	_Resources_Screenshots			= os.path.join(_Resources_Path, 'screenshots')
-	_Resources_Poster				= os.path.join(_Resources_Path, 'artwork\\poster.jpg')
-	_Resources_Fanart				= os.path.join(_Resources_Path, 'artwork\\fanart.jpg')
-	_Resources_Banner				= os.path.join(_Resources_Path, 'artwork\\banner.jpg')
-	_Resources_Preview_Ext1			= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.xmv')
-	_Resources_Preview_Ext2 		= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.mp4')
-	_Resources_Preview_Ext3 		= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.wmv')
-	_Resources_Preview_Ext4 		= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.mpg')
-	_Resources_Preview_Ext5 		= os.path.join(_Resources_Path, 'media\\' + Preview_Video_Name + '.strm')
-	Preview_default					= xbmc.getInfoLabel('ListItem.Path') + 'preview.xmv'
-	Preview_ext						= xbmc.getInfoLabel('Skin.String(PreviewFileExtension)')
-	Preview_alt						= xbmc.getInfoLabel('ListItem.Path') + Preview_Video_Name + '.' + Preview_ext
-	CachedThumb						= xbmc.translatePath('special://profile/Thumbnails/Programs/%s/%s' % ( xbmc.getCacheThumbName(xbmc.getInfoLabel('ListItem.FolderPath'))[0], xbmc.getCacheThumbName(xbmc.getInfoLabel('ListItem.FolderPath')) ) )
 	print '| ' + GameName
+		
+	
 	if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ) == 1:
-		#####	Check for Preview file & set skin settings so they can be played.
-		print '|  Scanning for preview video'
-		if os.path.isfile( _Resources_Preview_Ext1 ):
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Path', _Resources_Preview_Ext1 )
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', Preview_Video_Name + '.xmv' )
-			Current_Window.setProperty( 'Player_Type,DVDPlayer)' )
-			print '|   Found ' + Preview_Video_Name + '.xmv' 
-		elif os.path.exists( _Resources_Preview_Ext2 ):
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Path', _Resources_Preview_Ext2 )
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', Preview_Video_Name + '.mp4' )
-			Current_Window.setProperty( 'Player_Type', 'MPlayer' )
-			print '|   Found ' + Preview_Video_Name + '.mp4' 
-		elif os.path.exists( _Resources_Preview_Ext3 ):
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Path', _Resources_Preview_Ext3 )
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', Preview_Video_Name + '.wmv' )
-			Current_Window.setProperty( 'Player_Type', 'MPlayer' )
-			print '|   Found ' + Preview_Video_Name + '.wmv' 
-		elif os.path.exists( _Resources_Preview_Ext4 ):
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Path', _Resources_Preview_Ext4 )
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', Preview_Video_Name + '.mpg' )
-			Current_Window.setProperty( 'Player_Type', 'MPlayer' )
-			print '|   Found ' + Preview_Video_Name + '.mpg' 
-		elif os.path.exists( _Resources_Preview_Ext5 ):
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Path', _Resources_Preview_Ext5 )
-			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', Preview_Video_Name + '.strm' )
-			Current_Window.setProperty( 'Player_Type', 'MPlayer' )
-			print '|   Found ' + Preview_Video_Name + '.strm' 
-		else:
+		
+		
+		#####	Check for Preview files.
+		print '|  Scanning for assets'
+		PreviewFile = "0"
+		for root, dirs, files in os.walk( _Resources_Preview ):
+			for filename in files:
+				PreviewFile = root + '\\' + filename
+				Current_Window.setProperty( 'Synopsis_Video_Preview_Path', PreviewFile )
+				Current_Window.setProperty( 'Synopsis_Video_Preview_Name', filename )
+		if PreviewFile == "0":
 			Current_Window.setProperty( 'Synopsis_Video_Preview_Name', 'No Preview Video Found' )
 			Current_Window.setProperty( 'Synopsis_Video_Preview_Path','' )
-			print '|   No ' + Preview_Video_Name + ' video found'
-		#####	Get _resources assets
-		print '|  Scanning for assets'
-		if os.path.isfile( _Resources_Banner ): # Banner
-			Current_Window.setProperty( 'Synopsis_banner', _Resources_Banner )
-			print '|   Found banner.jpg'
+			xbmc.executebuiltin('Skin.Reset(SynopsisPreviewThere)')
+			print '|   No preview video found'
 		else:
+			if PreviewFile.endswith('.xmv'):
+				Current_Window.setProperty( 'Player_Type','DVDPlayer' )
+				xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
+			else:
+				Current_Window.setProperty( 'Player_Type','MPlayer' )
+				xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
+			print '|   Found ' + PreviewFile
+		
+		
+		#####	Check for assets files.
+		for root, dirs, files in os.walk( _Resources_Artwork ):
 			Current_Window.setProperty( 'Synopsis_banner', '' )
-		if os.path.isfile( _Resources_Fanart ): # Fanart
-			Current_Window.setProperty( 'Synopsis_fanart', _Resources_Fanart )
-			print '|   Found fanart.jpg'
-		else:
 			Current_Window.setProperty( 'Synopsis_fanart', '' )
-		if os.path.isfile( _Resources_Poster): # Poster
-			Current_Window.setProperty( 'Synopsis_poster', _Resources_Poster )
-			print '|   Found poster.jpg'
-		else:
 			Current_Window.setProperty( 'Synopsis_poster', '' )
-		if os.path.exists( _Resources_Screenshots ): # Screenshots
-			Current_Window.setProperty( 'Synopsis_screenshots', _Resources_Screenshots )
-			print '|   Found Screenshot folder'
-		else:	
-			Current_Window.setProperty( 'Synopsis_screenshots', '' )
-		if os.path.isfile( GameXBE ): # GameXBE
-			Current_Window.setProperty( 'Synopsis_xbe', GameXBE )
-			print '|   Found default.xbe'
-		else:
-			Current_Window.setProperty( 'Synopsis_xbe', '' )
-		if os.path.isfile( CachedThumb ): # Thumb
-			Current_Window.setProperty( 'Synopsis_thumb', CachedThumb )
-			print '|   Found Cached Thumb'
-		else:
-			Current_Window.setProperty( 'Synopsis_thumb', '' )
+			for filename in files:
+				if filename.startswith('banner'):
+					Current_Window.setProperty( 'Synopsis_banner', root + '\\' + filename )
+					print '|   Found ' + filename
+				if filename.startswith('fanart'):
+					Current_Window.setProperty( 'Synopsis_fanart', root + '\\' + filename )
+					print '|   Found ' + filename
+				if filename.startswith('poster'):
+					Current_Window.setProperty( 'Synopsis_poster', root + '\\' + filename )
+					print '|   Found ' + filename
+		
+		
+		#####	Get screenshots, xbe and cached thumb
+		Current_Window.setProperty( 'Synopsis_screenshots', '' )		
+		Current_Window.setProperty( 'Synopsis_screenshots', _Resources_Screenshots )
+		if os.path.exists( _Resources_Screenshots ): print '|   Found Screenshot folder'
+		Current_Window.setProperty( 'Synopsis_xbe', '' )
+		Current_Window.setProperty( 'Synopsis_xbe', GameXBE )
+		if os.path.isfile( GameXBE ): print '|   Found default.xbe'
+		Current_Window.setProperty( 'Synopsis_thumb', '' )
+		Current_Window.setProperty( 'Synopsis_thumb', CachedThumb )
+		if os.path.isfile( CachedThumb ): print '|   Found Cached Thumb'
+		
+		
 		#####	Read XML & set
 		print '|  Scanning for default.xml'
-		if os.path.isfile ( _Resources_Default_xml ):
+		if os.path.isfile( _Resources_Default_xml ):
+			colours()
+			labels()
 			print '|   Parsing ' + _Resources_Default_xml
 			xbmc.executebuiltin('Skin.Reset(nodefaultxml)')
 			Synopsis_XML = open( _Resources_Default_xml, 'r' ).read()
@@ -243,7 +406,7 @@ if (__name__ == '__main__'):
 			xbmc.executebuiltin('Skin.SetBool(nodefaultxml)')
 			Current_Window.setProperty( 'Synopsis_title','Could not find:' )
 			Current_Window.setProperty( 'Synopsis_title_alt',GameName )
-			Current_Window.setProperty( 'Synopsis_developer','' + GameFolder + '/_resources/default.xml' )
+			Current_Window.setProperty( 'Synopsis_developer','' + _Resources_Default_xml )
 			Current_Window.setProperty( 'Synopsis_publisher','' )
 			Current_Window.setProperty( 'Synopsis_features_general','' )
 			Current_Window.setProperty( 'Synopsis_features_online','' )
@@ -267,7 +430,7 @@ if (__name__ == '__main__'):
 				Current_Window.setProperty( 'Preview_default', Preview_default )
 			else:
 				Current_Window.setProperty( 'Synopsis_Video_Preview_Name', 'No Preview Video Found' )
-				print '|   No ' + Preview_Video_Name + ' found'
+				print '|   No preview video found'
 				Current_Window.setProperty( 'Preview_default', '' )
 		else:
 			if os.path.isfile( Preview_alt ):
@@ -275,14 +438,19 @@ if (__name__ == '__main__'):
 				Current_Window.setProperty( 'Preview_alt', Preview_alt )
 			else:
 				Current_Window.setProperty( 'Synopsis_Video_Preview_Name', 'No Preview Video Found' )
-				print '|   No ' + Preview_Video_Name + ' found'
+				print '|   No preview video found'
 				Current_Window.setProperty( 'Preview_alt', '' )
-				
-	xbmc.executebuiltin('dialog.close(1113,true)')
+	
+	
+	xbmc.executebuiltin('dialog.close(all,true)')
 	print '================================================================================'
+	
+	
 	#####	UI.
 	ui = GUI( '_Script_Synopsis.xml', os.getcwd() )
 	ui.doModal()
 	del ui
+	
+	
 	#####	Used to focus the games list when using the script in dialog mode
 	if UseDialog == 'dialog': xbmc.executebuiltin('SetFocus(50)')

@@ -130,17 +130,18 @@
 				</control>
 				<control type="button" id="9003">
 						<posx>30</posx>
-						<posy>265</posy>
+						<posy>266</posy>
 						<width>640</width>
 						<height>50</height>
 						<onup>9002</onup>
 						<ondown>9003</ondown>
 						<font>font12</font>
+						<align>center</align>
 						<label>$LOCALIZE[13005] Xbox</label>
 						<textcolor>white</textcolor>
 						<focusedcolor>black</focusedcolor>
 						<texturefocus border="5">ThumbFO.png</texturefocus>
-						<texturenofocus border="5">black-back.png</texturenofocus>
+						<texturenofocus border="5">icon-background.png</texturenofocus>
 						<onclick>Shutdown</onclick>
 				</control>
 				<!-- Debug Info -->

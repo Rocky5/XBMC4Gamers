@@ -40,6 +40,7 @@
 #include "utils/URIUtils.h"
 #include "LocalizeStrings.h"
 #include "utils/log.h"
+#include "interfaces/Builtins.h"
 
 using namespace XFILE;
 
@@ -141,6 +142,11 @@ void CGUIWindowPrograms::GetContextButtons(int itemNumber, CContextButtons &butt
     {
       if (item->IsXBE() || item->IsShortCut())
       {
+        if (CFile::Exists("special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py") || CFile::Exists("special://xbmc/scripts/Synopsis/default.py"))
+		{
+          buttons.Add(CONTEXT_BUTTON_SYNOPSIS, "Synopsis");         // Synopsis
+		}
+		  
         CStdString strLaunch = g_localizeStrings.Get(518); // Launch
         if (g_guiSettings.GetBool("myprograms.gameautoregion"))
         {
@@ -161,8 +167,8 @@ void CGUIWindowPrograms::GetContextButtons(int itemNumber, CContextButtons &butt
         CStdString strGameSavepath;
         strTitleID.Format("%08X",dwTitleId);
         URIUtils::AddFileToFolder("E:\\udata\\",strTitleID,strGameSavepath);
-  
-        if (CDirectory::Exists(strGameSavepath))
+        
+		if (CDirectory::Exists(strGameSavepath))
           buttons.Add(CONTEXT_BUTTON_GAMESAVES, 20322);         // Goto GameSaves
   
         if (g_guiSettings.GetBool("myprograms.gameautoregion"))
@@ -260,6 +266,19 @@ bool CGUIWindowPrograms::OnContextButton(int itemNumber, CONTEXT_BUTTON button)
     OnClick(itemNumber);
     return true;
 
+  case CONTEXT_BUTTON_SYNOPSIS:
+    {
+	  if (CFile::Exists("special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py"))
+	  {
+        CBuiltins::Execute("runscript(special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py)");
+      }
+	  else
+	  {
+        CBuiltins::Execute("runscript(special://xbmc/scripts/Synopsis/default.py)");
+	  }
+	  CBuiltins::Execute("ActivateWindow(1101)");
+      return true;
+    }
   case CONTEXT_BUTTON_GAMESAVES:
     {
       CStdString strTitleID;

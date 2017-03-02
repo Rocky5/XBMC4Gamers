@@ -3,7 +3,6 @@
 		<Programs>
 				<gamepad>
 						<B>Highlight</B>
-						<X>XBMC.ReplaceWindow(1113)</X>
 						<white>ContextMenu</white>
 						<black>XBMC.ActivateWindow(1112)</black>
 						<start>XBMC.PlayDVD()</start>

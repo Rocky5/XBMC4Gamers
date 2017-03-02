@@ -1,8 +1,18 @@
-28/02/2017
+02/03/2017
 1) Added more logging info and cleaned the synopsis script up a tad.
    ( Now outputs what files it finds so )
 2) Made the restart preview context button, only show when a video is playing.
-3) Added .strm support for the preview videos for the synopsis. ( Preview.strm )
+4) Modified the XBMC source again and added my Synopsis script to the context menu. ( white button )
+5) Due to the above edit I removed the (X) button for Synopsis + the custom xml as there not needed now.
+6) Updated the DialogContextMenu.xml fixed it up due to the above edit. ( for non edit mode )
+7) Fixed the loginscreen.xml when you enabled edit mode it had a label show :/
+8) Fixed a id issues in the _Script_Synopsis.xml, would launch the game if the alt view + auto preview video was enabled.
+9) Updated the Synopsis Readme.txt
+11) Modified the XBMC source added a new custom window, _script*.xml will now be automatically parsed like Custom*.xml
+12) Redone a lot of the Synopsis script.
+   ( You can now translate the hole thing + all its textures are located in its resources/textures directory so easy customisation and it has its own settings window, (Black) button. )
+13) There are more edits but cant be bother listing them, you can see the changes lol
+
 
 27/02/2017
 1) Fixed the Synopsis script crashing hanging XBMC if you try to launch the xbe file

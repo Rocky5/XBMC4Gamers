@@ -123,22 +123,6 @@
 						</control>
 						<control type="label">
 								<posx>0</posx>
-								<posy>623</posy>
-								<width>1280</width>
-								<height>36</height>
-								<font>font25</font>
-								<textcolor>white</textcolor>
-								<scroll>true</scroll>
-								<align>center</align>
-								<aligny>center</aligny>
-								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<animation type="Conditional" condition="Control.IsVisible(52)" reversible="false">
-										<effect type="zoom" end="100,-75" center="auto" delay="" time="0" />
-										<effect type="fade" end="2" delay="" time="0" />
-								</animation>
-						</control>
-						<control type="label">
-								<posx>0</posx>
 								<posy>599</posy>
 								<width>1280</width>
 								<height>30</height>

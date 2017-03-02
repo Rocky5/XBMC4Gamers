@@ -94,20 +94,14 @@
 										<onclick>Skin.ToggleSetting(DisplayTime)</onclick>
 										<selected>Skin.HasSetting(DisplayTime)</selected>
 								</control>
-								<control type="button" id="23">
-										<description>[B]Preview video[/B] settings</description>
-										<include>CustomSettingsButtons</include>
-										<label>$LOCALIZE[32045]</label>
-										<onclick>ActivateWindow(1115)</onclick>
-								</control>
-								<control type="radiobutton" id="24">
+								<control type="radiobutton" id="23">
 										<description>ThumbCleaner - Change ,0 to a 1 to use the games default.tbn files.</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32058]</label>
 										<onclick>Skin.ToggleSetting(CleanThumbsToggle)</onclick>
 										<selected>Skin.HasSetting(CleanThumbsToggle)</selected>
 								</control>
-								<control type="button" id="25">
+								<control type="button" id="24">
 										<description>ThumbCleaner - Clean thumbnails, removed none used thumbnails.</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32071]</label>
@@ -115,7 +109,7 @@
 										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py )</onclick>
 										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
 								</control>
-								<control type="button" id="26">
+								<control type="button" id="25">
 										<description>ThumbCleaner - Remove thumbnails, removes all thumbnails.</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32073]</label>
@@ -123,7 +117,7 @@
 										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0,1 )</onclick>
 										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
 								</control>
-								<control type="button" id="27">
+								<control type="button" id="26">
 										<description>ThumbCleaner - Generate new thumbnails, copies default.tbn files to the thumbs directory.</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32075]</label>
@@ -131,13 +125,13 @@
 										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,1,0 )</onclick>
 										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
 								</control>
-								<control type="button" id="28">
+								<control type="button" id="27">
 										<description>Clear Cache</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32012]</label>
 										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clear Cache.py )</onclick>
 								</control>
-								<control type="button" id="29">
+								<control type="button" id="28">
 										<description>Clear Cache</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[247] $LOCALIZE[33061]</label>
