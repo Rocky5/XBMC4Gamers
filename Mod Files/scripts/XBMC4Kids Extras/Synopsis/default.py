@@ -330,8 +330,6 @@ if (__name__ == '__main__'):
 		#####	Read XML & set
 		print '|  Scanning for default.xml'
 		if os.path.isfile( _Resources_Default_xml ):
-			colours()
-			labels()
 			print '|   Parsing ' + _Resources_Default_xml
 			xbmc.executebuiltin('Skin.Reset(nodefaultxml)')
 			Synopsis_XML = open( _Resources_Default_xml, 'r' ).read()
@@ -447,6 +445,8 @@ if (__name__ == '__main__'):
 	
 	
 	#####	UI.
+	colours()
+	labels()
 	ui = GUI( '_Script_Synopsis.xml', os.getcwd() )
 	ui.doModal()
 	del ui
