@@ -922,7 +922,7 @@ msgid ""
 msgstr ""
 
 msgctxt "#32088"
-msgid "Restart Video"
+msgid "Restart Preview"
 msgstr ""
 
 msgctxt "#32089"
