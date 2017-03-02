@@ -28,7 +28,7 @@
 										<description>Advanced Features</description>
 										<width>1170</width>
 										<height>40</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>white</textcolor>
 										<label> Music Options</label>
 										<align>center</align>
@@ -66,7 +66,7 @@
 										<description>Advanced Features</description>
 										<width>1170</width>
 										<height>40</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>white</textcolor>
 										<label> Other Toggles</label>
 										<align>center</align>
@@ -141,7 +141,7 @@
 										<description>Debug Stuff</description>
 										<width>1170</width>
 										<height>40</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>white</textcolor>
 										<label> Debug Stuff</label>
 										<align>center</align>
@@ -174,7 +174,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[20077]</label>
 						<include>Window_OpenClose_Animation</include>

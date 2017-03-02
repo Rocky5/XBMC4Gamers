@@ -31,7 +31,7 @@
 						<height>30</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font18</font>
+						<font>font21_bold</font>
 						<label>$LOCALIZE[12015]</label>
 						<textcolor>dialogheader</textcolor>
 				</control>
@@ -49,7 +49,7 @@
 						<width>620</width>
 						<align>center</align>
 						<label>12016</label>
-						<font>font12</font>
+						<font>font20</font>
 				</control>
 				<control type="grouplist" id="5">
 						<description>control area</description>
@@ -67,7 +67,7 @@
 				<control type="button" id="7">
 						<description>Default Button</description>
 						<height>35</height>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus border="3">button-focus.png</texturefocus>
@@ -76,7 +76,7 @@
 				<control type="radiobutton" id="8">
 						<description>Default RadioButton</description>
 						<height>35</height>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus border="3">button-focus.png</texturefocus>
@@ -87,7 +87,7 @@
 						<height>35</height>
 						<texturefocus border="3">button-focus.png</texturefocus>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<reverse>yes</reverse>
@@ -97,7 +97,7 @@
 						<height>35</height>
 						<texturefocus border="3">button-focus.png</texturefocus>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 				</control>

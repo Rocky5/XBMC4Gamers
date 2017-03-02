@@ -26,7 +26,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32000]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -39,7 +39,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32001]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -52,7 +52,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32061]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -65,7 +65,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32006]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -79,7 +79,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32062]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -93,7 +93,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32063]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -107,7 +107,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32011]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -121,7 +121,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32009]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -134,7 +134,7 @@
 						<height>35</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32064]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -148,7 +148,7 @@
 						<height>35</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32062]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -162,7 +162,7 @@
 						<height>35</height>
 						<align>right</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32020]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -175,7 +175,7 @@
 						<height>35</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32065]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -189,7 +189,7 @@
 						<height>35</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32062]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -203,7 +203,7 @@
 						<height>35</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32066]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -216,7 +216,7 @@
 						<height>35</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32067]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -229,7 +229,7 @@
 						<height>35</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32068]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -242,7 +242,7 @@
 						<height>35</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font11</font>
+						<font>font17</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32069]</label>
 						<include>Window_OpenClose_Animation</include>

@@ -31,7 +31,7 @@
 						<height>40</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font18</font>
+						<font>font21_bold</font>
 						<label>$INFO[Window.Property(heading)]</label>
 						<textcolor>black</textcolor>
 				</control>
@@ -53,7 +53,7 @@
 						<posy>90</posy>
 						<width>460</width>
 						<align>left</align>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[20093]</label>
 				</control>
@@ -63,7 +63,7 @@
 						<posy>115</posy>
 						<width>460</width>
 						<align>left</align>
-						<font>font13</font>
+						<font>font23</font>
 						<textcolor>white</textcolor>
 				</control>
 				<control type="label">
@@ -72,7 +72,7 @@
 						<posy>165</posy>
 						<width>460</width>
 						<align>left</align>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>blue</textcolor>
 						<label>$LOCALIZE[20070]</label>
 				</control>
@@ -82,7 +82,7 @@
 						<posy>190</posy>
 						<width>460</width>
 						<align>left</align>
-						<font>font13</font>
+						<font>font23</font>
 						<textcolor>white</textcolor>
 				</control>
 				<control type="grouplist" id="5">
@@ -101,7 +101,7 @@
 				<control type="button" id="7">
 						<description>Default Button</description>
 						<height>35</height>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus border="3">button-focus.png</texturefocus>
@@ -110,7 +110,7 @@
 				<control type="radiobutton." id="8">
 						<description>Default RadioButton</description>
 						<height>35</height>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<texturefocus border="3">button-focus.png</texturefocus>
@@ -121,7 +121,7 @@
 						<height>35</height>
 						<texturefocus border="3">button-focus.png</texturefocus>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<reverse>yes</reverse>
@@ -131,7 +131,7 @@
 						<height>35</height>
 						<texturefocus border="3">button-focus.png</texturefocus>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 				</control>

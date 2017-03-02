@@ -6,48 +6,48 @@
 						<size>8</size>
 				</font>
 				<font>
-						<name>font10</name>
+						<name>font15</name>
 						<filename>arial.ttf</filename>
 						<size>15</size>
 				</font>
 				<font>
-						<name>font11</name>
+						<name>font17</name>
 						<filename>arial.ttf</filename>
 						<size>17</size>
 				</font>
 				<font>
-						<name>font12a</name>
+						<name>font18</name>
 						<filename>arial.ttf</filename>
 						<size>18</size>
 				</font>
 				<font>
-						<name>font12</name>
+						<name>font20</name>
 						<filename>arial.ttf</filename>
 						<size>20</size>
 				</font>
 				<font>
-						<name>font13</name>
-						<filename>arial.ttf</filename>
-						<size>23</size>
-				</font>
-				<font>
-						<name>font18</name>
+						<name>font21_bold</name>
 						<filename>arial.ttf</filename>
 						<size>21</size>
 						<style>bold</style>
 				</font>
 				<font>
-						<name>font20</name>
+						<name>font23</name>
+						<filename>arial.ttf</filename>
+						<size>23</size>
+				</font>
+				<font>
+						<name>font25</name>
 						<filename>arial.ttf</filename>
 						<size>25</size>
 				</font>
 				<font>
-						<name>font22</name>
+						<name>font28</name>
 						<filename>arial.ttf</filename>
 						<size>28</size>
 				</font>
 				<font>
-						<name>font25</name>
+						<name>font35</name>
 						<filename>arial.ttf</filename>
 						<size>35</size>
 				</font>
@@ -62,60 +62,65 @@
 						<size>80</size>
 				</font>
 				<font>
-						<name>font13_Numeric</name>
+						<name>font20_Numeric</name>
 						<filename>DejaVuSans-Bold.ttf</filename>
 						<size>20</size>
 				</font>
 				<font>
-						<name>font35_Numeric</name>
+						<name>font40_Numeric</name>
 						<filename>DejaVuSans-Bold.ttf</filename>
 						<size>40</size>
 				</font>
 		</fontset>
 		<fontset id="Roboto" unicode="true">
 				<font>
-						<name>font10</name>
+						<name>font8</name>
+						<filename>Roboto-Regular.ttf</filename>
+						<size>8</size>
+				</font>
+				<font>
+						<name>font15</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>15</size>
 				</font>
 				<font>
-						<name>font11</name>
+						<name>font17</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>17</size>
 				</font>
 				<font>
-						<name>font12a</name>
+						<name>font18</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>18</size>
 				</font>
 				<font>
-						<name>font12</name>
+						<name>font20</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>20</size>
 				</font>
 				<font>
-						<name>font13</name>
-						<filename>Roboto-Regular.ttf</filename>
-						<size>23</size>
-				</font>
-				<font>
-						<name>font18</name>
+						<name>font21_bold</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>21</size>
 						<style>bold</style>
 				</font>
 				<font>
-						<name>font20</name>
+						<name>font23</name>
+						<filename>Roboto-Regular.ttf</filename>
+						<size>23</size>
+				</font>
+				<font>
+						<name>font25</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>25</size>
 				</font>
 				<font>
-						<name>font22</name>
+						<name>font28</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>28</size>
 				</font>
 				<font>
-						<name>font25</name>
+						<name>font35</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>35</size>
 				</font>
@@ -130,16 +135,14 @@
 						<size>80</size>
 				</font>
 				<font>
-						<name>font13_Numeric</name>
+						<name>font20_Numeric</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>20</size>
-						<style>bold</style>
 				</font>
 				<font>
-						<name>font35_Numeric</name>
+						<name>font40_Numeric</name>
 						<filename>Roboto-Regular.ttf</filename>
 						<size>40</size>
-						<style>bold</style>
 				</font>
 		</fontset>
 </fonts>

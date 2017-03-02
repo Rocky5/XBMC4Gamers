@@ -28,7 +28,7 @@
 						<posy>35</posy>
 						<width>200</width>
 						<height>40</height>
-						<font>font18</font>
+						<font>font21_bold</font>
 						<textcolor>black</textcolor>
 						<align>center</align>
 						<aligny>center</aligny>
@@ -49,7 +49,7 @@
 						<posy>85</posy>
 						<width>190</width>
 						<height>45</height>
-						<font>font12</font>
+						<font>font20</font>
 						<textcolor>white</textcolor>
 						<disabledcolor>grey</disabledcolor>
 						<align>center</align>
@@ -64,7 +64,7 @@
 								<posy>0</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -81,7 +81,7 @@
 								<posy>0</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -98,7 +98,7 @@
 								<posy>0</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -116,7 +116,7 @@
 								<width>48</width>
 								<height>98</height>
 								<textwidth>94</textwidth>
-								<font>font10</font>
+								<font>font15</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -134,7 +134,7 @@
 								<posy>50</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -151,7 +151,7 @@
 								<posy>50</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -168,7 +168,7 @@
 								<posy>50</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -185,7 +185,7 @@
 								<posy>100</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -202,7 +202,7 @@
 								<posy>100</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -219,7 +219,7 @@
 								<posy>100</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -237,7 +237,7 @@
 								<width>48</width>
 								<height>98</height>
 								<textwidth>94</textwidth>
-								<font>font10</font>
+								<font>font15</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -255,7 +255,7 @@
 								<posy>150</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<textwidth>40</textwidth>
 								<label>&lt;&lt;</label>
 								<align>center</align>
@@ -273,7 +273,7 @@
 								<posy>150</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<texturenofocus border="4">button-nofocus.png</texturenofocus>
@@ -290,7 +290,7 @@
 								<posy>150</posy>
 								<width>48</width>
 								<height>48</height>
-								<font>font12</font>
+								<font>font20</font>
 								<textwidth>40</textwidth>
 								<label>&gt;&gt;</label>
 								<align>center</align>

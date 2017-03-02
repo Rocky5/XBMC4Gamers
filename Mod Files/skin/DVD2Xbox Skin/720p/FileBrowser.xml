@@ -43,7 +43,7 @@
 								<height>30</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font18</font>
+								<font>font21_bold</font>
 								<label>31023</label>
 								<textcolor>black</textcolor>
 						</control>
@@ -100,7 +100,7 @@
 								<height>30</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font18</font>
+								<font>font21_bold</font>
 								<label>1023</label>
 								<textcolor>black</textcolor>
 						</control>
@@ -112,7 +112,7 @@
 								<height>30</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 								<haspath>true</haspath>
 						</control>
 						<control type="scrollbar" id="60">
@@ -162,7 +162,7 @@
 												<posy>0</posy>
 												<width>480</width>
 												<height>35</height>
-												<font>font12</font>
+												<font>font20</font>
 												<align>left</align>
 												<aligny>center</aligny>
 												<selectedcolor>blue</selectedcolor>
@@ -198,7 +198,7 @@
 												<posy>0</posy>
 												<width>480</width>
 												<height>35</height>
-												<font>font12</font>
+												<font>font20</font>
 												<align>left</align>
 												<aligny>center</aligny>
 												<selectedcolor>blue</selectedcolor>
@@ -238,7 +238,7 @@
 												<posy>0</posy>
 												<width>480</width>
 												<height>35</height>
-												<font>font12</font>
+												<font>font20</font>
 												<align>left</align>
 												<aligny>center</aligny>
 												<selectedcolor>blue</selectedcolor>
@@ -274,7 +274,7 @@
 												<posy>0</posy>
 												<width>480</width>
 												<height>35</height>
-												<font>font12</font>
+												<font>font20</font>
 												<align>left</align>
 												<aligny>center</aligny>
 												<selectedcolor>blue</selectedcolor>
@@ -290,7 +290,7 @@
 								<height>30</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 								<label>($INFO[Container(450).NumItems]) $LOCALIZE[31025] - $LOCALIZE[31024] ($INFO[Container(450).CurrentPage]/$INFO[Container(450).NumPages])</label>
 								<visible>!Control.IsVisible(451)</visible>
 						</control>
@@ -302,7 +302,7 @@
 								<height>30</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 								<label>($INFO[Container(451).NumItems]) $LOCALIZE[31025] - $LOCALIZE[31024] ($INFO[Container(451).CurrentPage]/$INFO[Container(451).NumPages])</label>
 								<visible>Control.IsVisible(451)</visible>
 						</control>

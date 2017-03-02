@@ -31,7 +31,7 @@
 						<height>40</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font18</font>
+						<font>font21_bold</font>
 						<label>13406</label>
 						<textcolor>black</textcolor>
 				</control>
@@ -44,7 +44,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>-</label>
-						<font>font12</font>
+						<font>font20</font>
 				</control>
 				<control type="label" id="3">
 						<description>dialog line 2</description>
@@ -55,7 +55,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>-</label>
-						<font>font12</font>
+						<font>font20</font>
 				</control>
 				<control type="label" id="4">
 						<description>dialog line 3</description>
@@ -66,7 +66,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>-</label>
-						<font>font12</font>
+						<font>font20</font>
 				</control>
 				<control type="button" id="10">
 						<description>OK button</description>

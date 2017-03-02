@@ -67,7 +67,7 @@
 								<width>750</width>
 								<label>-</label>
 								<align>center</align>
-								<font>font13</font>
+								<font>font23</font>
 						</control>
 						<control type="label" id="3">
 								<description>help information</description>
@@ -76,7 +76,7 @@
 								<width>750</width>
 								<label>-</label>
 								<align>center</align>
-								<font>font13</font>
+								<font>font23</font>
 						</control>
 				</control>
 				<!-- Debug Info -->

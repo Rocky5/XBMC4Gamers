@@ -15,7 +15,7 @@
 						<posx>10</posx>
 						<posy>96r</posy>
 						<width>1280</width>
-						<font>font11</font>
+						<font>font17</font>
 						<label>FPS: $INFO[System.FPS] - FreeMemory: $INFO[System.FreeMemory]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>
@@ -34,7 +34,7 @@
 						<posx>10</posx>
 						<posy>75r</posy>
 						<width>1280</width>
-						<font>font11</font>
+						<font>font17</font>
 						<label>CurrentWindow: $INFO[System.CurrentWindow]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>
@@ -53,7 +53,7 @@
 						<posx>10</posx>
 						<posy>53r</posy>
 						<width>1280</width>
-						<font>font11</font>
+						<font>font17</font>
 						<label>CurrentControl: $INFO[System.CurrentControl]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>
@@ -72,7 +72,7 @@
 						<posx>10</posx>
 						<posy>32r</posy>
 						<width>1280</width>
-						<font>font11</font>
+						<font>font17</font>
 						<label>Viewmode: $INFO[Container.Viewmode]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>
@@ -101,7 +101,7 @@
 						<posx>10</posx>
 						<posy>13</posy>
 						<width>1280</width>
-						<font>font11</font>
+						<font>font17</font>
 						<label>$LOCALIZE[31417] $INFO[window.property(xmlfile)]</label>
 						<visible>Skin.HasSetting(Debuginfo)</visible>
 				</control>

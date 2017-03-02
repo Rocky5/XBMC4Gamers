@@ -87,7 +87,7 @@
 												<posy>110</posy>
 												<width>790</width>
 												<height>20</height>
-												<font>font25</font>
+												<font>font35</font>
 												<textcolor>$VAR[var-labelcolour]</textcolor>
 												<scroll>true</scroll>
 												<align>left</align>
@@ -162,7 +162,7 @@
 												<posy>110</posy>
 												<width>790</width>
 												<height>20</height>
-												<font>font25</font>
+												<font>font35</font>
 												<textcolor>$VAR[var-labelcolour]</textcolor>
 												<scroll>true</scroll>
 												<align>left</align>

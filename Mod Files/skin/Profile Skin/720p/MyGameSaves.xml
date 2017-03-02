@@ -70,7 +70,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font13</font>
+						<font>font23</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[20323]</label>
 				</control>

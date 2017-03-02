@@ -47,7 +47,7 @@
 								<posy>-45r</posy>
 								<width>70</width>
 								<height>70</height>
-								<font>font12a</font>
+								<font>font18</font>
 								<textcolor>grey</textcolor>
 								<label>$LOCALIZE[503]</label>
 								<align>center</align>

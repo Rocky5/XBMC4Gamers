@@ -23,7 +23,7 @@
 								<width>90</width>
 								<height>50</height>
 								<label>$INFO[Player.Volume]</label>
-								<font>font12</font>
+								<font>font20</font>
 								<align>right</align>
 								<aligny>center</aligny>
 						</control>

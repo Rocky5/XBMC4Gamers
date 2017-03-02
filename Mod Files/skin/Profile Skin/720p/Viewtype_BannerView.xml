@@ -66,7 +66,7 @@
 										<posy>360</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font22</font>
+										<font>font28</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -78,7 +78,7 @@
 										<posy>420</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>blue</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -90,7 +90,7 @@
 										<posy>445</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -103,7 +103,7 @@
 										<posy>445</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -116,7 +116,7 @@
 										<posy>445</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -129,7 +129,7 @@
 										<posy>470</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>blue</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -141,7 +141,7 @@
 										<posy>495</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -153,7 +153,7 @@
 										<posy>520</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>blue</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -165,7 +165,7 @@
 										<posy>545</posy>
 										<width>570</width>
 										<height>20</height>
-										<font>font12</font>
+										<font>font20</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>

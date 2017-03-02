@@ -31,7 +31,7 @@
 								<posy>35</posy>
 								<width>700</width>
 								<height>40</height>
-								<font>font18</font>
+								<font>font21_bold</font>
 								<textcolor>black</textcolor>
 								<align>center</align>
 								<aligny>center</aligny>
@@ -43,7 +43,7 @@
 								<posy>35</posy>
 								<width>700</width>
 								<height>40</height>
-								<font>font18</font>
+								<font>font21_bold</font>
 								<textcolor>black</textcolor>
 								<label>Enter a 6 digit hex colour code (0-F)</label>
 								<align>center</align>
@@ -64,7 +64,7 @@
 								<posy>85</posy>
 								<width>690</width>
 								<height>45</height>
-								<font>font12</font>
+								<font>font20</font>
 								<align>center</align>
 								<aligny>center</aligny>
 						</control>
@@ -87,7 +87,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="48">
 										<description>'0' button</description>
@@ -103,7 +103,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="49">
 										<description>'1' button</description>
@@ -119,7 +119,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="50">
 										<description>'2' button</description>
@@ -135,7 +135,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="51">
 										<description>'3' button</description>
@@ -151,7 +151,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="52">
 										<description>'4' button</description>
@@ -167,7 +167,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="53">
 										<description>'5' button</description>
@@ -183,7 +183,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="54">
 										<description>'6' button</description>
@@ -199,7 +199,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="55">
 										<description>'7' button</description>
@@ -215,7 +215,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="56">
 										<description>'8' button</description>
@@ -231,7 +231,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="57">
 										<description>'9' button</description>
@@ -247,7 +247,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="togglebutton" id="302">
 										<description>SHIFT button</description>
@@ -266,7 +266,7 @@
 										<alttexturefocus border="3,14,27,3">button-focus-toggle-on.png</alttexturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="65">
 										<description>'A' button</description>
@@ -282,7 +282,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="66">
 										<description>'B' button</description>
@@ -298,7 +298,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="67">
 										<description>'C' button</description>
@@ -314,7 +314,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="68">
 										<description>'D' button</description>
@@ -330,7 +330,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="69">
 										<description>'E' button</description>
@@ -346,7 +346,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="70">
 										<description>'F' button</description>
@@ -362,7 +362,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="71">
 										<description>'G' button</description>
@@ -378,7 +378,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="72">
 										<description>'H' button</description>
@@ -394,7 +394,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="73">
 										<description>'I' button</description>
@@ -410,7 +410,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="74">
 										<description>'J' button</description>
@@ -426,7 +426,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="togglebutton" id="303">
 										<description>CAPS LOCK button</description>
@@ -445,7 +445,7 @@
 										<alttexturefocus border="3,14,27,3">button-focus-toggle-on.png</alttexturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="75">
 										<description>'K' button</description>
@@ -461,7 +461,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="76">
 										<description>'L' button</description>
@@ -477,7 +477,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="77">
 										<description>'M' button</description>
@@ -493,7 +493,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="78">
 										<description>'N' button</description>
@@ -509,7 +509,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="79">
 										<description>'O' button</description>
@@ -525,7 +525,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="80">
 										<description>'P' button</description>
@@ -541,7 +541,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="81">
 										<description>'Q' button</description>
@@ -557,7 +557,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="82">
 										<description>'R' button</description>
@@ -573,7 +573,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="83">
 										<description>'S' button</description>
@@ -589,7 +589,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="84">
 										<description>'T' button</description>
@@ -605,7 +605,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="togglebutton" id="304">
 										<description>Symbols button</description>
@@ -624,7 +624,7 @@
 										<alttexturefocus border="3,14,27,3">button-focus-toggle-on.png</alttexturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="85">
 										<description>'U' button</description>
@@ -640,7 +640,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="86">
 										<description>'V' button</description>
@@ -656,7 +656,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="87">
 										<description>'W' button</description>
@@ -672,7 +672,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="88">
 										<description>'X' button</description>
@@ -688,7 +688,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="89">
 										<description>'Y' button</description>
@@ -704,7 +704,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="90">
 										<description>'Z' button</description>
@@ -720,7 +720,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="8">
 										<description>BACKSPACE button</description>
@@ -737,7 +737,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="307">
 										<description>IP Input button</description>
@@ -748,7 +748,7 @@
 										<texturenofocus border="3">button-nofocus.png</texturenofocus>
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<label>1006</label>
-										<font>font12</font>
+										<font>font20</font>
 										<align>center</align>
 										<aligny>center</aligny>
 										<onleft>306</onleft>
@@ -771,7 +771,7 @@
 										<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font12</font>
+										<font>font20</font>
 								</control>
 								<control type="button" id="305">
 										<description>previous button</description>
@@ -826,7 +826,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="48">
 								<description>'0' button</description>
@@ -842,7 +842,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="49">
 								<description>'1' button</description>
@@ -858,7 +858,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="50">
 								<description>'2' button</description>
@@ -874,7 +874,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="51">
 								<description>'3' button</description>
@@ -890,7 +890,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="52">
 								<description>'4' button</description>
@@ -906,7 +906,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="53">
 								<description>'5' button</description>
@@ -922,7 +922,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="54">
 								<description>'6' button</description>
@@ -938,7 +938,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="55">
 								<description>'7' button</description>
@@ -954,7 +954,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="56">
 								<description>'8' button</description>
@@ -970,7 +970,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="57">
 								<description>'9' button</description>
@@ -986,7 +986,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="8">
 								<description>BACKSPACE button</description>
@@ -1003,7 +1003,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="65">
 								<description>'A' button</description>
@@ -1019,7 +1019,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="66">
 								<description>'B' button</description>
@@ -1035,7 +1035,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="67">
 								<description>'C' button</description>
@@ -1051,7 +1051,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="68">
 								<description>'D' button</description>
@@ -1067,7 +1067,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="69">
 								<description>'E' button</description>
@@ -1083,7 +1083,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 						<control type="button" id="70">
 								<description>'F' button</description>
@@ -1099,7 +1099,7 @@
 								<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font12</font>
+								<font>font20</font>
 						</control>
 				</control>
 				<!-- Debug Info -->

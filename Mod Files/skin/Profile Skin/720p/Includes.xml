@@ -8,7 +8,7 @@
 		<include name="CustomSettingsButtons">
 				<width>1170</width>
 				<height>51</height>
-				<font>font12</font>
+				<font>font20</font>
 				<textcolor>white</textcolor>
 				<focusedcolor>black</focusedcolor>
 				<texturefocus border="5">thumbfO.png</texturefocus>
@@ -146,7 +146,7 @@
 						<posy>30r</posy>
 						<width>500</width>
 						<height>20</height>
-						<font>font10</font>
+						<font>font15</font>
 						<textcolor>$VAR[var-labelcolour]</textcolor>
 						<scroll>false</scroll>
 						<align>right</align>
@@ -224,14 +224,14 @@
 								<aligny>center</aligny>
 								<label>[B]$INFO[ListItem.SortLetter][/B]</label>
 								<textcolor>black</textcolor>
-								<font>font25</font>
+								<font>font35</font>
 						</control>
 				</control>
 		</include>
 		<include name="ButtonCommonValues">
 				<height>44</height>
 				<width>280</width>
-				<font>font12</font>
+				<font>font20</font>
 				<textcolor>white</textcolor>
 				<focusedcolor>white</focusedcolor>
 				<shadowcolor>black</shadowcolor>
@@ -249,7 +249,7 @@
 				<focusedcolor>white</focusedcolor>
 				<align>center</align>
 				<aligny>center</aligny>
-				<font>font12</font>
+				<font>font20</font>
 				<texturefocus border="5">button-focus2.png</texturefocus>
 				<texturenofocus border="5">-</texturenofocus>
 				<pulseonselect>true</pulseonselect>
@@ -257,7 +257,7 @@
 		<include name="ButtonInfoDialogsCommonValues">
 				<height>25</height>
 				<width>200</width>
-				<font>font12</font>
+				<font>font20</font>
 				<textcolor>white</textcolor>
 				<focusedcolor>white</focusedcolor>
 				<shadowcolor>black</shadowcolor>

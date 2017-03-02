@@ -32,7 +32,7 @@
 								<posy>10</posy>
 								<width>330</width>
 								<height>18</height>
-								<font>font12</font>
+								<font>font20</font>
 								<textcolor>blue</textcolor>
 								<align>left</align>
 								<aligny>center</aligny>
@@ -45,7 +45,7 @@
 								<posy>32</posy>
 								<width>330</width>
 								<height>20</height>
-								<font>font10</font>
+								<font>font15</font>
 								<align>left</align>
 								<aligny>center</aligny>
 								<scrollout>false</scrollout>
