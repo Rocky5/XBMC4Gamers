@@ -34,6 +34,12 @@ Preview_default					= GetInfoPath + 'preview.xmv'
 Preview_ext						= xbmc.getInfoLabel('Skin.String(PreviewFileExtension)')
 Preview_alt						= GetInfoPath + 'Preview.' + Preview_ext
 CachedThumb						= xbmc.translatePath('special://profile/Thumbnails/Programs/%s/%s' % ( xbmc.getCacheThumbName(xbmc.getInfoLabel('ListItem.FolderPath'))[0], xbmc.getCacheThumbName(xbmc.getInfoLabel('ListItem.FolderPath')) ) )
+Font_Path1						= xbmc.translatePath('Special://skin/1080i/Font.xml')
+Font_Path2						= xbmc.translatePath('Special://skin/720p/Font.xml')
+Font_Path3						= xbmc.translatePath('Special://skin/NTSC/Font.xml')
+Font_Path4						= xbmc.translatePath('Special://skin/NTSC 16x9/Font.xml')
+Font_Path5						= xbmc.translatePath('Special://skin/PAL/Font.xml')
+Font_Path6						= xbmc.translatePath('Special://skin/PAL 16x9/Font.xml')
 Fonts = '				<synopsis_fonts>Installed</synopsis_fonts>\n\
 				<font>\n\
 						<name>synopsis_font17</name>\n\
@@ -60,28 +66,6 @@ Fonts = '				<synopsis_fonts>Installed</synopsis_fonts>\n\
 						<filename>arial.ttf</filename>\n\
 						<size>35</size>\n\
 				</font>'
-
-def check_fonts():
-	font_written = 0
-	print '|   Parsing Font.xml'
-	for root, dirs, files in os.walk( xbmc.translatePath('Special://skin/') ):
-		for fontxml in files:
-			if fontxml.startswith('Font'):
-				if fontxml.endswith('.xml'):
-					Font_XML = BeautifulSoup( open( root + '\\' + fontxml, 'r' ).read() )
-					try:
-						print '|    Synopsis Fonts ' + Font_XML.synopsis_fonts.string
-					except(TypeError, KeyError, AttributeError):
-						shutil.copyfile(root + '\\' + fontxml,root + '\\' + fontxml + '_backup')
-						for line in fileinput.FileInput(root + '\\' + fontxml,inplace=1):
-							if '<fontset' in line:
-								line = line.replace(line,line+Fonts)
-							print line
-							font_written = 1
-	if font_written:
-		xbmc.executebuiltin('ReloadSkin')
-		time.sleep(2)
-		print '|    Synopsis Fonts written to Font.xml'
 
 def synopsis_mode():
 	#####	Check for Preview files.
@@ -442,6 +426,88 @@ def labels():
 		Current_Window.setProperty( 'Synopsis_label_30','' )
 	print '================================================================================'
 
+
+def check_fonts():
+	#####	I could have used os.walk, but it took to long to search for the files, this way is far quicker
+	font_written = 0
+	print '|   Parsing Font.xml'
+	if os.path.isfile( Font_Path1 ):
+		Font_Path = Font_Path1
+		Font_XML = BeautifulSoup( open( Font_Path, 'r' ).read() )
+		try:
+			print '|    Synopsis Fonts ' + Font_XML.synopsis_fonts.string
+		except(TypeError, KeyError, AttributeError):
+			shutil.copyfile(Font_Path + '_backup')
+			for line in fileinput.FileInput(Font_Path,inplace=1):
+				if '<fontset' in line:
+					line = line.replace(line,line+Fonts)
+				print line
+				font_written = 1
+	elif os.path.isfile( Font_Path2 ):
+		Font_Path = Font_Path2
+		Font_XML = BeautifulSoup( open( Font_Path, 'r' ).read() )
+		try:
+			print '|    Synopsis Fonts ' + Font_XML.synopsis_fonts.string
+		except(TypeError, KeyError, AttributeError):
+			shutil.copyfile(Font_Path, Font_Path + '_backup')
+			for line in fileinput.FileInput(Font_Path,inplace=1):
+				if '<fontset' in line:
+					line = line.replace(line,line+Fonts)
+				print line
+				font_written = 1
+	elif os.path.isfile( Font_Path3 ):
+		Font_Path = Font_Path3
+		Font_XML = BeautifulSoup( open( Font_Path, 'r' ).read() )
+		try:
+			print '|    Synopsis Fonts ' + Font_XML.synopsis_fonts.string
+		except(TypeError, KeyError, AttributeError):
+			shutil.copyfile(Font_Path, Font_Path + '_backup')
+			for line in fileinput.FileInput(Font_Path,inplace=1):
+				if '<fontset' in line:
+					line = line.replace(line,line+Fonts)
+				print line
+				font_written = 1
+	elif os.path.isfile( Font_Path4 ):
+		Font_Path = Font_Path4
+		Font_XML = BeautifulSoup( open( Font_Path, 'r' ).read() )
+		try:
+			print '|    Synopsis Fonts ' + Font_XML.synopsis_fonts.string
+		except(TypeError, KeyError, AttributeError):
+			shutil.copyfile(Font_Path, Font_Path + '_backup')
+			for line in fileinput.FileInput(Font_Path,inplace=1):
+				if '<fontset' in line:
+					line = line.replace(line,line+Fonts)
+				print line
+				font_written = 1
+	elif os.path.isfile( Font_Path5 ):
+		Font_Path = Font_Path5
+		Font_XML = BeautifulSoup( open( Font_Path, 'r' ).read() )
+		try:
+			print '|    Synopsis Fonts ' + Font_XML.synopsis_fonts.string
+		except(TypeError, KeyError, AttributeError):
+			shutil.copyfile(Font_Path, Font_Path + '_backup')
+			for line in fileinput.FileInput(Font_Path,inplace=1):
+				if '<fontset' in line:
+					line = line.replace(line,line+Fonts)
+				print line
+				font_written = 1
+	elif os.path.isfile( Font_Path6 ):
+		Font_Path = Font_Path6
+		Font_XML = BeautifulSoup( open( Font_Path, 'r' ).read() )
+		try:
+			print '|    Synopsis Fonts ' + Font_XML.synopsis_fonts.string
+		except(TypeError, KeyError, AttributeError):
+			shutil.copyfile(Font_Path, Font_Path + '_backup')
+			for line in fileinput.FileInput(Font_Path,inplace=1):
+				if '<fontset' in line:
+					line = line.replace(line,line+Fonts)
+				print line
+				font_written = 1
+	if font_written:
+		xbmc.executebuiltin('ReloadSkin')
+		time.sleep(2)
+		print '|    Synopsis Fonts written to Font.xml'
+	
 #####	load window xml and check key presses/movement.
 class GUI(windowdialog):
 	def onInit(self):
