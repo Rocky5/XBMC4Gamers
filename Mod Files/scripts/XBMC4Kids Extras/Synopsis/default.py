@@ -536,9 +536,9 @@ if (__name__ == '__main__'):
 	print '| ------------------------------------------------------------------------------'
 	print '| ' + GameName
 	check_fonts()
+	colours()
+	labels()
 	if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisMode)' ):
-		colours()
-		labels()
 		synopsis_mode()
 	else:
 		preview_mode()
