@@ -437,7 +437,7 @@ def check_fonts():
 		try:
 			print '|    Synopsis Fonts ' + Font_XML.synopsis_fonts.string
 		except(TypeError, KeyError, AttributeError):
-			shutil.copyfile(Font_Path + '_backup')
+			shutil.copyfile(Font_Path, Font_Path + '_backup')
 			for line in fileinput.FileInput(Font_Path,inplace=1):
 				if '<fontset' in line:
 					line = line.replace(line,line+Fonts)
