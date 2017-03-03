@@ -173,7 +173,7 @@
 										<posy>539</posy>
 										<width>50</width>
 										<height>0</height>
-										<font>synopsis_font21_bold</font>
+										<font>synopsis_font21</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_label_4)]</label>

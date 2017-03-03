@@ -57,6 +57,11 @@ Fonts = '				<synopsis_fonts>Installed</synopsis_fonts>\n\
 						<size>20</size>\n\
 				</font>\n\
 				<font>\n\
+						<name>synopsis_font21</name>\n\
+						<filename>arial.ttf</filename>\n\
+						<size>21</size>\n\
+				</font>\n\
+				<font>\n\
 						<name>synopsis_font28</name>\n\
 						<filename>arial.ttf</filename>\n\
 						<size>28</size>\n\
