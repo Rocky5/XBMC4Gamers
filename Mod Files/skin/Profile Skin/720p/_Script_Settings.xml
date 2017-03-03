@@ -1,11 +1,5 @@
 <window type="window" id="1102">
 		<defaultcontrol always="true">9001</defaultcontrol>
-<!--
-fonts used:
-font17
-font20
-font35
--->
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">
@@ -22,7 +16,7 @@ font35
 								<posy>290</posy>
 								<width>760</width>
 								<height>105</height>
-								<font>font17</font>
+								<font>synopsis_font17</font>
 								<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 								<scroll>true</scroll>
 								<align>center</align>
@@ -34,7 +28,7 @@ font35
 								<posy>290</posy>
 								<width>760</width>
 								<height>105</height>
-								<font>font17</font>
+								<font>synopsis_font17</font>
 								<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 								<scroll>true</scroll>
 								<align>center</align>
@@ -52,7 +46,7 @@ font35
 								<control type="radiobutton" id="9002">
 										<width>760</width>
 										<height>50</height>
-										<font>font20</font>
+										<font>synopsis_font20</font>
 										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_23)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
@@ -66,7 +60,7 @@ font35
 								<control type="radiobutton" id="9003">
 										<width>760</width>
 										<height>50</height>
-										<font>font20</font>
+										<font>synopsis_font20</font>
 										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_24)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
@@ -78,7 +72,7 @@ font35
 								<control type="radiobutton" id="9004">
 										<width>760</width>
 										<height>50</height>
-										<font>font20</font>
+										<font>synopsis_font20</font>
 										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_25)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
@@ -92,7 +86,7 @@ font35
 								<control type="radiobutton" id="9005">
 										<width>760</width>
 										<height>50</height>
-										<font>font20</font>
+										<font>synopsis_font20</font>
 										<label> - $INFO[Window(MyPrograms).Property(Synopsis_label_26)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
@@ -137,7 +131,7 @@ font35
 												<posy>10</posy>
 												<width>250</width>
 												<height>45</height>
-												<font>font35</font>
+												<font>synopsis_font35</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>left</align>
@@ -167,7 +161,7 @@ font35
 												<posy>10</posy>
 												<width>250</width>
 												<height>45</height>
-												<font>font35</font>
+												<font>synopsis_font35</font>
 												<textcolor>black</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>left</align>

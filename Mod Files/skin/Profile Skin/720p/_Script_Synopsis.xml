@@ -1,12 +1,5 @@
 <window id="1100">
 		<defaultcontrol always="true">9000</defaultcontrol>
-<!--
-fonts used:
-font17
-font18
-font28
-font35
--->
 		<controls>
 				<control type="button" id="9000">
 						<posx>-500</posx>
@@ -114,7 +107,7 @@ font35
 										<posy>95</posy>
 										<width>650</width>
 										<height>0</height>
-										<font>font35</font>
+										<font>synopsis_font35</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_title_alt)][/B]</label>
@@ -125,7 +118,7 @@ font35
 										<posy>155</posy>
 										<width>650</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_label_1)] $INFO[Window(MyPrograms).Property(Synopsis_titleid_alt)]</label>
@@ -136,7 +129,7 @@ font35
 										<posy>210</posy>
 										<width>650</width>
 										<height>0</height>
-										<font>font28</font>
+										<font>synopsis_font28</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_label_2)]</label>
@@ -147,7 +140,7 @@ font35
 										<posy>255</posy>
 										<width>650</width>
 										<height>215</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<scrolltime>200</scrolltime>
@@ -160,7 +153,7 @@ font35
 										<posy>488</posy>
 										<width>325</width>
 										<height>0</height>
-										<font>font28</font>
+										<font>synopsis_font28</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_label_3)]</label>
@@ -180,7 +173,7 @@ font35
 										<posy>539</posy>
 										<width>50</width>
 										<height>0</height>
-										<font>font21_bold</font>
+										<font>synopsis_font21_bold</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<label>$INFO[Window(MyPrograms).Property(Synopsis_label_4)]</label>
@@ -211,7 +204,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -234,7 +227,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -246,7 +239,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -258,7 +251,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -270,7 +263,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -282,7 +275,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -294,7 +287,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -306,7 +299,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -318,7 +311,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -330,7 +323,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -342,7 +335,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -354,7 +347,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -366,7 +359,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -378,7 +371,7 @@ font35
 										<posy>0</posy>
 										<width>670</width>
 										<height>0</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<aligny>left</aligny>
@@ -391,7 +384,7 @@ font35
 								<posy>400</posy>
 								<width>670</width>
 								<height>215</height>
-								<font>font18</font>
+								<font>synopsis_font18</font>
 								<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 								<align>left</align>
 								<scrolltime>200</scrolltime>
@@ -572,7 +565,7 @@ font35
 										<posy>94</posy>
 										<width>173</width>
 										<height>252</height>
-										<font>font17</font>
+										<font>synopsis_font17</font>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_label_19)][/B]</label>
@@ -595,7 +588,7 @@ font35
 										<posy>94</posy>
 										<width>457</width>
 										<height>252</height>
-										<font>font35</font>
+										<font>synopsis_font35</font>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_label_20)][/B]</label>
@@ -623,7 +616,7 @@ font35
 										<posy>94</posy>
 										<width>457</width>
 										<height>252</height>
-										<font>font35</font>
+										<font>synopsis_font35</font>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>
@@ -654,7 +647,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -677,7 +670,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -689,7 +682,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -701,7 +694,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -713,7 +706,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -725,7 +718,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -737,7 +730,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -749,7 +742,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -761,7 +754,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -773,7 +766,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -785,7 +778,7 @@ font35
 												<posy>0</posy>
 												<width>670</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -797,7 +790,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -809,7 +802,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -821,7 +814,7 @@ font35
 												<posy>0</posy>
 												<width>567</width>
 												<height>0</height>
-												<font>font18</font>
+												<font>synopsis_font18</font>
 												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 												<align>left</align>
 												<aligny>left</aligny>
@@ -834,7 +827,7 @@ font35
 										<posy>355</posy>
 										<width>567</width>
 										<height>298</height>
-										<font>font18</font>
+										<font>synopsis_font18</font>
 										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
 										<align>left</align>
 										<scrolltime>200</scrolltime>
@@ -923,7 +916,7 @@ font35
 								<posy>68</posy>
 								<width>1080</width>
 								<height>608</height>
-								<font>font35</font>
+								<font>synopsis_font35</font>
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>

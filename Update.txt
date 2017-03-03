@@ -1,3 +1,8 @@
+03/03/2017
+1) Added font writing to the script, if the fonts aren't present in the font.xml the script will now write them to the font.xml so you don't have to.
+2) Fixed a font name.
+
+
 02/03/2017
 1) Added more logging info and cleaned the synopsis script up a tad.
    ( Now outputs what files it finds so )
