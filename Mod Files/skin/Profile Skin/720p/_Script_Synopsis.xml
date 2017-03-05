@@ -1,26 +1,23 @@
 <window id="1100">
-		<defaultcontrol always="true">9000</defaultcontrol>
+		<defaultcontrol always="true">9001</defaultcontrol>
 		<controls>
-				<control type="button" id="9000">
-						<posx>-500</posx>
-						<onfocus>SetFocus(10)</onfocus>
-				</control>
 				<include>CommonBackground</include>
+				<!-- disabled for now -->
+				<control type="image.">
+						<description>background image</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
+						<animation effect="fade" start="0" end="100" delay="0" time="100">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" delay="300" time="100">WindowClose</animation>
+				</control>
 				<!--                   -->
 				<!-- New Synopsis view -->
 				<!--                   -->
 				<control type="group">
 						<visible>Skin.HasSetting(SynopsisMode) + Skin.HasSetting(Synopsis)</visible>
-						<control type="image">
-								<description>background image</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>1280</width>
-								<height>720</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
-								<animation effect="fade" start="0" end="70" delay="0" time="500">WindowOpen</animation>
-								<animation effect="fade" start="70" end="0" delay="100" time="100">WindowClose</animation>
-						</control>
 						<!-- background + fanart -->
 						<control type="image">
 								<posx>520</posx>
@@ -29,8 +26,8 @@
 								<height>570</height>
 								<aspectratio>scale</aspectratio>
 								<texture>$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
-								<animation effect="fade" start="0" end="100" delay="700" time="500">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="50">WindowClose</animation>
+								<animation effect="fade" start="0" end="100" delay="900" time="400">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 						</control>
 						<control type="image">
 								<description>background image</description>
@@ -40,14 +37,8 @@
 								<height>570</height>
 								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<animation type="WindowOpen" reversible="false">
-										<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
-										<effect type="fade" start="0" end="100" time="300" delay="200" />
-								</animation>
-								<animation type="WindowClose" reversible="false">
-										<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-										<effect type="fade" start="100" end="0" time="300" />
-								</animation>
+								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
 						</control>
 						<control type="image">
 								<description>background overlay</description>
@@ -57,16 +48,9 @@
 								<height>570</height>
 								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<animation type="WindowOpen" reversible="false">
-										<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
-										<effect type="fade" start="0" end="100" time="300" delay="200" />
-								</animation>
-								<animation type="WindowClose" reversible="false">
-										<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-										<effect type="fade" start="100" end="0" time="300" />
-								</animation>
+								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
 						</control>
-						<!-- Poster image -->
 						<control type="image">
 								<description>No poster image</description>
 								<posx>40</posx>
@@ -75,15 +59,10 @@
 								<height>570</height>
 								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<animation type="WindowOpen" reversible="false">
-										<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
-										<effect type="fade" start="0" end="100" time="300" delay="200" />
-								</animation>
-								<animation type="WindowClose" reversible="false">
-										<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
-										<effect type="fade" start="100" end="0" time="300" />
-								</animation>
+								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
 						</control>
+						<!-- Poster image -->
 						<control type="image">
 								<description>Poster image</description>
 								<posx>40</posx>
@@ -93,13 +72,13 @@
 								<texture fallback="Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_no_poster.png">$INFO[Window(MyPrograms).Property(Synopsis_poster)]</texture>
 								<bordersize>10</bordersize>
 								<aspectratio>stretch</aspectratio>
-								<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
+								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
 						<!-- Synopsis overview section -->
 						<control type="group">
 								<visible>ControlGroup(9001).HasFocus(10)</visible>
-								<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="600">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								<control type="label">
 										<description>Synopsis Title alt</description>
@@ -196,7 +175,7 @@
 								<width>670</width>
 								<height>500</height>
 								<itemgap>23</itemgap>
-								<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="600">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								<control type="label">
 										<description>Synopsis No default.xml found</description>
@@ -219,7 +198,7 @@
 								<width>670</width>
 								<height>500</height>
 								<itemgap>23</itemgap>
-								<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="600">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								<control type="label">
 										<description>Synopsis Title</description>
@@ -391,7 +370,7 @@
 								<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(2)">Conditional</autoscroll>
 								<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_18)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_overview)]</label>
 								<visible>ControlGroup(9001).HasFocus(11) + !Skin.HasSetting(nodefaultxml)</visible>
-								<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="600">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
 						<!-- Screenshots and video preview -->
@@ -401,7 +380,7 @@
 								<posy>80</posy>
 								<width>700</width>
 								<height>550</height>
-								<imagepath background="true">$INFO[Window(MyPrograms).Property(Synopsis_screenshots)]</imagepath>
+								<imagepath>$INFO[Window(MyPrograms).Property(Synopsis_screenshots)]</imagepath>
 								<timeperimage>5000</timeperimage>
 								<fadetime>1000</fadetime>
 								<pauseatend>0</pauseatend>
@@ -409,7 +388,7 @@
 								<loop>yes</loop>
 								<aspectratio>keep</aspectratio>
 								<visible>ControlGroup(9001).HasFocus(12)</visible>
-								<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="600">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
 						<control type="videowindow">
@@ -419,108 +398,102 @@
 								<width>700</width>
 								<height>550</height>
 								<visible>ControlGroup(9001).HasFocus(13)</visible>
-								<animation effect="fade" start="0" end="100" delay="0" time="750">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
-						</control>
-						<!--  Side buttons -->
-						<control type="grouplist" id="9001">
-								<posx>440</posx>
-								<posy>195</posy>
-								<width>80</width>
-								<height>400</height>
-								<itemgap>0</itemgap>
-								<pagecontrol>-</pagecontrol>
-								<onleft>-</onleft>
-								<onright>-</onright>
-								<onup>9001</onup>
-								<ondown>9001</ondown>
-								<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
+								<animation effect="fade" start="0" end="100" delay="800" time="600">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
-								<control type="button" id="10">
-										<description>Synopsis overview</description>
+						</control>
+						<control type="group">
+								<animation effect="fade" start="0" end="100" delay="500" time="600">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+								<!--  Side buttons -->
+								<control type="grouplist" id="9001">
+										<posx>440</posx>
+										<posy>195</posy>
+										<width>80</width>
+										<height>400</height>
+										<itemgap>0</itemgap>
+										<pagecontrol>-</pagecontrol>
+										<onleft>-</onleft>
+										<onright>-</onright>
+										<onup>9001</onup>
+										<ondown>9001</ondown>
+										<control type="button" id="10">
+												<description>Synopsis overview</description>
+												<width>80</width>
+												<height>80</height>
+												<label>-</label>
+												<onfocus>stop</onfocus>
+												<onclick>RunXBE($INFO[Window(MyPrograms).Property(Synopsis_xbe)])</onclick>
+												<texturenofocus>-</texturenofocus>
+												<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+										</control>
+										<control type="button" id="11">
+												<description>Synopsis Full</description>
+												<width>80</width>
+												<height>80</height>
+												<label>-</label>
+												<onfocus>stop</onfocus>
+												<texturenofocus>-</texturenofocus>
+												<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+										</control>
+										<control type="button" id="12">
+												<description>Synopsis Screenshots</description>
+												<width>80</width>
+												<height>80</height>
+												<label>-</label>
+												<onfocus>stop</onfocus>
+												<texturenofocus>-</texturenofocus>
+												<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+										</control>
+										<control type="button" id="13">
+												<description>Synopsis Video</description>
+												<width>80</width>
+												<height>80</height>
+												<label>-</label>
+												<onclick>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onclick>
+												<onclick>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
+												<onfocus>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onfocus>
+												<onfocus>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
+												<texturenofocus>-</texturenofocus>
+												<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+										</control>
+								</control>
+								<!-- Icons -->
+								<control type="image">
+										<description>Synopsis overview icon</description>
+										<posx>440</posx>
+										<posy>195</posy>
 										<width>80</width>
 										<height>80</height>
-										<label>-</label>
-										<onfocus>stop</onfocus>
-										<onclick>RunXBE($INFO[Window(MyPrograms).Property(Synopsis_xbe)])</onclick>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_controller.png</texture>
+										<aspectratio>keep</aspectratio>
 								</control>
-								<control type="button" id="11">
-										<description>Synopsis Full</description>
+								<control type="image">
+										<description>Full synopsis Info</description>
+										<posx>440</posx>
+										<posy>275</posy>
 										<width>80</width>
 										<height>80</height>
-										<label>-</label>
-										<onfocus>stop</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_full.png</texture>
+										<aspectratio>stretch</aspectratio>
 								</control>
-								<control type="button" id="12">
-										<description>Synopsis Screenshots</description>
+								<control type="image">
+										<description>Screenshot</description>
+										<posx>440</posx>
+										<posy>355</posy>
 										<width>80</width>
 										<height>80</height>
-										<label>-</label>
-										<onfocus>stop</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_screenshots.png</texture>
+										<aspectratio>stretch</aspectratio>
 								</control>
-								<control type="button" id="13">
-										<description>Synopsis Video</description>
+								<control type="image">
+										<description>Play Video</description>
+										<posx>440</posx>
+										<posy>435</posy>
 										<width>80</width>
 										<height>80</height>
-										<label>-</label>
-										<onclick>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onclick>
-										<onclick>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
-										<onfocus>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onfocus>
-										<onfocus>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
-										<texturenofocus>-</texturenofocus>
-										<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_video.png</texture>
+										<aspectratio>stretch</aspectratio>
 								</control>
-						</control>
-						<!-- Icons -->
-						<control type="image">
-								<description>Synopsis overview icon</description>
-								<posx>440</posx>
-								<posy>195</posy>
-								<width>80</width>
-								<height>80</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_controller.png</texture>
-								<aspectratio>keep</aspectratio>
-								<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
-						</control>
-						<control type="image">
-								<description>Full synopsis Info</description>
-								<posx>440</posx>
-								<posy>275</posy>
-								<width>80</width>
-								<height>80</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_full.png</texture>
-								<aspectratio>stretch</aspectratio>
-								<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
-						</control>
-						<control type="image">
-								<description>Screenshot</description>
-								<posx>440</posx>
-								<posy>355</posy>
-								<width>80</width>
-								<height>80</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_screenshots.png</texture>
-								<aspectratio>stretch</aspectratio>
-								<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
-						</control>
-						<control type="image">
-								<description>Play Video</description>
-								<posx>440</posx>
-								<posy>435</posy>
-								<width>80</width>
-								<height>80</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_video.png</texture>
-								<aspectratio>stretch</aspectratio>
-								<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
 				</control>
 				<!--                   -->
@@ -530,24 +503,14 @@
 						<visible>Skin.HasSetting(SynopsisMode) + Skin.HasSetting(Synopsis_alt_view)</visible>
 						<control type="group">
 								<control type="image">
-										<description>background image</description>
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>1280</width>
-										<height>720</height>
-										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
-										<animation effect="fade" start="0" end="70" delay="0" time="500">WindowOpen</animation>
-										<animation effect="fade" start="70" end="0" delay="200" time="100">WindowClose</animation>
-								</control>
-								<control type="image">
 										<posx>39</posx>
 										<posy>59</posy>
 										<width>1202</width>
 										<height>614</height>
 										<aspectratio>stretch</aspectratio>
 										<texture diffuse="Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_diffuse.png">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
-										<animation effect="fade" start="0" end="100" delay="700" time="500">WindowOpen</animation>
-										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+										<animation effect="fade" start="0" end="100" delay="900" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 								</control>
 								<control type="image">
 										<description>background image</description>
@@ -557,8 +520,8 @@
 										<height>614</height>
 										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_background.png</texture>
 										<aspectratio>stretch</aspectratio>
-										<animation effect="fade" start="0" end="98" delay="0" time="100">WindowOpen</animation>
-										<animation effect="fade" start="98" end="0" delay="150" time="100">WindowClose</animation>
+										<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
 								</control>
 								<control type="label">
 										<posx>74</posx>
@@ -568,9 +531,10 @@
 										<font>synopsis_font17</font>
 										<align>center</align>
 										<aligny>center</aligny>
+										<textcolor>20FFFFFF</textcolor>
 										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_label_19)][/B]</label>
-										<animation effect="fade" start="0" end="20" delay="500" time="1000">WindowOpen</animation>
-										<animation effect="fade" start="20" end="0" delay="0" time="100">WindowClose</animation>
+										<animation effect="fade" start="0" end="100" delay="700" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
 								<control type="image">
 										<description>Poster image</description>
@@ -580,7 +544,7 @@
 										<height>252</height>
 										<texture>$INFO[Window(MyPrograms).Property(Synopsis_poster)]</texture>
 										<aspectratio>stretch</aspectratio>
-										<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
+										<animation effect="fade" start="0" end="100" delay="800" time="400">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
 								<control type="label">
@@ -591,9 +555,10 @@
 										<font>synopsis_font35</font>
 										<align>center</align>
 										<aligny>center</aligny>
+										<textcolor>20FFFFFF</textcolor>
 										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_label_20)][/B]</label>
-										<animation effect="fade" start="0" end="20" delay="500" time="1000">WindowOpen</animation>
-										<animation effect="fade" start="20" end="0" delay="0" time="100">WindowClose</animation>
+										<animation effect="fade" start="0" end="100" delay="800" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
 								<control type="multiimage">
 										<description>Screenshots window</description>
@@ -602,14 +567,14 @@
 										<width>457</width>
 										<height>252</height>
 										<imagepath>$INFO[Window(MyPrograms).Property(Synopsis_screenshots)]</imagepath>
+										<animation effect="fade" start="0" end="100" delay="800" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 										<timeperimage>5000</timeperimage>
 										<fadetime>1000</fadetime>
 										<pauseatend>0</pauseatend>
 										<randomize>true</randomize>
 										<loop>yes</loop>
 										<aspectratio>stretch</aspectratio>
-										<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
-										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
 								<control type="label">
 										<posx>749</posx>
@@ -619,9 +584,10 @@
 										<font>synopsis_font35</font>
 										<align>center</align>
 										<aligny>center</aligny>
+										<textcolor>20FFFFFF</textcolor>
 										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>
-										<animation effect="fade" start="0" end="20" delay="500" time="1000">WindowOpen</animation>
-										<animation effect="fade" start="20" end="0" delay="0" time="100">WindowClose</animation>
+										<animation effect="fade" start="0" end="100" delay="800" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
 								<control type="videowindow">
 										<description>video preview window</description>
@@ -629,18 +595,18 @@
 										<posy>94</posy>
 										<width>457</width>
 										<height>252</height>
-										<animation effect="fade" start="0" end="100" delay="500" time="750">WindowOpen</animation>
-										<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+										<animation effect="fade" start="0" end="100" delay="800" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
 								<control type="grouplist">
+										<animation effect="fade" start="0" end="100" delay="800" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 										<visible>Skin.HasSetting(nodefaultxml)</visible>
 										<posx>69</posx>
 										<posy>355</posy>
 										<width>1202</width>
 										<height>300</height>
 										<itemgap>23</itemgap>
-										<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
-										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 										<control type="label">
 												<description>Synopsis No default.xml found</description>
 												<posx>0</posx>
@@ -656,14 +622,14 @@
 										</control>
 								</control>
 								<control type="grouplist">
+										<animation effect="fade" start="0" end="100" delay="800" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 										<visible>!Skin.HasSetting(nodefaultxml)</visible>
 										<posx>69</posx>
 										<posy>355</posy>
 										<width>1202</width>
 										<height>300</height>
 										<itemgap>23</itemgap>
-										<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
-										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 										<control type="label">
 												<description>Synopsis Title</description>
 												<posx>0</posx>
@@ -833,9 +799,9 @@
 										<scrolltime>200</scrolltime>
 										<autoscroll delay="10000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
 										<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_18)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_overview)]</label>
-										<animation effect="fade" start="0" end="100" delay="500" time="1000">WindowOpen</animation>
-										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 										<visible>!Skin.HasSetting(nodefaultxml)</visible>
+										<animation effect="fade" start="0" end="100" delay="800" time="400">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
 						</control>
 						<control type="grouplist" id="9001">
@@ -881,24 +847,14 @@
 				<control type="group">
 						<visible>!Skin.HasSetting(SynopsisMode)</visible>
 						<control type="image">
-								<description>background image</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>1280</width>
-								<height>720</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
-								<animation effect="fade" start="0" end="70" delay="0" time="500">WindowOpen</animation>
-								<animation effect="fade" start="70" end="0" delay="300" time="100">WindowClose</animation>
-						</control>
-						<control type="image">
 								<posx>100</posx>
 								<posy>59</posy>
 								<width>1080</width>
 								<height>614</height>
 								<aspectratio>stretch</aspectratio>
 								<texture diffuse="Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-								<animation effect="fade" start="0" end="100" delay="700" time="500">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="400" time="0">WindowClose</animation>
+								<animation effect="fade" start="0" end="100" delay="900" time="400">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
 						<control type="image">
 								<description>background image</description>
@@ -908,8 +864,8 @@
 								<height>614</height>
 								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_background_alt.png</texture>
 								<aspectratio>stretch</aspectratio>
-								<animation effect="fade" start="0" end="98" delay="0" time="100">WindowOpen</animation>
-								<animation effect="fade" start="98" end="0" delay="400" time="100">WindowClose</animation>
+								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
 						</control>
 						<control type="label">
 								<posx>100</posx>
@@ -919,11 +875,12 @@
 								<font>synopsis_font35</font>
 								<align>center</align>
 								<aligny>center</aligny>
+								<textcolor>20FFFFFF</textcolor>
 								<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>
 								<visible>!Player.HasVideo</visible>
 								<animation effect="fade" start="0" end="0" delay="0" time="0">Visible</animation>
-								<animation effect="fade" start="0" end="20" delay="750" time="1000">WindowOpen</animation>
-								<animation effect="fade" start="20" end="0" delay="400" time="100">WindowClose</animation>
+								<animation effect="fade" start="0" end="100" delay="1200" time="400">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
 						<control type="videowindow">
 								<description>video preview window</description>
@@ -932,7 +889,7 @@
 								<width>1058</width>
 								<height>586</height>
 								<animation effect="fade" start="0" end="100" delay="1000" time="1000">WindowOpen</animation>
-								<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
 						<control type="grouplist" id="9001">
 								<posx>-500</posx>
@@ -953,7 +910,6 @@
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 										<visible>!Skin.HasSetting(PreviewExtension)</visible>
-										<animation effect="fade" start="0" end="20" delay="3000" time="1000">Visible</animation>
 								</control>
 								<control type="button" id="10">
 										<width>80</width>
@@ -963,7 +919,6 @@
 										<texturenofocus>-</texturenofocus>
 										<texturefocus>-</texturefocus>
 										<visible>Skin.HasSetting(PreviewExtension)</visible>
-										<animation effect="fade" start="0" end="20" delay="3000" time="1000">Visible</animation>
 								</control>
 						</control>
 				</control>

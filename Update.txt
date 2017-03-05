@@ -1,3 +1,15 @@
+05/03/2017
+1) Redone the synopsis _Script*.xml files animations.
+
+Synopsis script changes:
+	1) Slight change to the delay for the button focus in preview video view.
+	2) Script should be faster now.
+	3) Streamlined the process.
+	4) Added a dialog for when the fonts are installed letting you know.
+	5) Slight texture changes
+	6) Updated the default.xbe in the zip version. This one is the default XBMC4Xbox with fullscreen splash, gamesaves layout fix and synopsis support only.
+
+
 03/03/2017
 1) Added font writing to the script, if the fonts aren't present in the font.xml the script will now write them to the font.xml so you don't have to.
 2) Fixed a font name.

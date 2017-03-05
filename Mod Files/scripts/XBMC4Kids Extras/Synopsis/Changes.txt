@@ -1,6 +1,16 @@
+	Updated: 05 March 2017
+	-- Slight change to the delay for the button focus in preview video view.
+	
 
+	Updated: 04 March 2017
+	-- Script should be faster now.
+	   Streamlined the process.
+	   Added a dialog for when the fonts are installed letting you know.
+
+	   
 	Updated: 03 March 2017
 	-- Added font writing to the script, if the fonts aren't present in the font.xml the script will now write them to the font.xml so you don't have to.
+	
 	
 	Updated: 02 March 2017
 	-- Streamlined the scrip.
