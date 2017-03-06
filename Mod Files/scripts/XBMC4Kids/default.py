@@ -218,8 +218,9 @@ if SkipScript == "false":
 
 
 #####	Change user skin & skin settings names.
-			for line in fileinput.input(Current_Profile_GUISettings, inplace=True):
-				print(line.replace('Manage Profiles Skin', 'Profile skin'))
+			for line in fileinput.input(Current_Profile_GUISettings, inplace=1):
+				line = line.replace('Manage Profiles Skin','Profile skin')
+				print line,
 				
 			print "================================================================================"
 
@@ -242,8 +243,9 @@ if SkipScript == "false":
 			print "| Copied Guisettings.xml"
 			#shutil.copy(Master_Profile_AdvancedSettings, Current_Profile_Directory)
 			#print "| Copied AdvancedSettings.xml"
-			for line in fileinput.input(Current_Profile_GUISettings, inplace=True):
-				print(line.replace('Manage Profiles Skin', 'Profile skin'))
+			for line in fileinput.input(Current_Profile_GUISettings, inplace=1):
+				line = line.replace('Manage Profiles Skin','Profile skin')
+				print line,
 				
 			print "================================================================================"
 

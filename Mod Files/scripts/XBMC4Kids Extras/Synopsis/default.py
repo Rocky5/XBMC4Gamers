@@ -379,7 +379,7 @@ def pars_font_xml(Font_Path):
 			for line in fileinput.FileInput(Font_Path,inplace=1):
 				if '<fontset' in line:
 					line = line.replace(line,line+Fonts)
-				print line
+				print line,
 				fonts_installed = 1
 	
 def check_fonts():
