@@ -1,5 +1,9 @@
+07/04/2017
+	1) Updated the no banner and no poster images.
+
+
 05/03/2017
-1) Redone the synopsis _Script*.xml files animations.
+	1) Redone the synopsis _Script*.xml files animations.
 
 Synopsis script changes:
 	1) Slight change to the delay for the button focus in preview video view.
