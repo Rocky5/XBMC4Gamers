@@ -1,3 +1,9 @@
+11/05/2017
+	1) Fixed a couple of the scripts in the skin scripts menu.
+	( Forgot to update the fonts for there GUI elements )
+	2) Updated the synopsis script to auto adjust the rating so to cut down on images.
+	
+
 07/04/2017
 	1) Updated the no banner and no poster images.
 

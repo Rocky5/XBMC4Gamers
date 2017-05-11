@@ -52,7 +52,7 @@
 										<description>Action Button</description>
 										<width>300</width>
 										<height>42</height>
-										<font>font12</font>
+										<font>font23</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Clean Thumbs</label>
@@ -63,7 +63,7 @@
 										<description>Action Button</description>
 										<width>300</width>
 										<height>42</height>
-										<font>font12</font>
+										<font>font23</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Generate Thumbs</label>
@@ -74,7 +74,7 @@
 										<description>Action Button</description>
 										<width>300</width>
 										<height>42</height>
-										<font>font12</font>
+										<font>font23</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Remove Thumbs</label>

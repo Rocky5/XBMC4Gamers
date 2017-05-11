@@ -163,7 +163,28 @@ def synopsis_mode_text():
 			pass
 		try: # GameRating
 			Current_Window.setProperty( 'Synopsis_rating', Output.rating.string )
-			Current_Window.setProperty( 'Synopsis_rating_alt', Output.rating.string )
+			if "0" <= Output.rating.string < "1":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "0" )
+			if "1" <= Output.rating.string < "2":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "1" )
+			if "2" <= Output.rating.string < "3":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "2" )
+			if "3" <= Output.rating.string < "4":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "3" )
+			if "4" <= Output.rating.string < "5":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "4" )
+			if "5" <= Output.rating.string < "6":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "5" )
+			if "6" <= Output.rating.string < "7":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "6" )
+			if "7" <= Output.rating.string < "8":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "7" )
+			if "8" <= Output.rating.string < "9":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "8" )
+			if "9" <= Output.rating.string <= "9.9":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "9" )
+			if "10" <= Output.rating.string <= "10.9":
+				Current_Window.setProperty( 'Synopsis_rating_alt', "10" )
 		except(TypeError, KeyError, AttributeError):
 			pass
 		try: # Platform

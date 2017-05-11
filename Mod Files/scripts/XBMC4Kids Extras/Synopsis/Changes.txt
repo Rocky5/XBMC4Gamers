@@ -1,3 +1,6 @@
+	Updated: 11 May 2017
+	-- Updated the synopsis script to auto adjust the rating so to cut down on images.
+
 	Updated: 05 March 2017
 	-- Slight change to the delay for the button focus in preview video view.
 	
