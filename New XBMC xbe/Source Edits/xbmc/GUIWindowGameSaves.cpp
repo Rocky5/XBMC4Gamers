@@ -199,7 +199,7 @@ bool CGUIWindowGameSaves::GetDirectory(const CStdString & strDirectory, CFileIte
   {
     CFileItemPtr item = items[i];
 
-    if (!bProgressVisible && timeGetTime()-dwTick>2000 && m_dlgProgress)
+    if (!bProgressVisible && timeGetTime()-dwTick>1500 && m_dlgProgress)
     { // tag loading takes more then 1.5 secs, show a progress dialog
       m_dlgProgress->SetHeading(189);
       m_dlgProgress->SetLine(0, 20120);
@@ -279,8 +279,8 @@ bool CGUIWindowGameSaves::GetDirectory(const CStdString & strDirectory, CFileIte
           }
           if (j == items2.Size())
           {
-            /*item->m_bIsFolder = false;
-            item->SetPath(titlemetaXBX);*/
+            item->m_bIsFolder = true;
+            item->SetPath(titlemetaXBX);
           }
         }
         else
@@ -289,7 +289,7 @@ bool CGUIWindowGameSaves::GetDirectory(const CStdString & strDirectory, CFileIte
           item->m_bIsFolder = false;
           item->SetPath(savemetaXBX);
         }
-        item->GetMusicInfoTag()->SetTitle(item->GetLabel());  // Note we set ID as the TITLE to save code makign a SORT ID and a ID varible to the FileItem
+        item->GetMusicInfoTag()->SetTitle(item->GetLabel());  // Note we set ID as the TITLE to save code making a SORT ID and a ID variable to the FileItem
         item->SetLabel(strDescription);
         item->SetIconImage("defaultProgram.png");
         formatter.FormatLabel2(item.get());

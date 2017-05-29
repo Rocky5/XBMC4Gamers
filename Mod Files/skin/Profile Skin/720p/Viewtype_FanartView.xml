@@ -171,7 +171,7 @@
 								<texturesliderbarfocus border="16,2,16,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
 								<textureslidernib>scrollbar_nib-vertical.png</textureslidernib>
 								<textureslidernibfocus>scrollbar_nib-vertical.png</textureslidernibfocus>
-								<onup>54</onup>
+								<onup>57</onup>
 								<ondown>-</ondown>
 								<showonepage>false</showonepage>
 								<orientation>horizontal</orientation>

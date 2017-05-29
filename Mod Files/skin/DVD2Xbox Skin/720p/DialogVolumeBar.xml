@@ -29,19 +29,30 @@
 						</control>
 						<control type="progress" id="1">
 								<description>Progressbar</description>
-								<posx>10</posx>
+								<posx>20</posx>
 								<posy>20</posy>
-								<width>350</width>
+								<width>320</width>
 								<height>12</height>
 								<info>Player.Volume</info>
 								<visible>true</visible>
 						</control>
 						<control type="image">
-								<posx>360</posx>
-								<posy>9</posy>
-								<width>35</width>
-								<height>35</height>
+								<posx>345</posx>
+								<posy>2</posy>
+								<width>48</width>
+								<height>48</height>
+								<aspectratio>stretch</aspectratio>
 								<texture>icon_volume.png</texture>
+								<visible>!Player.Muted</visible>
+						</control>
+						<control type="image">
+								<posx>345</posx>
+								<posy>2</posy>
+								<width>48</width>
+								<height>48</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>icon_mute.png</texture>
+								<visible>Player.Muted</visible>
 						</control>
 				</control>
 				<!-- Debug Info -->

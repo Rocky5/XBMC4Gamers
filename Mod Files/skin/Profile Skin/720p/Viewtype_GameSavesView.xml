@@ -52,21 +52,7 @@
 										<selectedcolor>blue</selectedcolor>
 										<align>left</align>
 										<aligny>center</aligny>
-										<label>Path: [UPPERCASE]$INFO[ListItem.Path][/UPPERCASE]</label>
-										<visible>!ListItem.IsFolder</visible>
-								</control>
-								<control type="label">
-										<posx>90</posx>
-										<posy>55</posy>
-										<width>1175</width>
-										<height>20</height>
-										<font>font15</font>
-										<textcolor>grey2</textcolor>
-										<selectedcolor>blue</selectedcolor>
-										<align>left</align>
-										<aligny>center</aligny>
 										<label>Path: [UPPERCASE]$INFO[ListItem.FolderPath][/UPPERCASE]</label>
-										<visible>ListItem.IsFolder + !StringCompare(ListItem.Label,..)</visible>
 								</control>
 						</itemlayout>
 						<focusedlayout height="90" width="1175">
@@ -108,21 +94,7 @@
 										<selectedcolor>blue</selectedcolor>
 										<align>left</align>
 										<aligny>center</aligny>
-										<label>Path: [UPPERCASE]$INFO[ListItem.Path][/UPPERCASE]</label>
-										<visible>!ListItem.IsFolder</visible>
-								</control>
-								<control type="label">
-										<posx>90</posx>
-										<posy>55</posy>
-										<width>1175</width>
-										<height>20</height>
-										<font>font15</font>
-										<textcolor>black</textcolor>
-										<selectedcolor>blue</selectedcolor>
-										<align>left</align>
-										<aligny>center</aligny>
 										<label>Path: [UPPERCASE]$INFO[ListItem.FolderPath][/UPPERCASE]</label>
-										<visible>ListItem.IsFolder + !StringCompare(ListItem.Label,..)</visible>
 								</control>
 						</focusedlayout>
 				</control>

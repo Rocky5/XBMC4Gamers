@@ -1,3 +1,10 @@
+29/05/2017
+	1) Fixed all the views scroll bar ids, forgot to update the onup/onleft eg... ids.
+	2) Updated the gamesaves list.
+	3) Fixed the aspectratio of the volume icon and aded in the mute icon.
+	4) Updated guisettings.xml to force 720p and aspectration error increased to 20 for video playback.
+	
+
 11/05/2017
 	1) Fixed a couple of the scripts in the skin scripts menu.
 	( Forgot to update the fonts for there GUI elements )

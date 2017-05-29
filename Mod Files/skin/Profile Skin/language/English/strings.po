@@ -814,7 +814,7 @@ msgid "Show Controls"
 msgstr ""
 
 msgctxt "#32061"
-msgid "Preview Video, Synopsis or Music Controls"
+msgid "Music Controls"
 msgstr ""
 
 msgctxt "#32062"

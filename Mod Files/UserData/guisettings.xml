@@ -674,8 +674,8 @@
 				<calibrate>
 				</calibrate>
 				<defaultplayer>1</defaultplayer>
-				<displayresolution>10</displayresolution>
-				<errorinaspect>3.000000</errorinaspect>
+				<displayresolution>1</displayresolution>
+				<errorinaspect>20.000000</errorinaspect>
 				<fast>true</fast>
 				<flicker>1</flicker>
 				<framerateconversions>0</framerateconversions>

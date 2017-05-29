@@ -304,7 +304,7 @@
 										<texturesliderbarfocus border="2,16,2,16">scrollbar_bar_focus.png</texturesliderbarfocus>
 										<textureslidernib>scrollbar_nib.png</textureslidernib>
 										<textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
-										<onleft>56</onleft>
+										<onleft>55</onleft>
 										<showonepage>false</showonepage>
 										<orientation>vertical</orientation>
 										<visible allowhiddenfocus="true">Control.HasFocus(75)</visible>
