@@ -132,12 +132,39 @@
 										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clear Cache.py )</onclick>
 								</control>
 								<control type="button" id="28">
-										<description>Clear Cache</description>
+										<description>Scripts Menu</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[247] $LOCALIZE[33061]</label>
 										<onclick>ActivateWindow(Scripts)</onclick>
 								</control>
 								<control type="label" id="3">
+										<description>Advanced Stuff</description>
+										<width>1170</width>
+										<height>40</height>
+										<font>font20</font>
+										<textcolor>white</textcolor>
+										<label> Lock Profile</label>
+										<align>center</align>
+										<aligny>center</aligny>
+								</control>
+								<control type="label" id="4">
+										<description>Advanced Stuff</description>
+										<width>1170</width>
+										<height>40</height>
+										<font>font20</font>
+										<textcolor>white</textcolor>
+										<label>$LOCALIZE[32054]</label>
+										<align>center</align>
+										<aligny>center</aligny>
+								</control>
+								<control type="radiobutton" id="29">
+										<description>Adult Profile</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32053]</label>
+										<onclick>Skin.ToggleSetting(AdultProfile)</onclick>
+										<selected>Skin.HasSetting(AdultProfile)</selected>
+								</control>
+								<control type="label" id="5">
 										<description>Debug Stuff</description>
 										<width>1170</width>
 										<height>40</height>
@@ -147,7 +174,7 @@
 										<align>center</align>
 										<aligny>center</aligny>
 								</control>
-								<control type="radiobutton" id="39">
+								<control type="radiobutton" id="49">
 										<description>Debug</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32049]</label>

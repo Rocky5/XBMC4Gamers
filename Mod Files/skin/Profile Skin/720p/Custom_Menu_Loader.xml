@@ -5,6 +5,13 @@
 						<posx>-500</posx>
 						<onfocus>Dialog.Close(1114,true)</onfocus>
 						<onfocus>ActivateWindow(Programs,Games)</onfocus>
+						<visible>Skin.HasSetting(EditMode)</visible>
+						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
+				</control>
+				<control type="button" id="1">
+						<posx>-500</posx>
+						<onclick>ActivateWindow(1116)</onclick>
+						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile)</visible>
 						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
 				</control>
 				<control type="image">
@@ -99,6 +106,19 @@
 						<aligny>center</aligny>
 						<label>[UPPERCASE]$LOCALIZE[32028][/UPPERCASE]</label>
 						<animation effect="fade" start="100" end="0" delay="0" time="100">WindowOpen</animation>
+				</control>
+				<control type="textbox">
+						<posx>355</posx>
+						<posy>305</posy>
+						<width>570</width>
+						<height>321</height>
+						<font>font50</font>
+						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<label>$LOCALIZE[32070]</label>
+						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile)</visible>
+						<animation effect="fade" start="0" end="100" delay="100" time="0">WindowOpen</animation>
 				</control>
 		</controls>
 </window>

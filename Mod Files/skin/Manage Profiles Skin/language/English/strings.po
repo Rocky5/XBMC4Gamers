@@ -782,11 +782,11 @@ msgctxt "#32052"
 msgid "Custom"
 
 msgctxt "#32053"
-msgid ""
+msgid "Enable Adult Profile"
 msgstr ""
 
 msgctxt "#32054"
-msgid ""
+msgid "[COLOR=blue]Enabling this setting will lock this profile if[/COLOR] [B]Edit Mode[/B][COLOR=blue] is disabled[/COLOR]"
 msgstr ""
 
 msgctxt "#32055"

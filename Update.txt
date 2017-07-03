@@ -1,3 +1,8 @@
+04/07/2017
+	1) Added a new Option to the Skin settings that will disable that profile if Edit mode is disabled.
+	( Just like the Manage Profile profile )
+	
+
 29/05/2017
 	1) Fixed all the views scroll bar ids, forgot to update the onup/onleft eg... ids.
 	2) Updated the gamesaves list.
