@@ -782,7 +782,7 @@ msgctxt "#32052"
 msgid "Custom"
 
 msgctxt "#32053"
-msgid "Enable Adult Profile"
+msgid "Enable Profile Lock"
 msgstr ""
 
 msgctxt "#32054"
