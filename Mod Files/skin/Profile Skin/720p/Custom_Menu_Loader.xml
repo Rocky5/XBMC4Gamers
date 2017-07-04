@@ -3,15 +3,14 @@
 		<controls>
 				<control type="button" id="1">
 						<posx>-500</posx>
-						<onfocus>Dialog.Close(1114,true)</onfocus>
-						<onfocus>ActivateWindow(Programs,Games)</onfocus>
-						<visible>Skin.HasSetting(EditMode)</visible>
+						<onclick>ActivateWindow(1116)</onclick>
+						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile)</visible>
 						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
 				</control>
 				<control type="button" id="1">
 						<posx>-500</posx>
-						<onclick>ActivateWindow(1116)</onclick>
-						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile)</visible>
+						<onfocus>Dialog.Close(1114,true)</onfocus>
+						<onfocus>ActivateWindow(Programs,Games)</onfocus>
 						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
 				</control>
 				<control type="image">
