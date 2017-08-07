@@ -1,3 +1,13 @@
+21/07/2017
+	1) Name change to XBMC4Gamers
+		( since not everyone is a kid lol )
+	2) Changed how the faster game loading works, place a file called "faster_games_loading.bin" next to the default.xbe to enable
+		( if the files isn't present it defaults the normal way of scanning folders )
+	3) Changed how preview videos are played in the synopsis view, so you can listen to music and navigate the synopsis.
+		( press A to start playback of the preview video )
+	4) New splash
+
+	
 04/07/2017
 	1) Added a new Option to the Skin settings that will disable that profile if Edit mode is disabled.
 	( Just like the Manage Profile profile )

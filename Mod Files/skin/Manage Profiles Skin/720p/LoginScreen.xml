@@ -6,7 +6,7 @@
 				<posx>0</posx>
 				<posy>0</posy>
 		</coordinates>
-		<onload>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Update Checker.py )</onload>
+		<onload>RunScript( Special://xbmc/scripts/XBMC4Gamers/Utilities/Update Checker.py )</onload>
 		<controls>
 				<control type="button" id="51">
 						<posx>-500</posx>
@@ -102,7 +102,7 @@
 						<posx>-5000</posx>
 						<label>-</label>
 						<onclick>SetFocus(52)</onclick>
-						<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Edit Mode.py )</onclick>
+						<onclick>RunScript( Special://xbmc/scripts/XBMC4Gamers/Utilities/Edit Mode.py )</onclick>
 						<onleft>52</onleft>
 						<onright>52</onright>
 						<onup>52</onup>

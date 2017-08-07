@@ -1,0 +1,87 @@
+<window id="129">
+		<defaultcontrol always="false">3000</defaultcontrol>
+		<coordinates>
+				<system>1</system>
+				<posx>0</posx>
+				<posy>0</posy>
+		</coordinates>
+		<controls>
+				<control type="image">
+						<description>underlay image</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>main-underlay.png</texture>
+						<animation effect="fade" start="0" end="100" time="200">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
+				</control>
+				<control type="group">
+						<posx>447</posx>
+						<posy>236</posy>
+						<animation effect="fade" start="0" end="100" delay="200" time="500">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="500">WindowClose</animation>
+						<control type="image">
+								<description>background image</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>386</width>
+								<height>248</height>
+								<texture>main-background.png</texture>
+								<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="label">
+								<description>heading label</description>
+								<posx>0</posx>
+								<posy>28</posy>
+								<width>386</width>
+								<height>0</height>
+								<align>center</align>
+								<font>font20</font>
+								<label>Clean Program Thumbs</label>
+								<textcolor>black</textcolor>
+						</control>
+						<control type="grouplist">
+								<description>custom grouplist for context buttons</description>
+								<posx>43</posx>
+								<posy>84</posy>
+								<width>386</width>
+								<height>290</height>
+								<itemgap>0</itemgap>
+								<control type="button" id="3000">
+										<description>Action Button</description>
+										<width>300</width>
+										<height>42</height>
+										<font>font23</font>
+										<align>center</align>
+										<textcolor>white</textcolor>
+										<label>Clean Thumbs</label>
+										<texturefocus border="2">main-button-focus.png</texturefocus>
+										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
+								</control>
+								<control type="button" id="3001">
+										<description>Action Button</description>
+										<width>300</width>
+										<height>42</height>
+										<font>font23</font>
+										<align>center</align>
+										<textcolor>white</textcolor>
+										<label>Generate Thumbs</label>
+										<texturefocus border="2">main-button-focus.png</texturefocus>
+										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
+								</control>
+								<control type="button" id="3002">
+										<description>Action Button</description>
+										<width>300</width>
+										<height>42</height>
+										<font>font23</font>
+										<align>center</align>
+										<textcolor>white</textcolor>
+										<label>Remove Thumbs</label>
+										<texturefocus border="2">main-button-focus.png</texturefocus>
+										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
+								</control>
+						</control>
+				</control>
+		</controls>
+</window>

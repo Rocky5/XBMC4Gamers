@@ -10,7 +10,7 @@
 								<posy>270</posy>
 								<width>760</width>
 								<height>115</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texture>
+								<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/underlay.png</texture>
 						</control>
 						<control type="textbox">
 								<posx>260</posx>
@@ -51,8 +51,8 @@
 										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_23)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
-										<texturefocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
-										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
+										<texturefocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
+										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
 										<onclick>Skin.ToggleSetting(SynopsisMode)</onclick>
 										<onclick>Skin.SetBool(Synopsis)</onclick>
 										<onclick>Skin.Reset(Synopsis_alt_view)</onclick>
@@ -65,8 +65,8 @@
 										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_24)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
-										<texturefocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
-										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
+										<texturefocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
+										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
 										<selected>Skin.HasSetting(Synopsis)</selected>
 										<enable>Skin.HasSetting(SynopsisMode)</enable>
 								</control>
@@ -77,8 +77,8 @@
 										<label> $INFO[Window(MyPrograms).Property(Synopsis_label_25)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
-										<texturefocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
-										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
+										<texturefocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
+										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
 										<onclick>Skin.ToggleSetting(Synopsis)</onclick>
 										<onclick>Skin.ToggleSetting(Synopsis_alt_view)</onclick>
 										<selected>Skin.HasSetting(Synopsis_alt_view)</selected>
@@ -91,8 +91,8 @@
 										<label> - $INFO[Window(MyPrograms).Property(Synopsis_label_26)]</label>
 										<textcolor>white</textcolor>
 										<focusedcolor>black</focusedcolor>
-										<texturefocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
-										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
+										<texturefocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
+										<texturenofocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
 										<onclick>Skin.ToggleSetting(Synopsis_Autoplay)</onclick>
 										<selected>Skin.HasSetting(Synopsis_Autoplay)</selected>
 										<enable>Skin.HasSetting(Synopsis_alt_view)</enable>
@@ -116,7 +116,7 @@
 												<posy>0</posy>
 												<width>190</width>
 												<height>100</height>
-												<texture border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texture>
+												<texture border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/underlay.png</texture>
 										</control>
 										<control type="image">
 												<posx>20</posx>
@@ -124,7 +124,7 @@
 												<width>150</width>
 												<height>150</height>
 												<texture>$INFO[listitem.icon]</texture>
-												<bordertexture border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/white-back.png</bordertexture>
+												<bordertexture border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/white-back.png</bordertexture>
 												<bordersize>1</bordersize>
 										</control>
 										<control type="label.">
@@ -146,7 +146,7 @@
 												<posy>0</posy>
 												<width>190</width>
 												<height>100</height>
-												<texture border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/thumbfo.png</texture>
+												<texture border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/thumbfo.png</texture>
 										</control>
 										<control type="image">
 												<posx>20</posx>
@@ -154,7 +154,7 @@
 												<width>150</width>
 												<height>150</height>
 												<texture>$INFO[listitem.icon]</texture>
-												<bordertexture border="5">Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/white-back.png</bordertexture>
+												<bordertexture border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/white-back.png</bordertexture>
 												<bordersize>1</bordersize>
 										</control>
 										<control type="label.">
@@ -175,25 +175,25 @@
 												<label>xmv</label>
 												<onclick>Skin.Reset(PreviewFileExtension)</onclick>
 												<onclick>Skin.Reset(PreviewExtension)</onclick>
-												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/xmv.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/flagging/xmv.png</icon>
 										</item>
 										<item id="1">
 												<label>wmv</label>
 												<onclick>Skin.SetString(PreviewFileExtension,wmv)</onclick>
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
-												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/wmv.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/flagging/wmv.png</icon>
 										</item>
 										<item id="2">
 												<label>mp4</label>
 												<onclick>Skin.SetString(PreviewFileExtension,mp4)</onclick>
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
-												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/h264.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/flagging/h264.png</icon>
 										</item>
 										<item id="3">
 												<label>mpg</label>
 												<onclick>Skin.SetString(PreviewFileExtension,mpg)</onclick>
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
-												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/mpegvideo.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/flagging/mpegvideo.png</icon>
 										</item>
 										<!-- <item id="4">
 												<label>$LOCALIZE[32052]</label>
@@ -201,7 +201,7 @@
 												<onclick>Skin.SetString(PreviewFileExtension,ChangeMe)</onclick>
 												<onclick>Skin.SetString(PreviewFileExtension)</onclick>
 												<onclick>Skin.SetBool(PreviewExtension)</onclick>
-												<icon>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/flagging/custom.png</icon>
+												<icon>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/flagging/custom.png</icon>
 											</item>  -->
 								</content>
 						</control>

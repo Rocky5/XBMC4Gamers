@@ -11,7 +11,7 @@
 								<posy>0</posy>
 								<width>1280</width>
 								<height>720</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/underlay.png</texture>
+								<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/underlay.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<colordiffuse>88000000</colordiffuse>
 						</control>
@@ -21,7 +21,7 @@
 								<posy>275</posy>
 								<width>170</width>
 								<height>170</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/settings/busy.png</texture>
+								<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/busy.png</texture>
 								<aspectratio>keep</aspectratio>
 								<colordiffuse>AAFFFFFF</colordiffuse>
 								<animation effect="rotate" start="0" end="360" center="auto" time="500" loop="true" condition="true">conditional</animation>

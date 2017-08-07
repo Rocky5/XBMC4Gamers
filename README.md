@@ -1,4 +1,4 @@
-# XBMC4Kids
+# XBMC4Gamers
 This is a skin for XBMC4Xbox v3.5.3+ that utilises custom python scripts that I created to do specific tasks.
 
 The main objective of this project was to allow my kids to use the same Xbox but also have there own saves, so to stop fighting lol. Now the original Xbox doesn't allow this by default, so I had to think outside of the box and learn and create some Python script to do the job. It works quite well.
@@ -10,9 +10,9 @@ Now since the above, I have added scripts that fixes scrambled screen games on v
 Setup/Installation:
 
 	1)	Download XBMC. *
-	2)	Place the XBMC folder inside the XBMC4Kids-master folder.
-	3)	Double click "Build XBMC4Kids.bat"
-	4)	FTP the XBMC4Kids folder anywhere on your Xbox. **
+	2)	Place the XBMC folder inside the XBMC4Gamers-master folder.
+	3)	Double click "Build XBMC4Gamers.bat"
+	4)	FTP the XBMC4Gamers folder anywhere on your Xbox. **
 		
 		*
 			https://drive.google.com/folderview?pli=1&ddrp=1&id=0B9zNhNcNUdDTRVFBbHcwc2JCZFE#list

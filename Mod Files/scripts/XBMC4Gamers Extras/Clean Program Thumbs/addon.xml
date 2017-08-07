@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<addon id="Clean Program Thumbs" name="Clean Program Thumbs" version="1.0.0" provider-name="Rocky5">
+		<requires>
+				<import addon="xbmc.python" version="1.0" />
+		</requires>
+		<extension point="xbmc.python.script" library="default.py" />
+		<extension point="xbmc.addon.metadata">
+				<platform>all</platform>
+				<summary lang="en">Clean Program Thumbs Script</summary>
+				<description lang="en">Use to clean the programs thumbnails. This is handy for updating thumbnails without having to do it manually.</description>
+		</extension>
+</addon>

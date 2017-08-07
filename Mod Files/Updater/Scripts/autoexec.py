@@ -1,7 +1,7 @@
 ########################################################################################################################################
 '''
 	Script by Rocky5
-	Used to update XBMC4Kids & migrate profiles
+	Used to update XBMC4Gamers & migrate profiles
 	
 	Update: 10 December 2016
 	-- Gets the xbe name dynamically now, this will allow installations to work with custom xbe names.
@@ -32,7 +32,7 @@ print "| -----------------------------------------------------------------------
 # Sets paths, for profiles names & locations.
 ########################################################################################################################################
 
-# Gets current XBMC4Kids directory.
+# Gets current XBMC4Gamers directory.
 CharCount = 100 # How many characters you want after 'The executable running is: '
 with open( xbmc.translatePath( "special://xbmc" ) + "xbmc.log", "r" ) as XBMCLOG:
 	for line in XBMCLOG:
@@ -42,10 +42,10 @@ with open( xbmc.translatePath( "special://xbmc" ) + "xbmc.log", "r" ) as XBMCLOG
 			Working_Directory = Working_Directory[:-20] # Removed Updater\default.xbe
 			for XBE in os.listdir( Working_Directory ):
 				if XBE.endswith( ".xbe" ):
-					XBMC4KidsXBE = XBE
+					XBMC4GamersXBE = XBE
 
-XBMC4Kids_Update_Path				= os.path.join( Working_Directory,"Updater\\Update Files\\" )
-XBMC4Kids_Update_Path_Profiles		= os.path.join( XBMC4Kids_Update_Path,"UserData\\Profiles\\" )
+XBMC4Gamers_Update_Path				= os.path.join( Working_Directory,"Updater\\Update Files\\" )
+XBMC4Gamers_Update_Path_Profiles		= os.path.join( XBMC4Gamers_Update_Path,"UserData\\Profiles\\" )
 Profiles							= os.path.join( Working_Directory,"UserData\\Profiles\\" )
 pDialog								= xbmcgui.DialogProgress()
 dialog								= xbmcgui.Dialog()
@@ -54,11 +54,11 @@ dialog								= xbmcgui.Dialog()
 ########################################################################################################################################
 # Get list of directories and then parse them so I can id each directory then remove everything & then copy the new stuff over.
 ########################################################################################################################################
-if os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
+if os.path.isfile( os.path.join( Working_Directory, XBMC4GamersXBE ) ):
 
-	dialog.ok( "XBMC4Kids Updater","","Welcome to the XBMC4Kids Updater","Press (A) to proceed with the update." )
+	dialog.ok( "XBMC4Gamers Updater","","Welcome to the XBMC4Gamers Updater","Press (A) to proceed with the update." )
 
-	pDialog.create( "XBMC4Kids Updater" )
+	pDialog.create( "XBMC4Gamers Updater" )
 
 	if os.path.isdir( Profiles + "DVD2Xbox" ):
 		shutil.rmtree( Profiles + "DVD2Xbox" )
@@ -95,7 +95,7 @@ if os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
 			</profile>\n'
 	Footer_Data = '</profiles>'
 
-	WriteXML = open( XBMC4Kids_Update_Path + "UserData\\Profiles.xml",'w' )
+	WriteXML = open( XBMC4Gamers_Update_Path + "UserData\\Profiles.xml",'w' )
 
 	WriteXML.write( Header_Data )
 	ProfileMP = Profile_Data % ( "Manage Profiles","special://masterprofile/","special://masterprofile/Thumbnails/Profiles/ManageProfiles.tbn" )
@@ -146,7 +146,7 @@ if os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
 	pDialog.update( 0,"Removing Game Thumbnails","Processing" )
 	for Items in os.listdir( Profiles ):
 		CopyFrom	= os.path.join( Profiles, Items )
-		CopyTo		= os.path.join( XBMC4Kids_Update_Path_Profiles, Items )
+		CopyTo		= os.path.join( XBMC4Gamers_Update_Path_Profiles, Items )
 		progress += 1
 		pDialog.update( int ( progress / float( len ( os.listdir( Profiles ) ) ) *100 ),"Copying Profiles",Items )
 		if os.path.isdir( CopyFrom ):
@@ -201,18 +201,18 @@ if os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
 		pDialog.update(90,"Removing","xbmc.old.log" )
 	if os.path.isfile( os.path.join( Working_Directory, "xbmc.old.log" ) ):
 		os.remove( os.path.join( Working_Directory, "xbmc.old.log" ) )
-		pDialog.update(95,"Removing",XBMC4KidsXBE )
-	if os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
-		os.remove( os.path.join( Working_Directory, XBMC4KidsXBE ) )
+		pDialog.update(95,"Removing",XBMC4GamersXBE )
+	if os.path.isfile( os.path.join( Working_Directory, XBMC4GamersXBE ) ):
+		os.remove( os.path.join( Working_Directory, XBMC4GamersXBE ) )
 		pDialog.update(100,"","Done" )
 
 	# Copy new files over.
 	progress = 0
-	for Items in os.listdir( XBMC4Kids_Update_Path ):
-		CopyFrom	= os.path.join( XBMC4Kids_Update_Path, Items )
+	for Items in os.listdir( XBMC4Gamers_Update_Path ):
+		CopyFrom	= os.path.join( XBMC4Gamers_Update_Path, Items )
 		CopyTo		= os.path.join( Working_Directory, Items )
 		progress += 1
-		pDialog.update( int ( progress / float( len ( os.listdir( XBMC4Kids_Update_Path ) ) ) *100 ),"Installing Update Files",Items )
+		pDialog.update( int ( progress / float( len ( os.listdir( XBMC4Gamers_Update_Path ) ) ) *100 ),"Installing Update Files",Items )
 		if os.path.isdir( CopyFrom ):
 			try:
 				shutil.copytree( CopyFrom, CopyTo )
@@ -229,14 +229,14 @@ if os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
 	Success_File.close()
 
 	# Rename xbe back to what it was before the updater was run.
-	if not os.path.isfile( os.path.join( Working_Directory, XBMC4KidsXBE ) ):
-		os.rename( os.path.join( Working_Directory, "default.xbe" ), os.path.join( Working_Directory, XBMC4KidsXBE ) )
+	if not os.path.isfile( os.path.join( Working_Directory, XBMC4GamersXBE ) ):
+		os.rename( os.path.join( Working_Directory, "default.xbe" ), os.path.join( Working_Directory, XBMC4GamersXBE ) )
 	else:
 		pass
 
 	pDialog.close()
-	dialog.ok( "XBMC4Kids Updater","","Done, XBMC will now reload." )
+	dialog.ok( "XBMC4Gamers Updater","","Done, XBMC will now reload." )
 	
-	xbmc.executebuiltin( "XBMC.RunXBE(%s)" % os.path.join( Working_Directory, XBMC4KidsXBE ) )
+	xbmc.executebuiltin( "XBMC.RunXBE(%s)" % os.path.join( Working_Directory, XBMC4GamersXBE ) )
 else:
-	dialog.ok( "Error","","Have you placed the [B]Updater[/B] folder","inside your [B]XBMC4Kids[/B] directory?" )
+	dialog.ok( "Error","","Have you placed the [B]Updater[/B] folder","inside your [B]XBMC4Gamers[/B] directory?" )

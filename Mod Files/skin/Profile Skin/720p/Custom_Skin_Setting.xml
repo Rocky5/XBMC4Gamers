@@ -51,7 +51,7 @@
 										<description>Startup Playback Path</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32090]</label>
-										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Generate Random Playlist.py )</onclick>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Gamers/Utilities/Generate Random Playlist.py )</onclick>
 										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
 								</control>
 								<control type="button" id="13">
@@ -106,7 +106,7 @@
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32071]</label>
 										<label2>$LOCALIZE[32072]</label2>
-										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py )</onclick>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Gamers/Utilities/Clean Thumbs.py )</onclick>
 										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
 								</control>
 								<control type="button" id="25">
@@ -114,7 +114,7 @@
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32073]</label>
 										<label2>$LOCALIZE[32074]</label2>
-										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,0,1 )</onclick>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Gamers/Utilities/Clean Thumbs.py,0,1 )</onclick>
 										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
 								</control>
 								<control type="button" id="26">
@@ -122,14 +122,14 @@
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32075]</label>
 										<label2>$LOCALIZE[32076]</label2>
-										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clean Thumbs.py,1,0 )</onclick>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Gamers/Utilities/Clean Thumbs.py,1,0 )</onclick>
 										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
 								</control>
 								<control type="button" id="27">
 										<description>Clear Cache</description>
 										<include>CustomSettingsButtons</include>
 										<label>$LOCALIZE[32012]</label>
-										<onclick>RunScript( Special://xbmc/scripts/XBMC4Kids/Utilities/Clear Cache.py )</onclick>
+										<onclick>RunScript( Special://xbmc/scripts/XBMC4Gamers/Utilities/Clear Cache.py )</onclick>
 								</control>
 								<control type="button" id="28">
 										<description>Scripts Menu</description>

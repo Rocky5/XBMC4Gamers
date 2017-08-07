@@ -142,7 +142,7 @@ void CGUIWindowPrograms::GetContextButtons(int itemNumber, CContextButtons &butt
     {
       if (item->IsXBE() || item->IsShortCut())
       {
-        if (CFile::Exists("special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py") || CFile::Exists("special://xbmc/scripts/Synopsis/default.py"))
+        if (CFile::Exists("special://xbmc/scripts/XBMC4Gamers Extras/Synopsis/default.py") || CFile::Exists("special://xbmc/scripts/Synopsis/default.py"))
 		{
           buttons.Add(CONTEXT_BUTTON_SYNOPSIS, "Synopsis");         // Synopsis
 		}
@@ -268,9 +268,9 @@ bool CGUIWindowPrograms::OnContextButton(int itemNumber, CONTEXT_BUTTON button)
 
   case CONTEXT_BUTTON_SYNOPSIS:
     {
-	  if (CFile::Exists("special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py"))
+	  if (CFile::Exists("special://xbmc/scripts/XBMC4Gamers Extras/Synopsis/default.py"))
 	  {
-        CBuiltins::Execute("runscript(special://xbmc/scripts/XBMC4Kids Extras/Synopsis/default.py)");
+        CBuiltins::Execute("runscript(special://xbmc/scripts/XBMC4Gamers Extras/Synopsis/default.py)");
       }
 	  else
 	  {
@@ -668,17 +668,48 @@ bool CGUIWindowPrograms::GetDirectory(const CStdString &strDirectory, CFileItemL
       m_dlgProgress->Progress();
     }
 
-    if (item->m_bIsFolder && !item->IsParentFolder() && !item->IsPlugin())
+    if (item->m_bIsFolder && !item->IsParentFolder() && !item->IsPlugin() && CFile::Exists("special://xbmc/faster_game_Loading.bin"))
     { // folder item - let's check for a default.xbe file, and flatten if we have one
       CStdString defaultXBE;
       URIUtils::AddFileToFolder(item->GetPath(), "default.xbe", defaultXBE);
-	/*if (CFile::Exists(defaultXBE))
+      item->SetPath(defaultXBE);
+      item->m_bIsFolder = false;
+    }
+    else if (item->IsShortCut())
+    { // resolve the shortcut to set it's description etc.
+      // and save the old shortcut path (so we can reassign it later)
+      CShortcut cut;
+      if (cut.Create(item->GetPath()))
+      {
+        shortcutPath = item->GetPath();
+        item->SetPath(cut.m_strPath);
+        item->SetThumbnailImage(cut.m_strThumb);
+
+        LABEL_MASKS labelMasks;
+        m_guiState->GetSortMethodLabelMasks(labelMasks);
+        CLabelFormatter formatter("", labelMasks.m_strLabel2File);
+        if (!cut.m_strLabel.IsEmpty())
+        {
+          item->SetLabel(cut.m_strLabel);
+          __stat64 stat;
+          if (CFile::Stat(item->GetPath(),&stat) == 0)
+            item->m_dwSize = stat.st_size;
+
+          formatter.FormatLabel2(item.get());
+          item->SetLabelPreformated(true);
+        }
+      }
+    }
+
+    if (item->m_bIsFolder && !item->IsParentFolder() && !item->IsPlugin() && !CFile::Exists("special://xbmc/faster_game_Loading.bin"))
+    { // folder item - let's check for a default.xbe file, and flatten if we have one
+      CStdString defaultXBE;
+      URIUtils::AddFileToFolder(item->GetPath(), "default.xbe", defaultXBE);
+	if (CFile::Exists(defaultXBE))
       { // yes, format the item up
         item->SetPath(defaultXBE);
         item->m_bIsFolder = false;
-      }*/
-      item->SetPath(defaultXBE);
-      item->m_bIsFolder = false;
+      }
     }
     else if (item->IsShortCut())
     { // resolve the shortcut to set it's description etc.

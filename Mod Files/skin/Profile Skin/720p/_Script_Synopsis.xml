@@ -9,7 +9,7 @@
 						<posy>0</posy>
 						<width>1280</width>
 						<height>720</height>
-						<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
+						<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
 						<animation effect="fade" start="0" end="100" delay="0" time="100">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" delay="300" time="100">WindowClose</animation>
 				</control>
@@ -35,7 +35,7 @@
 								<posy>70</posy>
 								<width>800</width>
 								<height>570</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
+								<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
@@ -46,7 +46,7 @@
 								<posy>70</posy>
 								<width>80</width>
 								<height>570</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
+								<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
@@ -57,7 +57,7 @@
 								<posy>70</posy>
 								<width>390</width>
 								<height>570</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
+								<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
@@ -69,7 +69,7 @@
 								<posy>70</posy>
 								<width>390</width>
 								<height>570</height>
-								<texture fallback="Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_no_poster.png">$INFO[Window(MyPrograms).Property(Synopsis_poster)]</texture>
+								<texture fallback="Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.png">$INFO[Window(MyPrograms).Property(Synopsis_poster)]</texture>
 								<bordersize>10</bordersize>
 								<aspectratio>stretch</aspectratio>
 								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
@@ -143,7 +143,7 @@
 										<posy>532</posy>
 										<width>185</width>
 										<height>33</height>
-										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/star_rating\rating$INFO[Window(MyPrograms).Property(Synopsis_rating_alt)].png</texture>
+										<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/star_rating\rating$INFO[Window(MyPrograms).Property(Synopsis_rating_alt)].png</texture>
 										<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="label">
@@ -163,7 +163,7 @@
 										<posy>488</posy>
 										<width>355</width>
 										<height>80</height>
-										<texture fallback="Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_no_banner.png">$INFO[Window(MyPrograms).Property(Synopsis_banner)]</texture>
+										<texture fallback="Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_banner.png">$INFO[Window(MyPrograms).Property(Synopsis_banner)]</texture>
 										<aspectratio>stretch</aspectratio>
 								</control>
 						</control>
@@ -391,6 +391,19 @@
 								<animation effect="fade" start="0" end="100" delay="800" time="600">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
+						<control type="textbox">
+								<posx>530</posx>
+								<posy>325</posy>
+								<width>700</width>
+								<height>275</height>
+								<font>synopsis_font35</font>
+								<align>center</align>
+								<textcolor>20FFFFFF</textcolor>
+								<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>
+								<visible>ControlGroup(9001).HasFocus(13)</visible>
+								<animation effect="fade" start="0" end="100" delay="800" time="600">WindowOpen</animation>
+								<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+						</control>
 						<control type="videowindow">
 								<description>video preview window</description>
 								<posx>530</posx>
@@ -421,28 +434,25 @@
 												<width>80</width>
 												<height>80</height>
 												<label>-</label>
-												<onfocus>stop</onfocus>
 												<onclick>RunXBE($INFO[Window(MyPrograms).Property(Synopsis_xbe)])</onclick>
 												<texturenofocus>-</texturenofocus>
-												<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+												<texturefocus>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
 										</control>
 										<control type="button" id="11">
 												<description>Synopsis Full</description>
 												<width>80</width>
 												<height>80</height>
 												<label>-</label>
-												<onfocus>stop</onfocus>
 												<texturenofocus>-</texturenofocus>
-												<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+												<texturefocus>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
 										</control>
 										<control type="button" id="12">
 												<description>Synopsis Screenshots</description>
 												<width>80</width>
 												<height>80</height>
 												<label>-</label>
-												<onfocus>stop</onfocus>
 												<texturenofocus>-</texturenofocus>
-												<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+												<texturefocus>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
 										</control>
 										<control type="button" id="13">
 												<description>Synopsis Video</description>
@@ -451,10 +461,10 @@
 												<label>-</label>
 												<onclick>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onclick>
 												<onclick>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onclick>
-												<onfocus>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onfocus>
-												<onfocus>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onfocus>
+												<!-- <onfocus>PlayWith($INFO[Window(MyPrograms).Property(Player_Type)])</onfocus> -->
+												<!-- <onfocus>playmedia($INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Path)],1,noresume)</onfocus> -->
 												<texturenofocus>-</texturenofocus>
-												<texturefocus>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
+												<texturefocus>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_button-focus.png</texturefocus>
 										</control>
 								</control>
 								<!-- Icons -->
@@ -464,7 +474,7 @@
 										<posy>195</posy>
 										<width>80</width>
 										<height>80</height>
-										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_controller.png</texture>
+										<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_controller.png</texture>
 										<aspectratio>keep</aspectratio>
 								</control>
 								<control type="image">
@@ -473,7 +483,7 @@
 										<posy>275</posy>
 										<width>80</width>
 										<height>80</height>
-										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_full.png</texture>
+										<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_full.png</texture>
 										<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="image">
@@ -482,7 +492,7 @@
 										<posy>355</posy>
 										<width>80</width>
 										<height>80</height>
-										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_screenshots.png</texture>
+										<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_screenshots.png</texture>
 										<aspectratio>stretch</aspectratio>
 								</control>
 								<control type="image">
@@ -491,7 +501,7 @@
 										<posy>435</posy>
 										<width>80</width>
 										<height>80</height>
-										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_video.png</texture>
+										<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_video.png</texture>
 										<aspectratio>stretch</aspectratio>
 								</control>
 						</control>
@@ -508,7 +518,7 @@
 										<width>1202</width>
 										<height>614</height>
 										<aspectratio>stretch</aspectratio>
-										<texture diffuse="Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_diffuse.png">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
+										<texture diffuse="Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_diffuse.png">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
 										<animation effect="fade" start="0" end="100" delay="900" time="400">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 								</control>
@@ -518,7 +528,7 @@
 										<posy>59</posy>
 										<width>1202</width>
 										<height>614</height>
-										<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_background.png</texture>
+										<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_background.png</texture>
 										<aspectratio>stretch</aspectratio>
 										<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
@@ -852,7 +862,7 @@
 								<width>1080</width>
 								<height>614</height>
 								<aspectratio>stretch</aspectratio>
-								<texture diffuse="Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+								<texture diffuse="Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 								<animation effect="fade" start="0" end="100" delay="900" time="400">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 						</control>
@@ -862,7 +872,7 @@
 								<posy>59</posy>
 								<width>1080</width>
 								<height>614</height>
-								<texture>Special://xbmc/scripts/XBMC4Kids Extras/synopsis/resources/textures/synopsis_background_alt.png</texture>
+								<texture>Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_background_alt.png</texture>
 								<aspectratio>stretch</aspectratio>
 								<animation effect="fade" start="0" end="100" delay="400" time="400">WindowOpen</animation>
 								<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>

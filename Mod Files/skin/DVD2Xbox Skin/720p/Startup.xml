@@ -1,5 +1,5 @@
 <window id="2999">
-		<onload>RunScript( Special://xbmc/scripts/XBMC4Kids/default.py )</onload>
+		<onload>RunScript( Special://xbmc/scripts/XBMC4Gamers/default.py )</onload>
 		<defaultcontrol always="true">1</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
