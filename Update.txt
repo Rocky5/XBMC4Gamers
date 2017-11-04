@@ -1,3 +1,7 @@
+04/11/2017
+	1) Forgot to update the "Synopsis Script and XML's.zip" with the new xbe additions and also updated the skin xml files to match the main XBMC4Gamers ones.
+
+
 21/07/2017
 	1) Name change to XBMC4Gamers
 		( since not everyone is a kid lol )
