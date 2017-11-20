@@ -48,7 +48,7 @@ Move "Update Files" "Updater"
 
 cls
 Echo: & Echo: & Echo:
-Echo  Place the "Updater" folder inside your installation of XBMC4Kids
+Echo  Place the "Updater" folder inside your installation of XBMC4Gamers
 Echo  that is on your Xbox.
 timeout /t 8 >NUL
 cls

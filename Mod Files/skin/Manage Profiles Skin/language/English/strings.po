@@ -680,7 +680,7 @@ msgid "Individual save directories for each profile"
 msgstr ""
 
 msgctxt "#32027"
-msgid "[B]Note:[/B] If you're wanting to use [B]XBMC4Kids[/B] as an application or an individual profile then I would advise leaving it disabled."
+msgid "[B]Note:[/B] If you're wanting to use [B]XBMC4Gamers[/B] as an application or an individual profile then I would advise leaving it disabled."
 msgstr ""
 
 msgctxt "#32028"
