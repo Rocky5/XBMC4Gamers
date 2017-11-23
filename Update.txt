@@ -1,3 +1,10 @@
+23/11/2017
+	1) New fog.jpg file for custom fanart fog colours. fog.jpg goes in the _Resources\artwork\ folder.
+		( Idea by Jay Yardley )
+	2) Updated a couple textures.
+	3) Redone the readme.md file
+
+
 20/11/2017
 	1) Changed the few instances of XBMC4Kids to XBMC4Gamers, forgot to change these files :$
 

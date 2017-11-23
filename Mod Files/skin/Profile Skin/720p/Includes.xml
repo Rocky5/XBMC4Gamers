@@ -70,6 +70,15 @@
 						<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart)</visible>
 						<control type="image">
 								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>720</height>
+								<fadetime>FanartCrossfadeTime</fadetime>
+								<texture background="true" diffuse="fanart_diffuse_Custom.png">$INFO[listitem.path,,_resources\artwork\fog.jpg]</texture>
+								<visible>Skin.HasSetting(customfanartfog)</visible>
+						</control>
+						<control type="image">
+								<posx>0</posx>
 								<posy>45</posy>
 								<width>1280</width>
 								<height>675</height>
