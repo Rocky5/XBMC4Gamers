@@ -112,7 +112,7 @@
 												<icon>thumbs/FileManager.png</icon>
 										</item>
 										<item>
-												<label>166</label>
+												<label>20077</label>
 												<label2>31407</label2>
 												<onclick>ActivateWindow(1111)</onclick>
 												<icon>thumbs/SkinSettings.png</icon>

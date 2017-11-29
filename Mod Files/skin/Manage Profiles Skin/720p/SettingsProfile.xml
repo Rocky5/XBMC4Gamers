@@ -23,15 +23,35 @@
 										<aspectratio>scale</aspectratio>
 										<texture border="2,2,2,2">scrollbar_bar_back.png</texture>
 								</control>
-								<control type="group">
-										<control type="radiobutton" id="9001">
-												<description>Default Button</description>
+								<control type="grouplist" id="9000">
+										<posx>595</posx>
+										<posy>370</posy>
+										<width>570</width>
+										<height>250</height>
+										<onleft>2</onleft>
+										<onright>-</onright>
+										<onup>-</onup>
+										<ondown>-</ondown>
+										<itemgap>1</itemgap>
+										<scrolltime>0</scrolltime>
+										<orientation>vertical</orientation>
+										<control type="textbox" id="9001">
+												<posx>595</posx>
+												<posy>455</posy>
+												<width>570</width>
+												<height>45</height>
+												<font>font15</font>
+												<textcolor>grey2</textcolor>
+												<scroll>true</scroll>
+												<align>center</align>
+												<label>$LOCALIZE[32027]</label>
+										</control>
+										<control type="radiobutton" id="9002">
+												<description>Individual saves Button</description>
 												<posx>595</posx>
 												<posy>370</posy>
 												<width>570</width>
-												<height>70</height>
-												<onleft>2</onleft>
-												<ondown>9002</ondown>
+												<height>45</height>
 												<font>font20</font>
 												<label>  $LOCALIZE[32026]</label>
 												<textcolor>white</textcolor>
@@ -41,25 +61,12 @@
 												<onclick>Skin.ToggleSetting(UseProfiles)</onclick>
 												<selected>Skin.HasSetting(UseProfiles)</selected>
 										</control>
-										<control type="textbox">
-												<posx>595</posx>
-												<posy>455</posy>
-												<width>570</width>
-												<height>70</height>
-												<font>font17</font>
-												<textcolor>grey2</textcolor>
-												<scroll>true</scroll>
-												<align>center</align>
-												<label>$LOCALIZE[32027]</label>
-										</control>
-										<control type="button" id="9002">
-												<description>Default Button</description>
+										<control type="button" id="9003">
+												<description>Birthdays Button</description>
 												<posx>595</posx>
 												<posy>515</posy>
 												<width>570</width>
-												<height>70</height>
-												<onleft>2</onleft>
-												<onup>9001</onup>
+												<height>45</height>
 												<font>font20</font>
 												<label>  $LOCALIZE[32077]</label>
 												<textcolor>white</textcolor>
@@ -67,6 +74,38 @@
 												<texturefocus border="5">thumbfO.png</texturefocus>
 												<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
 												<onclick>ActivateWindow(1115)</onclick>
+										</control>
+										<control type="radiobutton" id="9004">
+												<description>Intro Button</description>
+												<posx>595</posx>
+												<posy>515</posy>
+												<width>570</width>
+												<height>45</height>
+												<font>font20</font>
+												<label>  $LOCALIZE[32084]</label>
+												<textcolor>white</textcolor>
+												<focusedcolor>black</focusedcolor>
+												<texturefocus border="5">thumbfO.png</texturefocus>
+												<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
+												<onclick>Skin.ToggleSetting(introenabled)</onclick>
+												<onclick>RunScript( Special://xbmc/scripts/XBMC4Gamers/Utilities/Disable Splash.py )</onclick>
+												<selected>Skin.HasSetting(introenabled)</selected>
+										</control>
+										<control type="button" id="9005">
+												<description>Intro select Button</description>
+												<posx>595</posx>
+												<posy>515</posy>
+												<width>570</width>
+												<height>45</height>
+												<font>font20</font>
+												<label>  &gt; $LOCALIZE[32085]</label>
+												<label2>  $INFO[Skin.String(selectedintrofile)]</label2>
+												<textcolor>white</textcolor>
+												<focusedcolor>black</focusedcolor>
+												<texturefocus border="5">thumbfO.png</texturefocus>
+												<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
+												<onclick>Skin.SetFile(selectedintrofile,.avi|.mp4|.wmv|.xmv,Special://xbmc/)</onclick>
+												<visible>Skin.HasSetting(introenabled)</visible>
 										</control>
 								</control>
 								<control type="image">
@@ -92,7 +131,7 @@
 										<width>570</width>
 										<height>610</height>
 										<onleft>60</onleft>
-										<onright>9001</onright>
+										<onright>9000</onright>
 										<onup>2</onup>
 										<ondown>2</ondown>
 										<viewtype label="535">list</viewtype>

@@ -656,7 +656,7 @@ msgid "Reload Skin"
 msgstr ""
 
 msgctxt "#32021"
-msgid "Games"
+msgid "XBMC4Gamers"
 msgstr ""
 
 msgctxt "#32022"
@@ -680,7 +680,7 @@ msgid "Individual save directories for each profile"
 msgstr ""
 
 msgctxt "#32027"
-msgid "[B]Note:[/B] If you're wanting to use [B]XBMC4Gamers[/B] as an application or an individual profile then I would advise leaving it disabled."
+msgid "[B]Note:[/B] If you're wanting to use [B]XBMC4Gamers[/B] as an application or an individual profile then I would advise leaving the individual saves directories disabled."
 msgstr ""
 
 msgctxt "#32028"
@@ -790,7 +790,7 @@ msgid "[COLOR=blue]Enabling this setting will lock this profile if[/COLOR] [B]Ed
 msgstr ""
 
 msgctxt "#32055"
-msgid ""
+msgid "Load into Emulators instead of Games"
 msgstr ""
 
 msgctxt "#32056"
@@ -906,11 +906,11 @@ msgid "No Banner.jpg Found"
 msgstr ""
 
 msgctxt "#32084"
-msgid ""
+msgid "Enable Intro"
 msgstr ""
 
 msgctxt "#32085"
-msgid ""
+msgid "Select video file"
 msgstr ""
 
 msgctxt "#32086"
@@ -918,7 +918,7 @@ msgid "Found"
 msgstr ""
 
 msgctxt "#32087"
-msgid ""
+msgid "Disable Splash"
 msgstr ""
 
 msgctxt "#32088"

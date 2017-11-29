@@ -1,3 +1,11 @@
+29/11/2017
+	1) New splash overlay support "Q:\media\splash_overlay.png"
+	2) Added the option to load into Emulators instead of Games when loading a profile.
+	3) Changed the Games text and logo to XBMC4Gamer.
+	4) Added intro video support. Enable in the Manage Profiles profile.
+	5) Updated the skin settings label to say Skin Settings
+
+
 23/11/2017
 	1) New fog.jpg file for custom fanart fog colours. fog.jpg goes in the _Resources\artwork\ folder.
 		( Idea by Jay Yardley )

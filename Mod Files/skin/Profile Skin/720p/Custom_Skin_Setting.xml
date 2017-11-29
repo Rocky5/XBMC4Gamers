@@ -72,6 +72,13 @@
 										<align>center</align>
 										<aligny>center</aligny>
 								</control>
+								<control type="radiobutton" id="19">
+										<description>Load Emulators toggle</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32055]</label>
+										<onclick>Skin.ToggleSetting(LoadEmulators)</onclick>
+										<selected>Skin.HasSetting(LoadEmulators)</selected>
+								</control>
 								<control type="radiobutton" id="20">
 										<description>Launcher toggle</description>
 										<include>CustomSettingsButtons</include>

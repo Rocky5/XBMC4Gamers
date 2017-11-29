@@ -36,7 +36,7 @@
 						<width>40</width>
 						<height>35</height>
 						<aspectratio>keep</aspectratio>
-						<texture>icon_addons.png</texture>
+						<texture>icon_xbmc4gamers.png</texture>
 				</control>
 				<control type="label">
 						<description>Header label</description>

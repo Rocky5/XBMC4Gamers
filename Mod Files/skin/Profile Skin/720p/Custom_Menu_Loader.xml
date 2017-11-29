@@ -9,9 +9,17 @@
 				</control>
 				<control type="button" id="1">
 						<posx>-500</posx>
-						<onfocus>Dialog.Close(1114,true)</onfocus>
 						<onfocus>ActivateWindow(Programs,Games)</onfocus>
+						<onfocus>Dialog.Close(1114,true)</onfocus>
 						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
+						<visible>!Skin.HasSetting(LoadEmulators)</visible>
+				</control>
+				<control type="button" id="1">
+						<posx>-500</posx>
+						<onfocus>ActivateWindow(Programs,Emulators)</onfocus>
+						<onfocus>Dialog.Close(1114,true)</onfocus>
+						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
+						<visible>Skin.HasSetting(LoadEmulators)</visible>
 				</control>
 				<control type="image">
 						<posx>0</posx>

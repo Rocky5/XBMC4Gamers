@@ -22,6 +22,7 @@
 #include "Splash.h"
 #include "guiImage.h"
 #include "FileSystem/File.h"
+#include "settings/AdvancedSettings.h"
 #include "log.h"
 
 using namespace XFILE;
@@ -30,7 +31,6 @@ CSplash::CSplash(const CStdString& imageName)
 {
   m_ImageName = imageName;
 }
-
 
 CSplash::~CSplash()
 {
@@ -55,8 +55,11 @@ void CSplash::Process()
   float w = g_graphicsContext.GetWidth();
   float h = g_graphicsContext.GetHeight();
   CGUIImage* image = new CGUIImage(0, 0, 0, 0, w, h, m_ImageName);
+  CGUIImage* image2 = new CGUIImage(0, 0, 0, 0, w, h, m_ImageName2);
   image->SetAspectRatio(CAspectRatio::AR_STRETCH);
+  image2->SetAspectRatio(CAspectRatio::AR_STRETCH);
   image->AllocResources();
+  image2->AllocResources();
 
   // Store the old gamma ramp
   g_graphicsContext.Get3DDevice()->GetGammaRamp(&oldRamp);
@@ -73,8 +76,11 @@ void CSplash::Process()
   g_graphicsContext.Get3DDevice()->BeginScene();
 #endif
   image->Render();
+  image2->Render();
   image->FreeResources();
+  image2->FreeResources();
   delete image;
+  delete image2;
   //show it on screen
 #ifdef HAS_XBOX_D3D
   g_graphicsContext.Get3DDevice()->BlockUntilVerticalBlank();
@@ -129,11 +135,20 @@ void CSplash::Process()
 
 bool CSplash::Start()
 {
+  if (CFile::Exists("special://xbmc/nosplash.bin"))
+  {
+    return false;
+  }
+  if (!g_advancedSettings.m_splashImage)
+  {
+    return false;
+  }
   if (m_ImageName.IsEmpty() || !CFile::Exists(m_ImageName))
   {
     CLog::Log(LOGDEBUG, "Splash image %s not found", m_ImageName.c_str());
     return false;
   }
+  m_ImageName2 = "Q:\\media\\splash_overlay.png";
   Create();
   Sleep(3000);
   return true;
