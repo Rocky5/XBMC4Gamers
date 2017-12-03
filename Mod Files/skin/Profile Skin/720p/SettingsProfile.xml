@@ -19,7 +19,7 @@
 			<textcolor>white</textcolor>
 			<scroll>true</scroll>
 			<align>center</align>
-			<label>Login Screen is disabled.[CR]You will always login as $INFO[system.profilename]</label>
+			<label>$LOCALIZE[32091]</label>
 			<visible>![System.HasLoginScreen + System.Loggedon]</visible>
 		</control>
 		<control type="textbox">
@@ -31,7 +31,7 @@
 			<textcolor>white</textcolor>
 			<scroll>true</scroll>
 			<align>center</align>
-			<label>Login Screen is enabled.[CR]You will be able to select from multiple profiles.</label>
+			<label>$LOCALIZE[32092]</label>
 			<visible>[System.HasLoginScreen + System.Loggedon]</visible>
 		</control>
 		<control type="grouplist">

@@ -934,11 +934,11 @@ msgid " - [B]Generate[/B] random playlist"
 msgstr ""
 
 msgctxt "#32091"
-msgid ""
+msgid "Login Screen is disabled.[CR]You will always login as $INFO[system.profilename]"
 msgstr ""
 
 msgctxt "#32092"
-msgid ""
+msgid "Login Screen is enabled.[CR]You will be able to select from multiple profiles."
 msgstr ""
 
 msgctxt "#32093"
