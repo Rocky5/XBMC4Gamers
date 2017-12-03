@@ -46,7 +46,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font23</font>
+						<font>size_23</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32021]</label>
 						<visible>!Window.IsVisible(134)</visible>
@@ -59,7 +59,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font23</font>
+						<font>size_23</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32011]</label>
 						<visible>Window.IsVisible(134)</visible>

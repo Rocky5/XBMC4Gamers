@@ -40,7 +40,7 @@
 												<posy>455</posy>
 												<width>570</width>
 												<height>45</height>
-												<font>font15</font>
+												<font>size_15</font>
 												<textcolor>grey2</textcolor>
 												<scroll>true</scroll>
 												<align>center</align>
@@ -52,7 +52,7 @@
 												<posy>370</posy>
 												<width>570</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<label>  $LOCALIZE[32026]</label>
 												<textcolor>white</textcolor>
 												<focusedcolor>black</focusedcolor>
@@ -67,7 +67,7 @@
 												<posy>515</posy>
 												<width>570</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<label>  $LOCALIZE[32077]</label>
 												<textcolor>white</textcolor>
 												<focusedcolor>black</focusedcolor>
@@ -81,7 +81,7 @@
 												<posy>515</posy>
 												<width>570</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<label>  $LOCALIZE[32084]</label>
 												<textcolor>white</textcolor>
 												<focusedcolor>black</focusedcolor>
@@ -97,7 +97,7 @@
 												<posy>515</posy>
 												<width>570</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<label>  &gt; $LOCALIZE[32085]</label>
 												<label2>  $INFO[Skin.String(selectedintrofile)]</label2>
 												<textcolor>white</textcolor>
@@ -160,7 +160,7 @@
 														<posy>10</posy>
 														<width>1175</width>
 														<height>45</height>
-														<font>font35</font>
+														<font>size_35</font>
 														<textcolor>grey2</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -172,7 +172,7 @@
 														<posy>55</posy>
 														<width>1175</width>
 														<height>20</height>
-														<font>font15</font>
+														<font>size_15</font>
 														<textcolor>grey2</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -202,7 +202,7 @@
 														<posy>10</posy>
 														<width>1175</width>
 														<height>45</height>
-														<font>font35</font>
+														<font>size_35</font>
 														<textcolor>black</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -214,7 +214,7 @@
 														<posy>55</posy>
 														<width>1175</width>
 														<height>20</height>
-														<font>font15</font>
+														<font>size_15</font>
 														<textcolor>black</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -259,7 +259,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font23</font>
+						<font>size_23</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[10034]</label>
 				</control>

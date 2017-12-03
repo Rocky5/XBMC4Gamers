@@ -104,7 +104,7 @@
 														<posy>10</posy>
 														<width>620</width>
 														<height>45</height>
-														<font>font35</font>
+														<font>size_35</font>
 														<textcolor>grey2</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -116,7 +116,7 @@
 														<posy>55</posy>
 														<width>620</width>
 														<height>20</height>
-														<font>font15</font>
+														<font>size_15</font>
 														<textcolor>grey2</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -129,7 +129,7 @@
 														<posy>55</posy>
 														<width>620</width>
 														<height>20</height>
-														<font>font15</font>
+														<font>size_15</font>
 														<textcolor>grey2</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -142,7 +142,7 @@
 														<posy>55</posy>
 														<width>620</width>
 														<height>20</height>
-														<font>font15</font>
+														<font>size_15</font>
 														<textcolor>grey2</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -210,7 +210,7 @@
 														<posy>10</posy>
 														<width>620</width>
 														<height>45</height>
-														<font>font35</font>
+														<font>size_35</font>
 														<textcolor>black</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -222,7 +222,7 @@
 														<posy>55</posy>
 														<width>620</width>
 														<height>20</height>
-														<font>font15</font>
+														<font>size_15</font>
 														<textcolor>black</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -235,7 +235,7 @@
 														<posy>55</posy>
 														<width>620</width>
 														<height>20</height>
-														<font>font15</font>
+														<font>size_15</font>
 														<textcolor>black</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>
@@ -248,7 +248,7 @@
 														<posy>55</posy>
 														<width>620</width>
 														<height>20</height>
-														<font>font15</font>
+														<font>size_15</font>
 														<textcolor>black</textcolor>
 														<selectedcolor>blue</selectedcolor>
 														<align>left</align>

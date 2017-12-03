@@ -41,7 +41,7 @@
 												<posy>100</posy>
 												<width>236</width>
 												<height>20</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>white</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>left</align>
@@ -72,7 +72,7 @@
 												<posy>100</posy>
 												<width>236</width>
 												<height>20</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>black</textcolor>
 												<selectedcolor>blue2</selectedcolor>
 												<align>left</align>
@@ -138,7 +138,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font23</font>
+						<font>size_23</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[5]</label>
 						<include>Window_OpenClose_Animation</include>

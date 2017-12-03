@@ -21,7 +21,7 @@
 								<height>40</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font28</font>
+								<font>size_28</font>
 								<label>$LOCALIZE[32050]</label>
 								<textcolor>black</textcolor>
 						</control>
@@ -33,7 +33,7 @@
 								<height>30</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font23</font>
+								<font>size_23</font>
 								<textcolor>black</textcolor>
 								<haspath>yes</haspath>
 						</control>
@@ -76,7 +76,7 @@
 								<height>40</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font21_bold</font>
+								<font>size_21_bold</font>
 								<label>$INFO[Control.GetLabel(1)] $INFO[System.Progressbar,- ,%]</label>
 								<textcolor>black</textcolor>
 						</control>
@@ -89,7 +89,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>-</label>
-								<font>font20</font>
+								<font>size_20</font>
 						</control>
 						<control type="label" id="3">
 								<description>dialog line 2</description>
@@ -100,7 +100,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>-</label>
-								<font>font20</font>
+								<font>size_20</font>
 								<haspath>yes</haspath>
 						</control>
 						<control type="label" id="4">
@@ -112,7 +112,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>-</label>
-								<font>font20</font>
+								<font>size_20</font>
 								<haspath>yes</haspath>
 						</control>
 						<control type="progress">

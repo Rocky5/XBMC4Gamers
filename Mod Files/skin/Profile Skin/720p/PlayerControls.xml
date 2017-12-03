@@ -279,7 +279,7 @@
 								<posy>0</posy>
 								<width>100</width>
 								<height>40</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<align>right</align>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$INFO[Player.Time(hh:mm:ss)]</label>
@@ -302,7 +302,7 @@
 								<posy>0</posy>
 								<width>100</width>
 								<height>40</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<align>left</align>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$INFO[Player.Duration(hh:mm:ss)]</label>
@@ -319,7 +319,7 @@
 								<height>20</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font25</font>
+								<font>size_25</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<shadowcolor>-</shadowcolor>
 								<scrollout>false</scrollout>
@@ -333,7 +333,7 @@
 								<height>20</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font20</font>
+								<font>size_20</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<shadowcolor>-</shadowcolor>
 								<scrollout>false</scrollout>

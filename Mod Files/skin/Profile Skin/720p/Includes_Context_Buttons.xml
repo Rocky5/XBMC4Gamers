@@ -24,7 +24,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32000]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -45,7 +45,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[518] Game</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -56,7 +56,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32088]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -67,7 +67,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32059]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -88,7 +88,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32059]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -99,7 +99,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32004]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -110,7 +110,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32088]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -131,7 +131,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32001]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -152,7 +152,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32002]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -173,7 +173,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32006]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -184,7 +184,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32007]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -195,7 +195,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32008]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -209,18 +209,18 @@
 								<height>25</height>
 								<texture>pad_buttons\white_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!Window.IsVisible(4) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111) + !Window.IsVisible(1102)</visible>
+								<visible>!Window.IsVisible(4) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111) + !Window.IsVisible(34) + !Window.IsVisible(1102)</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32009]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>!Window.IsVisible(4) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111) + !Window.IsVisible(1102)</visible>
+								<visible>!Window.IsVisible(4) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111) + !Window.IsVisible(34) + !Window.IsVisible(1102)</visible>
 						</control>
 						<!-- Black Button -->
 						<control type="image">
@@ -237,7 +237,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32041]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -248,7 +248,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32010]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -259,7 +259,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32011]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -270,7 +270,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32012]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -281,7 +281,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32013]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -292,7 +292,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32014]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -313,7 +313,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32015]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -334,7 +334,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32016]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -364,7 +364,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32017]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -375,7 +375,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32018]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -396,7 +396,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32019]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
@@ -417,7 +417,7 @@
 								<posy>0</posy>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
-								<font>font15</font>
+								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32020]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>

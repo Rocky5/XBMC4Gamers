@@ -99,7 +99,7 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<height>45</height>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>white</textcolor>
 						<focusedcolor>black</focusedcolor>
 						<texturefocus border="5">ThumbFO.png</texturefocus>
@@ -110,7 +110,7 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<height>45</height>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>white</textcolor>
 						<focusedcolor>black</focusedcolor>
 						<texturefocus border="5">ThumbFO.png</texturefocus>
@@ -121,7 +121,7 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<height>45</height>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>white</textcolor>
 						<focusedcolor>black</focusedcolor>
 						<texturefocus border="5">ThumbFO.png</texturefocus>
@@ -152,7 +152,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font23</font>
+						<font>size_23</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[5] - $INFO[Control.GetLabel(2)]</label>
 						<include>Window_OpenClose_Animation</include>

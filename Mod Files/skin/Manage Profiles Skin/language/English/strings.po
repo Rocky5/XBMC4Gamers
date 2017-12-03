@@ -918,7 +918,7 @@ msgid "Found"
 msgstr ""
 
 msgctxt "#32087"
-msgid "Disable Splash"
+msgid "Login settings for this profile"
 msgstr ""
 
 msgctxt "#32088"

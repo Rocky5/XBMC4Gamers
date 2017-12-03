@@ -11,7 +11,7 @@
 										<posy>230</posy>
 										<width>1204</width>
 										<height>36</height>
-										<font>font35</font>
+										<font>size_35</font>
 										<textcolor>$VAR[var-labelcolour]</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -128,7 +128,7 @@
 										<posy>308</posy>
 										<width>313</width>
 										<height>40</height>
-										<font>font25</font>
+										<font>size_25</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>center</align>
@@ -140,7 +140,7 @@
 										<posy>368</posy>
 										<width>279</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<textcolor>blue</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -152,7 +152,7 @@
 										<posy>388</posy>
 										<width>279</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -165,7 +165,7 @@
 										<posy>388</posy>
 										<width>279</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -178,7 +178,7 @@
 										<posy>388</posy>
 										<width>279</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -191,7 +191,7 @@
 										<posy>438</posy>
 										<width>279</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<textcolor>blue</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -203,7 +203,7 @@
 										<posy>458</posy>
 										<width>279</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -215,7 +215,7 @@
 										<posy>508</posy>
 										<width>279</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<textcolor>blue</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
@@ -227,7 +227,7 @@
 										<posy>528</posy>
 										<width>279</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<textcolor>white</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>

@@ -2,6 +2,11 @@
 		<defaultcontrol always="true">9001</defaultcontrol>
 		<controls>
 				<include>CommonBackground</include>
+				<control type="button" id="9002">
+						<description>Hidden Button</description>
+						<posx>-1000</posx>
+						<onclick>-</onclick>
+				</control>
 				<control type="group">
 						<include>ViewVisibleEffect</include>
 						<control type="image">
@@ -23,12 +28,11 @@
 								<onright>9061</onright>
 								<onup>9001</onup>
 								<ondown>9001</ondown>
-								<visible>!Container(9002).HasFocus()</visible>
 								<control type="label" id="1">
 										<description>Advanced Features</description>
 										<width>1170</width>
 										<height>40</height>
-										<font>font20</font>
+										<font>size_20</font>
 										<textcolor>white</textcolor>
 										<label> Music Options</label>
 										<align>center</align>
@@ -66,11 +70,17 @@
 										<description>Advanced Features</description>
 										<width>1170</width>
 										<height>40</height>
-										<font>font20</font>
+										<font>size_20</font>
 										<textcolor>white</textcolor>
 										<label> Other Toggles</label>
 										<align>center</align>
 										<aligny>center</aligny>
+								</control>
+								<control type="button" id="18">
+										<description>Auto Load Profile toggle</description>
+										<include>CustomSettingsButtons</include>
+										<label>$LOCALIZE[32087]</label>
+										<onclick>ActivateWindow(34)</onclick>
 								</control>
 								<control type="radiobutton" id="19">
 										<description>Load Emulators toggle</description>
@@ -148,7 +158,7 @@
 										<description>Advanced Stuff</description>
 										<width>1170</width>
 										<height>40</height>
-										<font>font20</font>
+										<font>size_20</font>
 										<textcolor>white</textcolor>
 										<label> Lock Profile</label>
 										<align>center</align>
@@ -158,7 +168,7 @@
 										<description>Advanced Stuff</description>
 										<width>1170</width>
 										<height>40</height>
-										<font>font20</font>
+										<font>size_20</font>
 										<textcolor>white</textcolor>
 										<label>$LOCALIZE[32054]</label>
 										<align>center</align>
@@ -175,7 +185,7 @@
 										<description>Debug Stuff</description>
 										<width>1170</width>
 										<height>40</height>
-										<font>font20</font>
+										<font>size_20</font>
 										<textcolor>white</textcolor>
 										<label> Debug Stuff</label>
 										<align>center</align>
@@ -208,7 +218,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[20077]</label>
 						<include>Window_OpenClose_Animation</include>

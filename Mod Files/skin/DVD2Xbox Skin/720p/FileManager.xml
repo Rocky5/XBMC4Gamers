@@ -47,7 +47,7 @@
 												<posy>0</posy>
 												<width>460</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>white</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>left</align>
@@ -59,7 +59,7 @@
 												<posy>0</posy>
 												<width>400</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>grey2</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>right</align>
@@ -89,7 +89,7 @@
 												<posy>0</posy>
 												<width>460</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>black</textcolor>
 												<selectedcolor>blue2</selectedcolor>
 												<align>left</align>
@@ -101,7 +101,7 @@
 												<posy>0</posy>
 												<width>400</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>black</textcolor>
 												<selectedcolor>blue2</selectedcolor>
 												<align>right</align>
@@ -172,7 +172,7 @@
 												<posy>0</posy>
 												<width>460</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>white</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>left</align>
@@ -184,7 +184,7 @@
 												<posy>0</posy>
 												<width>400</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>grey2</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>right</align>
@@ -214,7 +214,7 @@
 												<posy>0</posy>
 												<width>460</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>black</textcolor>
 												<selectedcolor>blue2</selectedcolor>
 												<align>left</align>
@@ -226,7 +226,7 @@
 												<posy>0</posy>
 												<width>400</width>
 												<height>45</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>black</textcolor>
 												<selectedcolor>blue2</selectedcolor>
 												<align>right</align>
@@ -271,7 +271,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font23</font>
+						<font>size_23</font>
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[7]</label>
 						<include>Window_OpenClose_Animation</include>
@@ -298,7 +298,7 @@
 						<posy>45r</posy>
 						<width>45</width>
 						<height>40</height>
-						<font>font28</font>
+						<font>size_28</font>
 						<textcolor>blue</textcolor>
 						<scroll>false</scroll>
 						<align>center</align>
@@ -311,7 +311,7 @@
 						<posy>25r</posy>
 						<width>500</width>
 						<height>20</height>
-						<font>font17</font>
+						<font>size_17</font>
 						<textcolor>black</textcolor>
 						<scroll>false</scroll>
 						<align>left</align>
@@ -324,7 +324,7 @@
 						<posy>52r</posy>
 						<width>500</width>
 						<height>25</height>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>black</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<scroll>true</scroll>
@@ -346,7 +346,7 @@
 						<posy>45r</posy>
 						<width>45</width>
 						<height>40</height>
-						<font>font28</font>
+						<font>size_28</font>
 						<textcolor>blue</textcolor>
 						<scroll>false</scroll>
 						<align>center</align>
@@ -359,7 +359,7 @@
 						<posy>25r</posy>
 						<width>500</width>
 						<height>20</height>
-						<font>font17</font>
+						<font>size_17</font>
 						<textcolor>black</textcolor>
 						<scroll>false</scroll>
 						<align>right</align>
@@ -372,7 +372,7 @@
 						<posy>52r</posy>
 						<width>500</width>
 						<height>25</height>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>black</textcolor>
 						<shadowcolor>black</shadowcolor>
 						<scroll>true</scroll>

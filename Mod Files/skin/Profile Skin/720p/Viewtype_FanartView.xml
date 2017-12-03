@@ -61,7 +61,7 @@
 												<posy>627</posy>
 												<width>1070</width>
 												<height>35</height>
-												<font>font35</font>
+												<font>size_35</font>
 												<textcolor>white</textcolor>
 												<scroll>true</scroll>
 												<align>center</align>
@@ -131,7 +131,7 @@
 												<posy>627</posy>
 												<width>1070</width>
 												<height>35</height>
-												<font>font35</font>
+												<font>size_35</font>
 												<textcolor>white</textcolor>
 												<scroll>true</scroll>
 												<align>center</align>

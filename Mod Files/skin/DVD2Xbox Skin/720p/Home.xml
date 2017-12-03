@@ -44,7 +44,7 @@
 												<posy>100</posy>
 												<width>236</width>
 												<height>20</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>white</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>left</align>
@@ -76,7 +76,7 @@
 												<posy>100</posy>
 												<width>236</width>
 												<height>20</height>
-												<font>font20</font>
+												<font>size_20</font>
 												<textcolor>black</textcolor>
 												<selectedcolor>blue2</selectedcolor>
 												<align>left</align>
@@ -134,7 +134,7 @@
 								<height>40</height>
 								<align>center</align>
 								<aligny>center</aligny>
-								<font>font21_bold</font>
+								<font>size_21_bold</font>
 								<label>Manually Install Game</label>
 								<textcolor>black</textcolor>
 						</control>
@@ -147,7 +147,7 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>Launch DVD2Xbox?</label>
-								<font>font20</font>
+								<font>size_20</font>
 						</control>
 						<control type="button" id="11">
 								<description>Yes button</description>
@@ -204,7 +204,7 @@
 						<height>35</height>
 						<align>left</align>
 						<aligny>center</aligny>
-						<font>font23</font>
+						<font>size_23</font>
 						<textcolor>white</textcolor>
 						<label>$INFO[system.profilename] Profile</label>
 				</control>

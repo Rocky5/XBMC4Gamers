@@ -34,7 +34,7 @@
 						<width>310</width>
 						<height>35</height>
 						<onup>1000</onup>
-						<font>font20</font>
+						<font>size_20</font>
 						<align>center</align>
 						<textcolor>white</textcolor>
 						<texturefocus border="3">button-focus2.png</texturefocus>
@@ -80,7 +80,7 @@
 						<visible>Window.IsVisible(1) + !Window.IsActive(134) + !Skin.HasSetting(editmode)</visible>
 						<control type="button" id="3001">
 								<description>SendClick 1001 button "Launch"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1001)]</label>
@@ -91,7 +91,7 @@
 						</control>
 						<control type="button" id="3002">
 								<description>SendClick 1002 button "Go to game save"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1002)]</label>
@@ -102,7 +102,7 @@
 						</control>
 						<control type="button" id="3003">
 								<description>SendClick 1003 button "Edit XBE title"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1003)]</label>
@@ -113,7 +113,7 @@
 						</control>
 						<control type="button" id="3004">
 								<description>SendClick 1004 button "Trainer settings"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1004)]</label>
@@ -124,7 +124,7 @@
 						</control>
 						<control type="button" id="3005">
 								<description>SendClick 1005 button "Update trainer list"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1005)]</label>
@@ -135,7 +135,7 @@
 						</control>
 						<control type="button" id="3006">
 								<description>SendClick 1006 button "Go to root"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1006)]</label>
@@ -146,7 +146,7 @@
 						</control>
 						<control type="button" id="3007">
 								<description>SendClick 1007 button "Add/Remove to/from favourites"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1007)]</label>
@@ -157,7 +157,7 @@
 						</control>
 						<control type="button" id="3008">
 								<description>SendClick 1008 button "Settings"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1008)]</label>
@@ -168,7 +168,7 @@
 						</control>
 						<control type="button" id="3009">
 								<description>SendClick 1009 button "Settings"</description>
-								<font>font20</font>
+								<font>size_20</font>
 								<align>center</align>
 								<textcolor>white</textcolor>
 								<label>$INFO[Control.GetLabel(1009)]</label>

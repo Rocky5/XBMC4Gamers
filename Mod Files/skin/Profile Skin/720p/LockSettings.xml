@@ -31,7 +31,7 @@
 						<height>40</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font21_bold</font>
+						<font>size_21_bold</font>
 						<label>$LOCALIZE[20043]</label>
 						<textcolor>black</textcolor>
 				</control>
@@ -53,7 +53,7 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<height>35</height>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>white</textcolor>
 						<textoffsetx>7</textoffsetx>
 						<texturefocus border="5">button-focus.png</texturefocus>
@@ -64,7 +64,7 @@
 						<posx>0</posx>
 						<posy>0</posy>
 						<height>35</height>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>white</textcolor>
 						<texturefocus border="5">button-focus.png</texturefocus>
 						<texturenofocus border="5">button-nofocus.png</texturenofocus>
@@ -83,7 +83,7 @@
 						<texturedown>scroll-down.png</texturedown>
 						<textureupfocus>scroll-up-focus.png</textureupfocus>
 						<texturedownfocus>scroll-down-focus.png</texturedownfocus>
-						<font>font20</font>
+						<font>size_20</font>
 						<textcolor>white</textcolor>
 						<disabledcolor>disabled</disabledcolor>
 						<textoffsetx>7</textoffsetx>

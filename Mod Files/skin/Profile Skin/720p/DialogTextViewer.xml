@@ -31,7 +31,7 @@
 						<height>40</height>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>font21_bold</font>
+						<font>size_21_bold</font>
 						<label>Thumbnail Cleaner</label>
 						<textcolor>black</textcolor>
 				</control>
@@ -41,7 +41,7 @@
 						<posy>100</posy>
 						<width>700</width>
 						<height>300</height>
-						<font>font23</font>
+						<font>size_23</font>
 						<align>center</align>
 						<textcolor>white</textcolor>
 						<shadowcolor>black</shadowcolor>

@@ -1,3 +1,10 @@
+04/12/2017
+	1) Updated all the fonts to match that of XBMC-Emustation.
+		( Allows finer tuning of font sizes from 1 to 80, standard and bold )
+	2) Disable Login screen added to the Skin Settings Menu.
+	3) Label updates.
+
+
 29/11/2017
 	1) New splash overlay support "Q:\media\splash_overlay.png"
 	2) Added the option to load into Emulators instead of Games when loading a profile.

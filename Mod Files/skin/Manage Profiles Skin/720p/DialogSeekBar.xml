@@ -29,7 +29,7 @@
 										<height>50</height>
 										<align>center</align>
 										<aligny>center</aligny>
-										<font>font15</font>
+										<font>size_15</font>
 										<label>[UPPERCASE]$LOCALIZE[773][/UPPERCASE]</label>
 										<visible>Player.Seeking</visible>
 								</control>
@@ -40,7 +40,7 @@
 										<posy>7</posy>
 										<width>110</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<align>left</align>
 										<aligny>center</aligny>
 										<info>Player.Time</info>
@@ -52,7 +52,7 @@
 										<posy>7</posy>
 										<width>110</width>
 										<height>20</height>
-										<font>font17</font>
+										<font>size_17</font>
 										<align>left</align>
 										<aligny>center</aligny>
 										<info>Player.SeekTime</info>
@@ -65,7 +65,7 @@
 										<width>130</width>
 										<height>20</height>
 										<label>$INFO[Player.Duration]</label>
-										<font>font17</font>
+										<font>size_17</font>
 										<align>right</align>
 										<aligny>center</aligny>
 								</control>
