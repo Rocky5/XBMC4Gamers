@@ -117,6 +117,12 @@
 												<onclick>ActivateWindow(guicalibration)</onclick>
 												<icon>thumbs/Appearance.png</icon>
 										</item>
+										<!-- <item> -->
+										<!-- <label>157</label> -->
+										<!-- <label2>31401</label2> -->
+										<!-- <onclick>ActivateWindow(VideosSettings)</onclick> -->
+										<!-- <icon>thumbs/Videos.png</icon> -->
+										<!-- </item> -->
 								</content>
 						</control>
 				</control>

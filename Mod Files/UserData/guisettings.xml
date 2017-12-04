@@ -670,14 +670,14 @@
 				<hd720p>true</hd720p>
 		</videooutput>
 		<videoplayer>
-				<allcodecs>true</allcodecs>
+				<allcodecs>false</allcodecs>
 				<calibrate>
 				</calibrate>
 				<defaultplayer>1</defaultplayer>
 				<displayresolution>1</displayresolution>
-				<errorinaspect>20.000000</errorinaspect>
-				<fast>true</fast>
-				<flicker>1</flicker>
+				<errorinaspect>0.000000</errorinaspect>
+				<fast>false</fast>
+				<flicker>0</flicker>
 				<framerateconversions>0</framerateconversions>
 				<rendermethod>0</rendermethod>
 				<resumeautomatically>0</resumeautomatically>
