@@ -8,7 +8,7 @@
 		</MyPrograms>
 		<Profiles>
 				<gamepad>
-						<B>highlight</B>
+						<B>Back</B>
 						<back>ActivateWindow(Settings)</back>
 						<black>XBMC.RunScript(Special://xbmc/scripts/XBMC4Gamers/Utilities/Clear Cache.py)</black>
 				</gamepad>

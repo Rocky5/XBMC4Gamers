@@ -8,9 +8,9 @@
 		</MyPrograms>
 		<Profiles>
 				<gamepad>
-						<B>highlight</B>
+						<B>Back</B>
 						<back>ActivateWindow(Settings)</back>
-						<black>XBMC.RunScript(Special://xbmc/scripts/XBMC4Kids/Utilities/Clear Cache.py)</black>
+						<black>XBMC.RunScript(Special://xbmc/scripts/XBMC4Gamers/Utilities/Clear Cache.py)</black>
 				</gamepad>
 		</Profiles>
 		<global>
@@ -40,7 +40,7 @@
 		<Home>
 				<gamepad>
 						<back />
-						<black>XBMC.RunScript(Special://xbmc/scripts/XBMC4Kids/Utilities/Clear Cache.py)</black>
+						<black>XBMC.RunScript(Special://xbmc/scripts/XBMC4Gamers/Utilities/Clear Cache.py)</black>
 						<lefttrigger>left</lefttrigger>
 						<righttrigger>right</righttrigger>
 				</gamepad>
