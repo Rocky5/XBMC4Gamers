@@ -37,7 +37,7 @@
 								<width>386</width>
 								<height>0</height>
 								<align>center</align>
-								<font>font20</font>
+								<font>size_20</font>
 								<label>480p Game loaders</label>
 								<textcolor>black</textcolor>
 						</control>
@@ -52,7 +52,7 @@
 										<description>Action Button</description>
 										<width>300</width>
 										<height>42</height>
-										<font>font23</font>
+										<font>size_23</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Info</label>
@@ -63,7 +63,7 @@
 										<description>Action Button</description>
 										<width>300</width>
 										<height>42</height>
-										<font>font23</font>
+										<font>size_23</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Auto Install</label>
@@ -74,7 +74,7 @@
 										<description>Action Button</description>
 										<width>300</width>
 										<height>42</height>
-										<font>font23</font>
+										<font>size_23</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Manual Install</label>
@@ -85,7 +85,7 @@
 										<description>Action Button</description>
 										<width>300</width>
 										<height>42</height>
-										<font>font23</font>
+										<font>size_23</font>
 										<align>center</align>
 										<textcolor>white</textcolor>
 										<label>Uninstall</label>
