@@ -1,3 +1,7 @@
+16/12/2017
+	1) Ported over Kodis fix for SetFocus(), it now focuses from the proper offset instead of the current page.
+
+
 04/12/2017
 	1) Updated all the fonts to match that of XBMC-Emustation.
 		( Allows finer tuning of font sizes from 1 to 80, standard and bold )
