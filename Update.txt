@@ -1,3 +1,8 @@
+31/12/2017
+	1) Added fanart support for folders. Only for background fanart.
+		( Q:\skins\profile skin\media\folder fanart\foldername.jpg and foldername_fog.jpg )
+
+
 16/12/2017
 	1) Ported over Kodis fix for SetFocus(), it now focuses from the proper offset instead of the current page.
 
