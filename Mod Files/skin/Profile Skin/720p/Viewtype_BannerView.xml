@@ -49,6 +49,16 @@
 										<width>570</width>
 										<height>321</height>
 										<aspectratio>stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture background="true" fallback="no_fanart.png">Special://skin/media/folder fanart/$INFO[ListItem.Label].jpg</texture>
+										<visible>ListItem.IsFolder</visible>
+								</control>
+								<control type="image">
+										<posx>595</posx>
+										<posy>5</posy>
+										<width>570</width>
+										<height>321</height>
+										<aspectratio>stretch</aspectratio>
 										<texture>glassoverlay.png</texture>
 								</control>
 								<control type="image">

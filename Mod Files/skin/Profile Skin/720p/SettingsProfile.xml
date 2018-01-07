@@ -49,8 +49,8 @@
 								<label>20096</label>
 								<textcolor>white</textcolor>
 								<focusedcolor>black</focusedcolor>
-								<texturefocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/ThumbFO.png</texturefocus>
-								<texturenofocus border="5">Special://xbmc/scripts/XBMC4Gamers Extras/synopsis/resources/textures/settings/underlay.png</texturenofocus>
+								<texturefocus border="5">ThumbFO.png</texturefocus>
+								<texturenofocus border="5">underlay.png</texturenofocus>
 						</control>
 				</control>
 				<include>WindowHeader</include>

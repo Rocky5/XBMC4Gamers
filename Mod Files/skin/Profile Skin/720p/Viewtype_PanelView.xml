@@ -107,6 +107,18 @@
 										<width>410</width>
 										<height>316</height>
 										<aspectratio>scale</aspectratio>
+										<texture background="true">Special://skin/media/folder fanart/$INFO[ListItem.Label].jpg</texture>
+										<bordertexture>-</bordertexture>
+										<bordersize>5</bordersize>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<visible>ListItem.IsFolder</visible>
+								</control>
+								<control type="image">
+										<posx>506</posx>
+										<posy>288</posy>
+										<width>410</width>
+										<height>316</height>
+										<aspectratio>scale</aspectratio>
 										<texture background="true">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 										<bordertexture>-</bordertexture>
 										<bordersize>5</bordersize>

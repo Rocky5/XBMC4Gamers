@@ -53,6 +53,15 @@
 												<width>1080</width>
 												<height>614</height>
 												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">Special://skin/media/folder fanart/$INFO[ListItem.Label].jpg</texture>
+												<visible>ListItem.IsFolder</visible>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio>stretch</aspectratio>
 												<texture diffuse="view_diffuse_alt.png">black-back.png</texture>
 												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
 										</control>
@@ -116,6 +125,15 @@
 												<aspectratio>stretch</aspectratio>
 												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 												<visible>Skin.HasSetting(_recourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png" fallback="no_fanart.png">Special://skin/media/folder fanart/$INFO[ListItem.Label].jpg</texture>
+												<visible>ListItem.IsFolder</visible>
 										</control>
 										<control type="image">
 												<posx>100</posx>
