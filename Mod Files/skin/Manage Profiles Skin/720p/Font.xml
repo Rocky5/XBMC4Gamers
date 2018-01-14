@@ -1,136 +1,9 @@
 <fonts>
 		<fontset id="Default" unicode="true">
 				<font>
-						<name>size_1</name>
-						<filename>arial.ttf</filename>
-						<size>1</size>
-				</font>
-				<font>
-						<name>size_1_bold</name>
-						<filename>arial.ttf</filename>
-						<size>1</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_2</name>
-						<filename>arial.ttf</filename>
-						<size>2</size>
-				</font>
-				<font>
-						<name>size_2_bold</name>
-						<filename>arial.ttf</filename>
-						<size>2</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_3</name>
-						<filename>arial.ttf</filename>
-						<size>3</size>
-				</font>
-				<font>
-						<name>size_3_bold</name>
-						<filename>arial.ttf</filename>
-						<size>3</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_4</name>
-						<filename>arial.ttf</filename>
-						<size>4</size>
-				</font>
-				<font>
-						<name>size_4_bold</name>
-						<filename>arial.ttf</filename>
-						<size>4</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_5</name>
-						<filename>arial.ttf</filename>
-						<size>5</size>
-				</font>
-				<font>
-						<name>size_5_bold</name>
-						<filename>arial.ttf</filename>
-						<size>5</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_6</name>
-						<filename>arial.ttf</filename>
-						<size>6</size>
-				</font>
-				<font>
-						<name>size_6_bold</name>
-						<filename>arial.ttf</filename>
-						<size>6</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_7</name>
-						<filename>arial.ttf</filename>
-						<size>7</size>
-				</font>
-				<font>
-						<name>size_7_bold</name>
-						<filename>arial.ttf</filename>
-						<size>7</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_8</name>
-						<filename>arial.ttf</filename>
-						<size>8</size>
-				</font>
-				<font>
-						<name>size_8_bold</name>
-						<filename>arial.ttf</filename>
-						<size>8</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_9</name>
-						<filename>arial.ttf</filename>
-						<size>9</size>
-				</font>
-				<font>
-						<name>size_9_bold</name>
-						<filename>arial.ttf</filename>
-						<size>9</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_10</name>
-						<filename>arial.ttf</filename>
-						<size>10</size>
-				</font>
-				<font>
-						<name>size_10_bold</name>
-						<filename>arial.ttf</filename>
-						<size>10</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_11</name>
-						<filename>arial.ttf</filename>
-						<size>11</size>
-				</font>
-				<font>
-						<name>size_11_bold</name>
-						<filename>arial.ttf</filename>
-						<size>11</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_12</name>
 						<filename>arial.ttf</filename>
 						<size>12</size>
-				</font>
-				<font>
-						<name>size_12_bold</name>
-						<filename>arial.ttf</filename>
-						<size>12</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_13</name>
@@ -138,21 +11,9 @@
 						<size>13</size>
 				</font>
 				<font>
-						<name>size_13_bold</name>
-						<filename>arial.ttf</filename>
-						<size>13</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_14</name>
 						<filename>arial.ttf</filename>
 						<size>14</size>
-				</font>
-				<font>
-						<name>size_14_bold</name>
-						<filename>arial.ttf</filename>
-						<size>14</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_15</name>
@@ -160,32 +21,14 @@
 						<size>15</size>
 				</font>
 				<font>
-						<name>size_15_bold</name>
-						<filename>arial.ttf</filename>
-						<size>15</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_16</name>
 						<filename>arial.ttf</filename>
 						<size>16</size>
 				</font>
 				<font>
-						<name>size_16_bold</name>
-						<filename>arial.ttf</filename>
-						<size>16</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_17</name>
 						<filename>arial.ttf</filename>
 						<size>17</size>
-				</font>
-				<font>
-						<name>size_17_bold</name>
-						<filename>arial.ttf</filename>
-						<size>17</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_18</name>
@@ -204,21 +47,9 @@
 						<size>19</size>
 				</font>
 				<font>
-						<name>size_19_bold</name>
-						<filename>arial.ttf</filename>
-						<size>19</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_20</name>
 						<filename>arial.ttf</filename>
 						<size>20</size>
-				</font>
-				<font>
-						<name>size_20_bold</name>
-						<filename>arial.ttf</filename>
-						<size>20</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_21</name>
@@ -237,21 +68,9 @@
 						<size>22</size>
 				</font>
 				<font>
-						<name>size_22_bold</name>
-						<filename>arial.ttf</filename>
-						<size>22</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_23</name>
 						<filename>arial.ttf</filename>
 						<size>23</size>
-				</font>
-				<font>
-						<name>size_23_bold</name>
-						<filename>arial.ttf</filename>
-						<size>23</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_24</name>
@@ -259,21 +78,9 @@
 						<size>24</size>
 				</font>
 				<font>
-						<name>size_24_bold</name>
-						<filename>arial.ttf</filename>
-						<size>24</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_25</name>
 						<filename>arial.ttf</filename>
 						<size>25</size>
-				</font>
-				<font>
-						<name>size_25_bold</name>
-						<filename>arial.ttf</filename>
-						<size>25</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_26</name>
@@ -281,21 +88,9 @@
 						<size>26</size>
 				</font>
 				<font>
-						<name>size_26_bold</name>
-						<filename>arial.ttf</filename>
-						<size>26</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_27</name>
 						<filename>arial.ttf</filename>
 						<size>27</size>
-				</font>
-				<font>
-						<name>size_27_bold</name>
-						<filename>arial.ttf</filename>
-						<size>27</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_28</name>
@@ -303,21 +98,9 @@
 						<size>28</size>
 				</font>
 				<font>
-						<name>size_28_bold</name>
-						<filename>arial.ttf</filename>
-						<size>28</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_29</name>
 						<filename>arial.ttf</filename>
 						<size>29</size>
-				</font>
-				<font>
-						<name>size_29_bold</name>
-						<filename>arial.ttf</filename>
-						<size>29</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_30</name>
@@ -325,21 +108,9 @@
 						<size>30</size>
 				</font>
 				<font>
-						<name>size_30_bold</name>
-						<filename>arial.ttf</filename>
-						<size>30</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_31</name>
 						<filename>arial.ttf</filename>
 						<size>31</size>
-				</font>
-				<font>
-						<name>size_31_bold</name>
-						<filename>arial.ttf</filename>
-						<size>31</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_32</name>
@@ -347,21 +118,9 @@
 						<size>32</size>
 				</font>
 				<font>
-						<name>size_32_bold</name>
-						<filename>arial.ttf</filename>
-						<size>32</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_33</name>
 						<filename>arial.ttf</filename>
 						<size>33</size>
-				</font>
-				<font>
-						<name>size_33_bold</name>
-						<filename>arial.ttf</filename>
-						<size>33</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_34</name>
@@ -369,65 +128,9 @@
 						<size>34</size>
 				</font>
 				<font>
-						<name>size_34_bold</name>
-						<filename>arial.ttf</filename>
-						<size>34</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_35</name>
 						<filename>arial.ttf</filename>
 						<size>35</size>
-				</font>
-				<font>
-						<name>size_35_bold</name>
-						<filename>arial.ttf</filename>
-						<size>35</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_36</name>
-						<filename>arial.ttf</filename>
-						<size>36</size>
-				</font>
-				<font>
-						<name>size_36_bold</name>
-						<filename>arial.ttf</filename>
-						<size>36</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_37</name>
-						<filename>arial.ttf</filename>
-						<size>37</size>
-				</font>
-				<font>
-						<name>size_37_bold</name>
-						<filename>arial.ttf</filename>
-						<size>37</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_38</name>
-						<filename>arial.ttf</filename>
-						<size>38</size>
-				</font>
-				<font>
-						<name>size_38_bold</name>
-						<filename>arial.ttf</filename>
-						<size>38</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_39</name>
-						<filename>arial.ttf</filename>
-						<size>39</size>
-				</font>
-				<font>
-						<name>size_39_bold</name>
-						<filename>arial.ttf</filename>
-						<size>39</size>
-						<style>bold</style>
 				</font>
 				<font>
 						<name>size_40</name>
@@ -435,450 +138,14 @@
 						<size>40</size>
 				</font>
 				<font>
-						<name>size_40_bold</name>
-						<filename>arial.ttf</filename>
-						<size>40</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_41</name>
-						<filename>arial.ttf</filename>
-						<size>41</size>
-				</font>
-				<font>
-						<name>size_41_bold</name>
-						<filename>arial.ttf</filename>
-						<size>41</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_42</name>
-						<filename>arial.ttf</filename>
-						<size>42</size>
-				</font>
-				<font>
-						<name>size_42_bold</name>
-						<filename>arial.ttf</filename>
-						<size>42</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_43</name>
-						<filename>arial.ttf</filename>
-						<size>43</size>
-				</font>
-				<font>
-						<name>size_43_bold</name>
-						<filename>arial.ttf</filename>
-						<size>43</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_44</name>
-						<filename>arial.ttf</filename>
-						<size>44</size>
-				</font>
-				<font>
-						<name>size_44_bold</name>
-						<filename>arial.ttf</filename>
-						<size>44</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_45</name>
-						<filename>arial.ttf</filename>
-						<size>45</size>
-				</font>
-				<font>
-						<name>size_45_bold</name>
-						<filename>arial.ttf</filename>
-						<size>45</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_46</name>
-						<filename>arial.ttf</filename>
-						<size>46</size>
-				</font>
-				<font>
-						<name>size_46_bold</name>
-						<filename>arial.ttf</filename>
-						<size>46</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_47</name>
-						<filename>arial.ttf</filename>
-						<size>47</size>
-				</font>
-				<font>
-						<name>size_47_bold</name>
-						<filename>arial.ttf</filename>
-						<size>47</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_48</name>
-						<filename>arial.ttf</filename>
-						<size>48</size>
-				</font>
-				<font>
-						<name>size_48_bold</name>
-						<filename>arial.ttf</filename>
-						<size>48</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_49</name>
-						<filename>arial.ttf</filename>
-						<size>49</size>
-				</font>
-				<font>
-						<name>size_49_bold</name>
-						<filename>arial.ttf</filename>
-						<size>49</size>
-						<style>bold</style>
-				</font>
-				<font>
 						<name>size_50</name>
 						<filename>arial.ttf</filename>
 						<size>50</size>
 				</font>
 				<font>
-						<name>size_50_bold</name>
+						<name>debuglogging</name>
 						<filename>arial.ttf</filename>
-						<size>50</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_51</name>
-						<filename>arial.ttf</filename>
-						<size>51</size>
-				</font>
-				<font>
-						<name>size_51_bold</name>
-						<filename>arial.ttf</filename>
-						<size>51</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_52</name>
-						<filename>arial.ttf</filename>
-						<size>52</size>
-				</font>
-				<font>
-						<name>size_52_bold</name>
-						<filename>arial.ttf</filename>
-						<size>52</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_53</name>
-						<filename>arial.ttf</filename>
-						<size>53</size>
-				</font>
-				<font>
-						<name>size_53_bold</name>
-						<filename>arial.ttf</filename>
-						<size>53</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_54</name>
-						<filename>arial.ttf</filename>
-						<size>54</size>
-				</font>
-				<font>
-						<name>size_54_bold</name>
-						<filename>arial.ttf</filename>
-						<size>54</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_55</name>
-						<filename>arial.ttf</filename>
-						<size>55</size>
-				</font>
-				<font>
-						<name>size_55_bold</name>
-						<filename>arial.ttf</filename>
-						<size>55</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_56</name>
-						<filename>arial.ttf</filename>
-						<size>56</size>
-				</font>
-				<font>
-						<name>size_56_bold</name>
-						<filename>arial.ttf</filename>
-						<size>56</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_57</name>
-						<filename>arial.ttf</filename>
-						<size>57</size>
-				</font>
-				<font>
-						<name>size_57_bold</name>
-						<filename>arial.ttf</filename>
-						<size>57</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_58</name>
-						<filename>arial.ttf</filename>
-						<size>58</size>
-				</font>
-				<font>
-						<name>size_58_bold</name>
-						<filename>arial.ttf</filename>
-						<size>58</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_59</name>
-						<filename>arial.ttf</filename>
-						<size>59</size>
-				</font>
-				<font>
-						<name>size_59_bold</name>
-						<filename>arial.ttf</filename>
-						<size>59</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_60</name>
-						<filename>arial.ttf</filename>
-						<size>60</size>
-				</font>
-				<font>
-						<name>size_60_bold</name>
-						<filename>arial.ttf</filename>
-						<size>60</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_61</name>
-						<filename>arial.ttf</filename>
-						<size>61</size>
-				</font>
-				<font>
-						<name>size_61_bold</name>
-						<filename>arial.ttf</filename>
-						<size>61</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_62</name>
-						<filename>arial.ttf</filename>
-						<size>62</size>
-				</font>
-				<font>
-						<name>size_62_bold</name>
-						<filename>arial.ttf</filename>
-						<size>62</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_63</name>
-						<filename>arial.ttf</filename>
-						<size>63</size>
-				</font>
-				<font>
-						<name>size_63_bold</name>
-						<filename>arial.ttf</filename>
-						<size>63</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_64</name>
-						<filename>arial.ttf</filename>
-						<size>64</size>
-				</font>
-				<font>
-						<name>size_64_bold</name>
-						<filename>arial.ttf</filename>
-						<size>64</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_65</name>
-						<filename>arial.ttf</filename>
-						<size>65</size>
-				</font>
-				<font>
-						<name>size_65_bold</name>
-						<filename>arial.ttf</filename>
-						<size>65</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_66</name>
-						<filename>arial.ttf</filename>
-						<size>66</size>
-				</font>
-				<font>
-						<name>size_66_bold</name>
-						<filename>arial.ttf</filename>
-						<size>66</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_67</name>
-						<filename>arial.ttf</filename>
-						<size>67</size>
-				</font>
-				<font>
-						<name>size_67_bold</name>
-						<filename>arial.ttf</filename>
-						<size>67</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_68</name>
-						<filename>arial.ttf</filename>
-						<size>68</size>
-				</font>
-				<font>
-						<name>size_68_bold</name>
-						<filename>arial.ttf</filename>
-						<size>68</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_69</name>
-						<filename>arial.ttf</filename>
-						<size>69</size>
-				</font>
-				<font>
-						<name>size_69_bold</name>
-						<filename>arial.ttf</filename>
-						<size>69</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_70</name>
-						<filename>arial.ttf</filename>
-						<size>70</size>
-				</font>
-				<font>
-						<name>size_70_bold</name>
-						<filename>arial.ttf</filename>
-						<size>70</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_71</name>
-						<filename>arial.ttf</filename>
-						<size>71</size>
-				</font>
-				<font>
-						<name>size_71_bold</name>
-						<filename>arial.ttf</filename>
-						<size>71</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_72</name>
-						<filename>arial.ttf</filename>
-						<size>72</size>
-				</font>
-				<font>
-						<name>size_72_bold</name>
-						<filename>arial.ttf</filename>
-						<size>72</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_73</name>
-						<filename>arial.ttf</filename>
-						<size>73</size>
-				</font>
-				<font>
-						<name>size_73_bold</name>
-						<filename>arial.ttf</filename>
-						<size>73</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_74</name>
-						<filename>arial.ttf</filename>
-						<size>74</size>
-				</font>
-				<font>
-						<name>size_74_bold</name>
-						<filename>arial.ttf</filename>
-						<size>74</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_75</name>
-						<filename>arial.ttf</filename>
-						<size>75</size>
-				</font>
-				<font>
-						<name>size_75_bold</name>
-						<filename>arial.ttf</filename>
-						<size>75</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_76</name>
-						<filename>arial.ttf</filename>
-						<size>76</size>
-				</font>
-				<font>
-						<name>size_76_bold</name>
-						<filename>arial.ttf</filename>
-						<size>76</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_77</name>
-						<filename>arial.ttf</filename>
-						<size>77</size>
-				</font>
-				<font>
-						<name>size_77_bold</name>
-						<filename>arial.ttf</filename>
-						<size>77</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_78</name>
-						<filename>arial.ttf</filename>
-						<size>78</size>
-				</font>
-				<font>
-						<name>size_78_bold</name>
-						<filename>arial.ttf</filename>
-						<size>78</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_79</name>
-						<filename>arial.ttf</filename>
-						<size>79</size>
-				</font>
-				<font>
-						<name>size_79_bold</name>
-						<filename>arial.ttf</filename>
-						<size>79</size>
-						<style>bold</style>
-				</font>
-				<font>
-						<name>size_80</name>
-						<filename>arial.ttf</filename>
-						<size>80</size>
-				</font>
-				<font>
-						<name>size_80_bold</name>
-						<filename>arial.ttf</filename>
-						<size>80</size>
-						<style>bold</style>
+						<size>23</size>
 				</font>
 		</fontset>
 </fonts>

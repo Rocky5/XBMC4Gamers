@@ -2281,7 +2281,7 @@ void CApplication::DoRender()
       iBlinkRecord++;
       if (iBlinkRecord > 25)
       {
-        CGUIFont* pFont = g_fontManager.GetFont("font13");
+        CGUIFont* pFont = g_fontManager.GetFont("debuglogging");
         CGUITextLayout::DrawText(pFont, 60, 50, 0xffff0000, 0, "REC", 0);
       }
 
@@ -2300,11 +2300,11 @@ void CApplication::DoRender()
   }
 
   {
-    // free memory if we got les then 10megs free ram
+    // free memory if we got les then 12megs free ram
     MEMORYSTATUS stat;
     GlobalMemoryStatus(&stat);
     DWORD dwMegFree = (DWORD)(stat.dwAvailPhys / (1024 * 1024));
-    if (dwMegFree <= 10)
+    if (dwMegFree <= 20)
     {
       g_TextureManager.Flush();
     }
@@ -2334,7 +2334,7 @@ void CApplication::DoRender()
         if (LOG_LEVEL_DEBUG_FREEMEM > g_advancedSettings.m_logLevel)
           y = 0.08f * g_graphicsContext.GetHeight();
 #endif
-        CGUITextLayout::DrawOutlineText(g_fontManager.GetFont("font13"), x, y, 0xffffffff, 0xff000000, 2, wszText);
+        CGUITextLayout::DrawOutlineText(g_fontManager.GetFont("debuglogging"), x, y, 0xffffffff, 0xff000000, 2, wszText);
         iShowRemoteCode--;
       }
 #endif
@@ -2389,13 +2389,13 @@ void CApplication::RenderMemoryStatus()
     CStdStringW wszText;
     MEMORYSTATUS stat;
     GlobalMemoryStatus(&stat);
-    wszText.Format(L"FreeMem %d/%d KB, FPS %2.1f, CPU %2.0f%%", stat.dwAvailPhys/1024, stat.dwTotalPhys/1024, g_infoManager.GetFPS(), (1.0f - m_idleThread.GetRelativeUsage())*100);
+    wszText.Format(L"FreeMem %d MB - %d/%d KB, FPS %2.1f, CPU %2.0f%%", stat.dwAvailPhys / (1024 * 1024), stat.dwAvailPhys/1024, stat.dwTotalPhys/1024, g_infoManager.GetFPS(), (1.0f - m_idleThread.GetRelativeUsage())*100);
 
     float x = 0.04f * g_graphicsContext.GetWidth() + g_settings.m_ResInfo[res].Overscan.left;
     float y = 0.04f * g_graphicsContext.GetHeight() + g_settings.m_ResInfo[res].Overscan.top;
-    CGUITextLayout::DrawOutlineText(g_fontManager.GetFont("font13"), x, y, 0xffffffff, 0xff000000, 2, wszText);
+    CGUITextLayout::DrawOutlineText(g_fontManager.GetFont("debuglogging"), x, y, 0xffffffff, 0xff000000, 2, wszText);
   }
-}
+ }
 
 // OnKey() translates the key into a CAction which is sent on to our Window Manager.
 // The window manager will return true if the event is processed, false otherwise.

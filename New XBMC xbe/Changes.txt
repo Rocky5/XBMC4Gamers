@@ -12,3 +12,4 @@
 10) nosplash.bin added to the root folder to easily disable the splash if you don't want to use the advancedsettings.xml
 11) Splash overlay file so folk can keep the splash but add there own logo or visa-versa. ( splash_overlay.png )
 12) Fix ported over from Kodi to fix the SetFocus function, it now focuses from the first entry in the list instead of the current page.
+13) Updated the debug overlay to use debugloggin font name and added MBs to the layout.

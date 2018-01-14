@@ -1,3 +1,9 @@
+14/01/2018
+	1) Updated the default.xbe to use the changes I made for XBMC-Emustation regarding the debug info.
+		( It will also unload textures if the memory drops below 20MB now )
+	2) Reduced the fonts.zml file to reduce the memory footprint. You now have 32MB of free ram, so no more thumbs vanishing.
+
+
 06/01/2018
 	1) Added fanart support for folders, to all views that use fanart.
 		( Q:\skins\profile skin\media\folder fanart\foldername.jpg and foldername_fog.jpg )
