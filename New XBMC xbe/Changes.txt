@@ -13,3 +13,5 @@
 11) Splash overlay file so folk can keep the splash but add there own logo or visa-versa. ( splash_overlay.png )
 12) Fix ported over from Kodi to fix the SetFocus function, it now focuses from the first entry in the list instead of the current page.
 13) Updated the debug overlay to use debugloggin font name and added MBs to the layout.
+14) Fixed centering labels in lists.
+( If you have a skin that uses center for its labels in a list you may want to remove the offset you had to use for posx )

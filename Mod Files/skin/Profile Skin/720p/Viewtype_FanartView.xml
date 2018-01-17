@@ -66,7 +66,7 @@
 												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
 										</control>
 										<control type="label">
-												<posx>640</posx>
+												<posx>105</posx>
 												<posy>627</posy>
 												<width>1070</width>
 												<height>35</height>
@@ -145,7 +145,7 @@
 												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
 										</control>
 										<control type="label">
-												<posx>640</posx>
+												<posx>105</posx>
 												<posy>627</posy>
 												<width>1070</width>
 												<height>35</height>

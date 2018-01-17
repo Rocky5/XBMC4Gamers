@@ -1,3 +1,9 @@
+16/01/2018
+	1) New XBE fixed the center label issue for lists
+		( If you have a skin that uses center for its labels in a list you may want to remove the offset you had to use for posx )
+	2) Updated the layouts that used the offset to fix the center issue, to not use the offsets now :D
+
+
 14/01/2018
 	1) Updated the default.xbe to use the changes I made for XBMC-Emustation regarding the debug info.
 		( It will also unload textures if the memory drops below 20MB now )
