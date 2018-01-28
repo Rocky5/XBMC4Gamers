@@ -41,6 +41,19 @@
 						<label>$LOCALIZE[32010]</label>
 						<textcolor>black</textcolor>
 				</control>
+				<control type="label">
+						<description>label</description>
+						<posx>0</posx>
+						<posy>180</posy>
+						<width>700</width>
+						<height>125</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_23</font>
+						<textcolor>white</textcolor>
+						<info>Container(9002).ListItem.Label</info>
+						<animation effect="fade" start="100" end="0" time="0">unfocus</animation>
+				</control>
 				<control type="list" id="9002">
 						<posx>145</posx>
 						<posy>100</posy>
@@ -85,19 +98,6 @@
 										<bordersize>3</bordersize>
 										<animation reversible="false" effect="zoom" start="7,7,104,104" end="-3,-3,124,124" time="200">focus</animation>
 										<animation reversible="false" effect="zoom" end="7,7,104,104" start="-3,-3,124,124" time="0">unfocus</animation>
-								</control>
-								<control type="label">
-										<description>label</description>
-										<posx>80</posx>
-										<posy>80</posy>
-										<width>400</width>
-										<height>125</height>
-										<align>center</align>
-										<aligny>center</aligny>
-										<font>size_23</font>
-										<textcolor>white</textcolor>
-										<info>ListItem.Label</info>
-										<animation effect="fade" start="100" end="0" time="0">unfocus</animation>
 								</control>
 						</focusedlayout>
 						<content>
