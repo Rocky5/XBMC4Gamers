@@ -15,3 +15,4 @@
 13) Updated the debug overlay to use debugloggin font name and added MBs to the layout.
 14) Fixed centering labels in lists.
 ( If you have a skin that uses center for its labels in a list you may want to remove the offset you had to use for posx )
+15) Update to the center label fix in lists, if your skin version is 2.1 it will use the old way and if its 2.2 or higher will use the fixed way.

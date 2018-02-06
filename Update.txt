@@ -1,3 +1,7 @@
+06/02/2018
+	1) Update to the center label fix in lists, if your skin version is 2.1 it will use the old way and if its 2.2 or higher will use the fixed way.
+
+
 16/01/2018
 	1) New XBE fixed the center label issue for lists
 		( If you have a skin that uses center for its labels in a list you may want to remove the offset you had to use for posx )
