@@ -1,3 +1,7 @@
+15/04/2018
+	1) New XBE: Fixed the XBE title extraction from the xbe files, so no more broken names!
+		( This is an issue with official builds and is now fixed here. )
+
 06/02/2018
 	1) Update to the center label fix in lists, if your skin version is 2.1 it will use the old way and if its 2.2 or higher will use the fixed way.
 
