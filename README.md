@@ -14,7 +14,8 @@
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=65NJWU9PUUX7W&lc=GB&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
  
 ## Artwork
- * If you would like to make artwork that will be used with this dashboard you can find the my toosl and photoshop files here.
+ * If you would like to make artwork that will be used with this dashboard you can find the my tools and photoshop files here.
+ 
  Download Artwork Making Tools: [Download Gamers - Emustation Artwork Stuff](https://drive.google.com/drive/folders/1a3ZaFTuuu5L7lDbnOjmA5tlHhrwpWFKC?usp=sharing)
  
 ## Installation
