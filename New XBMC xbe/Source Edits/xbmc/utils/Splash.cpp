@@ -135,7 +135,7 @@ void CSplash::Process()
 
 bool CSplash::Start()
 {
-  if (CFile::Exists("special://xbmc/nosplash.bin"))
+  if (CFile::Exists("special://xbmc/system/toggles/no splash.enabled"))
   {
     return false;
   }
@@ -148,7 +148,7 @@ bool CSplash::Start()
     CLog::Log(LOGDEBUG, "Splash image %s not found", m_ImageName.c_str());
     return false;
   }
-  m_ImageName2 = "Q:\\media\\splash_overlay.png";
+  m_ImageName2 = "Q:\\custom_splash.png";
   Create();
   Sleep(3000);
   return true;

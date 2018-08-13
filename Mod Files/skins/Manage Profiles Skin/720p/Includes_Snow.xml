@@ -1,0 +1,155 @@
+<includes>
+		<include name="snow">
+				<control type="group">
+						<!-- snow -->
+						<!-- Use this to space all the groups -->
+						<posx>-100</posx>
+						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
+						<control type="image">
+								<posx>100</posx>
+								<posy>-100</posy>
+								<width>20</width>
+								<height>20</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>260</posx>
+								<posy>-80</posy>
+								<width>15</width>
+								<height>15</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>390</posx>
+								<posy>-110</posy>
+								<width>10</width>
+								<height>10</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
+								<colordiffuse>C2FFFFFF</colordiffuse>
+						</control>
+				</control>
+				<control type="group">
+						<!-- Use this to space all the groups -->
+						<posx>200</posx>
+						<animation effect="rotate" start="10" end="60" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
+						<control type="image">
+								<posx>100</posx>
+								<posy>-100</posy>
+								<width>20</width>
+								<height>20</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>260</posx>
+								<posy>-80</posy>
+								<width>15</width>
+								<height>15</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>390</posx>
+								<posy>-110</posy>
+								<width>10</width>
+								<height>10</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
+								<colordiffuse>C2FFFFFF</colordiffuse>
+						</control>
+				</control>
+				<control type="group">
+						<!-- Use this to space all the groups -->
+						<posx>600</posx>
+						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
+						<control type="image">
+								<posx>100</posx>
+								<posy>-100</posy>
+								<width>20</width>
+								<height>20</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>260</posx>
+								<posy>-80</posy>
+								<width>15</width>
+								<height>15</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>390</posx>
+								<posy>-110</posy>
+								<width>10</width>
+								<height>10</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
+								<colordiffuse>C2FFFFFF</colordiffuse>
+						</control>
+				</control>
+				<control type="group">
+						<!-- Use this to space all the groups -->
+						<posx>900</posx>
+						<animation effect="rotate" end="40" time="12000" delay="300" pulse="true" condition="true">Conditional</animation>
+						<control type="image">
+								<posx>100</posx>
+								<posy>-100</posy>
+								<width>20</width>
+								<height>20</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>260</posx>
+								<posy>-80</posy>
+								<width>15</width>
+								<height>15</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>390</posx>
+								<posy>-110</posy>
+								<width>10</width>
+								<height>10</height>
+								<texture>snow.png</texture>
+								<aspectratio scalediffuse="false">keep</aspectratio>
+								<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+								<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
+								<colordiffuse>C2FFFFFF</colordiffuse>
+						</control>
+				</control>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>snow_fall.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<animation effect="slide" start="0,82" end="0,0" time="600000" delay="0" reversible="false" loop="false" condition="true">Conditional</animation>
+				</control>
+		</include>
+</includes>

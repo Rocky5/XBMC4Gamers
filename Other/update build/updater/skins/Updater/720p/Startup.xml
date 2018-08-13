@@ -1,0 +1,15 @@
+<window id="2999">
+		<onload>RunScript(Special://xbmc/scripts/updater.py)</onload>
+		<defaultcontrol always="true">1</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<controls>
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>background.png</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+		</controls>
+</window>

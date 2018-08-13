@@ -1,0 +1,11 @@
+[B]Version 2.4.3[/B]
+
+- Synchonize with requests 2.4.3
+
+[B]Version 2.3.0[/B]
+
+- Synchonize with requests 2.3.0
+
+[B]Version 1.1.0[/B]
+
+- requests v1.1.0

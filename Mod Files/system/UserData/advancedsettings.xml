@@ -1,0 +1,14 @@
+<advancedsettings>
+		<powersave>false</powersave>
+		<nodvdrom>false</nodvdrom>
+		<splash>true</splash>
+		<!-- this value gives the best quality and doesn't run out of ram -->
+		<!-- Note: its slower to draw the images when scrolling fast ( triggers ) -->
+		<!-- <thumbsize>300</thumbsize> -->
+		<myprograms>
+				<trainerpath>Q:\system\trainers\</trainerpath>
+		</myprograms>
+		<pictures>
+				<screenshotpath>Q:\system\Screenshots\</screenshotpath>
+		</pictures>
+</advancedsettings>

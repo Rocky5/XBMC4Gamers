@@ -1,0 +1,374 @@
+<includes>
+		<include name="Context_Buttons">
+				<control type="grouplist">
+						<description>Control Info</description>
+						<posx>10</posx>
+						<posy>688</posy>
+						<width>1280</width>
+						<height>80</height>
+						<itemgap>5</itemgap>
+						<orientation>Horizontal</orientation>
+						<visible>[Window.IsVisible(0) | Window.IsVisible(1) | Window.IsVisible(4) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1102) | Window.IsVisible(3000) | Window.IsVisible(1119)]</visible>
+						<!-- A Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\a_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!Window.IsVisible(3000)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32000]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>!Window.IsVisible(3000)</visible>
+						</control>
+						<!-- Synopsis View -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\a_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>Window.IsVisible(3000) + ControlGroup(9001).HasFocus(10) | [ControlGroup(9001).HasFocus(13) + Skin.HasSetting(SynopsisPreviewThere)]</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[518] Game</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(3000) + ControlGroup(9001).HasFocus(10)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32088]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(3000) + ControlGroup(9001).HasFocus(13) + Player.HasVideo</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32059]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Skin.HasSetting(SynopsisPreviewThere) + Window.IsVisible(3000) + ControlGroup(9001).HasFocus(13) + !Player.HasVideo</visible>
+						</control>
+						<!-- B Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\b_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>Skin.HasSetting(editmode) | Window.IsActive(3000) | Window.IsActive(134)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32001]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Skin.HasSetting(editmode) | Window.IsActive(3000) | Window.IsActive(134)</visible>
+						</control>
+						<!-- X Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\x_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!Window.IsVisible(0) + !Window.IsVisible(4) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(34) + !Window.IsVisible(35) + !Window.IsVisible(134) + !Window.IsVisible(1111) + !Window.IsVisible(1112) + !Window.IsVisible(1115) + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(1102) + !Window.IsVisible(3000) + Player.HasMedia</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32002]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>!Window.IsVisible(0) + !Window.IsVisible(4) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(34) + !Window.IsVisible(35) + !Window.IsVisible(134) + !Window.IsVisible(1111) + !Window.IsVisible(1112) + !Window.IsVisible(1115) + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(1102) + !Window.IsVisible(3000) + Player.HasMedia</visible>
+						</control>
+						<!-- Y Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\y_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!Window.IsVisible(3000) + !Skin.HasSetting(HideContextButtons) + Skin.HasSetting(editmode) | Window.IsVisible(500) | Window.IsVisible(501)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32006]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>!Window.IsVisible(3000) + !Skin.HasSetting(HideContextButtons) + !Window.IsVisible(500) + !Window.IsVisible(501) + Skin.HasSetting(editmode)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32007]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Skin.HasSetting(editmode) + Window.IsVisible(501) | Window.IsVisible(501)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32008]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Skin.HasSetting(editmode) + Window.IsVisible(500) | Window.IsVisible(500)</visible>
+						</control>
+						<!-- White Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\white_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!Window.IsVisible(4) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111) + !Window.IsVisible(1112)  + !Window.IsVisible(1115) + !Window.IsVisible(34) + !Window.IsVisible(1102)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32009]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>!Window.IsVisible(4) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111) + !Window.IsVisible(1112)  + !Window.IsVisible(1115) + !Window.IsVisible(34) + !Window.IsVisible(1102)</visible>
+						</control>
+						<!-- Black Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\black_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!window.IsVisible(134) + !Window.IsVisible(1112) + !Window.IsVisible(1115) + !Window.IsVisible(3000) + Window.IsVisible(1) | Window.IsVisible(0) | Window.IsVisible(500) | Window.IsVisible(501</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32010]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>!Window.IsVisible(3000) + !window.IsVisible(134) + !Window.IsVisible(1112) + !Window.IsVisible(1115) + Skin.HasSetting(EditMode) + Window.IsVisible(1)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32011]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>!Skin.HasSetting(EditMode) + !Window.IsVisible(4) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32012]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(0)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32013]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(500) + !Window.IsVisible(3000)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32014]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(501) + !Window.IsVisible(3000)</visible>
+						</control>
+						<!-- Back Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\back_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>Window.IsVisible(1) + !Window.IsVisible(3000) + !Window.IsVisible(134) + !Window.IsVisible(1112) + !Window.IsVisible(1115)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32015]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(1) + !Window.IsVisible(3000) + !Window.IsVisible(134) + !Window.IsVisible(1112) + !Window.IsVisible(1115)</visible>
+						</control>
+						<!-- Start Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\start_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>System.HasMediaDVD</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32016]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>System.HasMediaDVD</visible>
+						</control>
+						<!-- DPad Buttons -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\dpad_up_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!Window.IsVisible(3000) + ![Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58)| Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1112)  | Window.IsVisible(1115) | Window.IsVisible(1102) | Player.HasVideo]</visible>
+						</control>
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\dpad_left_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!Window.IsVisible(3000) + [Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58)] + ![Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1112)  | Window.IsVisible(1115) | Window.IsVisible(1102) | Player.HasVideo] | Window.IsVisible(500)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32017]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>!Window.IsVisible(3000) + ![Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1112)  | Window.IsVisible(1115) | Window.IsVisible(1102) | Player.HasVideo]</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32018]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(500)</visible>
+						</control>
+						<!-- R Stick Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\r_stick_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32019]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+						</control>
+						<!-- L Stick Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>25</width>
+								<height>25</height>
+								<texture>pad_buttons\l_stick_button.png</texture>
+								<aspectratio>keep</aspectratio>
+								<visible>!Window.IsVisible(3000) + !Skin.HasSetting(HideContextButtons) + Skin.HasSetting(editmode)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>$LOCALIZE[32020]</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>!Window.IsVisible(3000) + !Skin.HasSetting(HideContextButtons) + Skin.HasSetting(editmode)</visible>
+						</control>
+				</control>
+		</include>
+</includes>

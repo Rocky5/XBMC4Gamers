@@ -2139,6 +2139,7 @@ void CUtil::FlashScreen(bool bImmediate, bool bOn)
 
 void CUtil::TakeScreenshot(const CStdString& strFileName, bool flashScreen)
 {
+    CreateDirectory("Q:\\system\\screenshots", NULL);
     LPDIRECT3DSURFACE8 lpSurface = NULL;
     g_graphicsContext.Lock();
     CStdString strFileNameTranslated = CSpecialProtocol::TranslatePath(strFileName);
@@ -2750,6 +2751,8 @@ CStdString CUtil::TranslateSpecialSource(const CStdString &strSpecial)
   {
     if (strSpecial.Left(5).Equals("$HOME"))
       URIUtils::AddFileToFolder("special://home/", strSpecial.Mid(5), strReturn);
+    if (strSpecial.Left(5).Equals("$ROOT"))
+      URIUtils::AddFileToFolder("special://root/", strSpecial.Mid(5), strReturn);
     else if (strSpecial.Left(10).Equals("$SUBTITLES"))
       URIUtils::AddFileToFolder("special://subtitles/", strSpecial.Mid(10), strReturn);
     else if (strSpecial.Left(9).Equals("$USERDATA"))
@@ -3620,7 +3623,7 @@ void CUtil::GetSkinThemes(vector<CStdString>& vecTheme)
     {
       CStdString strExtension;
       URIUtils::GetExtension(pItem->GetPath(), strExtension);
-      if (strExtension == ".xpr" && pItem->GetLabel().CompareNoCase("Skindefault.xpr"))
+      if (strExtension == ".xpr" && pItem->GetLabel().CompareNoCase("Textures.xpr"))
       {
         CStdString strLabel = pItem->GetLabel();
         vecTheme.push_back(strLabel.Mid(0, strLabel.size() - 4));

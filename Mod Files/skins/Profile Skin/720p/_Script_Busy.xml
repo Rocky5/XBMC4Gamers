@@ -1,0 +1,35 @@
+<window type="dialog" id="1101">
+		<defaultcontrol always="true">9000</defaultcontrol>
+		<animation effect="slide" start="0,0" end="0,-70" delay="0" time="250">WindowOpen</animation>
+		<animation effect="slide" start="0,-70" end="0,0" delay="100" time="100">WindowClose</animation>
+		<controls>
+				<control type="image">
+						<posx>70r</posx>
+						<posy>0r</posy>
+						<width>70</width>
+						<height>70</height>
+						<texture border="20,20,20,20">thumbfo.png</texture>
+				</control>
+				<control type="label.">
+						<posx>70r</posx>
+						<posy>-45r</posy>
+						<width>70</width>
+						<height>70</height>
+						<font>size_18</font>
+						<textcolor>grey</textcolor>
+						<label>$LOCALIZE[503]</label>
+						<align>center</align>
+				</control>
+				<control type="image">
+						<description>Busy animation</description>
+						<posx>65r</posx>
+						<posy>-5r</posy>
+						<width>60</width>
+						<height>60</height>
+						<texture>busy.png</texture>
+						<aspectratio>keep</aspectratio>
+						<colordiffuse>AA000000</colordiffuse>
+						<animation effect="rotate" start="0" end="360" center="auto" time="250" loop="true" condition="true">conditional</animation>
+				</control>
+		</controls>
+</window>

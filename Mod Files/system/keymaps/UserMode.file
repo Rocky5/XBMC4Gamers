@@ -5,8 +5,8 @@
 						<B>Highlight</B>
 						<white>ContextMenu</white>
 						<black>XBMC.ActivateWindow(1112)</black>
+						<back>XBMC.ActivateWindow(1115)</back>
 						<start>XBMC.PlayDVD()</start>
-						<back>highlight</back>
 				</gamepad>
 		</Programs>
 		<Profiles>

@@ -1,0 +1,122 @@
+<window id="1114">
+		<defaultcontrol always="true">1</defaultcontrol>
+		<controls>
+				<control type="button" id="1">
+						<posx>-500</posx>
+						<onclick>ActivateWindow(1116)</onclick>
+						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile)</visible>
+						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
+				</control>
+				<control type="button" id="1">
+						<posx>-500</posx>
+						<onfocus>ActivateWindow(Programs,Games)</onfocus>
+						<onfocus>Dialog.Close(1114,true)</onfocus>
+						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
+						<visible>!Skin.HasSetting(LoadEmulators)</visible>
+				</control>
+				<control type="button" id="1">
+						<posx>-500</posx>
+						<onfocus>ActivateWindow(Programs,Emulators)</onfocus>
+						<onfocus>Dialog.Close(1114,true)</onfocus>
+						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
+						<visible>Skin.HasSetting(LoadEmulators)</visible>
+				</control>
+				<control type="image">
+						<include>1280x720</include>
+						<texture fallback="Background.png">$INFO[skin.string(background_color)]</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>background diffuse.png</texture>
+						<colordiffuse>$VAR[var-bgcustcolour]</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>$INFO[skin.string(background_image)]</texture>
+						<aspectratio>scale</aspectratio>
+				</control>
+				<control type="group">
+						<posx>524</posx>
+						<posy>252</posy>
+						<animation effect="fade" start="100" end="0" delay="0" time="100">WindowOpen</animation>
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>234</width>
+								<height>234</height>
+								<aspectratio>stretch</aspectratio>
+								<texture border="5">button-focus.png</texture>
+						</control>
+						<control type="image">
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>224</width>
+								<height>224</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>black-back.png</texture>
+								<bordersize>1</bordersize>
+						</control>
+						<control type="image">
+								<posx>5</posx>
+								<posy>5</posy>
+								<width>224</width>
+								<height>224</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>$INFO[system.profilethumb]</texture>
+						</control>
+						<!-- Flipped images -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>235</posy>
+								<width>234</width>
+								<height>234</height>
+								<aspectratio>stretch</aspectratio>
+								<texture flipy="true" diffuse="diffuse_mirror.png">button-focus.png</texture>
+						</control>
+						<control type="image">
+								<posx>5</posx>
+								<posy>240</posy>
+								<width>224</width>
+								<height>224</height>
+								<aspectratio>stretch</aspectratio>
+								<texture flipy="true" diffuse="diffuse_mirror.png">black-back.png</texture>
+						</control>
+						<control type="image">
+								<posx>5</posx>
+								<posy>240</posy>
+								<width>224</width>
+								<height>224</height>
+								<aspectratio>stretch</aspectratio>
+								<texture flipy="true" diffuse="diffuse_mirror.png">$INFO[system.profilethumb]</texture>
+						</control>
+				</control>
+				<control type="label">
+						<posx>0</posx>
+						<posy>559</posy>
+						<width>1280</width>
+						<height>36</height>
+						<font>size_35</font>
+						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE]$LOCALIZE[32028][/UPPERCASE]</label>
+						<animation effect="fade" start="100" end="0" delay="0" time="100">WindowOpen</animation>
+				</control>
+				<control type="textbox">
+						<posx>355</posx>
+						<posy>305</posy>
+						<width>570</width>
+						<height>321</height>
+						<font>size_50</font>
+						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<label>$LOCALIZE[32070]</label>
+						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile)</visible>
+						<animation effect="fade" start="0" end="100" delay="100" time="0">WindowOpen</animation>
+				</control>
+		</controls>
+</window>

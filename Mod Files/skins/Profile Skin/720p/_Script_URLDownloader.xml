@@ -1,0 +1,50 @@
+<window type="window" id="1901">
+		<defaultcontrol always="true">1</defaultcontrol>
+		<onload>RunScript(Special://urldownloader/default.py,updates/URLDownloader.zip,Q:/system/scripts/)</onload>
+		<onload>ActivateWindow(1101)</onload>
+		<controls>
+				<!-- Background Images -->
+				<control type="image">
+						<description>background</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>FF97999B</colordiffuse>
+						<texture>background diffuse.png</texture>
+				</control>
+				<!-- Top Underlay Image -->
+				<control type="image">
+						<description>top bar</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>115</height>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>FFC8CACB</colordiffuse>
+						<texture>background diffuse.png</texture>
+				</control>
+				<!-- System Log -->
+				<control type="image">
+						<description>logo</description>
+						<posx>30</posx>
+						<posy>20</posy>
+						<width>490</width>
+						<height>72</height>
+						<aspectratio align="left">keep</aspectratio>
+						<texture>layouts/settings/art/logo.png</texture>
+				</control>
+				<!-- Bottom Underlay Image -->
+				<control type="image">
+						<posx>0</posx>
+						<posy>47r</posy>
+						<width>1280</width>
+						<height>47</height>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>FFC5C6C7</colordiffuse>
+						<texture>background diffuse.png</texture>
+				</control>
+				<include>ContextButtonsSettings</include>
+		</controls>
+</window>

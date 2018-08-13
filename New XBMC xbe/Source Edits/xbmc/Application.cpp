@@ -1078,17 +1078,17 @@ HRESULT CApplication::Create(HWND hWnd)
 
   // Load the langinfo to have user charset <-> utf-8 conversion
   CStdString strLangInfoPath;
-  strLangInfoPath.Format("special://xbmc/language/%s/langinfo.xml", strLanguage.c_str());
+  strLangInfoPath.Format("special://xbmc/system/language/%s/langinfo.xml", strLanguage.c_str());
 
   CLog::Log(LOGINFO, "load language info file:%s", strLangInfoPath.c_str());
   g_langInfo.Load(strLangInfoPath);
 
   CStdString strKeyboardLayoutConfigurationPath;
-  strKeyboardLayoutConfigurationPath.Format("Q:\\language\\%s\\keyboardmap.xml", g_guiSettings.GetString("locale.language"));
+  strKeyboardLayoutConfigurationPath.Format("Q:\\system\\language\\%s\\keyboardmap.xml", g_guiSettings.GetString("locale.language"));
   CLog::Log(LOGINFO, "load keyboard layout configuration info file: %s", strKeyboardLayoutConfigurationPath.c_str());
   g_keyboardLayoutConfiguration.Load(strKeyboardLayoutConfigurationPath);
 
-  CStdString strLanguagePath = "special://xbmc/language/";
+  CStdString strLanguagePath = "special://xbmc/system/language/";
 
   CLog::Log(LOGINFO, "load %s language file, from path: %s", strLanguage.c_str(), strLanguagePath.c_str());
   if (!g_localizeStrings.Load(strLanguagePath, strLanguage))
@@ -1099,7 +1099,7 @@ HRESULT CApplication::Create(HWND hWnd)
     FatalErrorHandler(true, false, true);
 
   // check the skin file for testing purposes
-  CStdString strSkinBase = "special://xbmc/skin/";
+  CStdString strSkinBase = "special://xbmc/skins/";
   CStdString strSkinPath = strSkinBase + g_guiSettings.GetString("lookandfeel.skin");
   CLog::Log(LOGINFO, "Checking skin version of: %s", g_guiSettings.GetString("lookandfeel.skin").c_str());
   if (!g_SkinInfo.Check(strSkinPath))
@@ -1173,7 +1173,7 @@ HRESULT CApplication::Create(HWND hWnd)
   // set GUI res and force the clear of the screen
   g_graphicsContext.SetVideoResolution(g_guiSettings.m_LookAndFeelResolution, TRUE, true);
 
-  m_splash = new CSplash("Q:\\media\\splash.png");
+  m_splash = new CSplash("Q:\\splash.png");
   m_splash->Start();
 
   int iResolution = g_graphicsContext.GetVideoResolution();
@@ -1224,16 +1224,17 @@ HRESULT CApplication::Initialize()
 
   CUtil::WipeDir("Z:\\");
   CreateDirectory("Z:\\temp", NULL); // temp directory for python and dllGetTempPathA
-  CreateDirectory("Q:\\scripts", NULL);
-  CreateDirectory("Q:\\plugins", NULL);
-  CreateDirectory("Q:\\plugins\\music", NULL);
-  CreateDirectory("Q:\\plugins\\video", NULL);
-  CreateDirectory("Q:\\plugins\\pictures", NULL);
-  CreateDirectory("Q:\\plugins\\programs", NULL);
-  CreateDirectory("Q:\\language", NULL);
-  CreateDirectory("Q:\\visualisations", NULL);
-  CreateDirectory("Q:\\sounds", NULL);
-  CreateDirectory(g_settings.GetUserDataFolder()+"\\visualisations",NULL);
+  CreateDirectory("Q:\\system\\scripts", NULL);
+  CreateDirectory("Q:\\system\\plugins", NULL);
+  CreateDirectory("Q:\\system\\plugins\\music", NULL);
+  CreateDirectory("Q:\\system\\plugins\\video", NULL);
+  CreateDirectory("Q:\\system\\plugins\\pictures", NULL);
+  CreateDirectory("Q:\\system\\plugins\\programs", NULL);
+  CreateDirectory("Q:\\system\\language", NULL);
+  CreateDirectory("Q:\\system\\screenshots", NULL);
+  CreateDirectory("Q:\\system\\trainers", NULL);
+  CreateDirectory("Q:\\system\\visualisations", NULL);
+  CreateDirectory("Q:\\default skin\\sounds", NULL);
 
   // initialize network
   if (!m_bXboxMediacenterLoaded)
@@ -1452,7 +1453,7 @@ void CApplication::StartWebServer()
     CLog::Log(LOGNOTICE, "Webserver: Starting...");
     CSectionLoader::Load("LIBHTTP");
     m_pWebServer = new CWebServer();
-    m_pWebServer->Start(m_network.m_networkinfo.ip, atoi(g_guiSettings.GetString("services.webserverport")), "Q:\\web", false);
+    m_pWebServer->Start(m_network.m_networkinfo.ip, atoi(g_guiSettings.GetString("services.webserverport")), "Q:\\system\\web", false);
     if (m_pWebServer)
     {
       m_pWebServer->SetUserName(g_guiSettings.GetString("services.webserverusername").c_str());
@@ -1842,7 +1843,7 @@ void CApplication::StopServices()
 
 void CApplication::DelayLoadSkin()
 {
-  m_skinReloadTime = CTimeUtils::GetFrameTime() + 2000;
+  m_skinReloadTime = CTimeUtils::GetFrameTime() + 1500;
   return ;
 }
 
@@ -1896,7 +1897,7 @@ void CApplication::LoadSkin(const CStdString& strSkin)
   m_skinReloadTime = 0;
 
   CStdString strHomePath;
-  CStdString strSkinPath = "Q:\\skin\\" + strSkin;
+  CStdString strSkinPath = "Q:\\skins\\" + strSkin;
 
   CLog::Log(LOGINFO, "  load skin from:%s", strSkinPath.c_str());
 
@@ -2304,7 +2305,7 @@ void CApplication::DoRender()
     MEMORYSTATUS stat;
     GlobalMemoryStatus(&stat);
     DWORD dwMegFree = (DWORD)(stat.dwAvailPhys / (1024 * 1024));
-    if (dwMegFree <= 20)
+    if (dwMegFree <= 12)
     {
       g_TextureManager.Flush();
     }
@@ -2395,7 +2396,7 @@ void CApplication::RenderMemoryStatus()
     float y = 0.04f * g_graphicsContext.GetHeight() + g_settings.m_ResInfo[res].Overscan.top;
     CGUITextLayout::DrawOutlineText(g_fontManager.GetFont("debuglogging"), x, y, 0xffffffff, 0xff000000, 2, wszText);
   }
- }
+}
 
 // OnKey() translates the key into a CAction which is sent on to our Window Manager.
 // The window manager will return true if the event is processed, false otherwise.
@@ -5209,7 +5210,7 @@ void CApplication::Process()
   // check if we need to load a new skin
   if (m_skinReloadTime && CTimeUtils::GetFrameTime() >= m_skinReloadTime)
   {
-    ReloadSkin();
+	ReloadSkin();
   }
 
   // dispatch the messages generated by python or other threads to the current window
@@ -5918,25 +5919,30 @@ void CApplication::InitDirectoriesXbox()
 {  
   // Set installation path. Use Q as ie. F doesn't exist yet!!!
   CStdString install_path = "Q:\\";
+  // Get absolute path for XBMC
+  CStdString strABPath;
+  CUtil::GetHomePath(strABPath);
 
   // check logpath
   CStdString strLogFile, strLogFileOld;
-  g_settings.m_logFolder = install_path;
+  g_settings.m_logFolder = "Q:\\system";
   URIUtils::AddSlashAtEnd(g_settings.m_logFolder);
   strLogFile.Format("%sxbmc.log", g_settings.m_logFolder);
   strLogFileOld.Format("%sxbmc.old.log", g_settings.m_logFolder);
 
   // Rotate the log (xbmc.log -> xbmc.old.log)
-  ::DeleteFile(strLogFileOld.c_str());
   ::MoveFile(strLogFile.c_str(), strLogFileOld.c_str());
+  ::DeleteFile(strLogFileOld.c_str());
 
   // map our special drives to the correct drive letter
   CSpecialProtocol::SetXBMCPath(install_path);
   CSpecialProtocol::SetHomePath(install_path);
+  CSpecialProtocol::SetRootPath(strABPath);
+  CSpecialProtocol::SetURLDownloaderPath("Q:\\system\\scripts\\urldownloader\\");
   CSpecialProtocol::SetTempPath("Z:\\");
 
   // First profile is always the Master Profile
-  CSpecialProtocol::SetMasterProfilePath("Q:\\UserData");
+  CSpecialProtocol::SetMasterProfilePath("Q:\\system\\UserData");
 
   g_settings.LoadProfiles(PROFILES_FILE);
 }

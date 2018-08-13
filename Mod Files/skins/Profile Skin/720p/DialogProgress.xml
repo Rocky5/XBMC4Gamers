@@ -1,0 +1,162 @@
+<window id="101">
+		<defaultcontrol>10</defaultcontrol>
+		<controls>
+				<control type="group">
+						<visible>!Window.IsVisible(0) + Window.IsActive(1)</visible>
+						<animation effect="slide" start="0,0" end="0,-40" time="200">Windowopen</animation>
+						<animation effect="slide" start="0,-40" end="0,0" time="200">Windowclose</animation>
+						<control type="image">
+								<description>Heading Background</description>
+								<posx>0</posx>
+								<posy>0r</posy>
+								<width>1280</width>
+								<height>40</height>
+								<texture>footer.png</texture>
+						</control>
+						<control type="grouplist">
+								<posx>20</posx>
+								<posy>0r</posy>
+								<width>1240</width>
+								<height>40</height>
+								<itemgap>10</itemgap>
+								<orientation>horizontal</orientation>
+								<control type="label">
+										<description>heading label</description>
+										<height>40</height>
+										<width min="200" max="350">auto</width>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_23</font>
+										<label>$LOCALIZE[32050]</label>
+										<textcolor>black</textcolor>
+								</control>
+								<control type="label" id="4">
+										<description>dialog line 3</description>
+										<height>40</height>
+										<width min="400" max="930">auto</width>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_23</font>
+										<textcolor>black</textcolor>
+										<haspath>yes</haspath>
+								</control>
+						</control>
+				</control>
+				<control type="group">
+						<posx>290</posx>
+						<posy>210</posy>
+						<include>dialogeffect</include>
+						<visible>!Window.IsActive(0) + !Window.IsActive(1)</visible>
+						<control type="image">
+								<description>background image</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>700</width>
+								<height>300</height>
+								<texture border="40">dialogback.png</texture>
+						</control>
+						<control type="label" id="1">
+								<description>heading label</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>0</width>
+								<height>0</height>
+								<font>-</font>
+								<visible>false</visible>
+						</control>
+						<control type="image">
+								<description>Heading Background</description>
+								<posx>30</posx>
+								<posy>35</posy>
+								<width>640</width>
+								<height>40</height>
+								<texture border="5">thumbfo.png</texture>
+						</control>
+						<control type="label">
+								<description>heading label</description>
+								<posx>40</posx>
+								<posy>35</posy>
+								<width>620</width>
+								<height>40</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<font>size_21_bold</font>
+								<label>$INFO[Control.GetLabel(1)] $INFO[System.Progressbar,- ,%]</label>
+								<textcolor>black</textcolor>
+						</control>
+						<control type="label" id="2">
+								<description>dialog line 1</description>
+								<posx>40</posx>
+								<posy>85</posy>
+								<width>620</width>
+								<height>30</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>-</label>
+								<font>size_20</font>
+						</control>
+						<control type="label" id="3">
+								<description>dialog line 2</description>
+								<posx>40</posx>
+								<posy>115</posy>
+								<width>620</width>
+								<height>30</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>-</label>
+								<font>size_20</font>
+								<haspath>yes</haspath>
+						</control>
+						<control type="label" id="4">
+								<description>dialog line 3</description>
+								<posx>40</posx>
+								<posy>145</posy>
+								<width>620</width>
+								<height>30</height>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>-</label>
+								<font>size_20</font>
+								<haspath>yes</haspath>
+						</control>
+						<control type="progress">
+								<description>Progressbar</description>
+								<posx>40</posx>
+								<posy>184</posy>
+								<width>620</width>
+								<height>10</height>
+								<info>System.Progressbar</info>
+						</control>
+						<control type="button" id="10">
+								<description>Cancel button</description>
+								<posx>250</posx>
+								<posy>215</posy>
+								<width>200</width>
+								<height>35</height>
+								<label>222</label>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>white</focusedcolor>
+								<align>center</align>
+								<texturenofocus border="3">button-nofocus.png</texturenofocus>
+								<texturefocus border="3">button-focus2.png</texturefocus>
+								<onleft>10</onleft>
+								<onright>10</onright>
+								<onup>10</onup>
+								<ondown>10</ondown>
+								<visible>!Window.IsActive(2999) + !Window.IsActive(1111)</visible>
+						</control>
+						<control type="button" id="10">
+								<description>Cancel button</description>
+								<posx>-</posx>
+								<posy>-</posy>
+								<width>-</width>
+								<height>-</height>
+								<label>-</label>
+								<texturenofocus border="3">-</texturenofocus>
+								<texturefocus border="3">-</texturefocus>
+						</control>
+				</control>
+				<!-- Debug Info -->
+				<include>Debug</include>
+		</controls>
+</window>

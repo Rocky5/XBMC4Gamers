@@ -52,6 +52,8 @@
 #include "FileSystem/RarManager.h"
 #include "FileSystem/VideoDatabaseDirectory.h"
 #include "FileSystem/ZipManager.h"
+#include "FileSystem/SpecialProtocol.h"
+#include "FileSystem/File.h"
 
 #include "utils/URIUtils.h"
 #include "xbox/xbeheader.h"
@@ -76,6 +78,7 @@
 
 #include <vector>
 #include "settings/AdvancedSettings.h"
+
 
 using namespace std;
 using namespace XFILE;
@@ -894,9 +897,25 @@ int CBuiltins::Execute(const CStdString& execString)
     }
     // also set the default color theme
     CStdString colorTheme(URIUtils::ReplaceExtension(strSkinTheme, ".xml"));
-
     g_guiSettings.SetString("lookandfeel.skincolors", colorTheme);
-
+    CStdString soundTheme(URIUtils::ReplaceExtension(strSkinTheme, ""));
+	if (CFile::Exists("special://skin/sounds/" + soundTheme + "/sounds.xml"))
+	{
+		g_guiSettings.SetString("lookandfeel.soundskin",soundTheme);
+	}
+	else
+	{
+		g_guiSettings.SetString("lookandfeel.soundskin","SKINDEFAULT");
+	}
+	CStdString fontTheme(URIUtils::ReplaceExtension(strSkinTheme, ""));
+	if (CFile::Exists("special://skin/fonts/" + soundTheme + ".ttf"))
+	{
+		g_guiSettings.SetString("lookandfeel.font",fontTheme);
+	}
+	else
+	{
+		g_guiSettings.SetString("lookandfeel.font","SKINDEFAULT");;
+	}
     g_application.DelayLoadSkin();
   }
   else if (execute.Equals("skin.setstring") || execute.Equals("skin.setimage") || execute.Equals("skin.setfile") ||

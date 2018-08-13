@@ -1,19 +1,37 @@
-..:: XBMC4Xbox 3.6-DEV-r33024 Modifications ::..
+..:: XBMC4Xbox 3.5.3 Modifications ::..
 
-1) Changed how the login screen works when launching a profile for the first time. It no longer asks to edit the info.
-2) Removed some of the functionality from the profile settings dialog. ALso copies the guisettings & sources automatically.
-3) Changed how the game save menu works, it now doesn't list "TitleMeta.xbx" files as files, there in the own directory like the rest.
-4) Increased the Splash screen display time, no point having a nice splash if you dont get to see it.
-5) Fullscreen Splashscreen!
-6) Faster loading of your games library. ( disables the directory check/scan when entering the games menu )
-7) Added my Synopsis script to the context menu for the MyPrograms windows
-8) Added a new custom window _script*.xml will now be automatically parsed like Custom*.xml
-9) Added the option to disable the splash image via the advancedsettings.xml ( <splash>false</splash> )
-10) nosplash.bin added to the root folder to easily disable the splash if you don't want to use the advancedsettings.xml
-11) Splash overlay file so folk can keep the splash but add there own logo or visa-versa. ( splash_overlay.png )
-12) Fix ported over from Kodi to fix the SetFocus function, it now focuses from the first entry in the list instead of the current page.
-13) Updated the debug overlay to use debugloggin font name and added MBs to the layout.
-14) Fixed centering labels in lists.
-( If you have a skin that uses center for its labels in a list you may want to remove the offset you had to use for posx )
-15) Update to the center label fix in lists, if your skin version is 2.1 it will use the old way and if its 2.2 or higher will use the fixed way.
-16) Fixed the XBE title extraction from the xbe files, so no more broken names!
+1) Changed how the game save menu works, it now doesn't list "TitleMeta.xbx" files as files, there in the own directory like the rest.
+2) Increased the Splash screen display time, no point having a nice splash if you dont get to see it.
+3) Fullscreen Splashscreen!
+4) Faster loading of your games library.
+	( disables the directory check/scan when entering the games menu, also disabled by default. enable create a file called "fast game scanning.enabled" and place it in Q:\system\toggles\ )
+5) Added my Synopsis script to the context menu for the MyPrograms windows
+6) Added a new custom window _script*.xml will now be automatically parsed like Custom*.xml
+7) Rearranged the folders structure to make it cleaner.
+8) removed the extension from Skin.CurrentTheme
+9) Moved screensavers to the system folder :) ( Had to use XP to build the screensavers )
+10) Added the option to disable the splash image via the advancedsettings.xml ( <splash>false</splash> )
+11) system\toggles\no splash.enabled added to the system folder to easily disable the splash if you don't want to use the advancedsettings.xml
+12) Reload skin almost instantly, changed for the them selection screen.
+13) It now runs the "home_themer.py" script after changing the theme, so it now also works in the Settings menu of XBMC.
+	( Also means faster cycling of themes )
+14) Fix ported over from Kodi to fix the SetFocus function, it now focuses from the first entry in the list instead of the current page.
+15) Fixed the setting a new language, forgot to change a path.
+16) Updated the debug overlay to use debugloggin font name and added MBs to the layout.
+17) Fixed centring labels in lists.
+	( If you have a skin that uses centre for its labels in a list you may want to remove the offset you had to use for posx )
+18) Update to the centre label fix in lists, if your skin version is 2.1 it will use the old way and if its 2.2 or higher will use the fixed way.
+19) Now creates the system\trainers directory
+20) Now creates system\screenshots if it doesn't exist when you take a screenshot.
+21) Splash overlay file so folk can keep the splash but add there own logo or visa-versa. ( custom_splash.png )
+22) Fixed the XBE title extraction from the xbe files, so no more broken names!
+23) Added Special://root/ so that we can get the absolute path of XBMCs installation.
+	( will output for example E:\xbmc4gamers\ instead of Q:\ that xbmc and home use )
+24) Added slow scrolling for artwork. This can be disabled by renaming the following file Q:\system\toggles\slow scrolling.enabled
+25) Changed how the login screen works when launching a profile for the first time. It no longer asks to edit the info.
+26) Removed some of the functionality from the profile settings dialog. ALso copies the guisettings & sources automatically.
+27) Added Special://urldownloader/ so that we can get the absolute path of the urldownloaders installation.
+	( will output for example Q:\system\scripts\urldownloader  )
+28) Fixed favourites getting corrupted if you reload the skin when editing a label.
+29) If fast loading is enabled it will log any games added to the database in the log file.
+30) Moved the fanart screensaver path to Q:\System\Screensavers\Fanart

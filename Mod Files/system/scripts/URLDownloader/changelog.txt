@@ -1,0 +1,41 @@
+1.0.10
+	1) Added a load of check so I can support XBMC4Gamers
+	2) Now will check for the urldownloader update on first launch of a download.
+	   ( this only happens once per console cycle )
+
+1.0.9
+	1) Fixed a mistake on my part for removing the old files.
+	2) Added launching of the test build updater/installer
+
+1.0.8
+	1) Changed the filenames of the download list to better reflect its a script running.
+
+1.0.7
+- Changes to the DLC parsing code for getting the title ID. This was changed so I can get 1 character more for names.
+
+1.0.6
+- Added logging when an exception happens
+- Changed the test site to 'http://www.pool.ntp.org'
+- Added a new tool into the other section that is used to format the cache partitions of the Xbox.
+
+1.0.5
+- If DLC is detected it will truncate the zip name a cleaner name.
+- Other slight change to the singer section.
+- Progress bar added to the DLC Signer
+
+1.0.4
+- Fixed exiting the directory select. ( it would proceed to download the file )
+- Added a check if the download lists.zip is being downloaded and remove the old thumbs before extracting the new ones.
+- Added a check when installing a mod to check for the default.xbe. ( so you know youre in the right place )
+
+1.0.3
+- Added DLC signing support. Big thanks to Grimdoomer for telling me how the signing of contentmeta.xbx works.
+
+1.0.2
+- more error checking
+
+1.0.1
+- Modified to how I need it to work by Rocky5
+
+1.0.0
+- Initial release

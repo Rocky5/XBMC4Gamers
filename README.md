@@ -13,7 +13,14 @@
 
 [![paypal](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=65NJWU9PUUX7W&lc=GB&currency_code=GBP&bn=PP%2dDonationsBF%3abtn_donate_LG%2egif%3aNonHosted)
  
+## Artwork
+ * If you would like to make artwork that will be used with this dashboard you can find the my toosl and photoshop files here.
+ Download Artwork Making Tools: [Download Gamers - Emustation Artwork Stuff](https://drive.google.com/drive/folders/1a3ZaFTuuu5L7lDbnOjmA5tlHhrwpWFKC?usp=sharing)
+ 
 ## Installation
+ #### Download Prebuild build: [Download XBMC4Gamers](http://xbmc-emustation.com/downloads/_latest%20build/XBMC4Gamers.zip)
+ 
+ #### Build from Source:
  * Download [XBMC4Gamers](https://github.com/Rocky5/XBMC4Gamers/archive/master.zip) and extract the **XBMC4Gamers-master** folder to your desktop.
  * Download the latest [XBMC4XBOX-*****.zip](https://drive.google.com/drive/folders/0B9zNhNcNUdDTRVFBbHcwc2JCZFE) and extract the **XBMC** folder that is inside the zip to your desktop\\**XBMC4Gamers-master**\\ folder.
  * Now double click the **Build XBMC4Gamers.bat** that's inside the **XBMC4Gamers-master** folder and wait. It will output a new folder named **XBMC**

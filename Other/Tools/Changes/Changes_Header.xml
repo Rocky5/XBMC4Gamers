@@ -1,0 +1,15 @@
+<window type="window" id="1400">
+		<defaultcontrol always="true">9000</defaultcontrol>
+		<controls>
+				<include>CommonBackground</include>
+				<control type="textbox">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>1240</width>
+						<height>680</height>
+						<font>size_21</font>
+						<textcolor>FFFFFFFF</textcolor>
+						<align>left</align>
+						<scrolltime>200</scrolltime>
+						<autoscroll delay="10000" time="2000" repeat="10000" condition="true">Conditional</autoscroll>
+						<label>
