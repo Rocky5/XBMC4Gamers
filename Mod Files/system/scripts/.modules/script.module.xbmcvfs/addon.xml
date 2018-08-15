@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.xbmcvfs" name="xbmcvfs emulator"
+       version="1.0.2" provider-name="Frost (passion-xbmc.org)">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+    </requires>
+    <extension point="xbmc.python.module"
+               library="lib"/>
+    <extension point="xbmc.addon.metadata">
+        <summary lang="en">Module emulates XBMC xbmcvfs module.</summary>
+        <description lang="en">Module emulates XBMC xbmcvfs module.</description>
+        <platform>all</platform>
+    </extension>
+</addon>

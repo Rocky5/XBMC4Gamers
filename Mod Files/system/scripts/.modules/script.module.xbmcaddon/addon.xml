@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<addon id="script.module.xbmcaddon" name="xbmcaddon emulator" version="1.3.0" provider-name="Team XBMC4XBOX">
+    <requires>
+        <import addon="xbmc.python" version="1.0"/>
+    </requires>
+    <extension point="xbmc.python.module" library="lib"/>
+    <extension point="xbmc.addon.metadata">
+        <platform>xbox</platform>
+        <summary lang="en">Module emulates XBMC xbmcaddon module.</summary>
+        <description lang="en">Module emulates XBMC xbmcaddon module.</description>
+    </extension>
+</addon>

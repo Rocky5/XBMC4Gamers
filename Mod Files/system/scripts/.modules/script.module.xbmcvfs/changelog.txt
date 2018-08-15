@@ -1,0 +1,6 @@
+1.0.1
+ - fixed: unicode decode error
+ - changed: xbox platform for all
+
+1.0.0
+ - initial release
