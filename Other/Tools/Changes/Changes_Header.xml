@@ -1,7 +1,20 @@
 <window type="window" id="1400">
-		<defaultcontrol always="true">9000</defaultcontrol>
+		<defaultcontrol always="true">1</defaultcontrol>
 		<controls>
 				<include>CommonBackground</include>
+				<control type="scrollbar" id="1">
+						<posx>1265</posx>
+						<posy>0</posy>
+						<width>10</width>
+						<height>720</height>
+						<texturesliderbackground>-</texturesliderbackground>
+						<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+						<texturesliderbarfocus border="2,16,2,16">scrollbar_bar_focus.png</texturesliderbarfocus>
+						<textureslidernib>scrollbar_nib.png</textureslidernib>
+						<textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
+						<showonepage>false</showonepage>
+						<orientation>vertical</orientation>
+				</control>
 				<control type="textbox">
 						<posx>20</posx>
 						<posy>20</posy>
@@ -10,6 +23,7 @@
 						<font>size_21</font>
 						<textcolor>FFFFFFFF</textcolor>
 						<align>left</align>
-						<scrolltime>200</scrolltime>
+						<scrolltime>400</scrolltime>
+						<pagecontrol>1</pagecontrol>
 						<autoscroll delay="10000" time="2000" repeat="10000" condition="true">Conditional</autoscroll>
 						<label>

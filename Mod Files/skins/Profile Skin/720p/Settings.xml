@@ -183,16 +183,16 @@
 				</control>
 				<include>WindowFooter</include>
 				<control type="label">
-						<posx>5r</posx>
-						<posy>28r</posy>
+						<posx>10r</posx>
+						<posy>30r</posy>
 						<width>1280</width>
-						<height>15</height>
-						<font>size_15</font>
+						<height>25</height>
+						<font>size_19</font>
 						<textcolor>white</textcolor>
-						<selectedcolor>blue</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$LOCALIZE[31000]</label>
+						<include>Window_OpenClose_Animation</include>
 				</control>
 				<!-- Debug Info -->
 				<include>Debug</include>

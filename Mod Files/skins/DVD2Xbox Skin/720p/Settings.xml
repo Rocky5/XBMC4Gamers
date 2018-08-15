@@ -6,9 +6,9 @@
 				<control type="group">
 						<include>ViewVisibleEffect</include>
 						<control type="panel" id="50">
-								<posx>120</posx>
-								<posy>160</posy>
-								<width>1040</width>
+								<posx>380</posx>
+								<posy>317</posy>
+								<width>520</width>
 								<height>340</height>
 								<onleft>-</onleft>
 								<onright>-</onright>
@@ -108,40 +108,10 @@
 								</focusedlayout>
 								<content>
 										<item>
-												<label>480</label>
-												<label2>31400</label2>
-												<onclick>ActivateWindow(AppearanceSettings)</onclick>
+												<label>213</label>
+												<label2>Adjust your screen size</label2>
+												<onclick>ActivateWindow(guicalibration)</onclick>
 												<icon>thumbs/Appearance.png</icon>
-										</item>
-										<item>
-												<label>157</label>
-												<label2>31401</label2>
-												<onclick>ActivateWindow(VideosSettings)</onclick>
-												<icon>thumbs/Videos.png</icon>
-										</item>
-										<item>
-												<label>0</label>
-												<label2>31408</label2>
-												<onclick>ActivateWindow(ProgramsSettings)</onclick>
-												<icon>thumbs/Programs.png</icon>
-										</item>
-										<item>
-												<label>705</label>
-												<label2>31405</label2>
-												<onclick>ActivateWindow(NetworkSettings)</onclick>
-												<icon>thumbs/Network.png</icon>
-										</item>
-										<item>
-												<label>13000</label>
-												<label2>31406</label2>
-												<onclick>ActivateWindow(SystemSettings)</onclick>
-												<icon>thumbs/Settings.png</icon>
-										</item>
-										<item>
-												<label>7</label>
-												<label2>31409</label2>
-												<onclick>ActivateWindow(FileManager)</onclick>
-												<icon>thumbs/FileManager.png</icon>
 										</item>
 								</content>
 						</control>
@@ -171,16 +141,16 @@
 				</control>
 				<include>WindowFooter</include>
 				<control type="label">
-						<posx>5r</posx>
-						<posy>28r</posy>
+						<posx>10r</posx>
+						<posy>30r</posy>
 						<width>1280</width>
-						<height>15</height>
-						<font>size_15</font>
+						<height>25</height>
+						<font>size_19</font>
 						<textcolor>white</textcolor>
-						<selectedcolor>blue</selectedcolor>
 						<align>right</align>
 						<aligny>center</aligny>
 						<label>$LOCALIZE[31000]</label>
+						<include>Window_OpenClose_Animation</include>
 				</control>
 				<!-- Debug Info -->
 				<include>Debug</include>

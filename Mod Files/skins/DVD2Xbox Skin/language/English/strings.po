@@ -15,7 +15,7 @@ msgstr ""
 
 
 msgctxt "#31000"
-msgid "XBMC4Gamers v1.1"
+msgid "XBMC4Gamers 0.0.000"
 msgstr ""
 
 msgctxt "#31001"

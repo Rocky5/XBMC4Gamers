@@ -6,98 +6,123 @@
 				<control type="group">
 						<include>ViewVisibleEffect</include>
 						<control type="panel" id="1">
-								<posx>255</posx>
-								<posy>270</posy>
-								<width>1280</width>
-								<height>720</height>
-								<onleft>50</onleft>
-								<onright>50</onright>
-								<onup>50</onup>
-								<ondown>50</ondown>
-								<viewtype>list</viewtype>
-								<pagecontrol>61</pagecontrol>
+								<posx>380</posx>
+								<posy>232</posy>
+								<width>520</width>
+								<height>340</height>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>-</onup>
+								<ondown>-</ondown>
+								<viewtype label="21371">panel</viewtype>
+								<pagecontrol>-</pagecontrol>
 								<scrolltime>200</scrolltime>
-								<focusposition>3</focusposition>
-								<orientation>-</orientation>
-								<animation effect="slide" end="256" time="0" condition="!Skin.HasSetting(editmode)">conditional</animation>
-								<itemlayout height="130" width="256">
+								<preloaditems>2</preloaditems>
+								<itemlayout height="85" width="520">
 										<control type="image">
-												<posx>2</posx>
-												<posy>2</posy>
-												<width>252</width>
-												<height>126</height>
-												<texture>thumbnf.png</texture>
-												<aspectratio>scale</aspectratio>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>515</width>
+												<height>80</height>
+												<texture>black-back.png</texture>
+												<aspectratio>stretch</aspectratio>
 										</control>
 										<control type="image">
-												<posx>7</posx>
-												<posy>7</posy>
-												<width>242</width>
-												<height>90</height>
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>120</width>
+												<height>70</height>
 												<texture>$INFO[listitem.icon]</texture>
-												<bordertexture border="5">black-back.png</bordertexture>
+												<bordertexture>-</bordertexture>
 												<bordersize>1</bordersize>
 												<aspectratio>scale</aspectratio>
 										</control>
 										<control type="label">
-												<posx>10</posx>
-												<posy>100</posy>
-												<width>236</width>
-												<height>20</height>
-												<font>size_20</font>
+												<posx>130</posx>
+												<posy>15</posy>
+												<width>375</width>
+												<height>25</height>
+												<font>size_25</font>
 												<textcolor>white</textcolor>
 												<selectedcolor>blue</selectedcolor>
 												<align>left</align>
 												<aligny>center</aligny>
 												<label>$INFO[ListItem.Label]</label>
 										</control>
+										<control type="label">
+												<posx>130</posx>
+												<posy>45</posy>
+												<width>375</width>
+												<height>15</height>
+												<font>size_15</font>
+												<textcolor>white</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>$INFO[ListItem.Label2]</label>
+										</control>
 								</itemlayout>
-								<focusedlayout height="256" width="190">
+								<focusedlayout height="125" width="775">
 										<control type="image">
-												<posx>2</posx>
-												<posy>2</posy>
-												<width>252</width>
-												<height>126</height>
-												<texture>thumbfo.png</texture>
-												<aspectratio>scale</aspectratio>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>515</width>
+												<height>80</height>
+												<texture border="2,1,2,-1">settings_focus.png</texture>
+												<aspectratio>stretch</aspectratio>
 										</control>
 										<control type="image">
-												<posx>7</posx>
-												<posy>7</posy>
-												<width>242</width>
-												<height>90</height>
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>120</width>
+												<height>70</height>
 												<texture>$INFO[listitem.icon]</texture>
-												<bordertexture border="5">black-back.png</bordertexture>
+												<bordertexture>-</bordertexture>
 												<bordersize>1</bordersize>
 												<aspectratio>scale</aspectratio>
 										</control>
 										<control type="label">
-												<posx>10</posx>
-												<posy>100</posy>
-												<width>236</width>
-												<height>20</height>
-												<font>size_20</font>
-												<textcolor>black</textcolor>
-												<selectedcolor>blue2</selectedcolor>
+												<posx>130</posx>
+												<posy>15</posy>
+												<width>375</width>
+												<height>25</height>
+												<font>size_25</font>
+												<textcolor>white</textcolor>
+												<selectedcolor>blue</selectedcolor>
 												<align>left</align>
 												<aligny>center</aligny>
 												<label>$INFO[ListItem.Label]</label>
+										</control>
+										<control type="label">
+												<posx>130</posx>
+												<posy>45</posy>
+												<width>375</width>
+												<height>15</height>
+												<font>size_15</font>
+												<textcolor>white</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>$INFO[ListItem.Label2]</label>
 										</control>
 								</focusedlayout>
 								<content>
 										<item id="1">
 												<label>Auto Install Game</label>
+												<label2>Automate the process · Auto return to XBMC4Gamers</label2>
 												<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/DVD2Xbox/default.py )</onclick>
 												<icon>Special://xbmc/Apps/DVD2Xbox/icon.png</icon>
 										</item>
 										<item id="2">
 												<label>Manually Install Game</label>
+												<label2>Change settings · Manually patch games</label2>
 												<onclick>Control.SetFocus(10)</onclick>
 												<icon>Special://xbmc/Apps/DVD2Xbox/icon.png</icon>
 												<visible>Skin.HasSetting(editmode)</visible>
 										</item>
 										<item id="3">
 												<label>Settings</label>
+												<label2>Calibrate screen</label2>
 												<onclick>ActivateWindow(Settings)</onclick>
 												<icon>defaultharddisk.png</icon>
 												<visible>Skin.HasSetting(editmode)</visible>

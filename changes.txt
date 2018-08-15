@@ -1,3 +1,18 @@
+15/08/2018
+	1) Fixed the version label animations.
+	2) Updated the DVD2Xbox profile look.
+	3) Updater script done for updating Gamers
+	4) Fixed Clear Cache not working when in DVD2Xbox and Manage Profiles profiles.
+	5) Updated the Manage Profiles Profile settings menu.
+		( You can no longer change skins as you aren't meant to )
+	6) New .bat files to do the updater build and normal build.
+		( Just like XBMC-Emustation )
+	7) Added LCD.xml
+	8) New look for the downloader to better match gamers
+		( I may at a later date spend more time on this to make it completely different )
+	9) Removed some unused textures.
+
+
 13/08/2018
 	1) New XBE file cleans up ram better when ram gets low.
 	2) New XBE file A couple edits brought over from XBMC-Emustation

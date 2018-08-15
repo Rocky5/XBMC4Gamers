@@ -2,7 +2,6 @@
 		<defaultcontrol always="true">51</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<onload condition="Skin.HasSetting(introenabled)">RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Intro.py )</onload>
-		<onload condition="!Skin.HasSetting(introenabled)">RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Update Checker.py )</onload>
 		<controls>
 				<control type="button" id="51">
 						<posx>-500</posx>

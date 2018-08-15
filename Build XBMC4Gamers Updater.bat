@@ -1,16 +1,15 @@
 :: Copyright of John Conn (Rocky5 Forums & JCRocky5 Twitter) 2016
 :: Please don't re-release this as your own, if you make a better tool then I don't mind :-)
+Attrib /s -r -h -s "Thumbs.db" >NUL
+Del /Q /S "Thumbs.db" 2>NUL
 :Start
 @Echo off & SetLocal EnableDelayedExpansion & Mode con:cols=100 lines=10 & Color 0B
 title XBMC4Gamers Builder
 
-Attrib /s -r -h -s "Thumbs.db" >NUL
-Del /Q /S "Thumbs.db" 2>NUL
-
 Set "foldername=update-files"
-Set "fromDate=06/03/2018"
+Set "fromDate=13/08/2018"
 Set "toDate=%date%"
-Set "version=1.0"
+Set "version=1.1"
 (
 echo fromDate^=CDate^("%fromDate%"^)
 echo toDate^=CDate^("%toDate%"^)
@@ -28,14 +27,30 @@ Echo: & Echo: & Echo: & Echo   Please wait...
 
 (
 XCopy /s /e /i /h /r /y "Mod Files" "%foldername%"
-del /q /s "%foldername%\*.bat"
-copy "New XBMC xbe\default.xbe" "%foldername%\"
-copy "New XBMC xbe\default.xbe" "other\update build\updater\"
+copy /y "New XBMC xbe\default.xbe" "%foldername%\default.xbe"
+copy /y "New XBMC xbe\default.xbe" "Other\update build\updater\default.xbe"
+del /q "%foldername%\system\userdata\guisettings.xml"
+del /q "%foldername%\system\userdata\profiles.xml"
 )
+copy /y "Changes.txt" "%foldername%"
+if exist "Other\build for release" (
+	Call Other\Tools\repl.bat "XBMC4Gamers 0.0.000" "XBMC4Gamers %version%.%daytotal%" L < "%foldername%\skins\Profile Skin\language\English\strings.po" >"%foldername%\skins\Profile Skin\language\English\strings.tmp"
+	Del "%foldername%\skins\Profile Skin\language\English\strings.po"
+	rename "%foldername%\skins\Profile Skin\language\English\strings.tmp" "strings.po"
+	Call Other\Tools\repl.bat "	" "" L < "%foldername%\changes.txt" >"%foldername%\changes.tmp"
+	copy /b "Other\Tools\Changes\Changes_Header.xml"+"%foldername%\changes.tmp"+"Other\Tools\Changes\Changes_Footer.xml" "%foldername%\skins\Profile Skin\720p\Custom_Changes.xml"
+	del /q "%foldername%\changes.tmp"
+)
+copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\Manage Profile Skin\language\English\strings.po"
+copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\DVD2Xbox Skin\language\English\strings.po"
+del /Q /S "%foldername%\*.bat"
+del /Q /S "%foldername%\empty"
 CD %foldername%\
+del /Q "Changes.txt"
 "C:\Program Files\7-Zip\7z.exe" a "..\Other\update build\updater\Update Files\%foldername%.zip" "*" -mx=7 -r -y
 "C:\Program Files\7-Zip\7z.exe" a "..\XBMC4Gamers-update-files.zip" "..\Other\update build\*" -mx=7 -r -y
 del /Q "..\Other\update build\updater\Update Files\%foldername%.zip"
+del /Q "..\Other\update build\updater\default.xbe"
 cls
 Echo: & Echo:
 Echo  Just overwrite your existing install of XBMC4Gamers
