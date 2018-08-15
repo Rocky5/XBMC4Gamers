@@ -1,5 +1,5 @@
 <window id="29">
-		<defaultcontrol always="true">51</defaultcontrol>
+		<defaultcontrol always="true">52</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<onload condition="Skin.HasSetting(introenabled)">RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Intro.py )</onload>
 		<controls>
