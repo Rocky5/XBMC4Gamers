@@ -19,7 +19,7 @@
  Download Artwork Making Tools: [Download Gamers - Emustation Artwork Stuff](https://drive.google.com/drive/folders/1a3ZaFTuuu5L7lDbnOjmA5tlHhrwpWFKC?usp=sharing)
  
 ## Installation
- #### Download Prebuild build: [Download XBMC4Gamers](http://xbmc-emustation.com/downloads/_latest%20build/XBMC4Gamers.zip)
+ #### Download Prebuilt build: [Download XBMC4Gamers](http://xbmc-emustation.com/downloads/_latest%20build/XBMC4Gamers.zip)
  
  #### Build from Source:
  * Download [XBMC4Gamers](https://github.com/Rocky5/XBMC4Gamers/archive/master.zip) and extract the **XBMC4Gamers-master** folder to your desktop.
