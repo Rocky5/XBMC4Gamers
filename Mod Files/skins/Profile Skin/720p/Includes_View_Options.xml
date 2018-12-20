@@ -24,6 +24,7 @@
 						<itemgap>0</itemgap>
 						<ondown>50</ondown>
 						<orientation>horizontal</orientation>
+						<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus()</visible>
 						<animation effect="slide" start="0,0" end="0,60" delay="50" time="300">Focus</animation>
 						<animation effect="slide" start="0,60" end="0,0" time="200">Unfocus</animation>
 						<control type="button" id="3">
@@ -116,19 +117,19 @@
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(fanartenabled)</onclick>
 												<icon>fanart_disabled.png</icon>
-												<visible>!Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Skin.HasSetting(customfanartfog) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(65)</visible>
+												<visible>!Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Skin.HasSetting(customfanartfog) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79)</visible>
 										</item>
 										<item id="101">
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(fadefanart)</onclick>
 												<icon>fanart_faded.png</icon>
-												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Skin.HasSetting(customfanartfog) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(65)</visible>
+												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Skin.HasSetting(customfanartfog) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79)</visible>
 										</item>
 										<item id="101">
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(customfanartfog)</onclick>
 												<icon>fanart.png</icon>
-												<visible>Skin.HasSetting(fadefanart) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(customfanartfog) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(65)</visible>
+												<visible>Skin.HasSetting(fadefanart) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(customfanartfog) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79)</visible>
 										</item>
 										<item id="101">
 												<label>-</label>
@@ -136,7 +137,7 @@
 												<onclick>Skin.Reset(fadefanart)</onclick>
 												<onclick>Skin.Reset(customfanartfog)</onclick>
 												<icon>fanart_faded_custom.png</icon>
-												<visible>Skin.HasSetting(fadefanart) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(customfanartfog) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(65)</visible>
+												<visible>Skin.HasSetting(fadefanart) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(customfanartfog) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79)</visible>
 										</item>
 										<item id="102">
 												<label>-</label>
@@ -154,13 +155,13 @@
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(_recourcesenabled)</onclick>
 												<icon>_recources_enabled.png</icon>
-												<visible>Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(65)</visible>
+												<visible>Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(79)</visible>
 										</item>
 										<item id="103">
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(_recourcesenabled)</onclick>
 												<icon>_recources_disabled.png</icon>
-												<visible>!Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(65)</visible>
+												<visible>!Skin.HasSetting(_recourcesenabled) + !Control.IsVisible(79)</visible>
 										</item>
 										<item id="104">
 												<label>-</label>
@@ -312,6 +313,7 @@
 						<ondown>50</ondown>
 						<focusposition>3</focusposition>
 						<orientation>horizontal</orientation>
+						<visible allowhiddenfocus="true">Control.HasFocus(9001)</visible>
 						<animation effect="slide" start="0,0" end="0,60" delay="50" time="300">Focus</animation>
 						<animation effect="slide" start="0,60" end="0,0" time="200">Unfocus</animation>
 						<itemlayout height="45" width="110">
@@ -437,9 +439,44 @@
 										<onclick>Container.SetViewMode(64)</onclick>
 										<icon>views\dual3dview.png</icon>
 								</item>
-								<item id="220">
+								<item id="216">
 										<label>-</label>
 										<onclick>Container.SetViewMode(65)</onclick>
+										<icon>views\iconaltview.png</icon>
+								</item>
+								<item id="217">
+										<label>-</label>
+										<onclick>Container.SetViewMode(66)</onclick>
+										<icon>views\psview.png</icon>
+								</item>
+								<item id="218">
+										<label>-</label>
+										<onclick>Container.SetViewMode(67)</onclick>
+										<icon>views\posterfixedview.png</icon>
+								</item>
+								<!-- <item id="219"> -->
+								<!-- <label>-</label> -->
+								<!-- <onclick>Container.SetViewMode(68)</onclick> -->
+								<!-- <icon>views\.png</icon> -->
+								<!-- </item> -->
+								<!-- <item id="220"> -->
+								<!-- <label>-</label> -->
+								<!-- <onclick>Container.SetViewMode(69)</onclick> -->
+								<!-- <icon>views\.png</icon> -->
+								<!-- </item> -->
+								<!-- <item id="221"> -->
+								<!-- <label>-</label> -->
+								<!-- <onclick>Container.SetViewMode(70)</onclick> -->
+								<!-- <icon>views\.png</icon> -->
+								<!-- </item> -->
+								<!-- <item id="222"> -->
+								<!-- <label>-</label> -->
+								<!-- <onclick>Container.SetViewMode(71)</onclick> -->
+								<!-- <icon>views\.png</icon> -->
+								<!-- </item> -->
+								<item id="230">
+										<label>-</label>
+										<onclick>Container.SetViewMode(79)</onclick>
 										<icon>views\resourcesview.png</icon>
 								</item>
 						</content>

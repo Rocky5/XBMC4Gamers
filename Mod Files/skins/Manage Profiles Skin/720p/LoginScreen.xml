@@ -1,14 +1,12 @@
 <window id="29">
 		<defaultcontrol always="true">52</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
-		<onload condition="Skin.HasSetting(introenabled)">RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Intro.py )</onload>
 		<controls>
 				<control type="button" id="51">
 						<posx>-500</posx>
 				</control>
-				<include>CommonBackground</include>
 				<control type="group">
-						<animation effect="fade" start="0" end="100" time="100" delay="200" contidion="Skin.HasSetting(introenabled)">WindowOpen</animation>
+						<include>CommonBackground</include>
 						<control type="label">
 								<description>Edit mode indicator</description>
 								<posx>10r</posx>
@@ -597,7 +595,7 @@
 										<visible>Control.HasFocus(70)</visible>
 								</control>
 						</control>
-						<include condition="System.Date(12-25,12-26)">snow</include>
+						<include condition="System.Date(12-23,12-29)">snow</include>
 						<!-- Had to add the exact date for each year :/ damn easter! -->
 						<include condition="StringCompare(System.Date,Sun, Mar 27, 2016)">easter</include>
 						<include condition="StringCompare(System.Date,Sun, 27 Mar 2016)">easter</include>

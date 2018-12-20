@@ -82,7 +82,7 @@
 						<onfocus>system.logoff</onfocus>
 						<texturenofocus>-</texturenofocus>
 						<texturefocus>-</texturefocus>
-						<enable>[System.HasLoginScreen + System.Loggedon]</enable>
+						<enable>System.HasLoginScreen</enable>
 						<animation effect="fade" start="0" end="100" delay="2000" time="0">Focus</animation>
 				</control>
 		</controls>

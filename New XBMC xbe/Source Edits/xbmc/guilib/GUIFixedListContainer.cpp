@@ -22,8 +22,7 @@
 #include "GUIFixedListContainer.h"
 #include "GUIListItem.h"
 #include "GUIInfoManager.h"
-
-#include <fstream>
+#include "settings/AdvancedSettings.h"
 
 CGUIFixedListContainer::CGUIFixedListContainer(int parentID, int controlID, float posX, float posY, float width, float height, ORIENTATION orientation, int scrollTime, int preloadItems, int fixedPosition, int cursorRange)
     : CGUIBaseContainer(parentID, controlID, posX, posY, width, height, orientation, scrollTime, preloadItems)
@@ -60,10 +59,8 @@ bool CGUIFixedListContainer::OnAction(const CAction &action)
     {
 		m_analogScrollCount += action.GetAmount() * action.GetAmount();
 		bool handled = false;
-		std::ifstream toggle("Q:\\system\\toggles\\slow scrolling.enabled");
-		if (toggle.good())
+		if (g_advancedSettings.m_slowscrolling)
 		{
-			toggle.close();
 			while (m_analogScrollCount > 8.5)
 			{
 				handled = true;
@@ -73,10 +70,10 @@ bool CGUIFixedListContainer::OnAction(const CAction &action)
 		}
 		  else
 		{
-			while (m_analogScrollCount > 0.4)
+			while (m_analogScrollCount > 0.8)
 			{
 				handled = true;
-				m_analogScrollCount -= 0.4f;
+				m_analogScrollCount -= 0.8f;
 				Scroll(-1);
 			}
 		}
@@ -86,10 +83,8 @@ bool CGUIFixedListContainer::OnAction(const CAction &action)
     {
 		m_analogScrollCount += action.GetAmount() * action.GetAmount();
 		bool handled = false;
-		std::ifstream toggle("Q:\\system\\toggles\\slow scrolling.enabled");
-		if (toggle.good())
+		if (g_advancedSettings.m_slowscrolling)
 		{
-			toggle.close();
 			while (m_analogScrollCount > 8.5)
 			{
 				handled = true;
@@ -99,10 +94,10 @@ bool CGUIFixedListContainer::OnAction(const CAction &action)
 		}
 		  else
 		{
-			while (m_analogScrollCount > 0.4)
+			while (m_analogScrollCount > 0.8)
 			{
 				handled = true;
-				m_analogScrollCount -= 0.4f;
+				m_analogScrollCount -= 0.8f;
 				Scroll(1);
 			}
 		}

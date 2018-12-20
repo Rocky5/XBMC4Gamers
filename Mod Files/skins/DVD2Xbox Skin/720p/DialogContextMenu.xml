@@ -1,6 +1,6 @@
 <window id="106">
 		<defaultcontrol always="true">1000</defaultcontrol>
-		<include>dialogeffect</include>
+		<include>dialogeffect2</include>
 		<controls>
 				<control type="group">
 						<include>ContextMenuOffsets</include>

@@ -12,7 +12,7 @@
 						<onfocus>ActivateWindow(1116)</onfocus>
 						<onup>1</onup>
 						<ondown>1</ondown>
-						<enable>[System.HasLoginScreen + System.Loggedon]</enable>
+						<enable>System.HasLoginScreen</enable>
 				</control>
 				<!-- Debug Info -->
 				<include>Debug</include>

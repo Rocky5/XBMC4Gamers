@@ -1,3 +1,46 @@
+20/12/2018
+	1) Fixed width of the buttons and underlay in skin settings and settings category.
+	2) Updated the dialog progress to not show cancel when you select a downloader option.
+		( Gives the effect of a loading screen instead of just waiting thinking it's not working. )
+	3) Updated the progress dialog to show all information.
+	4) Added two new toggles to toggle the trainer and played overlay on poster views.
+	5) Redone the Poster and Poster small view
+		( first and second view )
+	6) New XBE now when you exit a emulator that supports command line launching it will return to the dash.
+		( Doesn't work after exiting the first rom :/ this is probably why it was disabled in the XBMC source code lol )
+	7) New XBE below explains it but the intro script is loaded by XBMC now.
+	8) Few other small improvements to make stuff simpler or easier on the eye.
+	9) Updater script used to check for new version on load.
+		( Just like XBMC-Emustation )
+	10) Intro script is now loaded via XBMC xbe before the login screen and profile loading screen.
+		( also MP4 at 704x396 works best for quality and no stuttering )
+	11) New options menu.
+		( Black button when on the games list )
+	12) Updated the synopsis script to play your startup playlist upon exiting if you played a video.
+	13) Updated the synopsis script to handle all button presses, so launching a game playing a video eg... is handled by the script now instead of the xml file.
+	14) A few new views, totalling 19 now Oo
+	15) New icons for the parent folders.
+		( Games, Emulators, Homebrew and Applications )
+	16) Probably a few more changes here and there.
+	17) Moved the toggle to the advancedsettings.xml this way I can just write them to the xml file for each profile instead of 1 file effecting all profiles.
+	18) Increased the slow scrolling speed a tad.
+	19) Each profile can now have there own independent intro if auto login is enabled.
+		( disabling an intro in one profile wont disable it globally now )
+	20) Fixed a few niggles with the settings page.
+	21) You can set the home window via the skin settings.
+		( Applications, Emulators, Games, Homebrew or Root )
+	22) Reorganised the Skin settings menu.
+	23) Customise the colour of the XBMC4Gamers logo on the games list screen.
+	24) Updated all dialogs with a new look.
+	25) New busy dialog animation.
+	26) If no video is found for the synopsis info it hides the video button.
+	27) More crap, but its odds and ends really.
+	28) New synopsis view, toggle in the skin settings.
+		( Updated the synopsis script also )
+	29) Updated a few of the old views.
+	**) A load of quality of life changes.
+
+
 15/08/2018
 	1) Fixed the version label animations.
 	2) Updated the DVD2Xbox profile look.

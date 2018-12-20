@@ -38,7 +38,7 @@
 								<height>25</height>
 								<texture>pad_buttons\a_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>Window.IsVisible(3000) + ControlGroup(9001).HasFocus(10) | [ControlGroup(9001).HasFocus(13) + Skin.HasSetting(SynopsisPreviewThere)]</visible>
+								<visible>Window.IsVisible(3000) + ControlGroup(9001).HasFocus(10) | [ControlGroup(9001).HasFocus(13) + !Window.IsActive(1111) + Skin.HasSetting(SynopsisPreviewThere)]</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -187,7 +187,7 @@
 								<height>25</height>
 								<texture>pad_buttons\black_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!window.IsVisible(134) + !Window.IsVisible(1112) + !Window.IsVisible(1115) + !Window.IsVisible(3000) + Window.IsVisible(1) | Window.IsVisible(0) | Window.IsVisible(500) | Window.IsVisible(501</visible>
+								<visible>!window.IsVisible(134) + !Window.IsVisible(1112) + !Window.IsVisible(1115) + !Window.IsVisible(3000) + Window.IsVisible(1) | Window.IsVisible(4) | Window.IsVisible(0) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(502)</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -240,6 +240,17 @@
 								<height>20</height>
 								<font>size_15</font>
 								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<label>Change Log</label>
+								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
+								<visible>Window.IsVisible(4)</visible>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32014]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
 								<visible>Window.IsVisible(501) + !Window.IsVisible(3000)</visible>
@@ -252,7 +263,7 @@
 								<height>25</height>
 								<texture>pad_buttons\back_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>Window.IsVisible(1) + !Window.IsVisible(3000) + !Window.IsVisible(134) + !Window.IsVisible(1112) + !Window.IsVisible(1115)</visible>
+								<visible>Window.IsVisible(1) +!Window.IsVisible(3000) + !Window.IsVisible(134) + !Window.IsVisible(1112) + !Window.IsVisible(1115)</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -335,7 +346,7 @@
 								<height>25</height>
 								<texture>pad_buttons\r_stick_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								<visible>System.HasLoginScreen + !Window.IsVisible(3000)</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -346,7 +357,7 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32019]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								<visible>System.HasLoginScreen + !Window.IsVisible(3000)</visible>
 						</control>
 						<!-- L Stick Button -->
 						<control type="image">

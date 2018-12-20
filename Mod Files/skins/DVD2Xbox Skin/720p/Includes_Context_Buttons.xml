@@ -141,7 +141,7 @@
 								<height>25</height>
 								<texture>pad_buttons\r_stick_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								<visible>System.HasLoginScreen</visible>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -152,7 +152,7 @@
 								<textcolor>$VAR[var-labelcolour]</textcolor>
 								<label>$LOCALIZE[32019]</label>
 								<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">conditional</animation>
-								<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+								<visible>System.HasLoginScreen</visible>
 						</control>
 						<!-- L Stick Button -->
 						<control type="image">

@@ -8,8 +8,8 @@
 										<posy>410</posy>
 										<width>1440</width>
 										<height>430</height>
-										<onleft>55</onleft>
-										<onright>55</onright>
+										<onleft>53</onleft>
+										<onright>53</onright>
 										<onup>117</onup>
 										<ondown>83</ondown>
 										<viewtype label="view53">list</viewtype>

@@ -12,26 +12,26 @@
 				<height>720</height>
 		</include>
 		<include name="CommonBackground">
-				<control type="image">
+				<control type="largeimage">
 						<include>1280x720</include>
-						<texture fallback="Background.png">$INFO[skin.string(background_color)]</texture>
+						<texture fallback="background.png">$INFO[skin.string(background_color)]</texture>
 						<aspectratio>stretch</aspectratio>
 				</control>
-				<control type="image">
+				<control type="largeimage">
 						<include>1280x720</include>
 						<texture>background diffuse.png</texture>
 						<colordiffuse>$VAR[var-bgcustcolour]</colordiffuse>
 						<aspectratio>stretch</aspectratio>
 				</control>
-				<control type="image">
+				<control type="largeimage">
 						<include>1280x720</include>
 						<texture>$INFO[skin.string(background_image)]</texture>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>stretch</aspectratio>
 				</control>
 		</include>
 		<include name="Fanart">
 				<control type="group">
-						<visible>Skin.HasSetting(higherfanart) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(65) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<visible>Skin.HasSetting(higherfanart) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<animation effect="fade" reversable="true" start="100" end="0" delay="1000" time="500" condition="Window.IsVisible(3000)">Hidden</animation>
 						<animation effect="fade" reversable="true" start="0" end="75" time="0" condition="!Skin.HasSetting(fadefanart)">Conditional</animation>
 						<control type="largeimage">
@@ -58,7 +58,7 @@
 						</control>
 				</control>
 				<control type="group">
-						<visible>Skin.HasSetting(higherfanart) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(65) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<visible>Skin.HasSetting(higherfanart) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<animation effect="fade" reversable="true" start="100" end="0" delay="1000" time="500" condition="Window.IsVisible(3000)">Hidden</animation>
 						<control type="largeimage">
 								<include>1280x720</include>
@@ -102,7 +102,7 @@
 						</control>
 				</control>
 				<control type="group">
-						<visible>!Skin.HasSetting(higherfanart) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(65) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<visible>!Skin.HasSetting(higherfanart) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fadefanart) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<animation effect="fade" reversable="true" start="100" end="0" delay="1000" time="500" condition="Window.IsVisible(3000)">Hidden</animation>
 						<animation effect="fade" reversable="true" start="0" end="75" time="0" condition="!Skin.HasSetting(fadefanart)">Conditional</animation>
 						<control type="largeimage">
@@ -129,7 +129,7 @@
 						</control>
 				</control>
 				<control type="group">
-						<visible>!Skin.HasSetting(higherfanart) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(65) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<visible>!Skin.HasSetting(higherfanart) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadefanart) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<animation effect="fade" reversable="true" start="100" end="0" delay="1000" time="500" condition="Window.IsVisible(3000)">Hidden</animation>
 						<control type="largeimage">
 								<include>1280x720</include>
@@ -177,18 +177,16 @@
 				<control type="image">
 						<include>1280x720</include>
 						<texture>black-back.png</texture>
-						<animation effect="fade" time="400">WindowOpen</animation>
-						<animation effect="fade" time="200">WindowClose</animation>
-						<animation effect="fade" time="400">Visible</animation>
-						<animation effect="fade" time="200">Hidden</animation>
-						<visible>Window.IsActive(SongInformation) | Window.IsActive(Favourites) | Window.IsActive(ShutdownMenu) | Window.IsActive(FileBrowser) | Window.IsActive(147) | Window.IsActive(10140) | Window.IsActive(ContentSettings) | Window.IsActive(SelectDialog) | Window.IsActive(FileStackingDialog) | Window.IsActive(MediaSource) | Window.IsActive(PictureInfo) | Window.IsActive(PlayerControls) | Window.IsActive(VirtualKeyboard) | Window.IsActive(NumericInput) | Window.IsActive(ProfileSettings) | Window.IsActive(LockSettings) | Window.IsActive(SmartPlaylistEditor) | Window.IsActive(SmartPlaylistRule) | Window.IsActive(script-Apple_Movie_Trailers-settings.xml) | Window.IsActive(script-Apple_Movie_Trailers-chooser.xml) | Window.IsActive(script-Apple_Movie_Trailers-search.xml) | Window.IsActive(script-Apple_Movie_Trailers-showtimes.xml) | Window.IsActive(script-XBMC_Lyrics-settings.xml) | Window.IsActive(script-RSS_Editor-rssEditor.xml) | Window.IsActive(script-RSS_Editor-setEditor.xml)</visible>
-						<!-- 147=TextViewer 10140=PluginSettings -->
+						<animation effect="fade" time="200">WindowOpen</animation>
+						<animation effect="fade" time="100">WindowClose</animation>
+						<animation effect="fade" time="200">Visible</animation>
+						<animation effect="fade" time="100">Hidden</animation>
 				</control>
 		</include>
 		<include name="ContextMenuOffsets">
-				<animation effect="slide" start="0,0" end="-11,-82" time="0" condition="StringCompare(Container.Viewmode,view50)">conditional</animation>
-				<animation effect="slide" start="0,0" end="-92,-82" time="0" condition="StringCompare(Container.Viewmode,view51)">conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-82" time="0" condition="StringCompare(Container.Viewmode,view52)">conditional</animation>
+				<animation effect="slide" start="0,0" end="21,-82" time="0" condition="StringCompare(Container.Viewmode,view50)">conditional</animation>
+				<animation effect="slide" start="0,0" end="-122,-82" time="0" condition="StringCompare(Container.Viewmode,view51)">conditional</animation>
+				<animation effect="slide" start="0,0" end="60,-82" time="0" condition="StringCompare(Container.Viewmode,view52)">conditional</animation>
 				<animation effect="slide" start="0,0" end="81,-82" time="0" condition="StringCompare(Container.Viewmode,view53)">conditional</animation>
 				<animation effect="slide" start="0,0" end="253,5" time="0" condition="StringCompare(Container.Viewmode,view54)">conditional</animation>
 				<animation effect="slide" start="0,0" end="296,75" time="0" condition="StringCompare(Container.Viewmode,view55)">conditional</animation>
@@ -201,7 +199,10 @@
 				<animation effect="slide" start="0,0" end="87,-82" time="0" condition="StringCompare(Container.Viewmode,view62)">conditional</animation>
 				<animation effect="slide" start="0,0" end="87,-82" time="0" condition="StringCompare(Container.Viewmode,view63)">conditional</animation>
 				<animation effect="slide" start="0,0" end="87,-82" time="0" condition="StringCompare(Container.Viewmode,view64)">conditional</animation>
-				<animation effect="slide" start="0,0" end="2,210" time="0" condition="StringCompare(Container.Viewmode,view65)">conditional</animation>
+				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view65)">conditional</animation>
+				<animation effect="slide" start="0,0" end="8,-89" time="0" condition="StringCompare(Container.Viewmode,view66)">conditional</animation>
+				<animation effect="slide" start="0,0" end="31,-49" time="0" condition="StringCompare(Container.Viewmode,view67)">conditional</animation>
+				<animation effect="slide" start="0,0" end="2,220" time="0" condition="StringCompare(Container.Viewmode,view79)">conditional</animation>
 		</include>
 		<include name="WindowHeader">
 				<control type="label">
@@ -309,7 +310,7 @@
 						<texture>horizontalglow.png</texture>
 				</control>
 		</include>
-		<include name="ScrollOffsetLabel">
+		<include name="ScrollOffsetLabel.">
 				<control type="group">
 						<visible>Container.Scrolling</visible>
 						<animation effect="slide" start="0,0" end="0,-70" delay="0" time="200">Visible</animation>
@@ -343,6 +344,20 @@
 				<texturefocus border="5">thumbfO.png</texturefocus>
 				<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
 		</include>
+		<include name="ButtonSettingsOptionsValues">
+				<description>Default Category Button</description>
+				<height>40</height>
+				<width>200</width>
+				<font>size_18</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<shadowcolor>-</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textoffsetx>10</textoffsetx>
+				<texturefocus border="5">ThumbFO.png</texturefocus>
+				<texturenofocus border="5">-</texturenofocus>
+		</include>
 		<include name="ButtonSettingsCategoryValues">
 				<description>Default Category Button</description>
 				<height>50</height>
@@ -356,14 +371,13 @@
 				<textoffsetx>20</textoffsetx>
 				<texturefocus border="5">ThumbFO.png</texturefocus>
 				<texturenofocus>-</texturenofocus>
-				<pulseonselect>false</pulseonselect>
 		</include>
 		<include name="ButtonSkinSettingsCategoryButtonValues">
 				<description>Default Button</description>
 				<posx>0</posx>
 				<posy>0</posy>
 				<height>50</height>
-				<width>949</width>
+				<width>939</width>
 				<font>size_24</font>
 				<textcolor>white</textcolor>
 				<focusedcolor>black</focusedcolor>
@@ -377,7 +391,7 @@
 				<posx>0</posx>
 				<posy>0</posy>
 				<height>50</height>
-				<width>949</width>
+				<width>939</width>
 				<font>size_24</font>
 				<textcolor>white</textcolor>
 				<focusedcolor>black</focusedcolor>
@@ -446,6 +460,10 @@
 		<include name="dialogeffect">
 				<animation effect="fade" time="200">WindowOpen</animation>
 				<animation effect="fade" time="200">WindowClose</animation>
+		</include>
+		<include name="dialogeffect2">
+				<animation effect="fade" time="100">WindowOpen</animation>
+				<animation effect="fade" time="100">WindowClose</animation>
 		</include>
 		<include name="DialogEffectZoom">
 				<animation type="WindowOpen" reversible="false">

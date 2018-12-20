@@ -1,0 +1,7 @@
+<window id="29">
+		<defaultcontrol>52</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<onload>ActivateWindow(2999)</onload>
+		<controls>
+		</controls>
+</window>

@@ -9,11 +9,11 @@
 		<controls>
 				<control type="image">
 						<description>background image</description>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>800</width>
-						<height>520</height>
-						<texture border="40">dialogback.png</texture>
+						<posx>30</posx>
+						<posy>35</posy>
+						<width>740</width>
+						<height>400</height>
+						<texture border="20,20,20,20">thumbnofo.png</texture>
 				</control>
 				<control type="image">
 						<description>Heading Background</description>
@@ -21,7 +21,7 @@
 						<posy>35</posy>
 						<width>740</width>
 						<height>40</height>
-						<texture border="5">thumbfo.png</texture>
+						<texture border="20,20,20,20">thumbfo.png</texture>
 				</control>
 				<control type="label" id="2">
 						<description>heading label</description>
@@ -117,10 +117,11 @@
 								<height>35</height>
 								<label>1024</label>
 								<font>size_20</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>black</focusedcolor>
 								<align>center</align>
-								<aligny>center</aligny>
-								<texturenofocus border="3">button-nofocus.png</texturenofocus>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">thumbnf.png</texturenofocus>
+								<texturefocus border="3">thumbfo.png</texturefocus>
 								<onup>18</onup>
 								<onleft>10</onleft>
 								<onright>10</onright>
@@ -134,10 +135,11 @@
 								<height>35</height>
 								<label>15019</label>
 								<font>size_20</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>black</focusedcolor>
 								<align>center</align>
-								<aligny>center</aligny>
-								<texturenofocus border="3">button-nofocus.png</texturenofocus>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">thumbnf.png</texturenofocus>
+								<texturefocus border="3">thumbfo.png</texturefocus>
 								<onup>11</onup>
 								<onleft>10</onleft>
 								<onright>10</onright>
@@ -151,10 +153,11 @@
 								<height>35</height>
 								<label>1210</label>
 								<font>size_20</font>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>black</focusedcolor>
 								<align>center</align>
-								<aligny>center</aligny>
-								<texturenofocus border="3">button-nofocus.png</texturenofocus>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">thumbnf.png</texturenofocus>
+								<texturefocus border="3">thumbfo.png</texturefocus>
 								<onup>13</onup>
 								<onleft>10</onleft>
 								<onright>10</onright>
@@ -200,14 +203,15 @@
 				<control type="group" id="9001">
 						<control type="button" id="18">
 								<description>Ok Button</description>
-								<posx>300</posx>
+								<posx>130</posx>
 								<posy>435</posy>
-								<width>200</width>
+								<width>370</width>
 								<height>35</height>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>black</focusedcolor>
 								<align>center</align>
-								<aligny>center</aligny>
-								<texturenofocus border="3">button-nofocus.png</texturenofocus>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">thumbnf.png</texturenofocus>
+								<texturefocus border="3">thumbfo.png</texturefocus>
 								<label>186</label>
 								<onup>12</onup>
 								<onleft>20</onleft>
@@ -217,14 +221,15 @@
 						</control>
 						<control type="button" id="19">
 								<description>Cancel Button</description>
-								<posx>510</posx>
+								<posx>500</posx>
 								<posy>435</posy>
-								<width>200</width>
+								<width>370</width>
 								<height>35</height>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>black</focusedcolor>
 								<align>center</align>
-								<aligny>center</aligny>
-								<texturenofocus border="3">button-nofocus.png</texturenofocus>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">thumbnf.png</texturenofocus>
+								<texturefocus border="3">thumbfo.png</texturefocus>
 								<label>222</label>
 								<onup>12</onup>
 								<onleft>18</onleft>
@@ -232,16 +237,18 @@
 								<ondown>10</ondown>
 								<animation effect="slide" start="0,0" end="-102,0" time="0" condition="!Control.IsVisible(20)">Conditional</animation>
 						</control>
-						<control type="button" id="20">
+						<!-- Disabled as there is no movie support in this skin -->
+						<control type="button." id="20">
 								<description>Set Content Button</description>
 								<posx>90</posx>
 								<posy>435</posy>
 								<width>200</width>
 								<height>35</height>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>black</focusedcolor>
 								<align>center</align>
-								<aligny>center</aligny>
-								<texturenofocus border="3">button-nofocus.png</texturenofocus>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<texturenofocus border="3">thumbnf.png</texturenofocus>
+								<texturefocus border="3">thumbfo.png</texturefocus>
 								<label>20333</label>
 								<onup>12</onup>
 								<onleft>19</onleft>

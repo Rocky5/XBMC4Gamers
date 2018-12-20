@@ -10,10 +10,10 @@
 								<posy>160</posy>
 								<width>1040</width>
 								<height>340</height>
-								<onleft>-</onleft>
-								<onright>-</onright>
-								<onup>-</onup>
-								<ondown>-</ondown>
+								<onleft>50</onleft>
+								<onright>50</onright>
+								<onup>50</onup>
+								<ondown>50</ondown>
 								<viewtype label="21371">panel</viewtype>
 								<pagecontrol>-</pagecontrol>
 								<scrolltime>200</scrolltime>

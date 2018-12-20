@@ -137,10 +137,12 @@ bool CSplash::Start()
 {
   if (CFile::Exists("special://xbmc/system/toggles/no splash.enabled"))
   {
+    CLog::Log(LOGDEBUG, "Splash disabled");
     return false;
   }
   if (!g_advancedSettings.m_splashImage)
   {
+    CLog::Log(LOGDEBUG, "Splash disabled");
     return false;
   }
   if (m_ImageName.IsEmpty() || !CFile::Exists(m_ImageName))

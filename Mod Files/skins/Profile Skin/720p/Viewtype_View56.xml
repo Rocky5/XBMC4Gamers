@@ -7,8 +7,8 @@
 								<posy>0</posy>
 								<width>1280</width>
 								<height>720</height>
-								<onleft>-</onleft>
-								<onright>-</onright>
+								<onleft>56</onleft>
+								<onright>56</onright>
 								<onup>117</onup>
 								<ondown>-</ondown>
 								<viewtype label="view56">Panel</viewtype>
@@ -17,7 +17,7 @@
 								<focusposition>0</focusposition>
 								<movement>0</movement>
 								<orientation>horizontal</orientation>
-								<preloaditems>2</preloaditems>
+								<preloaditems>1</preloaditems>
 								<itemlayout width="1280" height="720">
 										<control type="image">
 												<posx>40</posx>

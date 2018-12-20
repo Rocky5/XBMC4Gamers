@@ -13,9 +13,9 @@ if not exist "%foldername%" (
 	timeout /t 5
 	Exit
 )
-Set "fromDate=13/08/2018"
+Set "fromDate=20/12/2018"
 Set "toDate=%date%"
-Set "version=1.1"
+Set "version=1.2"
 (
 echo fromDate^=CDate^("%fromDate%"^)
 echo toDate^=CDate^("%toDate%"^)
@@ -40,15 +40,16 @@ rd /q /s "%foldername%\system\keymaps"
 rd /q /s "%foldername%\system\cdrip"
 rd /q /s "%foldername%\system\scrapers"
 rd /q /s "%foldername%\system\players\mplayer\codecs"
-del /q /s "%foldername%\copying.txt"
-del /q /s "%foldername%\keymapping.txt"
-del /q /s "%foldername%\media\icon.png"
-del /q /s "%foldername%\media\Splash_2007.png"
-del /q /s "%foldername%\media\Splash_2008.png"
-del /q /s "%foldername%\media\weather.rar"
 rd /q /s "%foldername%\scripts"
 rd /q /s "%foldername%\skin"
 rd /q /s "%foldername%\screensavers"
+del /q "%foldername%\system\filezilla server.xml"
+del /q "%foldername%\copying.txt"
+del /q "%foldername%\keymapping.txt"
+del /q "%foldername%\media\icon.png"
+del /q "%foldername%\media\Splash_2007.png"
+del /q "%foldername%\media\Splash_2008.png"
+del /q "%foldername%\media\weather.rar"
 move "%foldername%\media" "%foldername%\system\"
 move "%foldername%\language" "%foldername%\system\"
 move "%foldername%\media" "%foldername%\system\"
@@ -65,7 +66,7 @@ if exist "Other\build for release" (
 	copy /b "Other\Tools\Changes\Changes_Header.xml"+"%foldername%\changes.tmp"+"Other\Tools\Changes\Changes_Footer.xml" "%foldername%\skins\Profile Skin\720p\Custom_Changes.xml"
 	del /q "%foldername%\changes.tmp"
 )
-copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\Manage Profile Skin\language\English\strings.po"
+copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\Manage Profiles Skin\language\English\strings.po"
 copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\DVD2Xbox Skin\language\English\strings.po"
 del /Q "%foldername%\Changes.txt"
 copy /y "New XBMC xbe\default.xbe" "%foldername%\default.xbe"

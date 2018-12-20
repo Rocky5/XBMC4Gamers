@@ -6,6 +6,11 @@
 						<back>XBMC.ActivateWindow(1115)</back>
 				</gamepad>
 		</MyPrograms>
+		<Settings>
+				<gamepad>
+						<black>XBMC.ActivateWindow(1400)</black>
+				</gamepad>
+		</Settings>
 		<Profiles>
 				<gamepad>
 						<B>Back</B>

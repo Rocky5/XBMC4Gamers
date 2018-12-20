@@ -214,15 +214,15 @@
 										<height>610</height>
 										<onleft>117</onleft>
 										<onright>85</onright>
-										<onup>-</onup>
-										<ondown>-</ondown>
+										<onup>55</onup>
+										<ondown>55</ondown>
 										<viewtype label="view55">list</viewtype>
 										<pagecontrol>85</pagecontrol>
 										<scrolltime>200</scrolltime>
 										<focusposition>3</focusposition>
 										<movement>1</movement>
 										<orientation>vertical</orientation>
-										<preloaditems>2</preloaditems>
+										<preloaditems>5</preloaditems>
 										<itemlayout height="122" width="570">
 												<control type="image">
 														<posx>0</posx>

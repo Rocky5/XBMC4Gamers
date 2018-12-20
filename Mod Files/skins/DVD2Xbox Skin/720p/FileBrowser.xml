@@ -6,9 +6,10 @@
 				<posx>320</posx>
 				<posy>10</posy>
 		</coordinates>
-		<include>DialogEffectZoom</include>
+		<include Condition="!Window.IsActive(1901) + !Window.IsActive(1101)">dialogeffect</include>
 		<controls>
 				<control type="group">
+						<!-- Image Preview -->
 						<posx>300</posx>
 						<posy>0</posy>
 						<visible>Control.IsVisible(451)</visible>
@@ -21,19 +22,19 @@
 								<effect type="fade" start="100" end="0" time="200" />
 						</animation>
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>640</width>
-								<height>700</height>
-								<texture border="40,40,40,40">dialogback.png</texture>
+								<posx>30</posx>
+								<posy>34</posy>
+								<width>580</width>
+								<height>580</height>
+								<texture border="20,20,20,20">thumbnofo.png</texture>
 						</control>
 						<control type="image">
 								<description>Heading Background</description>
 								<posx>30</posx>
-								<posy>35</posy>
+								<posy>34</posy>
 								<width>580</width>
 								<height>40</height>
-								<texture border="5">thumbfo.png</texture>
+								<texture border="20,20,20,20">thumbfo.png</texture>
 						</control>
 						<control type="label">
 								<description>Heading label</description>
@@ -61,14 +62,15 @@
 						</control>
 						<control type="radiobutton" id="416">
 								<description>Flip Image button</description>
-								<posx>390</posx>
-								<posy>615</posy>
-								<width>200</width>
+								<posx>30</posx>
+								<posy>614</posy>
+								<width>580</width>
 								<height>40</height>
-								<align>left</align>
 								<label>749</label>
-								<texturenofocus border="3">button-nofocus.png</texturenofocus>
-								<texturefocus border="3">button-focus2.png</texturefocus>
+								<textcolor>grey2</textcolor>
+								<focusedcolor>black</focusedcolor>
+								<texturenofocus border="3">thumbnf.png</texturenofocus>
+								<texturefocus border="3">thumbfo.png</texturefocus>
 								<onleft>415</onleft>
 								<onright>413</onright>
 								<onup>450</onup>
@@ -76,21 +78,23 @@
 						</control>
 				</control>
 				<control type="group">
+						<!-- Browser pane -->
 						<animation effect="slide" start="0,0" end="-290,0" time="300" condition="Control.IsVisible(451)">Conditional</animation>
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width>640</width>
-								<height>700</height>
-								<texture border="40">dialogback.png</texture>
+								<description>background image</description>
+								<posx>30</posx>
+								<posy>34</posy>
+								<width>580</width>
+								<height>580</height>
+								<texture border="20,20,20,20">thumbnofo.png</texture>
 						</control>
 						<control type="image">
 								<description>Heading Background</description>
 								<posx>30</posx>
-								<posy>35</posy>
+								<posy>34</posy>
 								<width>580</width>
 								<height>40</height>
-								<texture border="5">thumbfo.png</texture>
+								<texture border="20,20,20,20">thumbfo.png</texture>
 						</control>
 						<control type="label" id="411">
 								<description>Heading label</description>
@@ -309,14 +313,16 @@
 						<control type="group" id="9000">
 								<control type="button" id="413">
 										<description>OK button</description>
-										<posx>40</posx>
-										<posy>615</posy>
-										<width>184</width>
+										<posx>30</posx>
+										<posy>614</posy>
+										<width>193</width>
 										<height>40</height>
-										<align>center</align>
 										<label>186</label>
-										<texturenofocus border="3">button-nofocus.png</texturenofocus>
-										<texturefocus border="3">button-focus2.png</texturefocus>
+										<textcolor>grey2</textcolor>
+										<focusedcolor>black</focusedcolor>
+										<align>center</align>
+										<texturenofocus border="3">thumbnf.png</texturenofocus>
+										<texturefocus border="3">thumbfo.png</texturefocus>
 										<onleft>416</onleft>
 										<onright>414</onright>
 										<onup>450</onup>
@@ -324,14 +330,16 @@
 								</control>
 								<control type="button" id="414">
 										<description>Cancel button</description>
-										<posx>226</posx>
-										<posy>615</posy>
-										<width>184</width>
+										<posx>223</posx>
+										<posy>614</posy>
+										<width>193</width>
 										<height>40</height>
-										<align>center</align>
 										<label>222</label>
-										<texturenofocus border="3">button-nofocus.png</texturenofocus>
-										<texturefocus border="3">button-focus2.png</texturefocus>
+										<textcolor>grey2</textcolor>
+										<focusedcolor>black</focusedcolor>
+										<align>center</align>
+										<texturenofocus border="3">thumbnf.png</texturenofocus>
+										<texturefocus border="3">thumbfo.png</texturefocus>
 										<onleft>413</onleft>
 										<onright>415</onright>
 										<onup>450</onup>
@@ -339,14 +347,16 @@
 								</control>
 								<control type="button" id="415">
 										<description>Create folder button</description>
-										<posx>412</posx>
-										<posy>615</posy>
-										<width>184</width>
+										<posx>416</posx>
+										<posy>614</posy>
+										<width>193</width>
 										<height>40</height>
-										<align>center</align>
 										<label>119</label>
-										<texturenofocus border="3">button-nofocus.png</texturenofocus>
-										<texturefocus border="3">button-focus2.png</texturefocus>
+										<textcolor>grey2</textcolor>
+										<focusedcolor>black</focusedcolor>
+										<align>center</align>
+										<texturenofocus border="3">thumbnf.png</texturenofocus>
+										<texturefocus border="3">thumbfo.png</texturefocus>
 										<onleft>414</onleft>
 										<onright>416</onright>
 										<onup>450</onup>

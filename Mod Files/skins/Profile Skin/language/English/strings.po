@@ -287,15 +287,15 @@ msgid "Enable TV show logo [COLOR=grey2](uses pre downloaded images)[/COLOR]"
 msgstr ""
 
 msgctxt "#31137"
-msgid "Enable playback at startup"
+msgid "Enable audio playlist"
 msgstr ""
 
 msgctxt "#31138"
-msgid "XBE Label"
+msgid "XBE label"
 msgstr ""
 
 msgctxt "#31139"
-msgid "XBE Path"
+msgid "XBE path"
 msgstr ""
 
 msgctxt "#31140"
@@ -303,7 +303,7 @@ msgid "Use alternative icons"
 msgstr ""
 
 msgctxt "#31141"
-msgid "Show Recently added Videos "
+msgid "Show recently added videos "
 msgstr ""
 
 msgctxt "#31142"
@@ -539,7 +539,7 @@ msgid "Music library"
 msgstr ""
 
 msgctxt "#31990"
-msgid "Update"
+msgid "Update check"
 msgstr ""
 
 msgctxt "#31991"
@@ -736,7 +736,7 @@ msgid "Game location"
 msgstr ""
 
 msgctxt "#32039"
-msgid "Emu Launcher"
+msgid "Label"
 msgstr ""
 
 msgctxt "#32040"
@@ -752,11 +752,11 @@ msgid "Create Playlist"
 msgstr ""
 
 msgctxt "#32043"
-msgid "Enable Emulator Launcher button in the Options Dialogue"
+msgid "Enable a custom button on the options dialogue"
 msgstr ""
 
 msgctxt "#32044"
-msgid "Launcher Path"
+msgid "Location"
 msgstr ""
 
 msgctxt "#32045"
@@ -764,19 +764,19 @@ msgid "Enable higher fanart"
 msgstr ""
 
 msgctxt "#32046"
-msgid "Enable Custom Source Entry"
+msgid "Enable additional sources"
 msgstr ""
 
 msgctxt "#32047"
-msgid "Enter Source Name"
+msgid "Enter source name"
 msgstr ""
 
 msgctxt "#32048"
-msgid "Disable the Time displayed in the upper right of the screen"
+msgid "Disable time overlay"
 msgstr ""
 
 msgctxt "#32049"
-msgid "Enable Debug Information"
+msgid "Enable debug information"
 msgstr ""
 
 msgctxt "#32050"
@@ -798,7 +798,7 @@ msgid "[COLOR=blue]Enabling this setting will lock this profile if[/COLOR] [B]Ed
 msgstr ""
 
 msgctxt "#32055"
-msgid "Load into Emulators instead of Games"
+msgid "Home Windows"
 msgstr ""
 
 msgctxt "#32056"
@@ -810,7 +810,7 @@ msgid "Error Script is missing or is taking to long to finish. Please send me a 
 msgstr ""
 
 msgctxt "#32058"
-msgid "Thumbnail Cleaner"
+msgid "Thumbnail cleaner"
 msgstr ""
 
 msgctxt "#32059"
@@ -914,7 +914,7 @@ msgid "No Banner.jpg Found"
 msgstr ""
 
 msgctxt "#32084"
-msgid "Enable Intro"
+msgid "Enable intro video"
 msgstr ""
 
 msgctxt "#32085"
@@ -926,7 +926,7 @@ msgid "Found"
 msgstr ""
 
 msgctxt "#32087"
-msgid "Login settings for this profile"
+msgid "Auto login"
 msgstr ""
 
 msgctxt "#32088"
@@ -934,7 +934,7 @@ msgid "Restart"
 msgstr ""
 
 msgctxt "#32089"
-msgid "Hide Screenshot and Reload Skin Context Buttons"
+msgid "Hide screenshot and reload skin context buttons"
 msgstr ""
 
 msgctxt "#32090"
@@ -942,17 +942,45 @@ msgid " - [B]Generate[/B] random playlist"
 msgstr ""
 
 msgctxt "#32091"
-msgid "Login Screen is disabled.[CR]You will always login as $INFO[system.profilename]"
+msgid "Auto login enabled.[CR]You will always login as $INFO[system.profilename]"
 msgstr ""
 
 msgctxt "#32092"
-msgid "Login Screen is enabled.[CR]You will be able to select from multiple profiles."
+msgid "Auto login disabled.[CR]You will be able to select from multiple profiles."
 msgstr ""
 
 msgctxt "#32093"
-msgid ""
+msgid "Hide played overlay on poster views"
 msgstr ""
 
 msgctxt "#32094"
+msgid "Hide trainer overlay on poster views"
+msgstr ""
+
+msgctxt "#32095"
+msgid "Enable custom xbmc4gamers logo colour"
+msgstr ""
+
+msgctxt "#32096"
+msgid "Custom hex value"
+msgstr ""
+
+msgctxt "#32097"
+msgid "Custom playlist"
+msgstr ""
+
+msgctxt "#32098"
+msgid "Disable fast game parsing"
+msgstr ""
+
+msgctxt "#32099"
+msgid "Disable slow scrolling"
+msgstr ""
+
+msgctxt "#32100"
+msgid "Enable alternative synopsis view"
+msgstr ""
+
+msgctxt "#32101"
 msgid ""
 msgstr ""

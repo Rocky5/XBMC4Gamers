@@ -101,6 +101,9 @@ CAdvancedSettings::CAdvancedSettings()
   m_usePCDVDROM = false;
   m_fullScreenOnMovieStart = true;
   m_noDVDROM = false;
+  m_enableintro = false;
+  m_fastscanning = true;
+  m_slowscrolling = true;
   m_splashImage = true;
   m_cachePath = "Z:\\";
   m_displayRemoteCodes = false;
@@ -215,7 +218,7 @@ CAdvancedSettings::CAdvancedSettings()
 
   m_bPythonVerbose = false;
 
-  m_bgInfoLoaderMaxThreads = 1;
+  m_bgInfoLoaderMaxThreads = 3;
 }
 
 bool CAdvancedSettings::Load()
@@ -447,6 +450,9 @@ bool CAdvancedSettings::Load()
 
   XMLUtils::GetBoolean(pRootElement, "usepcdvdrom", m_usePCDVDROM);
   XMLUtils::GetBoolean(pRootElement, "nodvdrom", m_noDVDROM);
+  XMLUtils::GetBoolean(pRootElement, "enableintro", m_enableintro);
+  XMLUtils::GetBoolean(pRootElement, "fasterscanning", m_fastscanning);
+  XMLUtils::GetBoolean(pRootElement, "slowscrolling", m_slowscrolling);
   XMLUtils::GetBoolean(pRootElement, "splash", m_splashImage);
   XMLUtils::GetBoolean(pRootElement, "disablemodchipdetection", m_DisableModChipDetection);
   XMLUtils::GetBoolean(pRootElement, "powersave", m_bPowerSave);
@@ -696,7 +702,7 @@ bool CAdvancedSettings::Load()
   }
 
   XMLUtils::GetInt(pRootElement, "bginfoloadermaxthreads", m_bgInfoLoaderMaxThreads);
-  m_bgInfoLoaderMaxThreads = std::max(1, m_bgInfoLoaderMaxThreads);
+  m_bgInfoLoaderMaxThreads = std::max(3, m_bgInfoLoaderMaxThreads);
 
   // load in the GUISettings overrides:
   g_guiSettings.LoadXML(pRootElement, true);  // true to hide the settings we read in

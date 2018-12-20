@@ -6,4 +6,8 @@
 		<variable name="var-bgcustcolour">
 				<value>FF$INFO[Skin.String(Background_Custom_Color)]</value>
 		</variable>
+		<variable name="var-xbmc4gamerslabelcolour">
+				<value condition="Skin.HasSetting(EnabledXBMC4GamersLogoColour)">FF$INFO[Skin.String(XBMC4GamersLogoColour)]</value>
+				<value condition="!Skin.HasSetting(EnabledXBMC4GamersLogoColour)">FFFFFFFF</value>
+		</variable>
 </includes>

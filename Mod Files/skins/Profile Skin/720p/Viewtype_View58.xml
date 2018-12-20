@@ -86,12 +86,12 @@
 										<height>450</height>
 										<onleft>117</onleft>
 										<onright>88</onright>
-										<onup>-</onup>
-										<ondown>-</ondown>
+										<onup>58</onup>
+										<ondown>58</ondown>
 										<viewtype label="view58">List</viewtype>
 										<pagecontrol>88</pagecontrol>
 										<scrolltime>200</scrolltime>
-										<preloaditems>2</preloaditems>
+										<preloaditems>5</preloaditems>
 										<itemlayout height="90" width="720">
 												<control type="image">
 														<posx>0</posx>

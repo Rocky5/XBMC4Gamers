@@ -1,25 +1,21 @@
 <window id="1114">
 		<defaultcontrol always="true">1</defaultcontrol>
+		<onunload condition="!Player.HasVideo + !Skin.HasSetting(updatecheck) + Skin.HasSetting(editmode)">RunScript( Special://root/system/scripts/XBMC4Gamers/Utilities/Update Check.py )</onunload>
+		<onunload condition="!Player.HasVideo + Skin.HasSetting(Use_Startup_Playback)">XBMC.PlayMedia($INFO[Skin.String(Startup_Playback_Path)])</onunload>
+		<onload condition="StringCompare(Skin.String(HomeWindow),)">Skin.SetString(HomeWindow,Games)</onload>
 		<controls>
 				<control type="button" id="1">
 						<posx>-500</posx>
 						<onclick>ActivateWindow(1116)</onclick>
-						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile)</visible>
+						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile) + !Player.HasVideo</visible>
 						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
 				</control>
 				<control type="button" id="1">
 						<posx>-500</posx>
-						<onfocus>ActivateWindow(Programs,Games)</onfocus>
+						<onfocus>ActivateWindow(Programs,$INFO[skin.String(HomeWindow)])</onfocus>
 						<onfocus>Dialog.Close(1114,true)</onfocus>
 						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
-						<visible>!Skin.HasSetting(LoadEmulators)</visible>
-				</control>
-				<control type="button" id="1">
-						<posx>-500</posx>
-						<onfocus>ActivateWindow(Programs,Emulators)</onfocus>
-						<onfocus>Dialog.Close(1114,true)</onfocus>
-						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
-						<visible>Skin.HasSetting(LoadEmulators)</visible>
+						<visible>!Player.HasVideo</visible>
 				</control>
 				<control type="image">
 						<include>1280x720</include>
@@ -35,7 +31,7 @@
 				<control type="image">
 						<include>1280x720</include>
 						<texture>$INFO[skin.string(background_image)]</texture>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="group">
 						<posx>524</posx>
@@ -115,7 +111,7 @@
 						<scroll>true</scroll>
 						<align>center</align>
 						<label>$LOCALIZE[32070]</label>
-						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile)</visible>
+						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile) + !Player.HasVideo</visible>
 						<animation effect="fade" start="0" end="100" delay="100" time="0">WindowOpen</animation>
 				</control>
 		</controls>

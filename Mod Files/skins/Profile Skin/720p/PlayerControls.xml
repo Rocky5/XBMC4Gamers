@@ -22,8 +22,7 @@
 								<posy>720</posy>
 								<width>380</width>
 								<height>30</height>
-								<colordiffuse>FF262626</colordiffuse>
-								<texture border="20,20,20,20">thumbfo.png</texture>
+								<texture border="20,20,20,20">thumbnofo.png</texture>
 						</control>
 						<control type="image">
 								<posx>900</posx>

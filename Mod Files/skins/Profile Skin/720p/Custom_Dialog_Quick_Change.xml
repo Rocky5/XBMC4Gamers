@@ -12,8 +12,8 @@
 				</control>
 				<control type="group">
 						<posy>90</posy>
-						<animation effect="slide" start="0,0" end="0,-90" delay="50" time="300">WindowOpen</animation>
-						<animation effect="slide" start="0,90" end="0,0" time="200">WindowClose</animation>
+						<animation effect="slide" start="0,0" end="0,-90" delay="0" time="100">WindowOpen</animation>
+						<animation effect="slide" start="0,90" end="0,0" time="100">WindowClose</animation>
 						<control type="wraplist" id="9000">
 								<posx>0</posx>
 								<posy>630</posy>

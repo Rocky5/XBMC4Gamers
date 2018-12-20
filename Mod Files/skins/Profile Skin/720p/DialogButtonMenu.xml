@@ -12,7 +12,7 @@
 						<onfocus>ActivateWindow(1116)</onfocus>
 						<onup>1</onup>
 						<ondown>1</ondown>
-						<enable>[System.HasLoginScreen + System.Loggedon]</enable>
+						<enable>System.HasLoginScreen</enable>
 				</control>
 				<control type="button" id="4">
 						<description>Log Off xbmc</description>
@@ -25,7 +25,7 @@
 						<onfocus>dialog.close(111,true)</onfocus>
 						<onup>1</onup>
 						<ondown>1</ondown>
-						<enable>![System.HasLoginScreen + System.Loggedon]</enable>
+						<enable>!System.HasLoginScreen</enable>
 				</control>
 				<!-- Debug Info -->
 				<include>Debug</include>

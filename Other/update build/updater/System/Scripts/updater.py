@@ -5,7 +5,7 @@ dialog	= xbmcgui.Dialog()
 zip_file = os.path.join( Root_Directory, 'updater\\Update Files\\update-files.zip' )
 destination = Root_Directory
 #Remove old files or files that are no longer needed.
-# nothing here yet
+if os.path.isdir( Root_Directory + 'system\\toggles' ): shutil.rmtree( Root_Directory + 'system\\toggles' )
 if os.path.isfile( zip_file ):
 	with zipfile.ZipFile( zip_file ) as zip:
 		pDialog.create( "EXTRACTING ZIP","","Please wait..." )
@@ -19,7 +19,6 @@ if os.path.isfile( zip_file ):
 				zip.extract( item, destination )
 			except:
 				print "Failed - " + item
-				pass
 autoexec_data = "import os, shutil\n\
 if os.path.isdir( 'Q:\\Updater' ):\n\
 	shutil.rmtree( 'Q:\\Updater' )\n\

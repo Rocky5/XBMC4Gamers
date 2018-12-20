@@ -3,7 +3,6 @@
 		<onload>RunScript( Special://root/system/scripts/XBMC4Gamers/default.py )</onload>
 		<!-- Unload, these are loaded as the window is closed -->
 		<onunload>Skin.SetBool(xbmc4gamers)</onunload>
-		<onunload condition="Skin.HasSetting(Use_Startup_Playback)">XBMC.PlayMedia($INFO[Skin.String(Startup_Playback_Path)])</onunload>
 		<defaultcontrol always="true">1</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
@@ -21,7 +20,7 @@
 				<control type="image">
 						<include>1280x720</include>
 						<texture>$INFO[skin.string(background_image)]</texture>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="group">
 						<posx>524</posx>

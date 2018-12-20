@@ -4,7 +4,7 @@
 2) Increased the Splash screen display time, no point having a nice splash if you dont get to see it.
 3) Fullscreen Splashscreen!
 4) Faster loading of your games library.
-	( disables the directory check/scan when entering the games menu, also disabled by default. enable create a file called "fast game scanning.enabled" and place it in Q:\system\toggles\ )
+	( part of the advancedsettings.xml )
 5) Added my Synopsis script to the context menu for the MyPrograms windows
 6) Added a new custom window _script*.xml will now be automatically parsed like Custom*.xml
 7) Rearranged the folders structure to make it cleaner.
@@ -27,7 +27,8 @@
 22) Fixed the XBE title extraction from the xbe files, so no more broken names!
 23) Added Special://root/ so that we can get the absolute path of XBMCs installation.
 	( will output for example E:\xbmc4gamers\ instead of Q:\ that xbmc and home use )
-24) Added slow scrolling for artwork. This can be disabled by renaming the following file Q:\system\toggles\slow scrolling.enabled
+24) Added slow scrolling for artwork.
+	( part of the advancedsettings.xml )
 25) Changed how the login screen works when launching a profile for the first time. It no longer asks to edit the info.
 26) Removed some of the functionality from the profile settings dialog. ALso copies the guisettings & sources automatically.
 27) Added Special://urldownloader/ so that we can get the absolute path of the urldownloaders installation.
@@ -35,3 +36,7 @@
 28) Fixed favourites getting corrupted if you reload the skin when editing a label.
 29) If fast loading is enabled it will log any games added to the database in the log file.
 30) Moved the fanart screensaver path to Q:\System\Screensavers\Fanart
+31) When you exit a emulators that supports command line launching it will return to XBMC4Gamers.
+	( Just like coinops, but only seems to work once for some reason :/ so disabled 
+32) Fixed the internal jpg decoder breaking if ram hits 0MB. If it hits less than 2MB of free ram it will use Imagelib to decode the images.
+33) Added different error screen colour and txt for the forced error screen. ( if you arse something up and its a crash ) (White + Y)

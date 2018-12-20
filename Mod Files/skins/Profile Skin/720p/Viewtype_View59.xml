@@ -7,8 +7,8 @@
 								<posy>310</posy>
 								<width>1700</width>
 								<height>460</height>
-								<onleft>-</onleft>
-								<onright>-</onright>
+								<onleft>59</onleft>
+								<onright>59</onright>
 								<onup>117</onup>
 								<ondown>89</ondown>
 								<viewtype label="view59">list</viewtype>
@@ -86,6 +86,7 @@
 												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+												<visible>!Skin.HasSetting(HidePlayedIndicator)</visible>
 										</control>
 										<control type="image">
 												<posx>10</posx>
@@ -95,9 +96,10 @@
 												<aspectratio>stretch</aspectratio>
 												<fadetime>ThumbCrossfadeTime</fadetime>
 												<texture>$INFO[listitem.overlay]</texture>
-												<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+												<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+												<visible>!Skin.HasSetting(HideTrainerIndicator)</visible>
 										</control>
 										<!-- Flipped images -->
 										<control type="image">
@@ -239,6 +241,7 @@
 												<animation reversible="false" effect="zoom" end="10,35,25,25" start="0,3,30,30" time="100">unfocus</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+												<visible>!Skin.HasSetting(HidePlayedIndicator)</visible>
 										</control>
 										<control type="image">
 												<posx>10</posx>
@@ -250,9 +253,10 @@
 												<texture>$INFO[listitem.overlay]</texture>
 												<animation reversible="false" effect="zoom" start="10,55,25,25" end="0,26,30,30" time="100">focus</animation>
 												<animation reversible="false" effect="zoom" end="10,55,25,25" start="0,26,30,30" time="100">unfocus</animation>
-												<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+												<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+												<visible>!Skin.HasSetting(HideTrainerIndicator)</visible>
 										</control>
 										<!-- Flipped images -->
 										<control type="image">

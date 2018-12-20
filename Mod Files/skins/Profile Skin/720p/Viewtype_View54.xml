@@ -266,12 +266,12 @@
 										<height>315</height>
 										<onleft>117</onleft>
 										<onright>84</onright>
-										<onup>51</onup>
-										<ondown>51</ondown>
+										<onup>54</onup>
+										<ondown>54</ondown>
 										<viewtype label="view54">Panel</viewtype>
 										<pagecontrol>84</pagecontrol>
 										<scrolltime>350</scrolltime>
-										<preloaditems>2</preloaditems>
+										<preloaditems>4</preloaditems>
 										<itemlayout height="110" width="84">
 												<control type="image">
 														<posx>0</posx>

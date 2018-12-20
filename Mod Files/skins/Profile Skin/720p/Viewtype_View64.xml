@@ -8,8 +8,8 @@
 										<posy>320</posy>
 										<width>1700</width>
 										<height>462</height>
-										<onleft>-</onleft>
-										<onright>-</onright>
+										<onleft>64</onleft>
+										<onright>64</onright>
 										<onup>117</onup>
 										<ondown>94</ondown>
 										<viewtype label="view64">list</viewtype>
@@ -18,7 +18,7 @@
 										<focusposition>2</focusposition>
 										<movement>0</movement>
 										<orientation>horizontal</orientation>
-										<preloaditems>2</preloaditems>
+										<preloaditems>4</preloaditems>
 										<itemlayout height="290" width="414">
 												<control type="image">
 														<posx>0</posx>
@@ -81,9 +81,9 @@
 														<aspectratio>stretch</aspectratio>
 														<fadetime>ThumbCrossfadeTime</fadetime>
 														<texture>overlay-watched.png</texture>
-														<visible>IntegerGreaterThan(ListItem.ProgramCount,0) + !Skin.HasSetting(_recourcesenabled)</visible>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(64).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(64).OnScrollPrevious">Conditional</animation>
+														<visible>IntegerGreaterThan(ListItem.ProgramCount,0) + !Skin.HasSetting(_recourcesenabled) + !Skin.HasSetting(HidePlayedIndicator)</visible>
 												</control>
 												<control type="image">
 														<posx>10</posx>
@@ -93,10 +93,10 @@
 														<aspectratio>stretch</aspectratio>
 														<fadetime>ThumbCrossfadeTime</fadetime>
 														<texture>$INFO[listitem.overlay]</texture>
-														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
-														<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+														<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(64).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(64).OnScrollPrevious">Conditional</animation>
+														<visible>!Skin.HasSetting(_recourcesenabled) + !Skin.HasSetting(HideTrainerIndicator)</visible>
 												</control>
 												<!-- Flipped images -->
 												<control type="image">
@@ -212,11 +212,11 @@
 														<aspectratio>stretch</aspectratio>
 														<fadetime>ThumbCrossfadeTime</fadetime>
 														<texture>overlay-watched.png</texture>
-														<visible>IntegerGreaterThan(ListItem.ProgramCount,0) + !Skin.HasSetting(_recourcesenabled)</visible>
 														<animation reversible="false" effect="zoom" start="10,35,25,25" end="0,3,30,30" time="100">focus</animation>
 														<animation reversible="false" effect="zoom" end="10,35,25,25" start="0,3,30,30" time="100">unfocus</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(64).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(64).OnScrollPrevious">Conditional</animation>
+														<visible>IntegerGreaterThan(ListItem.ProgramCount,0) + !Skin.HasSetting(_recourcesenabled) + !Skin.HasSetting(HidePlayedIndicator)</visible>
 												</control>
 												<control type="image">
 														<posx>10</posx>
@@ -226,12 +226,12 @@
 														<aspectratio>stretch</aspectratio>
 														<fadetime>ThumbCrossfadeTime</fadetime>
 														<texture>$INFO[listitem.overlay]</texture>
-														<visible>!Skin.HasSetting(_recourcesenabled)</visible>
 														<animation reversible="false" effect="zoom" start="10,55,25,25" end="0,26,30,30" time="100">focus</animation>
 														<animation reversible="false" effect="zoom" end="10,55,25,25" start="0,26,30,30" time="100">unfocus</animation>
-														<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+														<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(64).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(64).OnScrollPrevious">Conditional</animation>
+														<visible>!Skin.HasSetting(_recourcesenabled) + !Skin.HasSetting(HideTrainerIndicator)</visible>
 												</control>
 												<!-- Flipped images -->
 												<control type="image">

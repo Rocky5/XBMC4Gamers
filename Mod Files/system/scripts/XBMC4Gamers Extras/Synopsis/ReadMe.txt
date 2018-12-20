@@ -51,8 +51,12 @@ Here is a list of the variables you can use.
 	Synopsis Information:
 
 		Images:
+			$INFO[Window(MyPrograms).Property(Alt_Synopsis_icon)]
 			$INFO[Window(MyPrograms).Property(Synopsis_banner)]
+			$INFO[Window(MyPrograms).Property(Synopsis_disc)]
 			$INFO[Window(MyPrograms).Property(Synopsis_fanart)]
+			$INFO[Window(MyPrograms).Property(Synopsis_fog)]
+			$INFO[Window(MyPrograms).Property(Synopsis_icon)]
 			$INFO[Window(MyPrograms).Property(Synopsis_poster)]
 			$INFO[Window(MyPrograms).Property(Synopsis_screenshots)]
 

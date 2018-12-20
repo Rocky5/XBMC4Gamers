@@ -3,29 +3,20 @@
 		<allowoverlay>no</allowoverlay>
 		<controls>
 				<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>1280</width>
-						<height>720</height>
+						<include>1280x720</include>
 						<texture fallback="Background.png">$INFO[skin.string(background_color)]</texture>
 						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>1280</width>
-						<height>720</height>
+						<include>1280x720</include>
 						<texture>background diffuse.png</texture>
 						<colordiffuse>$VAR[var-bgcustcolour]</colordiffuse>
 						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>1280</width>
-						<height>720</height>
+						<include>1280x720</include>
 						<texture>$INFO[skin.string(background_image)]</texture>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="button" id="1">
 						<posx>-500</posx>

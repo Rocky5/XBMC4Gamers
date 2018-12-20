@@ -2,7 +2,7 @@
 
 ### Damn nice front end for Games using XBMC
 
- This is a skin for XBMC4Xbox v3.5.3+ that utilises custom python scripts that I created to do specific tasks.
+ This is a pet project of mine and its a combination of a skin, python scripts and source edits to XBMC.
 
  The main objective of this project was to allow my kids to use the same Xbox but also have there own saves, so to stop fighting lol. Now the original Xbox doesn't allow this by default, so I had to think outside of the box and learn and create some Python script to do the job. It works quite well.
 

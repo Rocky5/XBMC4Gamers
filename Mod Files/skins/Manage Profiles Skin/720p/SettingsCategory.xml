@@ -34,7 +34,7 @@
 								<description>background image</description>
 								<posx>321</posx>
 								<posy>60</posy>
-								<width>949</width>
+								<width>939</width>
 								<height>600</height>
 								<texture>black-back.png</texture>
 						</control>
@@ -42,7 +42,7 @@
 								<description>control area</description>
 								<posx>321</posx>
 								<posy>90</posy>
-								<width>949</width>
+								<width>939</width>
 								<height>540</height>
 								<itemgap>0</itemgap>
 								<pagecontrol>90</pagecontrol>

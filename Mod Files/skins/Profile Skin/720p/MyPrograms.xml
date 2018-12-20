@@ -1,7 +1,7 @@
 <window id="1">
 		<defaultcontrol always="true">50</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
-		<views>50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65</views>
+		<views>50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,79</views>
 		<controls>
 				<include>CommonBackground</include>
 				<include>Fanart</include>
@@ -22,44 +22,30 @@
 						<include file="Viewtype_View62.xml">IconView</include>
 						<include file="Viewtype_View63.xml">OpenCaseView</include>
 						<include file="Viewtype_View64.xml">Dual3DView</include>
-						<include file="Viewtype_View65.xml">ResourcesView</include>
+						<include file="Viewtype_View65.xml">IconAltView</include>
+						<include file="Viewtype_View66.xml">PSView</include>
+						<include file="Viewtype_View67.xml">PosterFixed</include>
+						<include file="Viewtype_View79.xml">ResourcesView</include>
 				</control>
 				<control type="group">
 						<visible>!Window.IsVisible(3000)</visible>
 						<include>WindowHeader</include>
 						<control type="image">
-								<posx>20</posx>
-								<posy>5</posy>
-								<width>40</width>
-								<height>35</height>
-								<aspectratio>keep</aspectratio>
-								<texture>icon_xbmc4gamers.png</texture>
+								<posx>23</posx>
+								<posy>3</posy>
+								<width>123</width>
+								<height>44</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>xbmc4gamers_logo_shadow.png</texture>
 						</control>
-						<control type="label">
-								<description>Header label</description>
-								<posx>53</posx>
+						<control type="image">
+								<posx>25</posx>
 								<posy>5</posy>
-								<width>700</width>
-								<height>35</height>
-								<align>left</align>
-								<aligny>center</aligny>
-								<font>size_23</font>
-								<textcolor>white</textcolor>
-								<label>$LOCALIZE[32021]</label>
-								<visible>!Window.IsVisible(134)</visible>
-						</control>
-						<control type="label">
-								<description>Header label</description>
-								<posx>70</posx>
-								<posy>5</posy>
-								<width>700</width>
-								<height>35</height>
-								<align>left</align>
-								<aligny>center</aligny>
-								<font>size_23</font>
-								<textcolor>white</textcolor>
-								<label>$LOCALIZE[32011]</label>
-								<visible>Window.IsVisible(134)</visible>
+								<width>119</width>
+								<height>40</height>
+								<aspectratio>stretch</aspectratio>
+								<colordiffuse>$VAR[var-xbmc4gamerslabelcolour]</colordiffuse>
+								<texture>xbmc4gamers_logo.png</texture>
 						</control>
 						<include>ScrollOffsetLabel</include>
 						<include>View_Options</include>

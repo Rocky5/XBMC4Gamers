@@ -88,7 +88,7 @@
 												<texturefocus border="5">thumbfO.png</texturefocus>
 												<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
 												<onclick>Skin.ToggleSetting(introenabled)</onclick>
-												<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Disable Splash.py )</onclick>
+												<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Toggle AdvancedSettings Settings.py,enableintro,splash )</onclick>
 												<selected>Skin.HasSetting(introenabled)</selected>
 										</control>
 										<control type="button" id="9005">

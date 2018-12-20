@@ -20,7 +20,7 @@
 						<scroll>true</scroll>
 						<align>center</align>
 						<label>$LOCALIZE[32091]</label>
-						<visible>![System.HasLoginScreen + System.Loggedon]</visible>
+						<visible>!System.HasLoginScreen</visible>
 				</control>
 				<control type="textbox">
 						<posx>260</posx>
@@ -32,7 +32,7 @@
 						<scroll>true</scroll>
 						<align>center</align>
 						<label>$LOCALIZE[32092]</label>
-						<visible>[System.HasLoginScreen + System.Loggedon]</visible>
+						<visible>System.HasLoginScreen</visible>
 				</control>
 				<control type="grouplist">
 						<posx>260</posx>

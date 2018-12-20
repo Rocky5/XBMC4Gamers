@@ -1,3 +1,8 @@
+	Updated: 03 Dec 2018
+	-- Updated the code to look for specific filenames now.
+	-- Added CD.png and a new alt synopsis image for the new view type.
+	-- Added a slight delay to the focus(10) section.
+	
 	Updated: 11 May 2017
 	-- Updated the synopsis script to auto adjust the rating so to cut down on images.
 

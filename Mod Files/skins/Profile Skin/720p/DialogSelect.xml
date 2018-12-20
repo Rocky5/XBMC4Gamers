@@ -9,11 +9,11 @@
 		<controls>
 				<control type="image">
 						<description>background image</description>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>610</width>
-						<height>650</height>
-						<texture border="40">dialogback.png</texture>
+						<posx>30</posx>
+						<posy>34</posy>
+						<width>550</width>
+						<height>580</height>
+						<texture border="20,20,20,20">thumbnofo.png</texture>
 						<animation effect="fade" start="90" end="90" time="0" condition="Window.IsVisible(Visualisation)">Conditional</animation>
 				</control>
 				<control type="image">
@@ -22,7 +22,7 @@
 						<posy>34</posy>
 						<width>550</width>
 						<height>40</height>
-						<texture border="5">thumbfo.png</texture>
+						<texture border="20,20,20,20">thumbfo.png</texture>
 				</control>
 				<control type="label" id="1">
 						<description>heading label</description>
@@ -133,17 +133,17 @@
 				</control>
 				<control type="button" id="5">
 						<description>OK button</description>
-						<posx>45</posx>
-						<posy>570</posy>
-						<width>200</width>
-						<height>35</height>
+						<posx>30</posx>
+						<posy>614</posy>
+						<width>550</width>
+						<height>40</height>
 						<label>186</label>
 						<font>size_20</font>
 						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
+						<focusedcolor>black</focusedcolor>
 						<align>center</align>
-						<texturefocus border="3">button-focus2.png</texturefocus>
-						<texturenofocus border="3">button-nofocus.png</texturenofocus>
+						<texturenofocus border="3">thumbnf.png</texturenofocus>
+						<texturefocus border="3">thumbfo.png</texturefocus>
 						<onleft>3</onleft>
 						<onright>61</onright>
 						<onup>3</onup>

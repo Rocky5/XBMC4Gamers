@@ -117,6 +117,9 @@ class CAdvancedSettings
     bool m_usePCDVDROM;
     bool m_fullScreenOnMovieStart;
     bool m_noDVDROM;
+    bool m_enableintro;
+    bool m_fastscanning;
+    bool m_slowscrolling;
     bool m_splashImage;
     CStdString m_cachePath;
     bool m_displayRemoteCodes;

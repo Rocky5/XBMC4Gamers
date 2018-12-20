@@ -7,9 +7,9 @@ Del /Q /S "Thumbs.db" 2>NUL
 title XBMC4Gamers Builder
 
 Set "foldername=update-files"
-Set "fromDate=13/08/2018"
+Set "fromDate=20/12/2018"
 Set "toDate=%date%"
-Set "version=1.1"
+Set "version=1.2"
 (
 echo fromDate^=CDate^("%fromDate%"^)
 echo toDate^=CDate^("%toDate%"^)
@@ -29,7 +29,6 @@ Echo: & Echo: & Echo: & Echo   Please wait...
 XCopy /s /e /i /h /r /y "Mod Files" "%foldername%"
 copy /y "New XBMC xbe\default.xbe" "%foldername%\default.xbe"
 copy /y "New XBMC xbe\default.xbe" "Other\update build\updater\default.xbe"
-del /q "%foldername%\system\userdata\guisettings.xml"
 del /q "%foldername%\system\userdata\profiles.xml"
 )
 copy /y "Changes.txt" "%foldername%"
@@ -41,7 +40,7 @@ if exist "Other\build for release" (
 	copy /b "Other\Tools\Changes\Changes_Header.xml"+"%foldername%\changes.tmp"+"Other\Tools\Changes\Changes_Footer.xml" "%foldername%\skins\Profile Skin\720p\Custom_Changes.xml"
 	del /q "%foldername%\changes.tmp"
 )
-copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\Manage Profile Skin\language\English\strings.po"
+copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\Manage Profiles Skin\language\English\strings.po"
 copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\DVD2Xbox Skin\language\English\strings.po"
 del /Q /S "%foldername%\*.bat"
 del /Q /S "%foldername%\empty"

@@ -21,6 +21,12 @@ if UseDialog == 'dialog':
 else:
 	windowdialog = xbmcgui.WindowXML
 	
+# Check if audio is playing when entering synopsis and store if true.
+if xbmc.getCondVisibility( 'Player.HasAudio' ):
+	Music_Playing = 1
+else:
+	Music_Playing = 0
+	
 #####	Sets paths & other crap.
 Current_Window					= xbmcgui.Window(xbmcgui.getCurrentWindowId())
 Working_Directory				= os.getcwd() + '\\resources\\'
@@ -37,6 +43,7 @@ _Resources_Artwork				= os.path.join(_Resources_Path, 'artwork' )
 Preview_default					= GetInfoPath + 'preview.xmv'
 Preview_ext						= xbmc.getInfoLabel('Skin.String(PreviewFileExtension)')
 Preview_alt						= GetInfoPath + 'Preview.' + Preview_ext
+Video_Played					= 0
 CachedThumb						= xbmc.translatePath('special://profile/Thumbnails/Programs/%s/%s' % ( xbmc.getCacheThumbName(xbmc.getInfoLabel('ListItem.FolderPath'))[0], xbmc.getCacheThumbName(xbmc.getInfoLabel('ListItem.FolderPath')) ) )
 Font_Path1						= xbmc.translatePath('Special://skin/1080i/Font.xml')
 Font_Path2						= xbmc.translatePath('Special://skin/720p/Font.xml')
@@ -103,20 +110,26 @@ def synopsis_mode_images():
 	#####	Check for assets files.
 	for root, dirs, files in os.walk( _Resources_Artwork ):
 		for filename in files:
-			if filename.startswith('banner'):
+			if filename.lower() == 'banner.png':
 				Current_Window.setProperty( 'Synopsis_banner', root + '\\' + filename )
 				log('|   Found ' + filename)
-			if filename.startswith('fanart'):
+			if filename.lower() == 'fanart.jpg':
 				Current_Window.setProperty( 'Synopsis_fanart', root + '\\' + filename )
 				log('|   Found ' + filename)
-			if filename.startswith('poster'):
+			if filename.lower() == 'fog.jpg':
+				Current_Window.setProperty( 'Synopsis_fog', root + '\\' + filename )
+				log('|   Found ' + filename)
+			if filename.lower() == 'poster.jpg':
 				Current_Window.setProperty( 'Synopsis_poster', root + '\\' + filename )
 				log('|   Found ' + filename)
-			if filename.startswith('synopsis'):
+			if filename.lower() == 'synopsis.png':
 				Current_Window.setProperty( 'Synopsis_icon', root + '\\' + filename )
 				log('|   Found ' + filename)
-			if filename.startswith('alt_synopsis'):
+			if filename.lower() == 'poster.jpg':
 				Current_Window.setProperty( 'Alt_Synopsis_icon', root + '\\' + filename )
+				log('|   Found ' + filename)
+			if filename.lower() == 'cd.png':
+				Current_Window.setProperty( 'Synopsis_disc', root + '\\' + filename )
 				log('|   Found ' + filename)
 	
 	#####	Get screenshots, xbe and cached thumb	
@@ -135,8 +148,8 @@ def synopsis_mode_text():
 		Synopsis_XML = open( _Resources_Default_xml, 'r' ).read()
 		Output = BeautifulSoup( Synopsis_XML )
 		try: # Title
-			Current_Window.setProperty( 'Synopsis_title', Output.title.string )
-			Current_Window.setProperty( 'Synopsis_title_alt', Output.title.string )
+			Current_Window.setProperty( 'Synopsis_title', Output.title.string.replace('&amp;','&') )
+			Current_Window.setProperty( 'Synopsis_title_alt', Output.title.string.replace('&amp;','&') )
 		except(TypeError, KeyError, AttributeError):
 			pass
 		try: # Developer
@@ -221,7 +234,7 @@ def synopsis_mode_text():
 		Current_Window.setProperty( 'Synopsis_title','Could not find:' )
 		Current_Window.setProperty( 'Synopsis_title_alt',GameName )
 		Current_Window.setProperty( 'Synopsis_developer','' + _Resources_Default_xml )
-		Current_Window.setProperty( 'Synopsis_titleid_alt','Null' )
+		Current_Window.setProperty( 'Synopsis_titleid_alt','' )
 		Current_Window.setProperty( 'Synopsis_overview_alt','No synopsis information found.' )
 
 def preview_mode():
@@ -458,9 +471,11 @@ def clear_properties():
 	#####	assets ( videos, images eg... )
 	Current_Window.setProperty( 'Synopsis_banner', '' )
 	Current_Window.setProperty( 'Synopsis_fanart', '' )
+	Current_Window.setProperty( 'Synopsis_fog', '' )
 	Current_Window.setProperty( 'Synopsis_poster', '' )
 	Current_Window.setProperty( 'Synopsis_icon', '' )
 	Current_Window.setProperty( 'Alt_Synopsis_icon', '' )
+	Current_Window.setProperty( 'Synopsis_disc', '' )
 	Current_Window.setProperty( 'Synopsis_screenshots', '' )
 	Current_Window.setProperty( 'Synopsis_xbe', '' )
 	Current_Window.setProperty( 'Synopsis_thumb', '' )
@@ -471,9 +486,9 @@ def clear_properties():
 	#####	colours.xml
 	Current_Window.setProperty( 'Synopsis_colour_1','FF399EDA' )
 	Current_Window.setProperty( 'Synopsis_colour_2','FF969696' )
-	Current_Window.setProperty( 'Synopsis_colour_3','FF969696' )
-	Current_Window.setProperty( 'Synopsis_colour_4','FF969696' )
-	Current_Window.setProperty( 'Synopsis_colour_5','FF969696' )
+	Current_Window.setProperty( 'Synopsis_colour_3','FFCCCCCC' )
+	Current_Window.setProperty( 'Synopsis_colour_4','FFFFFFFF' )
+	Current_Window.setProperty( 'Synopsis_colour_5','FF333333' )
 	#####	labels.xml
 	Current_Window.setProperty( 'Synopsis_label_1','Title ID:' )
 	Current_Window.setProperty( 'Synopsis_label_2','Synopsis' )
@@ -493,7 +508,7 @@ def clear_properties():
 	Current_Window.setProperty( 'Synopsis_label_16','Exclusive:' )
 	Current_Window.setProperty( 'Synopsis_label_17','Title ID:' )
 	Current_Window.setProperty( 'Synopsis_label_18','Synopsis:' )
-	Current_Window.setProperty( 'Synopsis_label_19','' )
+	Current_Window.setProperty( 'Synopsis_label_19','Year:' )
 	Current_Window.setProperty( 'Synopsis_label_20','' )
 	Current_Window.setProperty( 'Synopsis_label_21','' )
 	Current_Window.setProperty( 'Synopsis_label_22','' )
@@ -515,18 +530,39 @@ class GUI(windowdialog):
 		synopsis_mode_text()
 		synopsis_mode_images()
 		synopsis_mode_video()
-		if xbmc.getCondVisibility( 'Skin.HasSetting(Synopsis_alt_view)' ) and xbmc.getCondVisibility( 'Skin.HasSetting(Synopsis_Autoplay)' ): time.sleep(1)
-		xbmc.executebuiltin('SetFocus(10)')
+		if xbmc.getCondVisibility( '!Skin.HasSetting(Synopsis_First_Run)' ):
+			xbmc.executebuiltin('SetFocus(100)')
 		log('|===============================================================================')
+			
+	def onClick(self, controlID):
+		if (controlID == 100 ):
+			time.sleep(1)
+			self.close()
+		if (controlID == 101 ):
+			time.sleep(1)
+			self.close()
+		if (controlID == 10 ):
+			xbmc.executebuiltin('RunXBE('+xbmc.getInfoLabel('Window(MyPrograms).Property(Synopsis_xbe)')+')')
+		if (controlID == 13 ):
+			if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisPreviewThere)' ):
+				global Video_Played
+				Video_Played = 1
+				xbmc.executebuiltin('PlayWith('+xbmc.getInfoLabel('Window(MyPrograms).Property(Player_Type)')+')')
+				xbmc.executebuiltin('Playmedia('+xbmc.getInfoLabel('Window(MyPrograms).Property(Synopsis_Video_Preview_Path)')+',1,noresume)')
+				xbmc.executebuiltin('playercontrol(RepeatOff)')
+				xbmcgui.DialogProgress().update( 0,"" )
 		
 	def onAction(self, action):
 		if action.getButtonCode() == 257 or action.getButtonCode() == 275:
-			if xbmc.getCondVisibility( 'Player.HasVideo' ): xbmc.executebuiltin('PlayerControl(stop)')
-			self.close()
-			
-	def onClick(self, controlID):
-		if (controlID == 10 ):
-			self.close()
+			if xbmc.getCondVisibility( 'Player.HasVideo' ):
+				xbmc.executebuiltin('PlayerControl(stop)')
+				self.close()
+				if Music_Playing == 1 and xbmc.getCondVisibility( 'Skin.HasSetting(Use_Startup_Playback)' ) and Video_Played == 1:
+					time.sleep(0.1)
+					xbmc.executebuiltin('PlayMedia('+xbmc.getInfoLabel('Skin.String(Startup_Playback_Path)')+')')
+					xbmc.executebuiltin('playercontrol(RepeatAll)')
+			else:
+				self.close()
 			
 	def onFocus(self, controlID):
 		pass
@@ -552,3 +588,4 @@ if (__name__ == '__main__'):
 	
 	#####	Used to focus the games list when using the script in dialog mode
 	if UseDialog == 'dialog': xbmc.executebuiltin('SetFocus(50)')
+	xbmcgui.DialogProgress().update( 0,"" )

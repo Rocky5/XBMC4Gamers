@@ -22,8 +22,7 @@
 #include "GUIPanelContainer.h"
 #include "GUIListItem.h"
 #include "GUIInfoManager.h"
-
-#include <fstream>
+#include "settings/AdvancedSettings.h"
 
 using namespace std;
 
@@ -393,10 +392,8 @@ unsigned int CGUIPanelContainer::GetRows() const
 
 float CGUIPanelContainer::AnalogScrollSpeed() const
 {
-		std::ifstream toggle("Q:\\system\\toggles\\slow scrolling.enabled");
-		if (toggle.good())
+		if (g_advancedSettings.m_slowscrolling)
 		{
-			toggle.close();
 			return 18.5f / m_itemsPerPage;
 		}
 		else
