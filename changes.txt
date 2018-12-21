@@ -1,3 +1,6 @@
+21/12/2018
+	1) Changed how the intro is done, if there was no Ethernet/network connected it would hang :/ so now I just play intro.mp4 if found next to the splash.png.
+
 20/12/2018
 	1) Fixed width of the buttons and underlay in skin settings and settings category.
 	2) Updated the dialog progress to not show cancel when you select a downloader option.

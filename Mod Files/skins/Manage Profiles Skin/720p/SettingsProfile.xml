@@ -91,22 +91,6 @@
 												<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Toggle AdvancedSettings Settings.py,enableintro,splash )</onclick>
 												<selected>Skin.HasSetting(introenabled)</selected>
 										</control>
-										<control type="button" id="9005">
-												<description>Intro select Button</description>
-												<posx>595</posx>
-												<posy>515</posy>
-												<width>570</width>
-												<height>45</height>
-												<font>size_20</font>
-												<label>  &gt; $LOCALIZE[32085]</label>
-												<label2>  $INFO[Skin.String(selectedintrofile)]</label2>
-												<textcolor>white</textcolor>
-												<focusedcolor>black</focusedcolor>
-												<texturefocus border="5">thumbfO.png</texturefocus>
-												<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
-												<onclick>Skin.SetFile(selectedintrofile,.avi|.mp4|.wmv|.xmv,Special://xbmc/)</onclick>
-												<visible>Skin.HasSetting(introenabled)</visible>
-										</control>
 								</control>
 								<control type="image">
 										<posx>710</posx>
