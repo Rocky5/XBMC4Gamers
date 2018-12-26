@@ -1,3 +1,6 @@
+24/12/2018
+	1) Fixed the synopsis crashing when launching a xbe from the synopsis window.
+
 21/12/2018
 	1) Changed how the intro is done, if there was no Ethernet/network connected it would hang :/ so now I just play intro.mp4 if found next to the splash.png.
 

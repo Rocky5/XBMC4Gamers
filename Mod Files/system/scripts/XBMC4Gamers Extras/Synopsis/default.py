@@ -542,6 +542,8 @@ class GUI(windowdialog):
 			time.sleep(1)
 			self.close()
 		if (controlID == 10 ):
+			self.close()
+			time.sleep(0.4)
 			xbmc.executebuiltin('RunXBE('+xbmc.getInfoLabel('Window(MyPrograms).Property(Synopsis_xbe)')+')')
 		if (controlID == 13 ):
 			if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisPreviewThere)' ):
