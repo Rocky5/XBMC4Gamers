@@ -24,7 +24,7 @@
  #### Build from Source:
  * Download [XBMC4Gamers](https://github.com/Rocky5/XBMC4Gamers/archive/master.zip) and extract the **XBMC4Gamers-master** folder to your desktop.
  * Download the latest [XBMC4XBOX-*****.zip](https://drive.google.com/drive/folders/0B9zNhNcNUdDTRVFBbHcwc2JCZFE) and extract the **XBMC** folder that is inside the zip to your desktop\\**XBMC4Gamers-master**\\ folder.
- * Now double click the **Build XBMC4Gamers.bat** that's inside the **XBMC4Gamers-master** folder and wait. It will output a new folder named **XBMC**
+ * Now double click the **Build XBMC4Gamers.bat** that's inside the **XBMC4Gamers-master** folder and wait. It will output a new folder named **XBMC4Gamers**
  * FTP this new folder to your Xbox and enjoy.
  
 ## Create a Profile
