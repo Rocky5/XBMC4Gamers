@@ -1,13 +1,32 @@
 :: Copyright of John Conn (Rocky5 Forums & JCRocky5 Twitter) 2016
 :: Please don't re-release this as your own, if you make a better tool then I don't mind :-)
-Attrib /s -r -h -s "Thumbs.db" >NUL
-Del /Q /S "Thumbs.db" 2>NUL
-:Start
+
 @Echo off & SetLocal EnableDelayedExpansion & Mode con:cols=100 lines=10 & Color 0B
 title XBMC4Gamers Builder
+Attrib /s -r -h -s "Thumbs.db" >NUL
+Del /Q /S "Thumbs.db" 2>NUL
 
+cls
+:menu
+CLS & echo:
+echo  Select Time formating, this is used for versioning.
+echo:
+set "entry="
+echo  1. DD/MM/YYYY
+echo  2. MM/DD/YYYY
+echo:
+echo  or press "Enter" to exit
+echo:
+set /p entry=Enter Choice:
+if "%entry%"=="1" Set "fromDate=20/12/2018" & Goto Start
+if "%entry%"=="2" Set "fromDate=12/20/2018" & Goto Start
+if "%entry%"=="" exit
+echo Error: Incorrect entry.
+timeout /t %Delay%
+goto menu
+
+:Start
 Set "foldername=update-files"
-Set "fromDate=20/12/2018"
 Set "toDate=%date%"
 Set "version=1.2"
 (
