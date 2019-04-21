@@ -331,8 +331,6 @@
 								<align>center</align>
 								<aligny>center</aligny>
 								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(50).OnScrollNext">Conditional</animation>
-								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(50).OnScrollPrevious">Conditional</animation>
 						</control>
 						<control type="label">
 								<posx>0</posx>
@@ -349,8 +347,6 @@
 										<effect type="zoom" end="100,-75" center="auto" delay="" time="0" />
 										<effect type="fade" end="2" delay="" time="0" />
 								</animation>
-								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(50).OnScrollNext">Conditional</animation>
-								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(50).OnScrollPrevious">Conditional</animation>
 						</control>
 						<control type="scrollbar" id="80">
 								<posx>150</posx>

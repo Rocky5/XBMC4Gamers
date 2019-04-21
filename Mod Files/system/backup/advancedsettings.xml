@@ -2,12 +2,7 @@
 		<powersave>false</powersave>
 		<nodvdrom>false</nodvdrom>
 		<enableintro>false</enableintro>
-		<fasterscanning>true</fasterscanning>
-		<slowscrolling>true</slowscrolling>
 		<splash>true</splash>
-		<myprograms>
-				<trainerpath>Q:\system\trainers\</trainerpath>
-		</myprograms>
 		<pictures>
 				<screenshotpath>Q:\system\Screenshots\</screenshotpath>
 		</pictures>

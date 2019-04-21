@@ -614,9 +614,9 @@
 								<onleft>65</onleft>
 								<onright>65</onright>
 								<onup>117</onup>
-								<ondown>92</ondown>
+								<ondown>95</ondown>
 								<viewtype label="view65">list</viewtype>
-								<pagecontrol>92</pagecontrol>
+								<pagecontrol>95</pagecontrol>
 								<scrolltime>0</scrolltime>
 								<focusposition>1</focusposition>
 								<movement>0</movement>
@@ -688,7 +688,7 @@
 										<visible>!IsEmpty(ListItem.overlay)</visible>
 								</control>
 						</control>
-						<control type="scrollbar" id="92">
+						<control type="scrollbar" id="95">
 								<posx>150</posx>
 								<posy>671</posy>
 								<width>980</width>
@@ -702,7 +702,7 @@
 								<ondown>-</ondown>
 								<showonepage>false</showonepage>
 								<orientation>horizontal</orientation>
-								<visible allowhiddenfocus="true">Control.HasFocus(92)</visible>
+								<visible allowhiddenfocus="true">Control.HasFocus(95)</visible>
 								<animation reversible="false" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
 								<animation reversible="false" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
 						</control>

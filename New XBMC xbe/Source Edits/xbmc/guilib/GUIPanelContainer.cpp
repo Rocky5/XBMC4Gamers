@@ -22,7 +22,8 @@
 #include "GUIPanelContainer.h"
 #include "GUIListItem.h"
 #include "GUIInfoManager.h"
-#include "settings/AdvancedSettings.h"
+
+#include "settings/GUISettings.h"
 
 using namespace std;
 
@@ -392,7 +393,7 @@ unsigned int CGUIPanelContainer::GetRows() const
 
 float CGUIPanelContainer::AnalogScrollSpeed() const
 {
-		if (g_advancedSettings.m_slowscrolling)
+		if (!g_guiSettings.GetBool("mygames.fastscrolling"))
 		{
 			return 18.5f / m_itemsPerPage;
 		}

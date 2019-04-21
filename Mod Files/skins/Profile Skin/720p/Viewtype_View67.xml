@@ -11,9 +11,9 @@
 										<onleft>67</onleft>
 										<onright>67</onright>
 										<onup>117</onup>
-										<ondown>83</ondown>
+										<ondown>87</ondown>
 										<viewtype label="view67">list</viewtype>
-										<pagecontrol>83</pagecontrol>
+										<pagecontrol>87</pagecontrol>
 										<scrolltime>150</scrolltime>
 										<focusposition>1</focusposition>
 										<movement>0</movement>
@@ -308,7 +308,7 @@
 												<visible>Skin.HasSetting(_recourcesenabled) + !ListItem.IsFolder</visible>
 										</control>
 								</control>
-								<control type="scrollbar" id="83">
+								<control type="scrollbar" id="87">
 										<posx>150</posx>
 										<posy>662</posy>
 										<width>980</width>
@@ -322,7 +322,7 @@
 										<ondown>-</ondown>
 										<showonepage>false</showonepage>
 										<orientation>horizontal</orientation>
-										<visible allowhiddenfocus="true">Control.HasFocus(83)</visible>
+										<visible allowhiddenfocus="true">Control.HasFocus(87)</visible>
 										<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
 										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
 								</control>

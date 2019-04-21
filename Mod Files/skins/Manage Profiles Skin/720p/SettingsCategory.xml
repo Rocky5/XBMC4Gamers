@@ -114,7 +114,7 @@
 				<control type="image" id="11">
 						<description>separator image</description>
 						<height>1</height>
-						<texture>-</texture>
+						<texture>separator.png</texture>
 				</control>
 				<control type="image">
 						<posx>20</posx>

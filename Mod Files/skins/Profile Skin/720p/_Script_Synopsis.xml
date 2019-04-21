@@ -12,7 +12,7 @@
 								<width>1280</width>
 								<height>720</height>
 								<aspectratio>stretch</aspectratio>
-								<texture background="true">select_synopsis.jpg</texture>
+								<texture background="false">select_synopsis.jpg</texture>
 						</control>
 						<control type="button" id="100">
 								<posx>10</posx>
@@ -63,7 +63,7 @@
 										<width>1280</width>
 										<height>720</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
+										<texture background="false">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
 										<animation effect="fade" start="0" end="100" delay="400" time="200">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
@@ -73,7 +73,7 @@
 										<posy>70</posy>
 										<width>800</width>
 										<height>570</height>
-										<texture background="true">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
+										<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
 										<aspectratio>stretch</aspectratio>
 										<animation effect="fade" start="0" end="100" delay="700" time="350">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
@@ -84,7 +84,7 @@
 										<posy>70</posy>
 										<width>80</width>
 										<height>570</height>
-										<texture background="true">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
+										<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
 										<aspectratio>stretch</aspectratio>
 										<animation effect="fade" start="0" end="100" delay="700" time="350">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
@@ -96,7 +96,7 @@
 										<posy>70</posy>
 										<width>390</width>
 										<height>570</height>
-										<texture background="true">$INFO[Window(MyPrograms).Property(Synopsis_icon)]</texture>
+										<texture background="false">$INFO[Window(MyPrograms).Property(Synopsis_icon)]</texture>
 										<bordersize>0</bordersize>
 										<aspectratio>keep</aspectratio>
 										<animation effect="fade" start="0" end="100" delay="700" time="350">WindowOpen</animation>
@@ -170,7 +170,7 @@
 												<posy>552</posy>
 												<width>185</width>
 												<height>33</height>
-												<texture background="true">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/star_rating\rating$INFO[Window(MyPrograms).Property(Synopsis_rating_alt)].png</texture>
+												<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/star_rating\rating$INFO[Window(MyPrograms).Property(Synopsis_rating_alt)].png</texture>
 												<aspectratio>stretch</aspectratio>
 										</control>
 										<control type="label">
@@ -190,7 +190,7 @@
 												<posy>515</posy>
 												<width>355</width>
 												<height>80</height>
-												<texture background="true" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_banner.png">$INFO[Window(MyPrograms).Property(Synopsis_banner)]</texture>
+												<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_banner.png">$INFO[Window(MyPrograms).Property(Synopsis_banner)]</texture>
 												<aspectratio>stretch</aspectratio>
 												<animation effect="fade" start="0" end="100" delay="0" time="400">WindowOpen</animation>
 										</control>
@@ -521,7 +521,7 @@
 										<width>1280</width>
 										<height>720</height>
 										<aspectratio>stretch</aspectratio>
-										<texture diffuse="fanart_low_diffuse.png">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
+										<texture background="false" diffuse="fanart_low_diffuse.png">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
 										<animation effect="fade" start="0" end="100" delay="100" time="800">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
@@ -531,7 +531,7 @@
 										<width>1280</width>
 										<height>206</height>
 										<aspectratio scalediffuse="false">scale</aspectratio>
-										<texture diffuse="fanart_low_diffuse_Custom.png">$INFO[Window(MyPrograms).Property(Synopsis_fog)]</texture>
+										<texture background="false" diffuse="fanart_low_diffuse_Custom.png">$INFO[Window(MyPrograms).Property(Synopsis_fog)]</texture>
 										<animation effect="fade" start="0" end="100" delay="100" time="800">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
@@ -542,7 +542,7 @@
 										<height>370</height>
 										<aspectratio>stretch</aspectratio>
 										<colordiffuse>E0000000</colordiffuse>
-										<texture>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
+										<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
 										<animation effect="fade" start="0" end="100" delay="500" time="400">WindowOpen</animation>
 										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
 								</control>
@@ -603,7 +603,7 @@
 												<width>290</width>
 												<height>427</height>
 												<aspectratio align="top">stretch</aspectratio>
-												<texture background="true" flipy="true" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.png" diffuse="diffuse_mirror4.png">$INFO[Window(MyPrograms).Property(Alt_Synopsis_icon)]</texture>
+												<texture background="false" flipy="true" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.png" diffuse="diffuse_mirror4.png">$INFO[Window(MyPrograms).Property(Alt_Synopsis_icon)]</texture>
 										</control>
 										<control type="image">
 												<description>Poster image</description>
@@ -611,7 +611,7 @@
 												<posy>534</posy>
 												<width>310</width>
 												<height>15</height>
-												<texture background="true">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_listview_shadow.png</texture>
+												<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_listview_shadow.png</texture>
 												<aspectratio>stretch</aspectratio>
 												<colordiffuse>FF000000</colordiffuse>
 										</control>
@@ -621,7 +621,7 @@
 												<posy>114</posy>
 												<width>290</width>
 												<height>427</height>
-												<texture background="true" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.png">$INFO[Window(MyPrograms).Property(Alt_Synopsis_icon)]</texture>
+												<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.png">$INFO[Window(MyPrograms).Property(Alt_Synopsis_icon)]</texture>
 												<aspectratio align="bottom">stretch</aspectratio>
 										</control>
 										<!-- Synopsis overview section -->
@@ -780,7 +780,7 @@
 														<posy>317</posy>
 														<width>124</width>
 														<height>24</height>
-														<texture background="true">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/star_rating\rating$INFO[Window(MyPrograms).Property(Synopsis_rating_alt)].png</texture>
+														<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/star_rating\rating$INFO[Window(MyPrograms).Property(Synopsis_rating_alt)].png</texture>
 														<aspectratio>stretch</aspectratio>
 												</control>
 												<control type="image">
@@ -789,7 +789,7 @@
 														<posy>350</posy>
 														<width>846</width>
 														<height>5</height>
-														<texture background="true">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_separator.png</texture>
+														<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_separator.png</texture>
 														<aspectratio>stretch</aspectratio>
 														<colordiffuse>50FFFFFF</colordiffuse>
 												</control>
@@ -813,7 +813,7 @@
 														<width>178</width>
 														<height>178</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_cd.png">$INFO[Window(MyPrograms).Property(Synopsis_disc)]</texture>
+														<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_cd.png">$INFO[Window(MyPrograms).Property(Synopsis_disc)]</texture>
 														<animation effect="fade" start="0" end="100" delay="0" time="400">WindowOpen</animation>
 												</control>
 										</control>
@@ -997,7 +997,7 @@
 												<width>355</width>
 												<height>80</height>
 												<aspectratio>keep</aspectratio>
-												<texture background="true" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_banner.png">$INFO[Window(MyPrograms).Property(Synopsis_banner)]</texture>
+												<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_banner.png">$INFO[Window(MyPrograms).Property(Synopsis_banner)]</texture>
 												<animation effect="rotate" end="-90" center="auto" time="0">Visible</animation>
 												<visible>ControlGroup(9001).HasFocus(11)</visible>
 										</control>

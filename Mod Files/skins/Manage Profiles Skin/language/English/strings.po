@@ -19,15 +19,15 @@ msgid "XBMC4Gamers 0.0.000"
 msgstr ""
 
 msgctxt "#31001"
-msgid "Working"
+msgid "Enable fast game parsing"
 msgstr ""
 
 msgctxt "#31002"
-msgid ""
+msgid "Disable slow scrolling"
 msgstr ""
 
 msgctxt "#31003"
-msgid ""
+msgid "Advanced"
 msgstr ""
 
 msgctxt "#31004"
@@ -459,15 +459,15 @@ msgstr ""
 <!-- view id = 520 -->
 <!-- Settings Description Labels  -->
 msgctxt "#31400"
-msgid "Skin · Region · Screensavers · Display"
+msgid "Region · Screensavers · Display"
 msgstr ""
 
 msgctxt "#31401"
-msgid "Video library · Playback · Listing options · Subtitles"
+msgid "Playback"
 msgstr ""
 
 msgctxt "#31402"
-msgid "Music library · Playback · Listing options · Karaoke"
+msgid "Playback · Listing options"
 msgstr ""
 
 msgctxt "#31403"
@@ -491,7 +491,7 @@ msgid "Toggles · Scripts · Startup playlist"
 msgstr ""
 
 msgctxt "#31408"
-msgid "Trainer path · Video switching · Dashboard path"
+msgid "Trainer path · Game scanning · Dashboard path"
 msgstr ""
 
 msgctxt "#31409"
@@ -970,11 +970,11 @@ msgid "Custom playlist"
 msgstr ""
 
 msgctxt "#32098"
-msgid "Disable fast game parsing"
+msgid ""
 msgstr ""
 
 msgctxt "#32099"
-msgid "Disable slow scrolling"
+msgid ""
 msgstr ""
 
 msgctxt "#32100"

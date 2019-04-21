@@ -222,6 +222,9 @@ void CGUISettings::Initialize()
   AddSeparator(7,"myprograms.sep3");
   AddBool(8, "myprograms.usedashpath", 13007, true);
   AddString(9, "myprograms.dashboard", 13006, "C:\\xboxdash.xbe", BUTTON_CONTROL_PATH_INPUT, false, 655);
+  AddCategory(1, "mygames", 31003);
+  AddBool(1, "mygames.fastscrolling",31002,false);
+  AddBool(2, "mygames.slowgameparsing",31001,false);
 
   // My Weather settings
   AddGroup(2, 8);
@@ -235,19 +238,19 @@ void CGUISettings::Initialize()
 
   // My Music Settings
   AddGroup(3, 2);
-  AddCategory(3,"musiclibrary",14022);
-  AddBool(1, "musiclibrary.enabled", 421, true);
-  AddBool(2, "musiclibrary.showcompilationartists", 13414, true);
-  AddSeparator(3,"musiclibrary.sep1");
-  AddBool(4,"musiclibrary.downloadinfo", 20192, false);
-  AddString(6, "musiclibrary.scraper", 20194, "tadb.xml", SPIN_CONTROL_TEXT);
-  AddString(7, "musiclibrary.scrapersettings", 21417, "", BUTTON_CONTROL_STANDARD);
-  AddBool(8, "musiclibrary.updateonstartup", 22000, false);
-  AddBool(0, "musiclibrary.backgroundupdate", 22001, false);
-  AddSeparator(9,"musiclibrary.sep2");
-  AddString(10, "musiclibrary.cleanup", 334, "", BUTTON_CONTROL_STANDARD);
-  AddString(11, "musiclibrary.export", 20196, "", BUTTON_CONTROL_STANDARD);
-  AddString(12, "musiclibrary.import", 20197, "", BUTTON_CONTROL_STANDARD);
+  // AddCategory(3,"musiclibrary",14022);
+  // AddBool(1, "musiclibrary.enabled", 421, true);
+  // AddBool(2, "musiclibrary.showcompilationartists", 13414, true);
+  // AddSeparator(3,"musiclibrary.sep1");
+  // AddBool(4,"musiclibrary.downloadinfo", 20192, false);
+  // AddString(6, "musiclibrary.scraper", 20194, "tadb.xml", SPIN_CONTROL_TEXT);
+  // AddString(7, "musiclibrary.scrapersettings", 21417, "", BUTTON_CONTROL_STANDARD);
+  // AddBool(8, "musiclibrary.updateonstartup", 22000, false);
+  // AddBool(0, "musiclibrary.backgroundupdate", 22001, false);
+  // AddSeparator(9,"musiclibrary.sep2");
+  // AddString(10, "musiclibrary.cleanup", 334, "", BUTTON_CONTROL_STANDARD);
+  // AddString(11, "musiclibrary.export", 20196, "", BUTTON_CONTROL_STANDARD);
+  // AddString(12, "musiclibrary.import", 20197, "", BUTTON_CONTROL_STANDARD);
 
   AddCategory(3, "musicplayer", 14086);
   AddBool(1, "musicplayer.autoplaynextitem", 489, true);
@@ -267,45 +270,45 @@ void CGUISettings::Initialize()
   AddBool(11, "musicplayer.outputtoallspeakers", 252, false);
 #endif
 
-  AddCategory(3, "musicfiles", 14081);
-  AddBool(1, "musicfiles.usetags", 258, false);
-  AddString(2, "musicfiles.trackformat", 13307, "[%N. ]%A - %T", EDIT_CONTROL_INPUT, false, 16016);
-  AddString(3, "musicfiles.trackformatright", 13387, "%D", EDIT_CONTROL_INPUT, false, 16016);
-  // advanced per-view trackformats.
-  AddString(0, "musicfiles.nowplayingtrackformat", 13307, "", EDIT_CONTROL_INPUT, false, 16016);
-  AddString(0, "musicfiles.nowplayingtrackformatright", 13387, "", EDIT_CONTROL_INPUT, false, 16016);
-  AddString(0, "musicfiles.librarytrackformat", 13307, "", EDIT_CONTROL_INPUT, false, 16016);
-  AddString(0, "musicfiles.librarytrackformatright", 13387, "", EDIT_CONTROL_INPUT, false, 16016);
-  AddBool(4, "musicfiles.findremotethumbs", 14059, true);
+  // AddCategory(3, "musicfiles", 14081);
+  // AddBool(1, "musicfiles.usetags", 258, false);
+  // AddString(2, "musicfiles.trackformat", 13307, "[%N. ]%A - %T", EDIT_CONTROL_INPUT, false, 16016);
+  // AddString(3, "musicfiles.trackformatright", 13387, "%D", EDIT_CONTROL_INPUT, false, 16016);
+  // // advanced per-view trackformats.
+  // AddString(0, "musicfiles.nowplayingtrackformat", 13307, "", EDIT_CONTROL_INPUT, false, 16016);
+  // AddString(0, "musicfiles.nowplayingtrackformatright", 13387, "", EDIT_CONTROL_INPUT, false, 16016);
+  // AddString(0, "musicfiles.librarytrackformat", 13307, "", EDIT_CONTROL_INPUT, false, 16016);
+  // AddString(0, "musicfiles.librarytrackformatright", 13387, "", EDIT_CONTROL_INPUT, false, 16016);
+  // AddBool(4, "musicfiles.findremotethumbs", 14059, true);
 
-  AddCategory(3, "scrobbler", 15221);
-  AddBool(1, "scrobbler.lastfmsubmit", 15201, false);
-  AddBool(2, "scrobbler.lastfmsubmitradio", 15250, false);
-  AddString(3, "scrobbler.lastfmusername", 15202, "", EDIT_CONTROL_INPUT, false, 15202);
-  AddString(4, "scrobbler.lastfmpass", 15203, "", EDIT_CONTROL_MD5_INPUT, false, 15203);
-  AddSeparator(5, "scrobbler.sep1");
-  AddBool(6, "scrobbler.librefmsubmit", 15217, false);
-  AddString(7, "scrobbler.librefmusername", 15218, "", EDIT_CONTROL_INPUT, false, 15218);
-  AddString(8, "scrobbler.librefmpass", 15219, "", EDIT_CONTROL_MD5_INPUT, false, 15219);
+  // AddCategory(3, "scrobbler", 15221);
+  // AddBool(1, "scrobbler.lastfmsubmit", 15201, false);
+  // AddBool(2, "scrobbler.lastfmsubmitradio", 15250, false);
+  // AddString(3, "scrobbler.lastfmusername", 15202, "", EDIT_CONTROL_INPUT, false, 15202);
+  // AddString(4, "scrobbler.lastfmpass", 15203, "", EDIT_CONTROL_MD5_INPUT, false, 15203);
+  // AddSeparator(5, "scrobbler.sep1");
+  // AddBool(6, "scrobbler.librefmsubmit", 15217, false);
+  // AddString(7, "scrobbler.librefmusername", 15218, "", EDIT_CONTROL_INPUT, false, 15218);
+  // AddString(8, "scrobbler.librefmpass", 15219, "", EDIT_CONTROL_MD5_INPUT, false, 15219);
 
-  AddCategory(3, "audiocds", 620);
-  AddBool(2, "audiocds.usecddb", 227, true);
-  AddSeparator(3, "audiocds.sep1");
-  AddPath(4,"audiocds.recordingpath",20000,"select writable folder",BUTTON_CONTROL_PATH_INPUT,false,657);
-  AddString(5, "audiocds.trackpathformat", 13307, "%A - %B/[%N. ][%A - ]%T", EDIT_CONTROL_INPUT, false, 16016);
-  AddInt(6, "audiocds.encoder", 621, CDDARIP_ENCODER_LAME, CDDARIP_ENCODER_LAME, 1, CDDARIP_ENCODER_FLAC, SPIN_CONTROL_TEXT);
-  AddInt(7, "audiocds.quality", 622, CDDARIP_QUALITY_CBR, CDDARIP_QUALITY_CBR, 1, CDDARIP_QUALITY_EXTREME, SPIN_CONTROL_TEXT);
-  AddInt(8, "audiocds.bitrate", 623, 192, 128, 32, 320, SPIN_CONTROL_INT_PLUS, MASK_KBPS);
-  AddInt(9, "audiocds.compressionlevel", 665, 5, 0, 1, 8, SPIN_CONTROL_INT_PLUS);
+  // AddCategory(3, "audiocds", 620);
+  // AddBool(2, "audiocds.usecddb", 227, true);
+  // AddSeparator(3, "audiocds.sep1");
+  // AddPath(4,"audiocds.recordingpath",20000,"select writable folder",BUTTON_CONTROL_PATH_INPUT,false,657);
+  // AddString(5, "audiocds.trackpathformat", 13307, "%A - %B/[%N. ][%A - ]%T", EDIT_CONTROL_INPUT, false, 16016);
+  // AddInt(6, "audiocds.encoder", 621, CDDARIP_ENCODER_LAME, CDDARIP_ENCODER_LAME, 1, CDDARIP_ENCODER_FLAC, SPIN_CONTROL_TEXT);
+  // AddInt(7, "audiocds.quality", 622, CDDARIP_QUALITY_CBR, CDDARIP_QUALITY_CBR, 1, CDDARIP_QUALITY_EXTREME, SPIN_CONTROL_TEXT);
+  // AddInt(8, "audiocds.bitrate", 623, 192, 128, 32, 320, SPIN_CONTROL_INT_PLUS, MASK_KBPS);
+  // AddInt(9, "audiocds.compressionlevel", 665, 5, 0, 1, 8, SPIN_CONTROL_INT_PLUS);
 
-  AddCategory(3, "karaoke", 13327);
-  AddBool(1, "karaoke.enabled", 13323, false);
-  AddBool(2, "karaoke.voiceenabled", 13361, false);
-  AddInt(3, "karaoke.volume", 13376, 100, 0, 1, 100, SPIN_CONTROL_INT, MASK_PERCENT);
-  AddString(4, "karaoke.port0voicemask", 13382, "None", SPIN_CONTROL_TEXT);
-  AddString(5, "karaoke.port1voicemask", 13383, "None", SPIN_CONTROL_TEXT);
-  AddString(6, "karaoke.port2voicemask", 13384, "None", SPIN_CONTROL_TEXT);
-  AddString(7, "karaoke.port3voicemask", 13385, "None", SPIN_CONTROL_TEXT);
+  // AddCategory(3, "karaoke", 13327);
+  // AddBool(1, "karaoke.enabled", 13323, false);
+  // AddBool(2, "karaoke.voiceenabled", 13361, false);
+  // AddInt(3, "karaoke.volume", 13376, 100, 0, 1, 100, SPIN_CONTROL_INT, MASK_PERCENT);
+  // AddString(4, "karaoke.port0voicemask", 13382, "None", SPIN_CONTROL_TEXT);
+  // AddString(5, "karaoke.port1voicemask", 13383, "None", SPIN_CONTROL_TEXT);
+  // AddString(6, "karaoke.port2voicemask", 13384, "None", SPIN_CONTROL_TEXT);
+  // AddString(7, "karaoke.port3voicemask", 13385, "None", SPIN_CONTROL_TEXT);
 
   // System settings
   AddGroup(4, 13000);
@@ -394,31 +397,31 @@ void CGUISettings::Initialize()
   AddInt(14, "cacheunknown.internet", 14060, 1024, 0, 256, 16384, SPIN_CONTROL_INT_PLUS, MASK_KB, TEXT_OFF);
 
   // !! Should be the last category, else disabling it will cause problems!
-  AddCategory(4, "masterlock", 12360);
-  AddString(1, "masterlock.lockcode"       , 20100, "-", BUTTON_CONTROL_STANDARD);
-  AddBool(4, "masterlock.startuplock"      , 20076,false);
-  AddBool(5, "masterlock.enableshutdown"   , 12362,false);  
-  // hidden masterlock settings
-  AddInt(0,"masterlock.maxretries", 12364, 3, 3, 1, 100, SPIN_CONTROL_TEXT);
+  // AddCategory(4, "masterlock", 12360);
+  // AddString(1, "masterlock.lockcode"       , 20100, "-", BUTTON_CONTROL_STANDARD);
+  // AddBool(4, "masterlock.startuplock"      , 20076,false);
+  // AddBool(5, "masterlock.enableshutdown"   , 12362,false);  
+  // // hidden masterlock settings
+  // AddInt(0,"masterlock.maxretries", 12364, 3, 3, 1, 100, SPIN_CONTROL_TEXT);
 
   // video settings
   AddGroup(5, 3);
-  AddCategory(5, "videolibrary", 14022);
-  AddBool(2, "videolibrary.enabled", 421, true);
-  AddBool(3, "videolibrary.showunwatchedplots", 20369, true);
-  AddBool(4, "videolibrary.seasonthumbs", 20382, true);
-  AddBool(5, "videolibrary.actorthumbs", 20402, false);
-  AddInt(0, "videolibrary.flattentvshows", 20412, 1, 0, 1, 2, SPIN_CONTROL_TEXT);
-  AddBool(7, "videolibrary.groupmoviesets", 20458, false);
-  AddBool(8, "videolibrary.updateonstartup", 22000, false);
-  AddBool(0, "videolibrary.backgroundupdate", 22001, false);
-  AddSeparator(10, "videolibrary.sep3");
-  AddString(11, "videolibrary.cleanup", 334, "", BUTTON_CONTROL_STANDARD);
-  AddString(12, "videolibrary.export", 647, "", BUTTON_CONTROL_STANDARD);
-  AddString(13, "videolibrary.import", 648, "", BUTTON_CONTROL_STANDARD);
+  // AddCategory(5, "videolibrary", 14022);
+  // AddBool(2, "videolibrary.enabled", 421, true);
+  // AddBool(3, "videolibrary.showunwatchedplots", 20369, true);
+  // AddBool(4, "videolibrary.seasonthumbs", 20382, true);
+  // AddBool(5, "videolibrary.actorthumbs", 20402, false);
+  // AddInt(0, "videolibrary.flattentvshows", 20412, 1, 0, 1, 2, SPIN_CONTROL_TEXT);
+  // AddBool(7, "videolibrary.groupmoviesets", 20458, false);
+  // AddBool(8, "videolibrary.updateonstartup", 22000, false);
+  // AddBool(0, "videolibrary.backgroundupdate", 22001, false);
+  // AddSeparator(10, "videolibrary.sep3");
+  // AddString(11, "videolibrary.cleanup", 334, "", BUTTON_CONTROL_STANDARD);
+  // AddString(12, "videolibrary.export", 647, "", BUTTON_CONTROL_STANDARD);
+  // AddString(13, "videolibrary.import", 648, "", BUTTON_CONTROL_STANDARD);
 
   AddCategory(5, "videoplayer", 14086);
-  AddInt(1, "videoplayer.resumeautomatically", 12017, RESUME_ASK, RESUME_NO, 1, RESUME_ASK, SPIN_CONTROL_TEXT);
+ // AddInt(1, "videoplayer.resumeautomatically", 12017, RESUME_ASK, RESUME_NO, 1, RESUME_ASK, SPIN_CONTROL_TEXT);
   AddString(2, "videoplayer.calibrate", 214, "", BUTTON_CONTROL_STANDARD);
   AddSeparator(3, "videoplayer.sep1");
   AddInt(4, "videoplayer.rendermethod", 13354, RENDER_HQ_RGB_SHADER, RENDER_LQ_RGB_SHADER, 1, RENDER_HQ_RGB_SHADERV2, SPIN_CONTROL_TEXT);
@@ -433,28 +436,28 @@ void CGUISettings::Initialize()
   AddBool(14, "videoplayer.fast", 22026, false);
   AddInt(15, "videoplayer.skiploopfilter", 14100, VS_SKIPLOOP_NONREF, VS_SKIPLOOP_DEFAULT, 1, VS_SKIPLOOP_ALL, SPIN_CONTROL_TEXT);
 
-  AddCategory(5, "myvideos", 14081);
-  AddBool(0, "myvideos.treatstackasfile", 20051, true);
-  AddBool(0, "myvideos.extractflags",20433, false);
-  AddBool(3, "myvideos.cleanstrings", 20418, false);
-  AddBool(0, "myvideos.extractthumb",20433, false);
+  // AddCategory(5, "myvideos", 14081);
+  // AddBool(0, "myvideos.treatstackasfile", 20051, true);
+  // AddBool(0, "myvideos.extractflags",20433, false);
+  // AddBool(3, "myvideos.cleanstrings", 20418, false);
+  // AddBool(0, "myvideos.extractthumb",20433, false);
 
-  AddCategory(5, "subtitles", 287);
-  AddString(1, "subtitles.font", 288, "Arial.ttf", SPIN_CONTROL_TEXT);
-  AddInt(2, "subtitles.height", 289, 28, 16, 2, 74, SPIN_CONTROL_TEXT); // use text as there is a disk based lookup needed
-  AddInt(3, "subtitles.style", 736, FONT_STYLE_BOLD, FONT_STYLE_NORMAL, 1, FONT_STYLE_BOLD | FONT_STYLE_ITALICS, SPIN_CONTROL_TEXT);
-  AddInt(4, "subtitles.color", 737, SUBTITLE_COLOR_START + 1, SUBTITLE_COLOR_START, 1, SUBTITLE_COLOR_END, SPIN_CONTROL_TEXT);
-  AddString(5, "subtitles.charset", 735, "DEFAULT", SPIN_CONTROL_TEXT);
-  AddSeparator(7, "subtitles.sep1");
-  AddPath(11, "subtitles.custompath", 21366, "", BUTTON_CONTROL_PATH_INPUT, false, 657);
-  AddSeparator(12,"subtitles.sep2");
-  AddBool(13, "subtitles.searchrars", 13249, false);
+  // AddCategory(5, "subtitles", 287);
+  // AddString(1, "subtitles.font", 288, "Arial.ttf", SPIN_CONTROL_TEXT);
+  // AddInt(2, "subtitles.height", 289, 28, 16, 2, 74, SPIN_CONTROL_TEXT); // use text as there is a disk based lookup needed
+  // AddInt(3, "subtitles.style", 736, FONT_STYLE_BOLD, FONT_STYLE_NORMAL, 1, FONT_STYLE_BOLD | FONT_STYLE_ITALICS, SPIN_CONTROL_TEXT);
+  // AddInt(4, "subtitles.color", 737, SUBTITLE_COLOR_START + 1, SUBTITLE_COLOR_START, 1, SUBTITLE_COLOR_END, SPIN_CONTROL_TEXT);
+  // AddString(5, "subtitles.charset", 735, "DEFAULT", SPIN_CONTROL_TEXT);
+  // AddSeparator(7, "subtitles.sep1");
+  // AddPath(11, "subtitles.custompath", 21366, "", BUTTON_CONTROL_PATH_INPUT, false, 657);
+  // AddSeparator(12,"subtitles.sep2");
+  // AddBool(13, "subtitles.searchrars", 13249, false);
 
-  AddCategory(5, "dvds", 14087);
-  AddInt(2, "dvds.playerregion", 21372, 0, 0, 1, 8, SPIN_CONTROL_INT_PLUS, -1, TEXT_OFF);
-  AddBool(3, "dvds.automenu", 21882, false);
-  AddBool(4, "dvds.useexternaldvdplayer", 20001, false);
-  AddString(5, "dvds.externaldvdplayer", 20002, "",  BUTTON_CONTROL_PATH_INPUT, true, 655);
+  // AddCategory(5, "dvds", 14087);
+  // AddInt(2, "dvds.playerregion", 21372, 0, 0, 1, 8, SPIN_CONTROL_INT_PLUS, -1, TEXT_OFF);
+  // AddBool(3, "dvds.automenu", 21882, false);
+  // AddBool(4, "dvds.useexternaldvdplayer", 20001, false);
+  // AddString(5, "dvds.externaldvdplayer", 20002, "",  BUTTON_CONTROL_PATH_INPUT, true, 655);
 
   // Don't add the category - makes them hidden in the GUI
   //AddCategory(5, "postprocessing", 14041);
@@ -467,12 +470,12 @@ void CGUISettings::Initialize()
   AddBool(8, "postprocessing.autobrightnesscontrastlevels", 310, false);
   AddBool(9, "postprocessing.dering", 311, false);
 
-  AddCategory(5, "scrapers", 21412);
-  AddString(1, "scrapers.moviedefault", 21413, "tmdb.xml", SPIN_CONTROL_TEXT);
-  AddString(2, "scrapers.tvshowdefault", 21414, "tvdb.xml", SPIN_CONTROL_TEXT);
-  AddString(3, "scrapers.musicvideodefault", 21415, "mtv.xml", SPIN_CONTROL_TEXT);
-  AddSeparator(4,"scrapers.sep2");
-  AddBool(5, "scrapers.langfallback", 21416, false);
+  // AddCategory(5, "scrapers", 21412);
+  // AddString(1, "scrapers.moviedefault", 21413, "tmdb.xml", SPIN_CONTROL_TEXT);
+  // AddString(2, "scrapers.tvshowdefault", 21414, "tvdb.xml", SPIN_CONTROL_TEXT);
+  // AddString(3, "scrapers.musicvideodefault", 21415, "mtv.xml", SPIN_CONTROL_TEXT);
+  // AddSeparator(4,"scrapers.sep2");
+  // AddBool(5, "scrapers.langfallback", 21416, false);
 
   // network settings
   AddGroup(6, 705);

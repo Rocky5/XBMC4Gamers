@@ -1,8 +1,21 @@
+17/04/2019
+	1) Moved the fast game parsing and slow scrolling toggle into XBMCs Programs settings menu.
+		( They are now built in settings, Enable fast game parsing is disabled by default )
+	2) File cleanup.
+	3) New CD View
+	4) Other minor adjustments and refinements.
+	5) New script to take screenshots, auto converts them to .jpg.
+	6) Synopsis script updated.
+	7) Fixed and updated a few of the views.
+
+
 24/12/2018
 	1) Fixed the synopsis crashing when launching a xbe from the synopsis window.
 
+
 21/12/2018
 	1) Changed how the intro is done, if there was no Ethernet/network connected it would hang :/ so now I just play intro.mp4 if found next to the splash.png.
+
 
 20/12/2018
 	1) Fixed width of the buttons and underlay in skin settings and settings category.

@@ -40,3 +40,4 @@
 	( Just like coinops, but only seems to work once for some reason :/ so disabled 
 32) Fixed the internal jpg decoder breaking if ram hits 0MB. If it hits less than 2MB of free ram it will use Imagelib to decode the images.
 33) Added different error screen colour and txt for the forced error screen. ( if you arse something up and its a crash ) (White + Y)
+34) Added 2 new Programs Settings, Disable slow scrolling and Enable fast game parsing.

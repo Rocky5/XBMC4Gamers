@@ -454,11 +454,11 @@
 										<onclick>Container.SetViewMode(67)</onclick>
 										<icon>views\posterfixedview.png</icon>
 								</item>
-								<!-- <item id="219"> -->
-								<!-- <label>-</label> -->
-								<!-- <onclick>Container.SetViewMode(68)</onclick> -->
-								<!-- <icon>views\.png</icon> -->
-								<!-- </item> -->
+								<item id="219">
+										<label>-</label>
+										<onclick>Container.SetViewMode(68)</onclick>
+										<icon>views\cdfixedview.png</icon>
+								</item>
 								<!-- <item id="220"> -->
 								<!-- <label>-</label> -->
 								<!-- <onclick>Container.SetViewMode(69)</onclick> -->

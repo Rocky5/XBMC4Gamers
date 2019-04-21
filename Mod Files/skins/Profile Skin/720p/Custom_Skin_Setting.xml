@@ -80,24 +80,6 @@
 								<onup>9001</onup>
 								<ondown>9001</ondown>
 								<visible>ControlGroup(9000).HasFocus(1)</visible>
-								<control type="radiobutton" id="10">
-										<description>Fast Game Parsing</description>
-										<include>ButtonSkinSettingsCategoryButtonValues</include>
-										<label>$LOCALIZE[32098]</label>
-										<onclick>Skin.ToggleSetting(fastgameparsingdisabled)</onclick>
-										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/dialog ok.py,show_both-fastgameparsingdisabled,NOTICE,,XBMC4Gamers must be[CR]restarted for changes to take effect )</onclick>
-										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Toggle AdvancedSettings Settings.py,fasterscanning, )</onclick>
-										<selected>Skin.HasSetting(fastgameparsingdisabled)</selected>
-								</control>
-								<control type="radiobutton" id="11">
-										<description>Slow Scrolling</description>
-										<include>ButtonSkinSettingsCategoryButtonValues</include>
-										<label>$LOCALIZE[32099]</label>
-										<onclick>Skin.ToggleSetting(slowscrollingdisabled)</onclick>
-										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/dialog ok.py,show_both-slowscrollingdisabled,NOTICE,,XBMC4Gamers must be[CR]restarted for changes to take effect )</onclick>
-										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Toggle AdvancedSettings Settings.py,slowscrolling, )</onclick>
-										<selected>Skin.HasSetting(slowscrollingdisabled)</selected>
-								</control>
 								<control type="radiobutton" id="12">
 										<description>Time Display</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>

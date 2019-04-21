@@ -22,7 +22,8 @@
 #include "GUIListContainer.h"
 #include "GUIListItem.h"
 #include "GUIInfoManager.h"
-#include "settings/AdvancedSettings.h"
+
+#include "settings/GUISettings.h"
 
 CGUIListContainer::CGUIListContainer(int parentID, int controlID, float posX, float posY, float width, float height, ORIENTATION orientation, int scrollTime, int preloadItems)
     : CGUIBaseContainer(parentID, controlID, posX, posY, width, height, orientation, scrollTime, preloadItems)
@@ -70,7 +71,7 @@ bool CGUIListContainer::OnAction(const CAction &action)
     {
 		m_analogScrollCount += action.GetAmount() * action.GetAmount();
 		bool handled = false;
-		if (g_advancedSettings.m_slowscrolling)
+		if (!g_guiSettings.GetBool("mygames.fastscrolling"))
 		{
 			while (m_analogScrollCount > 8.5)
 			{
@@ -94,7 +95,7 @@ bool CGUIListContainer::OnAction(const CAction &action)
     {
 		m_analogScrollCount += action.GetAmount() * action.GetAmount();
 		bool handled = false;
-		if (g_advancedSettings.m_slowscrolling)
+		if (!g_guiSettings.GetBool("mygames.fastscrolling"))
 		{
 			while (m_analogScrollCount > 8.5)
 			{

@@ -1,3 +1,8 @@
+	Updated: 17 April 2019
+	-- Added a longer delay to exit and launch a game.
+	-- Added a check for internet access for .strm files.
+	   ( They crash XBMC if there is no network )
+
 	Updated: 24 Dec 2018
 	-- Fixed launching games from the synopsis window.
 

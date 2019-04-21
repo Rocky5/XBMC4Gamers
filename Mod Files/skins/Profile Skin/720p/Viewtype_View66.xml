@@ -11,9 +11,9 @@
 					<onleft>66</onleft>
 					<onright>66</onright>
 					<onup>117</onup>
-					<ondown>83</ondown>
+					<ondown>86</ondown>
 					<viewtype label="view66">list</viewtype>
-					<pagecontrol>83</pagecontrol>
+					<pagecontrol>86</pagecontrol>
 					<scrolltime>200</scrolltime>
 					<focusposition>2</focusposition>
 					<movement>0</movement>
@@ -218,7 +218,7 @@
 						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 					</control>
 				</control>
-				<control type="scrollbar" id="83">
+				<control type="scrollbar" id="86">
 					<posx>150</posx>
 					<posy>662</posy>
 					<width>980</width>
@@ -232,7 +232,7 @@
 					<ondown>-</ondown>
 					<showonepage>false</showonepage>
 					<orientation>horizontal</orientation>
-					<visible allowhiddenfocus="true">Control.HasFocus(83)</visible>
+					<visible allowhiddenfocus="true">Control.HasFocus(86)</visible>
 					<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
 					<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
 				</control>

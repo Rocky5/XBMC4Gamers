@@ -660,7 +660,7 @@ bool CGUIWindowPrograms::GetDirectory(const CStdString &strDirectory, CFileItemL
       m_dlgProgress->SetLine(0, 20120);
       m_dlgProgress->SetLine(1,"");
       m_dlgProgress->SetLine(2, item->GetLabel());
-	  if (!g_advancedSettings.m_fastscanning)
+	  if (!g_guiSettings.GetBool("mygames.slowgameparsing"))
 	  {
         m_dlgProgress->StartModal();
       }
@@ -672,7 +672,7 @@ bool CGUIWindowPrograms::GetDirectory(const CStdString &strDirectory, CFileItemL
       m_dlgProgress->Progress();
     }
 
-    if (item->m_bIsFolder && !item->IsParentFolder() && !item->IsPlugin() && g_advancedSettings.m_fastscanning)
+    if (item->m_bIsFolder && !item->IsParentFolder() && !item->IsPlugin() && g_guiSettings.GetBool("mygames.slowgameparsing"))
     { // folder item - let's check for a default.xbe file, and flatten if we have one
       CStdString defaultXBE;
       URIUtils::AddFileToFolder(item->GetPath(), "default.xbe", defaultXBE);
@@ -680,7 +680,7 @@ bool CGUIWindowPrograms::GetDirectory(const CStdString &strDirectory, CFileItemL
       item->m_bIsFolder = false;
     }
 
-    if (item->m_bIsFolder && !item->IsParentFolder() && !item->IsPlugin() && !g_advancedSettings.m_fastscanning)
+    if (item->m_bIsFolder && !item->IsParentFolder() && !item->IsPlugin() && !g_guiSettings.GetBool("mygames.slowgameparsing"))
     { // folder item - let's check for a default.xbe file, and flatten if we have one
       CStdString defaultXBE;
       URIUtils::AddFileToFolder(item->GetPath(), "default.xbe", defaultXBE);
@@ -730,7 +730,7 @@ bool CGUIWindowPrograms::GetDirectory(const CStdString &strDirectory, CFileItemL
         if (CUtil::GetXBEDescription(item->GetPath(), description) && (!item->IsLabelPreformated() && !item->GetLabel().IsEmpty()))
 		{
           item->SetLabel(description);
-		  if (!g_advancedSettings.m_fastscanning)
+		  if (!g_guiSettings.GetBool("mygames.slowgameparsing"))
 		  {
 			CLog::Log(LOGNOTICE,"Added to database: %s",description.c_str());
 		  }

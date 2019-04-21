@@ -188,7 +188,7 @@ if SkipScript == "false":
 			pDialog.update(100, '', 'Done')
 			time.sleep(1.0)
 			pDialog.close()
-			dialog.ok("That's everything setup","","I need to restart XBMC","so that the changes take affect.")
+			dialog.ok("That's everything setup","I need to restart XBMC","so that the changes take affect.")
 			xbmc.executebuiltin("System.LogOff()")
 			xbmc.executebuiltin("RestartApp")
 #####	If the script is disabled in the Manage Profiles profile settings, edit current skin & log out.
@@ -205,7 +205,7 @@ if SkipScript == "false":
 				line = line.replace('Manage Profiles Skin','Profile skin')
 				print line,
 			print "================================================================================"
-			dialog.ok("That's everything setup","","I need to restart XBMC","so that the changes take affect.")
+			dialog.ok("That's everything setup","I need to restart XBMC","so that the changes take affect.")
 			xbmc.executebuiltin("System.LogOff()")
 			xbmc.executebuiltin("RestartApp")
 		else:

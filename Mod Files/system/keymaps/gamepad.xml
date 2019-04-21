@@ -23,7 +23,7 @@
 						<A>Select</A>
 						<B>Back</B>
 						<X>XBMC.ReplaceWindow(114)</X>
-						<Y>Screenshot</Y>
+						<Y>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers/Utilities/screenshot.py)</Y>
 						<white>ContextMenu</white>
 						<black />
 						<start>XBMC.PlayDVD()</start>

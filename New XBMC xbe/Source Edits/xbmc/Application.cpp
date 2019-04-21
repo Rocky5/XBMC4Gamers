@@ -5314,7 +5314,7 @@ void CApplication::Process()
 void CApplication::ProcessSlow()
 {
   // check our network state every 15 seconds or when net status changes
-  m_network.CheckNetwork(5);
+  m_network.CheckNetwork(15);
   
   // check if we need 2 spin down the harddisk
   CheckNetworkHDSpinDown();

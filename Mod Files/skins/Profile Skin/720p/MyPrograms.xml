@@ -27,6 +27,7 @@
 						<include file="Viewtype_View65.xml">IconAltView</include>
 						<include file="Viewtype_View66.xml">PSView</include>
 						<include file="Viewtype_View67.xml">PosterFixed</include>
+						<include file="Viewtype_View68.xml">CDFixed</include>
 						<include file="Viewtype_View79.xml">ResourcesView</include>
 				</control>
 				<control type="group">

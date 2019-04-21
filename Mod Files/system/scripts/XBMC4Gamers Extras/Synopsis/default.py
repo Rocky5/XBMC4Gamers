@@ -4,7 +4,7 @@
 	
 '''
 
-import fileinput, glob, os, shutil, sys, time, xbmc, xbmcgui
+import fileinput, glob, os, shutil, sys, time, urllib2, xbmc, xbmcgui
 from BeautifulSoup import *
 
 #####	Check args for dialog and set the window output.
@@ -101,6 +101,13 @@ def synopsis_mode_video():
 		if PreviewFile.endswith('.xmv'):
 			Current_Window.setProperty( 'Player_Type','DVDPlayer' )
 			xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
+		elif PreviewFile.endswith('.strm'):
+			try:
+				urllib2.urlopen('http://www.google.com', timeout=1)
+				Current_Window.setProperty( 'Player_Type','MPlayer' )
+				xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
+			except urllib2.URLError as err:
+				xbmc.executebuiltin('Skin.Reset(SynopsisPreviewThere)')
 		else:
 			Current_Window.setProperty( 'Player_Type','MPlayer' )
 			xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
@@ -543,7 +550,7 @@ class GUI(windowdialog):
 			self.close()
 		if (controlID == 10 ):
 			self.close()
-			time.sleep(0.4)
+			time.sleep(0.7)
 			xbmc.executebuiltin('RunXBE('+xbmc.getInfoLabel('Window(MyPrograms).Property(Synopsis_xbe)')+')')
 		if (controlID == 13 ):
 			if xbmc.getCondVisibility( 'Skin.HasSetting(SynopsisPreviewThere)' ):
