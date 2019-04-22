@@ -55,7 +55,7 @@ del /Q /S "%foldername%\empty"
 CD %foldername%\
 del /Q "Changes.txt"
 "C:\Program Files\7-Zip\7z.exe" a "..\Other\update build\updater\Update Files\%foldername%.zip" "*" -mx=7 -r -y
-"C:\Program Files\7-Zip\7z.exe" a "..\XBMC4Gamers-update-files.zip" "..\Other\update build\*" -mx=7 -r -y
+"C:\Program Files\7-Zip\7z.exe" a "..\XBMC4Gamers-update-files.zip" "..\Other\update build\*" -mx=0 -r -y
 del /Q "..\Other\update build\updater\Update Files\%foldername%.zip"
 del /Q "..\Other\update build\updater\default.xbe"
 cls
