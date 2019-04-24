@@ -167,7 +167,7 @@
 		<network>
 				<assignment>1</assignment>
 				<bandwidth>0</bandwidth>
-				<dns>192.168.0.1</dns>
+				<dns>8.8.8.8</dns>
 				<gateway>192.168.0.1</gateway>
 				<httpproxyport>8080</httpproxyport>
 				<ipaddress>192.168.0.6</ipaddress>
