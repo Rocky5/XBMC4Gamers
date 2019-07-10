@@ -45,6 +45,9 @@ class Addon:
                 locations.append(cwd)                            # current directory
                 locations.append("%s/%s" % (cwd, id))            # subdirectory in current directory
             locations.append("Q:\scripts\.modules\%s" % ( id ))  # script modules
+            
+            # XBMC for gamers stores script modules in system\scripts
+            locations.append("Q:\system\scripts\.modules\%s" % ( id )) 
 
             # plugin.music|video|etc.something addons
             if len( parts ) == 3 and parts[ 0 ] == "plugin":
