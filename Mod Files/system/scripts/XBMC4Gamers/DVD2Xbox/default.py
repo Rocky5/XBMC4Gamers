@@ -18,7 +18,7 @@ if os.path.isfile("d:/default.xbe"):
 
 	# Gets current XBMC4Gamers directory.
 	CharCount = 100 # How many characters you want after 'The executable running is: '
-	with open(xbmc.translatePath("special://xbmc") + "xbmc.log", "r") as XBMCLOG:
+	with open(xbmc.translatePath("special://xbmc/system/") + "xbmc.log", "r") as XBMCLOG:
 		for line in XBMCLOG:
 			left,sep,right = line.partition("The executable running is: ")
 			if sep:
