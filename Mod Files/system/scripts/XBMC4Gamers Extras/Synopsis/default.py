@@ -103,7 +103,7 @@ def synopsis_mode_video():
 			xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
 		elif PreviewFile.endswith('.strm'):
 			try:
-				urllib2.urlopen('http://www.google.com', timeout=1)
+				urllib2.urlopen('http://216.58.192.142', timeout=1) # google.com fixed IP to avoid DNS lookup. Will require maintainance.
 				Current_Window.setProperty( 'Player_Type','MPlayer' )
 				xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
 			except urllib2.URLError as err:
