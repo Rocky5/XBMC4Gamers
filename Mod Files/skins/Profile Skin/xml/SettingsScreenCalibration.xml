@@ -1,0 +1,133 @@
+<window id="11">
+		<defaultcontrol always="true">8</defaultcontrol>
+		<controls>
+				<control type="image">
+						<posx>-50</posx>
+						<posy>-50</posy>
+						<width>1380</width>
+						<height>820</height>
+						<texture>windows\settings\calibrate.png</texture>
+				</control>
+				<control type="mover" id="8">
+						<description>top left mover</description>
+						<texturefocus>calibrate-topleft-focus.png</texturefocus>
+						<texturenofocus>calibrate-topleft.png</texturenofocus>
+				</control>
+				<control type="mover" id="9">
+						<description>right bottom mover</description>
+						<texturefocus>calibrate-bottomright-focus.png</texturefocus>
+						<texturenofocus>calibrate-bottomright.png</texturenofocus>
+				</control>
+				<control type="resize" id="10">
+						<description>pixel aspect ratio box</description>
+						<texturefocus>calibrate-pixelratio-focus.png</texturefocus>
+						<texturenofocus>calibrate-pixelratio.png</texturenofocus>
+				</control>
+				<control type="group">
+						<posx>240</posx>
+						<posy>40</posy>
+						<control type="label" id="2">
+								<description>coordinates label</description>
+								<posx>20</posx>
+								<posy>10</posy>
+								<width>750</width>
+								<label>-</label>
+								<align>center</align>
+								<font>size_23</font>
+								<textcolor>FFFFFFFF</textcolor>
+						</control>
+						<control type="label" id="3">
+								<description>help information</description>
+								<posx>20</posx>
+								<posy>40</posy>
+								<width>750</width>
+								<label>-</label>
+								<align>center</align>
+								<font>size_23</font>
+								<textcolor>FFFFFFFF</textcolor>
+						</control>
+						<control type="label">
+								<description>help information</description>
+								<posx>20</posx>
+								<posy>70</posy>
+								<width>750</width>
+								<label>$LOCALIZE[31176]</label>
+								<align>center</align>
+								<font>size_23</font>
+								<textcolor>FFFFFFFF</textcolor>
+								<visible>Control.HasFocus(10)</visible>
+						</control>
+				</control>
+				<control type="image">
+						<posx>519</posx>
+						<posy>239</posy>
+						<width>242</width>
+						<height>242</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>gamedisc.png</texture>
+						<visible>Control.HasFocus(10)</visible>
+						<animation effect="rotate" start="0" end="-360" center="auto" time="5000" loop="true" condition="true">conditional</animation>
+				</control>
+				<control type="image">
+						<posx>519</posx>
+						<posy>239</posy>
+						<width>242</width>
+						<height>242</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>gamedisc.png</texture>
+						<colordiffuse>60FFFFFF</colordiffuse>
+						<visible>!Control.HasFocus(10)</visible>
+						<animation effect="rotate" start="0" end="-360" center="auto" time="5000" loop="true" condition="true">conditional</animation>
+				</control>
+				<control type="grouplist">
+						<description>Control Info</description>
+						<posx>0</posx>
+						<posy>620</posy>
+						<width>1280</width>
+						<height>80</height>
+						<itemgap>10</itemgap>
+						<orientation>Horizontal</orientation>
+						<align>center</align>
+						<!-- A Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>32</width>
+								<height>32</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>pad_buttons\a_button.png</texture>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="80" max="147">auto</width>
+								<height>20</height>
+								<font>size_19</font>
+								<align>left</align>
+								<textcolor>FFFFFFFF</textcolor>
+								<label>$LOCALIZE[209]</label>
+								<include>Context_Buttons_Text_Align</include>
+						</control>
+						<!-- B Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>32</width>
+								<height>32</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>pad_buttons\b_button.png</texture>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="80" max="147">auto</width>
+								<height>20</height>
+								<font>size_19</font>
+								<align>left</align>
+								<textcolor>FFFFFFFF</textcolor>
+								<label>$LOCALIZE[31021]</label>
+								<include>Context_Buttons_Text_Align</include>
+						</control>
+				</control>
+		</controls>
+</window>

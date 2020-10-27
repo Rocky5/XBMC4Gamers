@@ -1,3 +1,10 @@
+	Updated: 04 May 2020
+	-- Removed a lot of code I don't use any more.
+	-- Old script is located in the "resources/Labels and Colours/old script to use these files/" folder.
+	   ( This script has the stuff I removed, in case I ever want to use it again. )
+	-- New artwork.
+
+
 	Updated: 17 April 2019
 	-- Added a longer delay to exit and launch a game.
 	-- Added a check for internet access for .strm files.
@@ -62,7 +69,7 @@
 		Skin>Has Setting(Synopsis_alt_view) - Will show the alt view.
 		Skin>Has Setting(Synopsis_Autoplay) - Will auto play the preview in the alt view only.
 		
-	   If Skin.HasSetting(SynopsisMode) is disbaled, it will default to the preview video window.
+	   If Skin.HasSetting(SynopsisMode) is disabled, it will default to the preview video window.
 	
 	Updated: 23 February 2017
 	-- Added a few more lines of code for the likes of Rating and gamexbe path eg...

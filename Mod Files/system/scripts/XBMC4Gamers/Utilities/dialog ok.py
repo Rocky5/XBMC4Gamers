@@ -1,10 +1,4 @@
-'''
-	Script by Rocky5
-	Used to display a dialog ok window for giving information on some toggle
-'''
 import os, xbmc, xbmcgui
-#####	Start markings for the log file.
-print "| dialog_ok.py loaded."
 show_dialog = 0
 try:
 	setting	= sys.argv[1:][0]
@@ -26,13 +20,21 @@ try:
 	line3	= sys.argv[5:][0]
 except:
 	line3	= ""
-show_dialog = setting.split('-')[1]
+try:
+	runscript	= sys.argv[6:][0]
+except:
+	runscript	= ""
+try:
+	show_dialog = setting.split('-')[1]
+except: pass
 if setting.startswith("show_enabled"):
 	if xbmc.getCondVisibility('Skin.HasSetting('+show_dialog+')'):
-		xbmcgui.Dialog().ok( title,line1,line2,line3 )
+		xbmcgui.Dialog().ok(title,line1,line2,line3)
 elif setting.startswith("show_disabled"):
 	if not xbmc.getCondVisibility('Skin.HasSetting('+show_dialog+')'):
-		xbmcgui.Dialog().ok( title,line1,line2,line3 )
+		xbmcgui.Dialog().ok(title,line1,line2,line3)
 elif setting.startswith("show_both"):
-	xbmcgui.Dialog().ok( title,line1,line2,line3 )
-
+	xbmcgui.Dialog().ok(title,line1,line2,line3)
+elif setting == "run_script":
+	xbmc.executebuiltin('RunScript("'+runscript+'")')
+	xbmcgui.Dialog().ok(title,line1,line2,line3)

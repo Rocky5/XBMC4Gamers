@@ -3,9 +3,9 @@
 	Used to toggle advanced settings options
 '''
 import fileinput, os, shutil, xbmc, xbmcgui
-Backup_Profile_AdvSettings = xbmc.translatePath( 'Special://root/system/backup/advancedsettings.xml' )
-Current_Profile_AdvSettings = xbmc.translatePath( 'Special://profile/advancedsettings.xml' )
-if not os.path.isfile( Current_Profile_AdvSettings ): shutil.copy2( Backup_Profile_AdvSettings,Current_Profile_AdvSettings )
+Backup_Profile_AdvSettings = xbmc.translatePath('Special://root/system/backups/advancedsettings.xml')
+Current_Profile_AdvSettings = xbmc.translatePath('Special://profile/advancedsettings.xml')
+if not os.path.isfile(Current_Profile_AdvSettings): shutil.copy2(Backup_Profile_AdvSettings,Current_Profile_AdvSettings)
 try:
 	arg1 = sys.argv[1:][0]
 	arg2 = sys.argv[2:][0]

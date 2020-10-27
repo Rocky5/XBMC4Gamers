@@ -1,0 +1,147 @@
+<window id="101">
+		<defaultcontrol>10</defaultcontrol>
+		<controls>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>black-back.png</texture>
+				</control>
+				<control type="image">
+						<description>background image</description>
+						<posx>326</posx>
+						<posy>252</posy>
+						<width>628</width>
+						<height>215</height>
+						<texture>windows\dialogs\main.png</texture>
+				</control>
+				<control type="image">
+						<description>Heading Background</description>
+						<posx>339</posx>
+						<posy>259</posy>
+						<width>602</width>
+						<height>61</height>
+						<texture>windows\dialogs\header.png</texture>
+				</control>
+				<control type="progress">
+						<description>Progressbar</description>
+						<posx>370</posx>
+						<posy>420</posy>
+						<width>332</width>
+						<height>23</height>
+						<info>System.Progressbar</info>
+						<texturebg>windows\dialogs\progressbackalt.png</texturebg>
+						<midtexture>windows\dialogs\progressfrontalt.png</midtexture>
+						<lefttexture>windows\dialogs\progressleftalt.png</lefttexture>
+						<righttexture>windows\dialogs\progressrightalt.png</righttexture>
+						<overlaytexture>-</overlaytexture>
+						<visible>IsEmpty(Skin.String(DisableProgress))</visible>
+				</control>
+				<control type="label">
+						<description>Progress Label</description>
+						<posx>723</posx>
+						<posy>420</posy>
+						<width>60</width>
+						<height>20</height>
+						<font>size_20</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>windows_label_no_focus</textcolor>
+						<label>$INFO[System.Progressbar,,%]</label>
+				</control>
+				<control type="group">
+						<visible>!Skin.HasSetting(SynopsisPreviewThere)</visible>
+						<control type="label" id="1">
+								<description>heading label</description>
+								<posx>370</posx>
+								<posy>269</posy>
+								<width>540</width>
+								<height>40</height>
+								<font>size_28</font>
+								<scroll>true</scroll>
+								<align>left</align>
+								<textcolor>windows_header_label</textcolor>
+								<label>-</label>
+						</control>
+						<control type="label" id="2">
+								<description>dialog line 1</description>
+								<posx>370</posx>
+								<posy>324</posy>
+								<width>540</width>
+								<height>40</height>
+								<font>size_28</font>
+								<scroll>true</scroll>
+								<align>left</align>
+								<textcolor>windows_label_no_focus</textcolor>
+								<label>-</label>
+						</control>
+						<control type="label" id="3">
+								<description>dialog line 2</description>
+								<posx>370</posx>
+								<posy>356</posy>
+								<width>540</width>
+								<height>40</height>
+								<font>size_20</font>
+								<scroll>true</scroll>
+								<align>left</align>
+								<textcolor>windows_label_no_focus</textcolor>
+								<label>-</label>
+						</control>
+						<control type="label" id="4">
+								<description>dialog line 3</description>
+								<posx>370</posx>
+								<posy>380</posy>
+								<width>540</width>
+								<height>40</height>
+								<font>size_20</font>
+								<scroll>true</scroll>
+								<align>left</align>
+								<textcolor>windows_label_no_focus</textcolor>
+								<label>-</label>
+						</control>
+				</control>
+				<control type="group">
+						<visible>Skin.HasSetting(SynopsisPreviewThere)</visible>
+						<control type="label">
+								<description>heading label</description>
+								<posx>370</posx>
+								<posy>269</posy>
+								<width>540</width>
+								<height>40</height>
+								<font>size_28</font>
+								<scroll>true</scroll>
+								<align>left</align>
+								<textcolor>windows_header_label</textcolor>
+								<label>$LOCALIZE[20159]</label>
+						</control>
+						<control type="label" id="2">
+								<description>dialog line 2</description>
+								<posx>370</posx>
+								<posy>345</posy>
+								<width>540</width>
+								<height>40</height>
+								<font>size_22</font>
+								<scroll>true</scroll>
+								<align>left</align>
+								<textcolor>windows_label_no_focus</textcolor>
+								<label>-</label>
+						</control>
+				</control>
+				<control type="button" id="10">
+						<description>Cancel button</description>
+						<posx>810</posx>
+						<posy>412</posy>
+						<width>100</width>
+						<height>36</height>
+						<label>222</label>
+						<textcolor>windows_label_no_focus</textcolor>
+						<focusedcolor>windows_label_focus</focusedcolor>
+						<align>center</align>
+						<texturenofocus border="3">windows\dialogs\button_no_focus.png</texturenofocus>
+						<texturefocus border="3">windows\dialogs\button_focus.png</texturefocus>
+						<onleft>10</onleft>
+						<onright>10</onright>
+						<onup>10</onup>
+						<ondown>10</ondown>
+						<visible>!Window.IsActive(2999) + IsEmpty(Skin.String(DisableCancel))</visible>
+				</control>
+		</controls>
+</window>

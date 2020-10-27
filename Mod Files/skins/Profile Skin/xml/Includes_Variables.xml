@@ -1,0 +1,20 @@
+<includes>
+		<variable name="var-labelcolour">
+				<value condition="Skin.String(Background_Color,backgrounds/2.jpg) | Skin.String(Background_Color,backgrounds/14.jpg) | Skin.String(Background_Color,backgrounds/15.jpg)">windows_games_label_alt</value>
+				<value>windows_games_label</value>
+		</variable>
+		<variable name="var-bgcustcolour">
+				<value>FF$INFO[Skin.String(Background_Custom_Color)]</value>
+		</variable>
+		<variable name="var-xbmc4gamerslabelcolour">
+				<value condition="Skin.HasSetting(EnabledXBMC4GamersLogoColour)">FF$INFO[Skin.String(XBMC4GamersLogoColour)]</value>
+				<value condition="!Skin.HasSetting(EnabledXBMC4GamersLogoColour)">FFFFFFFF</value>
+		</variable>
+		<variable name="VolumeIconVar">
+				<value condition="Player.Muted">windows/volume/mute.png</value>
+				<value condition="IntegerGreaterThan(Control.GetLabel(29999),66)">windows/volume/volume.png</value>
+				<value condition="IntegerGreaterThan(Control.GetLabel(29999),33)">windows/volume/volume2.png</value>
+				<value condition="player.passthrough">windows/volume/volume.png</value>
+				<value>windows/volume/volume1.png</value>
+		</variable>
+</includes>

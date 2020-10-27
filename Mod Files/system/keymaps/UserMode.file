@@ -2,7 +2,6 @@
 <keymap>
 		<Programs>
 				<gamepad>
-						<B>Highlight</B>
 						<white>ContextMenu</white>
 						<black>XBMC.ActivateWindow(1112)</black>
 						<back>XBMC.ActivateWindow(1115)</back>
@@ -11,7 +10,6 @@
 		</Programs>
 		<Profiles>
 				<gamepad>
-						<B>highlight</B>
 						<back>ActivateWindow(Settings)</back>
 						<black>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Kids/Utilities/Clear Cache.py)</black>
 				</gamepad>
@@ -42,7 +40,7 @@
 		</global>
 		<LoginScreen>
 				<gamepad>
-						<white>Highlight</white>
+						<black>XBMC.SetFocus(19)</black>
 				</gamepad>
 		</LoginScreen>
 		<Home>
@@ -116,11 +114,12 @@
 				<gamepad>
 						<A>Pause</A>
 						<B>Stop</B>
+						<x>LockPreset</x>
 						<Y>XBMC.ActivateWindow(VisualisationPresetList)</Y>
 						<black>CodecInfo</black>
 						<white>Info</white>
 						<start>XBMC.ActivateWindow(MusicOSD)</start>
-						<back>LockPreset</back>
+						<back>back</back>
 						<leftanalogtrigger>AnalogRewind</leftanalogtrigger>
 						<rightanalogtrigger>AnalogFastForward</rightanalogtrigger>
 						<dpadleft>SkipPrevious</dpadleft>

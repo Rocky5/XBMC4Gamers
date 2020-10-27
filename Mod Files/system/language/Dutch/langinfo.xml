@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language locale="dutch">
+  <charsets>
+    <gui unicodefont="false">CP1252</gui>
+    <subtitle>CP1252</subtitle>
+  </charsets>
+  <dvd>
+    <menu>nl</menu>
+    <audio>nl</audio>
+    <subtitle>nl</subtitle>
+  </dvd>
+  <regions>
+    <region name="NL">
+      <dateshort>D-M-YYYY</dateshort>
+      <datelong>DDDD D MMMM YYYY</datelong>
+      <time symbolAM="" symbolPM="">H:mm:ss</time>
+      <tempunit>C</tempunit>
+      <speedunit>kmh</speedunit>
+      <timezone>CEST</timezone>
+    </region>
+  </regions>
+
+  <sorttokens>
+    <token>The</token>
+    <token>De</token>
+    <token>Het</token>
+  </sorttokens>
+</language>

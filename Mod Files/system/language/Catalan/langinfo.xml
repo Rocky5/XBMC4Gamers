@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<language locale="cat">
+  <charsets>
+    <gui unicodefont="false">CP1252</gui>
+    <subtitle>CP1252</subtitle>
+  </charsets>
+  <dvd>
+    <menu>ca</menu>
+    <audio>ca</audio>
+    <subtitle>ca</subtitle>
+  </dvd>
+  <regions>
+    <region name="Cataluña" locale="ES">
+      <dateshort>DD/MM/YYYY</dateshort>
+      <datelong>DDDD, D / MMMM / YYYY</datelong>
+      <time symbolAM="" symbolPM="">HH:mm:ss</time>
+      <tempunit>C</tempunit>
+      <speedunit>kmh</speedunit>
+      <timezone>CEST</timezone>
+    </region>
+  <regions>
+    <region name="Principat d’Andorra" locale="ES">
+      <dateshort>DD/MM/YYYY</dateshort>
+      <datelong>DDDD, D / MMMM / YYYY</datelong>
+      <time symbolAM="" symbolPM="">HH:mm:ss</time>
+      <tempunit>C</tempunit>
+      <speedunit>kmh</speedunit>
+      <timezone>CEST</timezone>
+    </region>
+  </regions>
+</language>

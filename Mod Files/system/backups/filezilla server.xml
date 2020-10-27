@@ -1,0 +1,281 @@
+<FileZillaServer>
+		<Settings>
+				<Item name="Initial Welcome Message" type="string">Welcome to XBOX FileZilla (XBMC) version: %v http://sourceforge.net/pr</Item>
+				<Item name="Admin port" type="numeric">21</Item>
+				<Item name="Serverport" type="numeric">21</Item>
+				<Item name="Enable logging" type="numeric">0</Item>
+				<Item name="Logfile type" type="numeric">1</Item>
+				<!-- <Item name="Download Speedlimit" type="numeric">102400</Item> -->
+				<!-- <Item name="Upload Speedlimit" type="numeric">102400</Item> -->
+				<!-- <Item name="Buffer Size" type="numeric">8192</Item> -->
+		</Settings>
+		<XBFileZilla>
+				<FreeSpace>
+						<Drive>
+								<Name>c:</Name>
+								<Minimum>10</Minimum>
+								<Display>1</Display>
+						</Drive>
+						<Drive>
+								<Name>e:</Name>
+								<Minimum>200</Minimum>
+								<Display>1</Display>
+						</Drive>
+						<Drive>
+								<Name>f:</Name>
+								<Minimum>500</Minimum>
+								<Display>1</Display>
+						</Drive>
+						<Drive>
+								<Name>g:</Name>
+								<Minimum>500</Minimum>
+								<Display>1</Display>
+						</Drive>
+				</FreeSpace>
+		</XBFileZilla>
+		<Users>
+				<User Name="xbox">
+						<Option Name="Pass">3a3417f5f20a03a98973689887fb72a2</Option>
+						<Option Name="Group" />
+						<Option Name="Resolve Shortcuts">0</Option>
+						<Option Name="Relative">0</Option>
+						<Option Name="Bypass server userlimit">1</Option>
+						<Option Name="User Limit">0</Option>
+						<Option Name="IP Limit">0</Option>
+						<Permissions>
+								<Permission Dir="/">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">1</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="C:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="D:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="E:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="F:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="G:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="R:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="P:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="S:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="V:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="W:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="A:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="B:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="H:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="I:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="Q:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="X:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="Y:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+								<Permission Dir="Z:\">
+										<Option Name="FileRead">1</Option>
+										<Option Name="FileWrite">1</Option>
+										<Option Name="FileDelete">1</Option>
+										<Option Name="FileAppend">1</Option>
+										<Option Name="DirCreate">1</Option>
+										<Option Name="DirDelete">1</Option>
+										<Option Name="DirList">1</Option>
+										<Option Name="DirSubdirs">1</Option>
+										<Option Name="IsHome">0</Option>
+										<Option Name="AutoCreate">0</Option>
+								</Permission>
+						</Permissions>
+						<SpeedLimits DlType="1" DlLimit="10" UlType="1" UlLimit="10" ServerDlLimitBypass="1" ServerUlLimitBypass="1">
+								<Download />
+								<Upload />
+						</SpeedLimits>
+				</User>
+		</Users>
+</FileZillaServer>

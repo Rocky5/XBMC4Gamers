@@ -1,3 +1,171 @@
+Patron Supporters:
+	Richard, Giovany Rodriguez, Alf John Hammervik, Rick Girton, thePiratePimp, Michael Bergeron, Wayne Starr, Stian Tofte, Johnny Andersen, Wayne Swift
+	Clayton Beeney, Andrew Ryan, Tktagmedia, Darren Titchmarsh, Jay Jay, Natetronn, Incursion64 ., Roger Serres, Darren Old, Joel Peterson, Jamie Eubank
+
+Thank you for your support.
+Would also like to thank everyone that donates its much appreciated.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+26/10/2020
+	1) New look, redone basically all dialogs and menus.
+		( some aren't done yet or wont be done )
+	2) Optimized and organised the texture.xpr
+		( should make it easier to theme )
+	3) Sorted the string.po files so now you can translate it easily as it only includes string used.
+	4) New xbe file with a few fixes.
+	5) Removed the DVD2Xbox profile and skin, upgrading to this version will leave it intact.
+		( only effects new users )
+	6) Updated screenshot.py script to save as png.
+	7) Moved the option to rip games to the skin settings > scripts menu
+	8) New XBE to fixed intros for good now, should be no issues at all.
+		( note if no network is present there is a 5 to 6 second pause before the first window, could not resolve this. )
+	9) Optimised the textures and scripts so hopefully less ram usage and faster script running.
+	10) Fixed the new view options showing when highlighting the scroll bar.
+	11) Added the version the the options (black button)
+	12) Removed the update check on startup and added it as a button on the login screen (start button) or in the skin settings.
+	13) New night mode, enable it in the skin settings menu.
+		( only available for the profiles skin )
+	14) Fixed a few issues with the night theme.
+	15) New loading animation (busy dialog)
+	16) Now if Auto login is enabled for a profile if you press the RStick in it will bring up the Options menu.
+	17) Made the xbe copy filezilla server.xml on every boot from the system/backups folder.
+		( this seems to fix random crashing with FTP, also fixes the corrupt filezilla server.xml issue as its copied on each boot. )
+	18) Intro videos can be in two places now. System\intro or next to the default.xbe
+		( intro.mp4 is still looked for in both locations, I may at some point add random video playback from the intro folder )
+	19) You can now run default_p.xbe or defaultxhd.xbe from the context menu if they exist next to the default.xbe
+	20) New updater look.
+	21) URLDownloader updated to v1.0.18, I have moved to Google Drive for the downloads.
+		( Test this out as there is a daily limit on downloads but we should never hit this )
+	22) Cleaned up all the scripts.
+	23) Fixed a problem in XBMC (well just disabled stopping the FTP/Time server code) that would put you in a busy loop if you had an Ethernet
+		connected but not valid network, or hard crash the system if you disconnect and reconnected a Ethernet.
+	24) Added a new toggle for the banner view, lets to set the icons to scale (default) or stretch.
+		( under the view options > other tab )
+	25) Updated all of the dialogs used to use the new focus texture and background images, plus a darken the screen so you can see them better.
+	26) Updated the dialog ok.py script so it can run script and notify the user that it is.
+		( used for the update check )
+	27) Moved the R-Stick and L-Stick context button round so the match the pad.
+	28) Y button is now Synopsis, it will check for a xbe file so it wont load on content that's not got synopsis.
+		( context menu synopsis entry is disabled if the y_button_loader.py is found, no point having them on both. )
+	29) New keyboard layout for the hex colour string window.
+	30) Fixed custom backgrounds flashing when entering the profile.
+	31) Fixed the music visualisation not showing if enabled for screensaver.
+	32) Minor bug fixes
+	33) Fixed the view options search function.
+	34) Added new options to the view options other menu for fanart.
+		( now can toggle between on, blurred, off, fog and look )
+	35) New full screen fanart toggle for the fanart view
+	36) Updated some views to be faster.
+	37) Fixed conflict with the new artwork installer if run from the scripts menu.
+	38) Updated the synopsis script.
+	39) Updated the alt synopsis view to disable images if ram hits less than 2%, so not to hang the system.
+		( only reaaly an issue if playing music and a track changes while moving, so most wont ever have the issue but better safe than sorry )
+	40) Changed the xbe texture release limit to 4MB before it does it.
+	41) View options is now a dialog, so I had to move the soft options out of this menu.
+		( button to focus this option is in its place )
+	42) Sort options moved out of the view options menu as they wont work if the programs menu isn't the active window.
+	43) Fixed the skin settings labels menu entries focus ids.
+	44) New default icons, less in your face than before.
+	45) Updated the settings menu order and added a indicator to show there are more items in the list.
+	46) Updated the synopsis images
+	47) Updated the CD view flipped CD image for the focus item.
+		( there is no point drawing the rotating CD here as it doesn't rotate due to the diffuse image not being stationary )
+	48) .modules is now _modules so now FTP programs can FTP the folder over without requiring hidden files to be enabled.
+	49) Imagelib usage is now set to 8MB to combat ram hitting 0MB and causing black images.
+	50) Clear texture cache set to 10MB now, so when you hit 10MB it will flush the texture cache.
+	51) New xbe to check what resolution is currently enabled and tell the user if its 1080i and disable it.
+	52) New no_fanart image.
+	53) Updated labels for the pages and items in dialogs that use them.
+	54) Added support for grabbing the titleid from the inserted xbox disc in the drive.
+		( can now display artwork based on the titleids )
+	55) New busy/loading overlay
+	56) New Search and Sort look
+	57) Updated the downloader script to the latest version.
+	58) Added a preview window to the dialogselect window. Only shows when in the downloader theme menu
+	59) Fixed the individual game save per profile script, forgot to update the titleid in the script.
+	60) When a new profile is made it will restart XBMC4Gamers and auto load into said profile.
+	61) Moved to the naming format for the folder that holds the skin xml files.
+		( now just xml for all )
+	62) Updated and fixed all views
+		( some views now use the new images that come with the v1.9.4 and onwards version of the artwork installer )
+	63) Changed all the view file names to make it easier to find a view.
+	64) Optimisations to the views and synopsis window to help with 64MB ram boards.
+	65) Any script errors will now put a copy of the error in E:/TDATA/Rocky5 needs these logs/
+		( Send me this file )
+	66) Fixed the placements of the context menus.
+	67) Fixed the user mode controller buttons.
+	68) Added back in the scrolling latter when fast scrolling your games.
+	68) Updated the synopsis window, fixed a couple things.
+	69) Updated the login profile windows, logs in and out quicker.
+	70) New File Manager look.
+	71) New labels for the file manager.
+	 ( id 103 and 104 these are used to show the current folder you're in )
+	72) Redone all the views :/ optimized and fixed.
+	73) New default icons for file types.
+	74) Theme selection added, yes you can now theme it and add your own themes.
+		( .xpr file and optional color.xml name the xml the same name as the xpr )
+	75) Theme specific splash image support, images go in Skins\profile skin\extras\themes\splashes\
+	76) New Video Calibration screen.
+	77) Now when a profile is first run it will ask the user to calibrate the screen.
+	78) Can hide the labels on most views, can toggle between both, folders only or games only.
+	79) New settings thumbs
+	80) Redone all view options images
+	81) Redone all default folder icons, now has default and night versions.
+	82) Can use fonts file for themes.
+		( named the same as the xpr )
+	83) Some optimisation.
+	84) More info on the options dialog
+	85) Fixed search button label colour
+	86) Update to the skin settings, removed the updates tab and replaced it with themes.
+	87) DialogSelect will show a peview window for theme selection.
+	89) Redone the XBMC4Gamers logo to be cleaner looking.
+	90) Themes can have there own playlists.
+		( Special://skin/extras/themes/playlists/theme name.m3u )
+	91) Added two new colour labels for the games list labels that can be changed.
+	92 Updated the main script that does the individual saves and profile setup on first run.
+		( should fix all issues now )
+	93) Fixed the icons and animations on the settings profile screen of the manage profiles profile.
+	94) Fixed the new xbmc4gamers script breaking if it found the UDATA Backup folder and no user profile in the current UDATA folder.
+	95) Added the option to view the log files under "skin settings > debug" menu
+	96) Added the option to view text based files via the "skin settings > scripts" menu.
+	97) Fixed the XISO to HDD Installer script to parse multi images.
+		( test.1.iso, test.2.iso, test_1(2).iso and test_2(2).iso )
+	98) Some cosmetic changes to labels on dialogs.
+	99) log view and text viewer script updated.
+	100) Option to hide the profile pic on load if auto login is enabled.
+	101) missing xbmcgui from the updater script.
+	102) Fixed the dash not loading if no network was found.
+	103) Few odds and ends, you can now log into your profile from the Manage profiles profile easily.
+		( should fix folk not knowing what to do :/ )
+	104) Fixed the ISO to HDD script.
+	105) A few backend changes to help me.
+	106) New login screen look.
+	106) Updated the seasonal xml files.
+		( more snow flakes and different types, also no more eggs for easter. )
+	107) Fixed valishing labels on the login screen and changed it a tad.
+		( grouplists in lists don't use there alignment attributes so had to move them out of the list. )
+	108) Uninstall downloaded themes script added.
+	109) Couple xml fixes.
+	110) Can launch default720p.xbe if found via the content menu.
+	111) Random theme on startup support.
+	112) New Random theme script to go with the new xbe so theme splashes are loaded on boot when random themes are enabled on startup.
+	113) New xbe that adds support for ShowPicture() in python.
+	114) Updated the Apply Theme script to allow 3 uses, toggle, select and random.
+	115) FIxed the uninstall theme script.
+	116) New option to enable or disable the theme playlist.
+		( if you don't want the theme playlsit to override your playlist keep it disabled )
+	117) Fixed the settings menu.
+	118) Halloween even added.
+		( all events are in one file now to make it cleaner )
+	119) Added Appearance to the Manage Profiles Skin settings menu and updated the Screen Calibration image.
+	120) Fixed the check for extra xbes, showing all if default_p.xbe was found.
+	121) Fixed the edit mode login issues.
+	122) New seek bar to match the new player controls.
+	**) Other stuff but its been a while since I done these changes.
+		( See if you can find them LOL )
+	
+
 17/04/2019
 	1) Moved the fast game parsing and slow scrolling toggle into XBMCs Programs settings menu.
 		( They are now built in settings, Enable fast game parsing is disabled by default )
@@ -86,7 +254,7 @@
 	7) Added my XBMC-Emustation downloader to Gamers!
 		( This was a pin in the ass to do as I had to change a lot to get it so 1 script and download list work on two completely different systems. )
 	8) New player controls look, simpler and nice looking.
-	9) Ported over the folder structure from XBMC-Emustation to Gamers, so alot cleaner looking and simpler to maintain.
+	9) Ported over the folder structure from XBMC-Emustation to Gamers, so a lot cleaner looking and simpler to maintain.
 	10) Updated the views to use the correct extensions for the _Resources artwork.
 	11) Removed the alt synopsis and view preview modes from the synopsis script.
 	12) Updated the look of the synopsis view and added a synopsis.png file into the _resources artwork.
@@ -101,8 +269,8 @@
 	19) Add up to 6 custom sources for the quick change menu.
 		( This should cover everyone that has custom sources )
 	20) Adjusted some of old the views.
-	21) Optimised all views, so hoping thats me done with them.
-	22) There are alot more changes but hell if I remember them all :D
+	21) Optimised all views, so hoping that's me done with them.
+	22) There are a lot more changes but hell if I remember them all :D
 	
 
 15/04/2018
@@ -110,19 +278,19 @@
 		( This is an issue with official builds and is now fixed here. )
 
 06/02/2018
-	1) Update to the center label fix in lists, if your skin version is 2.1 it will use the old way and if its 2.2 or higher will use the fixed way.
+	1) Update to the centre label fix in lists, if your skin version is 2.1 it will use the old way and if its 2.2 or higher will use the fixed way.
 
 
 16/01/2018
-	1) New XBE fixed the center label issue for lists
-		( If you have a skin that uses center for its labels in a list you may want to remove the offset you had to use for posx )
-	2) Updated the layouts that used the offset to fix the center issue, to not use the offsets now :D
+	1) New XBE fixed the centre label issue for lists
+		( If you have a skin that uses centre for its labels in a list you may want to remove the offset you had to use for posx )
+	2) Updated the layouts that used the offset to fix the centre issue, to not use the offsets now :D
 
 
 14/01/2018
 	1) Updated the default.xbe to use the changes I made for XBMC-Emustation regarding the debug info.
 		( It will also unload textures if the memory drops below 20MB now )
-	2) Reduced the fonts.zml file to reduce the memory footprint. You now have 32MB of free ram, so no more thumbs vanishing.
+	2) Reduced the fonts.xml file to reduce the memory footprint. You now have 32MB of free ram, so no more thumbs vanishing.
 
 
 06/01/2018
@@ -137,7 +305,7 @@
 
 
 16/12/2017
-	1) Ported over Kodis fix for SetFocus(), it now focuses from the proper offset instead of the current page.
+	1) Ported over the Kodi fix for SetFocus(), it now focuses from the proper offset instead of the current page.
 
 
 04/12/2017
@@ -188,8 +356,8 @@
 29/05/2017
 	1) Fixed all the views scroll bar ids, forgot to update the onup/onleft eg... ids.
 	2) Updated the gamesaves list.
-	3) Fixed the aspectratio of the volume icon and aded in the mute icon.
-	4) Updated guisettings.xml to force 720p and aspectration error increased to 20 for video playback.
+	3) Fixed the aspect ratio of the volume icon and aded in the mute icon.
+	4) Updated guisettings.xml to force 720p and aspect ratio error increased to 20 for video playback.
 	
 
 11/05/2017
@@ -479,4 +647,4 @@ Changes.
 6) Updated the Poster view, now works better with transparent images & its now in the MyPrograms.xml
 7) Updated the Lockscreen, moved the list down a tad.
 8) Updated the EditMode.py, now launched the dashboard from within python.
-7) maybe something else cant mind :-
+7) maybe something else cant mind :-)

@@ -1,0 +1,929 @@
+<includes>
+		<include file="defaults.xml" />
+		<include file="includes_context_buttons.xml" />
+		<include file="includes_variables.xml" />
+		<include file="Includes_View_Options.xml" />
+		<include file="Includes_URLDownloader.xml" />
+		<constant name="FanartCrossfadeTime">200</constant>
+		<constant name="ThumbCrossfadeTime">100</constant>
+		<include name="1280x720">
+				<width>1280</width>
+				<height>720</height>
+		</include>
+		<include name="Context_Buttons_Text_Align">
+				<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">Conditional</animation>
+		</include>
+		<include name="CommonBackground">
+				<control type="image">
+						<include>1280x720</include>
+						<texture fallback="background.jpg">$INFO[skin.string(background_color)]</texture>
+						<aspectratio>stretch</aspectratio>
+						<visible>StringCompare(skin.string(background_image),) + StringCompare(skin.string(Background_Custom_Color),)</visible>
+				</control>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>background diffuse.png</texture>
+						<colordiffuse>$VAR[var-bgcustcolour]</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+						<visible>!StringCompare(skin.string(Background_Custom_Color),)</visible>
+				</control>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>$INFO[skin.string(background_image)]</texture>
+						<aspectratio>stretch</aspectratio>
+						<visible>!StringCompare(skin.string(background_image),)</visible>
+				</control>
+		</include>
+		<include name="Fanart">
+				<control type="group">
+						<visible>Skin.HasSetting(fanartenabled) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<animation effect="fade" reversable="true" start="100" end="0" delay="1000" time="500" condition="Window.IsVisible(3000)">Hidden</animation>
+						<control type="group">
+								<visible>!Skin.HasSetting(higherfanart)</visible>
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_low_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart-blur.jpg]</texture>
+										<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)</visible>
+								</control>
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_low_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+										<visible>Skin.HasSetting(_resourcesenabled) + !Skin.HasSetting(fanartblur)</visible>
+								</control>
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_low_diffuse.png">$INFO[listitem.path,,fanart.jpg]</texture>
+										<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+								</control>
+								<control type="largeimage">
+										<posy>514</posy>
+										<height>206</height>
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_low_diffuse_Custom.png">$INFO[listitem.path,,_resources\artwork\fog.jpg]</texture>
+										<visible>Skin.HasSetting(customfanartfog)</visible>
+								</control>
+								<!-- Folder fanart -->
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_low_diffuse.png">$Special://skin/extras/folder fanart/$INFO[ListItem.Label]-blur.jpg]</texture>
+										<visible>ListItem.IsFolder + Skin.HasSetting(fanartblur)</visible>
+								</control>
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_low_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+										<visible>ListItem.IsFolder</visible>
+								</control>
+								<control type="largeimage">
+										<posy>514</posy>
+										<height>206</height>
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_low_diffuse_Custom.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label]_fog.jpg</texture>
+										<visible>Skin.HasSetting(customfanartfog) + ListItem.IsFolder</visible>
+								</control>
+						</control>
+						<control type="group">
+								<visible>Skin.HasSetting(higherfanart)</visible>
+								<!-- Alternative Diffuse -->
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart-blur.jpg]</texture>
+										<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)</visible>
+								</control>
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+										<visible>Skin.HasSetting(_resourcesenabled) + !Skin.HasSetting(fanartblur)</visible>
+								</control>
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_diffuse.png">$INFO[listitem.path,,fanart.jpg]</texture>
+										<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+								</control>
+								<control type="largeimage">
+										<posy>514</posy>
+										<height>206</height>
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_diffuse_Custom.png">$INFO[listitem.path,,_resources\artwork\fog.jpg]</texture>
+										<visible>Skin.HasSetting(customfanartfog)</visible>
+								</control>
+								<!-- Folder fanart -->
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_diffuse.png">$Special://skin/extras/folder fanart/$INFO[ListItem.Label]-blur.jpg]</texture>
+										<visible>ListItem.IsFolder + Skin.HasSetting(fanartblur)</visible>
+								</control>
+								<control type="largeimage">
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+										<visible>ListItem.IsFolder</visible>
+								</control>
+								<control type="largeimage">
+										<posy>514</posy>
+										<height>206</height>
+										<include>1280x720</include>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>FanartCrossfadeTime</fadetime>
+										<texture diffuse="fanart_diffuse_Custom.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label]_fog.jpg</texture>
+										<visible>Skin.HasSetting(customfanartfog) + ListItem.IsFolder</visible>
+								</control>
+						</control>
+				</control>
+		</include>
+		<include name="BehindDialogFadeOut">
+				<control type="image">
+						<include>1280x720</include>
+						<texture>black-back.png</texture>
+						<animation effect="fade" time="200">WindowOpen</animation>
+						<animation effect="fade" delay="200" time="100">WindowClose</animation>
+						<animation effect="fade" time="200">Visible</animation>
+						<animation effect="fade" delay="200" time="100">Hidden</animation>
+				</control>
+		</include>
+		<include name="Startup_Window_Profile">
+				<visible>System.HasLoginScreen | [!System.HasLoginScreen + !Skin.HasSetting(HideProfilePic)]</visible>
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>234</width>
+						<height>234</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="5">black-back.png</texture>
+				</control>
+				<control type="image">
+						<posx>5</posx>
+						<posy>5</posy>
+						<width>224</width>
+						<height>224</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>black-back.png</texture>
+						<bordersize>1</bordersize>
+				</control>
+				<control type="image">
+						<posx>5</posx>
+						<posy>5</posy>
+						<width>224</width>
+						<height>224</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[system.profilethumb]</texture>
+				</control>
+		</include>
+		<include name="Startup_Window_Info">
+				<control type="label">
+						<posx>5</posx>
+						<posy>35r</posy>
+						<width>1280</width>
+						<height>36</height>
+						<font>size_15</font>
+						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<label> $LOCALIZE[31180]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<animation type="WindowOpen" reversible="false">
+								<effect type="fade" start="0" end="100" delay="0" time="0" />
+								<effect type="fade" start="100" end="0" delay="19000" time="1000" />
+						</animation>
+						<visible>Window.IsActive(2999)</visible>
+				</control>
+				<control type="label">
+						<posx>5</posx>
+						<posy>35r</posy>
+						<width>1280</width>
+						<height>36</height>
+						<font>size_15</font>
+						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<label> $LOCALIZE[31181]</label>
+						<align>left</align>
+						<aligny>center</aligny>
+						<animation effect="fade" end="100" delay="20000" time="1000">WindowOpen</animation>
+						<visible>Window.IsActive(2999)</visible>
+				</control>
+				<control type="textbox">
+						<posx>355</posx>
+						<posy>305</posy>
+						<width>570</width>
+						<height>321</height>
+						<font>size_50</font>
+						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<label>$LOCALIZE[31017]</label>
+						<visible>!Skin.HasSetting(EditMode) + Window.IsVisible(1114) + Skin.HasSetting(AdultProfile) + !Player.HasVideo</visible>
+						<animation effect="fade" start="0" end="100" delay="500" time="0">WindowOpen</animation>
+				</control>
+		</include>
+		<include name="ContextMenuOffsets">
+				<animation effect="slide" start="0,0" end="21,-82" time="0" condition="StringCompare(Container.Viewmode,view50)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-122,-90" time="0" condition="StringCompare(Container.Viewmode,view51)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="60,-90" time="0" condition="StringCompare(Container.Viewmode,view52)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="82,-90" time="0" condition="StringCompare(Container.Viewmode,view53)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="253,35" time="0" condition="StringCompare(Container.Viewmode,view54)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="297,86" time="0" condition="StringCompare(Container.Viewmode,view55)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="2,91" time="0" condition="StringCompare(Container.Viewmode,view56)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="2,91" time="0" condition="StringCompare(Container.Viewmode,view57)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-168,76" time="0" condition="StringCompare(Container.Viewmode,view58)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view59)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-91,-89" time="0" condition="StringCompare(Container.Viewmode,view60)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="-356,-89" time="0" condition="StringCompare(Container.Viewmode,view61)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view62)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view63)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view64)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view65)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="8,-89" time="0" condition="StringCompare(Container.Viewmode,view66)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="31,-49" time="0" condition="StringCompare(Container.Viewmode,view67)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="31,-49" time="0" condition="StringCompare(Container.Viewmode,view68)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="2,221" time="0" condition="StringCompare(Container.Viewmode,view79)">Conditional</animation>
+		</include>
+		<include name="WindowHeader">
+				<control type="image">
+						<posx>23</posx>
+						<posy>3</posy>
+						<width>123</width>
+						<height>44</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>xbmc4gamers_logo_shadow.png</texture>
+				</control>
+				<control type="image">
+						<posx>25</posx>
+						<posy>5</posy>
+						<width>119</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>$VAR[var-xbmc4gamerslabelcolour]</colordiffuse>
+						<texture>xbmc4gamers_logo.png</texture>
+				</control>
+				<control type="label">
+						<posx>1257</posx>
+						<posy>6</posy>
+						<width>200</width>
+						<height>45</height>
+						<align>right</align>
+						<label>$INFO[System.Time]</label>
+						<animation effect="slide" start="0,0" end="223,0" time="1000" reversible="false" condition="System.HasMediaDVD">Conditional</animation>
+						<animation effect="slide" start="223,0" end="0,0" delay="300" time="1000" reversible="false" condition="!System.HasMediaDVD">Conditional</animation>
+						<visible>!Skin.HasSetting(DisplayTime)</visible>
+				</control>
+				<include>DiscPressentIdicator</include>
+		</include>
+		<include name="WindowFooter">
+				<include>Context_Buttons</include>
+				<control type="image">
+						<description>shadow border</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>black-back.png</texture>
+						<visible>Container.Scrolling + !Skin.HasSetting(HideScrollLabel)</visible>
+						<animation effect="fade" start="0" end="50" delay="850" time="200">Visible</animation>
+						<animation effect="fade" start="50" end="0" delay="0" time="100">Hidden</animation>
+				</control>
+				<control type="label">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[B]$INFO[ListItem.SortLetter][/B]</label>
+						<textcolor>context_label</textcolor>
+						<font>size_400</font>
+						<visible>Container.Scrolling + !Skin.HasSetting(HideScrollLabel)</visible>
+						<animation effect="fade" start="0" end="60" delay="800" time="300">Visible</animation>
+						<animation effect="fade" start="60" end="0" delay="0" time="100">Hidden</animation>
+				</control>
+		</include>
+		<include name="DiscPressentIdicator">
+				<control type="label">
+						<posx>1705</posx>
+						<posy>14</posy>
+						<width>1280</width>
+						<height>45</height>
+						<align>right</align>
+						<label>$INFO[System.DVDLabel]</label>
+						<visible>System.HasMediaDVD</visible>
+						<animation effect="slide" start="-485,0" end="0,0" delay="0" time="500" reversible="false" condition="!System.HasMediaDVD">Conditional</animation>
+						<animation effect="slide" start="0,0" end="-485,0" delay="500" time="800" reversible="false" condition="System.HasMediaDVD">Conditional</animation>
+				</control>
+				<control type="image">
+						<posx>1325</posx>
+						<posy>-60</posy>
+						<width>128</width>
+						<height>128</height>
+						<aspectratio>stretch</aspectratio>
+						<visible>System.HasMediaDVD</visible>
+						<texture diffuse="gamedisc_small_diffuse.png" fallback="gamedisc_small_alt.png">Special://skin/extras/disc artwork/$INFO[System.DVDTitleid].jpg</texture>
+						<animation effect="slide" start="-105,0" end="0,0" time="100" reversible="false" condition="!System.HasMediaDVD">Conditional</animation>
+						<animation effect="slide" start="0,0" end="-105,0" delay="300" time="800" reversible="false" condition="System.HasMediaDVD">Conditional</animation>
+						<animation effect="rotate" start="0" end="-360" center="auto" time="3000" loop="true" condition="System.HasMediaDVD">Conditional</animation>
+				</control>
+		</include>
+		<include name="Contect_Buttons_Underlay">
+				<posx>0</posx>
+				<posy>680</posy>
+				<width>1280</width>
+				<height>40</height>
+				<texture>pad_buttons\underlay.png</texture>
+		</include>
+		<include name="CommonOptionsMenuBack">
+				<include>VisibleFadeEffect</include>
+				<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus</visible>
+				<animation effect="slide" start="0,0" end="60,0" time="200" condition="Player.HasMedia">Conditional</animation>
+				<posx>60</posx>
+				<posy>45</posy>
+				<control type="image">
+						<description>shadow border</description>
+						<posx>-8</posx>
+						<posy>17</posy>
+						<width>306</width>
+						<height>431</height>
+						<texture border="10">border-shadow.png</texture>
+				</control>
+				<control type="image">
+						<description>Down Arrow</description>
+						<posx>30</posx>
+						<posy>0</posy>
+						<width>40</width>
+						<height>25</height>
+						<texture>arrow-big-up.png</texture>
+				</control>
+				<control type="image">
+						<description>background image</description>
+						<posx>0</posx>
+						<posy>25</posy>
+						<width>290</width>
+						<height>415</height>
+						<texture border="8">subback.png</texture>
+				</control>
+				<control type="image">
+						<description>Overlay image</description>
+						<posx>0</posx>
+						<posy>25</posy>
+						<width>200</width>
+						<height>310</height>
+						<texture>glassoverlay.png</texture>
+				</control>
+				<control type="image">
+						<posx>0</posx>
+						<posy>25</posy>
+						<width>290</width>
+						<height>40</height>
+						<texture>horizontalglow.png</texture>
+				</control>
+		</include>
+		<include name="CustomSettingsButtons">
+				<width>1170</width>
+				<height>51</height>
+				<font>size_20</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>black</focusedcolor>
+				<texturefocus border="5">thumbfO.png</texturefocus>
+				<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
+		</include>
+		<include name="ButtonSettingsOptionsValues">
+				<description>Default Category Button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>40</height>
+				<width>200</width>
+				<textoffsetx>0</textoffsetx>
+				<textoffsety>0</textoffsety>
+				<font>size_18</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>windows_options_label_no_focus</textcolor>
+				<focusedcolor>windows_options_label_focus</focusedcolor>
+				<shadowcolor>-</shadowcolor>
+				<texturefocus>windows\options\button_focus.png</texturefocus>
+				<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+		</include>
+		<include name="ButtonSettingsCategoryValues">
+				<description>Default Category Button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>60</height>
+				<width>795</width>
+				<textoffsetx>44</textoffsetx>
+				<textoffsety>0</textoffsety>
+				<font>size_28</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>windows_settings_category_left_label_no_focus</textcolor>
+				<focusedcolor>windows_settings_category_left_label_focus</focusedcolor>
+				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
+				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+		</include>
+		<include name="ButtonSkinSettingsCategoryButtonValues">
+				<description>Default Button</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>60</height>
+				<width>795</width>
+				<font>size_20</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>44</textoffsetx>
+				<textoffsety>0</textoffsety>
+				<textcolor>windows_settings_category_right_label_no_focus</textcolor>
+				<focusedcolor>windows_settings_category_right_label_focus</focusedcolor>
+				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
+				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+		</include>
+		<include name="ButtonSkinSettingsCategoryRadioButtonValues">
+				<description>Default RadioButton</description>
+				<posx>0</posx>
+				<posy>0</posy>
+				<height>60</height>
+				<width>795</width>
+				<radioposx>669</radioposx>
+				<radioposy>0</radioposy>
+				<radiowidth>73</radiowidth>
+				<radioheight>25</radioheight>
+				<font>size_20</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>44</textoffsetx>
+				<textoffsety>0</textoffsety>
+				<textcolor>windows_settings_category_right_label_no_focus</textcolor>
+				<focusedcolor>windows_settings_category_right_label_focus</focusedcolor>
+				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
+				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+		</include>
+		<include name="ButtonCommonValues">
+				<height>44</height>
+				<width>280</width>
+				<font>size_20</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>10</textoffsetx>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<pulseonselect>true</pulseonselect>
+		</include>
+		<include name="ButtonViewOptionsValues">
+				<height>45</height>
+				<width>240</width>
+				<textwidth>205</textwidth>
+				<font>size_20</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>20</textoffsetx>
+				<texturenofocus>listnf.png</texturenofocus>
+				<texturefocus border="5">listnf.png</texturefocus>
+		</include>
+		<include name="ButtonHomeSubCommonValues">
+				<height>37</height>
+				<width>246</width>
+				<textcolor>grey2</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>size_20</font>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus border="5">-</texturenofocus>
+				<pulseonselect>true</pulseonselect>
+		</include>
+		<include name="ButtonInfoDialogsCommonValues">
+				<height>25</height>
+				<width>200</width>
+				<font>size_20</font>
+				<textcolor>white</textcolor>
+				<focusedcolor>white</focusedcolor>
+				<shadowcolor>black</shadowcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<texturefocus border="2">button-focus2.png</texturefocus>
+				<texturenofocus border="2">button-nofocus.png</texturenofocus>
+				<pulseonselect>no</pulseonselect>
+		</include>
+		<include name="File_Manager_Compact_Mode_Left">
+				<control type="panel" id="20">
+						<posx>105</posx>
+						<posy>195</posy>
+						<width>535</width>
+						<height>360</height>
+						<onleft>30</onleft>
+						<onright>21</onright>
+						<onup>20</onup>
+						<ondown>20</ondown>
+						<viewtype label="535">list</viewtype>
+						<pagecontrol>30</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<itemlayout height="45" width="535">
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>35</width>
+										<height>35</height>
+										<texture background="true">$INFO[listitem.icon]</texture>
+								</control>
+								<control type="label">
+										<posx>60</posx>
+										<posy>-1</posy>
+										<width>465</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_no_focus</textcolor>
+										<selectedcolor>windows_select_label_alt</selectedcolor>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+										<posx>305</posx>
+										<posy>-1</posy>
+										<width>220</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_no_focus</textcolor>
+										<selectedcolor>windows_select_label_alt</selectedcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label2]</label>
+								</control>
+						</itemlayout>
+						<focusedlayout height="45" width="535">
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>535</width>
+										<height>45</height>
+										<texture border="5">windows\file manager\button_focus.png</texture>
+								</control>
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>35</width>
+										<height>35</height>
+										<texture background="true">$INFO[listitem.icon]</texture>
+								</control>
+								<control type="label">
+										<posx>60</posx>
+										<posy>-1</posy>
+										<width>465</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_focus</textcolor>
+										<selectedcolor>windows_select_label</selectedcolor>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+										<posx>305</posx>
+										<posy>-1</posy>
+										<width>220</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_focus</textcolor>
+										<selectedcolor>windows_select_label</selectedcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label2]</label>
+								</control>
+						</focusedlayout>
+				</control>
+		</include>
+		<include name="File_Manager_Compact_Mode_Right">
+				<control type="panel" id="21">
+						<posx>640</posx>
+						<posy>195</posy>
+						<width>535</width>
+						<height>360</height>
+						<onleft>20</onleft>
+						<onright>-</onright>
+						<onup>21</onup>
+						<ondown>21</ondown>
+						<viewtype label="535">list</viewtype>
+						<pagecontrol>31</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<itemlayout height="45" width="535">
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>35</width>
+										<height>35</height>
+										<texture background="true">$INFO[listitem.icon]</texture>
+								</control>
+								<control type="label">
+										<posx>60</posx>
+										<posy>-1</posy>
+										<width>465</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_no_focus</textcolor>
+										<selectedcolor>windows_select_label_alt</selectedcolor>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+										<posx>305</posx>
+										<posy>-1</posy>
+										<width>220</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_no_focus</textcolor>
+										<selectedcolor>windows_select_label_alt</selectedcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label2]</label>
+								</control>
+						</itemlayout>
+						<focusedlayout height="45" width="535">
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>535</width>
+										<height>45</height>
+										<texture border="5">windows\file manager\button_focus_alt.png</texture>
+								</control>
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>35</width>
+										<height>35</height>
+										<texture background="true">$INFO[listitem.icon]</texture>
+								</control>
+								<control type="label">
+										<posx>60</posx>
+										<posy>-1</posy>
+										<width>465</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_focus</textcolor>
+										<selectedcolor>windows_select_label</selectedcolor>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+										<posx>305</posx>
+										<posy>-1</posy>
+										<width>220</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_focus</textcolor>
+										<selectedcolor>windows_select_label</selectedcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label2]</label>
+								</control>
+						</focusedlayout>
+				</control>
+		</include>
+		<include name="File_Manager_Normal_Mode_Left">
+				<control type="panel" id="20">
+						<posx>105</posx>
+						<posy>195</posy>
+						<width>1070</width>
+						<height>360</height>
+						<onleft>30</onleft>
+						<onright>21</onright>
+						<onup>20</onup>
+						<ondown>20</ondown>
+						<viewtype label="535">list</viewtype>
+						<pagecontrol>30</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<visible allowhiddenfocus="true">Control.HasFocus(20)</visible>
+						<itemlayout height="45" width="1070">
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>35</width>
+										<height>35</height>
+										<texture background="true">$INFO[listitem.icon]</texture>
+								</control>
+								<control type="label">
+										<posx>60</posx>
+										<posy>-1</posy>
+										<width>460</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_no_focus</textcolor>
+										<selectedcolor>windows_select_label_alt</selectedcolor>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+										<posx>790</posx>
+										<posy>-1</posy>
+										<width>250</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_no_focus</textcolor>
+										<selectedcolor>windows_select_label_alt</selectedcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label2]</label>
+								</control>
+						</itemlayout>
+						<focusedlayout height="45" width="1070">
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>1070</width>
+										<height>45</height>
+										<texture border="5">windows\file manager\button_focus.png</texture>
+								</control>
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>35</width>
+										<height>35</height>
+										<texture background="true">$INFO[listitem.icon]</texture>
+								</control>
+								<control type="label">
+										<posx>60</posx>
+										<posy>-1</posy>
+										<width>460</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_focus</textcolor>
+										<selectedcolor>windows_select_label</selectedcolor>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+										<posx>790</posx>
+										<posy>-1</posy>
+										<width>250</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_focus</textcolor>
+										<selectedcolor>windows_select_label</selectedcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label2]</label>
+								</control>
+						</focusedlayout>
+				</control>
+		</include>
+		<include name="File_Manager_Normal_Mode_Right">
+				<control type="panel" id="21">
+						<posx>105</posx>
+						<posy>195</posy>
+						<width>1070</width>
+						<height>360</height>
+						<onleft>20</onleft>
+						<onright>-</onright>
+						<onup>21</onup>
+						<ondown>21</ondown>
+						<viewtype label="535">list</viewtype>
+						<pagecontrol>31</pagecontrol>
+						<scrolltime>200</scrolltime>
+						<visible allowhiddenfocus="true">Control.HasFocus(21)</visible>
+						<itemlayout height="45" width="1070">
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>35</width>
+										<height>35</height>
+										<texture background="true">$INFO[listitem.icon]</texture>
+								</control>
+								<control type="label">
+										<posx>60</posx>
+										<posy>-1</posy>
+										<width>460</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_no_focus</textcolor>
+										<selectedcolor>windows_select_label_alt</selectedcolor>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+										<posx>790</posx>
+										<posy>-1</posy>
+										<width>250</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_no_focus</textcolor>
+										<selectedcolor>windows_select_label_alt</selectedcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label2]</label>
+								</control>
+						</itemlayout>
+						<focusedlayout height="45" width="1070">
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>1070</width>
+										<height>45</height>
+										<texture border="5">windows\file manager\button_focus_alt.png</texture>
+								</control>
+								<control type="image">
+										<posx>5</posx>
+										<posy>5</posy>
+										<width>35</width>
+										<height>35</height>
+										<texture background="true">$INFO[listitem.icon]</texture>
+								</control>
+								<control type="label">
+										<posx>60</posx>
+										<posy>-1</posy>
+										<width>460</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_focus</textcolor>
+										<selectedcolor>windows_select_label</selectedcolor>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label]</label>
+								</control>
+								<control type="label">
+										<posx>790</posx>
+										<posy>-1</posy>
+										<width>250</width>
+										<height>45</height>
+										<font>size_20</font>
+										<textcolor>windows_label_focus</textcolor>
+										<selectedcolor>windows_select_label</selectedcolor>
+										<align>right</align>
+										<aligny>center</aligny>
+										<label>$INFO[ListItem.Label2]</label>
+								</control>
+						</focusedlayout>
+				</control>
+		</include>
+		<include name="Window_OpenClose_Animation">
+				<animation effect="fade" time="0">WindowOpen</animation>
+				<animation effect="fade" time="0">WindowClose</animation>
+		</include>
+		<include name="dialogeffect">
+				<animation effect="fade" time="200">WindowOpen</animation>
+				<animation effect="fade" time="200">WindowClose</animation>
+		</include>
+		<include name="dialogeffect2">
+				<animation effect="fade" time="100">WindowOpen</animation>
+				<animation effect="fade" time="100">WindowClose</animation>
+		</include>
+		<include name="DialogEffectZoom">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="200" />
+						<effect type="fade" start="0" end="100" time="300" delay="200" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="300" />
+						<effect type="fade" start="100" end="0" time="300" />
+				</animation>
+		</include>
+		<include name="DialogEffectZoomFast">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="200" />
+						<effect type="fade" start="0" end="100" time="200" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="200" />
+						<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+		</include>
+		<include name="ViewVisibleEffect">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="200" />
+						<effect type="fade" start="0" end="100" time="200" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="200" />
+						<effect type="fade" start="100" end="0" time="200" />
+				</animation>
+		</include>
+		<include name="VisibleFadeEffect">
+				<animation effect="fade" time="200">Visible</animation>
+				<animation effect="fade" time="200">Hidden</animation>
+		</include>
+</includes>

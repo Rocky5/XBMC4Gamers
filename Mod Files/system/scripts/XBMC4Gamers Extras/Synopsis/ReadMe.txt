@@ -5,7 +5,7 @@ This script will allow you to show information/images on anything that uses a de
 
 To integrate this into your skin:
 
-	1) Place the 3 _Script* xml files into your 720p folder.
+	1) Place the 3 _Script* xml files into your skin xml folder.
 	2) Stick the Synopsis folder in you scripts folder.
 	3) Replace your default.xbe with the new one.
 	4) Yeah that's it.

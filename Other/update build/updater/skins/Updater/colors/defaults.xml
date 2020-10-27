@@ -11,4 +11,6 @@
 		<color name="dialogheader">FF399EDA</color>
 		<color name="synopsiscolour1">FF399EDA</color>
 		<color name="synopsiscolour2">FFFFFFFF</color>
+		<color name="windows_header_toast_label">FF424542</color>
+		<color name="windows_toast_label">FF424542</color>
 </colors>

@@ -11,16 +11,10 @@ if not exist "%foldername%" (
 	timeout /t 5
 	Exit
 )
-
-Attrib /s -r -h -s "Thumbs.db" >NUL
-Del /Q /S "Thumbs.db" 2>NUL
-for /F "usebackq tokens=1,2 delims==" %%i in (`wmic os get LocalDateTime /VALUE 2^>NUL`) do if '.%%i.'=='.LocalDateTime.' set dateformat=%%j
-
-cls
-
 :Start
-Set "version=1.2"
-Set "fromDate=20/12/2018"
+Set "version=1.3"
+Set "fromDate=27/10/2020"
+for /F "usebackq tokens=1,2 delims==" %%i in (`wmic os get LocalDateTime /VALUE 2^>NUL`) do if '.%%i.'=='.LocalDateTime.' set dateformat=%%j
 Set toDate=%dateformat:~6,2%^/%dateformat:~4,2%^/%dateformat:~0,4%
 if exist "..\other\build for release.bin" (
 	(
@@ -35,12 +29,16 @@ if exist "..\other\build for release.bin" (
 	)
 	del tmp.vbs
 ) else (
-	Set daytotal=122
+	Set daytotal=000
 )
+title XBMC4Gamers Builder - %version%.%daytotal%
 cls
-Echo: & Echo: & Echo: & Echo   Please wait...
-
+Echo: & Echo: & Echo: & Echo   Preping files & Echo   Please wait...
 (
+Attrib /s -r -h -s "desktop.ini"
+Attrib /s -r -h -s "Thumbs.db"
+Del /Q /S "desktop.ini"
+Del /Q /S "Thumbs.db"
 rd /q /s "%foldername%\plugins"
 rd /q /s "%foldername%\sounds"
 rd /q /s "%foldername%\userdata"
@@ -65,26 +63,23 @@ move "%foldername%\language" "%foldername%\system\"
 move "%foldername%\media" "%foldername%\system\"
 move "%foldername%\screenshots" "%foldername%\system\"
 move "%foldername%\UserData" "%foldername%\system\"
-
 XCopy /s /e /i /h /r /y "Mod Files" "%foldername%"
-copy /y "Changes.txt" "%foldername%"
 if exist "Other\build for release" (
 	Call Other\Tools\repl.bat "XBMC4Gamers 0.0.000" "XBMC4Gamers %version%.%daytotal%" L < "%foldername%\skins\Profile Skin\language\English\strings.po" >"%foldername%\skins\Profile Skin\language\English\strings.tmp"
 	Del "%foldername%\skins\Profile Skin\language\English\strings.po"
 	rename "%foldername%\skins\Profile Skin\language\English\strings.tmp" "strings.po"
-	Call Other\Tools\repl.bat "	" "" L < "%foldername%\changes.txt" >"%foldername%\changes.tmp"
-	copy /b "Other\Tools\Changes\Changes_Header.xml"+"%foldername%\changes.tmp"+"Other\Tools\Changes\Changes_Footer.xml" "%foldername%\skins\Profile Skin\720p\Custom_Changes.xml"
-	del /q "%foldername%\changes.tmp"
+	MD "%foldername%\system\SystemInfo"
+	Call Other\Tools\repl.bat "	" "" L < "changes.txt" >"%foldername%\system\SystemInfo\changes.txt"
 )
 copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\Manage Profiles Skin\language\English\strings.po"
 copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\DVD2Xbox Skin\language\English\strings.po"
 del /Q "%foldername%\Changes.txt"
-copy /y "New XBMC xbe\default.xbe" "%foldername%\default.xbe"
+copy /y "Source\default.xbe" "%foldername%\default.xbe"
 del /Q /S "%foldername%\*.bat"
 del /Q /S "%foldername%\empty"
 ren "%foldername%" "XBMC4Gamers"
-)
+)>nul 2>&1
+
 cls
-Echo:
 Echo: & Echo: & Echo: & Echo   Done...
 timeout /t 3 >NUL

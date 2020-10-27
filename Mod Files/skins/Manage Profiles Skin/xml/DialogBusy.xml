@@ -1,0 +1,54 @@
+<window id="138">
+		<controls>
+				<include>BehindDialogFadeOut</include>
+				<control type="multiimage">
+						<posx>20</posx>
+						<posy>20</posy>
+						<width>64</width>
+						<height>64</height>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+						<imagepath>loading</imagepath>
+						<timeperimage>24</timeperimage>
+						<fadetime>5</fadetime>
+						<loop>yes</loop>
+						<animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+				</control>
+				<control type="label">
+						<posx>19</posx>
+						<posy>80</posy>
+						<width>64</width>
+						<height>30</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_14</font>
+						<label>Loading</label>
+						<textcolor>FFFFFFFF</textcolor>
+						<animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+				</control>
+				<!-- <control type="image"> -->
+				<!-- <posx>580</posx> -->
+				<!-- <posy>300</posy> -->
+				<!-- <width>120</width> -->
+				<!-- <height>120</height> -->
+				<!-- <texture>spinner.png</texture> -->
+				<!-- <aspectratio>stretch</aspectratio> -->
+				<!-- <animation effect="rotate" start="0" end="-360" center="auto" time="3000" loop="true" condition="true">Conditional</animation> -->
+				<!-- <animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation> -->
+				<!-- <animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation> -->
+				<!-- </control> -->
+				<!-- <control type="image"> -->
+				<!-- <posx>605</posx> -->
+				<!-- <posy>325</posy> -->
+				<!-- <width>70</width> -->
+				<!-- <height>70</height> -->
+				<!-- <texture>spinner.png</texture> -->
+				<!-- <aspectratio>stretch</aspectratio> -->
+				<!-- <animation effect="rotate" start="0" end="360" center="auto" time="3000" loop="true" condition="true">Conditional</animation> -->
+				<!-- <animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation> -->
+				<!-- <animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation> -->
+				<!-- </control> -->
+		</controls>
+</window>

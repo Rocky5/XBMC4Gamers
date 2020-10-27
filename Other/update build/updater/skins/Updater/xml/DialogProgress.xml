@@ -1,0 +1,130 @@
+<window id="101">
+	<defaultcontrol>10</defaultcontrol>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<posx>0</posx>
+			<posy>0</posy>
+			<width>1280</width>
+			<height>720</height>
+			<texture>background.jpg</texture>
+		</control>
+		<control type="progress">
+			<description>Progressbar</description>
+			<posx>133</posx>
+			<posy>538</posy>
+			<width>1014</width>
+			<height>16</height>
+			<info>System.Progressbar</info>
+			<texturebg>-</texturebg>
+			<midtexture>progressfront.png</midtexture>
+			<lefttexture>-</lefttexture>
+			<righttexture>-</righttexture>
+			<overlaytexture>-</overlaytexture>
+			<aspectratio>stretch</aspectratio>
+		</control>
+		<!-- Not complete images -->
+		<control type="image">
+			<description>not complete image</description>
+			<posx>133</posx>
+			<posy>273</posy>
+			<width>44</width>
+			<height>44</height>
+			<texture>complete.png</texture>
+		</control>
+		<control type="image">
+			<description>not complete image</description>
+			<posx>133</posx>
+			<posy>334</posy>
+			<width>44</width>
+			<height>44</height>
+			<texture>notcomplete.png</texture>
+		</control>
+		<control type="image">
+			<description>complete image</description>
+			<posx>133</posx>
+			<posy>334</posy>
+			<width>44</width>
+			<height>44</height>
+			<texture>complete.png</texture>
+			<visible>Skin.HasSetting(DashboardUpdated)</visible>
+		</control>
+		<control type="label">
+			<description>label</description>
+			<posx>133</posx>
+			<posy>518</posy>
+			<width>650</width>
+			<height>30</height>
+			<align>left</align>
+			<font>font14</font>
+			<label>Your console will reload XBMC4Gamers when complete.</label>
+		</control>
+		<!-- Progress labels -->
+		<control type="label">
+			<description>progress label</description>
+			<posx>133</posx>
+			<posy>333</posy>
+			<width>44</width>
+			<height>44</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<font>font12</font>
+			<label>$INFO[Skin.String(DashboardUpdatedSmall)]%</label>
+			<animation effect="fade" start="50" end="50" time="0" condition="true">Conditional</animation>
+			<visible>!Skin.HasSetting(DashboardUpdated)</visible>
+		</control>
+		<!-- bottom right -->
+		<control type="label">
+			<description>progress label</description>
+			<posx>133r</posx>
+			<posy>518</posy>
+			<width>150</width>
+			<height>30</height>
+			<align>right</align>
+			<font>font14</font>
+			<label>$INFO[System.Progressbar,,%]</label>
+		</control>
+		<!-- Main labels -->
+		<control type="label" id="1">
+			<description>heading label</description>
+			<posx>133</posx>
+			<posy>175</posy>
+			<width>0</width>
+			<height>0</height>
+			<font>font50</font>
+		</control>
+		<control type="label" id="2">
+			<description>dialog line 2</description>
+			<posx>186</posx>
+			<posy>283</posy>
+			<width>620</width>
+			<height>30</height>
+			<align>left</align>
+			<label>-</label>
+			<font>font18</font>
+			<haspath>yes</haspath>
+		</control>
+		<control type="label" id="3">
+			<description>dialog line 3</description>
+			<posx>186</posx>
+			<posy>344</posy>
+			<width>620</width>
+			<height>30</height>
+			<align>left</align>
+			<label>-</label>
+			<font>font18</font>
+			<haspath>yes</haspath>
+		</control>
+		<control type="label" id="4">
+			<description>dialog line 4</description>
+			<posx>186</posx>
+			<posy>404</posy>
+			<width>620</width>
+			<height>30</height>
+			<align>left</align>
+			<label>-</label>
+			<font>font18</font>
+			<haspath>yes</haspath>
+		</control>
+	</controls>
+</window>

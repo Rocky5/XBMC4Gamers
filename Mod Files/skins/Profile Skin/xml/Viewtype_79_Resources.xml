@@ -1,0 +1,270 @@
+<includes>
+		<include name="ResourcesView">
+				<control type="group">
+						<visible>Control.IsVisible(79) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<control type="group">
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(79).OnScrollNext">Conditional</animation>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(79).OnScrollPrevious">Conditional</animation>
+								<!-- Poster.jpg -->
+								<control type="group">
+										<posx>30</posx>
+										<posy>120</posy>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>214</width>
+												<height>290</height>
+												<aspectratio>stretch</aspectratio>
+												<texture border="5">thumbnf.png</texture>
+										</control>
+										<control type="image">
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>205</width>
+												<height>280</height>
+												<aspectratio>stretch</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true" fallback="no_poster.jpg">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+												<bordertexture border="5">-</bordertexture>
+												<bordersize>1</bordersize>
+										</control>
+								</control>
+								<!-- icon.png -->
+								<control type="group">
+										<posx>30</posx>
+										<posy>420</posy>
+										<control type="image">
+												<posx>2</posx>
+												<posy>0</posy>
+												<width>214</width>
+												<height>214</height>
+												<aspectratio>stretch</aspectratio>
+												<texture border="5">button-focus.png</texture>
+										</control>
+										<control type="image">
+												<posx>7</posx>
+												<posy>5</posy>
+												<width>204</width>
+												<height>204</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+										</control>
+										<control type="image">
+												<posx>7</posx>
+												<posy>5</posy>
+												<width>204</width>
+												<height>204</height>
+												<aspectratio>keep</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true" fallback="no_icon.png">$INFO[listitem.path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<!-- Thumb.jpg -->
+								<control type="group">
+										<posx>270</posx>
+										<posy>120</posy>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio>stretch</aspectratio>
+												<texture border="5">button-focus.png</texture>
+										</control>
+										<control type="image">
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+										</control>
+										<control type="image">
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio>stretch</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true" fallback="no_thumb.jpg">$INFO[listitem.path,,_resources\artwork\thumb.jpg]</texture>
+										</control>
+								</control>
+								<!-- Screenshot.jpg -->
+								<control type="group">
+										<posx>270</posx>
+										<posy>310</posy>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio>stretch</aspectratio>
+												<texture border="5">button-focus.png</texture>
+										</control>
+										<control type="image">
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+										</control>
+										<control type="image">
+												<posx>5</posx>
+												<posy>5</posy>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio>stretch</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true" fallback="no_screenshots.png">$INFO[listitem.path,,_resources\screenshots\screenshot-1.jpg]</texture>
+										</control>
+								</control>
+								<!-- CD.png -->
+								<control type="group">
+										<posx>335</posx>
+										<posy>500</posy>
+										<control type="image">
+												<posx>2</posx>
+												<posy>0</posy>
+												<width>174</width>
+												<height>174</height>
+												<aspectratio>stretch</aspectratio>
+												<texture border="5">button-focus.png</texture>
+										</control>
+										<control type="image">
+												<posx>7</posx>
+												<posy>5</posy>
+												<width>164</width>
+												<height>164</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+										</control>
+										<control type="image">
+												<posx>7</posx>
+												<posy>5</posy>
+												<width>164</width>
+												<height>164</height>
+												<aspectratio>stretch</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true" fallback="no_cd.png">$INFO[listitem.path,,_resources\artwork\cd.png]</texture>
+										</control>
+								</control>
+								<!-- banner.png -->
+								<control type="group">
+										<posx>670r</posx>
+										<posy>500</posy>
+										<control type="image">
+												<posx>2</posx>
+												<posy>0</posy>
+												<width>580</width>
+												<height>130</height>
+												<aspectratio>stretch</aspectratio>
+												<texture border="5">button-focus.png</texture>
+										</control>
+										<control type="image">
+												<posx>7</posx>
+												<posy>5</posy>
+												<width>570</width>
+												<height>120</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+										</control>
+										<control type="image">
+												<posx>7</posx>
+												<posy>5</posy>
+												<width>570</width>
+												<height>120</height>
+												<aspectratio>stretch</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true" fallback="no_banner.png">$INFO[listitem.path,,_resources\artwork\banner.png]</texture>
+										</control>
+								</control>
+								<!-- Fanart.jpg -->
+								<control type="group">
+										<posx>670r</posx>
+										<posy>130</posy>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>640</width>
+												<height>360</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>black-back.png</texture>
+												<bordersize>5</bordersize>
+										</control>
+										<control type="largeimage">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>640</width>
+												<height>360</height>
+												<aspectratio>scale</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">no_fanart.jpg</texture>
+												<bordersize>5</bordersize>
+										</control>
+										<control type="largeimage">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>640</width>
+												<height>360</height>
+												<aspectratio>scale</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<bordersize>5</bordersize>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>640</width>
+												<height>360</height>
+												<aspectratio>stretch</aspectratio>
+												<texture border="5">poster-border.png</texture>
+										</control>
+								</control>
+						</control>
+						<control type="fixedlist" id="79">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>460</height>
+								<onleft>79</onleft>
+								<onright>79</onright>
+								<onup>9000</onup>
+								<ondown>-</ondown>
+								<viewtype label="view79">list</viewtype>
+								<pagecontrol>-</pagecontrol>
+								<scrolltime>0</scrolltime>
+								<focusposition>1</focusposition>
+								<movement>1</movement>
+								<orientation>horizontal</orientation>
+								<preloaditems>3</preloaditems>
+								<itemlayout />
+								<focusedlayout />
+						</control>
+						<control type="label">
+								<posx>30</posx>
+								<posy>70</posy>
+								<width>1220</width>
+								<height>36</height>
+								<font>size_35</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<scroll>false</scroll>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+						</control>
+						<control type="label">
+								<posx>670r</posx>
+								<posy>80r</posy>
+								<width>640</width>
+								<height>36</height>
+								<font>size_15</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<scroll>false</scroll>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>This view is for creating [B]_resources[/B] files for your games.[CR]This is not meant to be used as a normal view.</label>
+						</control>
+				</control>
+		</include>
+</includes>

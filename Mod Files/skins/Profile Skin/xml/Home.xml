@@ -1,0 +1,27 @@
+<window id="0">
+		<defaultcontrol always="true">1</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<controls>
+				<control type="image">
+						<include>1280x720</include>
+						<texture fallback="background.jpg">$INFO[skin.string(background_color)]</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>background diffuse.png</texture>
+						<colordiffuse>$VAR[var-bgcustcolour]</colordiffuse>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>$INFO[skin.string(background_image)]</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="button" id="1">
+						<posx>-500</posx>
+						<onfocus>ActivateWindow(Programs)</onfocus>
+						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
+				</control>
+		</controls>
+</window>

@@ -1,0 +1,355 @@
+<window type="dialog" id="1112">
+		<defaultcontrol always="true">9002</defaultcontrol>
+		<include>DialogEffectZoomFast</include>
+		<controls>
+				<control type="image">
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>black-back.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<include>dialogeffect</include>
+				</control>
+				<control type="image">
+						<posx>270</posx>
+						<posy>80</posy>
+						<width>740</width>
+						<height>560</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>windows\options\main.png</texture>
+				</control>
+				<control type="image">
+						<posx>286</posx>
+						<posy>99</posy>
+						<width>709</width>
+						<height>61</height>
+						<aspectratio>stretch</aspectratio>
+						<texture>windows\options\header.png</texture>
+				</control>
+				<control type="label">
+						<posx>313</posx>
+						<posy>107</posy>
+						<width>731</width>
+						<height>28</height>
+						<font>size_28</font>
+						<scroll>true</scroll>
+						<align>left</align>
+						<textcolor>windows_header_label</textcolor>
+						<label>$LOCALIZE[33063]</label>
+				</control>
+				<control type="label">
+						<posx>10</posx>
+						<posy>35r</posy>
+						<width>1280</width>
+						<height>36</height>
+						<font>size_15</font>
+						<animation effect="fade" end="70" condition="true">Conditional</animation>
+						<textcolor>windows_context_label</textcolor>
+						<align>left</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31000]</label>
+				</control>
+				<control type="grouplist">
+						<description>Control Info</description>
+						<posx>286</posx>
+						<posy>568</posy>
+						<width>708</width>
+						<height>80</height>
+						<itemgap>10</itemgap>
+						<orientation>Horizontal</orientation>
+						<align>center</align>
+						<!-- A Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>32</width>
+								<height>32</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>pad_buttons\a_button.png</texture>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="80" max="147">auto</width>
+								<height>20</height>
+								<font>size_19</font>
+								<align>left</align>
+								<textcolor>windows_context_label</textcolor>
+								<label>$LOCALIZE[424]</label>
+								<include>Context_Buttons_Text_Align</include>
+						</control>
+						<!-- B Button -->
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>32</width>
+								<height>32</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>pad_buttons\B_button.png</texture>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width min="80" max="147">auto</width>
+								<height>20</height>
+								<font>size_19</font>
+								<align>left</align>
+								<textcolor>windows_context_label</textcolor>
+								<label>Back</label>
+								<include>Context_Buttons_Text_Align</include>
+						</control>
+				</control>
+				<control type="button" id="9002">
+						<posx>-500</posx>
+						<onfocus>Dialog.Close(1112,true)</onfocus>
+						<onfocus>ActivateWindow(Favourites)</onfocus>
+						<visible>!Skin.HasSetting(editmode)</visible>
+				</control>
+				<control type="grouplist" id="9002">
+						<description>button area</description>
+						<posx>370</posx>
+						<posy>195</posy>
+						<width>200</width>
+						<height>340</height>
+						<itemgap>10</itemgap>
+						<onleft>-</onleft>
+						<onright>-</onright>
+						<onup>9002</onup>
+						<ondown>9002</ondown>
+						<animation effect="slide" start="0,0" end="0,20" time="0" condition="!Skin.HasSetting(EmuButton)">Conditional</animation>
+						<control type="button" id="1">
+								<include>ButtonSettingsOptionsValues</include>
+								<label>[UPPERCASE]$INFO[Skin.String(Emulator_Name)][/UPPERCASE]</label>
+								<onclick>RunXBE($INFO[Skin.String(Emulator_Path)])</onclick>
+								<visible>Skin.HasSetting(EmuButton)</visible>
+						</control>
+						<control type="button." id="1">
+								<include>ButtonSettingsOptionsValues</include>
+								<label>[UPPERCASE]$INFO[Skin.String(Emulator_Name)][/UPPERCASE]</label>
+								<onclick>Dialog.Close(1112,true)</onclick>
+								<onclick>XBMC.RunXBE($INFO[Skin.String(Emulator_Path)])</onclick>
+								<visible>Skin.HasSetting(EmuButton)</visible>
+						</control>
+						<control type="button" id="2">
+								<include>ButtonSettingsOptionsValues</include>
+								<label>[UPPERCASE]$LOCALIZE[1036][/UPPERCASE]</label>
+								<onclick>Dialog.Close(1112,true)</onclick>
+								<onclick>ActivateWindow(Favourites)</onclick>
+								<visible>Window.IsActive(Programs)</visible>
+						</control>
+						<control type="button" id="3">
+								<include>ButtonSettingsOptionsValues</include>
+								<label>[UPPERCASE]$LOCALIZE[20315][/UPPERCASE]</label>
+								<onclick>Dialog.Close(1112,true)</onclick>
+								<onclick>ActivateWindow(GameSaves)</onclick>
+								<visible>Window.IsActive(Programs)</visible>
+						</control>
+						<control type="button" id="4">
+								<include>ButtonSettingsOptionsValues</include>
+								<label>[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</label>
+								<onclick>Dialog.Close(1112,true)</onclick>
+								<onclick>ActivateWindow(Settings)</onclick>
+						</control>
+						<control type="button" id="5">
+								<include>ButtonSettingsOptionsValues</include>
+								<label>[UPPERCASE]$LOCALIZE[13313][/UPPERCASE]</label>
+								<onclick>RunXBE(Special://root/default.xbe)</onclick>
+						</control>
+						<control type="button" id="6">
+								<include>ButtonSettingsOptionsValues</include>
+								<label>[UPPERCASE]$LOCALIZE[13013][/UPPERCASE]</label>
+								<onclick>Reboot</onclick>
+						</control>
+						<control type="button" id="7">
+								<include>ButtonSettingsOptionsValues</include>
+								<label>[UPPERCASE]$LOCALIZE[13005][/UPPERCASE]</label>
+								<onclick>Shutdown</onclick>
+						</control>
+				</control>
+				<control type="group">
+						<posx>650</posx>
+						<posy>190</posy>
+						<control type="group">
+								<posy>0</posy>
+								<control type="label">
+										<description>IP Address label</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_24</font>
+										<label>[UPPERCASE]$LOCALIZE[705][/UPPERCASE]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>IP Address</description>
+										<posx>10</posx>
+										<posy>25</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$INFO[Network.IPAddress]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>Internet state</description>
+										<posx>10</posx>
+										<posy>45</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$INFO[System.InternetState]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+						</control>
+						<control type="group">
+								<posy>75</posy>
+								<control type="label">
+										<description>Current Profile</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_24</font>
+										<label>[UPPERCASE]$LOCALIZE[20093][/UPPERCASE]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>Profile</description>
+										<posx>10</posx>
+										<posy>25</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$INFO[System.ProfileName]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+						</control>
+						<control type="group">
+								<posy>130</posy>
+								<control type="label">
+										<description>Drive Space</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_24</font>
+										<label>[UPPERCASE]$LOCALIZE[155] $LOCALIZE[20182][/UPPERCASE]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>Space</description>
+										<posx>10</posx>
+										<posy>25</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$INFO[System.Freespace(C)]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>Space</description>
+										<posx>10</posx>
+										<posy>45</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$INFO[System.Freespace(E)]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>Space</description>
+										<posx>10</posx>
+										<posy>65</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$INFO[System.Freespace(F)]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>Space</description>
+										<posx>10</posx>
+										<posy>85</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$INFO[System.Freespace(G)]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+						</control>
+						<control type="group">
+								<posy>245</posy>
+								<control type="label">
+										<description>System Info</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_24</font>
+										<label>[UPPERCASE]$LOCALIZE[10007][/UPPERCASE]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>RAM</description>
+										<posx>10</posx>
+										<posy>25</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$LOCALIZE[158]: $INFO[System.FreeMemory]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>CPU Temp</description>
+										<posx>10</posx>
+										<posy>45</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$LOCALIZE[22011] $INFO[System.CPUTemperature]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+								<control type="label">
+										<description>CPU Temp</description>
+										<posx>10</posx>
+										<posy>65</posy>
+										<width>380</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<font>size_19</font>
+										<label>$LOCALIZE[22010] $INFO[System.GPUTemperature]</label>
+										<textcolor>windows_options_no_focus_labels</textcolor>
+								</control>
+						</control>
+				</control>
+		</controls>
+</window>

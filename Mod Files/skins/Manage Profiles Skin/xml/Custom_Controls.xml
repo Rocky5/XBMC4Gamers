@@ -1,0 +1,249 @@
+<!-- Not used as I moved this to the login screen, but kept the xml since I may use it at another date -->
+<window id="1117">
+		<defaultcontrol always="true">1</defaultcontrol>
+		<controls>
+				<control type="image">
+						<include>1280x720</include>
+						<texture>background.jpg</texture>
+						<aspectratio>stretch</aspectratio>
+				</control>
+				<control type="image">
+						<posx>387</posx>
+						<posy>165</posy>
+						<width>505</width>
+						<height>390</height>
+						<texture>controlpad.png</texture>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>A Button</description>
+						<posx>900</posx>
+						<posy>313</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32000]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>B Button</description>
+						<posx>900</posx>
+						<posy>288</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32001]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>X Button</description>
+						<posx>900</posx>
+						<posy>260</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32061]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>Y Button</description>
+						<posx>900</posx>
+						<posy>235</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32006]</label>
+						<include>Window_OpenClose_Animation</include>
+						<visible>Skin.HasSetting(EditMode)</visible>
+				</control>
+				<control type="label">
+						<description>Y Button</description>
+						<posx>900</posx>
+						<posy>235</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32062]</label>
+						<include>Window_OpenClose_Animation</include>
+						<visible>!Skin.HasSetting(EditMode)</visible>
+				</control>
+				<control type="label">
+						<description>Black Button</description>
+						<posx>900</posx>
+						<posy>377</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32063]</label>
+						<include>Window_OpenClose_Animation</include>
+						<visible>Skin.HasSetting(EditMode)</visible>
+				</control>
+				<control type="label">
+						<description>Black Button</description>
+						<posx>900</posx>
+						<posy>377</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32011]</label>
+						<include>Window_OpenClose_Animation</include>
+						<visible>!Skin.HasSetting(EditMode)</visible>
+				</control>
+				<control type="label">
+						<description>White Button</description>
+						<posx>900</posx>
+						<posy>403</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32009]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>Back Button</description>
+						<posx>377</posx>
+						<posy>354</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32064]</label>
+						<include>Window_OpenClose_Animation</include>
+						<visible>Skin.HasSetting(EditMode)</visible>
+				</control>
+				<control type="label">
+						<description>Back Button</description>
+						<posx>377</posx>
+						<posy>354</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32062]</label>
+						<include>Window_OpenClose_Animation</include>
+						<visible>!Skin.HasSetting(EditMode)</visible>
+				</control>
+				<control type="label">
+						<description>Start Button</description>
+						<posx>377</posx>
+						<posy>382</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>right</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32020]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>Left Stick Button</description>
+						<posx>217</posx>
+						<posy>187</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32065]</label>
+						<include>Window_OpenClose_Animation</include>
+						<visible>Skin.HasSetting(EditMode)</visible>
+				</control>
+				<control type="label">
+						<description>Left Stick Button</description>
+						<posx>217</posx>
+						<posy>187</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32062]</label>
+						<include>Window_OpenClose_Animation</include>
+						<visible>!Skin.HasSetting(EditMode)</visible>
+				</control>
+				<control type="label">
+						<description>Right Stick Button</description>
+						<posx>499</posx>
+						<posy>560</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32066]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>Left Trigger</description>
+						<posx>332</posx>
+						<posy>130</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32067]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>Right Trigger</description>
+						<posx>552</posx>
+						<posy>130</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32068]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<control type="label">
+						<description>Dpad</description>
+						<posx>376</posx>
+						<posy>550</posy>
+						<width>400</width>
+						<height>35</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_17</font>
+						<textcolor>white</textcolor>
+						<label>$LOCALIZE[32069]</label>
+						<include>Window_OpenClose_Animation</include>
+				</control>
+				<include>WindowFooter</include>
+		</controls>
+</window>

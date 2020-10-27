@@ -1,0 +1,715 @@
+<includes>
+		<include name="IconAltView">
+				<control type="group">
+						<visible>Control.IsVisible(65) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<!-- On previous -->
+						<control type="group" id="6501">
+								<visible>Container(65).OnPrevious</visible>
+								<animation effect="slide" end="0,0" reversible="false" time="250">Hidden</animation>
+								<posx>60</posx>
+								<control type="group">
+										<visible>Container(65).OnPrevious</visible>
+										<animation reversible="false" effect="fade" start="0" end="0" time="0">Visible</animation>
+										<animation type="Hidden" reversible="false">
+												<effect type="fade" start="1" end="100" time="250" />
+												<effect type="slide" start="0,0" end="120,0" time="250" />
+										</animation>
+										<posx>0</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(-3).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnPrevious</visible>
+										<animation reversible="false" effect="slide" start="0,0" end="120,0" time="250">hidden</animation>
+										<posx>120</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(-2).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnPrevious</visible>
+										<animation reversible="false" effect="slide" start="0,0" end="120,0" time="250">hidden</animation>
+										<posx>240</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(-1).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnPrevious</visible>
+										<animation reversible="false" effect="zoom" start="360,340,141,249" end="486,280,188,327" time="250">hidden</animation>
+										<posx>360</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(0).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnPrevious</visible>
+										<animation reversible="false" effect="zoom" start="486,280,188,327" end="660,340,141,249" time="250">hidden</animation>
+										<posx>486</posx>
+										<posy>280</posy>
+										<width>188</width>
+										<height>327</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>188</width>
+												<height>327</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>188</width>
+												<height>327</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(1).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnPrevious</visible>
+										<animation reversible="false" effect="slide" start="0,0" end="120,0" time="250">hidden</animation>
+										<posx>660</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(2).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnPrevious</visible>
+										<animation reversible="false" effect="slide" start="0,0" end="120,0" time="250">hidden</animation>
+										<posx>780</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(3).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnPrevious</visible>
+										<animation type="Hidden" reversible="false">
+												<effect type="fade" start="100" end="0" time="250" />
+												<effect type="slide" start="0,0" end="120,0" time="250" />
+										</animation>
+										<posx>900</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(4).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+						</control>
+						<!-- On Next -->
+						<control type="group" id="6502">
+								<visible>Container(65).OnNext</visible>
+								<animation effect="slide" end="0,0" reversible="false" time="250">Hidden</animation>
+								<posx>60</posx>
+								<control type="group">
+										<visible>Container(65).OnNext</visible>
+										<animation type="Hidden" reversible="false">
+												<effect type="fade" start="100" end="0" time="250" />
+												<effect type="slide" start="0,0" end="-120,0" time="250" />
+										</animation>
+										<posx>120</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(-4).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnNext</visible>
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>240</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(-3).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnNext</visible>
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>360</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(-2).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnNext</visible>
+										<animation reversible="false" effect="zoom" start="486,280,188,327" end="360,340,141,249" time="250">hidden</animation>
+										<posx>486</posx>
+										<posy>280</posy>
+										<width>188</width>
+										<height>327</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>188</width>
+												<height>327</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>188</width>
+												<height>327</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(-1).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnNext</visible>
+										<animation reversible="false" effect="zoom" start="660,340,141,249" end="486,280,188,327" time="250">hidden</animation>
+										<posx>660</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(0).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnNext</visible>
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>780</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(1).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnNext</visible>
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>900</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(2).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<visible>Container(65).OnNext</visible>
+										<animation reversible="false" effect="fade" start="0" end="0" time="0">Visible</animation>
+										<animation type="Hidden" reversible="false">
+												<effect type="fade" start="0" end="100" time="250" />
+												<effect type="slide" start="0,0" end="-120,0" time="250" />
+										</animation>
+										<posx>1020</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="true">$INFO[Container(65).ListItem(3).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+						</control>
+						<!-- Static -->
+						<control type="group" id="6500">
+								<posx>60</posx>
+								<visible>!Control.IsVisible(6501) + !Control.IsVisible(6502)</visible>
+								<control type="group">
+										<posx>-500</posx>
+										<posy>0</posy>
+										<width>0</width>
+										<height>0</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>0</width>
+												<height>0</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(-4).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>120</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(-3).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>240</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(-2).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>360</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(-1).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>486</posx>
+										<posy>280</posy>
+										<width>188</width>
+										<height>327</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>188</width>
+												<height>327</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>188</width>
+												<height>327</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(0).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>660</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(1).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>780</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(2).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<animation reversible="false" effect="slide" start="0,0" end="-120,0" time="250">hidden</animation>
+										<posx>900</posx>
+										<posy>340</posy>
+										<width>141</width>
+										<height>249</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture>no_icon.png</texture>
+										</control>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>141</width>
+												<height>249</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(3).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+								<control type="group">
+										<posx>-500</posx>
+										<posy>0</posy>
+										<width>0</width>
+										<height>0</height>
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>0</width>
+												<height>0</height>
+												<aspectratio align="" aligny="bottom">stretch</aspectratio>
+												<texture background="false">$INFO[Container(65).ListItem(4).path,,_resources\artwork\icon.png]</texture>
+										</control>
+								</control>
+						</control>
+						<control type="fixedlist" id="65">
+								<posx>-295</posx>
+								<posy>320</posy>
+								<width>1700</width>
+								<height>471</height>
+								<onleft>65</onleft>
+								<onright>65</onright>
+								<onup>9000</onup>
+								<ondown>95</ondown>
+								<viewtype label="view65">list</viewtype>
+								<pagecontrol>95</pagecontrol>
+								<scrolltime>0</scrolltime>
+								<focusposition>1</focusposition>
+								<movement>0</movement>
+								<orientation>horizontal</orientation>
+								<preloaditems>3</preloaditems>
+								<itemlayout height="290" width="44">
+								</itemlayout>
+								<focusedlayout height="290" width="44">
+								</focusedlayout>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>605</posy>
+								<width>1280</width>
+								<height>36</height>
+								<font>size_40</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<scroll>true</scroll>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+								<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(65).ListItem.IsFolder">Conditional</animation>
+								<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(65).ListItem.IsFolder">Conditional</animation>
+						</control>
+						<control type="grouplist">
+								<posx>0</posx>
+								<posy>650</posy>
+								<width>1280</width>
+								<itemgap>5</itemgap>
+								<align>center</align>
+								<orientation>horizontal</orientation>
+								<visible>!Control.HasFocus(92) + !ListItem.IsFolder</visible>
+								<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(65).ListItem.IsFolder">Conditional</animation>
+								<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(65).ListItem.IsFolder">Conditional</animation>
+								<control type="label">
+										<width min="0" max="640">auto</width>
+										<height>30</height>
+										<font>size_15</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<scroll>true</scroll>
+										<aligny>center</aligny>
+										<label>$LOCALIZE[31186]</label>
+										<visible>StringCompare(ListItem.ProgramCount,0)</visible>
+								</control>
+								<control type="label">
+										<width min="0" max="640">auto</width>
+										<height>30</height>
+										<font>size_15</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<scroll>true</scroll>
+										<aligny>center</aligny>
+										<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+										<visible>StringCompare(ListItem.ProgramCount,1)</visible>
+								</control>
+								<control type="label">
+										<width min="0" max="640">auto</width>
+										<height>30</height>
+										<font>size_15</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<scroll>true</scroll>
+										<aligny>center</aligny>
+										<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+										<visible>IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+								</control>
+								<control type="label">
+										<width min="0" max="640">auto</width>
+										<height>30</height>
+										<font>size_15</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<scroll>true</scroll>
+										<aligny>center</aligny>
+										<label>- Has Trainer</label>
+										<visible>!IsEmpty(ListItem.overlay)</visible>
+								</control>
+						</control>
+						<control type="scrollbar" id="95">
+								<posx>150</posx>
+								<posy>671</posy>
+								<width>980</width>
+								<height>15</height>
+								<texturesliderbackground border="2,2,2,2">black-back.png</texturesliderbackground>
+								<texturesliderbar border="16,2,16,2">scrollbar_bar-vertical.png</texturesliderbar>
+								<texturesliderbarfocus border="16,2,16,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
+								<textureslidernib>scrollbar_nib-vertical.png</textureslidernib>
+								<textureslidernibfocus>scrollbar_nib-vertical.png</textureslidernibfocus>
+								<onup>65</onup>
+								<ondown>-</ondown>
+								<showonepage>false</showonepage>
+								<orientation>horizontal</orientation>
+								<visible allowhiddenfocus="true">Control.HasFocus(95)</visible>
+								<animation reversible="false" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
+								<animation reversible="false" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
+						</control>
+				</control>
+		</include>
+</includes>

@@ -1,0 +1,705 @@
+<window id="1111">
+		<defaultcontrol always="true">9000</defaultcontrol>
+		<onload condition="StringCompare(Skin.String(Emulator_Name),)">Skin.SetString(Emulator_Name,Custom Button)</onload>
+		<controls>
+				<include>CommonBackground</include>
+				<include>WindowHeader</include>
+				<control type="button" id="9002">
+						<description>Hidden Button</description>
+						<posx>-1000</posx>
+						<onclick>-</onclick>
+				</control>
+				<control type="group">
+						<include>DialogEffectZoomFast</include>
+						<control type="image">
+								<posx>55</posx>
+								<posy>55</posy>
+								<width>1170</width>
+								<height>610</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\settings_categories\main.png</texture>
+						</control>
+						<control type="image">
+								<posx>75</posx>
+								<posy>75</posy>
+								<width>330</width>
+								<height>570</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\settings_categories\main_overlay.png</texture>
+						</control>
+						<control type="grouplist">
+								<description>Control Info</description>
+								<posx>415</posx>
+								<posy>580</posy>
+								<width>775</width>
+								<height>80</height>
+								<itemgap>10</itemgap>
+								<orientation>Horizontal</orientation>
+								<align>center</align>
+								<!-- A Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\a_button.png</texture>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="80" max="147">auto</width>
+										<height>20</height>
+										<font>size_19</font>
+										<align>left</align>
+										<textcolor>windows_context_label</textcolor>
+										<label>$LOCALIZE[424]</label>
+										<include>Context_Buttons_Text_Align</include>
+								</control>
+								<!-- B Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\b_button.png</texture>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="80" max="147">auto</width>
+										<height>20</height>
+										<font>size_19</font>
+										<align>left</align>
+										<textcolor>windows_context_label</textcolor>
+										<label>$LOCALIZE[31021]</label>
+										<include>Context_Buttons_Text_Align</include>
+								</control>
+						</control>
+						<control type="list" id="9000">
+								<description>button area</description>
+								<posx>75</posx>
+								<posy>105</posy>
+								<width>330</width>
+								<height>520</height>
+								<onleft>-</onleft>
+								<onright>9001</onright>
+								<onup>9000</onup>
+								<ondown>9000</ondown>
+								<itemlayout height="64" width="330">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>330</width>
+												<height>60</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>windows\settings_categories\button_no_focus.png</texture>
+										</control>
+										<!-- Item Name -->
+										<control type="label">
+												<posx>0</posx>
+												<posy>0</posy>
+												<height>60</height>
+												<width>400</width>
+												<textoffsetx>44</textoffsetx>
+												<textoffsety>0</textoffsety>
+												<font>size_27</font>
+												<align>left</align>
+												<aligny>center</aligny>
+												<textcolor>windows_settings_category_left_label_no_focus</textcolor>
+												<label>$INFO[ListItem.Label]</label>
+												<scroll>false</scroll>
+										</control>
+								</itemlayout>
+								<focusedlayout height="64" width="330">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>330</width>
+												<height>60</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>windows\settings_categories\button_focus.png</texture>
+										</control>
+										<!-- Item Name -->
+										<control type="label">
+												<posx>0</posx>
+												<posy>0</posy>
+												<height>60</height>
+												<width>400</width>
+												<textoffsetx>44</textoffsetx>
+												<textoffsety>0</textoffsety>
+												<font>size_27</font>
+												<align>left</align>
+												<aligny>center</aligny>
+												<textcolor>windows_settings_category_left_label_focus</textcolor>
+												<label>$INFO[ListItem.Label]</label>
+												<scroll>false</scroll>
+										</control>
+								</focusedlayout>
+								<content>
+										<item id="1">
+												<label>$LOCALIZE[31022]</label>
+												<onclick>-</onclick>
+										</item>
+										<item id="2">
+												<label>$LOCALIZE[31023]</label>
+												<onclick>-</onclick>
+										</item>
+										<item id="3">
+												<label>$LOCALIZE[31024]</label>
+												<onclick>-</onclick>
+										</item>
+										<item id="4">
+												<label>$LOCALIZE[31025]</label>
+												<onclick>-</onclick>
+										</item>
+										<item id="5">
+												<label>$LOCALIZE[247]</label>
+												<onclick>-</onclick>
+										</item>
+										<item id="6">
+												<label>$LOCALIZE[31027]</label>
+												<onclick>-</onclick>
+										</item>
+										<item id="7">
+												<label>$LOCALIZE[21895]</label>
+												<onclick>-</onclick>
+										</item>
+										<item id="8">
+												<label>$LOCALIZE[31026]</label>
+												<onclick>-</onclick>
+										</item>
+								</content>
+						</control>
+						<!-- General Toggles -->
+						<control type="grouplist" id="9001">
+								<description>control area</description>
+								<posx>415</posx>
+								<posy>105</posy>
+								<width>775</width>
+								<height>445</height>
+								<itemgap>4</itemgap>
+								<onleft>9000</onleft>
+								<onright>-</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<pagecontrol>80</pagecontrol>
+								<visible>Container(9000).HasFocus(1)</visible>
+								<control type="radiobutton" id="12">
+										<description>Time Display</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31035]</label>
+										<onclick>Skin.ToggleSetting(DisplayTime)</onclick>
+										<selected>Skin.HasSetting(DisplayTime)</selected>
+								</control>
+								<control type="radiobutton" id="20">
+										<description>Synopsis alt view toggle</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31036]</label>
+										<onclick>Skin.ToggleSetting(Alt_Synopsis_View)</onclick>
+										<selected>Skin.HasSetting(Alt_Synopsis_View)</selected>
+								</control>
+								<control type="radiobutton" id="21">
+										<description>Launcher toggle</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31037]</label>
+										<onclick>Skin.ToggleSetting(EmuButton)</onclick>
+										<selected>Skin.HasSetting(EmuButton)</selected>
+								</control>
+								<control type="button" id="22">
+										<description>Launcher Label</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31038]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(Emulator_Name)][/COLOR]</label2>
+										<onclick>Skin.SetString(Emulator_Name,)</onclick>
+										<onclick>Skin.SetString(Emulator_Name)</onclick>
+										<visible>Skin.HasSetting(EmuButton)</visible>
+								</control>
+								<control type="button" id="23">
+										<description>Launcher Path</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31039]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(Emulator_Path)][/COLOR]</label2>
+										<onclick>Skin.SetFile(Emulator_Path,,)</onclick>
+										<visible>Skin.HasSetting(EmuButton)</visible>
+								</control>
+								<control type="radiobutton" id="24">
+										<description>XBMC4Gamers Logo Colour Toggle</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31040]</label>
+										<onclick>Skin.ToggleSetting(EnabledXBMC4GamersLogoColour)</onclick>
+										<selected>Skin.HasSetting(EnabledXBMC4GamersLogoColour)</selected>
+								</control>
+								<control type="button" id="25">
+										<description>Colour Type</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31041]</label>
+										<label2>[COLOR=$VAR[var-xbmc4gamerslabelcolour]]$INFO[Skin.String(XBMC4GamersLogoColour)][/COLOR]</label2>
+										<onclick>Skin.SetString(XBMC4GamersLogoColour)</onclick>
+										<visible>Skin.HasSetting(EnabledXBMC4GamersLogoColour)</visible>
+								</control>
+								<control type="radiobutton." id="26">
+										<description>Free Button</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31042] change label in language file</label>
+										<onclick>Skin.ToggleSetting()</onclick>
+										<selected>Skin.HasSetting()</selected>
+								</control>
+								<control type="radiobutton" id="30">
+										<description>Hide Played Overlay</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31043]</label>
+										<onclick>Skin.ToggleSetting(HidePlayedIndicator)</onclick>
+										<selected>Skin.HasSetting(HidePlayedIndicator)</selected>
+								</control>
+								<control type="radiobutton" id="31">
+										<description>Hide some context buttons toggle</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31044]</label>
+										<onclick>Skin.ToggleSetting(HideContextButtons)</onclick>
+										<selected>Skin.HasSetting(HideContextButtons)</selected>
+								</control>
+								<control type="radiobutton" id="32">
+										<description>Hide Scroll Label</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31047]</label>
+										<onclick>Skin.ToggleSetting(HideScrollLabel)</onclick>
+										<selected>Skin.HasSetting(HideScrollLabel)</selected>
+								</control>
+								<control type="radiobutton" id="33">
+										<description>Hide Trainer Overlay</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31045]</label>
+										<onclick>Skin.ToggleSetting(HideTrainerIndicator)</onclick>
+										<selected>Skin.HasSetting(HideTrainerIndicator)</selected>
+								</control>
+						</control>
+						<!-- Home Window -->
+						<control type="grouplist" id="9001">
+								<description>control area</description>
+								<posx>415</posx>
+								<posy>105</posy>
+								<width>775</width>
+								<height>445</height>
+								<itemgap>4</itemgap>
+								<onleft>9000</onleft>
+								<onright>-</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<pagecontrol>80</pagecontrol>
+								<visible>Container(9000).HasFocus(2)</visible>
+								<control type="label" id="510">
+										<description>Home Window Label</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>[COLOR=windows_settings_category_no_focus_labels]$LOCALIZE[31076] [B]$INFO[Skin.String(HomeWindow)][/B][/COLOR]</label>
+								</control>
+								<control type="button" id="511">
+										<description>Home Window Toggle</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31077]</label>
+										<onclick>Skin.SetString(HomeWindow,Applications)</onclick>
+								</control>
+								<control type="button" id="512">
+										<description>Home Window Toggle</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31078]</label>
+										<onclick>Skin.SetString(HomeWindow,Emulators)</onclick>
+								</control>
+								<control type="button" id="513">
+										<description>Home Window Toggle</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31079]</label>
+										<onclick>Skin.SetString(HomeWindow,Games)</onclick>
+								</control>
+								<control type="button" id="514">
+										<description>Home Window Toggle</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31080]</label>
+										<onclick>Skin.SetString(HomeWindow,Homebrew)</onclick>
+								</control>
+								<control type="button" id="515">
+										<description>Home Window Toggle</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[20108]</label>
+										<onclick>Skin.SetString(HomeWindow,Root)</onclick>
+								</control>
+						</control>
+						<!-- Login -->
+						<control type="grouplist" id="9001">
+								<description>control area</description>
+								<posx>415</posx>
+								<posy>105</posy>
+								<width>775</width>
+								<height>445</height>
+								<itemgap>4</itemgap>
+								<onleft>9000</onleft>
+								<onright>-</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<pagecontrol>80</pagecontrol>
+								<visible>Container(9000).HasFocus(3)</visible>
+								<control type="button" id="210">
+										<description>Auto Load Profile toggle</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31061] &gt;</label>
+										<onclick>ActivateWindow(34)</onclick>
+								</control>
+								<control type="radiobutton" id="220">
+										<description>Hide Profile Pic</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31065]</label>
+										<onclick>Skin.ToggleSetting(HideProfilePic)</onclick>
+										<selected>Skin.HasSetting(HideProfilePic)</selected>
+										<visible>!System.HasLoginScreen</visible>
+								</control>
+								<control type="radiobutton" id="221">
+										<description>Adult Profile</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31063]</label>
+										<onclick>Skin.ToggleSetting(AdultProfile)</onclick>
+										<selected>Skin.HasSetting(AdultProfile)</selected>
+								</control>
+								<control type="label" id="222">
+										<description>Advanced Stuff</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>[COLOR=windows_settings_category_no_focus_labels]$LOCALIZE[31064][/COLOR]</label>
+								</control>
+						</control>
+						<!-- Quick Change Menu -->
+						<control type="grouplist" id="9001">
+								<description>control area</description>
+								<posx>415</posx>
+								<posy>105</posy>
+								<width>775</width>
+								<height>445</height>
+								<itemgap>4</itemgap>
+								<onleft>9000</onleft>
+								<onright>-</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<pagecontrol>80</pagecontrol>
+								<visible>Container(9000).HasFocus(4)</visible>
+								<control type="radiobutton" id="110">
+										<description>Custom Quick Change Entry</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31056] 1</label>
+										<onclick>Skin.ToggleSetting(CustomQuickChange1Enabled)</onclick>
+										<selected>Skin.HasSetting(CustomQuickChange1Enabled)</selected>
+								</control>
+								<control type="button" id="111">
+										<description>Custom Quick Change Entry variable</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31057]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange1)][/COLOR]</label2>
+										<onclick>Skin.SetString(CustomQuickChange1)</onclick>
+										<visible>Skin.HasSetting(CustomQuickChange1Enabled)</visible>
+								</control>
+								<control type="radiobutton" id="112">
+										<description>Custom Quick Change Entry</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31056] 2</label>
+										<onclick>Skin.ToggleSetting(CustomQuickChange2Enabled)</onclick>
+										<selected>Skin.HasSetting(CustomQuickChange2Enabled)</selected>
+								</control>
+								<control type="button" id="113">
+										<description>Custom Quick Change Entry variable</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31057]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange2)][/COLOR]</label2>
+										<onclick>Skin.SetString(CustomQuickChange2)</onclick>
+										<visible>Skin.HasSetting(CustomQuickChange2Enabled)</visible>
+								</control>
+								<control type="radiobutton" id="114">
+										<description>Custom Quick Change Entry</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31056] 3</label>
+										<onclick>Skin.ToggleSetting(CustomQuickChange3Enabled)</onclick>
+										<selected>Skin.HasSetting(CustomQuickChange3Enabled)</selected>
+								</control>
+								<control type="button" id="115">
+										<description>Custom Quick Change Entry variable</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31057]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange3)][/COLOR]</label2>
+										<onclick>Skin.SetString(CustomQuickChange3)</onclick>
+										<visible>Skin.HasSetting(CustomQuickChange3Enabled)</visible>
+								</control>
+								<control type="radiobutton" id="116">
+										<description>Custom Quick Change Entry</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31056] 4</label>
+										<onclick>Skin.ToggleSetting(CustomQuickChange4Enabled)</onclick>
+										<selected>Skin.HasSetting(CustomQuickChange4Enabled)</selected>
+								</control>
+								<control type="button" id="117">
+										<description>Custom Quick Change Entry variable</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31057]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange4)][/COLOR]</label2>
+										<onclick>Skin.SetString(CustomQuickChange4)</onclick>
+										<visible>Skin.HasSetting(CustomQuickChange4Enabled)</visible>
+								</control>
+								<control type="radiobutton" id="118">
+										<description>Custom Quick Change Entry</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31056] 5</label>
+										<onclick>Skin.ToggleSetting(CustomQuickChange5Enabled)</onclick>
+										<selected>Skin.HasSetting(CustomQuickChange5Enabled)</selected>
+								</control>
+								<control type="button" id="119">
+										<description>Custom Quick Change Entry variable</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31057]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange5)][/COLOR]</label2>
+										<onclick>Skin.SetString(CustomQuickChange5)</onclick>
+										<visible>Skin.HasSetting(CustomQuickChange5Enabled)</visible>
+								</control>
+								<control type="radiobutton" id="120">
+										<description>Custom Quick Change Entry</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31056] 6</label>
+										<onclick>Skin.ToggleSetting(CustomQuickChange6Enabled)</onclick>
+										<selected>Skin.HasSetting(CustomQuickChange6Enabled)</selected>
+								</control>
+								<control type="button" id="121">
+										<description>Custom Quick Change Entry variable</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31057]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange6)][/COLOR]</label2>
+										<onclick>Skin.SetString(CustomQuickChange6)</onclick>
+										<visible>Skin.HasSetting(CustomQuickChange6Enabled)</visible>
+								</control>
+						</control>
+						<!-- Scripts -->
+						<control type="grouplist" id="9001">
+								<description>control area</description>
+								<posx>415</posx>
+								<posy>105</posy>
+								<width>775</width>
+								<height>445</height>
+								<itemgap>4</itemgap>
+								<onleft>9000</onleft>
+								<onright>-</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<pagecontrol>80</pagecontrol>
+								<visible>Container(9000).HasFocus(5)</visible>
+								<control type="button" id="310">
+										<description>Scripts Menu</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[247] $LOCALIZE[33061] &gt;</label>
+										<onclick>ActivateWindow(Scripts)</onclick>
+								</control>
+								<control type="button" id="320">
+										<description>480p Game Loaders</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - 480p Game Loaders Script</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers Extras/480p Game Loaders/default.py )</onclick>
+								</control>
+								<control type="button" id="330">
+										<description>Clear Cache</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - Clear Cache Script</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Clear Cache.py )</onclick>
+								</control>
+								<control type="button" id="340">
+										<description>Remove Empty Save Folders</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - Remove Empty Save Folders Script</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers Extras/Remove Empty Save Folders/default.py )</onclick>
+								</control>
+								<control type="button" id="341">
+										<description>Rip game with DVD2Xbox</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - Rip Game Disc to HDD with DVD2Xbox</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/DVD2Xbox/default.py )</onclick>
+								</control>
+								<control type="button" id="350">
+										<description>ThumbCleaner - Clean thumbnails, removed none used thumbnails.</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - Thumbnail Cleaner Script</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Clean Thumbs.py )</onclick>
+										<visible>Skin.HasSetting(CleanThumbsToggle)</visible>
+								</control>
+								<control type="button" id="360">
+										<description>Text viewer</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - View Text Based Files</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Text Reader.py,1, )</onclick>
+								</control>
+								<control type="button" id="361">
+										<description>Xbox Games Artwork Installer</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - Xbox Games Artwork Installer Script</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Run Artwork Installer.py )</onclick>
+								</control>
+								<control type="button" id="362">
+										<description>XISO to HDD Installer</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - XISO to HDD Installer Script</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers Extras/XISO to HDD Installer/default.py )</onclick>
+								</control>
+						</control>
+						<!-- Startup Options -->
+						<control type="grouplist" id="9001">
+								<description>control area</description>
+								<posx>415</posx>
+								<posy>105</posy>
+								<width>775</width>
+								<height>445</height>
+								<itemgap>4</itemgap>
+								<onleft>9000</onleft>
+								<onright>-</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<pagecontrol>80</pagecontrol>
+								<visible>Container(9000).HasFocus(6)</visible>
+								<control type="button" id="610">
+										<description>Startup Playback creation</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[10500] &gt;</label>
+										<onclick>ActivateWindow(501)</onclick>
+								</control>
+								<control type="radiobutton" id="621">
+										<description>Enable Intro</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31086]</label>
+										<onclick>Skin.ToggleSetting(introenabled)</onclick>
+										<selected>Skin.HasSetting(introenabled)</selected>
+								</control>
+								<control type="radiobutton" id="622">
+										<description>Startup Playback</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31087]</label>
+										<onclick>Skin.ToggleSetting(Use_Startup_Playback)</onclick>
+										<selected>Skin.HasSetting(Use_Startup_Playback)</selected>
+								</control>
+								<control type="button" id="623">
+										<description>Startup Playback Path</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31088]</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Generate Random Playlist.py )</onclick>
+										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
+								</control>
+								<control type="radiobutton" id="624">
+										<description>Startup Playback Themes</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label> - $LOCALIZE[31091]</label>
+										<onclick>Skin.ToggleSetting(UseThemePlaylist)</onclick>
+										<selected>Skin.HasSetting(UseThemePlaylist)</selected>
+										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
+								</control>
+								<control type="button" id="625">
+										<description>Startup Playback Path</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[31089]</label>
+										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
+										<onclick>Skin.SetFile(Startup_Playback_Path,.m3u,special://profile/playlists/music/)</onclick>
+										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
+								</control>
+						</control>
+						<!-- Theme Options -->
+						<control type="grouplist" id="9001">
+								<description>control area</description>
+								<posx>415</posx>
+								<posy>105</posy>
+								<width>775</width>
+								<height>445</height>
+								<itemgap>4</itemgap>
+								<onleft>9000</onleft>
+								<onright>-</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<pagecontrol>80</pagecontrol>
+								<visible>Container(9000).HasFocus(7)</visible>
+								<control type="button" id="400">
+										<description>Change Theme</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31048]</label>
+										<onclick>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Apply Theme.py,select,nothing)</onclick>
+								</control>
+								<control type="radiobutton" id="401">
+										<description>night mode toggle</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31046]</label>
+										<onclick>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Apply Theme.py,toggle,night)</onclick>
+										<selected>StringCompare(Skin.CurrentTheme,night)</selected>
+								</control>
+								<control type="button" id="402">
+										<description>Random Theme Selection</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31050]</label>
+										<onclick>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Apply Theme.py,random,nothing)</onclick>
+								</control>
+								<control type="radiobutton" id="403">
+										<description>Random Theme On Startup</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31051]</label>
+										<onclick>Skin.ToggleSetting(RandomTheme)</onclick>
+										<selected>Skin.HasSetting(RandomTheme)</selected>
+								</control>
+								<control type="radiobutton" id="404">
+										<description>Skip builtin themes</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label> - $LOCALIZE[31053]</label>
+										<onclick>Skin.ToggleSetting(RandomThemeDL)</onclick>
+										<selected>Skin.HasSetting(RandomThemeDL)</selected>
+										<visible>Skin.HasSetting(RandomTheme)</visible>
+								</control>
+								<control type="radiobutton" id="405">
+										<description>Random Wallpaper On Startup</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label> - $LOCALIZE[31052]</label>
+										<onclick>Skin.ToggleSetting(RandomThemeWallpaper)</onclick>
+										<selected>Skin.HasSetting(RandomThemeWallpaper)</selected>
+										<visible>Skin.HasSetting(RandomTheme)</visible>
+								</control>
+								<control type="button" id="406">
+										<description>Uninstall Theme</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31049]</label>
+										<onclick>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Uninstall Theme.py)</onclick>
+								</control>
+						</control>
+						<!-- Debug -->
+						<control type="grouplist" id="9001">
+								<description>control area</description>
+								<posx>415</posx>
+								<posy>105</posy>
+								<width>775</width>
+								<height>445</height>
+								<itemgap>4</itemgap>
+								<onleft>9000</onleft>
+								<onright>-</onright>
+								<onup>9001</onup>
+								<ondown>9001</ondown>
+								<pagecontrol>80</pagecontrol>
+								<visible>Container(9000).HasFocus(8)</visible>
+								<control type="button" id="700">
+										<description>Text viewer</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>View Log Files</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Text Reader.py,2, )</onclick>
+								</control>
+						</control>
+						<control type="scrollbar" id="80">
+								<posx>1190</posx>
+								<posy>105</posy>
+								<width>4</width>
+								<height>445</height>
+								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+								<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
+								<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
+								<textureslidernib>-</textureslidernib>
+								<textureslidernibfocus>-</textureslidernibfocus>
+								<onleft>50</onleft>
+								<ondown>-</ondown>
+								<showonepage>false</showonepage>
+								<orientation>vertical</orientation>
+								<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(80)">Conditional</animation>
+								<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+						</control>
+				</control>
+		</controls>
+</window>

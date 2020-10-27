@@ -1,0 +1,414 @@
+<window id="29">
+		<defaultcontrol always="true">52</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<controls>
+				<control type="button" id="51">
+						<posx>-500</posx>
+				</control>
+				<include>CommonBackground</include>
+				<!-- Snow effect at winter time -->
+				<include condition="System.Date(12-20,1-1)">snow</include>
+				<!-- Halloween -->
+				<include condition="System.Date(10-24,11-1)">halloween</include>
+				<control type="group">
+						<animation effect="fade" time="100">WindowOpen</animation>
+						<animation effect="fade" time="400" delay="300">WindowClose</animation>
+						<control type="label">
+								<posx>10r</posx>
+								<posy>35r</posy>
+								<width>1280</width>
+								<height>36</height>
+								<font>size_15</font>
+								<textcolor>80FFFFFF</textcolor>
+								<align>right</align>
+								<aligny>center</aligny>
+								<label>$LOCALIZE[31522]</label>
+								<visible>Skin.HasSetting(editmode)</visible>
+						</control>
+						<control type="label">
+								<posx>10</posx>
+								<posy>35r</posy>
+								<width>1280</width>
+								<height>36</height>
+								<font>size_15</font>
+								<textcolor>80FFFFFF</textcolor>
+								<align>left</align>
+								<aligny>center</aligny>
+								<label>$LOCALIZE[31000]</label>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>30</posy>
+								<width>1280</width>
+								<height>28</height>
+								<font>size_25</font>
+								<align>center</align>
+								<textcolor>FFFFFFFF</textcolor>
+								<label>$LOCALIZE[31523]</label>
+						</control>
+						<control type="label">
+								<posx>0</posx>
+								<posy>55</posy>
+								<width>1280</width>
+								<height>28</height>
+								<font>size_22</font>
+								<align>center</align>
+								<textcolor>80FFFFFF</textcolor>
+								<label>$LOCALIZE[31524]</label>
+						</control>
+				</control>
+				<control type="group">
+						<include>DialogEffectZoomFast</include>
+						<!-- Profile List -->
+						<control type="fixedlist" id="52">
+								<posx>0</posx>
+								<posy>157</posy>
+								<width>1280</width>
+								<height>720</height>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>-</onup>
+								<ondown>-</ondown>
+								<viewtype>list</viewtype>
+								<scrolltime>300</scrolltime>
+								<orientation>horizontal</orientation>
+								<preloaditems>2</preloaditems>
+								<focusposition>1</focusposition>
+								<itemlayout height="478" width="387">
+										<control type="image">
+												<posx>67</posx>
+												<posy>473</posy>
+												<width>372</width>
+												<height>6</height>
+												<aspectratio>stretch</aspectratio>
+												<colordiffuse>50FFFFFF</colordiffuse>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">windows\login\poster_shadow.png</texture>
+										</control>
+										<control type="image">
+												<posx>77</posx>
+												<posy>97</posy>
+												<width>352</width>
+												<height>378</height>
+												<aspectratio>stretch</aspectratio>
+												<colordiffuse>50FFFFFF</colordiffuse>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">background diffuse.png</texture>
+										</control>
+										<control type="image">
+												<posx>174</posx>
+												<posy>150</posy>
+												<width>156</width>
+												<height>156</height>
+												<aspectratio>scale</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">$INFO[listitem.Icon]</texture>
+										</control>
+										<control type="label">
+												<posx>77</posx>
+												<posy>334</posy>
+												<width>352</width>
+												<height>16</height>
+												<align>center</align>
+												<font>size_24</font>
+												<textcolor>FF424542</textcolor>
+												<selectedcolor>FF424542</selectedcolor>
+												<label>$INFO[listitem.Label]</label>
+										</control>
+										<control type="label">
+												<posx>77</posx>
+												<posy>382</posy>
+												<width>352</width>
+												<height>16</height>
+												<align>center</align>
+												<font>size_16</font>
+												<textcolor>FF424542</textcolor>
+												<selectedcolor>FF424542</selectedcolor>
+												<label>$INFO[ListItem.label2]</label>
+												<animation effect="fade" start="0" end="60" condition="true">Conditional</animation>
+										</control>
+								</itemlayout>
+								<focusedlayout height="563" width="387">
+										<control type="image">
+												<posx>77</posx>
+												<posy>472</posy>
+												<width>352</width>
+												<height>106</height>
+												<aspectratio>stretch</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">windows\login\poster_shadow.png</texture>
+										</control>
+										<control type="image">
+												<posx>77</posx>
+												<posy>26</posy>
+												<width>352</width>
+												<height>449</height>
+												<aspectratio>stretch</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">windows\login\profile_underlay.png</texture>
+												<visible>Control.HasFocus(52)</visible>
+										</control>
+										<control type="image">
+												<posx>77</posx>
+												<posy>26</posy>
+												<width>352</width>
+												<height>449</height>
+												<aspectratio>stretch</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">windows\login\profile_underlay_alt.png</texture>
+												<visible>!Control.HasFocus(52)</visible>
+										</control>
+										<control type="image">
+												<posx>130</posx>
+												<posy>0</posy>
+												<width>246</width>
+												<height>246</height>
+												<aspectratio>scale</aspectratio>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<texture background="true">$INFO[listitem.Icon]</texture>
+										</control>
+										<control type="label">
+												<posx>77</posx>
+												<posy>282</posy>
+												<width>352</width>
+												<height>16</height>
+												<align>center</align>
+												<font>size_24</font>
+												<textcolor>FFFFFFFF</textcolor>
+												<selectedcolor>FFFFFFFF</selectedcolor>
+												<label>$INFO[listitem.Label]</label>
+										</control>
+										<control type="label">
+												<posx>77</posx>
+												<posy>330</posy>
+												<width>352</width>
+												<height>16</height>
+												<align>center</align>
+												<font>size_16</font>
+												<textcolor>80FFFFFF</textcolor>
+												<selectedcolor>50FFFFFF</selectedcolor>
+												<label>$INFO[ListItem.label2]</label>
+										</control>
+								</focusedlayout>
+						</control>
+						<control type="grouplist">
+								<posx>465</posx>
+								<posy>535</posy>
+								<width>352</width>
+								<height>80</height>
+								<itemgap>10</itemgap>
+								<orientation>Horizontal</orientation>
+								<align>center</align>
+								<animation reversible="false" effect="fade" start="0" end="100" delay="300" time="500" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious">Conditional</animation>
+								<animation type="Conditional" reversible="false" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious" loop="true">
+										<effect type="fade" start="40" end="100" time="1000" />
+										<effect type="fade" start="100" end="40" delay="1000" time="1000" />
+								</animation>
+								<!-- A Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>32</width>
+										<height>32</height>
+										<colordiffuse>FFFFFFFF</colordiffuse>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\a_button_login.png</texture>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="50" max="300">auto</width>
+										<height>12</height>
+										<font>size_24</font>
+										<textcolor>FFFFFFFF</textcolor>
+										<label>$LOCALIZE[31520]</label>
+										<animation effect="slide" start="0,0" end="0,1" time="0" condition="true">Conditional</animation>
+								</control>
+						</control>
+						<control type="grouplist">
+								<posx>465</posx>
+								<posy>605</posy>
+								<width>352</width>
+								<height>80</height>
+								<itemgap>5</itemgap>
+								<orientation>Horizontal</orientation>
+								<align>center</align>
+								<animation reversible="false" effect="fade" start="0" end="100" delay="300" time="500" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious">Conditional</animation>
+								<!-- White Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>16</width>
+										<height>16</height>
+										<colordiffuse>50FFFFFF</colordiffuse>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\white_button_login_small.png</texture>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="50" max="139">auto</width>
+										<height>12</height>
+										<font>size_12</font>
+										<align>left</align>
+										<textcolor>80FFFFFF</textcolor>
+										<label>$LOCALIZE[31521]</label>
+										<visible>Skin.HasSetting(editmode)</visible>
+										<animation effect="slide" start="0,0" end="0,1" time="0" condition="true">Conditional</animation>
+								</control>
+								<!-- Start Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>16</width>
+										<height>16</height>
+										<colordiffuse>50FFFFFF</colordiffuse>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\start_button_login_small.png</texture>
+										<visible>Skin.HasSetting(editmode)</visible>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="50" max="139">auto</width>
+										<height>12</height>
+										<font>size_12</font>
+										<align>left</align>
+										<textcolor>80FFFFFF</textcolor>
+										<label>$LOCALIZE[31090]</label>
+										<visible>Skin.HasSetting(editmode)</visible>
+										<animation effect="slide" start="0,0" end="0,1" time="0" condition="true">Conditional</animation>
+								</control>
+						</control>
+				</control>
+				<!-- Secret Passcode -->
+				<control type="button" id="19">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>20</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="20">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>21</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="21">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>22</ondown>
+				</control>
+				<control type="button" id="22">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>23</ondown>
+				</control>
+				<control type="button" id="23">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onleft>24</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="24">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onleft>25</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="25">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>26</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="26">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>27</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="27">
+						<description>Secret Code Button</description>
+						<posx>-5000</posx>
+						<label>-</label>
+						<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Edit Mode.py )</onclick>
+						<onclick>SetFocus(51)</onclick>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<!-- Had to add the exact date for each year :/ damn easter! -->
+				<include condition="StringCompare(System.Date,Sun, Apr 4, 2021)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 4 Apr 2021)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 17, 2022)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 17 Apr 2022)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 9 2023)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 9 Apr 2023)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Mar 31 2024)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 31 Mar 2024)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 20 2025)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 20 Apr 2025)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 5 2026)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 5 Apr 2026)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Mar 28 2027)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 28 Mar 2027)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 16 2028)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 16 Apr 2028)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 1 2029)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 1 Apr 2029)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 21 2030)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 21 Apr 2030)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 13 2031)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 13 Apr 2031)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Mar 28 2032)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 28 Mar 2032)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 17 2033)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 17 Apr 2033)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 9 2034)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 9 Apr 2034)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Mar 25 2035)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 25 Mar 2035)">easter</include>
+				<!-- birthdays -->
+				<include condition="SubString(System.Date,Jan)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jan.xml">Jan</include>
+				<include condition="SubString(System.Date,Feb)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Feb.xml">Feb</include>
+				<include condition="SubString(System.Date,Mar)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Mar.xml">Mar</include>
+				<include condition="SubString(System.Date,Apr)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Apr.xml">Apr</include>
+				<include condition="SubString(System.Date,May)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_May.xml">May</include>
+				<include condition="SubString(System.Date,Jun)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jun.xml">Jun</include>
+				<include condition="SubString(System.Date,Jul)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jul.xml">Jul</include>
+				<include condition="SubString(System.Date,Aug)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Aug.xml">Aug</include>
+				<include condition="SubString(System.Date,Sep)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Sep.xml">Sep</include>
+				<include condition="SubString(System.Date,Oct)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Oct.xml">Oct</include>
+				<include condition="SubString(System.Date,Nov)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Nov.xml">Nov</include>
+				<include condition="SubString(System.Date,Dec)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Dec.xml">Dec</include>
+		</controls>
+</window>

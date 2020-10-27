@@ -1,0 +1,54 @@
+<window id="35">
+		<defaultcontrol always="true">50</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<controls>
+				<include>CommonBackground</include>
+				<control type="group">
+						<include>ViewVisibleEffect</include>
+						<include file="Viewtype_GameSavesView.xml">GameSavesView</include>
+				</control>
+				<control type="group">
+						<include>WindowHeader</include>
+						<include>WindowFooter</include>
+				</control>
+				<control type="group">
+						<posx>0</posx>
+						<posy>45</posy>
+						<animation effect="slide" reversible="true" start="-300,0" end="0,0" time="100">Visible</animation>
+						<animation effect="slide" reversible="true" start="0,0" end="-300,0" time="100">Hidden</animation>
+						<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus</visible>
+						<control type="group" id="9000">
+								<control type="image">
+										<description>background image</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>230</width>
+										<height>45</height>
+										<texture border="8">subback.png</texture>
+								</control>
+								<control type="button" id="3">
+										<description>Sort by button</description>
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>230</width>
+										<include>ButtonCommonValues</include>
+										<label>103</label>
+										<onleft>50</onleft>
+										<onright>4</onright>
+										<onup>50</onup>
+										<ondown>50</ondown>
+								</control>
+								<control type="togglebutton" id="4">
+										<description>Sort asc</description>
+										<posx>200</posx>
+										<posy>13</posy>
+										<label>-</label>
+										<onleft>3</onleft>
+										<onright>50</onright>
+										<onup>50</onup>
+										<ondown>50</ondown>
+								</control>
+						</control>
+				</control>
+		</controls>
+</window>

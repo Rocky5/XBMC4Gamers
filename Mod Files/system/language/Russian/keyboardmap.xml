@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Configuration file to map an English keyboard layout to a Russian keyboard layout.
+
+  Keyboard layouts:
+  http://en.wikipedia.org/wiki/Keyboard_layout#Russian_.D0.99.D0.A6.D0.A3.D0.9A.D0.95.D0.9D
+
+  Forum thread:
+  http://www.xbmc4xbox.org.uk/forum/viewtopic.php?f=9&t=2668
+-->
+<keyboard_layout>
+
+  <char2char>
+    <entry inchar="q" outchar="й" />
+    <entry inchar="Q" outchar="Й" />
+    <entry inchar="w" outchar="ц" />
+    <entry inchar="W" outchar="Ц" />
+    <entry inchar="e" outchar="у" />
+    <entry inchar="E" outchar="У" />
+    <entry inchar="r" outchar="к" />
+    <entry inchar="R" outchar="К" />
+    <entry inchar="t" outchar="e" />
+    <entry inchar="T" outchar="Е" />
+    <entry inchar="y" outchar="н" />
+    <entry inchar="Y" outchar="Н" />
+    <entry inchar="u" outchar="г" />
+    <entry inchar="U" outchar="Г" />
+    <entry inchar="i" outchar="ш" />
+    <entry inchar="I" outchar="Ш" />
+    <entry inchar="o" outchar="щ" />
+    <entry inchar="O" outchar="Щ" />
+    <entry inchar="p" outchar="з" />
+    <entry inchar="P" outchar="З" />
+    <entry inchar="[" outchar="х" />
+    <entry inchar="{" outchar="Х" />
+    <entry inchar="}" outchar="ъ" />
+    <entry inchar="}" outchar="Ъ" />
+    <entry inchar="a" outchar="ф" />
+    <entry inchar="A" outchar="Ф" />
+    <entry inchar="s" outchar="ы" />
+    <entry inchar="S" outchar="Ы" />
+    <entry inchar="d" outchar="в" />
+    <entry inchar="D" outchar="В" />
+    <entry inchar="f" outchar="а" />
+    <entry inchar="F" outchar="А" />
+    <entry inchar="g" outchar="п" />
+    <entry inchar="G" outchar="П" />
+    <entry inchar="h" outchar="р" />
+    <entry inchar="H" outchar="Р" />
+    <entry inchar="j" outchar="о" />
+    <entry inchar="J" outchar="О" />
+    <entry inchar="k" outchar="л" />
+    <entry inchar="K" outchar="Л" />
+    <entry inchar="l" outchar="д" />
+    <entry inchar="L" outchar="Д" />
+    <entry inchar=";" outchar="ж" />
+    <entry inchar=":" outchar="Ж" />
+    <entry inchar="'" outchar="э" />
+    <entry inchar="&quot;" outchar="Э" />
+    <entry inchar="z" outchar="я" />
+    <entry inchar="Z" outchar="Я" />
+    <entry inchar="x" outchar="ч" />
+    <entry inchar="X" outchar="Ч" />
+    <entry inchar="c" outchar="c" />
+    <entry inchar="C" outchar="C" />
+    <entry inchar="v" outchar="м" />
+    <entry inchar="V" outchar="М" />
+    <entry inchar="b" outchar="и" />
+    <entry inchar="B" outchar="И" />
+    <entry inchar="n" outchar="т" />
+    <entry inchar="N" outchar="Т" />
+    <entry inchar="m" outchar="ь" />
+    <entry inchar="M" outchar="Ь" />
+    <entry inchar="," outchar="б" />
+    <entry inchar="&lt;" outchar="Б" />
+    <entry inchar="." outchar="ю" />
+    <entry inchar="&gt;" outchar="Ю" />
+  </char2char>
+
+</keyboard_layout>

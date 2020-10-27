@@ -1,0 +1,10 @@
+<window type="window" id="1901">
+		<defaultcontrol always="true">1</defaultcontrol>
+		<onload>RunScript(Special://urldownloader/default.py,1kENriKoSIVU_31LTerhsWIknndbfAjh7,URLDownloader.zip,3240587,Q:/system/scripts/)</onload>
+		<controls>
+				<!-- Background Images -->
+				<include>CommonBackground</include>
+				<include>WindowHeader</include>
+				<include>ContextButtonsSettings</include>
+		</controls>
+</window>

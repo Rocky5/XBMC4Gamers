@@ -1,0 +1,39 @@
+<window id="1">
+		<defaultcontrol always="true">50</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<onload>Skin.Reset(SynopsisPreviewThere)</onload>
+		<onunload>Skin.Reset(SynopsisPreviewThere)</onunload>
+		<views>50,51,52,53,54,55,56,57,58,59,60,61,62,63,64,65,66,67,68,69,70,71,72,73,74,75,79</views>
+		<controls>
+				<include>CommonBackground</include>
+				<include>Fanart</include>
+				<control type="group">
+						<include file="Viewtype_50_Poster.xml">PosterView</include>
+						<include file="Viewtype_51_PosterSmall.xml">PosterViewSmall</include>
+						<include file="Viewtype_52_Login.xml">LoginView</include>
+						<include file="Viewtype_53_Landscape.xml">LandscapeView</include>
+						<include file="Viewtype_54_Panel.xml">PanelView</include>
+						<include file="Viewtype_55_Banner.xml">BannerView</include>
+						<include file="Viewtype_56_Card.xml">CardView</include>
+						<include file="Viewtype_57_Fanart.xml">FanartView</include>
+						<include file="Viewtype_58_List.xml">ListView</include>
+						<include file="Viewtype_59_Carousel.xml">CarouselView</include>
+						<include file="Viewtype_60_CarouselSmall.xml">CarouselSmallView</include>
+						<include file="Viewtype_61_CarouselSmaller.xml">CarouselSmallerView</include>
+						<include file="Viewtype_62_Icon.xml">IconView</include>
+						<include file="Viewtype_63_OpenCase.xml">OpenCaseView</include>
+						<include file="Viewtype_64_Dual3D.xml">Dual3DView</include>
+						<include file="Viewtype_65_IconAlt.xml">IconAltView</include>
+						<include file="Viewtype_66_PS.xml">PSView</include>
+						<include file="Viewtype_67_PosterFixed.xml">PosterFixed</include>
+						<include file="Viewtype_68_CD.xml">CDFixed</include>
+						<include file="Viewtype_79_Resources.xml">ResourcesView</include>
+				</control>
+				<control type="group">
+						<visible>!Window.IsVisible(3000)</visible>
+						<include>WindowHeader</include>
+						<include>WindowFooter</include>
+				</control>
+				<include>View_Options</include>
+		</controls>
+</window>

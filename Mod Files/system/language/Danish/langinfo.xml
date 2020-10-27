@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<language locale="danish">
+  <charsets>
+    <gui>CP1252</gui>
+    <subtitle>CP1252</subtitle>
+  </charsets>
+
+  <dvd>
+    <menu>da</menu>
+    <audio>da</audio>
+    <subtitle>da</subtitle>
+  </dvd>
+
+  <regions>
+    <region>
+      <dateshort>DD-MM-YYYY</dateshort>
+      <datelong>D. MMMM YYYY</datelong>
+      <time symbolAM="" symbolPM="">H:mm:ss</time>
+      <tempunit>C</tempunit>
+      <speedunit>mps</speedunit>
+      <timezone>CEST</timezone> 
+    </region>
+</regions>
+
+<sorttokens>
+    <token>The</token>
+</sorttokens>
+</language>

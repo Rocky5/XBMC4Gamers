@@ -1,0 +1,1093 @@
+<window type="dialog" id="1101">
+		<defaultcontrol always="true">10</defaultcontrol>
+		<onunload>Skin.Reset(SynopsisPreviewThere)</onunload>
+		<controls>
+				<control type="group">
+						<visible>!Skin.HasSetting(Synopsis_First_Run)</visible>
+						<animation effect="fade" start="0" end="100" delay="400" time="200">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+						<control type="image">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>720</height>
+								<aspectratio>stretch</aspectratio>
+								<texture background="false">select_synopsis.jpg</texture>
+						</control>
+						<control type="button" id="100">
+								<posx>9</posx>
+								<posy>455</posy>
+								<width>622</width>
+								<height>80</height>
+								<onright>101</onright>
+								<texturefocus>black-back.png</texturefocus>
+								<font>size_35</font>
+								<textcolor>white</textcolor>
+								<disabledcolor>grey3</disabledcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>DEFAULT SYNOPSIS VIEW</label>
+								<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/dialog ok.py,show_both-Synopsis_First_Run,NOTICE,Default Synopsis View Set,You can change this view from the,skin settings &gt; toggles menu )</onclick>
+								<onclick>Skin.SetBool(Synopsis_First_Run)</onclick>
+								<onclick>Skin.Reset(Alt_Synopsis_View)</onclick>
+								<visible allowhiddenfocus="true">Control.HasFocus(100)</visible>
+						</control>
+						<control type="button" id="101">
+								<posx>649</posx>
+								<posy>455</posy>
+								<width>622</width>
+								<height>80</height>
+								<onleft>100</onleft>
+								<texturefocus>black-back.png</texturefocus>
+								<font>size_35</font>
+								<textcolor>white</textcolor>
+								<disabledcolor>grey3</disabledcolor>
+								<align>center</align>
+								<aligny>center</aligny>
+								<label>ALT SYNOPSIS VIEW</label>
+								<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/dialog ok.py,show_both-Synopsis_First_Run,NOTICE,Alternative Synopsis View Set,You can change this view from the,skin settings &gt; toggles menu )</onclick>
+								<onclick>Skin.SetBool(Synopsis_First_Run)</onclick>
+								<onclick>Skin.SetBool(Alt_Synopsis_View)</onclick>
+								<visible allowhiddenfocus="true">Control.HasFocus(101)</visible>
+						</control>
+				</control>
+				<control type="group">
+						<visible>Skin.HasSetting(Synopsis_First_Run)</visible>
+						<!-- Default synopsis view -->
+						<control type="group">
+								<visible>!Skin.HasSetting(Alt_Synopsis_View)</visible>
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>1280</width>
+										<height>720</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="false">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
+										<animation effect="fade" start="0" end="100" delay="400" time="200">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+								</control>
+								<control type="image">
+										<description>background image</description>
+										<posx>440</posx>
+										<posy>70</posy>
+										<width>800</width>
+										<height>570</height>
+										<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_overlay.png</texture>
+										<aspectratio>stretch</aspectratio>
+										<animation effect="fade" start="0" end="100" delay="700" time="350">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
+								</control>
+								<control type="image">
+										<description>background overlay</description>
+										<posx>440</posx>
+										<posy>70</posy>
+										<width>80</width>
+										<height>570</height>
+										<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_black-back.png</texture>
+										<aspectratio>stretch</aspectratio>
+										<animation effect="fade" start="0" end="100" delay="700" time="350">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="200" time="100">WindowClose</animation>
+								</control>
+								<!-- Poster image -->
+								<control type="image">
+										<description>Poster image</description>
+										<posx>40</posx>
+										<posy>70</posy>
+										<width>390</width>
+										<height>570</height>
+										<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.jpg">$INFO[Window(MyPrograms).Property(Synopsis_icon)]</texture>
+										<bordersize>0</bordersize>
+										<aspectratio>keep</aspectratio>
+										<animation effect="fade" start="0" end="100" delay="700" time="350">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+								</control>
+								<!-- Synopsis overview section -->
+								<control type="group">
+										<visible>ControlGroup(9001).HasFocus(10)</visible>
+										<animation effect="fade" start="0" end="100" delay="1200" time="600">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+										<control type="label">
+												<description>Synopsis Title alt</description>
+												<posx>552</posx>
+												<posy>95</posy>
+												<width>650</width>
+												<height>0</height>
+												<font>synopsis_font35</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_title_alt)][/B]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Title ID alt</description>
+												<posx>552</posx>
+												<posy>155</posy>
+												<width>650</width>
+												<height>0</height>
+												<font>synopsis_font18</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<label>$INFO[Window(MyPrograms).Property(Synopsis_label_1)] $INFO[Window(MyPrograms).Property(Synopsis_titleid_alt)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Label</description>
+												<posx>552</posx>
+												<posy>190</posy>
+												<width>650</width>
+												<height>0</height>
+												<font>synopsis_font28</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<label>$INFO[Window(MyPrograms).Property(Synopsis_label_2)]</label>
+										</control>
+										<control type="textbox">
+												<description>Synopsis Description alt</description>
+												<posx>552</posx>
+												<posy>230</posy>
+												<width>650</width>
+												<height>275</height>
+												<font>synopsis_font18</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<scrolltime>200</scrolltime>
+												<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(10)">Conditional</autoscroll>
+												<label>$INFO[Window(MyPrograms).Property(Synopsis_overview_alt)]</label>
+										</control>
+										<control type="label">
+												<description>Rating label</description>
+												<posx>552</posx>
+												<posy>510</posy>
+												<width>325</width>
+												<height>0</height>
+												<font>synopsis_font28</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<label>$INFO[Window(MyPrograms).Property(Synopsis_label_3)]</label>
+										</control>
+										<control type="image">
+												<description>Rating star 0</description>
+												<posx>545</posx>
+												<posy>552</posy>
+												<width>185</width>
+												<height>33</height>
+												<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/star_rating\rating$INFO[Window(MyPrograms).Property(Synopsis_rating_alt)].png</texture>
+												<aspectratio>stretch</aspectratio>
+										</control>
+										<control type="label">
+												<description>Rating star label</description>
+												<posx>730</posx>
+												<posy>558</posy>
+												<width>50</width>
+												<height>0</height>
+												<font>synopsis_font21</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<label>$INFO[Window(MyPrograms).Property(Synopsis_label_4)]</label>
+										</control>
+										<control type="image">
+												<description>Banner image</description>
+												<posx>855</posx>
+												<posy>515</posy>
+												<width>355</width>
+												<height>80</height>
+												<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_banner.png">$INFO[Window(MyPrograms).Property(Synopsis_banner)]</texture>
+												<aspectratio>stretch</aspectratio>
+												<animation effect="fade" start="0" end="100" delay="0" time="400">WindowOpen</animation>
+										</control>
+								</control>
+								<!-- Full Synopsis -->
+								<control type="grouplist">
+										<visible>ControlGroup(9001).HasFocus(11) + Skin.HasSetting(nodefaultxml)</visible>
+										<posx>552</posx>
+										<posy>90</posy>
+										<width>670</width>
+										<height>500</height>
+										<itemgap>23</itemgap>
+										<control type="label">
+												<description>Synopsis No default.xml found</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_title)][/COLOR][CR]$INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
+												<visible>Skin.HasSetting(nodefaultxml)</visible>
+										</control>
+								</control>
+								<control type="grouplist">
+										<visible>ControlGroup(9001).HasFocus(11) + !Skin.HasSetting(nodefaultxml)</visible>
+										<posx>552</posx>
+										<posy>90</posy>
+										<width>670</width>
+										<height>500</height>
+										<itemgap>20</itemgap>
+										<control type="label">
+												<description>Synopsis Title</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_5)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_title)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Developer</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_6)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Publisher</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_7)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_publisher)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Offline</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_8)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_features_general)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Online</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_9)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_features_online)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis ESRB</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_10)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_esrb)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis ESRB Descriptors</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_11)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_esrb_descriptors)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Genre</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_12)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_genre)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Release Date</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_13)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_release_date)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Rating</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_14)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_rating)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Platform</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_15)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_platform)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Exclusive</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_16)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_exclusive)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis TitleId</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_17)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_titleid)]</label>
+										</control>
+										<control type="label">
+												<description>Synopsis Overview</description>
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>670</width>
+												<height>0</height>
+												<font>synopsis_font17</font>
+												<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+												<align>left</align>
+												<aligny>left</aligny>
+												<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_18)][/COLOR]</label>
+										</control>
+								</control>
+								<control type="textbox">
+										<description>Synopsis Description</description>
+										<posx>552</posx>
+										<posy>375</posy>
+										<width>670</width>
+										<height>223</height>
+										<font>synopsis_font17</font>
+										<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_2)]</textcolor>
+										<align>left</align>
+										<scrolltime>200</scrolltime>
+										<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(2)">Conditional</autoscroll>
+										<label>$INFO[Window(MyPrograms).Property(Synopsis_overview)]</label>
+										<visible>ControlGroup(9001).HasFocus(11) + !Skin.HasSetting(nodefaultxml)</visible>
+								</control>
+								<!-- Screenshots and video preview -->
+								<control type="textbox">
+										<posx>530</posx>
+										<posy>325</posy>
+										<width>700</width>
+										<height>275</height>
+										<font>synopsis_font35</font>
+										<align>center</align>
+										<textcolor>20FFFFFF</textcolor>
+										<label>[B]No Screenshots Found[/B]</label>
+										<visible>ControlGroup(9001).HasFocus(12)</visible>
+								</control>
+								<control type="multiimage">
+										<description>Screenshots window</description>
+										<posx>530</posx>
+										<posy>100</posy>
+										<width>700</width>
+										<height>500</height>
+										<imagepath>$INFO[Window(MyPrograms).Property(Synopsis_screenshots)]</imagepath>
+										<timeperimage>5000</timeperimage>
+										<fadetime>1000</fadetime>
+										<pauseatend>0</pauseatend>
+										<randomize>true</randomize>
+										<loop>yes</loop>
+										<aspectratio>keep</aspectratio>
+										<visible>ControlGroup(9001).HasFocus(12)</visible>
+								</control>
+								<control type="textbox">
+										<posx>530</posx>
+										<posy>325</posy>
+										<width>700</width>
+										<height>275</height>
+										<font>synopsis_font35</font>
+										<align>center</align>
+										<textcolor>20FFFFFF</textcolor>
+										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>
+										<visible>ControlGroup(9001).HasFocus(13)</visible>
+								</control>
+								<control type="videowindow">
+										<description>video preview window</description>
+										<posx>530</posx>
+										<posy>100</posy>
+										<width>700</width>
+										<height>500</height>
+										<visible>ControlGroup(9001).HasFocus(13)</visible>
+								</control>
+								<control type="group">
+										<animation effect="fade" start="0" end="100" delay="700" time="800">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+										<!--  Side buttons -->
+										<control type="grouplist" id="9001">
+												<posx>440</posx>
+												<posy>187.5</posy>
+												<width>80</width>
+												<height>335</height>
+												<itemgap>5</itemgap>
+												<pagecontrol>-</pagecontrol>
+												<onleft>-</onleft>
+												<onright>-</onright>
+												<onup>-</onup>
+												<ondown>-</ondown>
+												<animation effect="slide" start="0,0" end="0,42" delay="0" time="0" condition="!Skin.HasSetting(SynopsisPreviewThere)">Conditional</animation>
+												<control type="button" id="10">
+														<description>Synopsis overview</description>
+														<width>80</width>
+														<height>80</height>
+														<label>-</label>
+														<texturenofocus>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_controller_nf.png</texturenofocus>
+														<texturefocus>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_controller_f.png</texturefocus>
+												</control>
+												<control type="button" id="11">
+														<description>Synopsis Full</description>
+														<width>80</width>
+														<height>80</height>
+														<label>-</label>
+														<texturenofocus>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_full_nf.png</texturenofocus>
+														<texturefocus>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_full_f.png</texturefocus>
+												</control>
+												<control type="button" id="12">
+														<description>Synopsis Screenshots</description>
+														<width>80</width>
+														<height>80</height>
+														<label>-</label>
+														<texturenofocus>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_screenshots_nf.png</texturenofocus>
+														<texturefocus>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_screenshots_f.png</texturefocus>
+												</control>
+												<control type="button" id="13">
+														<description>Synopsis Video</description>
+														<width>80</width>
+														<height>80</height>
+														<label>-</label>
+														<texturenofocus>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_video_nf.png</texturenofocus>
+														<texturefocus>Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_video_f.png</texturefocus>
+														<visible>Skin.HasSetting(SynopsisPreviewThere)</visible>
+												</control>
+										</control>
+								</control>
+								<control type="group">
+										<animation effect="fade" start="0" end="100" delay="700" time="800">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+										<posx>520</posx>
+										<posy>-80</posy>
+										<control type="image">
+												<width>720</width>
+												<include>Contect_Buttons_Underlay</include>
+										</control>
+										<include>Context_Buttons</include>
+								</control>
+						</control>
+						<!-- Alternative synopsis view -->
+						<control type="group">
+								<visible>Skin.HasSetting(Alt_Synopsis_View)</visible>
+								<control type="largeimage">
+										<posx>0</posx>
+										<posy>514</posy>
+										<width>1280</width>
+										<height>206</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<texture background="false" diffuse="fanart_low_diffuse_Custom.png">$INFO[Window(MyPrograms).Property(Synopsis_fog)]</texture>
+										<animation effect="fade" start="0" end="100" delay="0" time="100">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+								</control>
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>1280</width>
+										<height>720</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="false" diffuse="fanart_low_diffuse.png">$INFO[Window(MyPrograms).Property(Synopsis_fanart)]</texture>
+										<animation effect="fade" start="0" end="100" delay="0" time="100">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+								</control>
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>1280</width>
+										<height>720</height>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<texture background="false" diffuse="alt_synopsis_diffuse.png">$INFO[Window(MyPrograms).Property(Synopsis_fanart_blur)]</texture>
+										<visible>IntegerGreaterThan(system.memory(free.percent),1)</visible>
+										<animation effect="fade" start="0" end="100" delay="400" time="550">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+								</control>
+								<control type="image">
+										<posx>0</posx>
+										<posy>215</posy>
+										<width>1280</width>
+										<height>372</height>
+										<aspectratio>stretch</aspectratio>
+										<colordiffuse>E9FFFFFF</colordiffuse>
+										<texture background="false" border="5,5,5,5">listnf.png</texture>
+										<animation effect="fade" start="0" end="100" delay="400" time="350">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+								</control>
+								<!-- Screenshots and video preview -->
+								<control type="textbox">
+										<posx>380</posx>
+										<posy>370</posy>
+										<width>865</width>
+										<height>60</height>
+										<font>synopsis_font35</font>
+										<align>center</align>
+										<textcolor>20FFFFFF</textcolor>
+										<label>[B]No Screenshots Found[/B]</label>
+										<visible>ControlGroup(9001).HasFocus(12)</visible>
+								</control>
+								<control type="multiimage">
+										<description>Screenshots window</description>
+										<posx>380</posx>
+										<posy>221</posy>
+										<width>865</width>
+										<height>359</height>
+										<imagepath>$INFO[Window(MyPrograms).Property(Synopsis_screenshots)]</imagepath>
+										<timeperimage>5000</timeperimage>
+										<fadetime>1000</fadetime>
+										<pauseatend>0</pauseatend>
+										<randomize>true</randomize>
+										<loop>yes</loop>
+										<aspectratio>keep</aspectratio>
+										<visible>ControlGroup(9001).HasFocus(12)</visible>
+								</control>
+								<control type="textbox">
+										<posx>380</posx>
+										<posy>370</posy>
+										<width>865</width>
+										<height>60</height>
+										<font>synopsis_font35</font>
+										<align>center</align>
+										<textcolor>20FFFFFF</textcolor>
+										<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_Video_Preview_Name)][/B]</label>
+										<visible>ControlGroup(9001).HasFocus(13)</visible>
+								</control>
+								<control type="videowindow">
+										<description>video preview window</description>
+										<posx>380</posx>
+										<posy>221</posy>
+										<width>865</width>
+										<height>359</height>
+										<visible>ControlGroup(9001).HasFocus(13)</visible>
+								</control>
+								<control type="group">
+										<animation effect="fade" start="0" end="100" delay="400" time="450">WindowOpen</animation>
+										<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+										<posy>70</posy>
+										<!-- Poster image -->
+										<control type="image">
+												<posx>40</posx>
+												<posy>541</posy>
+												<width>290</width>
+												<height>427</height>
+												<aspectratio align="top">stretch</aspectratio>
+												<texture background="false" flipy="true" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.jpg" diffuse="diffuse_mirror4.png">$INFO[Window(MyPrograms).Property(Synopsis_poster_small)]</texture>
+										</control>
+										<control type="image">
+												<description>Poster image</description>
+												<posx>30</posx>
+												<posy>534</posy>
+												<width>310</width>
+												<height>15</height>
+												<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_listview_shadow.png</texture>
+												<aspectratio>stretch</aspectratio>
+												<colordiffuse>FF000000</colordiffuse>
+										</control>
+										<control type="image">
+												<description>Poster image</description>
+												<posx>40</posx>
+												<posy>114</posy>
+												<width>290</width>
+												<height>427</height>
+												<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.jpg">$INFO[Window(MyPrograms).Property(Synopsis_poster)]</texture>
+												<visible>!IntegerGreaterThan(system.memory(free.percent),13)</visible>
+												<aspectratio align="bottom">stretch</aspectratio>
+										</control>
+										<control type="image">
+												<description>Poster image</description>
+												<posx>40</posx>
+												<posy>114</posy>
+												<width>290</width>
+												<height>427</height>
+												<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_poster.jpg">$INFO[Window(MyPrograms).Property(Alt_Synopsis_icon)]</texture>
+												<visible>IntegerGreaterThan(system.memory(free.percent),12)</visible>
+												<aspectratio align="bottom">stretch</aspectratio>
+										</control>
+										<!-- Synopsis overview section -->
+										<control type="group">
+												<visible>ControlGroup(9001).HasFocus(10)</visible>
+												<!-- Title and TitleID -->
+												<control type="label">
+														<description>Synopsis Title alt</description>
+														<posx>380</posx>
+														<posy>160</posy>
+														<width>676</width>
+														<height>24</height>
+														<font>synopsis_font35</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<label>[B]$INFO[Window(MyPrograms).Property(Synopsis_title_alt)][/B]</label>
+												</control>
+												<!-- Info labels -->
+												<control type="label">
+														<description>Synopsis Year</description>
+														<posx>380</posx>
+														<posy>196</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_label_17)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Title ID alt</description>
+														<posx>480</posx>
+														<posy>196</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_titleid_alt)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Year</description>
+														<posx>380</posx>
+														<posy>220</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_label_19)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Year</description>
+														<posx>480</posx>
+														<posy>220</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_release_date)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Developer</description>
+														<posx>380</posx>
+														<posy>244</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_label_6)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Developer</description>
+														<posx>480</posx>
+														<posy>244</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
+														<visible>!StringCompare(Window(MyPrograms).Property(Synopsis_title),Could not find:)</visible>
+												</control>
+												<control type="label">
+														<description>Synopsis Publisher</description>
+														<posx>380</posx>
+														<posy>268</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_label_7)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Publisher</description>
+														<posx>480</posx>
+														<posy>268</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_publisher)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Genre</description>
+														<posx>380</posx>
+														<posy>292</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_label_12)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Genre</description>
+														<posx>480</posx>
+														<posy>292</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_genre)]</label>
+												</control>
+												<control type="label">
+														<description>Rating label</description>
+														<posx>380</posx>
+														<posy>316</posy>
+														<width>846</width>
+														<height>24</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<aligny>center</aligny>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]</textcolor>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_label_14)]</label>
+												</control>
+												<control type="image">
+														<description>Rating star 0</description>
+														<posx>475</posx>
+														<posy>317</posy>
+														<width>124</width>
+														<height>24</height>
+														<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/star_rating\rating$INFO[Window(MyPrograms).Property(Synopsis_rating_alt)].png</texture>
+														<aspectratio>stretch</aspectratio>
+												</control>
+												<control type="image">
+														<description>separator</description>
+														<posx>380</posx>
+														<posy>350</posy>
+														<width>846</width>
+														<height>5</height>
+														<texture background="false">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_separator.png</texture>
+														<aspectratio>stretch</aspectratio>
+														<colordiffuse>50FFFFFF</colordiffuse>
+												</control>
+												<control type="textbox">
+														<description>Synopsis Description alt</description>
+														<posx>380</posx>
+														<posy>365</posy>
+														<width>846</width>
+														<height>140</height>
+														<font>synopsis_font17</font>
+														<align>left</align>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<scrolltime>200</scrolltime>
+														<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(10)">Conditional</autoscroll>
+														<label>$INFO[Window(MyPrograms).Property(Synopsis_overview_alt)]</label>
+												</control>
+												<control type="image">
+														<description>CD image</description>
+														<posx>1047</posx>
+														<posy>160</posy>
+														<width>178</width>
+														<height>178</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_cd.png">$INFO[Window(MyPrograms).Property(Synopsis_disc)]</texture>
+														<animation effect="fade" start="0" end="100" delay="0" time="400">WindowOpen</animation>
+												</control>
+										</control>
+										<!-- Full Synopsis -->
+										<control type="grouplist">
+												<visible>ControlGroup(9001).HasFocus(11) + Skin.HasSetting(nodefaultxml)</visible>
+												<posx>380</posx>
+												<posy>178</posy>
+												<width>1280</width>
+												<height>300</height>
+												<itemgap>22</itemgap>
+												<control type="label">
+														<description>Synopsis No default.xml found</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>846</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<aligny>left</aligny>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_title)][/COLOR][CR]$INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
+														<visible>Skin.HasSetting(nodefaultxml)</visible>
+												</control>
+										</control>
+										<control type="grouplist">
+												<visible>ControlGroup(9001).HasFocus(11) + !Skin.HasSetting(nodefaultxml)</visible>
+												<posx>380</posx>
+												<posy>178</posy>
+												<width>1280</width>
+												<height>300</height>
+												<itemgap>22</itemgap>
+												<control type="label">
+														<description>Synopsis Title</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_5)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_title)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Developer</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_6)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_developer)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Publisher</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_7)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_publisher)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Offline</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_8)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_features_general)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Online</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_9)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_features_online)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis ESRB</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_10)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_esrb)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis ESRB Descriptors</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_11)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_esrb_descriptors)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Genre</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_12)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_genre)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Release Date</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_13)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_release_date)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Rating</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_14)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_rating)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Platform</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_15)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_platform)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis Exclusive</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_16)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_exclusive)]</label>
+												</control>
+												<control type="label">
+														<description>Synopsis TitleId</description>
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>870</width>
+														<height>0</height>
+														<font>synopsis_font20</font>
+														<textcolor>$INFO[Window(MyPrograms).Property(Synopsis_colour_3)]</textcolor>
+														<align>left</align>
+														<label>[COLOR=$INFO[Window(MyPrograms).Property(Synopsis_colour_1)]]$INFO[Window(MyPrograms).Property(Synopsis_label_17)][/COLOR] $INFO[Window(MyPrograms).Property(Synopsis_titleid)]</label>
+												</control>
+										</control>
+										<control type="image.">
+												<description>Banner image</description>
+												<posx>1010</posx>
+												<posy>289</posy>
+												<width>355</width>
+												<height>80</height>
+												<aspectratio>keep</aspectratio>
+												<texture background="false" fallback="Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/synopsis_no_banner.png">$INFO[Window(MyPrograms).Property(Synopsis_banner)]</texture>
+												<animation effect="rotate" end="-90" center="auto" time="0">Visible</animation>
+												<visible>ControlGroup(9001).HasFocus(11)</visible>
+										</control>
+										<!--  Side buttons -->
+										<control type="grouplist" id="9001">
+												<posx>360</posx>
+												<posy>525</posy>
+												<width>870</width>
+												<height>46</height>
+												<itemgap>11</itemgap>
+												<pagecontrol>-</pagecontrol>
+												<onleft>-</onleft>
+												<onright>-</onright>
+												<onup>-</onup>
+												<ondown>-</ondown>
+												<orientation>horizontal</orientation>
+												<animation effect="slide" start="0,0" end="105,0" delay="0" time="0" condition="!Skin.HasSetting(SynopsisPreviewThere)">Conditional</animation>
+												<control type="button" id="10">
+														<description>Synopsis overview</description>
+														<width>209</width>
+														<height>46</height>
+														<label>PLAY</label>
+														<align>center</align>
+														<aligny>center</aligny>
+														<texturefocus border="5">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/alt_synopsis_f.png</texturefocus>
+														<texturenofocus border="5">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/alt_synopsis_nf.png</texturenofocus>
+												</control>
+												<control type="button" id="11">
+														<description>Synopsis Full</description>
+														<width>209</width>
+														<height>46</height>
+														<align>center</align>
+														<aligny>center</aligny>
+														<label>INFORMATION</label>
+														<texturefocus border="5">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/alt_synopsis_f.png</texturefocus>
+														<texturenofocus border="5">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/alt_synopsis_nf.png</texturenofocus>
+												</control>
+												<control type="button" id="12">
+														<description>Synopsis Screenshots</description>
+														<width>209</width>
+														<height>46</height>
+														<label>IMAGES</label>
+														<align>center</align>
+														<aligny>center</aligny>
+														<texturefocus border="5">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/alt_synopsis_f.png</texturefocus>
+														<texturenofocus border="5">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/alt_synopsis_nf.png</texturenofocus>
+												</control>
+												<control type="button" id="13">
+														<description>Synopsis Video</description>
+														<width>209</width>
+														<height>46</height>
+														<label>PREVIEW</label>
+														<align>center</align>
+														<aligny>center</aligny>
+														<texturefocus border="5">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/alt_synopsis_f.png</texturefocus>
+														<texturenofocus border="5">Special://xbmc/system/scripts/XBMC4Gamers Extras/synopsis/resources/textures/alt_synopsis_nf.png</texturenofocus>
+														<visible>Skin.HasSetting(SynopsisPreviewThere)</visible>
+												</control>
+										</control>
+								</control>
+								<control type="image">
+										<include>Contect_Buttons_Underlay</include>
+								</control>
+								<include>Context_Buttons</include>
+						</control>
+				</control>
+		</controls>
+</window>

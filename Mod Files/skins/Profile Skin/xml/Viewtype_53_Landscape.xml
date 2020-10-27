@@ -1,0 +1,237 @@
+<includes>
+		<include name="LandscapeView">
+				<control type="group">
+						<visible>Control.IsVisible(53) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<control type="group">
+								<control type="fixedlist" id="53">
+										<posx>-160</posx>
+										<posy>410</posy>
+										<width>1440</width>
+										<height>430</height>
+										<onleft>53</onleft>
+										<onright>53</onright>
+										<onup>9000</onup>
+										<ondown>83</ondown>
+										<viewtype label="view53">list</viewtype>
+										<pagecontrol>83</pagecontrol>
+										<scrolltime>220</scrolltime>
+										<focusposition>2</focusposition>
+										<movement>0</movement>
+										<orientation>horizontal</orientation>
+										<preloaditems>3</preloaditems>
+										<itemlayout height="180" width="320">
+												<control type="image">
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>320</width>
+														<height>180</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" border="5">button-focus.png</texture>
+												</control>
+												<control type="image">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">black-back.png</texture>
+												</control>
+												<control type="image">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio>scale</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true" fallback="no_thumb.jpg">$INFO[listitem.icon]</texture>
+														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio>stretch</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true">no_thumb.jpg</texture>
+														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio aligny="bottom">scale</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true">$INFO[listitem.icon]</texture>
+														<visible>!IsEmpty(ListItem.Thumb) + ListItem.IsFolder + Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="largeimage">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio>stretch</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true">$INFO[listitem.path,,_resources\artwork\thumb.jpg]</texture>
+														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>8</posx>
+														<posy>8</posy>
+														<width>25</width>
+														<height>25</height>
+														<aspectratio>stretch</aspectratio>
+														<texture>$INFO[listitem.overlay]</texture>
+												</control>
+										</itemlayout>
+										<focusedlayout height="180" width="320">
+												<control type="image">
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>320</width>
+														<height>180</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" border="5">poster-border.png</texture>
+												</control>
+												<control type="image">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">black-back.png</texture>
+														<bordersize>1</bordersize>
+												</control>
+												<control type="image">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio>scale</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true" fallback="no_thumb.jpg">$INFO[listitem.icon]</texture>
+														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio>stretch</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true">no_thumb.jpg</texture>
+														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio aligny="bottom">scale</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true">$INFO[listitem.icon]</texture>
+														<visible>!IsEmpty(ListItem.Thumb) + ListItem.IsFolder + Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="largeimage">
+														<posx>5</posx>
+														<posy>5</posy>
+														<width>310</width>
+														<height>170</height>
+														<aspectratio>stretch</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true">$INFO[listitem.path,,_resources\artwork\thumb.jpg]</texture>
+														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>8</posx>
+														<posy>8</posy>
+														<width>25</width>
+														<height>25</height>
+														<aspectratio>stretch</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture>$INFO[listitem.overlay]</texture>
+												</control>
+										</focusedlayout>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>115r</posy>
+										<width>1280</width>
+										<height>36</height>
+										<font>size_35</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<scroll>true</scroll>
+										<align>center</align>
+										<aligny>center</aligny>
+										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(53).ListItem.IsFolder">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(53).ListItem.IsFolder">Conditional</animation>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>69r</posy>
+										<width>1280</width>
+										<height>30</height>
+										<font>size_15</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<scroll>true</scroll>
+										<align>center</align>
+										<aligny>center</aligny>
+										<label>$LOCALIZE[31186]</label>
+										<visible>StringCompare(ListItem.ProgramCount,0) + !Control.HasFocus(83) + !ListItem.IsFolder</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(53).ListItem.IsFolder">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(53).ListItem.IsFolder">Conditional</animation>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>69r</posy>
+										<width>1280</width>
+										<height>30</height>
+										<font>size_15</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<scroll>true</scroll>
+										<align>center</align>
+										<aligny>center</aligny>
+										<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+										<visible>StringCompare(ListItem.ProgramCount,1) + !Control.HasFocus(83) + !ListItem.IsFolder</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(53).ListItem.IsFolder">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(53).ListItem.IsFolder">Conditional</animation>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>69r</posy>
+										<width>1280</width>
+										<height>30</height>
+										<font>size_15</font>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<scroll>true</scroll>
+										<align>center</align>
+										<aligny>center</aligny>
+										<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+										<visible>IntegerGreaterThan(ListItem.ProgramCount,1) + !Control.HasFocus(83) + !ListItem.IsFolder</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(53).ListItem.IsFolder">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(53).ListItem.IsFolder">Conditional</animation>
+								</control>
+								<control type="scrollbar" id="83">
+										<posx>150</posx>
+										<posy>662</posy>
+										<width>980</width>
+										<height>15</height>
+										<texturesliderbackground border="2,2,2,2">black-back.png</texturesliderbackground>
+										<texturesliderbar border="16,2,16,2">scrollbar_bar-vertical.png</texturesliderbar>
+										<texturesliderbarfocus border="16,2,16,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
+										<textureslidernib>scrollbar_nib-vertical.png</textureslidernib>
+										<textureslidernibfocus>scrollbar_nib-vertical.png</textureslidernibfocus>
+										<onup>53</onup>
+										<ondown>-</ondown>
+										<showonepage>false</showonepage>
+										<orientation>horizontal</orientation>
+										<visible allowhiddenfocus="true">Control.HasFocus(83)</visible>
+										<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
+										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
+								</control>
+						</control>
+				</control>
+		</include>
+</includes>

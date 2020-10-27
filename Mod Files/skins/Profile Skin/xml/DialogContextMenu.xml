@@ -1,0 +1,218 @@
+<window id="106">
+		<defaultcontrol always="true">1000</defaultcontrol>
+		<include>DialogEffectZoomFast</include>
+		<controls>
+				<control type="image.">
+						<posx>-442</posx>
+						<posy>-321</posy>
+						<width>1280</width>
+						<height>720</height>
+						<texture>black-back.png</texture>
+						<aspectratio>stretch</aspectratio>
+						<include>ContextMenuOffsets</include>
+						<visible>Window.IsActive(1)</visible>
+				</control>
+				<control type="group">
+						<include>ContextMenuOffsets</include>
+						<control type="image" id="997">
+								<description>background top image</description>
+								<posx>0</posx>
+								<posy>-37</posy>
+								<width>396</width>
+								<height>37</height>
+								<texture border="40,0,40,0">contextmenu_top.png</texture>
+								<visible>Skin.HasSetting(editmode)</visible>
+						</control>
+						<control type="image" id="999">
+								<description>background image</description>
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>396</width>
+								<texture border="40,0,40,0">contextmenu_middle.png</texture>
+								<visible>Skin.HasSetting(editmode)</visible>
+						</control>
+						<control type="image" id="998">
+								<description>background bottom image</description>
+								<posx>0</posx>
+								<width>396</width>
+								<height>34</height>
+								<texture border="40,0,40,0">contextmenu_bottom.png</texture>
+								<visible>Skin.HasSetting(editmode)</visible>
+						</control>
+						<control type="button" id="1000">
+								<description>button template</description>
+								<posx>43</posx>
+								<posy>40</posy>
+								<width>310</width>
+								<height>35</height>
+								<onup>1000</onup>
+								<font>size_20</font>
+								<align>center</align>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onfocus condition="Control.IsVisible(3000)">SetFocus(3000)</onfocus>
+								<visible allowhiddenfocus="true">Skin.HasSetting(editmode)</visible>
+								<include>ContextMenuOffsets</include>
+						</control>
+				</control>
+				<control type="group">
+						<include>ContextMenuOffsets</include>
+						<posy>-50</posy>
+						<visible>Window.IsVisible(1) + !Window.IsActive(134) + !Skin.HasSetting(editmode)</visible>
+						<control type="image">
+								<description>background top image</description>
+								<posx>0</posx>
+								<posy>11</posy>
+								<width>396</width>
+								<height>37</height>
+								<texture border="40,40,40,0">contextmenu_top.png</texture>
+						</control>
+						<control type="image">
+								<description>background image</description>
+								<posx>0</posx>
+								<posy>48</posy>
+								<width>396</width>
+								<height>225</height>
+								<texture border="40,0,40,0">contextmenu_middle.png</texture>
+						</control>
+						<control type="image">
+								<description>background bottom image</description>
+								<posx>0</posx>
+								<posy>273</posy>
+								<width>396</width>
+								<height>34</height>
+								<texture border="40,0,40,0">contextmenu_bottom.png</texture>
+						</control>
+				</control>
+				<control type="grouplist" id="3000">
+						<description>custom grouplist for context buttons</description>
+						<posx>50</posx>
+						<posy>5</posy>
+						<width>310</width>
+						<height>304</height>
+						<itemgap>2</itemgap>
+						<include>ContextMenuOffsets</include>
+						<visible>Window.IsVisible(1) + !Window.IsActive(134) + !Skin.HasSetting(editmode)</visible>
+						<control type="button" id="3001">
+								<description>SendClick 1001 button "Launch"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1001)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1001)</onclick>
+								<visible>StringCompare(Control.GetLabel(1001),Synopsis) | StringCompare(Control.GetLabel(1001),$LOCALIZE[518]) | StringCompare(Control.GetLabel(1001),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1001),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1001),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1001),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1001),$LOCALIZE[14076])</visible>
+						</control>
+						<control type="button" id="3002">
+								<description>SendClick 1002 button "Go to game save"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1002)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1002)</onclick>
+								<visible>StringCompare(Control.GetLabel(1002),Synopsis) | StringCompare(Control.GetLabel(1002),$LOCALIZE[518]) | StringCompare(Control.GetLabel(1002),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1002),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1002),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1002),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1002),$LOCALIZE[14076])</visible>
+						</control>
+						<control type="button" id="3003">
+								<description>SendClick 1003 button "Edit XBE title"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1003)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1003)</onclick>
+								<visible>StringCompare(Control.GetLabel(1003),Synopsis) | StringCompare(Control.GetLabel(1003),$LOCALIZE[518]) | StringCompare(Control.GetLabel(1003),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1003),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1003),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1003),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1003),$LOCALIZE[14076])</visible>
+						</control>
+						<control type="button" id="3004">
+								<description>SendClick 1004 button "Trainer settings"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1004)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1004)</onclick>
+								<visible>StringCompare(Control.GetLabel(1004),Synopsis) | StringCompare(Control.GetLabel(1004),$LOCALIZE[518]) |StringCompare(Control.GetLabel(1004),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1004),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1004),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1004),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1004),$LOCALIZE[14076])</visible>
+						</control>
+						<control type="button" id="3005">
+								<description>SendClick 1005 button "Update trainer list"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1005)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1005)</onclick>
+								<visible>StringCompare(Control.GetLabel(1005),Synopsis) | StringCompare(Control.GetLabel(1005),$LOCALIZE[518]) |StringCompare(Control.GetLabel(1005),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1005),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1005),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1005),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1005),$LOCALIZE[14076])</visible>
+						</control>
+						<control type="button" id="3006">
+								<description>SendClick 1006 button "Go to root"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1006)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1006)</onclick>
+								<visible>StringCompare(Control.GetLabel(1006),Synopsis) | StringCompare(Control.GetLabel(1006),$LOCALIZE[518]) |StringCompare(Control.GetLabel(1006),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1006),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1006),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1006),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1006),$LOCALIZE[14076])</visible>
+						</control>
+						<control type="button" id="3007">
+								<description>SendClick 1007 button "Add/Remove to/from favourites"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1007)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1007)</onclick>
+								<visible>StringCompare(Control.GetLabel(1007),Synopsis) | StringCompare(Control.GetLabel(1007),$LOCALIZE[518]) |StringCompare(Control.GetLabel(1007),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1007),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1007),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1007),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1007),$LOCALIZE[14076])</visible>
+						</control>
+						<control type="button" id="3008">
+								<description>SendClick 1008 button "Settings"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1008)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1008)</onclick>
+								<visible>StringCompare(Control.GetLabel(1008),Synopsis) | StringCompare(Control.GetLabel(1008),$LOCALIZE[518]) |StringCompare(Control.GetLabel(1108),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1108),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1008),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1008),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1008),$LOCALIZE[14076])</visible>
+						</control>
+						<control type="button" id="3009">
+								<description>SendClick 1009 button "Settings"</description>
+								<font>size_20</font>
+								<align>center</align>
+								<label>$INFO[Control.GetLabel(1009)]</label>
+								<textcolor>windows_options_label_no_focus</textcolor>
+								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<shadowcolor>-</shadowcolor>
+								<texturefocus>windows\options\button_focus.png</texturefocus>
+								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+								<onclick>SendClick(1009)</onclick>
+								<visible>StringCompare(Control.GetLabel(1009),Synopsis) | StringCompare(Control.GetLabel(1009),$LOCALIZE[518]) |StringCompare(Control.GetLabel(1109),$LOCALIZE[20322]) | StringCompare(Control.GetLabel(1109),$LOCALIZE[12015]) | StringCompare(Control.GetLabel(1009),$LOCALIZE[12012]) | StringCompare(Control.GetLabel(1009),$LOCALIZE[14077]) | StringCompare(Control.GetLabel(1009),$LOCALIZE[14076])</visible>
+						</control>
+				</control>
+		</controls>
+</window>

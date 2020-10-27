@@ -13,974 +13,533 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-
+## version
 msgctxt "#31000"
 msgid "XBMC4Gamers 0.0.000"
 msgstr ""
 
-msgctxt "#31001"
-msgid "Enable fast game parsing"
-msgstr ""
-
-msgctxt "#31002"
-msgid "Disable slow scrolling"
-msgstr ""
-
-msgctxt "#31003"
+## internal - no xml file id's cannot be changed, unless you recompile the xbe
+msgctxt "#32000"
 msgid "Advanced"
 msgstr ""
 
-msgctxt "#31004"
-msgid "Home"
-msgstr ""
-
-msgctxt "#31005"
-msgid "Memory Used:"
-msgstr ""
-
-msgctxt "#31006"
-msgid "View Options"
-msgstr ""
-
-msgctxt "#31007"
-msgid "Recently Added Movies"
-msgstr ""
-
-msgctxt "#31008"
-msgid "Recently Added Episodes"
-msgstr ""
-
-msgctxt "#31009"
-msgid "Recently Added"
-msgstr ""
-
-msgctxt "#31010"
-msgid "Add-ons"
-msgstr ""
-
-msgctxt "#31011"
-msgid "Last Updated"
-msgstr ""
-
-msgctxt "#31012"
-msgid "Currently"
-msgstr ""
-
-msgctxt "#31013"
-msgid "Vis Settings"
-msgstr ""
-
-msgctxt "#31014"
-msgid "Vis Preset"
-msgstr ""
-
-msgctxt "#31015"
-msgid "Show Fanart"
-msgstr ""
-
-msgctxt "#31016"
-msgid "Hide Fanart"
-msgstr ""
-
-msgctxt "#31017"
-msgid "Song Lyrics"
-msgstr ""
-
-msgctxt "#31018"
-msgid "Get Subtitles"
-msgstr ""
-
-msgctxt "#31019"
-msgid "Audio Settings"
-msgstr ""
-
-msgctxt "#31020"
-msgid "Play Disc"
-msgstr ""
-
-msgctxt "#31021"
-msgid "Video - Files"
-msgstr ""
-
-msgctxt "#31022"
-msgid "Music - Files"
-msgstr ""
-
-msgctxt "#31023"
-msgid "Image Preview"
-msgstr ""
-
-msgctxt "#31024"
-msgid "Page"
-msgstr ""
-
-msgctxt "#31025"
-msgid "Items"
-msgstr ""
-
-msgctxt "#31026"
-msgid "Auto Shutdown[CR]in"
-msgstr ""
-
-msgctxt "#31027"
-msgid "DVD Menu"
-msgstr ""
-
-msgctxt "#31028"
-msgid "Set Lyrics script"
-msgstr ""
-
-msgctxt "#31029"
-msgid "Set Subtitles script"
-msgstr ""
-
-msgctxt "#31042"
-msgid "PLAYING"
-msgstr ""
-
-msgctxt "#31043"
-msgid "PAUSED"
-msgstr ""
-
-msgctxt "#31044"
-msgid "FAST FORWARD"
-msgstr ""
-
-msgctxt "#31045"
-msgid "REWIND"
-msgstr ""
-
-msgctxt "#31046"
-msgid ""
-msgstr ""
-
-msgctxt "#31047"
-msgid "Last logged in"
-msgstr ""
-
-msgctxt "#31050"
-msgid "Sort: Ascending"
-msgstr ""
-
-msgctxt "#31051"
-msgid "Sort: Descending"
-msgstr ""
-
-<!-- Playlist Editor labels -->
-msgctxt "#31054"
-msgid "The playlist is currently empty.[CR][CR]Use the context menu to[CR]add items to the playlist"
-msgstr ""
-
-msgctxt "#31055"
-msgid "Open playlist"
-msgstr ""
-
-msgctxt "#31056"
-msgid "Save playlist"
-msgstr ""
-
-msgctxt "#31057"
-msgid "Close playlist"
-msgstr ""
-
-msgctxt "#31058"
-msgid "System music files"
-msgstr ""
-
-msgctxt "#31059"
-msgid "Current playlist"
-msgstr ""
-
-msgctxt "#31060"
-msgid "This file is stacked, select the part you want to play from"
-msgstr ""
-
-<!-- Skin Settings labels (Catagories) -->
-msgctxt "#31100"
-msgid ""
-msgstr ""
-
-msgctxt "#31105"
-msgid "Home menu"
-msgstr ""
-
-msgctxt "#31106"
-msgid "Home add-ons"
-msgstr ""
-
-msgctxt "#31107"
-msgid "Media views"
-msgstr ""
-
-msgctxt "#31109"
-msgid "Reset skin"
-msgstr ""
-
-<!-- Skin Settings labels (Sub Headers) -->
-msgctxt "#31110"
-msgid "General skin options"
-msgstr ""
-
-msgctxt "#31111"
-msgid "Home screen options"
-msgstr ""
-
-msgctxt "#31112"
-msgid "Main menu options"
-msgstr ""
-
-msgctxt "#31113"
-msgid "Home menu options"
-msgstr ""
-
-msgctxt "#31114"
-msgid "-"
-msgstr ""
-
-msgctxt "#31115"
-msgid "Programs submenu shortcuts"
-msgstr ""
-
-msgctxt "#31116"
-msgid "Videos submenu shortcuts"
-msgstr ""
-
-msgctxt "#31117"
-msgid "Music submenu shortcuts"
-msgstr ""
-
-msgctxt "#31118"
-msgid "Add-ons submenu shortcuts"
-msgstr ""
-
-msgctxt "#31119"
-msgid "Media views options"
-msgstr ""
-
-<!-- Skin Settings labels (Options Text Headers) -->
-msgctxt "#31130"
-msgid "Show Fanart in background"
-msgstr ""
-
-msgctxt "#31131"
-msgid "Enable XBE button"
-msgstr ""
-
-msgctxt "#31132"
-msgid "Enable Playlist button"
-msgstr ""
-
-msgctxt "#31133"
-msgid "Playlist Label"
-msgstr ""
-
-msgctxt "#31134"
-msgid "Playlist Path"
-msgstr ""
-
-msgctxt "#31135"
-msgid "Enable auto scrolling for plot &amp; review"
-msgstr ""
-
-msgctxt "#31136"
-msgid "Enable TV show logo [COLOR=grey2](uses pre downloaded images)[/COLOR]"
-msgstr ""
-
-msgctxt "#31137"
-msgid "Enable audio playlist"
-msgstr ""
-
-msgctxt "#31138"
-msgid "XBE label"
-msgstr ""
-
-msgctxt "#31139"
-msgid "XBE path"
-msgstr ""
-
-msgctxt "#31140"
-msgid "Use alternative icons"
-msgstr ""
-
-msgctxt "#31141"
-msgid "Show recently added videos "
-msgstr ""
-
-msgctxt "#31142"
-msgid "Show "Now Playing" in background"
-msgstr ""
-
-msgctxt "#31143"
-msgid "Hide submenus [COLOR=grey2](when unfocused)[/COLOR]"
-msgstr ""
-
-msgctxt "#31144"
-msgid "Show background color"
-msgstr ""
-
-msgctxt "#31145"
-msgid "Hide in Home Screen"
-msgstr ""
-
-msgctxt "#31148"
-msgid "Theater"
-msgstr ""
-
-msgctxt "#31149"
-msgid "Enable Theater in video info [COLOR=grey2](replace trailer button)[/COLOR]"
-msgstr ""
-
-msgctxt "#31150"
-msgid "Add-on Label"
-msgstr ""
-
-msgctxt "#31151"
-msgid "Script Path"
-msgstr ""
-
-msgctxt "#31152"
-msgid "Enable Add-on button"
-msgstr ""
-
-msgctxt "#31153"
-msgid "Plugin Type/Folder [COLOR=grey2](e.g. Programs/SVN Repo Installer)[/COLOR]"
-msgstr ""
-
-msgctxt "#31154"
-msgid "Plugin Window ID [COLOR=grey2](e.g. 1) 1=Programs 2=Pictures 24=Video 501=Music 2600=Weather[/COLOR]"
-msgstr ""
-
-msgctxt "#31201"
-msgid "Disable "flatten" Movies button [COLOR=grey2](title, genres, etc)[/COLOR]"
-msgstr ""
-
-msgctxt "#31202"
-msgid "Disable "flatten" TV shows button [COLOR=grey2](title, genres, etc)[/COLOR]"
-msgstr ""
-
-msgctxt "#31380"
-msgid "Hide Programs button"
-msgstr ""
-
-msgctxt "#31381"
-msgid "Hide Videos button"
-msgstr ""
-
-msgctxt "#31382"
-msgid "Hide Music button"
-msgstr ""
-
-msgctxt "#31383"
-msgid "Hide Pictures button"
-msgstr ""
-
-msgctxt "#31384"
-msgid "Hide Weather button"
-msgstr ""
-
-msgctxt "#31385"
-msgid "Hide System button"
-msgstr ""
-
-msgctxt "#31386"
-msgid "Hide Shutdown button"
-msgstr ""
-
-msgctxt "#31387"
-msgid "Hide Favourites button"
-msgstr ""
-
-msgctxt "#31388"
-msgid "Hide Addons button"
-msgstr ""
-
-msgctxt "#31391"
-msgid "Show System Resources info"
-msgstr ""
-
-msgctxt "#31392"
-msgid "Show System Temperatures info"
-msgstr ""
-
-msgctxt "#31393"
-msgid "Show System Fan Speed info"
-msgstr ""
-
-<!-- Media Window View Type labels -->
-msgctxt "#31300"
-msgid "DVD Thumbs"
-msgstr ""
-
-<!-- view id = 53 -->
-msgctxt "#31301"
-msgid "Info Thumbs"
-msgstr ""
-
-<!-- view id = 54 -->
-msgctxt "#31302"
-msgid "Info List"
-msgstr ""
-
-<!-- view id = 51 -->
-msgctxt "#31303"
-msgid "Info Wide"
-msgstr ""
-
-<!-- view id = 56 -->
-msgctxt "#31304"
-msgid "Wide Icons"
-msgstr ""
-
-<!-- view id = 55 -->
-msgctxt "#31305"
-msgid "Posters"
-msgstr ""
-
-<!-- view id = 57 -->
-msgctxt "#31306"
-msgid "Media List"
-msgstr ""
-
-<!-- view id = 59 -->
-msgctxt "#31307"
-msgid "Covers"
-msgstr ""
-
-<!-- view id = 552 -->
-msgctxt "#31308"
-msgid "Low Media List"
-msgstr ""
-
-<!-- view id = 521 -->
-msgctxt "#31309"
-msgid "Posters 2"
-msgstr ""
-
-<!-- view id = 520 -->
-<!-- Settings Description Labels  -->
-msgctxt "#31400"
-msgid "Region · Screensavers · Display"
-msgstr ""
-
-msgctxt "#31401"
-msgid "Playback"
-msgstr ""
-
-msgctxt "#31402"
-msgid "Playback · Listing options"
-msgstr ""
-
-msgctxt "#31403"
-msgid "Listing options · Slideshows"
-msgstr ""
-
-msgctxt "#31404"
-msgid "Set weather information"
-msgstr ""
-
-msgctxt "#31405"
-msgid "UPnP/DLNA · Web server · SMB"
-msgstr ""
-
-msgctxt "#31406"
-msgid "Ouput · Power saving · Autorun"
-msgstr ""
-
-msgctxt "#31407"
-msgid "Toggles · Scripts · Startup playlist"
-msgstr ""
-
-msgctxt "#31408"
-msgid "Trainer path · Game scanning · Dashboard path"
-msgstr ""
-
-msgctxt "#31409"
-msgid "Copy · Move · Rename · Delete"
-msgstr ""
-
-msgctxt "#31410"
-msgid "[B]Load/Add Profiles · Set Media Info · Set Media Sources · Set Lock Preferences[CR]Delete Profiles · Enable/Disable Login screen"
-msgstr ""
-
-msgctxt "#31411"
-msgid "Applications · DLC · Mods · Update"
-msgstr ""
-
-msgctxt "#31500"
-msgid "Power off"
-msgstr ""
-
-msgctxt "#31981"
-msgid "[COLOR=blue]No Favourites found![/COLOR]"
-msgstr ""
-
-msgctxt "#31982"
-msgid "(add items and refresh)"
-msgstr ""
-
-msgctxt "#31983"
-msgid "Are you sure you want to reset skin settings?"
-msgstr ""
-
-msgctxt "#31984"
-msgid "(Cannot be undone!)"
-msgstr ""
-
-msgctxt "#31987"
-msgid "Hide"
-msgstr ""
-
-msgctxt "#31988"
-msgid "Video library"
-msgstr ""
-
-msgctxt "#31989"
-msgid "Music library"
-msgstr ""
-
-msgctxt "#31990"
-msgid "Update check"
-msgstr ""
-
-msgctxt "#31991"
-msgid "Emulators"
-msgstr ""
-
-msgctxt "#31992"
-msgid "Applications"
-msgstr ""
-
-msgctxt "#31993"
-msgid "Homebrews"
-msgstr ""
-
-msgctxt "#31994"
-msgid "Dashboards"
-msgstr ""
-
-msgctxt "#31995"
-msgid "SLik settings"
-msgstr ""
-
-msgctxt "#31996"
-msgid "Fan:"
-msgstr ""
-
-msgctxt "#31997"
-msgid "WARNING!"
-msgstr ""
-
-msgctxt "#31998"
-msgid "Free Mem:"
-msgstr ""
-
-msgctxt "#31999"
-msgid "Plugins"
-msgstr ""
-
-<!-- New Labels -->
-msgctxt "#32000"
-msgid "Select"
-msgstr ""
-
 msgctxt "#32001"
-msgid "Back"
+msgid "Disable slow scrolling"
 msgstr ""
 
 msgctxt "#32002"
-msgid "Media Controls"
+msgid "Enable fast game parsing"
 msgstr ""
 
-msgctxt "#32003"
-msgid "Preview Video"
+## Custom_Dialog_Quick_Change.xml - 31000 to 31010
+msgctxt "#31001"
+msgid "applications"
 msgstr ""
 
-msgctxt "#32004"
-msgid "Stop Playback"
+msgctxt "#31002"
+msgid "emulators"
 msgstr ""
 
-msgctxt "#32005"
-msgid "Close Window"
+msgctxt "#31003"
+msgid "games"
 msgstr ""
 
-msgctxt "#32006"
-msgid "Screenshot"
+msgctxt "#31004"
+msgid "homebrew"
 msgstr ""
 
-msgctxt "#32007"
-msgid "Add to Playlist"
+## Custom_logoff.xml - 31011 to 31015
+msgctxt "#31011"
+msgid "logging off"
 msgstr ""
 
-msgctxt "#32008"
-msgid "Remove from Playlist"
-msgstr ""
-
-msgctxt "#32009"
-msgid "Context menu"
-msgstr ""
-
-msgctxt "#32010"
-msgid "Options"
-msgstr ""
-
-msgctxt "#32011"
-msgid "Favourites"
-msgstr ""
-
-msgctxt "#32012"
-msgid "Clear Cache"
-msgstr ""
-
-msgctxt "#32013"
-msgid "Exit Playlist Menu"
-msgstr ""
-
-msgctxt "#32014"
-msgid "Enter Playlist Menu"
-msgstr ""
-
-msgctxt "#32015"
-msgid "Quick Change"
-msgstr ""
-
-msgctxt "#32016"
-msgid "Play Game"
-msgstr ""
-
-msgctxt "#32017"
-msgid "View Settings"
-msgstr ""
-
-msgctxt "#32018"
-msgid "Playlist Settings"
-msgstr ""
-
-msgctxt "#32019"
-msgid "Log Out"
-msgstr ""
-
-msgctxt "#32020"
-msgid "Reload Skin"
-msgstr ""
-
-msgctxt "#32021"
-msgid "bmc4Gamers"
-msgstr ""
-
-msgctxt "#32022"
-msgid "Title:"
-msgstr ""
-
-msgctxt "#32023"
-msgid "Artist:"
-msgstr ""
-
-msgctxt "#32024"
-msgid "Album:"
-msgstr ""
-
-msgctxt "#32025"
-msgid "Duration:"
-msgstr ""
-
-msgctxt "#32026"
-msgid "Individual save directories for each profile"
-msgstr ""
-
-msgctxt "#32027"
-msgid "[B]Note:[/B] If you're wanting to use [B]XBMC4Gamers[/B] as an application or an individual profile then I would advise leaving the individual saves directories disabled."
-msgstr ""
-
-msgctxt "#32028"
+## Custom_Menu_Loader.xml - 31016 to 31020
+msgctxt "#31016"
 msgid "loading"
 msgstr ""
 
-msgctxt "#32029"
-msgid "Running Scripts, please wait..."
+msgctxt "#31017"
+msgid "[B]User Mode[/B] is enabled[CR]Press (A) to logout"
 msgstr ""
 
-msgctxt "#32030"
-msgid "Played 0 times"
+## Custom_Skin_Settings.xml - 31021 to 31034
+msgctxt "#31021"
+msgid "Back"
 msgstr ""
 
-msgctxt "#32031"
-msgid "Played"
+msgctxt "#31022"
+msgid "General Toggles"
 msgstr ""
 
-msgctxt "#32032"
-msgid "time"
+msgctxt "#31023"
+msgid "Home Window"
 msgstr ""
 
-msgctxt "#32033"
-msgid "times"
+msgctxt "#31024"
+msgid "Login"
 msgstr ""
 
-msgctxt "#32034"
-msgid "Game Info"
+msgctxt "#31025"
+msgid "Quick Change Menu"
 msgstr ""
 
-msgctxt "#32035"
-msgid "0 times"
+msgctxt "#31026"
+msgid "Debug"
 msgstr ""
 
-msgctxt "#32036"
-msgid "This game has been played"
+msgctxt "#31027"
+msgid "Startup Options"
 msgstr ""
 
-msgctxt "#32037"
-msgid "Used space"
-msgstr ""
-
-msgctxt "#32038"
-msgid "Game location"
-msgstr ""
-
-msgctxt "#32039"
-msgid "Label"
-msgstr ""
-
-msgctxt "#32040"
-msgid "Game Saves"
-msgstr ""
-
-msgctxt "#32041"
-msgid "Settings"
-msgstr ""
-
-msgctxt "#32042"
-msgid "Create Playlist"
-msgstr ""
-
-msgctxt "#32043"
-msgid "Enable a custom button on the options dialogue"
-msgstr ""
-
-msgctxt "#32044"
-msgid "Location"
-msgstr ""
-
-msgctxt "#32045"
-msgid "Enable higher fanart"
-msgstr ""
-
-msgctxt "#32046"
-msgid "Enable additional sources"
-msgstr ""
-
-msgctxt "#32047"
-msgid "Enter source name"
-msgstr ""
-
-msgctxt "#32048"
+## General Toggles - Custom_Skin_Settings.xml - 31035 to 31055
+msgctxt "#31035"
 msgid "Disable time overlay"
 msgstr ""
 
-msgctxt "#32049"
-msgid "Enable debug information"
-msgstr ""
-
-msgctxt "#32050"
-msgid "Parsing Database:"
-
-msgctxt "#32051"
-msgid "Edit Mode is Enabled"
-msgstr ""
-
-msgctxt "#32052"
-msgid "Custom"
-
-msgctxt "#32053"
-msgid "Enable Profile Lock"
-msgstr ""
-
-msgctxt "#32054"
-msgid "[COLOR=blue]Enabling this setting will lock this profile if[/COLOR] [B]Edit Mode[/B][COLOR=blue] is disabled[/COLOR]"
-msgstr ""
-
-msgctxt "#32055"
-msgid "Home Windows"
-msgstr ""
-
-msgctxt "#32056"
-msgid "Synopsis"
-msgstr ""
-
-msgctxt "#32057"
-msgid "Error Script is missing or is taking to long to finish. Please send me a copy of your [B]"xbmc.log"[/B] file."
-msgstr ""
-
-msgctxt "#32058"
-msgid "Thumbnail cleaner"
-msgstr ""
-
-msgctxt "#32059"
-msgid "Play"
-msgstr ""
-
-msgctxt "#32060"
-msgid "Show Controls"
-msgstr ""
-
-msgctxt "#32061"
-msgid "Music Controls"
-msgstr ""
-
-msgctxt "#32062"
-msgid "Disabled"
-msgstr ""
-
-msgctxt "#32063"
-msgid "Options Dialogue"
-msgstr ""
-
-msgctxt "#32064"
-msgid "Previous Menu"
-msgstr ""
-
-msgctxt "#32065"
-msgid "Reload Skin[CR](Press)"
-msgstr ""
-
-msgctxt "#32066"
-msgid "Log Out[CR](Press)"
-msgstr ""
-
-msgctxt "#32067"
-msgid "Scroll Backwards Fast"
-msgstr ""
-
-msgctxt "#32068"
-msgid "Scroll Forward Fast"
-msgstr ""
-
-msgctxt "#32069"
-msgid "Navigate Menus"
-msgstr ""
-
-msgctxt "#32070"
-msgid "[B]User Mode[/B] is enabled[CR]Press (A) to logout."
-msgstr ""
-
-msgctxt "#32071"
-msgid " - [B]Clean[/B] thumbnails"
-msgstr ""
-
-msgctxt "#32072"
-msgid "[COLOR=blue]Removes unused thumbnails[/COLOR]"
-msgstr ""
-
-msgctxt "#32073"
-msgid " - [B]Remove[/B] cached thumbnails"
-msgstr ""
-
-msgctxt "#32074"
-msgid "[COLOR=blue]Cached upon entering the games menu[/COLOR]"
-msgstr ""
-
-msgctxt "#32075"
-msgid " - [B]Generate[/B] new thumbnails"
-msgstr ""
-
-msgctxt "#32076"
-msgid "[COLOR=blue]Using [B]default.tbns[/B][/COLOR]"
-msgstr ""
-
-msgctxt "#32077"
-msgid "Setup Birthday dates."
-msgstr ""
-
-msgctxt "#32078"
-msgid "Welcome. [CR]In this menu you will be able to set up to 5 different birthdays. [CR]These will show on the login-screen when the date arrives."
-msgstr ""
-
-msgctxt "#32079"
-msgid "No Fanart.jpg Found"
-msgstr ""
-
-msgctxt "#32080"
-msgid "No Poster.jpg Found"
-msgstr ""
-
-msgctxt "#32081"
-msgid "No Icon.jpg Found"
-msgstr ""
-
-msgctxt "#32082"
-msgid "No Thumb.jpg Found"
-msgstr ""
-
-msgctxt "#32083"
-msgid "No Banner.jpg Found"
-msgstr ""
-
-msgctxt "#32084"
-msgid "Enable intro video"
-msgstr ""
-
-msgctxt "#32085"
-msgid "Select video file"
-msgstr ""
-
-msgctxt "#32086"
-msgid "Found"
-msgstr ""
-
-msgctxt "#32087"
-msgid "Auto login"
-msgstr ""
-
-msgctxt "#32088"
-msgid "Restart"
-msgstr ""
-
-msgctxt "#32089"
-msgid "Hide screenshot and reload skin context buttons"
-msgstr ""
-
-msgctxt "#32090"
-msgid " - [B]Generate[/B] random playlist"
-msgstr ""
-
-msgctxt "#32091"
-msgid "Auto login enabled.[CR]You will always login as $INFO[system.profilename]"
-msgstr ""
-
-msgctxt "#32092"
-msgid "Auto login disabled.[CR]You will be able to select from multiple profiles."
-msgstr ""
-
-msgctxt "#32093"
-msgid "Hide played overlay on poster views"
-msgstr ""
-
-msgctxt "#32094"
-msgid "Hide trainer overlay on poster views"
-msgstr ""
-
-msgctxt "#32095"
-msgid "Enable custom xbmc4gamers logo colour"
-msgstr ""
-
-msgctxt "#32096"
-msgid "Custom hex value"
-msgstr ""
-
-msgctxt "#32097"
-msgid "Custom playlist"
-msgstr ""
-
-msgctxt "#32098"
-msgid ""
-msgstr ""
-
-msgctxt "#32099"
-msgid ""
-msgstr ""
-
-msgctxt "#32100"
+msgctxt "#31036"
 msgid "Enable alternative synopsis view"
 msgstr ""
 
-msgctxt "#32101"
-msgid ""
+msgctxt "#31037"
+msgid "Enable a custom button on the options dialogue"
+msgstr ""
+
+msgctxt "#31038"
+msgid "Label"
+msgstr ""
+
+msgctxt "#31039"
+msgid "Location"
+msgstr ""
+
+msgctxt "#31040"
+msgid "Enable custom xbmc4gamers logo colour"
+msgstr ""
+
+msgctxt "#31041"
+msgid "Custom hex value"
+msgstr ""
+
+msgctxt "#31042"
+msgid "Enable alt fanart mask"
+msgstr ""
+
+msgctxt "#31043"
+msgid "Hide played overlay on poster views"
+msgstr ""
+
+msgctxt "#31044"
+msgid "Hide reload skin and logout context buttons"
+msgstr ""
+
+msgctxt "#31045"
+msgid "Hide trainer overlay on poster views"
+msgstr ""
+
+msgctxt "#31046"
+msgid "Enable night mode"
+msgstr ""
+
+msgctxt "#31047"
+msgid "Hide scrolling letter"
+msgstr ""
+
+msgctxt "#31048"
+msgid "Change theme"
+msgstr ""
+
+msgctxt "#31049"
+msgid "Uninstall themes"
+msgstr ""
+
+msgctxt "#31050"
+msgid "Random theme"
+msgstr ""
+
+msgctxt "#31051"
+msgid "Randomise theme on startup"
+msgstr ""
+
+msgctxt "#31052"
+msgid "Randomise wallpaper"
+msgstr ""
+
+msgctxt "#31053"
+msgid "Only randomise downloaded themes"
+msgstr ""
+
+## Quick Change Menu - Custom_Skin_Settings.xml - 31056 to 31060
+msgctxt "#31056"
+msgid "Enable additional sources"
+msgstr ""
+
+msgctxt "#31057"
+msgid "Enter source name"
+msgstr ""
+
+## Login - Custom_Skin_Settings.xml - 31061 to 31068
+msgctxt "#31061"
+msgid "Auto Login"
+msgstr ""
+
+msgctxt "#31062"
+msgid "Enable debug information"
+msgstr ""
+
+msgctxt "#31063"
+msgid "Enable profile lock"
+msgstr ""
+
+msgctxt "#31064"
+msgid "Enabling this setting will lock this profile if [B]Edit Mode[/B] is disabled"
+msgstr ""
+
+msgctxt "#31065"
+msgid "Hide profile image on startup"
+msgstr ""
+
+## Scripts - Custom_Skin_Settings.xml - 31069 to 31075
+msgctxt "#31069"
+msgid "Run"
+msgstr ""
+
+## Home Window - Custom_Skin_Settings.xml - 31076 to 31085
+msgctxt "#31076"
+msgid "Current Home Window:"
+msgstr ""
+
+msgctxt "#31077"
+msgid "Applications"
+msgstr ""
+
+msgctxt "#31078"
+msgid "Emulators"
+msgstr ""
+
+msgctxt "#31079"
+msgid "Games"
+msgstr ""
+
+msgctxt "#31080"
+msgid "Homebrew"
+msgstr ""
+
+## Startup Options - Custom_Skin_Settings.xml - 31086 to 31100
+msgctxt "#31086"
+msgid "Enable intro video"
+msgstr ""
+
+msgctxt "#31087"
+msgid "Enable audio playlist"
+msgstr ""
+
+msgctxt "#31088"
+msgid "[B]Generate[/B] random playlist"
+msgstr ""
+
+msgctxt "#31089"
+msgid "Custom playlist"
+msgstr ""
+
+msgctxt "#31090"
+msgid "Update check"
+msgstr ""
+
+msgctxt "#31091"
+msgid "Use theme playlist"
+msgstr ""
+
+## DialogKeyboard.xml - 310101 to 31105
+msgctxt "#31101"
+msgid "6 digit hex colour code (0-F)"
+msgstr ""
+
+## Includes_Context_Buttons.xml - 31106 to 31140
+msgctxt "#31106"
+msgid "Select"
+msgstr ""
+
+msgctxt "#31107"
+msgid "Game"
+msgstr ""
+
+msgctxt "#31108"
+msgid "Back"
+msgstr ""
+
+msgctxt "#31109"
+msgid "Media Controls"
+msgstr ""
+
+msgctxt "#31110"
+msgid "Synopsis"
+msgstr ""
+
+msgctxt "#31111"
+msgid "Add to Playlist"
+msgstr ""
+
+msgctxt "#31112"
+msgid "Remove from Playlist"
+msgstr ""
+
+msgctxt "#31113"
+msgid "Context menu"
+msgstr ""
+
+msgctxt "#31114"
+msgid "Options"
+msgstr ""
+
+msgctxt "#31115"
+msgid "Favourites"
+msgstr ""
+
+msgctxt "#31116"
+msgid "Clear Cache"
+msgstr ""
+
+msgctxt "#31117"
+msgid "Exit Playlist Menu"
+msgstr ""
+
+msgctxt "#31118"
+msgid "Enter Playlist Menu"
+msgstr ""
+
+msgctxt "#31119"
+msgid "Quick Change"
+msgstr ""
+
+msgctxt "#31120"
+msgid "Launch Disc"
+msgstr ""
+
+msgctxt "#31121"
+msgid "View Settings"
+msgstr ""
+
+msgctxt "#31122"
+msgid "Playlist Settings"
+msgstr ""
+
+msgctxt "#31123"
+msgid "Log Out"
+msgstr ""
+
+msgctxt "#31124"
+msgid "Reload Skin"
+msgstr ""
+
+## Custom_View_Options.xml - 31141 to 31150
+msgctxt "#31141"
+msgid "Sort: Descending"
+msgstr ""
+
+msgctxt "#31142"
+msgid "Sort: Ascending"
+msgstr ""
+
+msgctxt "#31143"
+msgid "Close"
+msgstr ""
+
+msgctxt "#31144"
+msgid "Search & Sort"
+msgstr ""
+
+msgctxt "#31145"
+msgid "View Options"
+msgstr ""
+
+msgctxt "#31146"
+msgid "Switch View"
+msgstr ""
+
+## Settings.xml - 31151 to 31169
+msgctxt "#31151"
+msgid "Back"
+msgstr ""
+
+msgctxt "#31152"
+msgid "Region · Screensavers · Display"
+msgstr ""
+
+msgctxt "#31153"
+msgid "Playback · Video Playback Resolution"
+msgstr ""
+
+msgctxt "#31154"
+msgid "Trainer path · Game scanning · Dashboard path"
+msgstr ""
+
+msgctxt "#31155"
+msgid "Static IP · DHCP"
+msgstr ""
+
+msgctxt "#31156"
+msgid "Output · Power saving · Autorun"
+msgstr ""
+
+msgctxt "#31157"
+msgid "Playback"
+msgstr ""
+
+msgctxt "#31158"
+msgid "Copy · Move · Rename · Delete"
+msgstr ""
+
+msgctxt "#31159"
+msgid "Applications · DLC · Mods · Update"
+msgstr ""
+
+msgctxt "#31160"
+msgid "Toggles · Scripts · Startup playlist"
+msgstr ""
+
+## SettingsCategory.xml - 31166 to 31170
+msgctxt "#31166"
+msgid "Back"
+msgstr ""
+
+## SettingsProfile.xml - 31171 to 31175
+msgctxt "#31171"
+msgid "Auto login enabled.[CR]You will always login as [B]$INFO[system.profilename][/B]"
+msgstr ""
+
+msgctxt "#31172"
+msgid "Auto login disabled.[CR]You will be able to select from multiple profiles."
+msgstr ""
+
+## SettingsScreenCalibration.xml - 31176 to 31178
+msgctxt "#31176"
+msgid "Get spinning disc to have as little wobble as possible."
+msgstr ""
+
+## Startup.xml - 31179 to 31185
+msgctxt "#31179"
+msgid "loading"
+msgstr ""
+
+msgctxt "#31180"
+msgid "Running Scripts, please wait..."
+msgstr ""
+
+msgctxt "#31181"
+msgid "Error Script is missing or is taking to long to finish. Please send me a copy of your [B]"xbmc.log"[/B] file."
+msgstr ""
+
+## View files - 31186 to 31209
+msgctxt "#31186"
+msgid "Played 0 times"
+msgstr ""
+
+msgctxt "#31187"
+msgid "Played"
+msgstr ""
+
+msgctxt "#31188"
+msgid "time"
+msgstr ""
+
+msgctxt "#31189"
+msgid "times"
+msgstr ""
+
+msgctxt "#31190"
+msgid "Game Info"
+msgstr ""
+
+msgctxt "#31191"
+msgid "0 times"
+msgstr ""
+
+msgctxt "#31192"
+msgid "This game has been played"
+msgstr ""
+
+msgctxt "#31193"
+msgid "Used space"
+msgstr ""
+
+msgctxt "#31194"
+msgid "Game location"
+msgstr ""
+
+## FileBrowser.xml - 31210 to 31212
+msgctxt "#31210"
+msgid "Page"
+msgstr ""
+
+msgctxt "#31211"
+msgid "Items"
+msgstr ""
+
+## Master Profile Strings - 31500 to 31519
+msgctxt "#31500"
+msgid "[B]Note:[/B] If you're wanting to use [B]XBMC4Gamers[/B] as an application or an individual profile then I would advise leaving the individual saves directories disabled."
+msgstr ""
+
+msgctxt "#31501"
+msgid "Individual save directories for each profile"
+msgstr ""
+
+msgctxt "#31502"
+msgid "Setup Birthday dates."
+msgstr ""
+
+msgctxt "#31503"
+msgid "Welcome. [CR]In this menu you will be able to set up to 5 different birthdays. [CR]These will show on the login-screen when the date arrives."
+msgstr ""
+
+msgctxt "#31504"
+msgid "Enable intro video"
+msgstr ""
+
+msgctxt "#31505"
+msgid "Other Options"
+msgstr ""
+
+msgctxt "#31506"
+msgid "Context Menu"
+msgstr ""
+
+## LoginScreen.xml - 31520 to 31529
+msgctxt "#31520"
+msgid "Load Profile"
+msgstr ""
+
+msgctxt "#31521"
+msgid "Context Menu"
+msgstr ""
+
+msgctxt "#31522"
+msgid "Edit Mode Enabled"
+msgstr ""
+
+msgctxt "#31523"
+msgid "Welcome to XBMC4Gamers"
+msgstr ""
+
+msgctxt "#31524"
+msgid "Who is using the controller?"
+msgstr ""
+
+## Settings.xml - 31529 to 31540
+msgctxt "#31529"
+msgid "Adjust your screen size"
+msgstr ""
+
+
+## File Manager.xml - 31530 to 31540
+msgctxt "#31530"
+msgid "Highlight"
+msgstr ""
+
+msgctxt "#31531"
+msgid "Normal Mode"
+msgstr ""
+
+msgctxt "#31532"
+msgid "Compact Mode"
 msgstr ""

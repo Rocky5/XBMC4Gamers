@@ -1,0 +1,107 @@
+<window id="34">
+		<defaultcontrol always="true">4</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<controls>
+				<include>CommonBackground</include>
+				<include>WindowHeader</include>
+				<control type="group">
+						<include>DialogEffectZoomFast</include>
+						<control type="image">
+								<posx>55</posx>
+								<posy>55</posy>
+								<width>1170</width>
+								<height>610</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\settings_categories\main.png</texture>
+						</control>
+						<control type="grouplist">
+								<description>Control Info</description>
+								<posx>55</posx>
+								<posy>580</posy>
+								<width>1170</width>
+								<height>80</height>
+								<itemgap>10</itemgap>
+								<orientation>Horizontal</orientation>
+								<align>center</align>
+								<!-- A Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\a_button.png</texture>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="80" max="147">auto</width>
+										<height>20</height>
+										<font>size_19</font>
+										<align>left</align>
+										<textcolor>windows_context_label</textcolor>
+										<label>$LOCALIZE[424]</label>
+										<include>Context_Buttons_Text_Align</include>
+								</control>
+								<!-- B Button -->
+								<control type="image">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\b_button.png</texture>
+								</control>
+								<control type="label">
+										<posx>0</posx>
+										<posy>0</posy>
+										<width min="80" max="147">auto</width>
+										<height>20</height>
+										<font>size_19</font>
+										<align>left</align>
+										<textcolor>windows_context_label</textcolor>
+										<label>$LOCALIZE[31021]</label>
+										<include>Context_Buttons_Text_Align</include>
+								</control>
+						</control>
+						<control type="textbox">
+								<posx>260</posx>
+								<posy>250</posy>
+								<width>760</width>
+								<height>105</height>
+								<font>size_30</font>
+								<textcolor>windows_context_label</textcolor>
+								<scroll>true</scroll>
+								<align>center</align>
+								<label>$LOCALIZE[31171]</label>
+								<visible>!System.HasLoginScreen</visible>
+						</control>
+						<control type="textbox">
+								<posx>260</posx>
+								<posy>250</posy>
+								<width>760</width>
+								<height>105</height>
+								<font>size_30</font>
+								<textcolor>windows_context_label</textcolor>
+								<scroll>true</scroll>
+								<align>center</align>
+								<label>$LOCALIZE[31172]</label>
+								<visible>System.HasLoginScreen</visible>
+						</control>
+						<control type="radiobutton" id="4">
+								<description>View As button</description>
+								<posx>420</posx>
+								<posy>305</posy>
+								<width>360</width>
+								<height>200</height>
+								<label>$LOCALIZE[24022] $LOCALIZE[20096]</label>
+								<font>size_25</font>
+								<align>center</align>
+								<textcolor>windows_context_label</textcolor>
+								<focusedcolor>windows_context_alt_label</focusedcolor>
+								<texturefocus border="5">-</texturefocus>
+								<texturenofocus border="5">-</texturenofocus>
+						</control>
+				</control>
+		</controls>
+</window>

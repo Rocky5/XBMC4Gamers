@@ -1,0 +1,18 @@
+<window id="2999">
+		<!-- Onload, these are loaded when the window is first loaded -->
+		<onload>Skin.SetBool(xbmc4gamers)</onload>
+		<onload>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/default.py )</onload>
+		<onunload>Skin.SetString(urldownloader,Special://xbmc/system/scripts/urldownloader/)</onunload>
+		<defaultcontrol always="true">1</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<controls>
+				<include>CommonBackground</include>
+				<control type="group">
+						<posx>523</posx>
+						<posy>243</posy>
+						<animation effect="fade" start="0" end="100" time="200" reversible="false">WindowOpen</animation>
+						<include>Startup_Window_Profile</include>
+				</control>
+				<include>Startup_Window_Info</include>
+		</controls>
+</window>

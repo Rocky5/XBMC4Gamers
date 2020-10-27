@@ -1,0 +1,130 @@
+<window type="dialog" id="134">
+		<defaultcontrol always="true">450</defaultcontrol>
+		<include>Window_OpenClose_Animation</include>
+		<controls>
+				<control type="group">
+						<posx>145</posx>
+						<posy>-70</posy>
+						<control type="image">
+								<posx>-10</posx>
+								<posy>288</posy>
+								<width>260</width>
+								<height>360</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>black-back.png</texture>
+								<bordertexture border="5">poster-border.png</bordertexture>
+								<bordersize>5</bordersize>
+						</control>
+						<control type="image">
+								<posx>-10</posx>
+								<posy>288</posy>
+								<width>260</width>
+								<height>360</height>
+								<aspectratio>stretch</aspectratio>
+								<texture background="true">$INFO[container(450).listitem.icon]</texture>
+								<bordertexture>-</bordertexture>
+								<bordersize>5</bordersize>
+						</control>
+						<control type="list" id="450">
+								<posx>260</posx>
+								<posy>288</posy>
+								<width>740</width>
+								<height>360</height>
+								<onleft>-</onleft>
+								<onright>-</onright>
+								<onup>-</onup>
+								<ondown>-</ondown>
+								<viewtype label="Panels">Panel</viewtype>
+								<pagecontrol>62</pagecontrol>
+								<scrolltime>200</scrolltime>
+								<preloaditems>6</preloaditems>
+								<itemlayout height="90" width="1175">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>1200</width>
+												<height>90</height>
+												<texture border="5">listnf.png</texture>
+										</control>
+										<control type="image">
+												<posx>10</posx>
+												<posy>10</posy>
+												<width>70</width>
+												<height>70</height>
+												<texture background="true">$INFO[listitem.icon]</texture>
+												<bordertexture border="5">white-back.png</bordertexture>
+												<bordersize>1</bordersize>
+										</control>
+										<control type="label">
+												<posx>90</posx>
+												<posy>10</posy>
+												<width>1175</width>
+												<height>45</height>
+												<font>size_35</font>
+												<textcolor>grey2</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>$INFO[ListItem.Label]</label>
+										</control>
+										<control type="label">
+												<posx>90</posx>
+												<posy>55</posy>
+												<width>1175</width>
+												<height>20</height>
+												<font>size_15</font>
+												<textcolor>grey2</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>Path: $INFO[ListItem.FolderPath]</label>
+												<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..)</visible>
+										</control>
+								</itemlayout>
+								<focusedlayout height="90" width="1175">
+										<control type="image">
+												<posx>0</posx>
+												<posy>0</posy>
+												<width>1175</width>
+												<height>90</height>
+												<texture border="5">thumbfo.png</texture>
+										</control>
+										<control type="image">
+												<posx>10</posx>
+												<posy>10</posy>
+												<width>70</width>
+												<height>70</height>
+												<texture background="true">$INFO[listitem.icon]</texture>
+												<bordertexture border="5">white-back.png</bordertexture>
+												<bordersize>1</bordersize>
+										</control>
+										<control type="label">
+												<posx>90</posx>
+												<posy>10</posy>
+												<width>1175</width>
+												<height>45</height>
+												<font>size_35</font>
+												<textcolor>black</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>$INFO[ListItem.Label]</label>
+										</control>
+										<control type="label">
+												<posx>90</posx>
+												<posy>55</posy>
+												<width>1175</width>
+												<height>20</height>
+												<font>size_15</font>
+												<textcolor>black</textcolor>
+												<selectedcolor>blue</selectedcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>Path: $INFO[ListItem.FolderPath]</label>
+												<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..)</visible>
+										</control>
+								</focusedlayout>
+						</control>
+				</control>
+		</controls>
+</window>

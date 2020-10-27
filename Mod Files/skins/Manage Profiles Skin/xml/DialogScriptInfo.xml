@@ -1,0 +1,50 @@
+<window type="dialog" id="2004">
+		<defaultcontrol always="true">61</defaultcontrol>
+		<coordinates>
+				<system>1</system>
+				<posx>290</posx>
+				<posy>210</posy>
+		</coordinates>
+		<include>dialogeffect</include>
+		<controls>
+				<control type="image">
+						<description>background image</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>700</width>
+						<height>300</height>
+						<texture border="40">dialogback.png</texture>
+				</control>
+				<control type="image">
+						<description>Heading Background</description>
+						<posx>30</posx>
+						<posy>34</posy>
+						<width>640</width>
+						<height>40</height>
+						<texture border="5">thumbfo.png</texture>
+				</control>
+				<control type="label" id="1">
+						<description>heading label</description>
+						<posx>40</posx>
+						<posy>35</posy>
+						<width>620</width>
+						<height>40</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_21_bold</font>
+						<label>-</label>
+						<textcolor>black</textcolor>
+				</control>
+				<control type="textbox" id="5">
+						<description>textarea</description>
+						<posx>0</posx>
+						<posy>100</posy>
+						<width>700</width>
+						<height>300</height>
+						<font>size_23</font>
+						<align>center</align>
+						<textcolor>white</textcolor>
+						<shadowcolor>black</shadowcolor>
+				</control>
+		</controls>
+</window>

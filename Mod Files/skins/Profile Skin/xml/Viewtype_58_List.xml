@@ -1,0 +1,282 @@
+<includes>
+		<include name="ListView">
+				<control type="group">
+						<visible>Control.IsVisible(58) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<control type="group">
+								<control type="image">
+										<posx>100</posx>
+										<posy>588</posy>
+										<width>1080</width>
+										<height>30</height>
+										<aspectratio>stretch</aspectratio>
+										<colordiffuse>FF000000</colordiffuse>
+										<texture background="true">listview_shadow.png</texture>
+								</control>
+								<control type="image">
+										<posx>120</posx>
+										<posy>150</posy>
+										<width>320</width>
+										<height>450</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true">black-back.png</texture>
+										<bordertexture border="5">poster-border.png</bordertexture>
+										<bordersize>5</bordersize>
+								</control>
+								<control type="image">
+										<posx>120</posx>
+										<posy>150</posy>
+										<width>320</width>
+										<height>450</height>
+										<aspectratio>keep</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true">$INFO[listitem.icon]</texture>
+										<bordertexture>-</bordertexture>
+										<bordersize>5</bordersize>
+										<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+								</control>
+								<control type="image">
+										<posx>120</posx>
+										<posy>150</posy>
+										<width>320</width>
+										<height>450</height>
+										<aspectratio>stretch</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true">no_poster.jpg</texture>
+										<bordertexture>-</bordertexture>
+										<bordersize>5</bordersize>
+										<visible>Skin.HasSetting(_resourcesenabled)</visible>
+								</control>
+								<control type="image">
+										<posx>120</posx>
+										<posy>150</posy>
+										<width>320</width>
+										<height>450</height>
+										<aspectratio>keep</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true">$INFO[listitem.icon]</texture>
+										<bordertexture>-</bordertexture>
+										<bordersize>5</bordersize>
+										<visible>!IsEmpty(ListItem.Thumb) + ListItem.IsFolder + Skin.HasSetting(_resourcesenabled)</visible>
+								</control>
+								<control type="largeimage">
+										<posx>120</posx>
+										<posy>150</posy>
+										<width>320</width>
+										<height>450</height>
+										<aspectratio>stretch</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+										<bordertexture>-</bordertexture>
+										<bordersize>5</bordersize>
+										<visible>Skin.HasSetting(_resourcesenabled)</visible>
+								</control>
+								<control type="list" id="58">
+										<posx>440</posx>
+										<posy>150</posy>
+										<width>740</width>
+										<height>450</height>
+										<onleft>9000</onleft>
+										<onright>88</onright>
+										<onup>58</onup>
+										<ondown>58</ondown>
+										<viewtype label="view58">List</viewtype>
+										<pagecontrol>88</pagecontrol>
+										<scrolltime>220</scrolltime>
+										<preloaditems>3</preloaditems>
+										<itemlayout height="90" width="720">
+												<control type="image">
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>720</width>
+														<height>90</height>
+														<texture background="true" border="5">listnf.png</texture>
+												</control>
+												<control type="image">
+														<posx>10</posx>
+														<posy>10</posy>
+														<width>70</width>
+														<height>70</height>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true">no_cd_small.png</texture>
+														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>10</posx>
+														<posy>10</posy>
+														<width>70</width>
+														<height>70</height>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true" diffuse="CD_diffuse_listview.png">$INFO[listitem.path,,_resources\artwork\cd_small.jpg]</texture>
+														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="label">
+														<posx>90</posx>
+														<posy>10</posy>
+														<width>620</width>
+														<height>45</height>
+														<font>size_35</font>
+														<textcolor>grey2</textcolor>
+														<selectedcolor>blue</selectedcolor>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>$INFO[ListItem.Label]</label>
+												</control>
+												<control type="label">
+														<posx>90</posx>
+														<posy>55</posy>
+														<width>620</width>
+														<height>20</height>
+														<font>size_15</font>
+														<textcolor>grey2</textcolor>
+														<selectedcolor>blue</selectedcolor>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+												</control>
+												<control type="label">
+														<posx>90</posx>
+														<posy>55</posy>
+														<width>620</width>
+														<height>20</height>
+														<font>size_15</font>
+														<textcolor>grey2</textcolor>
+														<selectedcolor>blue</selectedcolor>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+												</control>
+												<control type="label">
+														<posx>90</posx>
+														<posy>55</posy>
+														<width>620</width>
+														<height>20</height>
+														<font>size_15</font>
+														<textcolor>grey2</textcolor>
+														<selectedcolor>blue</selectedcolor>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+												</control>
+												<control type="image">
+														<posx>680</posx>
+														<posy>50</posy>
+														<width>30</width>
+														<height>30</height>
+														<aspectratio>stretch</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture>$INFO[listitem.overlay]</texture>
+												</control>
+										</itemlayout>
+										<focusedlayout height="90" width="720">
+												<control type="image">
+														<posx>0</posx>
+														<posy>0</posy>
+														<width>720</width>
+														<height>90</height>
+														<texture background="true" border="5">thumbfo.png</texture>
+												</control>
+												<control type="image">
+														<posx>10</posx>
+														<posy>10</posy>
+														<width>70</width>
+														<height>70</height>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true">no_cd_small.png</texture>
+														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>10</posx>
+														<posy>10</posy>
+														<width>70</width>
+														<height>70</height>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture background="true" diffuse="CD_diffuse_listview.png">$INFO[listitem.path,,_resources\artwork\cd_small.jpg]</texture>
+														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>680</posx>
+														<posy>50</posy>
+														<width>30</width>
+														<height>30</height>
+														<aspectratio>stretch</aspectratio>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<texture>$INFO[listitem.overlay]</texture>
+												</control>
+												<control type="label">
+														<posx>90</posx>
+														<posy>10</posy>
+														<width>620</width>
+														<height>45</height>
+														<font>size_35</font>
+														<textcolor>black</textcolor>
+														<selectedcolor>blue</selectedcolor>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>$INFO[ListItem.Label]</label>
+												</control>
+												<control type="label">
+														<posx>90</posx>
+														<posy>55</posy>
+														<width>620</width>
+														<height>20</height>
+														<font>size_15</font>
+														<textcolor>black</textcolor>
+														<selectedcolor>blue</selectedcolor>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+												</control>
+												<control type="label">
+														<posx>90</posx>
+														<posy>55</posy>
+														<width>620</width>
+														<height>20</height>
+														<font>size_15</font>
+														<textcolor>black</textcolor>
+														<selectedcolor>blue</selectedcolor>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+												</control>
+												<control type="label">
+														<posx>90</posx>
+														<posy>55</posy>
+														<width>620</width>
+														<height>20</height>
+														<font>size_15</font>
+														<textcolor>black</textcolor>
+														<selectedcolor>blue</selectedcolor>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+												</control>
+										</focusedlayout>
+								</control>
+						</control>
+						<!-- Scroll bar fails to work due to the scrolltime being set to 200 :-/ -->
+						<control type="scrollbar" id="88">
+								<posx>1155</posx>
+								<posy>150</posy>
+								<width>10</width>
+								<height>450</height>
+								<texturesliderbackground>-</texturesliderbackground>
+								<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+								<texturesliderbarfocus border="2,16,2,16">scrollbar_bar_focus.png</texturesliderbarfocus>
+								<textureslidernib>scrollbar_nib.png</textureslidernib>
+								<textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
+								<onleft>58</onleft>
+								<showonepage>false</showonepage>
+								<orientation>vertical</orientation>
+								<visible allowhiddenfocus="true">Control.HasFocus(88)</visible>
+								<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
+						</control>
+				</control>
+		</include>
+</includes>

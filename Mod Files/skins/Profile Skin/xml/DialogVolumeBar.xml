@@ -1,0 +1,47 @@
+<window id="104">
+		<defaultcontrol>1</defaultcontrol>
+		<include>dialogeffect</include>
+		<controls>
+				<control type="progress" id="29999">
+						<description>Hidden Progressbar Volume</description>
+						<posx>0</posx>
+						<posy>0</posy>
+						<width>0</width>
+						<height>0</height>
+						<info>Player.Volume</info>
+						<texturebg>-</texturebg>
+						<midtexture>-</midtexture>
+						<lefttexture>-</lefttexture>
+						<righttexture>-</righttexture>
+						<overlaytexture>-</overlaytexture>
+				</control>
+				<control type="group">
+						<visible>!StringCompare(System.Profilename,Manage Profiles) + !StringCompare(System.Profilename,DVD2Xbox) + !Window.IsActive(114)</visible>
+						<control type="image">
+								<posx>606</posx>
+								<posy>15</posy>
+								<width>68</width>
+								<height>68</height>
+								<texture>windows/volume/back.png</texture>
+								<animation effect="fade" start="100" end="0" delay="300" time="500" tween="sine" condition="Player.Muted">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>606</posx>
+								<posy>15</posy>
+								<width>68</width>
+								<height>68</height>
+								<colordiffuse>volume_color</colordiffuse>
+								<texture>$INFO[Control.GetLabel(29999),windows/volume/progress/p,.png]</texture>
+								<animation effect="fade" start="100" end="0" delay="300" time="500" tween="sine" condition="Player.Muted">Conditional</animation>
+						</control>
+						<control type="image">
+								<posx>620</posx>
+								<posy>29</posy>
+								<width>40</width>
+								<height>40</height>
+								<colordiffuse>volume_color</colordiffuse>
+								<texture>$VAR[VolumeIconVar]</texture>
+						</control>
+				</control>
+		</controls>
+</window>

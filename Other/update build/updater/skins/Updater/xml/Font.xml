@@ -1,0 +1,34 @@
+<fonts>
+		<fontset id="Default" unicode="true">
+				<font>
+						<name>font12</name>
+						<filename>arial.ttf</filename>
+						<size>12</size>
+				</font>
+				<font>
+						<name>font14</name>
+						<filename>arial.ttf</filename>
+						<size>14</size>
+				</font>
+				<font>
+						<name>font15</name>
+						<filename>arial.ttf</filename>
+						<size>15</size>
+				</font>
+				<font>
+						<name>font18</name>
+						<filename>arial.ttf</filename>
+						<size>18</size>
+				</font>
+				<font>
+						<name>font20</name>
+						<filename>arial.ttf</filename>
+						<size>20</size>
+				</font>
+				<font>
+						<name>font50</name>
+						<filename>arial.ttf</filename>
+						<size>50</size>
+				</font>
+		</fontset>
+</fonts>

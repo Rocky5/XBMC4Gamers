@@ -1,0 +1,359 @@
+<includes>
+		<include name="FanartView">
+				<control type="group">
+						<visible>Control.IsVisible(57) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<control type="wraplist" id="57">
+								<posx>0</posx>
+								<posy>0</posy>
+								<width>1280</width>
+								<height>720</height>
+								<onleft>57</onleft>
+								<onright>57</onright>
+								<onup>9000</onup>
+								<ondown>-</ondown>
+								<viewtype label="view57">Panel</viewtype>
+								<pagecontrol>87</pagecontrol>
+								<scrolltime>300</scrolltime>
+								<focusposition>0</focusposition>
+								<movement>0</movement>
+								<orientation>horizontal</orientation>
+								<preloaditems>3</preloaditems>
+								<itemlayout condition="!Skin.HasSetting(fanartfullscreen)" width="1280" height="720">
+										<control type="image">
+												<description>background image</description>
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<texture>view_background_alt.png</texture>
+												<aspectratio>stretch</aspectratio>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png">no_fanart.jpg</texture>
+										</control>
+										<control type="largeimage">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png">$INFO[listitem.path,,fanart.jpg]</texture>
+												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="largeimage">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<visible>Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="largeimage">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+												<visible>ListItem.IsFolder</visible>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse_alt.png">black-back.png</texture>
+												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
+										</control>
+										<control type="label">
+												<posx>105</posx>
+												<posy>627</posy>
+												<width>1070</width>
+												<height>35</height>
+												<font>size_35</font>
+												<textcolor>white</textcolor>
+												<scroll>true</scroll>
+												<align>center</align>
+												<aligny>center</aligny>
+												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>113</posx>
+												<posy>630</posy>
+												<width>30</width>
+												<height>30</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>overlay-watched.png</texture>
+												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+												<animation reversible="false" effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+										</control>
+										<control type="image">
+												<posx>142r</posx>
+												<posy>630</posy>
+												<width>30</width>
+												<height>30</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[listitem.overlay]</texture>
+												<animation reversible="false" effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+										</control>
+								</itemlayout>
+								<focusedlayout condition="!Skin.HasSetting(fanartfullscreen)" width="1280" height="720">
+										<control type="image">
+												<description>background image</description>
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<texture>view_background_alt.png</texture>
+												<aspectratio>stretch</aspectratio>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png">no_fanart.jpg</texture>
+										</control>
+										<control type="largeimage">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png">$INFO[listitem.path,,fanart.jpg]</texture>
+												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="largeimage">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<visible>Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="largeimage">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+												<visible>ListItem.IsFolder</visible>
+										</control>
+										<control type="image">
+												<posx>100</posx>
+												<posy>59</posy>
+												<width>1080</width>
+												<height>614</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="view_diffuse_alt.png">black-back.png</texture>
+												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
+										</control>
+										<control type="label">
+												<posx>105</posx>
+												<posy>627</posy>
+												<width>1070</width>
+												<height>35</height>
+												<font>size_35</font>
+												<textcolor>white</textcolor>
+												<scroll>true</scroll>
+												<align>center</align>
+												<aligny>center</aligny>
+												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+												<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
+										</control>
+										<control type="image">
+												<posx>113</posx>
+												<posy>630</posy>
+												<width>30</width>
+												<height>30</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>overlay-watched.png</texture>
+												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+												<animation reversible="false" effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+										</control>
+										<control type="image">
+												<posx>142r</posx>
+												<posy>630</posy>
+												<width>30</width>
+												<height>30</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[listitem.overlay]</texture>
+												<animation reversible="false" effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+										</control>
+								</focusedlayout>
+								<itemlayout condition="Skin.HasSetting(fanartfullscreen)" width="1280" height="720">
+										<control type="image">
+												<include>1280x720</include>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true">no_fanart.jpg</texture>
+										</control>
+										<control type="image">
+												<include>1280x720</include>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true">$INFO[listitem.path,,fanart.jpg]</texture>
+												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<include>1280x720</include>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<visible>Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<include>1280x720</include>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+												<visible>ListItem.IsFolder</visible>
+										</control>
+										<control type="group">
+												<animation effect="slide" start="0,0" end="0,0" time="0">WindowOpen</animation>
+												<animation effect="slide" start="0,0" end="0,20" time="100" condition="Window.IsActive(1112)">Conditional</animation>
+												<animation effect="slide" start="0,20" end="0,0" time="100" condition="!Window.IsActive(1112)">Conditional</animation>
+												<control type="image">
+														<posx>0</posx>
+														<posy>620</posy>
+														<width>1280</width>
+														<height>50</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">black-back.png</texture>
+														<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
+												</control>
+												<control type="label">
+														<posx>105</posx>
+														<posy>627</posy>
+														<width>1070</width>
+														<height>35</height>
+														<font>size_35</font>
+														<textcolor>white</textcolor>
+														<scroll>true</scroll>
+														<align>center</align>
+														<aligny>center</aligny>
+														<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+														<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>113</posx>
+														<posy>630</posy>
+														<width>30</width>
+														<height>30</height>
+														<aspectratio>stretch</aspectratio>
+														<texture>overlay-watched.png</texture>
+														<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+														<animation reversible="false" effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+												</control>
+												<control type="image">
+														<posx>142r</posx>
+														<posy>630</posy>
+														<width>30</width>
+														<height>30</height>
+														<aspectratio>stretch</aspectratio>
+														<texture>$INFO[listitem.overlay]</texture>
+														<animation reversible="false" effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+												</control>
+										</control>
+								</itemlayout>
+								<focusedlayout condition="Skin.HasSetting(fanartfullscreen)" width="1280" height="720">
+										<control type="image">
+												<include>1280x720</include>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true">no_fanart.jpg</texture>
+										</control>
+										<control type="image">
+												<include>1280x720</include>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true">$INFO[listitem.path,,fanart.jpg]</texture>
+												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<include>1280x720</include>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+												<visible>Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<include>1280x720</include>
+												<aspectratio scalediffuse="false">stretch</aspectratio>
+												<texture background="true">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+												<visible>ListItem.IsFolder</visible>
+										</control>
+										<control type="group">
+												<animation effect="slide" start="0,0" end="0,0" time="0">WindowOpen</animation>
+												<animation effect="slide" start="0,0" end="0,20" time="100" condition="Window.IsActive(1112)">Conditional</animation>
+												<animation effect="slide" start="0,20" end="0,0" time="100" condition="!Window.IsActive(1112)">Conditional</animation>
+												<control type="image">
+														<posx>0</posx>
+														<posy>620</posy>
+														<width>1280</width>
+														<height>50</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">black-back.png</texture>
+														<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
+												</control>
+												<control type="label">
+														<posx>105</posx>
+														<posy>627</posy>
+														<width>1070</width>
+														<height>35</height>
+														<font>size_35</font>
+														<textcolor>white</textcolor>
+														<scroll>true</scroll>
+														<align>center</align>
+														<aligny>center</aligny>
+														<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+														<visible>!Skin.HasSetting(fanartoverlayenabled)</visible>
+												</control>
+												<control type="image">
+														<posx>113</posx>
+														<posy>630</posy>
+														<width>30</width>
+														<height>30</height>
+														<aspectratio>stretch</aspectratio>
+														<texture>overlay-watched.png</texture>
+														<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+														<animation reversible="false" effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+												</control>
+												<control type="image">
+														<posx>142r</posx>
+														<posy>630</posy>
+														<width>30</width>
+														<height>30</height>
+														<aspectratio>stretch</aspectratio>
+														<texture>$INFO[listitem.overlay]</texture>
+														<animation reversible="false" effect="fade" start="100" end="80" time="0" condition="true">Conditional</animation>
+												</control>
+										</control>
+								</focusedlayout>
+						</control>
+						<!-- Scroll bar fails to work due to the scrolltime being set to 200 :-/ -->
+						<control type="scrollbar" id="87">
+								<posx>150</posx>
+								<posy>48r</posy>
+								<width>980</width>
+								<height>10</height>
+								<texturesliderbackground border="2,2,2,2">black-back.png</texturesliderbackground>
+								<texturesliderbar border="16,2,16,2">scrollbar_bar-vertical.png</texturesliderbar>
+								<texturesliderbarfocus border="16,2,16,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
+								<textureslidernib>scrollbar_nib-vertical.png</textureslidernib>
+								<textureslidernibfocus>scrollbar_nib-vertical.png</textureslidernibfocus>
+								<onup>57</onup>
+								<ondown>-</ondown>
+								<showonepage>false</showonepage>
+								<orientation>horizontal</orientation>
+								<visible allowhiddenfocus="true">Control.HasFocus(87)</visible>
+								<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
+								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
+						</control>
+				</control>
+		</include>
+</includes>

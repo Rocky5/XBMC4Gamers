@@ -1,20 +1,26 @@
 <!-- Edit Mode -->
 <keymap>
+		<FileManager>
+				<gamepad>
+						<black>XBMC.RunScript(Special://scripts/XBMC4Gamers/Utilities/Toggle Filemanager Mode.py)</black>
+				</gamepad>
+		</FileManager>
 		<MyPrograms>
 				<gamepad>
 						<black>XBMC.ActivateWindow(1112)</black>
 						<back>XBMC.ActivateWindow(1115)</back>
+						<Y>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers Extras/Synopsis/Y_button_loader.py)</Y>
 				</gamepad>
 		</MyPrograms>
 		<Settings>
 				<gamepad>
-						<black>XBMC.ActivateWindow(1400)</black>
+						<black>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Text Reader.py,0,Special://root/system/SystemInfo/changes.txt)</black>
 				</gamepad>
 		</Settings>
 		<Profiles>
 				<gamepad>
-						<B>Back</B>
-						<back>ActivateWindow(Settings)</back>
+						<Back>Highlight</Back>
+						<start>ActivateWindow(Settings)</start>
 						<black>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Clear Cache.py)</black>
 				</gamepad>
 		</Profiles>
@@ -23,7 +29,7 @@
 						<A>Select</A>
 						<B>Back</B>
 						<X>XBMC.ReplaceWindow(114)</X>
-						<Y>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers/Utilities/screenshot.py)</Y>
+						<Y />
 						<white>ContextMenu</white>
 						<black />
 						<start>XBMC.PlayDVD()</start>
@@ -42,10 +48,15 @@
 						<rightthumbstickdown>VolumeDown</rightthumbstickdown>
 				</gamepad>
 		</global>
+		<LoginScreen>
+				<gamepad>
+						<black>XBMC.SetFocus(19)</black>
+						<start>RunScript(Special://scripts/XBMC4Gamers/Utilities/dialog ok.py,run_script,NOTICE,,About to check for an update[CR]This can take a few seconds.,,Special://scripts/XBMC4Gamers/Utilities/Update Check.py)</start>
+				</gamepad>
+		</LoginScreen>
 		<Home>
 				<gamepad>
 						<back />
-						<black>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Clear Cache.py)</black>
 						<lefttrigger>left</lefttrigger>
 						<righttrigger>right</righttrigger>
 				</gamepad>
@@ -113,11 +124,12 @@
 				<gamepad>
 						<A>Pause</A>
 						<B>Stop</B>
+						<x>LockPreset</x>
 						<Y>XBMC.ActivateWindow(VisualisationPresetList)</Y>
 						<black>CodecInfo</black>
 						<white>Info</white>
 						<start>XBMC.ActivateWindow(MusicOSD)</start>
-						<back>LockPreset</back>
+						<back>back</back>
 						<leftanalogtrigger>AnalogRewind</leftanalogtrigger>
 						<rightanalogtrigger>AnalogFastForward</rightanalogtrigger>
 						<dpadleft>SkipPrevious</dpadleft>
