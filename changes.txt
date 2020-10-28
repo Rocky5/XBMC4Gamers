@@ -7,6 +7,11 @@ Would also like to thank everyone that donates its much appreciated.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+28/10/2020
+	1) Remove the DVD2Xbox profile and skin as its no longer required and can cause issues.
+	2) Fixed label in the manage profiles profile settings menu.
+
+
 26/10/2020
 	1) New look, redone basically all dialogs and menus.
 		( some aren't done yet or wont be done )

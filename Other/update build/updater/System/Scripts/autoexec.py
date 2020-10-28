@@ -83,9 +83,15 @@ if os.path.isfile(zip_file):
 		pDialog.update(100,"Download complete","Updating dashboard complete")
 		xbmc.executebuiltin('Skin.SetBool(DashboardUpdated)')
 		time.sleep(3)
-	if os.path.isdir(Root_Directory+'skins/DVD2Xbox Skin/720p'):
-		os.rename(Root_Directory+'skins/DVD2Xbox Skin/720p',Root_Directory+'skins/DVD2Xbox Skin/xml')
-		shutil.copy2(Root_Directory+'skins/Profile skin/skin.xml',Root_Directory+'skins/DVD2Xbox Skin/skin.xml')
+	if os.path.isdir(Root_Directory+'skins/DVD2Xbox Skin'):
+		shutil.rmtree(Root_Directory+'skins/DVD2Xbox Skin')
+		input = fileinput.input(Root_Directory+'system/userdata/profiles.xml', inplace=True)
+		for line in input:
+			 if '<name>DVD2Xbox</name>' in line:
+				 for _ in range(19):
+					 next(input, None)
+			 else:
+				 print line,
 else:
 	pDialog.create('Error')
 	pDialog.update(0,"Download complete","Files are missing")

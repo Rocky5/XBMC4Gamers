@@ -223,7 +223,7 @@
 										</item>
 										<item>
 												<label>7</label>
-												<label2>$LOCALIZE[31157]</label2>
+												<label2>$LOCALIZE[31158]</label2>
 												<onclick>ActivateWindow(FileManager)</onclick>
 												<icon>thumbs/FileManager.png</icon>
 										</item>
