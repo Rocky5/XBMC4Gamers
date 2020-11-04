@@ -1,69 +1,78 @@
-1.0.23
-	1) Cleanup of the scrip
-	2) New look
+1.0.26
+1) Added 2MB padding to file sizes so you can't install if there is not enough space.
+( this isn't really required but its a precaution )
+2) New look
 
+1.0.25
+1) Updated the DLC signer to write 01 for the content type for all DLC regardless of the value in the contextmeta.xbx
+( credit to sinikal6969 for letting me know about this. )
+
+1.0.24
+1) Clean up of the script
+
+1.0.23
+1) Clean up of the script
+2) New look
 
 1.0.22
-	1) New look for the downloader, its now self contained and has higher resolution artwork
-
+1) New look for the downloader, its now self contained and has higher resolution artwork
 
 1.0.21
-	1) Added estimate download time.
-	2) Added progress percentage to the resolving dialog.
-	3) Increased the chunk_size to 512kb 
-
+1) Added estimate download time.
+2) Added progress percentage to the resolving dialog.
+3) Increased the chunk_size to 512kb 
 
 1.0.20
-	1) Moved the network check to the default.py file (loader)
-		( this just makes it cleaner, also changed to HEAD request, faster. )
+1) Moved the network check to the default.py file (loader)
+( this just makes it cleaner, also changed to HEAD request, faster. )
 
 1.0.19
-	1) Added external hdd-key.txt parsing so folk with corrupt eeproms can sign DLC
-		( hdd-key.txt goes in Q:\system\ just plain txt key is used. )
+1) Added external hdd-key.txt parsing so folk with corrupt eeproms can sign DLC
+( hdd-key.txt goes in Q:\system\ just plain txt key is used. )
 
 1.0.18
-	1) Moved to Google drive for the download links. This has changed alot of the script and also how things are done now.
-		( share links are required, Im not sure if larger files require validation when requested so time will tell )
-	2) Above changes added support for 5 arguments
-	
-	Original Google drive download script from:
-		https://github.com/ndrplz/google-drive-downloader
+1) Moved to Google drive for the download links. This has changed alot of the script and also how things are done now.
+( share links are required, Im not sure if larger files require validation when requested so time will tell )
+2) Above changes added support for 5 arguments
+
+Original Google drive download script from:
+https://github.com/ndrplz/google-drive-downloader
 
 1.0.17
-	1) Updated the autoexec.py file to check if .emustation or just emustation exists.
-		( Im removing the . from emustation so its no longer hidden in some FTP programs or MAC/Linux )
-	2) Changed the default url check to an IP so there is no dns lookup.
+1) Updated the autoexec.py file to check if .emustation or just emustation exists.
+( Im removing the . from emustation so its no longer hidden in some FTP programs or MAC/Linux )
+2) Changed the default url check to an IP so there is no dns lookup.
 
 1.0.16
-	1) Added a space check before downloading files to make sure there is sufficient space.
+1) Added a space check before downloading files to make sure there is sufficient space.
 
 1.0.15
-	1) Forced a version number for XBMC-Emustation and XBMC4Gamers due to changes in there folder structures.
+1) Forced a version number for XBMC-Emustation and XBMC4Gamers due to changes in there folder structures.
 
 1.0.14
-	1) Added a update for the progress bar so no matter what its always reset to zero at the end of the script.
-		( This fixes the progress being at a certain percentage on other progress dialogues that done update )
+1) Added a update for the progress bar so no matter what its always reset to zero at the end of the script.
+( This fixes the progress being at a certain percentage on other progress dialogues that done update )
 
 1.0.13
-	1) Added a loader to show a progress dialog to give the impression of a loading screen. So you aren't sitting wondering if its loading or not.
+1) Added a loader to show a progress dialog to give the impression of a loading screen. So you aren't sitting wondering if its loading or not.
 
 1.0.12
-	1) Added XBMC4Gamers update support
+1) Added XBMC4Gamers update support
 
 1.0.11
-	1) Label changes
+1) Label changes
 
 1.0.10
-	1) Added a load of check so I can support XBMC4Gamers
-	2) Now will check for the urldownloader update on first launch of a download.
-	   ( this only happens once per console cycle )
+1) Added a load of check so I can support XBMC4Gamers
+2) Now will check for the urldownloader update on first launch of a download.
+( this only happens once per console cycle )
 
 1.0.9
-	1) Fixed a mistake on my part for removing the old files.
-	2) Added launching of the test build updater/installer
+1) Fixed a mistake on my part for removing the old files.
+2) Added launching of the test build updater/installer
 
 1.0.8
-	1) Changed the filenames of the download list to better reflect its a script running.
+1) Changed the filenames of the download list to better reflect its a script running.
 
 1.0.7
 - Changes to the DLC parsing code for getting the title ID. This was changed so I can get 1 character more for names.

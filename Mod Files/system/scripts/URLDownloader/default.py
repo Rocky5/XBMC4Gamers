@@ -1,13 +1,15 @@
-'''
-	Edited to work with XBMC-Emustation and have vars passed to it for downloading files.
-'''
-import extract,hashlib,hmac,math,os,requests,socket,struct,time,xbmc,xbmcgui
+### URLDownloading by Rocky5.
+import extract,hashlib,hmac,math,os,requests,socket,struct,time,traceback,xbmc,xbmcgui
 dialog = xbmcgui.Dialog()
 dprogress = xbmcgui.DialogProgress()
 working_directory = os.getcwd() + '/'
+if os.path.isfile('Special://skin/720p/includes.xml') and not os.path.isfile('Special://skin/xml/includes.xml'):
+	skin_xml_path = '720p'
+else:
+	skin_xml_path = 'xml'
 class GoogleDriveDownloader:
-	# CHUNK_SIZE = 32768 # 256kb
-	CHUNK_SIZE = 65536 # 512kb
+	CHUNK_SIZE = 32768 # 256kb
+	# CHUNK_SIZE = 65536 # 512kb
 	DOWNLOAD_URL = "https://docs.google.com/uc?export=download"
 	@staticmethod
 	def download_file_from_google_drive(file_id,dest_path,zipsize,filename,overwrite=False,unzip=False,showsize=False):
@@ -52,32 +54,29 @@ class GoogleDriveDownloader:
 	def _save_response_content(response,destination,showsize,current_size,zipsize,filename):
 		percent = 0
 		current_size = int(current_size[0])
-		global allowcancellation
-		allowcancellation = 1
 		StartTime = time.clock()
-		try:
-			with open(destination,'wb') as f:
-				for chunk in response.iter_content(GoogleDriveDownloader.CHUNK_SIZE):
-					if chunk:  # filter out keep-alive new chunks
-						f.write(chunk)
-						if showsize:
-							percent = current_size*101/zipsize
-							current_size += GoogleDriveDownloader.CHUNK_SIZE
-							# calculate time renaming
-							ElapsedTime = (time.clock() - StartTime)
-							ChunksPerTime = (current_size / ElapsedTime)
-							EstimatedTotalTime = (zipsize / ChunksPerTime)
-							TimeLeftInSeconds = (EstimatedTotalTime - ElapsedTime) * 10 / 10 + 1 # adding + 1 makes it finish on 0 instead of being 0 with 1 second left
-							TimeLeftInMinutes = TimeLeftInSeconds // 60
-							TimeLeftInHours = TimeLeftInMinutes // 60
-							if TimeLeftInHours >= 1: TimeLeft = ("Estimated time left %s hour, %s minutes " % (int(TimeLeftInHours),int(TimeLeftInMinutes) % 60))
-							elif TimeLeftInMinutes >= 1: TimeLeft = ("Estimated time left %s minutes, %s seconds" % (int(TimeLeftInMinutes) % 60,int(TimeLeftInSeconds) % 60))
-							elif TimeLeftInSeconds < 60: TimeLeft = ("Estimated time left %s seconds" % (int(TimeLeftInSeconds) % 60))
-							dprogress.update(percent,filename.replace('.zip',''),TimeLeft)
-							if dprogress.iscanceled():
-								if allowcancellation == 1:	raise Exception("Cancelled")
-		except Exception as err:
-			pass
+		with open(destination,'wb') as f:
+			for chunk in response.iter_content(GoogleDriveDownloader.CHUNK_SIZE):
+				if chunk:  # filter out keep-alive new chunks
+					f.write(chunk)
+					if showsize:
+						percent = current_size*101/zipsize
+						current_size += GoogleDriveDownloader.CHUNK_SIZE
+						# calculate time renaming
+						ElapsedTime = (time.clock() - StartTime)
+						ChunksPerTime = (current_size / ElapsedTime)
+						EstimatedTotalTime = (zipsize / ChunksPerTime)
+						TimeLeftInSeconds = (EstimatedTotalTime - ElapsedTime) * 10 / 10 + 1 # adding + 1 makes it finish on 0 instead of being 0 with 1 second left
+						TimeLeftInMinutes = TimeLeftInSeconds // 60
+						TimeLeftInHours = TimeLeftInMinutes // 60
+						if TimeLeftInHours >= 1: TimeLeft = ("Estimated time left %s hour, %s minutes " % (int(TimeLeftInHours),int(TimeLeftInMinutes) % 60))
+						elif TimeLeftInMinutes >= 1: TimeLeft = ("Estimated time left %s minutes, %s seconds" % (int(TimeLeftInMinutes) % 60,int(TimeLeftInSeconds) % 60))
+						elif TimeLeftInSeconds < 60: TimeLeft = ("Estimated time left %s seconds" % (int(TimeLeftInSeconds) % 60))
+						dprogress.update(percent,filename.replace('.zip',''),TimeLeft)
+						if dprogress.iscanceled():
+							global allowcancellation
+							allowcancellation = 1
+							raise Exception("User cancelled download")
 def download_update_check(url):
 	if not os.path.exists(update_path): os.makedirs(update_path)
 	path = os.path.join(update_path,url.split('/')[-1])
@@ -106,8 +105,8 @@ def clear_X():
 				os.rmdir(os.path.join(root,name))
 			dprogress.update(0,'','Preparing Cache')
 			time.sleep(0.1)
-	except:
-		pass
+	except Exception as error:
+		traceback.print_exc()
 def convert_size(size_bytes):
 	if size_bytes == 0:
 		return "0B"
@@ -137,7 +136,7 @@ def update_check():
 		download_update_check('1udJy_7OfVES0iV2g5Q3TVT1Afobu0lYb')
 		with open('Z:/temp/DownloadList.bin','r') as verfile:
 			dlsversion = verfile.readline().rstrip()
-		with open(xbmc.translatePath('Special://skin/xml/_Script_URLDownloader.xml'),"rb") as updatefile:
+		with open(xbmc.translatePath('Special://skin/'+skin_xml_path+'/_Script_URLDownloader.xml'),"rb") as updatefile:
 			udhashlibmd5.update(updatefile.read())
 		if udhashlibmd5.hexdigest() != dlsversion:
 			os.remove('Z:/temp/DownloadList.bin')
@@ -148,25 +147,35 @@ def dlc_hashing(titleid):
 	readhddkey = 1
 	countlist = 0
 	dumphddkey = 0
+	if os.path.isfile('Special://xbmc/dump_hddkey.bin'):
+		dumphddkey = 1
+		os.remove('Special://xbmc/dump_hddkey.bin')
 	dprogress.update(0)
-	dprogress.create("DLC SIGNER","","Initializing")
-	# Check for a txt file with the hdd key or use the eeprom. Can also dump the key if you toggle the dumphddkey to 1
-	# This is for folk with corrupt eeproms,that there chips can bypass.
-	if os.path.isfile('Special://xbmc/system/hdd-key.txt'):
+	dprogress.create("DLC SIGNER","","Getting EEPROM HDD key")
+	xbmc.executebuiltin('Skin.SetString(DisableProgress,Disabled)')
+	# Check for a txt file with the hdd key or use the eeprom. Can also dump the key if you put dump_hddkey.bin next to the default.xbe
+	# This is for folk with corrupt eeproms, that there chips can bypass.
+	if os.path.isfile('Special://xbmc/system/hdd-key.txt') and dumphddkey == 0:
 		readhddkey = 0
+		time.sleep(2)
 		with open('Special://xbmc/system/hdd-key.txt') as hex:
 			hddkey = hex.readline()
+			dprogress.update(0,"","EEPROM HDD key:",hddkey)
 			if len(hddkey) == 32 and not len(hddkey) < 32:
 				hddkey = bytearray.fromhex(hddkey)
 			else: readhddkey = 1
 	while readhddkey:
 		key = xbmc.getInfoLabel('system.hddlockkey')
-		time.sleep(1)
+		time.sleep(2)
 		if key != 'Busy':
 			hddkey = key.decode('hex')
+			if dumphddkey == 1:
+				with open('Special://xbmc/system/hdd-key.txt',"w") as txteeprom: txteeprom.write(hddkey.encode('hex'))
+			dprogress.update(0,"","EEPROM HDD key:",hddkey.encode('hex'))
 			break
-	if readhddkey == 1 and dumphddkey == 1:
-		with open('Special://xbmc/system/hdd-key.txt',"w+") as txteeprom: txteeprom.write(hddkey.encode('hex'))
+	time.sleep(2)
+	dprogress.update(0,"Signing ContextMeta.xbx","This can take some time, please be patient.","")
+	xbmc.executebuiltin('Skin.SetString(DisableProgress,)')
 	for folder,subfolder,file in os.walk('E:/TDATA/'+titleid):
 		filecount += len(file)
 	for folder,subfolder,file in os.walk('E:/TDATA/'+titleid):
@@ -176,6 +185,11 @@ def dlc_hashing(titleid):
 				contextmetafile = os.path.join(folder,xbxfile)
 				filesize = os.path.getsize(contextmetafile)
 				readxbx = open(contextmetafile,'r+b')
+				# All DLC installed to HDD must have this byte set to 0x01. Must be done before signing to calculate the correct signature.
+				# Credit to sinikal6969 for letting me know about this.
+				readxbx.seek(32,0)
+				readxbx.write(bytearray.fromhex("01").decode())							
+				readxbx.seek(0,0)
 				filedata = readxbx.read(filesize)
 				# Check the header fields.
 				headersize = struct.unpack('I',filedata[24:28])[0]
@@ -207,6 +221,7 @@ try:
 	dlcmode = 0
 	xmlinvalid = 0
 	urldinvalid = 0
+	bad_zip = 0
 	valid_arguments = 1
 	# args passed from xml
 	try:
@@ -268,13 +283,19 @@ try:
 					free_space_check = install_path
 					if free_space_check.startswith('Special:') or free_space_check.startswith('Q:'): free_space_check = xbmc.translatePath('Special://root/')[:2]
 					partition_free_space = xbmc.getInfoLabel('System.Freespace('+free_space_check[:1]+')').replace(free_space_check[:2]+' ','').split(' ')[0]
-					if int(zipsize) <= int(partition_free_space)*1024*1024:
+					if int(partition_free_space)*1024*1024 > int(zipsize)+(1024*1024*2):
 						try:
 							clear_X()
 							download_url(defaulturl)
 							# Disable the cancel button
 							xbmc.executebuiltin('Skin.SetString(DisableCancel,Disabled)')
-							extract_file(file)
+							try:
+								extract_file(file)
+							except Exception as error:
+								traceback.print_exc()
+								dprogress.close()
+								bad_zip = 1
+								dialog.ok("ERROR","Google Drive issue.","Probably exceeded daily download quota.","Wait a couple hours and try again.")
 							# If DLC process the files
 							if dlcmode: dlc_hashing(titleid)
 							# Enable the cancel button
@@ -288,9 +309,11 @@ try:
 								xbmc.executebuiltin('RunScript(' + xbmc.translatePath('Special://xbmc/system/scripts/autoexec.py') + ')')
 							else:
 								dprogress.close()
-								dialog.ok("SUCCESS","",filename.replace('.zip','') + " Installed")
+								if not bad_zip:
+									dialog.ok("SUCCESS","",filename.replace('.zip','') + " Installed")
 								xbmc.executebuiltin('Dialog.Close(1902,false)')
-						except:
+						except Exception as error:
+							traceback.print_exc()
 							if allowcancellation == 1:
 								dprogress.close()
 								dialog.ok("URLDOWNLOADER","You cancelled the download of",filename.replace('.zip',''))
@@ -306,6 +329,8 @@ try:
 		else:
 			xbmcgui.Dialog().ok("UPDATE AVAILABLE","Please update the","[B]URLDownloader[/B]")
 			xbmc.executebuiltin('Dialog.Close(1902,false)')
+			time.sleep(.5)
+			xbmc.executebuiltin('SetFocus(10)')
 	else:
 		dialog.ok("ERROR","Corrupt _Script_URLDownloader.xml","Update URLDownloader")
 		xbmc.executebuiltin('Dialog.Close(1902,false)')
