@@ -140,7 +140,8 @@ def search_tree():
 					time.sleep(0.7)
 				pDialog.update((CountList * 100) / len(os.listdir(ISO_Directory)),"Scanning XISO Files",ISO_Directory+Item,)
 				iso_file = open(current_iso, 'rb') # open iso
-				iso_name		= Item[:-4].replace('_1','').replace('_2','').replace('.1','').replace('.2','').split('(',1)[0] # make a new folder for the current game
+				iso_full_name   = Item[:-4].replace('_1','').replace('_2','').replace('.1','').replace('.2','')
+				iso_name        = iso_full_name.split('(',1)[0] # make a new folder for the current game
 				iso_folder_name	= (iso_name[:36]) if len(iso_name) > 36 else iso_name # truncate the name to 42 characters, reason is the .iso.
 				iso_folder		= os.path.join(ISO_Directory, iso_folder_name+' (ISO)')
 				iso_info = check_iso(iso_file) # check iso is an xbox game and record some details
@@ -156,10 +157,10 @@ def search_tree():
 					shutil.move(current_iso, iso_folder)
 					# Search for other parts of current ISO and move them into the directory.
 					if '.1.' in Item:
-						for alt_images in glob.glob(os.path.join(ISO_Directory,iso_name+'.*.iso')):
+						for alt_images in glob.glob(os.path.join(ISO_Directory,iso_full_name+'.*.iso')):
 							shutil.move(os.path.join(ISO_Directory,alt_images),iso_folder)
 					if '_1' in Item:
-						for alt_images in glob.glob(os.path.join(ISO_Directory,iso_name+'_*.iso')):
+						for alt_images in glob.glob(os.path.join(ISO_Directory,iso_full_name+'_*.iso')):
 							shutil.move(os.path.join(ISO_Directory,alt_images),iso_folder)
 					CountList = CountList+1
 				except:
