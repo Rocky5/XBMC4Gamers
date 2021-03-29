@@ -72,6 +72,7 @@ def extract_defaultxbe(iso_file, iso_info):
 				f.seek(file_size+file_size+file_size)
 				f.write(iso_file.read(file_size))
 				f.close()
+	root_sector_buffer.close()
 def prepare_attachxbe(iso_filename):
 	iso_name	= iso_filename[:-4].replace('_1','').replace('_2','').replace('.1','').replace('.2','').split('(',1)[0]
 	iso_folder_name	= (iso_name[:36]) if len(iso_name) > 36 else iso_name # truncate the name to 42 characters, reason is the .iso.
