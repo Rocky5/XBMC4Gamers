@@ -7,6 +7,12 @@ Would also like to thank everyone that donates its much appreciated.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+22/06/2022
+	1) Progress dialog will only show when adding games.
+	2) Added support for parsing _resources/default.xml if found. This will allow the use of the <title> value as the game title.
+		( toggle in "settings > programs > other" )
+
+
 28/10/2020
 	1) Remove the DVD2Xbox profile and skin as its no longer required and can cause issues.
 	2) Fixed label in the manage profiles profile settings menu.

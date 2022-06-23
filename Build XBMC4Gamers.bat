@@ -12,8 +12,8 @@ if not exist "%foldername%" (
 	Exit
 )
 :Start
-Set "version=1.3"
-Set "fromDate=27/10/2020"
+Set "version=1.4"
+Set "fromDate=23/06/2022"
 for /F "usebackq tokens=1,2 delims==" %%i in (`wmic os get LocalDateTime /VALUE 2^>NUL`) do if '.%%i.'=='.LocalDateTime.' set dateformat=%%j
 Set toDate=%dateformat:~6,2%^/%dateformat:~4,2%^/%dateformat:~0,4%
 if exist "..\other\build for release.bin" (

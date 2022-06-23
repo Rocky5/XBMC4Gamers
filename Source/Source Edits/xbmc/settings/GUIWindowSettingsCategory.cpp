@@ -78,6 +78,9 @@
 #include "LocalizeStrings.h"
 #include "LangInfo.h"
 
+#include <iostream>
+#include <cstdio>
+
 #include "ScraperSettings.h"
 #include "ScriptSettings.h"
 #include "dialogs/GUIDialogPluginSettings.h"
@@ -1943,6 +1946,32 @@ void CGUIWindowSettingsCategory::OnSettingChanged(CBaseSettingControl *pSettingC
         }
       }
     }
+  }
+  else if (strSetting.Equals("mygames.usesynopsisname"))
+  {
+	// CGUIDialogOK *dialog = (CGUIDialogOK *)g_windowManager.GetWindow(WINDOW_DIALOG_OK);
+	// if (dialog)
+	// {
+		// dialog->SetHeading( g_localizeStrings.Get(33049) );
+		// dialog->SetLine( 0, "");
+		// dialog->SetLine( 1, g_localizeStrings.Get(32004));
+		// dialog->SetLine(2, "");
+		// dialog->DoModal();
+	// }
+	if (g_guiSettings.GetBool("mygames.usesynopsisname"))
+	{
+		CopyFile("P:\\Database\\MyPrograms6.db","P:\\Database\\MyPrograms-Default.db",1);
+		CFile::Delete("P:/Database/MyPrograms6.db");
+		if ( CFile::Exists("P:\\Database\\MyPrograms-Synopsis.db") )
+		CopyFile("P:\\Database\\MyPrograms-Synopsis.db","P:\\Database\\MyPrograms6.db",1);
+	}
+	else
+	{
+		CopyFile("P:\\Database\\MyPrograms6.db","P:\\Database\\MyPrograms-Synopsis.db",1);
+		CFile::Delete("P:/Database/MyPrograms6.db");
+		if ( CFile::Exists("P:\\Database\\MyPrograms-Default.db") )
+		CopyFile("P:\\Database\\MyPrograms-Default.db","P:\\Database\\MyPrograms6.db",1);
+	}
   }
   else if (strSetting.Left(22).Equals("MusicPlayer.ReplayGain"))
   { // Update our replaygain settings

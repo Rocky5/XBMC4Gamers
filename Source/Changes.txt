@@ -53,3 +53,5 @@
 43) FFPatchXBE added to builtin functions.
 	( this will patch the xbe you point to with the value set in the video settings, its useless as is as XBMC will do it automatically but I wanted this for Python. )
 44) Other changes, forgot some lol
+45) Now will parse _resources/default.xml if found and use the title field as the game name.
+	( toggle in the My Programs settings menu )

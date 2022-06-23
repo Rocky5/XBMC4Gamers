@@ -225,6 +225,7 @@ void CGUISettings::Initialize()
   AddCategory(1, "mygames", 32000);
   AddBool(1, "mygames.fastscrolling",32001,true);
   AddBool(2, "mygames.slowgameparsing",32002,false);
+  AddBool(3, "mygames.usesynopsisname",32003,false);
 
   // My Weather settings
   AddGroup(2, 8);

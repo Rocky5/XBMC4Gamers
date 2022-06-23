@@ -42,6 +42,8 @@
 #include "utils/log.h"
 #include "interfaces/Builtins.h"
 #include "settings/AdvancedSettings.h"
+#include "Application.h"
+
 
 using namespace XFILE;
 
@@ -713,23 +715,7 @@ bool CGUIWindowPrograms::GetDirectory(const CStdString &strDirectory, CFileItemL
 	{
 		CStdString shortcutPath;
 		CFileItemPtr item = items[i];
-		if (!bProgressVisible && timeGetTime()-dwTick>1500 && m_dlgProgress)
-		{ // tag loading takes more then 1.5 secs, show a progress dialog
-			m_dlgProgress->SetHeading(189);
-			m_dlgProgress->SetLine(0, 20120);
-			m_dlgProgress->SetLine(1,"");
-			m_dlgProgress->SetLine(2, item->GetLabel());
-			if (!g_guiSettings.GetBool("mygames.slowgameparsing"))
-			{
-				m_dlgProgress->StartModal();
-			}
-			bProgressVisible = true;
-		}
-		if (bProgressVisible)
-		{
-			m_dlgProgress->SetLine(2,item->GetLabel());
-			m_dlgProgress->Progress();
-		}
+		CStdString xbexml = item->GetPath();
 
 		if (item->m_bIsFolder && !item->IsParentFolder() && !item->IsPlugin() && g_guiSettings.GetBool("mygames.slowgameparsing"))
 		{ // folder item - let's check for a default.xbe file, and flatten if we have one
@@ -806,8 +792,38 @@ bool CGUIWindowPrograms::GetDirectory(const CStdString &strDirectory, CFileItemL
 			if (!dwTitleID)
 			{
 				CStdString description;
-				if (CUtil::GetXBEDescription(item->GetPath(), description) && (!item->IsLabelPreformated() && !item->GetLabel().IsEmpty()))
+				
+				if (!bProgressVisible && m_dlgProgress)
+				{ // tag loading takes more then 1.5 secs, show a progress dialog
+					m_dlgProgress->SetHeading(189);
+					m_dlgProgress->SetLine(0, 20120);
+					m_dlgProgress->SetLine(1,"");
+					m_dlgProgress->SetLine(2, description);
+					// if (!g_guiSettings.GetBool("mygames.slowgameparsing"))
+					// {
+						m_dlgProgress->StartModal();
+					// }
+					bProgressVisible = true;
+				}
+				if (bProgressVisible)
 				{
+					m_dlgProgress->SetLine(2,item->GetLabel());
+					m_dlgProgress->Progress();
+				}
+				
+				if (CUtil::GetXBEDescription(item->GetPath(), description) && (!item->IsLabelPreformated() && !item->GetLabel().IsEmpty()))
+				{					
+					URIUtils::AddFileToFolder(xbexml,"_resources\\default.xml",xbexml);
+					if (CFile::Exists(xbexml) && g_guiSettings.GetBool("mygames.usesynopsisname"))
+					{
+						TiXmlDocument xbexmlload;
+						xbexmlload.LoadFile(xbexml);
+						TiXmlElement *pRootElement = xbexmlload.RootElement();
+						if (pRootElement)
+						{
+							XMLUtils::GetString(pRootElement,"title", description);
+						}
+					}
 					item->SetLabel(description);
 					if (!g_guiSettings.GetBool("mygames.slowgameparsing"))
 					{
@@ -818,8 +834,8 @@ bool CGUIWindowPrograms::GetDirectory(const CStdString &strDirectory, CFileItemL
 				dwTitleID = CUtil::GetXbeID(item->GetPath());
 				if (!item->IsOnDVD())
 				m_database.AddProgramInfo(item.get(), dwTitleID);
+				
 			}
-
 			// SetOverlayIcons()
 			if (m_database.ItemHasTrainer(dwTitleID))
 			{

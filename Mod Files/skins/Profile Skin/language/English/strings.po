@@ -31,6 +31,14 @@ msgctxt "#32002"
 msgid "Enable fast game parsing"
 msgstr ""
 
+msgctxt "#32003"
+msgid "Use synopsis naming if available"
+msgstr ""
+
+msgctxt "#32004"
+msgid "Game database rebuild required"
+msgstr ""
+
 ## Custom_Dialog_Quick_Change.xml - 31000 to 31010
 msgctxt "#31001"
 msgid "applications"
