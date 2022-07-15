@@ -126,55 +126,56 @@ def prepare_attachxbe(iso_folder):
 def search_tree():
 	global iso_folder
 	CountList = 1
-	iso_info = None
 
 	# progress bar
 	pDialog.create("XISO to HDD Installer")
 	pDialog.update(0)
 	time.sleep(0.7)
 
-	for Item in sorted(os.listdir(ISO_Directory)):
-		current_iso = os.path.join(ISO_Directory, Item)
+	iso_files = [(item, os.path.join(ISO_Directory, item)) for item in os.listdir(ISO_Directory) if os.path.isfile(os.path.join(ISO_Directory, item)) and item.lower().endswith('.iso')]
 
-		if os.path.isfile(current_iso) and current_iso.lower().endswith(('.iso')):
-			iso_full_name   = Item[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
-			iso_name        = iso_full_name.split('(', 1)[0]
-			iso_folder_name	= iso_name[:36] if len(iso_name) > 36 else iso_name # truncate the name to 42 characters, reason is the .iso.
-			iso_folder		= os.path.join(ISO_Directory, iso_folder_name + ' (ISO)') # make a new folder for the current game
+	for file_name, file_path in sorted(iso_files):
+		iso_info        = None
+		iso_full_name   = file_name[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
+		iso_name        = iso_full_name.split('(', 1)[0]
+		iso_folder_name	= iso_name[:36] if len(iso_name) > 36 else iso_name # truncate the name to 42 characters, reason is the .iso
+		iso_folder		= os.path.join(ISO_Directory, iso_folder_name + ' (ISO)')
 
-			pDialog.update((CountList * 100) / len(os.listdir(ISO_Directory)), "Scanning XISO Files", ISO_Directory + Item,)
+		pDialog.update((CountList * 100) / len(iso_files), "Scanning XISO Files", ISO_Directory + Item,)
 
-			with open(current_iso, 'rb') as iso_file: # open iso
-				iso_info = check_iso(iso_file) # check iso is an xbox game and record some details
-				
-				if iso_info: # doesn't work, if no xbe files is found inside the xiso. (yeah I was testing and forgot the xbe lol)
-					os.mkdir(iso_folder)
-					extract_defaultxbe(iso_file, iso_info) # find and extract default.xbe from the iso
+		with open(file_path, 'rb') as iso_file:
+			iso_info = check_iso(iso_file) # check iso is an xbox game and record some details
 			
-			if iso_info:
-				try:
-					# Patch the title+id into attach.xbe...
-					prepare_attachxbe(iso_folder)
-					
-					# Move the game ISO to its own folder!
-					shutil.move(current_iso, iso_folder)
-					
-					# Search for other parts of current ISO and move them into the directory.
-					if '.1.' in Item:
-						for iso_part_image in glob.glob(os.path.join(ISO_Directory, iso_full_name + '.*.iso')):
-							shutil.move(os.path.join(ISO_Directory, iso_part_image), iso_folder)
-					if '_1' in Item:
-						for iso_part_image in glob.glob(os.path.join(ISO_Directory, iso_full_name + '_*.iso')):
-							shutil.move(os.path.join(ISO_Directory, iso_part_image), iso_folder)
-					CountList = CountList + 1
+			if iso_info: # doesn't work, if no xbe files is found inside the xiso. (yeah I was testing and forgot the xbe lol)
+				os.mkdir(iso_folder) # make a new folder for the current game
+				extract_defaultxbe(iso_file, iso_info) # find and extract default.xbe from the iso
+		
+		if iso_info:
+			try:
+				# Patch the title+id into attach.xbe...
+				prepare_attachxbe(iso_folder)
 				
-				except Exception as exc:
-					pDialog.close()
-					shutil.rmtree(iso_folder)
-					print "ERROR 2 : Not a valid XISO?"
-					print "ERROR 2 : Could not extract the Default.xbe"
-					print "ERROR 2 : Exception follows", exc
-					dialog.ok("ERROR: 2 ", "Not a valid XISO?", "Could not extract the [B]Default.xbe[/B]", current_iso)
+				# Move the game ISO to its own folder!
+				shutil.move(file_path, iso_folder)
+				
+				# Search for other parts of current ISO and move them into the directory.
+				if '.1.' in file_name:
+					for iso_part_image in glob.glob(os.path.join(ISO_Directory, iso_full_name + '.*.iso')):
+						shutil.move(os.path.join(ISO_Directory, iso_part_image), iso_folder)
+				if '_1' in file_name:
+					for iso_part_image in glob.glob(os.path.join(ISO_Directory, iso_full_name + '_*.iso')):
+						shutil.move(os.path.join(ISO_Directory, iso_part_image), iso_folder)
+				CountList = CountList + 1
+			
+			except Exception as exc:
+				pDialog.close()
+				shutil.rmtree(iso_folder)
+				print "ERROR 2 : Not a valid XISO?"
+				print "ERROR 2 : Could not extract the Default.xbe"
+				print "ERROR 2 : Exception follows", exc
+				dialog.ok("ERROR: 2 ", "Not a valid XISO?", "Could not extract the [B]Default.xbe[/B]", file_path)
+		else:
+			print str.format("DEBUG : ISO info could not be obtained, skipping '{}'", iso_full_name)
 
 Working_Directory	= os.getcwd()
 ISO_Found = "False"
