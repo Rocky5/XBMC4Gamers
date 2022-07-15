@@ -32,7 +32,7 @@ def check_iso(iso_file):
 	# an empty dictionary is falsy, so just return the iso_info.
 	return iso_info
 
-def extract_defaultxbe(iso_file, iso_info, xbe_partitions = 4):
+def extract_defaultxbe(iso_file, iso_info, xbe_partitions = 128):
 	#seek to root sector
 	iso_file.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
 	# read the root sector into a bytes object
@@ -49,17 +49,23 @@ def extract_defaultxbe(iso_file, iso_info, xbe_partitions = 4):
 				root_sector_buffer.seek(i - 8)
 				file_sector = unpack('I', root_sector_buffer.read(4))[ 0 ]
 				file_size	= unpack('I', root_sector_buffer.read(4))[ 0 ]
-				# dump the xbe quarterly for huge xbe file.
-				file_size	= file_size / xbe_partitions
-
-				with open(os.path.join(iso_folder, "default.xbe"), "wb") as default_xbe:
-					# Had to split the xbe in quarters so the Xbox doesn't run out of memory.
-					for partition in range(0, xbe_partitions):
-						iso_file.seek(file_sector * iso_info['sector_size'] + (file_size*partition))
-						# write partition of default.xbe to file
-						default_xbe.write(iso_file.read(file_size))
 				
-				print str.format("| DEBUG: Done writing default.xbe for '{}', file size: {}", iso_file, str(os.path.getsize(os.path.join(iso_folder,"default.xbe")))
+				# dump the xbe in parts for huge xbe files.
+				# adding dangling size if xbe is not cleanly divisble by xbe_partitions
+				dangling_partition_size = file_size % xbe_partitions 
+				file_partition_size	= file_size / xbe_partitions
+
+				with open(os.path.join(iso_folder, "default.xbe"), "ab") as default_xbe:
+					print str.format("DEBUG: default.xbe size is {} bytes, partition size is {} bytes, dangling size is {} bytes", file_size, file_partition_size, dangling_partition_size)
+					for partition in range(0, xbe_partitions):
+						iso_file.seek(file_sector * iso_info['sector_size'] + (file_partition_size*partition))
+						default_xbe.write(iso_file.read(file_partition_size))
+					
+					# write the remainder of the the default.xbe
+					iso_file.seek(file_sector * iso_info['sector_size'] + (file_partition_size*xbe_partitions))
+					default_xbe.write(iso_file.read(dangling_partition_size))
+				
+				print str.format("| DEBUG: Done writing default.xbe for '{}', file size: {}", os.path.basename(iso_file.name), str(os.path.getsize(os.path.join(iso_folder,"default.xbe"))))
 
 def prepare_attachxbe(iso_folder):
 	copyfile(os.path.join(Working_Directory, "attach.xbe"), os.path.join(iso_folder, "attach.xbe"))
@@ -101,14 +107,14 @@ def prepare_attachxbe(iso_folder):
 
 	try: # this is to move on if there is an error with extracting the image.
 		xbeinfo(default_xbe).image_png()
-	except:
+	except Exception as exc:
 		print "| Error: Memory ran out when trying to extract TitleImage.xbx."
-		print "|        So using alternative way."
+		print "|        So using alternative way.", exc
 
 		try: # if the memory runs out this one works.
 			XBE(default_xbe).Get_title_image().Write_PNG(os.path.join("Z:\\default.png"))
-		except:
-			print "| Error: Cannot extract the default.png, haven't a clue why maybe its in DDS format?"
+		except Exception as exc:
+			print "| Error: Cannot extract the default.png, haven't a clue why maybe its in DDS format?", exc
 	
 	default_tbn = os.path.join(iso_folder, 'default.tbn')
 	if os.path.isfile('Z:\\default.png'):
@@ -125,6 +131,7 @@ def prepare_attachxbe(iso_folder):
 
 def search_tree():
 	global iso_folder
+	processed_files = []
 	CountList = 1
 
 	# progress bar
@@ -132,16 +139,24 @@ def search_tree():
 	pDialog.update(0)
 	time.sleep(0.7)
 
-	iso_files = [(item, os.path.join(ISO_Directory, item)) for item in os.listdir(ISO_Directory) if os.path.isfile(os.path.join(ISO_Directory, item)) and item.lower().endswith('.iso')]
+	iso_files = [(item, os.path.join(ISO_Directory, item)) for item in sorted(os.listdir(ISO_Directory)) if os.path.isfile(os.path.join(ISO_Directory, item)) and item.lower().endswith('.iso')]
 
-	for file_name, file_path in sorted(iso_files):
+
+	for file_name, file_path in iso_files:
 		iso_info        = None
 		iso_full_name   = file_name[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
 		iso_name        = iso_full_name.split('(', 1)[0]
 		iso_folder_name	= iso_name[:36] if len(iso_name) > 36 else iso_name # truncate the name to 42 characters, reason is the .iso
 		iso_folder		= os.path.join(ISO_Directory, iso_folder_name + ' (ISO)')
+		
+		pDialog.update((CountList * 100) / len(iso_files), "Scanning XISO Files", file_path,)
 
-		pDialog.update((CountList * 100) / len(iso_files), "Scanning XISO Files", ISO_Directory + Item,)
+		if iso_full_name in processed_files:
+			CountList = CountList + 1
+			continue
+		
+		print str.format("DEBUG: Processing {}", file_name)
+		processed_files.append(iso_full_name)
 
 		with open(file_path, 'rb') as iso_file:
 			iso_info = check_iso(iso_file) # check iso is an xbox game and record some details
