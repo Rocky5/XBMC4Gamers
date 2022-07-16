@@ -3,8 +3,10 @@
 	Used to prep a XISO so it can be playd from the Xbox HDD. It also extracts images and the xbe header so trainers work.
 	Original script by headphone - http://www.emuxtras.net/forum/viewtopic.php?f=187&t=3228&start=40#p70178
 '''
-import io, os, shutil, sys, xbmcgui, glob, traceback
+import os, shutil, xbmcgui, glob, traceback
+from io import BytesIO
 from struct import unpack
+from xbmcgui import Dialog, DialogProgress
 from xbe import *
 from xbeinfo import *
 #-----------------------------------------------------------------------------------
@@ -34,7 +36,7 @@ def extract_defaultxbe(iso_file, iso_info, iso_folder, xbe_partitions = 4):
 	#seek to root sector
 	iso_file.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
 	# read the root sector into a bytes object
-	with io.BytesIO() as root_sector_buffer:
+	with BytesIO() as root_sector_buffer:
 		root_sector_buffer.write(iso_file.read(iso_info['root_dir_size']))
 		root_sector_buffer.seek(0)
 		# case insensitive search of root sector for default.xbe
@@ -171,7 +173,6 @@ def process_iso(file_path, iso_directory):
 		
 		except Exception as exc:
 			shutil.rmtree(iso_folder)
-			#pDialog.close()
 			print "ERROR 2 : Not a valid XISO?"
 			print "ERROR 2 : Could not prepare the attach.xbe with extracted values from default.xbe"
 			traceback.print_exc()
@@ -181,40 +182,37 @@ def process_iso(file_path, iso_directory):
 
 if __name__ == "__main__":
 	print "| Scripts\XBMC4Gamers Extras\XISO to HDD Installer\default.py loaded."
-	pDialog = xbmcgui.DialogProgress()
-	dialog = xbmcgui.Dialog()
+	progress_dialog = DialogProgress()
+	dialog = Dialog()
 	search_directory = dialog.browse(0, "Select a folder", "files")
 
-	if not search_directory:
-		sys.exit("No Directory provided")
-	
-	# progress bar
-	pDialog.create("XISO to HDD Installer")
-	pDialog.update(0)
+	if search_directory:		
+		# progress bar
+		progress_dialog.create("XISO to HDD Installer")
+		progress_dialog.update(0)
 
-	num_iso_files = len({os.path.basename(iso).replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '') for iso in glob.iglob(search_directory + "*.iso")})
-	
-	print str.format("DEBUG: Searching '{}' for iso files!", search_directory)
-	for idx, iso_file in enumerate(sorted(glob.iglob(search_directory + "*.iso"))):
-		if os.path.isfile(iso_file):
-			# Progress updates need some work, it'll report kinda wonky now
-			# Unique files are in num_iso_files, while this loop disregards
-			# that there are approximately double the amount of files being
-			# that are being looped over.
-			pDialog.update(((idx + 1) * 100) / num_iso_files, "Scanning XISO Files", iso_file,)
-			try:
-				process_iso(iso_file, search_directory)
-			except Exception as exc:
-				pDialog.close()
-				print "ERROR: Script has failed"
-				traceback.print_exc()
-				dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_file)
-				break
+		num_iso_files = len([ iso for iso in glob.iglob(search_directory + "*.iso")])
+		
+		print str.format("DEBUG: Searching '{}' for iso files!", search_directory)
+		for idx, iso_file in enumerate(sorted(glob.iglob(search_directory + "*.iso"))):
+			# If second part of ISO has been moved by process_iso, we skip to the next part.
+			if os.path.isfile(iso_file):
+				progress_dialog.update(((idx + 1) * 100) / num_iso_files, "Scanning XISO Files", iso_file,)
+				try:
+					process_iso(iso_file, search_directory)
+				except Exception as exc:
+					progress_dialog.close()
+					print "ERROR: Script has failed"
+					traceback.print_exc()
+					dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_file)
+					break
+		else:
+			progress_dialog.close()
+			dialog.ok("XISO to HDD Installer", "", "Everything is setup.", "You just launch the game, or games like normal.")
+		
+		if num_iso_files == 0:
+			dialog.ok("ERROR:", "", "No XISO files found")
 	else:
-		pDialog.close()
-		dialog.ok("XISO to HDD Installer", "", "Everything is setup.", "You just launch the game, or games like normal.")
-	
-	if num_iso_files == 0:
-		dialog.ok("ERROR:", "", "No XISO files found")
+		print "DEBUG: No search directory was defined!"
 	
 	print "================================================================================"
