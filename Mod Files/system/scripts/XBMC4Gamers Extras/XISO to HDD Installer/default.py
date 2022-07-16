@@ -3,7 +3,7 @@
 	Used to prep a XISO so it can be playd from the Xbox HDD. It also extracts images and the xbe header so trainers work.
 	Original script by headphone - http://www.emuxtras.net/forum/viewtopic.php?f=187&t=3228&start=40#p70178
 '''
-import io, os, shutil, sys, xbmcgui, glob
+import io, os, shutil, sys, xbmcgui, glob, traceback
 from struct import unpack
 from xbe import *
 from xbeinfo import *
@@ -27,6 +27,7 @@ def check_iso(iso_file):
 		print("FATAL: this doesn't appear to be an xbox iso image")
 
 	# an empty dictionary is falsy, so just return the iso_info.
+	print str.format("DEBUG: iso_info -> {}", iso_info)
 	return iso_info
 
 def extract_defaultxbe(iso_file, iso_info, iso_folder, xbe_partitions = 4):
@@ -108,12 +109,14 @@ def prepare_attachxbe(iso_folder):
 		xbeinfo(default_xbe).image_png()
 	except Exception as exc:
 		print "| Error: Memory ran out when trying to extract TitleImage.xbx."
-		print "|        So using alternative way.", exc
+		print "|        So using alternative way."
+		traceback.print_exc()
 
 		try: # if the memory runs out this one works.
 			XBE(default_xbe).Get_title_image().Write_PNG(os.path.join("Z:\\default.png"))
 		except Exception as exc:
-			print "| Error: Cannot extract the default.png, haven't a clue why maybe its in DDS format?", exc
+			print "| Error: Cannot extract the default.png, haven't a clue why maybe its in DDS format?"
+			traceback.print_exc()
 	
 	default_tbn = os.path.join(iso_folder, 'default.tbn')
 	if os.path.isfile('Z:\\default.png'):
@@ -170,9 +173,9 @@ def process_iso(file_path, iso_directory):
 			shutil.rmtree(iso_folder)
 			#pDialog.close()
 			print "ERROR 2 : Not a valid XISO?"
-			print "ERROR 2 : Could not extract the Default.xbe"
-			print "ERROR 2 : Exception follows", exc
-			dialog.ok("ERROR: 2 ", "Not a valid XISO?", "Could not extract the [B]Default.xbe[/B]", file_path)
+			print "ERROR 2 : Could not prepare the attach.xbe with extracted values from default.xbe"
+			traceback.print_exc()
+			dialog.ok("ERROR: 2 ", "Not a valid XISO?", "Could not prepare the [B]attach.xbe[/B]", file_path)
 	else:
 		print str.format("DEBUG : ISO info could not be obtained, skipping '{}'", file_name)
 
@@ -203,7 +206,8 @@ if __name__ == "__main__":
 				process_iso(iso_file, search_directory)
 			except Exception as exc:
 				pDialog.close()
-				print "ERROR: Script has failed", exc
+				print "ERROR: Script has failed"
+				traceback.print_exc()
 				dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_file)
 				break
 	else:
