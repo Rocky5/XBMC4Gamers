@@ -3805,24 +3805,26 @@ def Hex8(val):
 ### Function: Get_image
 ################################################################################    
 def Get_image(mipmap=0,addr=0,size=None,file=None,process=True,options=None):
-    if not file: return None
+    if not file:
+        return None
+
     f = openfile(file,'rb')
     f.seek(addr)
-    type = unpack('4s',f.read(4))[0]
+    file_type = unpack('4s', f.read(4))[0]
     f.seek(0)
     f.close()
     try:
-        if type == 'XPR0':
+        if file_type == 'XPR0':
             return XPR0_image(mipmap=mipmap,addr=addr,size=size,file=file,process=process)
-        elif type == 'DDS ':
+        elif file_type == 'DDS ':
             return DDS_image(mipmap=mipmap,addr=addr,size=size,file=file,process=process)
-        elif type[:2] == 'BM':
+        elif file_type[:2] == 'BM':
             return BMP_image(addr=addr,size=size,file=file,process=process)
-        elif type == chr(255) + chr(216) + chr(255) + chr(224):
+        elif file_type == chr(255) + chr(216) + chr(255) + chr(224):
             return JPEG_image(addr=addr,size=size,file=file,process=process)
-        elif type == chr(137) + 'PNG':
+        elif file_type == chr(137) + 'PNG':
             return PNG_image(addr=addr,size=size,file=file,process=process)
-        elif type == '/* X':
+        elif file_type == '/* X':
             return XPM_image(addr=addr,size=size,file=file,process=process)
         else:
             ext = ospath_splitext(file)[1].upper()
