@@ -32,7 +32,7 @@ def check_iso(iso_file):
 	print str.format("DEBUG: iso_info -> {}", iso_info)
 	return iso_info
 
-def extract_defaultxbe(iso_file, iso_info, iso_folder, xbe_partitions = 4):
+def extract_defaultxbe(iso_file, iso_info, iso_folder, xbe_partitions = 8):
 	#seek to root sector
 	iso_file.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
 	# read the root sector into a bytes object
