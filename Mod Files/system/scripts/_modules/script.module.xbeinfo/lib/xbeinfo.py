@@ -1,56 +1,63 @@
-'''
+"""
 	-----------------------------------------------------------------------------------
 	Inspiration/code from:	https://github.com/LoveMHz/XBEpy
 	-----------------------------------------------------------------------------------
-'''	
+"""
 import struct
+import os
 from limpp import *
 
 		
 class xbeinfo:
+	def __init__(self, data_file, read_buffer_size=3145728):  # Default read buffer is 3MB
+		with open(data_file, 'rb', buffering=read_buffer_size) as xbe:
+			xbe.seek(0)
 
-	def __init__(self, data_file):
-		xbe_data = None
-		with open(data_file, 'rb') as xbe:
-			xbe_data = xbe.read()
+			# Load XBE Header
+			self.header = XBE_HEADER(xbe.read(376))  # <-- Read the relevant bytes for the XBE_HEADER
 
-		# Load XBE Header
-		self.header = XBE_HEADER(xbe_data)
+			# Load XBE Cert
+			xbe.seek(self.header.dwCertificateAddr - self.header.dwBaseAddr)
+			self.cert = XBE_CERT(xbe.read(388))  # <-- See the last XBE_CERT alternative signing key slice, don't need to use more space than necessary
 
-		# Load XBE Cert
-		certificate_slice_start = self.header.dwCertificateAddr - self.header.dwBaseAddr
-		self.cert = XBE_CERT(xbe_data[certificate_slice_start:certificate_slice_start + 388])  # <-- See the last XBE_CERT alternative signing key slice, don't need to use more space than necessary
+			# Load XBE Section Headers and Section Names
+			# self.sections = []
+			for x in range(0, self.header.dwSections):
+				# Load XBE Section Header
+				xbe.seek(self.header.dwSectionHeadersAddr - self.header.dwBaseAddr + (56 * x))
+				section = XBE_SECTION(xbe.read(56))
 
-		# Load XBE Section Headers and Section Names
-		self.sections = []
-		for x in range(0, self.header.dwSections):
-			# Load XBE Section Header
-			section_slice_start = self.header.dwSectionHeadersAddr - self.header.dwBaseAddr + (56 * x)
-			section = XBE_SECTION(xbe_data[section_slice_start:section_slice_start + 56], xbe_data)
+				# Load XBE Section Name
+				xbe.seek(section.dwSectionNameAddr - self.header.dwBaseAddr)
+				section.name = struct.unpack('8s', xbe.read(8))[0].split("\x00")[0].rstrip()
 
-			# Load XBE Section Name
-			name_slice_start = section.dwSectionNameAddr - self.header.dwBaseAddr
-			section.name = struct.unpack('8s', xbe_data[name_slice_start:name_slice_start + 8])[0].split("\x00")[0].rstrip()
+				# Load XBE section Data
+				section_data = xbe.read(section.dwSizeofRaw)
+				# section_data += '\x00' * (section.dwVirtualSize - len(section_data))
+				section_data += '\x00'  # Line above is for historical accuracy, as we _should_ pad the data for completeness
+				section.data = section_data
 
-			self.sections.append(section)
+				if section.name == '$$XTIMAG':
+					self.xbe_title_image = section
 
 	def get_logo(self):
 		return 0
 
+	def save_png_image(self, save_path, file_name="default.png", tmp_file_name="TitleImage.xbx"):
+		if self.xbe_title_image:
+			file_type = struct.unpack('4s', self.xbe_title_image.data[0:4])[0]
+			with open(os.path.join(save_path, tmp_file_name), "wb") as title_image:
+				title_image.write(self.xbe_title_image.data)
+
+			if file_type == 'XPR0':
+				Get_image(os.path.join(save_path, tmp_file_name)).Write_PNG(os.path.join(save_path, file_name))
+
 	def image_png(self):
-		for section in self.sections:
-			if section.name == '$$XTIMAG':
-				file_type = struct.unpack('4s', section.data[0:4])[0]
-
-				with open('Z:\\TitleImage.xbx', "wb") as title_image:
-					title_image.write(section.data)
-
-				if file_type == 'XPR0':
-					image = Get_image( file='Z:\\TitleImage.xbx' )
-					image.Write_PNG( 'Z:\\default.png' )
+		self.save_png_image("Z:\\")  # save image to disk, yields the same result as previously
 		print 'done'
 
-class XBE_HEADER():
+
+class XBE_HEADER:
 	def __init__(self, data):
 		XOR_EP_DEBUG  = 0x94859D4B  # Entry Point (Debug)
 		XOR_EP_RETAIL = 0xA8FC57AB  # Entry Point (Retail)
@@ -103,7 +110,7 @@ class XBE_HEADER():
 		self.dwEntryAddr_f				   = self.dwEntryAddr ^ XOR_EP_RETAIL	   # Entry point address
 
 
-class XBE_CERT():
+class XBE_CERT:
 	def __init__(self, data):
 		self.dwSize						   = struct.unpack('I', data[0:4])[0]	   # 0x0000 - size of certificate
 		self.dwTimeDate					   = struct.unpack('I', data[4:8])[0]	   # 0x0004 - timedate stamp
@@ -140,8 +147,8 @@ class XBE_CERT():
 		self.wszTitleName = self.wszTitleName.decode('utf-16')
 
 
-class XBE_SECTION(xbeinfo):
-	def __init__(self, data, data_file):
+class XBE_SECTION:
+	def __init__(self, data):
 		self.name = None
 		self.data = None
 
@@ -168,7 +175,3 @@ class XBE_SECTION(xbeinfo):
 		self.dwHeadSharedRefCountAddr	= struct.unpack('I', data[28:32])[0]  # Head shared page reference count address
 		self.dwTailSharedRefCountAddr	= struct.unpack('I', data[32:36])[0]  # Tail shared page reference count address
 		self.bzSectionDigest			= struct.unpack('20B', data[36:56])	  # Section digest
-
-		# Section Data
-		self.data  = data_file[self.dwRawAddr:self.dwRawAddr + self.dwSizeofRaw]
-		self.data += '\x00' * (self.dwVirtualSize - len(self.data))
