@@ -31,20 +31,20 @@ class xbeinfo:
 				xbe.seek(section.dwSectionNameAddr - self.header.dwBaseAddr)
 				section.name = struct.unpack('8s', xbe.read(8))[0].split("\x00")[0].rstrip()
 
-				# Load XBE section Data
-				section_data = xbe.read(section.dwSizeofRaw)
-				# section_data += '\x00' * (section.dwVirtualSize - len(section_data))
-				section_data += '\x00'  # Line above is for historical accuracy, as we _should_ pad the data for completeness
-				section.data = section_data
-
 				if section.name == '$$XTIMAG':
+					# Load XBE section Data conditionally
+					xbe.seek(section.dwRawAddr)
+					section_data = xbe.read(section.dwSizeofRaw)
+					section_data += '\x00' * (section.dwVirtualSize - len(section_data))  # pad the data to the correct length
+					section.data = section_data
+
 					self.xbe_title_image = section
 
 	def get_logo(self):
 		return 0
 
 	def save_png_image(self, save_path, file_name="default.png", tmp_file_name="TitleImage.xbx"):
-		if self.xbe_title_image:
+		if hasattr(self, 'xbe_title_image'):
 			file_type = struct.unpack('4s', self.xbe_title_image.data[0:4])[0]
 			with open(os.path.join(save_path, tmp_file_name), "wb") as title_image:
 				title_image.write(self.xbe_title_image.data)

@@ -39,7 +39,7 @@ def check_iso(iso_file):
 	log(str.format("iso_info -> {}", iso_info), LOGDEBUG)
 	return iso_info
 
-def extract_defaultxbe(iso_file, iso_info, iso_folder, xbe_partitions = 8):
+def extract_defaultxbe(iso_file, iso_info, iso_folder, xbe_partitions=8):
 	# seek to root sector
 	iso_file.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
 	# read the root sector into a bytes object
@@ -115,31 +115,31 @@ def prepare_attachxbe(iso_folder):
 
 	default_xbe = os.path.join(iso_folder, "default.xbe")
 
+	os.remove(default_xbe)
+	os.rename(os.path.join(iso_folder, "attach.xbe"), default_xbe)
+
+def extract_title_image(iso_folder, xbe_file):
+	default_tbn = os.path.join(iso_folder, "default.tbn")
+	title_image_xbx = os.path.join(iso_folder, "TitleImage.xbx")
+
 	try:  # this is to move on if there is an error with extracting the image.
-		xbeinfo(default_xbe).image_png()
+		xbeinfo(xbe_file).save_png_image(iso_folder, file_name="default.tbn")
 	except:
-		log("Memory ran out when trying to extract TitleImage.xbx.", LOGERROR)
-		log("       So using alternative way.", LOGERROR)
+		log("Memory ran out while trying to extract TitleImage.xbx.", LOGERROR)
+		log("          Using alternative way.", LOGERROR)
 		traceback.print_exc()
 
 		try:  # if the memory runs out this one works.
-			XBE(default_xbe).Get_title_image().Write_PNG(os.path.join("Z:\\default.png"))
+			XBE(xbe_file).Get_title_image().Write_PNG(default_tbn)
 		except:
 			log("Cannot extract the default.png, haven't a clue why maybe its in DDS format?", LOGERROR)
 			traceback.print_exc()
 
-	default_tbn = os.path.join(iso_folder, 'default.tbn')
-	if os.path.isfile('Z:\\default.png'):
-		shutil.move('Z:\\default.png', default_tbn)
-
 	if os.path.isfile(default_tbn):
 		shutil.copy2(default_tbn, os.path.join(iso_folder, 'icon.png'))
 
-	if os.path.isfile('Z:\\TitleImage.xbx'):
-		os.remove('Z:\\TitleImage.xbx')
-
-	os.remove(default_xbe)
-	os.rename(os.path.join(iso_folder, "attach.xbe"), default_xbe)
+	if os.path.isfile(title_image_xbx):
+		os.remove(title_image_xbx)
 
 def process_iso_name(file_name):
 	iso_full_name = file_name[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
@@ -165,6 +165,9 @@ def process_iso(file_path, iso_directory):
 
 	if iso_info:
 		try:
+			# Extract the title image from the default xbe
+			extract_title_image(iso_folder, file_path)
+
 			# Patch the title+id into attach.xbe...
 			prepare_attachxbe(iso_folder)
 
