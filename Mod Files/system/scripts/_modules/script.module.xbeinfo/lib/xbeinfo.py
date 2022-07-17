@@ -4,15 +4,14 @@
 	-----------------------------------------------------------------------------------
 '''	
 import struct
-import string
 from limpp import *
 
 		
 class xbeinfo:
 
-	def __init__(self, file):
+	def __init__(self, data_file):
 		xbe_data = None
-		with open(file, 'rb') as xbe:
+		with open(data_file, 'rb') as xbe:
 			xbe_data = xbe.read()
 
 		# Load XBE Header
@@ -20,12 +19,12 @@ class xbeinfo:
 
 		# Load XBE Cert
 		certificate_slice_start = self.header.dwCertificateAddr - self.header.dwBaseAddr
-		self.cert = XBE_CERT(xbe_data[certificate_slice_start:certificate_slice_start + 388]) # <-- See the last XBE_CERT alternative signing key slice, don't need to use more space than necessary
+		self.cert = XBE_CERT(xbe_data[certificate_slice_start:certificate_slice_start + 388])  # <-- See the last XBE_CERT alternative signing key slice, don't need to use more space than necessary
 
 		# Load XBE Section Headers and Section Names
 		self.sections = []
 		for x in range(0, self.header.dwSections):
-			#Load XBE Section Header
+			# Load XBE Section Header
 			section_slice_start = self.header.dwSectionHeadersAddr - self.header.dwBaseAddr + (56 * x)
 			section = XBE_SECTION(xbe_data[section_slice_start:section_slice_start + 56], xbe_data)
 
@@ -43,7 +42,7 @@ class xbeinfo:
 			if section.name == '$$XTIMAG':
 				file_type = struct.unpack('4s', section.data[0:4])[0]
 
-				with open( 'Z:\\TitleImage.xbx', "wb") as title_image:
+				with open('Z:\\TitleImage.xbx', "wb") as title_image:
 					title_image.write(section.data)
 
 				if file_type == 'XPR0':
@@ -53,10 +52,10 @@ class xbeinfo:
 
 class XBE_HEADER():
 	def __init__(self, data):
-		XOR_EP_DEBUG  = 0x94859D4B # Entry Point (Debug)
-		XOR_EP_RETAIL = 0xA8FC57AB # Entry Point (Retail)
-		XOR_KT_DEBUG  = 0xEFB1F152 # Kernel Thunk (Debug)
-		XOR_KT_RETAIL = 0x5B6D40B6 # Kernel Thunk (Retail)
+		XOR_EP_DEBUG  = 0x94859D4B  # Entry Point (Debug)
+		XOR_EP_RETAIL = 0xA8FC57AB  # Entry Point (Retail)
+		XOR_KT_DEBUG  = 0xEFB1F152  # Kernel Thunk (Debug)
+		XOR_KT_RETAIL = 0x5B6D40B6  # Kernel Thunk (Retail)
 
 		self.dwMagic					   = struct.unpack('4s', data[0:4])[0]		# Magic number [should be "XBEH"]
 		self.pbDigitalSignature			   = struct.unpack('256B', data[4:260])	   # Digital signature
