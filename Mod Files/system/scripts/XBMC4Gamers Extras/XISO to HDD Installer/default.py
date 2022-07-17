@@ -6,6 +6,7 @@
 import os, shutil, xbmcgui, glob, traceback
 from io import BytesIO
 from struct import unpack
+from xbmc import log, LOGDEBUG, LOGERROR, LOGFATAL
 from xbmcgui import Dialog, DialogProgress
 from xbe import *
 from xbeinfo import *
@@ -25,11 +26,11 @@ def check_iso(iso_file):
 		iso_info['root_dir_sector'] = unpack('I', iso_file.read(4))[0] #dtable
 		iso_info['root_dir_size'] = unpack('I', iso_file.read(4))[0]
 	else:
-		print("FATAL: header tail mismatch -- possible corruption?")
-		print("FATAL: this doesn't appear to be an xbox iso image")
+		log("header tail mismatch -- possible corruption?", LOGFATAL)
+		log("this doesn't appear to be an xbox iso image", LOGFATAL)
 
 	# an empty dictionary is falsy, so just return the iso_info.
-	print str.format("DEBUG: iso_info -> {}", iso_info)
+	log(str.format("iso_info -> {}", iso_info), LOGDEBUG)
 	return iso_info
 
 def extract_defaultxbe(iso_file, iso_info, iso_folder, xbe_partitions = 8):
@@ -58,22 +59,23 @@ def extract_defaultxbe(iso_file, iso_info, iso_folder, xbe_partitions = 8):
 				file_partition_size	= file_size / xbe_partitions
 
 				with open(os.path.join(iso_folder, "default.xbe"), "ab") as default_xbe:
-					print str.format("DEBUG: default.xbe size is {} bytes, partition size is {} bytes, dangling size is {} bytes", file_size, file_partition_size, dangling_partition_size)
+					log(str.format("default.xbe size is {} bytes, partition size is {} bytes, dangling size is {} bytes", file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
 					for partition in range(0, xbe_partitions):
 						iso_file.seek(file_sector * iso_info['sector_size'] + (file_partition_size*partition))
 						default_xbe.write(iso_file.read(file_partition_size))
 					
 					# write the remainder of the the default.xbe
-					iso_file.seek(file_sector * iso_info['sector_size'] + (file_partition_size*xbe_partitions))
-					default_xbe.write(iso_file.read(dangling_partition_size))
+					if dangling_partition_size > 0:
+						iso_file.seek(file_sector * iso_info['sector_size'] + (file_partition_size*xbe_partitions))
+						default_xbe.write(iso_file.read(dangling_partition_size))
 				
-				print str.format("DEBUG: Done extracting default.xbe from '{}'", os.path.basename(iso_file.name))
+				log(str.format("Done extracting default.xbe from '{}'", os.path.basename(iso_file.name)), LOGDEBUG)
 
 def prepare_attachxbe(iso_folder):
 	shutil.copyfile(os.path.join(os.getcwd(), "attach.xbe"), os.path.join(iso_folder, "attach.xbe"))
 	
 	## DEFAULT XBE TITLE
-	with open(os.path.join(iso_folder, 'default.xbe'), 'rb') as default_xbe:
+	with open(os.path.join(iso_folder, 'default.xbe'), 'rb', buffering=5242880) as default_xbe:
 		#move to base address
 		default_xbe.seek(260, 0)
 		base = default_xbe.read(4)
@@ -90,7 +92,7 @@ def prepare_attachxbe(iso_folder):
 		
 	# I'm not too worried about reuising all these vars...
 	# ATTACH XBE FILE
-	with open(os.path.join(iso_folder, 'attach.xbe'), 'r+b') as attach_xbe:
+	with open(os.path.join(iso_folder, 'attach.xbe'), 'r+b', buffering=5242880) as attach_xbe:
 		#move to base address
 		attach_xbe.seek(260, 0)
 		base = attach_xbe.read(4)
@@ -110,14 +112,14 @@ def prepare_attachxbe(iso_folder):
 	try: # this is to move on if there is an error with extracting the image.
 		xbeinfo(default_xbe).image_png()
 	except Exception as exc:
-		print "| Error: Memory ran out when trying to extract TitleImage.xbx."
-		print "|        So using alternative way."
+		log("Memory ran out when trying to extract TitleImage.xbx.", LOGERROR)
+		log("       So using alternative way.", LOGERROR)
 		traceback.print_exc()
 
 		try: # if the memory runs out this one works.
 			XBE(default_xbe).Get_title_image().Write_PNG(os.path.join("Z:\\default.png"))
 		except Exception as exc:
-			print "| Error: Cannot extract the default.png, haven't a clue why maybe its in DDS format?"
+			log("Cannot extract the default.png, haven't a clue why maybe its in DDS format?", LOGERROR)
 			traceback.print_exc()
 	
 	default_tbn = os.path.join(iso_folder, 'default.tbn')
@@ -146,9 +148,9 @@ def process_iso(file_path, iso_directory):
 	iso_full_name, iso_folder_name	= process_iso_name(file_name)
 	iso_folder = os.path.join(iso_directory, iso_folder_name + ' (ISO)')
 
-	print str.format("DEBUG: Processing {}", file_name)
+	log(str.format("Processing {}", file_name))
 
-	with open(file_path, 'rb') as iso_file:
+	with open(file_path, 'rb', buffering=5242880) as iso_file: # Buffer 5MB of data at a time
 		iso_info = check_iso(iso_file) # check that iso is an xbox game and extract some details
 			
 		if iso_info: # doesn't work, if no xbe files is found inside the xiso. (yeah I was testing and forgot the xbe lol)
@@ -173,15 +175,15 @@ def process_iso(file_path, iso_directory):
 		
 		except Exception as exc:
 			shutil.rmtree(iso_folder)
-			print "ERROR 2 : Not a valid XISO?"
-			print "ERROR 2 : Could not prepare the attach.xbe with extracted values from default.xbe"
+			log("Not a valid XISO?", LOGERROR)
+			log("Could not prepare the attach.xbe with extracted values from default.xbe", LOGERROR)
 			traceback.print_exc()
 			dialog.ok("ERROR: 2 ", "Not a valid XISO?", "Could not prepare the [B]attach.xbe[/B]", file_path)
 	else:
-		print str.format("DEBUG : ISO info could not be obtained, skipping '{}'", file_name)
+		log(str.format("ISO info could not be obtained, skipping '{}'", file_name), LOGDEBUG)
 
 if __name__ == "__main__":
-	print "| Scripts\XBMC4Gamers Extras\XISO to HDD Installer\default.py loaded."
+	log("| Scripts\XBMC4Gamers Extras\XISO to HDD Installer\default.py loaded.")
 	progress_dialog = DialogProgress()
 	dialog = Dialog()
 	search_directory = dialog.browse(0, "Select a folder", "files")
@@ -193,7 +195,7 @@ if __name__ == "__main__":
 
 		num_iso_files = len([ iso for iso in glob.iglob(search_directory + "*.iso")])
 		
-		print str.format("DEBUG: Searching '{}' for iso files!", search_directory)
+		log(str.format("Searching '{}' for iso files!", search_directory), LOGDEBUG)
 		for idx, iso_file in enumerate(sorted(glob.iglob(search_directory + "*.iso"))):
 			# If second part of ISO has been moved by process_iso, we skip to the next part.
 			if os.path.isfile(iso_file):
@@ -202,7 +204,7 @@ if __name__ == "__main__":
 					process_iso(iso_file, search_directory)
 				except Exception as exc:
 					progress_dialog.close()
-					print "ERROR: Script has failed"
+					log("Script has failed", LOGERROR)
 					traceback.print_exc()
 					dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_file)
 					break
@@ -213,6 +215,6 @@ if __name__ == "__main__":
 		if num_iso_files == 0:
 			dialog.ok("ERROR:", "", "No XISO files found")
 	else:
-		print "DEBUG: No search directory was defined!"
+		log("No search directory was defined!", LOGDEBUG)
 	
-	print "================================================================================"
+	log("================================================================================")
