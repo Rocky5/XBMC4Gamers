@@ -9,25 +9,31 @@ from limpp import *
 
 		
 class xbeinfo:
-	m_file = None
 
 	def __init__(self, file):
-		self.m_file = open(file, 'rb').read()
+		xbe_data = None
+		with open(file, 'rb') as xbe:
+			xbe_data = xbe.read()
 
 		# Load XBE Header
-		self.header = XBE_HEADER(self.m_file)
-		self.cert	= XBE_CERT(self.m_file[self.header.dwCertificateAddr - self.header.dwBaseAddr:len(self.m_file)])
+		self.header = XBE_HEADER(xbe_data)
 
-		# Load XBE Section Headers
+		# Load XBE Cert
+		certificate_slice_start = self.header.dwCertificateAddr - self.header.dwBaseAddr
+		self.cert = XBE_CERT(xbe_data[certificate_slice_start:certificate_slice_start + 388]) # <-- See the last XBE_CERT alternative signing key slice, don't need to use more space than necessary
+
+		# Load XBE Section Headers and Section Names
 		self.sections = []
 		for x in range(0, self.header.dwSections):
-			self.sections.append(XBE_SECTION(self.m_file[self.header.dwSectionHeadersAddr - self.header.dwBaseAddr + (x * 56):len(self.m_file)], self.m_file))
+			#Load XBE Section Header
+			section_slice_start = self.header.dwSectionHeadersAddr - self.header.dwBaseAddr + (56 * x)
+			section = XBE_SECTION(xbe_data[section_slice_start:section_slice_start + 56], xbe_data)
 
-		# Load XBE Section Names
-		for section in self.sections:
-			section.name = struct.unpack('8s', self.m_file[section.dwSectionNameAddr - self.header.dwBaseAddr:
-														   section.dwSectionNameAddr - self.header.dwBaseAddr + 8])[0].split("\x00")[0].rstrip()
+			# Load XBE Section Name
+			name_slice_start = section.dwSectionNameAddr - self.header.dwBaseAddr
+			section.name = struct.unpack('8s', xbe[name_slice_start:name_slice_start + 8])[0].split("\x00")[0].rstrip()
 
+			self.sections.append(section)
 
 	def get_logo(self):
 		return 0
@@ -35,18 +41,15 @@ class xbeinfo:
 	def image_png(self):
 		for section in self.sections:
 			if section.name == '$$XTIMAG':
-				data = section.data
-				type = struct.unpack('4s', data[0:4])[0]
+				file_type = struct.unpack('4s', section.data[0:4])[0]
 
-				newFile = open( 'Z:\\TitleImage.xbx', "wb")
-				# write to file
-				newFile.write(data)
-				newFile.close()
+				with open( 'Z:\\TitleImage.xbx', "wb") as title_image:
+					title_image.write(section.data)
 
-				if type == 'XPR0':
+				if file_type == 'XPR0':
 					image = Get_image( file='Z:\\TitleImage.xbx' )
 					image.Write_PNG( 'Z:\\default.png' )
-		print 'done';
+		print 'done'
 
 class XBE_HEADER():
 	def __init__(self, data):
