@@ -31,7 +31,7 @@ class xbeinfo:
 
 			# Load XBE Section Name
 			name_slice_start = section.dwSectionNameAddr - self.header.dwBaseAddr
-			section.name = struct.unpack('8s', xbe[name_slice_start:name_slice_start + 8])[0].split("\x00")[0].rstrip()
+			section.name = struct.unpack('8s', xbe_data[name_slice_start:name_slice_start + 8])[0].split("\x00")[0].rstrip()
 
 			self.sections.append(section)
 
