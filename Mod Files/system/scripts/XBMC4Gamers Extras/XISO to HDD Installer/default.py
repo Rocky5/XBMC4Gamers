@@ -39,7 +39,7 @@ def check_iso(iso_file):
 	log(str.format("iso_info -> {}", iso_info), LOGDEBUG)
 	return iso_info
 
-def extract_files(iso_file, iso_info, iso_folder, xbe_partitions=8, files={"default.xbe", "game.xbe"}):
+def extract_files(iso_file, iso_info, game_iso_folder, xbe_partitions=8, files={"default.xbe", "game.xbe"}):
 	# seek to root sector
 	iso_file.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
 
@@ -73,7 +73,7 @@ def extract_files(iso_file, iso_info, iso_folder, xbe_partitions=8, files={"defa
 					dangling_partition_size = file_size % xbe_partitions
 					file_partition_size = file_size / xbe_partitions
 
-					with open(os.path.join(iso_folder, 'default.xbe'), "ab") as default_xbe:
+					with open(os.path.join(game_iso_folder, 'default.xbe'), "ab") as default_xbe:
 						log(str.format("{} size is {} bytes, partition size is {} bytes, dangling size is {} bytes", filename, file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
 						for partition in range(0, xbe_partitions):
 							iso_file.seek(file_sector * iso_info['sector_size'] + (file_partition_size*partition))
@@ -86,12 +86,12 @@ def extract_files(iso_file, iso_info, iso_folder, xbe_partitions=8, files={"defa
 
 					log(str.format("Done extracting '{}' from '{}'", filename, os.path.basename(iso_file.name)), LOGDEBUG)
 
-def prepare_attachxbe(iso_folder):
+def prepare_attachxbe(game_iso_folder):
 	script_root_dir = os.getcwd()
-	shutil.copyfile(os.path.join(script_root_dir, "attach.xbe"), os.path.join(iso_folder, "attach.xbe"))
+	shutil.copyfile(os.path.join(script_root_dir, "attach.xbe"), os.path.join(game_iso_folder, "attach.xbe"))
 
 	# DEFAULT XBE TITLE
-	with open(os.path.join(iso_folder, 'default.xbe'), 'rb', buffering=4096) as default_xbe:
+	with open(os.path.join(game_iso_folder, 'default.xbe'), 'rb', buffering=4096) as default_xbe:
 		# move to base address
 		default_xbe.seek(260, 0)
 		base = default_xbe.read(4)
@@ -108,7 +108,7 @@ def prepare_attachxbe(iso_folder):
 
 	# I'm not too worried about reuising all these vars...
 	# ATTACH XBE FILE
-	with open(os.path.join(iso_folder, 'attach.xbe'), 'r+b', buffering=4096) as attach_xbe:
+	with open(os.path.join(game_iso_folder, 'attach.xbe'), 'r+b', buffering=4096) as attach_xbe:
 		# move to base address
 		attach_xbe.seek(260, 0)
 		base = attach_xbe.read(4)
@@ -123,7 +123,7 @@ def prepare_attachxbe(iso_folder):
 		attach_xbe.seek(loc + 8, 0)
 		attach_xbe.write(xbe_certificate)
 
-	default_xbe = os.path.join(iso_folder, "default.xbe")
+	default_xbe = os.path.join(game_iso_folder, "default.xbe")
 
 	try:  # this is to move on if there is an error with extracting the image.
 		XBE(default_xbe).Get_title_image().Write_PNG(os.path.join("Z:\\default.png"))
@@ -138,20 +138,20 @@ def prepare_attachxbe(iso_folder):
 			log("Unsupported format or XBE is to large for current system memory.", LOGERROR)
 			traceback.print_exc()
 
-	default_tbn = os.path.join(iso_folder, 'default.tbn')
+	default_tbn = os.path.join(game_iso_folder, 'default.tbn')
 	if os.path.isfile('Z:\\default.png'):
 		shutil.move('Z:\\default.png', default_tbn)
 	else:
 		shutil.copy2(os.path.join(script_root_dir, 'missing.jpg'), default_tbn)
 
 	# Always copy the default thumbnail to icon.png
-	shutil.copy2(default_tbn, os.path.join(iso_folder, 'icon.png'))
+	shutil.copy2(default_tbn, os.path.join(game_iso_folder, 'icon.png'))
 
 	if os.path.isfile('Z:\\TitleImage.png'):
 		os.remove('Z:\\TitleImage.xbx')
 
 	os.remove(default_xbe)
-	os.rename(os.path.join(iso_folder, "attach.xbe"), default_xbe)
+	os.rename(os.path.join(game_iso_folder, "attach.xbe"), default_xbe)
 
 def process_iso_name(file_name):
 	iso_full_name = file_name[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
@@ -160,11 +160,11 @@ def process_iso_name(file_name):
 
 	return iso_full_name, iso_folder_name
 
-def process_iso(file_path, iso_directory):
+def process_iso(file_path, root_iso_directory):
 	iso_info = None
 	file_name = os.path.basename(file_path)
 	iso_full_name, iso_folder_name = process_iso_name(file_name)
-	iso_folder = os.path.join(iso_directory, iso_folder_name + ' (ISO)')
+	game_iso_folder = os.path.join(root_iso_directory, iso_folder_name + ' (ISO)')
 
 	log(str.format("Processing {}", file_name))
 
@@ -172,23 +172,24 @@ def process_iso(file_path, iso_directory):
 		iso_info = check_iso(iso_file)  # check that iso is an xbox game and extract some details
 
 		if iso_info:  # doesn't work, if no xbe files is found inside the xiso. (yeah I was testing and forgot the xbe lol)
-			if not os.path.isdir(iso_folder):
-				os.mkdir(iso_folder)  # make a new folder for the current game
-			extract_files(iso_file, iso_info, iso_folder)  # find and extract default.xbe from the iso
+			if not os.path.isdir(game_iso_folder):
+				os.mkdir(game_iso_folder)  # make a new folder for the current game
+			extract_files(iso_file, iso_info, game_iso_folder)  # find and extract default.xbe/game.xbe from the iso
 
 	if iso_info:
 		try:
 			# Patch the title+id into attach.xbe...
-			prepare_attachxbe(iso_folder)
+			prepare_attachxbe(game_iso_folder)
 
 			# Search for all parts of current ISO and move them into the directory.
 			# This assumes your iso a full dd+split or equivalent and has a name matching <name>.1.iso or <name>_1.iso
 			# Use .1.iso if using a repacked iso that is smaller than the 4GB fatx filesystem limit.
-			for iso_part_image in glob.iglob(os.path.join(iso_directory, iso_full_name + '[._]?.iso')):
-				shutil.move(os.path.join(iso_directory, iso_part_image), iso_folder)
+			for iso_part_image in glob.iglob(os.path.join(root_iso_directory, iso_full_name + '[._]?.iso')):
+				log(str.format("Moving '{}' into '{}'", iso_part_image, game_iso_folder), LOGDEBUG)
+				shutil.move(iso_part_image, game_iso_folder)
 
 		except:
-			shutil.rmtree(iso_folder)
+			shutil.rmtree(game_iso_folder)
 			log("Not a valid XISO?", LOGERROR)
 			log("Could not prepare the attach.xbe with extracted values from default.xbe", LOGERROR)
 			traceback.print_exc()
