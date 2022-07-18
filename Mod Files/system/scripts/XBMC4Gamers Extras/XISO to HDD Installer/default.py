@@ -12,7 +12,7 @@ from struct import unpack
 
 from xbe import *
 from xbeinfo import *
-from xbmc import log, LOGDEBUG, LOGERROR, LOGFATAL
+from xbmc import log, LOGDEBUG, LOGERROR, LOGFATAL, LOGINFO
 from xbmcgui import Dialog, DialogProgress
 
 
@@ -125,14 +125,20 @@ def prepare_attachxbe(game_iso_folder):
 		attach_xbe.write(xbe_certificate)
 
 	default_xbe = os.path.join(game_iso_folder, "default.xbe")
+	os.remove(default_xbe)
+	os.rename(os.path.join(game_iso_folder, "attach.xbe"), default_xbe)
+
+def extract_title_image(game_iso_folder):
+	script_root_dir = os.getcwd()
+	default_xbe = os.path.join(game_iso_folder, "default.xbe")
 
 	try:  # this is to move on if there is an error with extracting the image.
 		XBE(default_xbe).Get_title_image().Write_PNG(os.path.join("Z:\\default.png"))
 	except:
 		log("Memory ran out when trying to extract TitleImage.xbx.", LOGERROR)
-		log("So using alternative way.", LOGERROR)
 
 		try:  # if the memory runs out this one should work.
+			log("Using alternative extraction for TitleImage.xbx.", LOGINFO)
 			xbeinfo(default_xbe).image_png()
 		except:
 			log("Cannot extract TitleImage.xbx.", LOGERROR)
@@ -151,8 +157,6 @@ def prepare_attachxbe(game_iso_folder):
 	if os.path.isfile('Z:\\TitleImage.png'):
 		os.remove('Z:\\TitleImage.xbx')
 
-	os.remove(default_xbe)
-	os.rename(os.path.join(game_iso_folder, "attach.xbe"), default_xbe)
 
 def process_iso_name(file_name):
 	iso_full_name = file_name[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
@@ -174,6 +178,7 @@ def process_iso(file_path, root_iso_directory):
 			os.mkdir(game_iso_folder)  # make a new folder for the current game
 
 		extract_files(file_path, iso_info, game_iso_folder)  # find and extract default.xbe/game.xbe from the iso
+		extract_title_image(game_iso_folder)  # Extract title image from default.xbe
 
 		try:
 			# Patch the title+id into attach.xbe...
