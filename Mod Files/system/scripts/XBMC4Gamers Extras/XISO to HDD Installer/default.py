@@ -61,10 +61,6 @@ def extract_files(iso_file, iso_info, game_iso_folder, xbe_partitions=8, files={
 
 			for filename in files:
 				if filename_length == len(filename) and root_sector_buffer.read(len(filename)).decode("ascii", "ignore").lower() == filename:
-					# found *.xbe
-					if filename.lower() == "game.xbe":
-						os.remove(os.path.join(iso_folder, "default.xbe"))
-
 					root_sector_buffer.seek(i - 8)
 					file_sector = unpack('I', root_sector_buffer.read(4))[0]
 					file_size = unpack('I', root_sector_buffer.read(4))[0]
@@ -74,16 +70,16 @@ def extract_files(iso_file, iso_info, game_iso_folder, xbe_partitions=8, files={
 					dangling_partition_size = file_size % xbe_partitions
 					file_partition_size = file_size / xbe_partitions
 
-					with open(os.path.join(game_iso_folder, 'default.xbe'), "ab") as default_xbe:
+					with open(os.path.join(game_iso_folder, filename), "wb") as xbe:  # write binary, truncating file before writing.
 						log(str.format("{} size is {} bytes, partition size is {} bytes, dangling size is {} bytes", filename, file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
 						for partition in range(0, xbe_partitions):
 							iso.seek(file_sector * iso_info['sector_size'] + (file_partition_size * partition))
-							default_xbe.write(iso.read(file_partition_size))
+							xbe.write(iso.read(file_partition_size))
 
 						# write the remainder of the the default.xbe
 						if dangling_partition_size > 0:
 							iso.seek(file_sector * iso_info['sector_size'] + (file_partition_size * xbe_partitions))
-							default_xbe.write(iso.read(dangling_partition_size))
+							xbe.write(iso.read(dangling_partition_size))
 
 					log(str.format("Done extracting '{}' from '{}'", filename, os.path.basename(iso.name)), LOGDEBUG)
 
@@ -157,6 +153,13 @@ def extract_title_image(game_iso_folder):
 	if os.path.isfile('Z:\\TitleImage.png'):
 		os.remove('Z:\\TitleImage.xbx')
 
+def check_for_gamexbe(game_iso_folder):
+	default_xbe = os.path.join(game_iso_folder, 'default.xbe')
+	game_xbe = os.path.join(game_iso_folder, 'game.xbe')
+
+	if os.path.isfile(game_xbe):
+		os.remove(default_xbe)
+		os.rename(game_xbe, default_xbe)
 
 def process_iso_name(file_name):
 	iso_full_name = file_name[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
@@ -178,6 +181,7 @@ def process_iso(file_path, root_iso_directory):
 			os.mkdir(game_iso_folder)  # make a new folder for the current game
 
 		extract_files(file_path, iso_info, game_iso_folder)  # find and extract default.xbe/game.xbe from the iso
+		check_for_gamexbe(game_iso_folder)  # Check if we extracted a game.xbe and rename to default.xbe if found
 		extract_title_image(game_iso_folder)  # Extract title image from default.xbe
 
 		try:
