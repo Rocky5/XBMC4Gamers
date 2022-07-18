@@ -60,6 +60,10 @@ def extract_files(iso_file, iso_info, iso_folder, xbe_partitions=8, files={"defa
 
 			for filename in files:
 				if filename_length == len(filename) and root_sector_buffer.read(len(filename)).decode("ascii", "ignore").lower() == filename:
+					# found *.xbe
+					if filename.lower() == "game.xbe":
+						os.remove(os.path.join(iso_folder, "default.xbe"))
+
 					root_sector_buffer.seek(i - 8)
 					file_sector = unpack('I', root_sector_buffer.read(4))[0]
 					file_size = unpack('I', root_sector_buffer.read(4))[0]
@@ -81,7 +85,6 @@ def extract_files(iso_file, iso_info, iso_folder, xbe_partitions=8, files={"defa
 							default_xbe.write(iso_file.read(dangling_partition_size))
 
 					log(str.format("Done extracting '{}' from '{}'", filename, os.path.basename(iso_file.name)), LOGDEBUG)
-					return  # Return as there is only one file present, either 'game.xbe' or 'default.xbe'
 
 def prepare_attachxbe(iso_folder):
 	shutil.copyfile(os.path.join(os.getcwd(), "attach.xbe"), os.path.join(iso_folder, "attach.xbe"))
