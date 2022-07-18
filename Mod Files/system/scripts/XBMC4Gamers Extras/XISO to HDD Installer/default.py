@@ -23,38 +23,39 @@ from xbmcgui import Dialog, DialogProgress
 # -----------------------------------------------------------------------------------
 def check_iso(iso_file):
 	iso_info = {}
-	# check for validity
-	iso_file.seek(0x10000)
-	if iso_file.read(0x14).decode("ascii", "ignore") == 'MICROSOFT*XBOX*MEDIA':  # read tailend of header
-		iso_info['sector_size'] = 0x800
-		# read the directory table
-		iso_file.seek(0x10014)
-		iso_info['root_dir_sector'] = unpack('I', iso_file.read(4))[0]  # dtable
-		iso_info['root_dir_size'] = unpack('I', iso_file.read(4))[0]
-	else:
-		log("header tail mismatch -- possible corruption?", LOGFATAL)
-		log("this doesn't appear to be an xbox iso image", LOGFATAL)
+	with open(iso_file, 'rb') as iso:
+		# check for validity
+		iso.seek(0x10000)
+		if iso.read(0x14).decode("ascii", "ignore") == 'MICROSOFT*XBOX*MEDIA':  # read tailend of header
+			iso_info['sector_size'] = 0x800
+			# read the directory table
+			iso.seek(0x10014)
+			iso_info['root_dir_sector'] = unpack('I', iso.read(4))[0]  # dtable
+			iso_info['root_dir_size'] = unpack('I', iso.read(4))[0]
+		else:
+			log("header tail mismatch -- possible corruption?", LOGFATAL)
+			log("this doesn't appear to be an xbox iso image", LOGFATAL)
 
 	# an empty dictionary is falsy, so just return the iso_info.
 	log(str.format("iso_info -> {}", iso_info), LOGDEBUG)
 	return iso_info
 
 def extract_files(iso_file, iso_info, game_iso_folder, xbe_partitions=8, files={"default.xbe", "game.xbe"}):
-	# seek to root sector
-	iso_file.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
+	with BytesIO() as root_sector_buffer, open(iso_file, 'rb') as iso:
+		# seek to root sector
+		iso.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
 
-	# read the root sector into a bytes object
-	with BytesIO() as root_sector_buffer:
-		root_sector_buffer.write(iso_file.read(iso_info['root_dir_size']))
+		# read the root sector into a bytes object
+		root_sector_buffer.write(iso.read(iso_info['root_dir_size']))
 		root_sector_buffer.seek(0)
 
 		# case insensitive search of root sector for default.xbe
 		for i in range(0, iso_info['root_dir_size']):
 			root_sector_buffer.seek(i)
-			root_sector_buffer.read(1) # No idea why we're reading 1 byte here
+			root_sector_buffer.read(1)  # No idea why we're reading 1 byte here
 
 			try:
-				filename_length = unpack('<' + 'B' * 1,  root_sector_buffer.read(1))[ 0 ] # file_attribute
+				filename_length = unpack('<' + 'B' * 1,  root_sector_buffer.read(1))[0]  # filename length in directory table
 			except:
 				continue
 
@@ -76,15 +77,15 @@ def extract_files(iso_file, iso_info, game_iso_folder, xbe_partitions=8, files={
 					with open(os.path.join(game_iso_folder, 'default.xbe'), "ab") as default_xbe:
 						log(str.format("{} size is {} bytes, partition size is {} bytes, dangling size is {} bytes", filename, file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
 						for partition in range(0, xbe_partitions):
-							iso_file.seek(file_sector * iso_info['sector_size'] + (file_partition_size*partition))
-							default_xbe.write(iso_file.read(file_partition_size))
+							iso.seek(file_sector * iso_info['sector_size'] + (file_partition_size * partition))
+							default_xbe.write(iso.read(file_partition_size))
 
 						# write the remainder of the the default.xbe
 						if dangling_partition_size > 0:
-							iso_file.seek(file_sector * iso_info['sector_size'] + (file_partition_size*xbe_partitions))
-							default_xbe.write(iso_file.read(dangling_partition_size))
+							iso.seek(file_sector * iso_info['sector_size'] + (file_partition_size * xbe_partitions))
+							default_xbe.write(iso.read(dangling_partition_size))
 
-					log(str.format("Done extracting '{}' from '{}'", filename, os.path.basename(iso_file.name)), LOGDEBUG)
+					log(str.format("Done extracting '{}' from '{}'", filename, os.path.basename(iso.name)), LOGDEBUG)
 
 def prepare_attachxbe(game_iso_folder):
 	script_root_dir = os.getcwd()
@@ -161,22 +162,19 @@ def process_iso_name(file_name):
 	return iso_full_name, iso_folder_name
 
 def process_iso(file_path, root_iso_directory):
-	iso_info = None
 	file_name = os.path.basename(file_path)
 	iso_full_name, iso_folder_name = process_iso_name(file_name)
 	game_iso_folder = os.path.join(root_iso_directory, iso_folder_name + ' (ISO)')
 
 	log(str.format("Processing {}", file_name))
 
-	with open(file_path, 'rb') as iso_file:
-		iso_info = check_iso(iso_file)  # check that iso is an xbox game and extract some details
+	iso_info = check_iso(file_path)  # check that iso is an xbox game and extract some details
+	if iso_info:  # doesn't work, if no xbe files is found inside the xiso. (yeah I was testing and forgot the xbe lol)
+		if not os.path.isdir(game_iso_folder):
+			os.mkdir(game_iso_folder)  # make a new folder for the current game
 
-		if iso_info:  # doesn't work, if no xbe files is found inside the xiso. (yeah I was testing and forgot the xbe lol)
-			if not os.path.isdir(game_iso_folder):
-				os.mkdir(game_iso_folder)  # make a new folder for the current game
-			extract_files(iso_file, iso_info, game_iso_folder)  # find and extract default.xbe/game.xbe from the iso
+		extract_files(file_path, iso_info, game_iso_folder)  # find and extract default.xbe/game.xbe from the iso
 
-	if iso_info:
 		try:
 			# Patch the title+id into attach.xbe...
 			prepare_attachxbe(game_iso_folder)
