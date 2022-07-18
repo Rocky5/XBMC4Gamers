@@ -1,8 +1,8 @@
-'''
+"""
 	Script by Rocky5
 	Used to prep a XISO so it can be playd from the Xbox HDD. It also extracts images and the xbe header so trainers work.
-	Original script by headphone - http://www.emuxtras.net/forum/viewtopic.php?f=187&t=3228&start=40#p70178
-'''
+	Original script by headphone - https://www.emuxtras.net/forum/viewtopic.php?f=187&t=3228&start=40#p70178
+"""
 import glob
 import os
 import shutil
@@ -87,7 +87,8 @@ def extract_files(iso_file, iso_info, iso_folder, xbe_partitions=8, files={"defa
 					log(str.format("Done extracting '{}' from '{}'", filename, os.path.basename(iso_file.name)), LOGDEBUG)
 
 def prepare_attachxbe(iso_folder):
-	shutil.copyfile(os.path.join(os.getcwd(), "attach.xbe"), os.path.join(iso_folder, "attach.xbe"))
+	script_root_dir = os.getcwd()
+	shutil.copyfile(os.path.join(script_root_dir, "attach.xbe"), os.path.join(iso_folder, "attach.xbe"))
 
 	# DEFAULT XBE TITLE
 	with open(os.path.join(iso_folder, 'default.xbe'), 'rb', buffering=4096) as default_xbe:
@@ -130,7 +131,7 @@ def prepare_attachxbe(iso_folder):
 		log("Memory ran out when trying to extract TitleImage.xbx.", LOGERROR)
 		log("So using alternative way.", LOGERROR)
 
-		try:  # if the memory runs out this one works.
+		try:  # if the memory runs out this one should work.
 			xbeinfo(default_xbe).image_png()
 		except:
 			log("Cannot extract TitleImage.xbx.", LOGERROR)
@@ -140,11 +141,14 @@ def prepare_attachxbe(iso_folder):
 	default_tbn = os.path.join(iso_folder, 'default.tbn')
 	if os.path.isfile('Z:\\default.png'):
 		shutil.move('Z:\\default.png', default_tbn)
-		shutil.copy2(default_tbn, os.path.join(iso_folder, 'icon.png'))
 	else:
-		shutil.copy2(os.path.join(os.getcwd(), 'missing.jpg'), default_tbn)
-		shutil.copy2(os.path.join(os.getcwd(), 'missing.jpg'), os.path.join(iso_folder, 'icon.png'))
-	if os.path.isfile('Z:\\TitleImage.png'): os.remove('Z:\\TitleImage.xbx')
+		shutil.copy2(os.path.join(script_root_dir, 'missing.jpg'), default_tbn)
+
+	# Always copy the default thumbnail to icon.png
+	shutil.copy2(default_tbn, os.path.join(iso_folder, 'icon.png'))
+
+	if os.path.isfile('Z:\\TitleImage.png'):
+		os.remove('Z:\\TitleImage.xbx')
 
 	os.remove(default_xbe)
 	os.rename(os.path.join(iso_folder, "attach.xbe"), default_xbe)
@@ -177,13 +181,11 @@ def process_iso(file_path, iso_directory):
 			# Patch the title+id into attach.xbe...
 			prepare_attachxbe(iso_folder)
 
-			# Search for other parts of current ISO and move them into the directory.
-			if '.1.' in file_name:
-				for iso_part_image in glob.iglob(os.path.join(iso_directory, iso_full_name + '.*.iso')):
-					shutil.move(os.path.join(iso_directory, iso_part_image), iso_folder)
-			if '_1' in file_name:
-				for iso_part_image in glob.iglob(os.path.join(iso_directory, iso_full_name + '_*.iso')):
-					shutil.move(os.path.join(iso_directory, iso_part_image), iso_folder)
+			# Search for all parts of current ISO and move them into the directory.
+			# This assumes your iso a full dd+split or equivalent and has a name matching <name>.1.iso or <name>_1.iso
+			# Use .1.iso if using a repacked iso that is smaller than the 4GB fatx filesystem limit.
+			for iso_part_image in glob.iglob(os.path.join(iso_directory, iso_full_name + '[._]?.iso')):
+				shutil.move(os.path.join(iso_directory, iso_part_image), iso_folder)
 
 		except:
 			shutil.rmtree(iso_folder)
@@ -193,6 +195,7 @@ def process_iso(file_path, iso_directory):
 			dialog.ok("ERROR: 2 ", "Not a valid XISO?", "Could not prepare the [B]attach.xbe[/B]", file_path)
 	else:
 		log(str.format("ISO info could not be obtained, skipping '{}'", file_name), LOGDEBUG)
+
 
 if __name__ == "__main__":
 	log("| Scripts\XBMC4Gamers Extras\XISO to HDD Installer\default.py loaded.")
