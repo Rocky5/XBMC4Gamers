@@ -4,13 +4,12 @@
 	-----------------------------------------------------------------------------------
 """
 import struct
-import os
 from limpp import *
 
-		
+
 class xbeinfo:
-	def __init__(self, data_file, read_buffer_size=3145728):  # Default read buffer is 3MB
-		with open(data_file, 'rb', buffering=read_buffer_size) as xbe:
+	def __init__(self, data_file):
+		with open(data_file, 'rb', buffering=3145728) as xbe: # <-- Buffer 3MB of data at a time
 			xbe.seek(0)
 
 			# Load XBE Header
@@ -25,37 +24,36 @@ class xbeinfo:
 			for x in range(0, self.header.dwSections):
 				# Load XBE Section Header
 				xbe.seek(self.header.dwSectionHeadersAddr - self.header.dwBaseAddr + (56 * x))
-				section = XBE_SECTION(xbe.read(56))
+				section = XBE_SECTION(xbe.read(56))  # <-- Read the sction information
 
 				# Load XBE Section Name
 				xbe.seek(section.dwSectionNameAddr - self.header.dwBaseAddr)
 				section.name = struct.unpack('8s', xbe.read(8))[0].split("\x00")[0].rstrip()
 
 				if section.name == '$$XTIMAG':
+					# Hack to find the only section we care about, discarding the rest
+					self.xbe_title_image = section
+
 					# Load XBE section Data conditionally
 					xbe.seek(section.dwRawAddr)
 					section_data = xbe.read(section.dwSizeofRaw)
-					section_data += '\x00' * (section.dwVirtualSize - len(section_data))  # pad the data to the correct length
+					section_data += '\x00' * (section.dwVirtualSize - len(section_data))  # This should pad the data to the correct length
 					section.data = section_data
-
-					self.xbe_title_image = section
 
 	def get_logo(self):
 		return 0
 
-	def save_png_image(self, save_path, file_name="default.png", tmp_file_name="TitleImage.xbx"):
+	def image_png(self):
 		if hasattr(self, 'xbe_title_image'):
 			file_type = struct.unpack('4s', self.xbe_title_image.data[0:4])[0]
-			with open(os.path.join(save_path, tmp_file_name), "wb") as title_image:
+
+			with open( 'Z:\\TitleImage.xbx', "wb") as title_image:
 				title_image.write(self.xbe_title_image.data)
 
 			if file_type == 'XPR0':
-				Get_image(os.path.join(save_path, tmp_file_name)).Write_PNG(os.path.join(save_path, file_name))
-
-	def image_png(self):
-		self.save_png_image("Z:\\")  # save image to disk, yields the same result as previously
-		print 'done'
-
+				image = Get_image( file='Z:\\TitleImage.xbx' )
+				image.Write_PNG( 'Z:\\default.png' )
+	# print 'done'
 
 class XBE_HEADER:
 	def __init__(self, data):
