@@ -227,6 +227,11 @@ if __name__ == "__main__":
 					traceback.print_exc()
 					dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_file)
 					break
+
+			if progress_dialog.iscanceled():
+				log(str.format("User terminated scanning, stopping after '{}'", iso_file), LOGDEBUG)
+				progress_dialog.close()
+				break
 		else:
 			progress_dialog.close()
 			dialog.ok("XISO to HDD Installer", "", "Everything is setup.", "You just launch the game/s like normal.")
