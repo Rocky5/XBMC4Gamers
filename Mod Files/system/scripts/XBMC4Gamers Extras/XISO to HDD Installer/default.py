@@ -33,8 +33,8 @@ def check_iso(iso_file):
 		iso.seek(0x10000)
 		if iso.read(0x14).decode("ascii", "ignore") == 'MICROSOFT*XBOX*MEDIA':  # read tailend of header
 			iso_info['sector_size'] = 0x800
+
 			# read the directory table
-			iso.seek(0x10014)
 			iso_info['root_dir_sector'] = unpack('I', iso.read(4))[0]  # dtable
 			iso_info['root_dir_size'] = unpack('I', iso.read(4))[0]
 		else:
@@ -70,20 +70,20 @@ def extract_files(iso_file, iso_info, game_iso_folder, xbe_partitions=8, files={
 					file_sector = unpack('I', root_sector_buffer.read(4))[0]
 					file_size = unpack('I', root_sector_buffer.read(4))[0]
 
+					iso.seek(file_sector * iso_info['sector_size'])  # Move to the correct file
+
 					# dump the xbe in parts for huge xbe files.
 					# adding dangling size if xbe is not cleanly divisble by xbe_partitions
 					dangling_partition_size = file_size % xbe_partitions
 					file_partition_size = file_size / xbe_partitions
 
+					log(str.format("{} size is {} bytes, partition size is {} bytes, dangling size is {} bytes", filename, file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
 					with open(os.path.join(game_iso_folder, filename), "wb") as xbe:  # write binary, truncating file before writing.
-						log(str.format("{} size is {} bytes, partition size is {} bytes, dangling size is {} bytes", filename, file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
 						for partition in range(0, xbe_partitions):
-							iso.seek(file_sector * iso_info['sector_size'] + (file_partition_size * partition))
 							xbe.write(iso.read(file_partition_size))
 
-						# write the remainder of the the default.xbe
+						# write the remainder of the xbe
 						if dangling_partition_size > 0:
-							iso.seek(file_sector * iso_info['sector_size'] + (file_partition_size * xbe_partitions))
 							xbe.write(iso.read(dangling_partition_size))
 
 					log(str.format("Done extracting '{}' from '{}'", filename, os.path.basename(iso.name)), LOGDEBUG)
