@@ -12,7 +12,7 @@ import shutil
 import traceback
 import zipfile
 from io import BytesIO
-from itertools import chain
+from itertools import chain, groupby
 from struct import unpack, calcsize
 
 from xbe import *
@@ -45,48 +45,65 @@ def check_iso(iso_file):
 	log(str.format("iso_info -> {}", iso_info), LOGDEBUG)
 	return iso_info
 
-def extract_files(iso_file, iso_info, game_iso_folder, xbe_partitions=8, files={"default.xbe", "game.xbe"}):
-	with BytesIO() as root_sector_buffer, open(iso_file, 'rb') as iso:
-		# seek to root sector
-		iso.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
+def extract_files(iso_files, iso_info, game_iso_folder, xbe_partitions=8, files={"default.xbe", "game.xbe"}):
+	iso_size = os.path.getsize(iso_files[0])
+	isos = [open(x, 'rb') for x in iso_files]
 
-		# read the root sector into a bytes object
-		root_sector_buffer.write(iso.read(iso_info['root_dir_size']))
-		root_sector_buffer.seek(0)
+	try:
+		iso = isos[0]
+		with BytesIO() as root_sector_buffer:
+			# seek to root sector
+			iso.seek(iso_info['root_dir_sector'] * iso_info['sector_size'])
 
-		# case insensitive search of root sector for default.xbe
-		for i in range(0, iso_info['root_dir_size']):
-			root_sector_buffer.seek(i)
-			root_sector_buffer.read(1)  # No idea why we're reading 1 byte here
+			# read the root sector into a bytes object
+			root_sector_buffer.write(iso.read(iso_info['root_dir_size']))
+			root_sector_buffer.seek(0)
 
-			try:
-				filename_length = unpack('<' + 'B' * 1,  root_sector_buffer.read(1))[0]  # filename length in directory table
-			except:
-				continue
+			# case insensitive search of root sector for default.xbe
+			for i in range(0, iso_info['root_dir_size']):
+				root_sector_buffer.seek(i)
+				root_sector_buffer.read(1)  # No idea why we're reading 1 byte here
 
-			for filename in files:
-				if filename_length == len(filename) and root_sector_buffer.read(len(filename)).decode("ascii", "ignore").lower() == filename:
-					root_sector_buffer.seek(i - 8)
-					file_sector = unpack('I', root_sector_buffer.read(4))[0]
-					file_size = unpack('I', root_sector_buffer.read(4))[0]
+				try:
+					filename_length = unpack('<' + 'B' * 1,  root_sector_buffer.read(1))[0]  # filename length in directory table
+				except:
+					continue
 
-					iso.seek(file_sector * iso_info['sector_size'])  # Move to the correct file
+				for filename in files:
+					if filename_length == len(filename) and root_sector_buffer.read(len(filename)).decode("ascii", "ignore").lower() == filename:
+						root_sector_buffer.seek(i - 8)
+						file_sector = unpack('I', root_sector_buffer.read(4))[0]
+						file_size = unpack('I', root_sector_buffer.read(4))[0]
+						file_offset = file_sector * iso_info['sector_size']
 
-					# dump the xbe in parts for huge xbe files.
-					# adding dangling size if xbe is not cleanly divisble by xbe_partitions
-					dangling_partition_size = file_size % xbe_partitions
-					file_partition_size = file_size / xbe_partitions
+						# dump the xbe in parts for huge xbe files.
+						# adding dangling size if xbe is not cleanly divisble by xbe_partitions
+						dangling_partition_size = file_size % xbe_partitions
+						file_partition_size = file_size / xbe_partitions
 
-					log(str.format("{} size is {} bytes, partition size is {} bytes, dangling size is {} bytes", filename, file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
-					with open(os.path.join(game_iso_folder, filename), "wb") as xbe:  # write binary, truncating file before writing.
-						for partition in range(0, xbe_partitions):
-							xbe.write(iso.read(file_partition_size))
+						# File could be located in part 2 of the iso.
+						if file_offset > iso_size:
+							# TODO This shit here is not working yet
+							log(str.format("{} is not located in '{}', skipping to '{}', file sector {}, file offset {}", filename, os.path.basename(iso.name), os.path.basename(iso_files[1]), file_sector, file_offset), LOGDEBUG)
+							file_offset = file_offset - iso_size  # Set the correct offset for second iso(?).
+							iso = isos[1]  # switch file handle
 
-						# write the remainder of the xbe
-						if dangling_partition_size > 0:
-							xbe.write(iso.read(dangling_partition_size))
+						iso.seek(file_offset)  # Move to the correct file
 
-					log(str.format("Done extracting '{}' from '{}'", filename, os.path.basename(iso.name)), LOGDEBUG)
+						log(str.format("{} size is {} bytes, partition size is {} bytes, dangling size is {} bytes", filename, file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
+						with open(os.path.join(game_iso_folder, filename), "wb") as xbe:  # write binary, truncating file before writing.
+							for partition in range(0, xbe_partitions):
+								xbe.write(iso.read(file_partition_size))
+
+							# write the remainder of the xbe
+							if dangling_partition_size > 0:
+								xbe.write(iso.read(dangling_partition_size))
+
+						log(str.format("Done extracting '{}' from '{}', size is {} bytes", filename, os.path.basename(iso.name), os.path.getsize(os.path.join(game_iso_folder, filename))), LOGDEBUG)
+				iso = isos[0]  # Reset filehandle back to file number 1.
+	finally:
+		for iso in isos:
+			iso.close()
 
 def prepare_attachxbe(game_iso_folder):
 	script_root_dir = os.getcwd()
@@ -232,19 +249,19 @@ def process_iso_name(file_name):
 
 	return iso_full_name, iso_folder_name
 
-def process_iso(file_path, root_iso_directory, artwork_resources):
-	file_name = os.path.basename(file_path)
+def process_iso(iso_files, root_iso_directory, artwork_resources):
+	file_name = os.path.basename(iso_files[0])
 	iso_full_name, iso_folder_name = process_iso_name(file_name)
 	game_iso_folder = os.path.join(root_iso_directory, iso_folder_name + ' (ISO)')
 
 	log(str.format("Processing {}", file_name))
 
-	iso_info = check_iso(file_path)  # check that iso is an xbox game and extract some details
+	iso_info = check_iso(iso_files[0])  # check that iso is an xbox game and extract some details
 	if iso_info:  # doesn't work, if no xbe files is found inside the xiso. (yeah I was testing and forgot the xbe lol)
 		if not os.path.isdir(game_iso_folder):
 			os.mkdir(game_iso_folder)  # make a new folder for the current game
 
-		extract_files(file_path, iso_info, game_iso_folder)  # find and extract default.xbe/game.xbe from the iso
+		extract_files(iso_files, iso_info, game_iso_folder)  # find and extract default.xbe/game.xbe from the iso
 		check_for_gamexbe(game_iso_folder)  # Check if we extracted a game.xbe and rename to default.xbe if found
 
 		title_id = extract_titleid(os.path.join(game_iso_folder, "default.xbe")).lower()  # Get the titleid from default.xbe
@@ -264,7 +281,7 @@ def process_iso(file_path, root_iso_directory, artwork_resources):
 			prepare_attachxbe(game_iso_folder)
 
 			# Search for all parts of current ISO and move them into the directory.
-			for iso_part_image in set(chain([file_path], glob.iglob(os.path.join(root_iso_directory, iso_full_name + '[._]?.iso')))):
+			for iso_part_image in iso_files:
 				log(str.format("Moving '{}' into '{}'", iso_part_image, game_iso_folder), LOGDEBUG)
 				shutil.move(iso_part_image, game_iso_folder)
 
@@ -273,7 +290,7 @@ def process_iso(file_path, root_iso_directory, artwork_resources):
 			log("Not a valid XISO?", LOGERROR)
 			log("Could not prepare the attach.xbe with extracted values from default.xbe", LOGERROR)
 			traceback.print_exc()
-			dialog.ok("ERROR: 2 ", "Not a valid XISO?", "Could not prepare the [B]attach.xbe[/B]", file_path)
+			dialog.ok("ERROR: 2 ", "Not a valid XISO?", "Could not prepare the [B]attach.xbe[/B]", iso_files)
 	else:
 		log(str.format("ISO info could not be obtained, skipping '{}'", file_name), LOGDEBUG)
 
@@ -290,23 +307,32 @@ if __name__ == "__main__":
 		artwork_resources = get_artwork_resources()  # Prefetch artwork resource locations
 		num_iso_files = len([iso for iso in glob.iglob(search_directory + "*.iso")])
 
+		grouped_iso_files = groupby(
+			[iso for iso in glob.iglob(search_directory + "*.iso")],
+			lambda file_name: os.path.basename(process_iso_name(file_name)[0])#[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
+		)
+
 		progress_dialog.create("XISO to HDD Installer")
 		progress_dialog.update(0)
 
-		for idx, iso_file in enumerate(sorted(glob.iglob(search_directory + "*.iso"))):
+		for idx, entry in enumerate(grouped_iso_files):
+			name = entry[0]
+			iso_files = sorted(list(entry[1]))
+			log(str.format("{} - {}", name, iso_files), LOGDEBUG)
+
 			# If second part of ISO has been moved by process_iso, we skip to the next part.
-			if os.path.isfile(iso_file):
-				progress_dialog.update(((idx + 1) * 100) / num_iso_files, "Scanning XISO Files", iso_file,)
-				try:
-					process_iso(iso_file, search_directory, artwork_resources)
-				except:
-					log("Script has failed", LOGERROR)
-					traceback.print_exc()
-					dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_file)
-					continue
+			# if os.path.isfile(iso_file):
+			progress_dialog.update(((idx + 1) * 100) / num_iso_files, "Scanning XISO Files", iso_files[0],)  # TODO fix this after adding grouping
+			try:
+				process_iso(iso_files, search_directory, artwork_resources)
+			except:
+				log("Script has failed", LOGERROR)
+				traceback.print_exc()
+				dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_files[0])
+				continue
 
 			if progress_dialog.iscanceled():
-				log(str.format("User terminated scanning, stopping after '{}'", iso_file), LOGDEBUG)
+				log(str.format("User terminated scanning, stopping after '{}'", iso_files[0]), LOGDEBUG)
 				progress_dialog.close()
 				break
 		else:
