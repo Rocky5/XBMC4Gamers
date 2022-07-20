@@ -23,40 +23,43 @@ from limpp import Get_image as GET_IMAGE
 
 def Get_image(mipmap=0,addr=0,size=None,file=None,process=True,options=None):
     return GET_IMAGE(mipmap=mipmap,addr=addr,size=size,file=file,process=process,options=options)
-    
+
+
 ################################################################################
 ''' Class: XBE_Error '''
 ################################################################################
 class XBE_Error(Exception):
     def __init__(self, value):
         self.value = value
+
     def __str__(self):
         return repr(self.value)
-    
+
+
 ################################################################################
 ''' Class: XBE '''
 ################################################################################
 class XBE:
-    def __init__(self,file=None):
-        self.file = file
+    def __init__(self, data_file=None):
+        self.file = data_file
         self.header = {}
         self.certificate = {}
         try:
             self.Read_header()
-        except IOError,(errno,strerror):
-            raise XBE_Error , ['MainHeader','File',strerror]
+        except IOError, (errno, strerror):
+            raise XBE_Error, ['MainHeader', 'File', strerror]
         except:
-            raise XBE_Error , ['MainHeader','Unhandled',sys.exc_info()[0]]
+            raise XBE_Error, ['MainHeader', 'Unhandled', sys.exc_info()[0]]
         try:
             self.Read_certificate()
-        except IOError,(errno,strerror):
-            raise XBE_Error , ['Certificate','File',strerror]
+        except IOError, (errno, strerror):
+            raise XBE_Error, ['Certificate', 'File', strerror]
         except:
-            raise XBE_Error , ['Certificate','Unhandled',sys.exc_info()[0]]
+            raise XBE_Error, ['Certificate', 'Unhandled', sys.exc_info()[0]]
         
     def Read_header(self):
-        format = '4s256s8L4B20L'
-        f = open(self.file,'rb')
+        struct_format = '4s256s8L4B20L'
+        f = open(self.file, 'rb')
         
         self.header['magic'],\
         self.header['digsig'],\
@@ -91,13 +94,13 @@ class XBE:
         self.header['kernel_library_version_addr'],\
         self.header['xapi_library_version_addr'],\
         self.header['logo_bitmap_addr'],\
-        self.header['logo_bitmap_size'] = unpack(format,f.read(calcsize(format)))
+        self.header['logo_bitmap_size'] = unpack(struct_format,f.read(calcsize(struct_format)))
         
         f.close()
         
     def Read_certificate(self):    
-        format = '3L80s64s5L16s16s256s'
-        f = open(self.file,'rb')
+        struct_format = '3L80s64s5L16s16s256s'
+        f = open(self.file, 'rb')
         f.seek(self.header['sizeof_image_header'])
         
         self.certificate['size'],\
@@ -112,16 +115,16 @@ class XBE:
         self.certificate['version'],\
         self.certificate['lan_key'],\
         self.certificate['sig_key'],\
-        self.certificate['title_alt_sig_key'] = unpack(format,f.read(calcsize(format)))
+        self.certificate['title_alt_sig_key'] = unpack(struct_format, f.read(calcsize(struct_format)))
 
         f.close()
         
     def Read_section(self,section_number):
-        format = '4B6L2L20s'
-        size = calcsize(format)
+        struct_format = '4B6L2L20s'
+        size = calcsize(struct_format)
         offset = self.header['section_headers_addr'] - self.header['base']
         offset += (section_number - 1) * size
-        f = open(self.file,'rb')
+        f = open(self.file, 'rb')
         f.seek(offset)
 
         pSection_Header = {}
@@ -137,7 +140,7 @@ class XBE:
         pSection_Header['section_reference_count'],\
         pSection_Header['head_shared_ref_count_addr'],\
         pSection_Header['tail_shared_ref_count_addr'],\
-        pSection_Header['section_digest'] = unpack(format,f.read(size))
+        pSection_Header['section_digest'] = unpack(struct_format,f.read(size))
         f.close()
         pSection_Header['flags.writable'] =         (flags_byte >> 0) % 2
         pSection_Header['flags.preload'] =          (flags_byte >> 1) % 2
@@ -148,7 +151,7 @@ class XBE:
         pSection_Header['flags.unused_a1'] =        (flags_byte >> 6) % 2
         pSection_Header['flags.unused_a2'] =        (flags_byte >> 7) % 2
       
-        f = open(self.file,'rb')
+        f = open(self.file, 'rb')
         try:
             offset = pSection_Header['section_name_addr'] - self.header['base']
             f.seek(offset)
@@ -156,18 +159,19 @@ class XBE:
             val = unpack('20s',f.read(20))
             val = val[0]
             for i in range(0,20):
-                    if val[i] == "\x00": break
-                    name += val[i]
+                if val[i] == "\x00":
+                    break
+                name += val[i]
         except:
             name = ''
             
         f.close()
         
-        return name,pSection_Header
+        return name, pSection_Header
     
-    def Read_version(self,addr):
-        format = '8s4H'
-        f = open(self.file,'rb')
+    def Read_version(self, addr):
+        struct_format = '8s4H'
+        f = open(self.file, 'rb')
         f.seek(addr)
         
         Version = {}
@@ -175,12 +179,12 @@ class XBE:
         major,\
         minor,\
         build,\
-        flags = unpack(format,f.read(calcsize(format)))
+        flags = unpack(struct_format, f.read(calcsize(struct_format)))
         
         f.close()
         
         name += chr(0)
-        Version['name'],x = name.split(chr(0),1)
+        Version['name'], x = name.split(chr(0), 1)
         Version['version'] = str(major) + '.' + str(minor) + '.' + str(build)
         '''' We need to seperate out the flags
         Version['flags.qfe_version'] 13 bits
@@ -200,7 +204,7 @@ class XBE:
         return self.Read_version(self.header['xapi_library_version_addr'] - self.header['base'])
     
     def Read_TLS(self):
-        f = open(self.file,'rb')
+        f = open(self.file, 'rb')
         f.seek(self.header['tls_addr'] - self.header['base'])
         
         TLS = {}
@@ -224,10 +228,10 @@ class XBE:
         return t
 
     def Get_game_region(self):
-        regions = { 0x00000001:'NA',
-                    0x00000002:'Japan',
-                    0x00000004:'World',
-                    0x80000000:'Manufacturing'}
+        regions = {0x00000001: 'NA',
+                   0x00000002: 'Japan',
+                   0x00000004: 'World',
+                   0x80000000: 'Manufacturing'}
         try:
             return regions[self.certificate['game_region']]
         except:
@@ -263,22 +267,22 @@ class XBE:
         #MEDIA MASK 0x00FFFFFF
 
 
-    def Get_image_magic(self,addr):
-        f = open(self.file,'rb')
+    def Get_image_magic(self, addr):
+        f = open(self.file, 'rb')
         f.seek(addr)
-        magic = unpack('4s',f.read(4))
+        magic = unpack('4s', f.read(4))
         f.close()
         return magic[0][:3]
         
-    def Get_image_info(self,type_string):
+    def Get_image_info(self, type_string):
         found = 0
-        for n in range(1,self.header['sections']):
-            s_name , section = self.Read_section(n)
+        for n in range(1, self.header['sections']):
+            s_name, section = self.Read_section(n)
             if section['flags.inserted_file']:
                 if s_name == type_string:
                     found = 1
                     break
-        img_hdr = {}
+
         if found:
             magic = self.Get_image_magic(section['raw_addr'])
             if magic == 'XPR':
@@ -291,14 +295,14 @@ class XBE:
     def Get_title_image(self):
         img_section = self.Get_image_info('$$XTIMAGE')
         if img_section:
-            return Get_image(addr=img_section['raw_addr'],size=img_section['sizeof_raw'],file=self.file)
+            return Get_image(addr=img_section['raw_addr'], size=img_section['sizeof_raw'], file=self.file)
         else:
             return None
         
     def Get_save_image(self):
         img_section = self.Get_image_info('$$XSIMAGE')
         if img_section:
-            return Get_image(addr=img_section['raw_addr'],size=img_section['sizeof_raw'],file=self.file)
+            return Get_image(addr=img_section['raw_addr'], size=img_section['sizeof_raw'], file=self.file)
         else:
             return None
         
