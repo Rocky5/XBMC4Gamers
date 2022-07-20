@@ -12,7 +12,8 @@ import shutil
 import traceback
 import zipfile
 from io import BytesIO
-from itertools import chain, groupby
+from itertools import groupby
+from os.path import basename, getsize, join
 from struct import unpack, calcsize
 
 from xbe import *
@@ -46,7 +47,7 @@ def check_iso(iso_file):
 	return iso_info
 
 def extract_files(iso_files, iso_info, game_iso_folder, xbe_partitions=8, files={"default.xbe", "game.xbe"}):
-	iso_size = os.path.getsize(iso_files[0])
+	iso_size = getsize(iso_files[0])
 	isos = [open(x, 'rb') for x in iso_files]
 
 	try:
@@ -83,15 +84,14 @@ def extract_files(iso_files, iso_info, game_iso_folder, xbe_partitions=8, files=
 
 						# File could be located in part 2 of the iso.
 						if file_offset > iso_size:
-							# TODO This shit here is not working yet
-							log(str.format("{} is not located in '{}', skipping to '{}', file sector {}, file offset {}", filename, os.path.basename(iso.name), os.path.basename(iso_files[1]), file_sector, file_offset), LOGDEBUG)
+							log(str.format("{} is not located in '{}', skipping to '{}', file_sector {}, file_offset {}", filename, basename(iso.name), basename(iso_files[1]), file_sector, file_offset), LOGDEBUG)
 							file_offset = file_offset - iso_size  # Set the correct offset for second iso(?).
 							iso = isos[1]  # switch file handle
 
 						iso.seek(file_offset)  # Move to the correct file
 
 						log(str.format("{} size is {} bytes, partition size is {} bytes, dangling size is {} bytes", filename, file_size, file_partition_size, dangling_partition_size), LOGDEBUG)
-						with open(os.path.join(game_iso_folder, filename), "wb") as xbe:  # write binary, truncating file before writing.
+						with open(join(game_iso_folder, filename), "wb") as xbe:  # write binary, truncating file before writing.
 							for partition in range(0, xbe_partitions):
 								xbe.write(iso.read(file_partition_size))
 
@@ -99,7 +99,7 @@ def extract_files(iso_files, iso_info, game_iso_folder, xbe_partitions=8, files=
 							if dangling_partition_size > 0:
 								xbe.write(iso.read(dangling_partition_size))
 
-						log(str.format("Done extracting '{}' from '{}', size is {} bytes", filename, os.path.basename(iso.name), os.path.getsize(os.path.join(game_iso_folder, filename))), LOGDEBUG)
+						log(str.format("Done extracting '{}' from '{}', size is {} bytes", filename, basename(iso.name), getsize(join(game_iso_folder, filename))), LOGDEBUG)
 				iso = isos[0]  # Reset filehandle back to file number 1.
 	finally:
 		for iso in isos:
@@ -107,10 +107,10 @@ def extract_files(iso_files, iso_info, game_iso_folder, xbe_partitions=8, files=
 
 def prepare_attachxbe(game_iso_folder):
 	script_root_dir = os.getcwd()
-	shutil.copyfile(os.path.join(script_root_dir, "attach.xbe"), os.path.join(game_iso_folder, "attach.xbe"))
+	shutil.copyfile(join(script_root_dir, "attach.xbe"), join(game_iso_folder, "attach.xbe"))
 
 	# DEFAULT XBE TITLE
-	with open(os.path.join(game_iso_folder, 'default.xbe'), 'rb', buffering=4096) as default_xbe:
+	with open(join(game_iso_folder, 'default.xbe'), 'rb', buffering=4096) as default_xbe:
 		default_xbe.seek(260, 0)  # move to base address
 		base = default_xbe.read(4)
 
@@ -126,7 +126,7 @@ def prepare_attachxbe(game_iso_folder):
 
 	# I'm not too worried about reuising all these vars...
 	# ATTACH XBE FILE
-	with open(os.path.join(game_iso_folder, 'attach.xbe'), 'r+b', buffering=4096) as attach_xbe:
+	with open(join(game_iso_folder, 'attach.xbe'), 'r+b', buffering=4096) as attach_xbe:
 		attach_xbe.seek(260, 0)  # move to base address
 		base = attach_xbe.read(4)
 
@@ -140,17 +140,17 @@ def prepare_attachxbe(game_iso_folder):
 		attach_xbe.seek((certAddress - baseAddress) + 8, 0)  # move to the titleid
 		attach_xbe.write(xbe_certificate)
 
-	default_xbe = os.path.join(game_iso_folder, "default.xbe")
+	default_xbe = join(game_iso_folder, "default.xbe")
 	os.remove(default_xbe)
-	os.rename(os.path.join(game_iso_folder, "attach.xbe"), default_xbe)
+	os.rename(join(game_iso_folder, "attach.xbe"), default_xbe)
 
 def install_artwork_resources(game_iso_folder, artwork_zip):
 	try:
 		extract_zip(artwork_zip, game_iso_folder)
 
-		game_artwork_path = os.path.join(game_iso_folder, "_resources", "artwork")
+		game_artwork_path = join(game_iso_folder, "_resources", "artwork")
 		for source_file, destination_file in [("thumb.jpg", "icon.png"), ("poster.jpg", "default.tbn"), ("fanart.jpg", "fanart.jpg")]:
-			shutil.copy2(os.path.join(game_artwork_path, source_file), os.path.join(game_iso_folder, destination_file))
+			shutil.copy2(join(game_artwork_path, source_file), join(game_iso_folder, destination_file))
 
 	except:
 		pass  # This shouldn't happen
@@ -158,12 +158,12 @@ def install_artwork_resources(game_iso_folder, artwork_zip):
 def get_artwork_resources():
 	artwork = {}
 	try:
-		with open(os.path.join("E:\\", "UDATA", "09999993", "location.bin")) as db_location:
+		with open(join("E:\\", "UDATA", "09999993", "location.bin")) as db_location:
 			artwork_path = db_location.readline()
 
 		if os.path.isdir(artwork_path):
-			artwork_db = os.path.join(artwork_path, "system", "scripts", "Artwork Info.txt")
-			artwork_root_folder = os.path.join(artwork_path, "system", "scripts", "Artwork")
+			artwork_db = join(artwork_path, "system", "scripts", "Artwork Info.txt")
+			artwork_root_folder = join(artwork_path, "system", "scripts", "Artwork")
 
 			with open(artwork_db, 'r') as database:
 				log(database.readline(), LOGDEBUG)  # Skip the first line containing amount of artwork
@@ -171,7 +171,7 @@ def get_artwork_resources():
 				for entry in database:
 					if not entry.startswith("n/a"):
 						title_id, artwork_folder = entry.strip().split('|')
-						artwork[title_id.lower()] = os.path.join(artwork_root_folder, artwork_folder, "_resources.zip")
+						artwork[title_id.lower()] = join(artwork_root_folder, artwork_folder, "_resources.zip")
 	except:
 		traceback.print_exc()
 		log("Artwork installer not installed or hasn't been run for the first time.", LOGERROR)
@@ -181,11 +181,11 @@ def get_artwork_resources():
 
 def extract_title_image(game_iso_folder):
 	script_root_dir = os.getcwd()
-	default_xbe = os.path.join(game_iso_folder, "default.xbe")
+	default_xbe = join(game_iso_folder, "default.xbe")
 
 	try:  # this is to move on if there is an error with extracting the image.
 		log("Trying to extract TitleImage.xbx.", LOGINFO)
-		XBE(default_xbe).Get_title_image().Write_PNG(os.path.join("Z:\\default.png"))
+		XBE(default_xbe).Get_title_image().Write_PNG(join("Z:\\default.png"))
 	except:
 		log("Memory ran out while trying to extract TitleImage.xbx.", LOGERROR)
 
@@ -197,14 +197,14 @@ def extract_title_image(game_iso_folder):
 			log("Unsupported format or XBE is to large for current system memory.", LOGERROR)
 			traceback.print_exc()
 
-	default_tbn = os.path.join(game_iso_folder, 'default.tbn')
+	default_tbn = join(game_iso_folder, 'default.tbn')
 	if os.path.isfile('Z:\\default.png'):
 		shutil.move('Z:\\default.png', default_tbn)
 	else:
-		shutil.copy2(os.path.join(script_root_dir, 'missing.jpg'), default_tbn)
+		shutil.copy2(join(script_root_dir, 'missing.jpg'), default_tbn)
 
 	# Always copy the default thumbnail to icon.png
-	shutil.copy2(default_tbn, os.path.join(game_iso_folder, 'icon.png'))
+	shutil.copy2(default_tbn, join(game_iso_folder, 'icon.png'))
 
 	if os.path.isfile('Z:\\TitleImage.png'):
 		os.remove('Z:\\TitleImage.xbx')
@@ -235,8 +235,8 @@ def extract_zip(zip_file, game_iso_folder):
 		resource.extractall(game_iso_folder)
 
 def check_for_gamexbe(game_iso_folder):
-	default_xbe = os.path.join(game_iso_folder, 'default.xbe')
-	game_xbe = os.path.join(game_iso_folder, 'game.xbe')
+	default_xbe = join(game_iso_folder, 'default.xbe')
+	game_xbe = join(game_iso_folder, 'game.xbe')
 
 	if os.path.isfile(game_xbe):
 		os.remove(default_xbe)
@@ -250,11 +250,9 @@ def process_iso_name(file_name):
 	return iso_full_name, iso_folder_name
 
 def process_iso(iso_files, root_iso_directory, artwork_resources):
-	file_name = os.path.basename(iso_files[0])
+	file_name = basename(iso_files[0])
 	iso_full_name, iso_folder_name = process_iso_name(file_name)
-	game_iso_folder = os.path.join(root_iso_directory, iso_folder_name + ' (ISO)')
-
-	log(str.format("Processing {}", file_name))
+	game_iso_folder = join(root_iso_directory, iso_folder_name + ' (ISO)')
 
 	iso_info = check_iso(iso_files[0])  # check that iso is an xbox game and extract some details
 	if iso_info:  # doesn't work, if no xbe files is found inside the xiso. (yeah I was testing and forgot the xbe lol)
@@ -264,7 +262,7 @@ def process_iso(iso_files, root_iso_directory, artwork_resources):
 		extract_files(iso_files, iso_info, game_iso_folder)  # find and extract default.xbe/game.xbe from the iso
 		check_for_gamexbe(game_iso_folder)  # Check if we extracted a game.xbe and rename to default.xbe if found
 
-		title_id = extract_titleid(os.path.join(game_iso_folder, "default.xbe")).lower()  # Get the titleid from default.xbe
+		title_id = extract_titleid(join(game_iso_folder, "default.xbe")).lower()  # Get the titleid from default.xbe
 		if title_id in artwork_resources:
 			log(str.format("Installing artwork for title id '{}' to folder '{}'", title_id, game_iso_folder), LOGINFO)
 
@@ -308,8 +306,8 @@ if __name__ == "__main__":
 		num_iso_files = len([iso for iso in glob.iglob(search_directory + "*.iso")])
 
 		grouped_iso_files = groupby(
-			[iso for iso in glob.iglob(search_directory + "*.iso")],
-			lambda file_name: os.path.basename(process_iso_name(file_name)[0])#[:-4].replace('_1', '').replace('_2', '').replace('.1', '').replace('.2', '')
+			sorted(glob.glob(search_directory + "*.iso")),
+			lambda file_name: basename(process_iso_name(file_name)[0])
 		)
 
 		progress_dialog.create("XISO to HDD Installer")
@@ -317,11 +315,9 @@ if __name__ == "__main__":
 
 		for idx, entry in enumerate(grouped_iso_files):
 			name = entry[0]
-			iso_files = sorted(list(entry[1]))
-			log(str.format("{} - {}", name, iso_files), LOGDEBUG)
+			iso_files = list(entry[1])
+			log(str.format("Processing {} - {}", name, iso_files))
 
-			# If second part of ISO has been moved by process_iso, we skip to the next part.
-			# if os.path.isfile(iso_file):
 			progress_dialog.update(((idx + 1) * 100) / num_iso_files, "Scanning XISO Files", iso_files[0],)  # TODO fix this after adding grouping
 			try:
 				process_iso(iso_files, search_directory, artwork_resources)
