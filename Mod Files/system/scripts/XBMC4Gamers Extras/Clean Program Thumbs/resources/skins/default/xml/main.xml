@@ -2,14 +2,14 @@
 		<defaultcontrol always="false">3000</defaultcontrol>
 		<coordinates>
 				<system>1</system>
-				<posx>0</posx>
-				<posy>0</posy>
+				<left>0</left>
+				<top>0</top>
 		</coordinates>
 		<controls>
 				<control type="image">
 						<description>underlay image</description>
-						<posx>0</posx>
-						<posy>0</posy>
+						<left>0</left>
+						<top>0</top>
 						<width>1280</width>
 						<height>720</height>
 						<texture>main-underlay.png</texture>
@@ -17,14 +17,14 @@
 						<animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
 				</control>
 				<control type="group">
-						<posx>447</posx>
-						<posy>236</posy>
+						<left>447</left>
+						<top>236</top>
 						<animation effect="fade" start="0" end="100" delay="200" time="500">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" time="500">WindowClose</animation>
 						<control type="image">
 								<description>background image</description>
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>386</width>
 								<height>248</height>
 								<texture>main-background.png</texture>
@@ -32,19 +32,19 @@
 						</control>
 						<control type="label">
 								<description>heading label</description>
-								<posx>0</posx>
-								<posy>28</posy>
+								<left>0</left>
+								<top>28</top>
 								<width>386</width>
 								<height>0</height>
 								<align>center</align>
 								<font>size_20</font>
 								<label>Clean Program Thumbs</label>
-								<textcolor>black</textcolor>
+								<textcolor>FF000000</textcolor>
 						</control>
 						<control type="grouplist">
 								<description>custom grouplist for context buttons</description>
-								<posx>43</posx>
-								<posy>84</posy>
+								<left>43</left>
+								<top>84</top>
 								<width>386</width>
 								<height>290</height>
 								<itemgap>0</itemgap>
@@ -54,7 +54,8 @@
 										<height>42</height>
 										<font>size_23</font>
 										<align>center</align>
-										<textcolor>white</textcolor>
+										<textcolor>F5FFFFFFF</textcolor>
+										<focusedcolor>FFFFFFFF</focusedcolor>
 										<label>Clean Thumbs</label>
 										<texturefocus border="2">main-button-focus.png</texturefocus>
 										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
@@ -65,7 +66,8 @@
 										<height>42</height>
 										<font>size_23</font>
 										<align>center</align>
-										<textcolor>white</textcolor>
+										<textcolor>F5FFFFFFF</textcolor>
+										<focusedcolor>FFFFFFFF</focusedcolor>
 										<label>Generate Thumbs</label>
 										<texturefocus border="2">main-button-focus.png</texturefocus>
 										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>
@@ -76,7 +78,8 @@
 										<height>42</height>
 										<font>size_23</font>
 										<align>center</align>
-										<textcolor>white</textcolor>
+										<textcolor>F5FFFFFFF</textcolor>
+										<focusedcolor>FFFFFFFF</focusedcolor>
 										<label>Remove Thumbs</label>
 										<texturefocus border="2">main-button-focus.png</texturefocus>
 										<texturenofocus border="2">main-button-nofocus.png</texturenofocus>

@@ -8,8 +8,9 @@ if os.path.isfile('Special://skin/720p/includes.xml') and not os.path.isfile('Sp
 else:
 	skin_xml_path = 'xml'
 class GoogleDriveDownloader:
-	CHUNK_SIZE = 32768 # 256kb
-	# CHUNK_SIZE = 65536 # 512kb
+	#CHUNK_SIZE = 32768 # 32.768kb
+	#CHUNK_SIZE = 65536 # 65.536kb
+	CHUNK_SIZE = 512000 # 512kb
 	DOWNLOAD_URL = "https://docs.google.com/uc?export=download"
 	@staticmethod
 	def download_file_from_google_drive(file_id,dest_path,zipsize,filename,overwrite=False,unzip=False,showsize=False):
@@ -28,15 +29,16 @@ class GoogleDriveDownloader:
 			dprogress.create("URLDOWNLOADER","",progress_resolver)
 			current_download_size = [0]
 			session = requests.Session()
-			response = session.get(GoogleDriveDownloader.DOWNLOAD_URL,params={'id': file_id},stream=True)
-			token = GoogleDriveDownloader._get_confirm_token(response)
-			if progress_resolver.endswith('link'): dprogress.update(50,"",progress_resolver) # fake progress so the user doesn't think its hung
-			if token:
-				params = {'id': file_id,'confirm': token}
-				response = session.get(GoogleDriveDownloader.DOWNLOAD_URL,params=params,stream=True)
-			if progress_resolver.endswith('link'):
-				dprogress.update(100,"","Done "+progress_resolver) # fake progress so the user doesn't think its hung
-				time.sleep(1)
+			response = session.post(GoogleDriveDownloader.DOWNLOAD_URL,params={'id': file_id,'confirm': 't'}, stream=True)
+			# response = session.get(GoogleDriveDownloader.DOWNLOAD_URL,params={'id': file_id,'confirm': 't'}, stream=True)
+			# token = GoogleDriveDownloader._get_confirm_token(response)
+			# if progress_resolver.endswith('link'): dprogress.update(50,"",progress_resolver) # fake progress so the user doesn't think its hung
+			# if token:
+				# params = {'id': file_id,'confirm': token}
+				# response = session.get(GoogleDriveDownloader.DOWNLOAD_URL,params=params,stream=True)
+			# if progress_resolver.endswith('link'):
+				# dprogress.update(100,"","Done "+progress_resolver) # fake progress so the user doesn't think its hung
+				# time.sleep(1)
 			GoogleDriveDownloader._save_response_content(response,dest_path,showsize,current_download_size,zipsize,filename)
 			if unzip:
 				try:
@@ -151,7 +153,7 @@ def dlc_hashing(titleid):
 		dumphddkey = 1
 		os.remove('Special://xbmc/dump_hddkey.bin')
 	dprogress.update(0)
-	dprogress.create("DLC SIGNER","","Getting EEPROM HDD key")
+	dprogress.create("DLC SIGNER","Getting EEPROM HDD key","")
 	xbmc.executebuiltin('Skin.SetString(DisableProgress,Disabled)')
 	# Check for a txt file with the hdd key or use the eeprom. Can also dump the key if you put dump_hddkey.bin next to the default.xbe
 	# This is for folk with corrupt eeproms, that there chips can bypass.
@@ -160,7 +162,7 @@ def dlc_hashing(titleid):
 		time.sleep(2)
 		with open('Special://xbmc/system/hdd-key.txt') as hex:
 			hddkey = hex.readline()
-			dprogress.update(0,"","EEPROM HDD key:",hddkey)
+			dprogress.update(0,"EEPROM HDD key:",hddkey,"")
 			if len(hddkey) == 32 and not len(hddkey) < 32:
 				hddkey = bytearray.fromhex(hddkey)
 			else: readhddkey = 1
@@ -171,7 +173,7 @@ def dlc_hashing(titleid):
 			hddkey = key.decode('hex')
 			if dumphddkey == 1:
 				with open('Special://xbmc/system/hdd-key.txt',"w") as txteeprom: txteeprom.write(hddkey.encode('hex'))
-			dprogress.update(0,"","EEPROM HDD key:",hddkey.encode('hex'))
+			dprogress.update(0,"EEPROM HDD key:",hddkey.encode('hex'),"")
 			break
 	time.sleep(2)
 	dprogress.update(0,"Signing ContextMeta.xbx","This can take some time, please be patient.","")
@@ -237,17 +239,22 @@ try:
 	except:
 		zipsize == ""
 	try:
-		install_path = sys.argv[4:][0]
+		zipsizecheck = sys.argv[4:][0]
+	except:
+		zipsizecheck == ""
+	try:
+		install_path = sys.argv[5:][0]
 	except:
 		install_path = ""
 	try:
-		mod_dlc_mode = sys.argv[5:][0]
+		mod_dlc_mode = sys.argv[6:][0]
 	except:
 		mod_dlc_mode = ""
 	# Check consistency of args
 	if defaulturl == "": valid_arguments = 0
 	if filename == "": valid_arguments = 0
 	if zipsize == "": valid_arguments = 0
+	if zipsizecheck == "": valid_arguments = 0
 	# vars
 	if install_path == "Emulator_Folder_Path":
 		if xbmc.getCondVisibility('Skin.String(Custom_Emulator_Path)'): install_path = xbmc.getInfoLabel('Skin.String(Custom_Emulator_Path)')
@@ -283,7 +290,7 @@ try:
 					free_space_check = install_path
 					if free_space_check.startswith('Special:') or free_space_check.startswith('Q:'): free_space_check = xbmc.translatePath('Special://root/')[:2]
 					partition_free_space = xbmc.getInfoLabel('System.Freespace('+free_space_check[:1]+')').replace(free_space_check[:2]+' ','').split(' ')[0]
-					if int(partition_free_space)*1024*1024 > int(zipsize)+(1024*1024*2):
+					if int(partition_free_space)*1024*1024 > int(zipsizecheck)+(1024*1024*2):
 						try:
 							clear_X()
 							download_url(defaulturl)
@@ -327,10 +334,9 @@ try:
 			else:
 				pass # just put this here to make the indents consistent
 		else:
-			xbmcgui.Dialog().ok("UPDATE AVAILABLE","Please update the","[B]URLDownloader[/B]")
-			xbmc.executebuiltin('Dialog.Close(1902,false)')
-			time.sleep(.5)
-			xbmc.executebuiltin('SetFocus(10)')
+			xbmcgui.Dialog().ok("UPDATE AVAILABLE","Please (A) to update the","[B]URLDownloader[/B]")
+			xbmc.executebuiltin('ActivateWindow(1904)')
+			xbmc.executebuiltin('RunScript(Special://scripts/urldownloader/default.py,1kENriKoSIVU_31LTerhsWIknndbfAjh7,URLDownloader.zip,3055001,3585632,Q:/system/scripts/)')
 	else:
 		dialog.ok("ERROR","Corrupt _Script_URLDownloader.xml","Update URLDownloader")
 		xbmc.executebuiltin('Dialog.Close(1902,false)')

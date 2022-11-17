@@ -3,8 +3,8 @@
 				<control type="group">
 						<visible>Control.IsVisible(56) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<control type="wraplist" id="56">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>1280</width>
 								<height>720</height>
 								<onleft>56</onleft>
@@ -12,103 +12,89 @@
 								<onup>9000</onup>
 								<ondown>-</ondown>
 								<viewtype label="view56">Panel</viewtype>
-								<pagecontrol>-</pagecontrol>
-								<scrolltime>300</scrolltime>
+								<pagecontrol>90</pagecontrol>
+								<scrolltime>230</scrolltime>
 								<focusposition>0</focusposition>
 								<movement>0</movement>
 								<orientation>horizontal</orientation>
-								<preloaditems>3</preloaditems>
+								<preloaditems>2</preloaditems>
 								<itemlayout width="1280" height="720">
 										<control type="image">
-												<posx>40</posx>
-												<posy>100</posy>
+												<left>40</left>
+												<top>100</top>
 												<width>1200</width>
 												<height>500</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true">view_background_alt.png</texture>
+												<texture background="true">views/card/view_background.png</texture>
 										</control>
 										<control type="image">
-												<posx>50</posx>
-												<posy>110</posy>
+												<left>50</left>
+												<top>110</top>
 												<width>340</width>
 												<height>480</height>
 												<aspectratio>keep</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse_alt_thumb.png" fallback="no_poster.jpg">$INFO[listitem.icon]</texture>
+												<texture background="true" diffuse="views/card/thumb_diffuse.png">no_poster.jpg</texture>
+										</control>
+										<control type="image">
+												<left>50</left>
+												<top>110</top>
+												<width>340</width>
+												<height>480</height>
+												<aspectratio>keep</aspectratio>
+												<texture background="true" diffuse="views/card/thumb_diffuse.png">$INFO[listitem.icon]</texture>
 												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 										</control>
-										<control type="image">
-												<posx>50</posx>
-												<posy>110</posy>
-												<width>340</width>
-												<height>480</height>
-												<aspectratio>stretch</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse_alt_thumb.png">no_poster.jpg</texture>
+										<control type="group">
 												<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												<control type="image">
+														<left>50</left>
+														<top>110</top>
+														<width>340</width>
+														<height>480</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/card/thumb_diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>ListItem.IsFolder</visible>
+												</control>
+												<control type="largeimage">
+														<left>50</left>
+														<top>110</top>
+														<width>340</width>
+														<height>480</height>
+														<aspectratio>stretch</aspectratio>
+														<texture diffuse="views/card/thumb_diffuse.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+												</control>
 										</control>
 										<control type="image">
-												<posx>50</posx>
-												<posy>110</posy>
-												<width>340</width>
-												<height>480</height>
-												<aspectratio>keep</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse_alt_thumb.png">$INFO[listitem.icon]</texture>
-												<visible>!IsEmpty(ListItem.Thumb) + ListItem.IsFolder + Skin.HasSetting(_resourcesenabled)</visible>
-										</control>
-										<control type="largeimage">
-												<posx>50</posx>
-												<posy>110</posy>
-												<width>340</width>
-												<height>480</height>
-												<aspectratio>stretch</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse_alt_thumb.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
-												<visible>Skin.HasSetting(_resourcesenabled)</visible>
-										</control>
-										<control type="image">
-												<posx>401</posx>
-												<posy>161</posy>
+												<left>401</left>
+												<top>161</top>
 												<width>828</width>
 												<height>388</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
 												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse.png" border="20,20,20,20">no_fanart.jpg</texture>
+												<texture background="true" diffuse="views/card/view_diffuse.png">no_fanart.jpg</texture>
 										</control>
 										<control type="largeimage">
-												<posx>400</posx>
-												<posy>160</posy>
+												<left>400</left>
+												<top>160</top>
 												<width>830</width>
 												<height>390</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
 												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse.png" border="20,20,20,20">$INFO[listitem.path,,fanart.jpg]</texture>
-												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+												<texture diffuse="views/card/view_diffuse.png">$INFO[listitem.path,,fanart.jpg]</texture>
 										</control>
 										<control type="largeimage">
-												<posx>400</posx>
-												<posy>160</posy>
+												<left>400</left>
+												<top>160</top>
 												<width>830</width>
 												<height>390</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
 												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse.png" border="20,20,20,20">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-												<visible>Skin.HasSetting(_resourcesenabled)</visible>
-										</control>
-										<control type="largeimage">
-												<posx>400</posx>
-												<posy>160</posy>
-												<width>830</width>
-												<height>390</height>
-												<aspectratio scalediffuse="false">scale</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse.png" border="20,20,20,20">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+												<texture diffuse="views/card/view_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
 												<visible>ListItem.IsFolder</visible>
 										</control>
 										<control type="image">
-												<posx>415</posx>
-												<posy>170r</posy>
+												<left>415</left>
+												<top>170r</top>
 												<width>40</width>
 												<height>40</height>
 												<aspectratio>stretch</aspectratio>
@@ -116,8 +102,8 @@
 												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
 										</control>
 										<control type="image">
-												<posx>415</posx>
-												<posy>170r</posy>
+												<left>415</left>
+												<top>170r</top>
 												<width>40</width>
 												<height>40</height>
 												<aspectratio>stretch</aspectratio>
@@ -125,8 +111,8 @@
 												<animation reversible="false" effect="slide" start="0,0" end="45,0" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 										</control>
 										<control type="label">
-												<posx>410</posx>
-												<posy>110</posy>
+												<left>410</left>
+												<top>110</top>
 												<width>790</width>
 												<height>20</height>
 												<font>size_35</font>
@@ -138,95 +124,81 @@
 								</itemlayout>
 								<focusedlayout width="1280" height="720">
 										<control type="image">
-												<posx>40</posx>
-												<posy>100</posy>
+												<left>40</left>
+												<top>100</top>
 												<width>1200</width>
 												<height>500</height>
 												<aspectratio>stretch</aspectratio>
-												<texture>view_background_alt.png</texture>
+												<texture background="true">views/card/view_background.png</texture>
 										</control>
 										<control type="image">
-												<posx>50</posx>
-												<posy>110</posy>
+												<left>50</left>
+												<top>110</top>
 												<width>340</width>
 												<height>480</height>
 												<aspectratio>keep</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse_alt_thumb.png" fallback="no_poster.jpg">$INFO[listitem.icon]</texture>
+												<texture background="true" diffuse="views/card/thumb_diffuse.png">no_poster.jpg</texture>
+										</control>
+										<control type="image">
+												<left>50</left>
+												<top>110</top>
+												<width>340</width>
+												<height>480</height>
+												<aspectratio>keep</aspectratio>
+												<texture background="true" diffuse="views/card/thumb_diffuse.png">$INFO[listitem.icon]</texture>
 												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 										</control>
-										<control type="image">
-												<posx>50</posx>
-												<posy>110</posy>
-												<width>340</width>
-												<height>480</height>
-												<aspectratio>stretch</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse_alt_thumb.png">no_poster.jpg</texture>
+										<control type="group">
 												<visible>Skin.HasSetting(_resourcesenabled)</visible>
+												<control type="image">
+														<left>50</left>
+														<top>110</top>
+														<width>340</width>
+														<height>480</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/card/thumb_diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>ListItem.IsFolder</visible>
+												</control>
+												<control type="largeimage">
+														<left>50</left>
+														<top>110</top>
+														<width>340</width>
+														<height>480</height>
+														<aspectratio>stretch</aspectratio>
+														<texture diffuse="views/card/thumb_diffuse.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+												</control>
 										</control>
 										<control type="image">
-												<posx>50</posx>
-												<posy>110</posy>
-												<width>340</width>
-												<height>480</height>
-												<aspectratio>keep</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse_alt_thumb.png">$INFO[listitem.icon]</texture>
-												<visible>!IsEmpty(ListItem.Thumb) + ListItem.IsFolder + Skin.HasSetting(_resourcesenabled)</visible>
-										</control>
-										<control type="largeimage">
-												<posx>50</posx>
-												<posy>110</posy>
-												<width>340</width>
-												<height>480</height>
-												<aspectratio>stretch</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse_alt_thumb.png">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
-												<visible>Skin.HasSetting(_resourcesenabled)</visible>
-										</control>
-										<control type="image">
-												<posx>401</posx>
-												<posy>161</posy>
+												<left>401</left>
+												<top>161</top>
 												<width>828</width>
 												<height>388</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
 												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse.png" border="20,20,20,20">no_fanart.jpg</texture>
+												<texture background="true" diffuse="views/card/view_diffuse.png">no_fanart.jpg</texture>
 										</control>
 										<control type="largeimage">
-												<posx>400</posx>
-												<posy>160</posy>
+												<left>400</left>
+												<top>160</top>
 												<width>830</width>
 												<height>390</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
 												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse.png" border="20,20,20,20">$INFO[listitem.path,,fanart.jpg]</texture>
-												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+												<texture diffuse="views/card/view_diffuse.png">$INFO[listitem.path,,fanart.jpg]</texture>
 										</control>
 										<control type="largeimage">
-												<posx>400</posx>
-												<posy>160</posy>
+												<left>400</left>
+												<top>160</top>
 												<width>830</width>
 												<height>390</height>
 												<aspectratio scalediffuse="false">scale</aspectratio>
 												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse.png" border="20,20,20,20">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-												<visible>Skin.HasSetting(_resourcesenabled)</visible>
-										</control>
-										<control type="largeimage">
-												<posx>400</posx>
-												<posy>160</posy>
-												<width>830</width>
-												<height>390</height>
-												<aspectratio scalediffuse="false">scale</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture background="true" diffuse="view_diffuse.png" border="20,20,20,20">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+												<texture diffuse="views/card/view_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
 												<visible>ListItem.IsFolder</visible>
 										</control>
 										<control type="image">
-												<posx>415</posx>
-												<posy>170r</posy>
+												<left>415</left>
+												<top>170r</top>
 												<width>40</width>
 												<height>40</height>
 												<aspectratio>stretch</aspectratio>
@@ -234,8 +206,8 @@
 												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
 										</control>
 										<control type="image">
-												<posx>415</posx>
-												<posy>170r</posy>
+												<left>415</left>
+												<top>170r</top>
 												<width>40</width>
 												<height>40</height>
 												<aspectratio>stretch</aspectratio>
@@ -243,8 +215,8 @@
 												<animation reversible="false" effect="slide" start="0,0" end="45,0" time="0" condition="IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 										</control>
 										<control type="label">
-												<posx>410</posx>
-												<posy>110</posy>
+												<left>410</left>
+												<top>110</top>
 												<width>790</width>
 												<height>20</height>
 												<font>size_35</font>
@@ -256,5 +228,9 @@
 								</focusedlayout>
 						</control>
 				</control>
+				<!-- <control type="scrollbar" id="90"> -->
+				<!-- <onup>56</onup> -->
+				<!-- <include condition="Control.IsVisible(56)">ViewScrollBarHor</include> -->
+				<!-- </control> -->
 		</include>
 </includes>

@@ -1,3 +1,7 @@
+	Updated: 30 June 2022
+	-- Changed from URLLib2 to Socket for the online check when using .strm files.
+
+
 	Updated: 04 May 2020
 	-- Removed a lot of code I don't use any more.
 	-- Old script is located in the "resources/Labels and Colours/old script to use these files/" folder.

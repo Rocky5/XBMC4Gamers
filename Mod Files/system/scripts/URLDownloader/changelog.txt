@@ -1,3 +1,18 @@
+1.0.31
+1) Updated for googles updated systems
+
+1.0.30
+1) Added new script to force and update and also just made it directly update the URLDownloader when asked.
+
+1.0.29
+1) Added support for the new compressed size and uncompressed size check
+
+1.0.28
+1) Changed the chunk size to 512kb
+
+1.0.27
+1) Fixed large files not downloading
+
 1.0.26
 1) Added 2MB padding to file sizes so you can't install if there is not enough space.
 ( this isn't really required but its a precaution )

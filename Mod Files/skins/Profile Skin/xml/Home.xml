@@ -19,7 +19,7 @@
 						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="button" id="1">
-						<posx>-500</posx>
+						<left>-500</left>
 						<onfocus>ActivateWindow(Programs)</onfocus>
 						<animation effect="fade" start="0" end="100" delay="100" time="0">Focus</animation>
 				</control>

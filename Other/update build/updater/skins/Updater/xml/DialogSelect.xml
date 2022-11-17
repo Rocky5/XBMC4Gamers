@@ -2,15 +2,15 @@
 		<defaultcontrol always="true">3</defaultcontrol>
 		<coordinates>
 				<system>1</system>
-				<posx>335</posx>
-				<posy>35</posy>
+				<left>335</left>
+				<top>35</top>
 		</coordinates>
 		<include>dialogeffect</include>
 		<controls>
 				<control type="image">
 						<description>background image</description>
-						<posx>0</posx>
-						<posy>0</posy>
+						<left>0</left>
+						<top>0</top>
 						<width>610</width>
 						<height>650</height>
 						<texture border="40">DialogBack.png</texture>
@@ -18,16 +18,16 @@
 				</control>
 				<control type="image">
 						<description>Heading Background</description>
-						<posx>30</posx>
-						<posy>34</posy>
+						<left>30</left>
+						<top>34</top>
 						<width>550</width>
 						<height>40</height>
 						<texture border="5">ThumbFO.png</texture>
 				</control>
 				<control type="label" id="1">
 						<description>heading label</description>
-						<posx>40</posx>
-						<posy>35</posy>
+						<left>40</left>
+						<top>35</top>
 						<width>510</width>
 						<height>40</height>
 						<align>center</align>
@@ -37,8 +37,8 @@
 						<textcolor>black</textcolor>
 				</control>
 				<control type="list" id="3">
-						<posx>45</posx>
-						<posy>90</posy>
+						<left>45</left>
+						<top>90</top>
 						<width>500</width>
 						<height>480</height>
 						<onup>3</onup>
@@ -50,15 +50,15 @@
 						<animation effect="slide" start="0,0" end="10,0" time="0" condition="!Control.IsVisible(61)">Conditional</animation>
 						<itemlayout height="40">
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>500</width>
 										<height>35</height>
 										<texture border="3">button-nofocus.png</texture>
 								</control>
 								<control type="label">
-										<posx>10</posx>
-										<posy>0</posy>
+										<left>10</left>
+										<top>0</top>
 										<width>480</width>
 										<height>35</height>
 										<font>font12</font>
@@ -70,24 +70,24 @@
 						</itemlayout>
 						<focusedlayout height="40">
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>500</width>
 										<height>35</height>
 										<visible>!Control.HasFocus(3)</visible>
 										<texture border="3">button-nofocus.png</texture>
 								</control>
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>500</width>
 										<height>35</height>
 										<visible>Control.HasFocus(3)</visible>
 										<texture border="3">button-focus.png</texture>
 								</control>
 								<control type="label">
-										<posx>10</posx>
-										<posy>0</posy>
+										<left>10</left>
+										<top>0</top>
 										<width>480</width>
 										<height>35</height>
 										<font>font12</font>
@@ -101,8 +101,8 @@
 				<control type="group">
 						<visible>Control.IsVisible(3)</visible>
 						<control type="scrollbar" id="61">
-								<posx>550</posx>
-								<posy>90</posy>
+								<left>550</left>
+								<top>90</top>
 								<width>20</width>
 								<height>475</height>
 								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
@@ -119,8 +119,8 @@
 						</control>
 						<control type="label">
 								<description>number of files/pages in list text label</description>
-								<posx>570</posx>
-								<posy>570</posy>
+								<left>570</left>
+								<top>570</top>
 								<width>300</width>
 								<height>35</height>
 								<font>font12</font>
@@ -133,8 +133,8 @@
 				</control>
 				<control type="button" id="5">
 						<description>OK button</description>
-						<posx>45</posx>
-						<posy>570</posy>
+						<left>45</left>
+						<top>570</top>
 						<width>200</width>
 						<height>35</height>
 						<label>186</label>

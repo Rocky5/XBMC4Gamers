@@ -1,12 +1,57 @@
-Patron Supporters:
-	Richard, Giovany Rodriguez, Alf John Hammervik, Rick Girton, thePiratePimp, Michael Bergeron, Wayne Starr, Stian Tofte, Johnny Andersen, Wayne Swift
-	Clayton Beeney, Andrew Ryan, Tktagmedia, Darren Titchmarsh, Jay Jay, Natetronn, Incursion64 ., Roger Serres, Darren Old, Joel Peterson, Jamie Eubank
+15/11/2022
+	1) Master Profile is set to default (Dashboard) for its network, user profiles will need to manually change theirs.
 
-Thank you for your support.
-Would also like to thank everyone that donates its much appreciated.
+14/08/2022
+	1) Progress dialog when adding games will hide the cancel button as its not used.
+	2) Code cleanup and changes.
+	3) If the kernel can't be patched (added check) for the switch region/video mode (white button launch as) it will be hidden as it is redundant then.
+	4) Hidden the Edit XBE Name button if the synopsis naming toggle is enabled as it's useless.
+	5) New view LGView
+	6) Updated the profile creation system and GUISettings.xml
+	7) Added support for 5713, 5838 (M8+) and Cerbios kernels auto video switching.
+		(lets you play PAL games that require the system to be set to PAL)
+	8) System Information added to the settings menu.
+		(it's just a simple menu)
+	9) Updated the profile setup script and added some code to help in the xbe.
+	10) Redone all the colour stuff so every window can be unique.
+		(themes will only work with this version onwards)
+	11) Fixed the progress bar for scanning games.
+	12) QOL changes to the skin and back end.
+	13) XISO to HDD Installer script updated by frehov (Fredr1kh) and me.
+		(now extracts 100% XPR0 images and games that don't have TITLEIMAGES I add a no artwork file, also game.xbe support for jpn games)
+	14) Views have some of there artwork separated into there own folders. Allowing easier theming of main elements.
+	15) New view LoginAlt
+	16) Fixed the check for extra xbes in the context menu.
+		(thanks RoofTop for noticing)
+	17) New script for patching files, acts like DVD2Xbox ACL files, but uses python.
+		(few patches for games, widescreen and Toca 3 HDD patch etc... Can be used to patch anything lol)
+	18) Random script added, so now when not playing media you can randomly pick a game using (X)
+	19) All views optimised and cleaned up.
+	20) Added xresize.xbe to the context menu, so if it's found it will display "Resize Screen" for homebrew games.
+	21) Sources thumbnails if not populated will be auto populated on first load of Gamers.
+		(uses artwork inside the xpr by default and if not found falls back to the default thumb)
+	22) Random selection of a game, homebrew or emulators on startup.
+		(skin settings > statup options)
+	23) Changed posx and posy to left and top, like Kodi uses.
+		(had these changes for a long time but never used them, so why not :D)
+	24) Fixed the uninstall theme script
+	25) Updated the playlist, game saves side panel menu.
+	26) Updated some scripts ui images and colours.
+	27) Resizes splashes and remade them.
+	28) More back-end changes here and there.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Patron Supporters & Testers:
+	Richard, Giovany Rodriguez, Alf John Hammervik, Rick Girton, thePiratePimp, Michael Bergeron, Wayne Starr, Stian Tofte, Johnny Andersen, Wayne Swift
+	Clayton Beeney, Andrew Ryan, Tktagmedia, Darren Titchmarsh, Jay Jay, Natetronn, Incursion64 ., Roger Serres, Darren Old, Joel Peterson, Jamie Eubank, EnsignRutherford
+
+Thank you for your support.
+Would also like to thank everyone that donates it's much appreciated.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+Previous Updates:
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 22/06/2022
 	1) Progress dialog will only show when adding games.
 	2) Added support for parsing _resources/default.xml if found. This will allow the use of the <title> value as the game title.

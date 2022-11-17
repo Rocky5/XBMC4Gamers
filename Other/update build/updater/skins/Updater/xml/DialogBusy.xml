@@ -1,8 +1,8 @@
 <window id="138">
 		<controls>
 				<control type="multiimage">
-						<posx>20</posx>
-						<posy>20</posy>
+						<left>20</left>
+						<top>20</top>
 						<width>64</width>
 						<height>64</height>
 						<aspectratio>stretch</aspectratio>
@@ -15,8 +15,8 @@
 						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 				</control>
 				<control type="label">
-						<posx>19</posx>
-						<posy>80</posy>
+						<left>19</left>
+						<top>80</top>
 						<width>64</width>
 						<height>30</height>
 						<align>center</align>

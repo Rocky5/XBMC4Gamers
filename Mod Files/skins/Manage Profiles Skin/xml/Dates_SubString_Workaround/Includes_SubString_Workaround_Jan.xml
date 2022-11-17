@@ -119,7 +119,7 @@
 						<visible>[SubString(System.Date,28 Jan) + StringCompare(Skin.String(BirthdayDate1),28) + StringCompare(Skin.String(BirthdayMonth1),Jan)] | [SubString(System.Date,28 Jan) + StringCompare(Skin.String(BirthdayDate2),28) + StringCompare(Skin.String(BirthdayMonth2),Jan)] | [SubString(System.Date,28 Jan) + StringCompare(Skin.String(BirthdayDate3),28) + StringCompare(Skin.String(BirthdayMonth3),Jan)] | [SubString(System.Date,28 Jan) + StringCompare(Skin.String(BirthdayDate4),28) + StringCompare(Skin.String(BirthdayMonth4),Jan)] | [SubString(System.Date,28 Jan) + StringCompare(Skin.String(BirthdayDate5),28) + StringCompare(Skin.String(BirthdayMonth5),Jan)]</visible>
 				</control>
 				<control type="group">
-						<posy>320</posy>
+						<top>320</top>
 						<label>"29"</label>
 						<visible>[SubString(System.Date,29 Jan) + StringCompare(Skin.String(BirthdayDate1),29) + StringCompare(Skin.String(BirthdayMonth1),Jan)] | [SubString(System.Date,29 Jan) + StringCompare(Skin.String(BirthdayDate2),29) + StringCompare(Skin.String(BirthdayMonth2),Jan)] | [SubString(System.Date,29 Jan) + StringCompare(Skin.String(BirthdayDate3),29) + StringCompare(Skin.String(BirthdayMonth3),Jan)] | [SubString(System.Date,29 Jan) + StringCompare(Skin.String(BirthdayDate4),29) + StringCompare(Skin.String(BirthdayMonth4),Jan)] | [SubString(System.Date,29 Jan) + StringCompare(Skin.String(BirthdayDate5),29) + StringCompare(Skin.String(BirthdayMonth5),Jan)]</visible>
 				</control>

@@ -1,0 +1,10 @@
+# Game: The Sims 2
+# TitleID: 4541038B
+# Author: JCRocky5
+
+# Adds a title to the xbe ( The Sims 2)
+# Fixes the dirty disc error.
+
+CP|default.xbe|default_orig.xbe
+OF|default.xbe|400|5400680065002000530069006D007300200032
+OF|default.xbe|1997564|EB

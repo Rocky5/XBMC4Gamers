@@ -18,12 +18,11 @@ def prepare_loaderxbe(self):
 	default_xbe_file.seek(280, 0)
 	cert = default_xbe_file.read(4)
 	#get the location of the cert
-	certAddress = unpack("i", cert) # init32 values
-	baseAddress = unpack("i", base) # init32 values
-	loc = certAddress[0] - baseAddress[0]
+	certAddress = unpack("i", cert)[0] # init32 values
+	baseAddress = unpack("i", base)[0] # init32 values
 	#move to the titleid
-	default_xbe_file.seek(loc+8, 0)
-	xbe_certificate = default_xbe_file.read(168)
+	default_xbe_file.seek((certAddress - baseAddress), 0)
+	xbe_certificate = default_xbe_file.read(464)
 	default_xbe_file.close()
 	##
 	# I'm not too worried about reuising all these vars...
@@ -36,11 +35,10 @@ def prepare_loaderxbe(self):
 	attach_xbe_file.seek( 280, 0)
 	cert = attach_xbe_file.read(4)
 	#get the location of the cert
-	certAddress = unpack("i", cert) # init32 values
-	baseAddress = unpack("i", base) # init32 values
-	loc = certAddress[0] - baseAddress[0]
+	certAddress = unpack("i", cert)[0] # init32 values
+	baseAddress = unpack("i", base)[0] # init32 values
 	#move to the titleid
-	attach_xbe_file.seek(loc+8, 0)
+	attach_xbe_file.seek((certAddress - baseAddress), 0)
 	attach_xbe_file.write(xbe_certificate)
 	# Custom fix for Men of Valor, but the game resets when you select one of the training mission, so this patch is pointless :/
 	if TitleID == "56550019":
@@ -49,18 +47,21 @@ def prepare_loaderxbe(self):
 		attach_xbe_file.seek(280, 0)
 		attach_xbe_file.write(MOV_Fix)
 	attach_xbe_file.close()
-	try: # this is to move on if there is an error with extracting the image.
-		xbeinfo(os.path.join(Game_Path,"default.xbe")).image_png()
-	except:
-		print "| Error: Memory ran out when trying to extract TitleImage.xbx."
-		print "|        So using alternative way."
-		try: # if the memory runs out this one works.
-			XBE(os.path.join(Game_Path,"default.xbe")).Get_title_image().Write_PNG("Z:\\default.png")
+	if not os.path.isfile(os.path.join(Game_Path,'default.tbn'):
+		try: # this is to move on if there is an error with extracting the image.
+			xbeinfo(os.path.join(Game_Path,"default.xbe")).image_png()
 		except:
-			print "| Error: Cannot extract the default.png, haven't a clue why maybe its in DDS format?"
-	if os.path.isfile('Z:\\default.png'):	shutil.move('Z:\\default.png',os.path.join(Game_Path,'default.tbn'))
-	if os.path.isfile(os.path.join(Game_Path,'default.tbn')):	shutil.copy2(os.path.join(Game_Path,'default.tbn'),os.path.join(Game_Path,'icon.png'))
-	if os.path.isfile('Z:\\TitleImage.xbx'):	os.remove('Z:\\TitleImage.xbx')
+			print "| Error: Memory ran out when trying to extract TitleImage.xbx."
+			print "|        So using alternative way."
+			try: # if the memory runs out this one works.
+				XBE(os.path.join(Game_Path,"default.xbe")).Get_title_image().Write_PNG("Z:\\default.png")
+			except:
+				print "| Error: Cannot extract the default.png, haven't a clue why maybe its in DDS format?"
+		if os.path.isfile('Z:\\default.png'):
+			shutil.move('Z:\\default.png',os.path.join(Game_Path,'default.tbn'))
+		if os.path.isfile(os.path.join(Game_Path,'default.tbn')):
+			shutil.copy2(os.path.join(Game_Path,'default.tbn'),os.path.join(Game_Path,'icon.png'))
+		if os.path.isfile('Z:\\TitleImage.xbx'):	os.remove('Z:\\TitleImage.xbx')
 	os.rename(os.path.join(Game_Path,"default.xbe"),os.path.join(Game_Path,"game_default.xbe"))
 	os.rename(os.path.join(Game_Path,"loader_default.xbe"),os.path.join(Game_Path,"default.xbe"))
 	if Loader == Loader1:

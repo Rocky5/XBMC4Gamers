@@ -2,24 +2,30 @@ import os, xbmc, xbmcgui
 dialog	= xbmcgui.Dialog()
 '''
 Mode:
-0 = change log.
-1 = Browse.
-2 = View logs.
+	0 = change log.
+	1 = Browse.
+	2 = View logs.
 '''
 Mode = sys.argv[1:][0]
 File = sys.argv[2:][0]
+
+
 if Mode == '0':
 	if os.path.isfile(File):
 		with open(File,"rb") as input:
 			xbmcgui.Dialog().textviewer(os.path.basename(File), input.read())
 	else:
 		dialog.ok("Error","Cant find changes.txt")
+
+
 if Mode == '1':
 	File = dialog.browse(1,"Select file to view",'files','' )
 	Input = os.path.basename(File)
 	if os.path.isfile(File):
 		with open(File,"rb") as text_viewer:
 			xbmcgui.Dialog().textviewer(Input, text_viewer.read())
+
+
 if Mode == '2':
 	Log_Path = 'E:/TDATA/Rocky5 needs these Logs/'
 	Select_Root = dialog.select( "Select Log File",sorted(os.listdir(Log_Path)),10000 )

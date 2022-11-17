@@ -3,20 +3,20 @@
 		<include>dialogeffect</include>
 		<controls>
 				<control type="image">
-						<posx>0</posx>
-						<posy>0</posy>
+						<left>0</left>
+						<top>0</top>
 						<width>1280</width>
 						<height>720</height>
 						<texture>black-back.png</texture>
 						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="group">
-						<posy>90</posy>
+						<top>90</top>
 						<animation effect="slide" start="0,0" end="0,-90" delay="0" time="100">WindowOpen</animation>
 						<animation effect="slide" start="0,90" end="0,0" time="100">WindowClose</animation>
 						<control type="wraplist" id="9000">
-								<posx>0</posx>
-								<posy>630</posy>
+								<left>0</left>
+								<top>630</top>
 								<width>1280</width>
 								<height>50</height>
 								<onleft>-</onleft>
@@ -30,23 +30,23 @@
 								</itemlayout>
 								<focusedlayout height="50" width="1280">
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>1280</width>
 												<height>50</height>
 												<texture border="5">banner.png</texture>
 										</control>
 										<control type="label">
 												<description>heading label</description>
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>1280</width>
 												<height>50</height>
 												<align>center</align>
 												<aligny>center</aligny>
 												<font>size_28</font>
 												<label>$INFO[ListItem.Label]</label>
-												<textcolor>context_label</textcolor>
+												<textcolor>1115_label</textcolor>
 										</control>
 								</focusedlayout>
 								<content>
@@ -119,24 +119,24 @@
 								</content>
 						</control>
 						<control type="image">
-								<posx>20</posx>
-								<posy>635</posy>
+								<left>20</left>
+								<top>635</top>
 								<width>40</width>
 								<height>40</height>
-								<texture>pad_buttons\dpad_left_button.png</texture>
+								<texture>pad_buttons\dialogs\dpad_left_button.png</texture>
 								<aspectratio>keep</aspectratio>
 						</control>
 						<control type="image">
-								<posx>1220</posx>
-								<posy>635</posy>
+								<left>1220</left>
+								<top>635</top>
 								<width>40</width>
 								<height>40</height>
-								<texture>pad_buttons\dpad_right_button.png</texture>
+								<texture>pad_buttons\dialogs\dpad_right_button.png</texture>
 								<aspectratio>keep</aspectratio>
 						</control>
 						<control type="image">
-								<posx>0</posx>
-								<posy>680</posy>
+								<left>0</left>
+								<top>680</top>
 								<width>1280</width>
 								<height>50</height>
 								<texture>black-back.png</texture>

@@ -8,8 +8,8 @@
 						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="image">
-						<posx>387</posx>
-						<posy>165</posy>
+						<left>387</left>
+						<top>165</top>
 						<width>505</width>
 						<height>390</height>
 						<texture>controlpad.png</texture>
@@ -17,8 +17,8 @@
 				</control>
 				<control type="label">
 						<description>A Button</description>
-						<posx>900</posx>
-						<posy>313</posy>
+						<left>900</left>
+						<top>313</top>
 						<width>400</width>
 						<height>35</height>
 						<align>left</align>
@@ -30,8 +30,8 @@
 				</control>
 				<control type="label">
 						<description>B Button</description>
-						<posx>900</posx>
-						<posy>288</posy>
+						<left>900</left>
+						<top>288</top>
 						<width>400</width>
 						<height>35</height>
 						<align>left</align>
@@ -43,8 +43,8 @@
 				</control>
 				<control type="label">
 						<description>X Button</description>
-						<posx>900</posx>
-						<posy>260</posy>
+						<left>900</left>
+						<top>260</top>
 						<width>400</width>
 						<height>35</height>
 						<align>left</align>
@@ -56,8 +56,8 @@
 				</control>
 				<control type="label">
 						<description>Y Button</description>
-						<posx>900</posx>
-						<posy>235</posy>
+						<left>900</left>
+						<top>235</top>
 						<width>400</width>
 						<height>35</height>
 						<align>left</align>
@@ -70,8 +70,8 @@
 				</control>
 				<control type="label">
 						<description>Y Button</description>
-						<posx>900</posx>
-						<posy>235</posy>
+						<left>900</left>
+						<top>235</top>
 						<width>400</width>
 						<height>35</height>
 						<align>left</align>
@@ -84,8 +84,8 @@
 				</control>
 				<control type="label">
 						<description>Black Button</description>
-						<posx>900</posx>
-						<posy>377</posy>
+						<left>900</left>
+						<top>377</top>
 						<width>400</width>
 						<height>35</height>
 						<align>left</align>
@@ -98,8 +98,8 @@
 				</control>
 				<control type="label">
 						<description>Black Button</description>
-						<posx>900</posx>
-						<posy>377</posy>
+						<left>900</left>
+						<top>377</top>
 						<width>400</width>
 						<height>35</height>
 						<align>left</align>
@@ -112,8 +112,8 @@
 				</control>
 				<control type="label">
 						<description>White Button</description>
-						<posx>900</posx>
-						<posy>403</posy>
+						<left>900</left>
+						<top>403</top>
 						<width>400</width>
 						<height>35</height>
 						<align>left</align>
@@ -125,8 +125,8 @@
 				</control>
 				<control type="label">
 						<description>Back Button</description>
-						<posx>377</posx>
-						<posy>354</posy>
+						<left>377</left>
+						<top>354</top>
 						<width>400</width>
 						<height>35</height>
 						<align>right</align>
@@ -139,8 +139,8 @@
 				</control>
 				<control type="label">
 						<description>Back Button</description>
-						<posx>377</posx>
-						<posy>354</posy>
+						<left>377</left>
+						<top>354</top>
 						<width>400</width>
 						<height>35</height>
 						<align>right</align>
@@ -153,8 +153,8 @@
 				</control>
 				<control type="label">
 						<description>Start Button</description>
-						<posx>377</posx>
-						<posy>382</posy>
+						<left>377</left>
+						<top>382</top>
 						<width>400</width>
 						<height>35</height>
 						<align>right</align>
@@ -166,8 +166,8 @@
 				</control>
 				<control type="label">
 						<description>Left Stick Button</description>
-						<posx>217</posx>
-						<posy>187</posy>
+						<left>217</left>
+						<top>187</top>
 						<width>400</width>
 						<height>35</height>
 						<align>center</align>
@@ -180,8 +180,8 @@
 				</control>
 				<control type="label">
 						<description>Left Stick Button</description>
-						<posx>217</posx>
-						<posy>187</posy>
+						<left>217</left>
+						<top>187</top>
 						<width>400</width>
 						<height>35</height>
 						<align>center</align>
@@ -194,8 +194,8 @@
 				</control>
 				<control type="label">
 						<description>Right Stick Button</description>
-						<posx>499</posx>
-						<posy>560</posy>
+						<left>499</left>
+						<top>560</top>
 						<width>400</width>
 						<height>35</height>
 						<align>center</align>
@@ -207,8 +207,8 @@
 				</control>
 				<control type="label">
 						<description>Left Trigger</description>
-						<posx>332</posx>
-						<posy>130</posy>
+						<left>332</left>
+						<top>130</top>
 						<width>400</width>
 						<height>35</height>
 						<align>center</align>
@@ -220,8 +220,8 @@
 				</control>
 				<control type="label">
 						<description>Right Trigger</description>
-						<posx>552</posx>
-						<posy>130</posy>
+						<left>552</left>
+						<top>130</top>
 						<width>400</width>
 						<height>35</height>
 						<align>center</align>
@@ -233,8 +233,8 @@
 				</control>
 				<control type="label">
 						<description>Dpad</description>
-						<posx>376</posx>
-						<posy>550</posy>
+						<left>376</left>
+						<top>550</top>
 						<width>400</width>
 						<height>35</height>
 						<align>center</align>

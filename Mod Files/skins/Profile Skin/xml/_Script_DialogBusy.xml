@@ -2,12 +2,12 @@
 		<controls>
 				<include>BehindDialogFadeOut</include>
 				<control type="multiimage">
-						<posx>20</posx>
-						<posy>20</posy>
+						<left>20</left>
+						<top>20</top>
 						<width>64</width>
 						<height>64</height>
 						<aspectratio>stretch</aspectratio>
-						<colordiffuse>FFFFFFFF</colordiffuse>
+						<colordiffuse>1100_diffuse</colordiffuse>
 						<imagepath>loading</imagepath>
 						<timeperimage>24</timeperimage>
 						<fadetime>5</fadetime>
@@ -16,15 +16,15 @@
 						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 				</control>
 				<control type="label">
-						<posx>19</posx>
-						<posy>80</posy>
+						<left>19</left>
+						<top>80</top>
 						<width>64</width>
 						<height>30</height>
 						<align>center</align>
 						<aligny>center</aligny>
 						<font>size_14</font>
 						<label>Loading</label>
-						<textcolor>FFFFFFFF</textcolor>
+						<textcolor>1100_label</textcolor>
 						<animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 				</control>

@@ -3,28 +3,28 @@
 				<control type="group">
 						<visible>Control.IsVisible(55) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<control type="group">
-								<posx>55</posx>
-								<posy>55</posy>
+								<left>55</left>
+								<top>55</top>
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>1170</width>
 										<height>620</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">thumbnf.png</texture>
+										<texture background="true">views/banner/thumbnf.png</texture>
 								</control>
 								<control type="image">
-										<posx>580</posx>
-										<posy>0</posy>
+										<left>580</left>
+										<top>0</top>
 										<width>10</width>
 										<height>620</height>
 										<aspectratio>scale</aspectratio>
-										<texture background="true" border="2,2,2,2">scrollbar_bar_back.png</texture>
+										<texture background="true" border="2,2,2,2">views/banner/scrollbar_bar_back.png</texture>
 								</control>
 								<!-- fanart -->
 								<control type="image">
-										<posx>595</posx>
-										<posy>5</posy>
+										<left>595</left>
+										<top>5</top>
 										<width>570</width>
 										<height>321</height>
 										<aspectratio>stretch</aspectratio>
@@ -32,84 +32,84 @@
 										<texture background="true">no_fanart.jpg</texture>
 								</control>
 								<control type="largeimage">
-										<posx>595</posx>
-										<posy>5</posy>
+										<left>595</left>
+										<top>5</top>
 										<width>570</width>
 										<height>321</height>
 										<aspectratio>stretch</aspectratio>
 										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture background="true">$INFO[listitem.path,,fanart.jpg]</texture>
+										<texture>$INFO[listitem.path,,fanart.jpg]</texture>
 										<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 								</control>
 								<control type="largeimage">
-										<posx>595</posx>
-										<posy>5</posy>
+										<left>595</left>
+										<top>5</top>
 										<width>570</width>
 										<height>321</height>
 										<aspectratio>stretch</aspectratio>
 										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture background="true">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
+										<texture>$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
 										<visible>Skin.HasSetting(_resourcesenabled)</visible>
 								</control>
 								<control type="largeimage">
-										<posx>595</posx>
-										<posy>5</posy>
+										<left>595</left>
+										<top>5</top>
 										<width>570</width>
 										<height>321</height>
 										<aspectratio>stretch</aspectratio>
 										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture background="true">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
+										<texture>Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
 										<visible>ListItem.IsFolder</visible>
 								</control>
 								<control type="image">
-										<posx>595</posx>
-										<posy>5</posy>
+										<left>595</left>
+										<top>5</top>
 										<width>570</width>
 										<height>321</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">glassoverlay.png</texture>
+										<texture background="true">views/banner/glassoverlay.png</texture>
 								</control>
 								<control type="image">
-										<posx>595</posx>
-										<posy>5</posy>
+										<left>595</left>
+										<top>5</top>
 										<width>570</width>
 										<height>321</height>
 										<aspectratio>stretch</aspectratio>
-										<colordiffuse>blue</colordiffuse>
-										<texture background="true" border="5">poster-border.png</texture>
+										<colordiffuse>view55_info_label_alt</colordiffuse>
+										<texture background="true" border="5">views/banner/poster-border.png</texture>
 								</control>
 								<!-- game info -->
 								<control type="label">
-										<posx>595</posx>
-										<posy>360</posy>
+										<left>595</left>
+										<top>360</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_28</font>
-										<textcolor>white</textcolor>
+										<textcolor>view55_info_label</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 								</control>
 								<control type="label">
-										<posx>595</posx>
-										<posy>420</posy>
+										<left>595</left>
+										<top>420</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_20</font>
-										<textcolor>blue</textcolor>
+										<textcolor>view55_info_label_alt</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31192]</label>
 								</control>
 								<control type="label">
-										<posx>600</posx>
-										<posy>445</posy>
+										<left>600</left>
+										<top>445</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_20</font>
-										<textcolor>white</textcolor>
+										<textcolor>view55_info_label</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
@@ -117,12 +117,12 @@
 										<visible>StringCompare(ListItem.ProgramCount,0)</visible>
 								</control>
 								<control type="label">
-										<posx>600</posx>
-										<posy>445</posy>
+										<left>600</left>
+										<top>445</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_20</font>
-										<textcolor>white</textcolor>
+										<textcolor>view55_info_label</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
@@ -130,12 +130,12 @@
 										<visible>StringCompare(ListItem.ProgramCount,1)</visible>
 								</control>
 								<control type="label">
-										<posx>600</posx>
-										<posy>445</posy>
+										<left>600</left>
+										<top>445</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_20</font>
-										<textcolor>white</textcolor>
+										<textcolor>view55_info_label</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
@@ -143,48 +143,48 @@
 										<visible>IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
 								</control>
 								<control type="label">
-										<posx>595</posx>
-										<posy>470</posy>
+										<left>595</left>
+										<top>470</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_20</font>
-										<textcolor>blue</textcolor>
+										<textcolor>view55_info_label_alt</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31193]</label>
 								</control>
 								<control type="label">
-										<posx>600</posx>
-										<posy>495</posy>
+										<left>600</left>
+										<top>495</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_20</font>
-										<textcolor>white</textcolor>
+										<textcolor>view55_info_label</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$INFO[ListItem.Label2]</label>
 								</control>
 								<control type="label">
-										<posx>595</posx>
-										<posy>520</posy>
+										<left>595</left>
+										<top>520</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_20</font>
-										<textcolor>blue</textcolor>
+										<textcolor>view55_info_label_alt</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31194]</label>
 								</control>
 								<control type="label">
-										<posx>600</posx>
-										<posy>545</posy>
+										<left>600</left>
+										<top>545</top>
 										<width>570</width>
 										<height>20</height>
 										<font>size_20</font>
-										<textcolor>white</textcolor>
+										<textcolor>view55_info_label</textcolor>
 										<scroll>true</scroll>
 										<align>left</align>
 										<aligny>center</aligny>
@@ -192,15 +192,15 @@
 								</control>
 								<control type="grouplist">
 										<description>Control Info</description>
-										<posx>600</posx>
-										<posy>578</posy>
+										<left>600</left>
+										<top>578</top>
 										<width>570</width>
 										<height>30</height>
 										<itemgap>5</itemgap>
 										<orientation>Horizontal</orientation>
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>30</width>
 												<height>30</height>
 												<aspectratio>stretch</aspectratio>
@@ -208,8 +208,8 @@
 												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
 										</control>
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>30</width>
 												<height>30</height>
 												<aspectratio>stretch</aspectratio>
@@ -217,145 +217,138 @@
 										</control>
 								</control>
 								<control type="list" id="55">
-										<posx>5</posx>
-										<posy>5</posy>
+										<left>5</left>
+										<top>5</top>
 										<width>570</width>
 										<height>610</height>
 										<onleft>9000</onleft>
-										<onright>85</onright>
+										<onright>90</onright>
 										<onup>55</onup>
 										<ondown>55</ondown>
 										<viewtype label="view55">list</viewtype>
-										<pagecontrol>85</pagecontrol>
-										<scrolltime>220</scrolltime>
+										<pagecontrol>90</pagecontrol>
+										<scrolltime>230</scrolltime>
 										<orientation>vertical</orientation>
-										<preloaditems>3</preloaditems>
+										<preloaditems>4</preloaditems>
 										<itemlayout height="122" width="570">
-												<control type="image">
-														<posx>0</posx>
-														<posy>0</posy>
-														<width>570</width>
-														<height>120</height>
-														<aspectratio>scale</aspectratio>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<bordertexture border="5">-</bordertexture>
-														<bordersize>1</bordersize>
-														<visible>!Skin.HasSetting(_resourcesenabled) + !Skin.HasSetting(imagestretchmode)</visible>
+												<control type="group">
+														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+														<control type="image">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>scale</aspectratio>
+																<texture background="true">$INFO[listitem.icon]</texture>
+																<bordertexture border="5">-</bordertexture>
+																<bordersize>1</bordersize>
+																<visible>!Skin.HasSetting(imagestretchmode)</visible>
+														</control>
+														<control type="image">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>stretch</aspectratio>
+																<texture background="true">$INFO[listitem.icon]</texture>
+																<bordertexture border="5">-</bordertexture>
+																<bordersize>1</bordersize>
+																<visible>Skin.HasSetting(imagestretchmode)</visible>
+														</control>
 												</control>
-												<control type="image">
-														<posx>0</posx>
-														<posy>0</posy>
-														<width>570</width>
-														<height>120</height>
-														<aspectratio>stretch</aspectratio>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<bordertexture border="5">-</bordertexture>
-														<bordersize>1</bordersize>
-														<visible>!Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(imagestretchmode)</visible>
-												</control>
-												<control type="image">
-														<posx>0</posx>
-														<posy>0</posy>
-														<width>570</width>
-														<height>120</height>
-														<aspectratio>stretch</aspectratio>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<texture background="true">no_banner.png</texture>
-														<bordertexture border="5">-</bordertexture>
-														<bordersize>1</bordersize>
+												<control type="group">
 														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-												</control>
-												<control type="largeimage">
-														<posx>0</posx>
-														<posy>0</posy>
-														<width>570</width>
-														<height>120</height>
-														<aspectratio>stretch</aspectratio>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<texture background="true">$INFO[listitem.path,,_resources\artwork\banner.png]</texture>
-														<bordertexture border="5">-</bordertexture>
-														<bordersize>1</bordersize>
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+														<control type="image">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>stretch</aspectratio>
+																<texture background="true">no_banner.png</texture>
+																<bordertexture border="5">-</bordertexture>
+																<bordersize>1</bordersize>
+														</control>
+														<control type="largeimage">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>stretch</aspectratio>
+																<texture>$INFO[listitem.path,,_resources\artwork\banner.png]</texture>
+																<bordertexture border="5">-</bordertexture>
+																<bordersize>1</bordersize>
+														</control>
 												</control>
 										</itemlayout>
 										<focusedlayout height="122" width="570">
-												<control type="image">
-														<posx>0</posx>
-														<posy>0</posy>
-														<width>570</width>
-														<height>120</height>
-														<aspectratio>scale</aspectratio>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<bordertexture border="5">-</bordertexture>
-														<bordersize>1</bordersize>
-														<visible>!Skin.HasSetting(_resourcesenabled) + !Skin.HasSetting(imagestretchmode)</visible>
+												<control type="group">
+														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+														<control type="image">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>scale</aspectratio>
+																<texture background="true">$INFO[listitem.icon]</texture>
+																<bordertexture border="5">-</bordertexture>
+																<bordersize>1</bordersize>
+																<visible>!Skin.HasSetting(imagestretchmode)</visible>
+														</control>
+														<control type="image">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>stretch</aspectratio>
+																<texture background="true">$INFO[listitem.icon]</texture>
+																<bordertexture border="5">-</bordertexture>
+																<bordersize>1</bordersize>
+																<visible>Skin.HasSetting(imagestretchmode)</visible>
+														</control>
 												</control>
-												<control type="image">
-														<posx>0</posx>
-														<posy>0</posy>
-														<width>570</width>
-														<height>120</height>
-														<aspectratio>stretch</aspectratio>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<bordertexture border="5">-</bordertexture>
-														<bordersize>1</bordersize>
-														<visible>!Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(imagestretchmode)</visible>
-												</control>
-												<control type="image">
-														<posx>0</posx>
-														<posy>0</posy>
-														<width>570</width>
-														<height>120</height>
-														<aspectratio>stretch</aspectratio>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<texture background="true">no_banner.png</texture>
-														<bordertexture border="5">-</bordertexture>
-														<bordersize>1</bordersize>
+												<control type="group">
 														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-												</control>
-												<control type="largeimage">
-														<posx>0</posx>
-														<posy>0</posy>
-														<width>570</width>
-														<height>120</height>
-														<aspectratio>stretch</aspectratio>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<texture background="true">$INFO[listitem.path,,_resources\artwork\banner.png]</texture>
-														<bordertexture border="5">-</bordertexture>
-														<bordersize>1</bordersize>
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+														<control type="image">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>stretch</aspectratio>
+																<texture background="true">no_banner.png</texture>
+																<bordertexture border="5">-</bordertexture>
+																<bordersize>1</bordersize>
+														</control>
+														<control type="largeimage">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>stretch</aspectratio>
+																<texture>$INFO[listitem.path,,_resources\artwork\banner.png]</texture>
+																<bordertexture border="5">-</bordertexture>
+																<bordersize>1</bordersize>
+														</control>
 												</control>
 												<control type="image">
-														<posx>0</posx>
-														<posy>0</posy>
+														<left>0</left>
+														<top>0</top>
 														<width>570</width>
 														<height>120</height>
 														<aspectratio>stretch</aspectratio>
-														<colordiffuse>blue</colordiffuse>
-														<texture background="true" border="5">poster-border.png</texture>
+														<colordiffuse>view55_info_label_alt</colordiffuse>
+														<texture background="true" border="5">views/banner/poster-border.png</texture>
 												</control>
 										</focusedlayout>
 								</control>
-								<control type="scrollbar" id="85">
-										<posx>580</posx>
-										<posy>0</posy>
-										<width>10</width>
+								<control type="scrollbar" id="90">
+										<left>580</left>
+										<top>0</top>
+										<width>8</width>
 										<height>620</height>
-										<texturesliderbackground>-</texturesliderbackground>
-										<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
-										<texturesliderbarfocus border="2,16,2,16">scrollbar_bar_focus.png</texturesliderbarfocus>
-										<textureslidernib>scrollbar_nib.png</textureslidernib>
-										<textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
 										<onleft>55</onleft>
-										<showonepage>false</showonepage>
 										<orientation>vertical</orientation>
-										<visible allowhiddenfocus="true">Control.HasFocus(85)</visible>
-										<animation reversible="true" effect="fade" start="0" end="100" delay="" time="300">visible</animation>
-										<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300">hidden</animation>
+										<texturesliderbackground>-</texturesliderbackground>
+										<include condition="Control.IsVisible(55)">ViewScrollBarVer</include>
 								</control>
 						</control>
 				</control>

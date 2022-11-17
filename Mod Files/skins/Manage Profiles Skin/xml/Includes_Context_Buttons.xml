@@ -1,26 +1,30 @@
 <includes>
 		<include name="Context_Buttons">
 				<control type="image">
-						<include>Contect_Buttons_Underlay</include>
-						<visible>!Window.IsVisible(1112) + !Window.IsVisible(3000)</visible>
+						<left>0</left>
+						<top>680</top>
+						<width>1280</width>
+						<height>40</height>
+						<texture>pad_buttons\underlay.png</texture>
+						<visible>!Window.IsVisible(1112) + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<animation effect="slide" start="0,0" end="0,40" time="100" condition="Window.IsActive(1112)">Hidden</animation>
 						<animation effect="slide" start="0,40" end="0,0" time="100" condition="!Window.IsActive(1112)">Visible</animation>
 				</control>
 				<control type="grouplist">
 						<description>Control Info</description>
-						<posx>10</posx>
-						<posy>688</posy>
+						<left>10</left>
+						<top>688</top>
 						<width>1280</width>
 						<height>80</height>
 						<itemgap>10</itemgap>
 						<orientation>Horizontal</orientation>
-						<visible>!Window.IsVisible(1112) + [Window.IsVisible(0) | Window.IsVisible(1) | Window.IsVisible(4) | Window.IsVisible(20) | Window.IsVisible(1901) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111) | Window.IsVisible(1102) | Window.IsVisible(1901) | Window.IsVisible(3000) | Window.IsVisible(1119)]</visible>
+						<visible>!Window.IsVisible(1112) + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(134) + [Window.IsVisible(0) | Window.IsVisible(1) | Window.IsVisible(4) | Window.IsVisible(20) | Window.IsVisible(1901) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(1111) | Window.IsVisible(1102) | Window.IsVisible(1901) | Window.IsVisible(3000) | Window.IsVisible(1119)]</visible>
 						<animation effect="slide" start="0,0" end="0,40" time="100" condition="Window.IsActive(1112)">Hidden</animation>
 						<animation effect="slide" start="0,40" end="0,0" time="100" delay="5" condition="!Window.IsActive(1112)">Visible</animation>
 						<!-- A Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\a_button.png</texture>
@@ -28,20 +32,20 @@
 								<visible>!Window.IsVisible(3000)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31106]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>!Window.IsVisible(3000)</visible>
 						</control>
 						<!-- Synopsis View -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\a_button.png</texture>
@@ -49,42 +53,42 @@
 								<visible>Window.IsVisible(3000) + ControlGroup(9001).HasFocus(10) | [ControlGroup(9001).HasFocus(13) + !Window.IsActive(1111) + Skin.HasSetting(SynopsisPreviewThere)]</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[518] $LOCALIZE[31107]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>Window.IsVisible(3000) + ControlGroup(9001).HasFocus(10)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[13313]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>Window.IsVisible(3000) + ControlGroup(9001).HasFocus(13) + Player.HasVideo</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[208]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>Skin.HasSetting(SynopsisPreviewThere) + Window.IsVisible(3000) + ControlGroup(9001).HasFocus(13) + !Player.HasVideo</visible>
 						</control>
 						<!-- B Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\b_button.png</texture>
@@ -92,84 +96,95 @@
 								<visible>Skin.HasSetting(editmode) | Window.IsActive(3000) | Window.IsActive(134)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31108]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>Skin.HasSetting(editmode) | Window.IsActive(3000) | Window.IsActive(134)</visible>
 						</control>
 						<!-- X Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\x_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!Window.IsVisible(0) + !Window.IsVisible(4) + !Window.IsVisible(1901) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(34) + !Window.IsVisible(35) + !Window.IsVisible(134) + !Window.IsVisible(1111) + !Window.IsVisible(1115) + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(1102) + !Window.IsVisible(3000) + Player.HasMedia</visible>
+								<visible>Window.IsVisible(1) + !Window.IsVisible(3000) | !Window.IsVisible(0) + !Window.IsVisible(4) + !Window.IsVisible(1901) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(34) + !Window.IsVisible(35) + !Window.IsVisible(134) + !Window.IsVisible(1111) + !Window.IsVisible(1115) + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(1102) + !Window.IsVisible(3000) + Player.HasMedia</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31109]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>!Window.IsVisible(0) + !Window.IsVisible(4) + !Window.IsVisible(1901) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(34) + !Window.IsVisible(35) + !Window.IsVisible(134) + !Window.IsVisible(1111) + !Window.IsVisible(1115) + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(1102) + !Window.IsVisible(3000) + Player.HasMedia</visible>
 						</control>
+						<control type="label">
+								<left>0</left>
+								<top>0</top>
+								<width min="40" max="250">auto</width>
+								<height>20</height>
+								<font>size_15</font>
+								<textcolor>context_buttons_label</textcolor>
+								<label>$LOCALIZE[31125]</label>
+								<include>Context_Buttons_Text_Align</include>
+								<visible>Window.IsVisible(1) + !Window.IsVisible(3000) + !Player.HasMedia</visible>
+						</control>
 						<!-- Y Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\y_button.png</texture>
 								<aspectratio>keep</aspectratio>
-								<visible>!Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(4) + !Window.IsVisible(35) + !Window.IsVisible(1901) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111)  + !Window.IsVisible(1115) + !Window.IsVisible(34) + !Window.IsVisible(1102) + Skin.HasSetting(editmode) | Window.IsVisible(500) | Window.IsVisible(501)</visible>
+								<visible>!ListItem.IsFolder + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(4) + !Window.IsVisible(35) + !Window.IsVisible(1901) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111)  + !Window.IsVisible(1115) + !Window.IsVisible(34) + !Window.IsVisible(134) + !Window.IsVisible(1102) + Skin.HasSetting(editmode) | Window.IsVisible(500) | Window.IsVisible(501)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31110]</label>
 								<include>Context_Buttons_Text_Align</include>
-								<visible>Skin.HasSetting(editmode) + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(4) + !Window.IsVisible(35) + !Window.IsVisible(1901) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111)  + !Window.IsVisible(1115) + !Window.IsVisible(34) + !Window.IsVisible(1102)</visible>
+								<visible>Skin.HasSetting(editmode) + !ListItem.IsFolder + !Window.IsVisible(500) + !Window.IsVisible(501) + !Window.IsVisible(4) + !Window.IsVisible(35) + !Window.IsVisible(1901) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111)  + !Window.IsVisible(1115) + !Window.IsVisible(34) + !Window.IsVisible(134) + !Window.IsVisible(1102)</visible>
 						</control>
-						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width min="40" max="250">auto</width>
-								<height>20</height>
-								<font>size_15</font>
-								<textcolor>context_label</textcolor>
-								<label>$LOCALIZE[31111]</label>
-								<include>Context_Buttons_Text_Align</include>
-								<visible>Skin.HasSetting(editmode) + Window.IsVisible(501) | Window.IsVisible(501)</visible>
-						</control>
-						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width min="40" max="250">auto</width>
-								<height>20</height>
-								<font>size_15</font>
-								<textcolor>context_label</textcolor>
-								<label>$LOCALIZE[31112]</label>
-								<include>Context_Buttons_Text_Align</include>
-								<visible>Skin.HasSetting(editmode) + Window.IsVisible(500) | Window.IsVisible(500)</visible>
-						</control>
+						<!-- <control type="label"> -->
+						<!-- <left>0</left> -->
+						<!-- <top>0</top> -->
+						<!-- <width min="40" max="250">auto</width> -->
+						<!-- <height>20</height> -->
+						<!-- <font>size_15</font> -->
+						<!-- <textcolor>context_buttons_label</textcolor> -->
+						<!-- <label>$LOCALIZE[31111]</label> -->
+						<!-- <include>Context_Buttons_Text_Align</include> -->
+						<!-- <visible>Skin.HasSetting(editmode) + Window.IsVisible(501) | Window.IsVisible(501)</visible> -->
+						<!-- </control> -->
+						<!-- <control type="label"> -->
+						<!-- <left>0</left> -->
+						<!-- <top>0</top> -->
+						<!-- <width min="40" max="250">auto</width> -->
+						<!-- <height>20</height> -->
+						<!-- <font>size_15</font> -->
+						<!-- <textcolor>context_buttons_label</textcolor> -->
+						<!-- <label>$LOCALIZE[31112]</label> -->
+						<!-- <include>Context_Buttons_Text_Align</include> -->
+						<!-- <visible>Skin.HasSetting(editmode) + Window.IsVisible(500) | Window.IsVisible(500)</visible> -->
+						<!-- </control> -->
 						<!-- White Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\white_button.png</texture>
@@ -177,20 +192,20 @@
 								<visible>!Window.IsVisible(4) + !Window.IsVisible(1901) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111)  + !Window.IsVisible(1115) + !Window.IsVisible(34) + !Window.IsVisible(1102)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31113]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>!Window.IsVisible(4) + !Window.IsVisible(1901) + !Window.IsVisible(3000) + !Window.IsVisible(0) + !Window.IsVisible(SettingsCategory.xml) + !Window.IsVisible(1111)  + !Window.IsVisible(1115) + !Window.IsVisible(34) + !Window.IsVisible(1102)</visible>
 						</control>
 						<!-- Black Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\black_button.png</texture>
@@ -198,75 +213,75 @@
 								<visible>!window.IsVisible(134) + !Window.IsVisible(1115) + !Window.IsVisible(3000) + Window.IsVisible(1) | Window.IsVisible(4) | Window.IsVisible(0) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(502)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31114]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>!Window.IsVisible(3000) + !window.IsVisible(134) + !Window.IsVisible(1115) + Skin.HasSetting(EditMode) + Window.IsVisible(1)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31115]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>!Skin.HasSetting(EditMode) + !Window.IsVisible(4) + !Window.IsVisible(1901) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31116]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>Window.IsVisible(0)</visible>
 						</control>
+						<!-- <control type="label"> -->
+						<!-- <left>0</left> -->
+						<!-- <top>0</top> -->
+						<!-- <width min="40" max="250">auto</width> -->
+						<!-- <height>20</height> -->
+						<!-- <font>size_15</font> -->
+						<!-- <textcolor>context_buttons_label</textcolor> -->
+						<!-- <label>$LOCALIZE[31117]</label> -->
+						<!-- <include>Context_Buttons_Text_Align</include> -->
+						<!-- <visible>Window.IsVisible(500) + !Window.IsVisible(3000)</visible> -->
+						<!-- </control> -->
+						<!-- <control type="label"> -->
+						<!-- <left>0</left> -->
+						<!-- <top>0</top> -->
+						<!-- <width min="40" max="250">auto</width> -->
+						<!-- <height>20</height> -->
+						<!-- <font>size_15</font> -->
+						<!-- <textcolor>context_buttons_label</textcolor> -->
+						<!-- <label>$LOCALIZE[31118]</label> -->
+						<!-- <include>Context_Buttons_Text_Align</include> -->
+						<!-- <visible>Window.IsVisible(501) + !Window.IsVisible(3000)</visible> -->
+						<!-- </control> -->
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
-								<label>$LOCALIZE[31117]</label>
-								<include>Context_Buttons_Text_Align</include>
-								<visible>Window.IsVisible(500) + !Window.IsVisible(3000)</visible>
-						</control>
-						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width min="40" max="250">auto</width>
-								<height>20</height>
-								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>Change Log</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>Window.IsVisible(4)</visible>
 						</control>
-						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
-								<width min="40" max="250">auto</width>
-								<height>20</height>
-								<font>size_15</font>
-								<textcolor>context_label</textcolor>
-								<label>$LOCALIZE[31118]</label>
-								<include>Context_Buttons_Text_Align</include>
-								<visible>Window.IsVisible(501) + !Window.IsVisible(3000)</visible>
-						</control>
 						<!-- Back Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\back_button.png</texture>
@@ -274,20 +289,20 @@
 								<visible>Window.IsVisible(1) +!Window.IsVisible(3000) + !Window.IsVisible(134) + !Window.IsVisible(1115)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31119]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>Window.IsVisible(1) + !Window.IsVisible(3000) + !Window.IsVisible(134) + !Window.IsVisible(1115)</visible>
 						</control>
 						<!-- Start Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\start_button.png</texture>
@@ -295,20 +310,20 @@
 								<visible>System.HasMediaDVD</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31120]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>System.HasMediaDVD</visible>
 						</control>
 						<!-- DPad Buttons -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\dpad_up_button.png</texture>
@@ -316,8 +331,8 @@
 								<visible>!Window.IsVisible(3000) +  !Window.IsVisible(20) + ![Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58)| Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(1901) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111)  | Window.IsVisible(1115) | Window.IsVisible(1102) | Player.HasVideo]</visible>
 						</control>
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\dpad_left_button.png</texture>
@@ -325,31 +340,31 @@
 								<visible>!Window.IsVisible(3000) + [Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58)] + ![Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(1901) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111)  | Window.IsVisible(1115) | Window.IsVisible(1102) | Player.HasVideo] | Window.IsVisible(500)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31121]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>!Window.IsVisible(3000) +  !Window.IsVisible(20) + ![Window.IsVisible(0) | Window.IsVisible(4) | Window.IsVisible(1901) | Window.IsVisible(SettingsCategory.xml) | Window.IsVisible(34) | Window.IsVisible(35) | Window.IsVisible(134) | Window.IsVisible(500) | Window.IsVisible(501) | Window.IsVisible(1111)  | Window.IsVisible(1115) | Window.IsVisible(1102) | Player.HasVideo]</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31122]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>Window.IsVisible(500)</visible>
 						</control>
 						<!-- L Stick Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\l_stick_button.png</texture>
@@ -357,20 +372,20 @@
 								<visible>!Window.IsVisible(3000) + !Skin.HasSetting(HideContextButtons) + Skin.HasSetting(editmode)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31124]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>!Window.IsVisible(3000) + !Skin.HasSetting(HideContextButtons) + Skin.HasSetting(editmode)</visible>
 						</control>
 						<!-- R Stick Button -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>25</width>
 								<height>25</height>
 								<texture>pad_buttons\r_stick_button.png</texture>
@@ -378,12 +393,12 @@
 								<visible>System.HasLoginScreen + !Skin.HasSetting(HideContextButtons) + !Window.IsVisible(3000)</visible>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width min="40" max="250">auto</width>
 								<height>20</height>
 								<font>size_15</font>
-								<textcolor>context_label</textcolor>
+								<textcolor>context_buttons_label</textcolor>
 								<label>$LOCALIZE[31123]</label>
 								<include>Context_Buttons_Text_Align</include>
 								<visible>System.HasLoginScreen + !Skin.HasSetting(HideContextButtons) + !Window.IsVisible(3000)</visible>

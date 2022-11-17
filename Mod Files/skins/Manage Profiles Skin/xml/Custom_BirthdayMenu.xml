@@ -9,8 +9,8 @@
 						<animation effect="fade" start="0" end="70" delay="0" time="1000" condition="true">Conditional</animation>
 				</control>
 				<control type="textbox">
-						<posx>0</posx>
-						<posy>170</posy>
+						<left>0</left>
+						<top>170</top>
 						<width>1280</width>
 						<height>300</height>
 						<font>size_18</font>
@@ -21,18 +21,18 @@
 						<animation effect="fade" start="0" end="100" delay="100" time="0">WindowOpen</animation>
 				</control>
 				<control type="group">
-						<posx>410</posx>
-						<posy>255</posy>
+						<left>410</left>
+						<top>255</top>
 						<control type="image">
-								<posx>-10</posx>
-								<posy>-10</posy>
+								<left>-10</left>
+								<top>-10</top>
 								<width>460</width>
 								<height>225</height>
 								<texture>black-back.png</texture>
 						</control>
 						<control type="grouplist" id="9001">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>280</width>
 								<height>210</height>
 								<itemgap>-1</itemgap>
@@ -91,8 +91,8 @@
 								<visible>ControlGroup(9001).HasFocus(1)) + Skin.HasSetting(EnabledBirthday1)</visible>
 								<!-- Months -->
 								<control type="grouplist" id="9002">
-										<posx>290</posx>
-										<posy>0</posy>
+										<left>290</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -175,8 +175,8 @@
 								</control>
 								<!-- Days -->
 								<control type="grouplist" id="9003">
-										<posx>370</posx>
-										<posy>0</posy>
+										<left>370</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -350,8 +350,8 @@
 								<visible>ControlGroup(9001).HasFocus(2)) + Skin.HasSetting(EnabledBirthday2)</visible>
 								<!-- Months -->
 								<control type="grouplist" id="9002">
-										<posx>290</posx>
-										<posy>0</posy>
+										<left>290</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -434,8 +434,8 @@
 								</control>
 								<!-- Days -->
 								<control type="grouplist" id="9003">
-										<posx>370</posx>
-										<posy>0</posy>
+										<left>370</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -609,8 +609,8 @@
 								<visible>ControlGroup(9001).HasFocus(3)) + Skin.HasSetting(EnabledBirthday3)</visible>
 								<!-- Months -->
 								<control type="grouplist" id="9002">
-										<posx>290</posx>
-										<posy>0</posy>
+										<left>290</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -693,8 +693,8 @@
 								</control>
 								<!-- Days -->
 								<control type="grouplist" id="9003">
-										<posx>370</posx>
-										<posy>0</posy>
+										<left>370</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -868,8 +868,8 @@
 								<visible>ControlGroup(9001).HasFocus(4)) + Skin.HasSetting(EnabledBirthday4)</visible>
 								<!-- Months -->
 								<control type="grouplist" id="9002">
-										<posx>290</posx>
-										<posy>0</posy>
+										<left>290</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -952,8 +952,8 @@
 								</control>
 								<!-- Days -->
 								<control type="grouplist" id="9003">
-										<posx>370</posx>
-										<posy>0</posy>
+										<left>370</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -1127,8 +1127,8 @@
 								<visible>ControlGroup(9001).HasFocus(5)) + Skin.HasSetting(EnabledBirthday5)</visible>
 								<!-- Months -->
 								<control type="grouplist" id="9002">
-										<posx>290</posx>
-										<posy>0</posy>
+										<left>290</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>
@@ -1211,8 +1211,8 @@
 								</control>
 								<!-- Days -->
 								<control type="grouplist" id="9003">
-										<posx>370</posx>
-										<posy>0</posy>
+										<left>370</left>
+										<top>0</top>
 										<width>70</width>
 										<height>206</height>
 										<itemgap>-1</itemgap>

@@ -26,6 +26,7 @@ if exist "..\other\build for release.bin" (
 ) else (
 	Set daytotal=000
 )
+Set "daytotal=001"
 title XBMC4Gamers Builder - %version%.%daytotal%
 cls
 Echo: & Echo: & Echo: & Echo   Preping files & Echo   Please wait...
@@ -56,7 +57,7 @@ cls
 Echo: & Echo: & Echo: & Echo   Creating archive & Echo   Please wait...
 (
 "C:\Program Files\7-Zip\7z.exe" a "..\Other\update build\updater\Update Files\%foldername%.zip" "*" -mx=7 -r -y
-"C:\Program Files\7-Zip\7z.exe" a "..\%output_zip%" "..\Other\update build\*" -mx=0 -r -y
+"C:\Program Files\7-Zip\7z.exe" a "..\%output_zip%" "..\Other\update build\*" -mx=7 -r -y
 cd ..\
 del /Q "Other\update build\updater\Update Files\%foldername%.zip"
 rd /q /s "update-files"

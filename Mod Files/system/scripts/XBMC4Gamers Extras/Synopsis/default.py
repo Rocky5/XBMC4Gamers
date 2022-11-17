@@ -2,7 +2,7 @@
 	Script by Rocky5
 	Extracts information from a file named default.xml located in the '_resources' folder.
 '''
-import fileinput, glob, os, shutil, sys, time, urllib2, xbmc, xbmcgui
+import fileinput,glob,os,shutil,socket,sys,time,xbmc,xbmcgui
 from BeautifulSoup import *
 windowdialog = xbmcgui.WindowXMLDialog
 #windowdialog = xbmcgui.WindowXML
@@ -49,10 +49,11 @@ def synopsis_mode_video():
 			xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
 		elif PreviewFile.endswith('.strm'):
 			try:
-				urllib2.urlopen('http://51.255.141.154', timeout=1)
+				socket.setdefaulttimeout(3.0)
+				socket.socket(socket.AF_INET, socket.SOCK_STREAM).connect(("8.8.8.8", 53))
 				Current_Window.setProperty('Player_Type','MPlayer')
 				xbmc.executebuiltin('Skin.SetBool(SynopsisPreviewThere)')
-			except urllib2.URLError as err:
+			except socket.error as ex:
 				xbmc.executebuiltin('Skin.Reset(SynopsisPreviewThere)')
 		else:
 			Current_Window.setProperty('Player_Type','MPlayer')

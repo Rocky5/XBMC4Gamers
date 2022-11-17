@@ -3,7 +3,7 @@
 		<allowoverlay>no</allowoverlay>
 		<controls>
 				<control type="button" id="51">
-						<posx>-500</posx>
+						<left>-500</left>
 				</control>
 				<include>CommonBackground</include>
 				<!-- Snow effect at winter time -->
@@ -14,8 +14,8 @@
 						<animation effect="fade" time="100">WindowOpen</animation>
 						<animation effect="fade" time="400" delay="300">WindowClose</animation>
 						<control type="label">
-								<posx>10r</posx>
-								<posy>35r</posy>
+								<left>10r</left>
+								<top>35r</top>
 								<width>1280</width>
 								<height>36</height>
 								<font>size_15</font>
@@ -26,8 +26,8 @@
 								<visible>Skin.HasSetting(editmode)</visible>
 						</control>
 						<control type="label">
-								<posx>10</posx>
-								<posy>35r</posy>
+								<left>10</left>
+								<top>35r</top>
 								<width>1280</width>
 								<height>36</height>
 								<font>size_15</font>
@@ -37,8 +37,8 @@
 								<label>$LOCALIZE[31000]</label>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>30</posy>
+								<left>0</left>
+								<top>30</top>
 								<width>1280</width>
 								<height>28</height>
 								<font>size_25</font>
@@ -47,8 +47,8 @@
 								<label>$LOCALIZE[31523]</label>
 						</control>
 						<control type="label">
-								<posx>0</posx>
-								<posy>55</posy>
+								<left>0</left>
+								<top>55</top>
 								<width>1280</width>
 								<height>28</height>
 								<font>size_22</font>
@@ -61,8 +61,8 @@
 						<include>DialogEffectZoomFast</include>
 						<!-- Profile List -->
 						<control type="fixedlist" id="52">
-								<posx>0</posx>
-								<posy>157</posy>
+								<left>0</left>
+								<top>157</top>
 								<width>1280</width>
 								<height>720</height>
 								<onleft>-</onleft>
@@ -76,8 +76,8 @@
 								<focusposition>1</focusposition>
 								<itemlayout height="478" width="387">
 										<control type="image">
-												<posx>67</posx>
-												<posy>473</posy>
+												<left>67</left>
+												<top>473</top>
 												<width>372</width>
 												<height>6</height>
 												<aspectratio>stretch</aspectratio>
@@ -86,8 +86,8 @@
 												<texture background="true">windows\login\poster_shadow.png</texture>
 										</control>
 										<control type="image">
-												<posx>77</posx>
-												<posy>97</posy>
+												<left>77</left>
+												<top>97</top>
 												<width>352</width>
 												<height>378</height>
 												<aspectratio>stretch</aspectratio>
@@ -96,8 +96,8 @@
 												<texture background="true">background diffuse.png</texture>
 										</control>
 										<control type="image">
-												<posx>174</posx>
-												<posy>150</posy>
+												<left>174</left>
+												<top>150</top>
 												<width>156</width>
 												<height>156</height>
 												<aspectratio>scale</aspectratio>
@@ -105,8 +105,8 @@
 												<texture background="true">$INFO[listitem.Icon]</texture>
 										</control>
 										<control type="label">
-												<posx>77</posx>
-												<posy>334</posy>
+												<left>77</left>
+												<top>334</top>
 												<width>352</width>
 												<height>16</height>
 												<align>center</align>
@@ -116,8 +116,8 @@
 												<label>$INFO[listitem.Label]</label>
 										</control>
 										<control type="label">
-												<posx>77</posx>
-												<posy>382</posy>
+												<left>77</left>
+												<top>382</top>
 												<width>352</width>
 												<height>16</height>
 												<align>center</align>
@@ -130,8 +130,8 @@
 								</itemlayout>
 								<focusedlayout height="563" width="387">
 										<control type="image">
-												<posx>77</posx>
-												<posy>472</posy>
+												<left>77</left>
+												<top>472</top>
 												<width>352</width>
 												<height>106</height>
 												<aspectratio>stretch</aspectratio>
@@ -139,8 +139,8 @@
 												<texture background="true">windows\login\poster_shadow.png</texture>
 										</control>
 										<control type="image">
-												<posx>77</posx>
-												<posy>26</posy>
+												<left>77</left>
+												<top>26</top>
 												<width>352</width>
 												<height>449</height>
 												<aspectratio>stretch</aspectratio>
@@ -149,8 +149,8 @@
 												<visible>Control.HasFocus(52)</visible>
 										</control>
 										<control type="image">
-												<posx>77</posx>
-												<posy>26</posy>
+												<left>77</left>
+												<top>26</top>
 												<width>352</width>
 												<height>449</height>
 												<aspectratio>stretch</aspectratio>
@@ -159,8 +159,8 @@
 												<visible>!Control.HasFocus(52)</visible>
 										</control>
 										<control type="image">
-												<posx>130</posx>
-												<posy>0</posy>
+												<left>130</left>
+												<top>0</top>
 												<width>246</width>
 												<height>246</height>
 												<aspectratio>scale</aspectratio>
@@ -168,8 +168,8 @@
 												<texture background="true">$INFO[listitem.Icon]</texture>
 										</control>
 										<control type="label">
-												<posx>77</posx>
-												<posy>282</posy>
+												<left>77</left>
+												<top>282</top>
 												<width>352</width>
 												<height>16</height>
 												<align>center</align>
@@ -179,8 +179,8 @@
 												<label>$INFO[listitem.Label]</label>
 										</control>
 										<control type="label">
-												<posx>77</posx>
-												<posy>330</posy>
+												<left>77</left>
+												<top>330</top>
 												<width>352</width>
 												<height>16</height>
 												<align>center</align>
@@ -192,8 +192,8 @@
 								</focusedlayout>
 						</control>
 						<control type="grouplist">
-								<posx>465</posx>
-								<posy>535</posy>
+								<left>465</left>
+								<top>535</top>
 								<width>352</width>
 								<height>80</height>
 								<itemgap>10</itemgap>
@@ -201,22 +201,22 @@
 								<align>center</align>
 								<animation reversible="false" effect="fade" start="0" end="100" delay="300" time="500" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious">Conditional</animation>
 								<animation type="Conditional" reversible="false" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious" loop="true">
-										<effect type="fade" start="40" end="100" time="1000" />
-										<effect type="fade" start="100" end="40" delay="1000" time="1000" />
+										<effect type="fade" start="50" end="100" time="1000" />
+										<effect type="fade" start="100" end="50" delay="2000" time="1000" />
 								</animation>
 								<!-- A Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<colordiffuse>FFFFFFFF</colordiffuse>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\a_button_login.png</texture>
+										<texture>pad_buttons\login\a_button_login.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="50" max="300">auto</width>
 										<height>12</height>
 										<font>size_24</font>
@@ -226,8 +226,8 @@
 								</control>
 						</control>
 						<control type="grouplist">
-								<posx>465</posx>
-								<posy>605</posy>
+								<left>465</left>
+								<top>605</top>
 								<width>352</width>
 								<height>80</height>
 								<itemgap>5</itemgap>
@@ -236,46 +236,46 @@
 								<animation reversible="false" effect="fade" start="0" end="100" delay="300" time="500" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious">Conditional</animation>
 								<!-- White Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>16</width>
 										<height>16</height>
-										<colordiffuse>50FFFFFF</colordiffuse>
+										<colordiffuse>A0FFFFFF</colordiffuse>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\white_button_login_small.png</texture>
+										<texture>pad_buttons\login\white_button_small.png</texture>
 										<visible>Skin.HasSetting(editmode)</visible>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="50" max="139">auto</width>
 										<height>12</height>
 										<font>size_12</font>
 										<align>left</align>
-										<textcolor>80FFFFFF</textcolor>
+										<textcolor>A0FFFFFF</textcolor>
 										<label>$LOCALIZE[31521]</label>
 										<visible>Skin.HasSetting(editmode)</visible>
 										<animation effect="slide" start="0,0" end="0,1" time="0" condition="true">Conditional</animation>
 								</control>
 								<!-- Start Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>16</width>
 										<height>16</height>
-										<colordiffuse>50FFFFFF</colordiffuse>
+										<colordiffuse>A0FFFFFF</colordiffuse>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\start_button_login_small.png</texture>
+										<texture>pad_buttons\login\start_button_small.png</texture>
 										<visible>Skin.HasSetting(editmode)</visible>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="50" max="139">auto</width>
 										<height>12</height>
 										<font>size_12</font>
 										<align>left</align>
-										<textcolor>80FFFFFF</textcolor>
+										<textcolor>A0FFFFFF</textcolor>
 										<label>$LOCALIZE[31090]</label>
 										<visible>Skin.HasSetting(editmode)</visible>
 										<animation effect="slide" start="0,0" end="0,1" time="0" condition="true">Conditional</animation>
@@ -285,7 +285,7 @@
 				<!-- Secret Passcode -->
 				<control type="button" id="19">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onleft>52</onleft>
 						<onright>52</onright>
@@ -294,7 +294,7 @@
 				</control>
 				<control type="button" id="20">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onleft>52</onleft>
 						<onright>52</onright>
@@ -303,7 +303,7 @@
 				</control>
 				<control type="button" id="21">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onleft>52</onleft>
 						<onright>52</onright>
@@ -312,7 +312,7 @@
 				</control>
 				<control type="button" id="22">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onleft>52</onleft>
 						<onright>52</onright>
@@ -321,7 +321,7 @@
 				</control>
 				<control type="button" id="23">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onleft>24</onleft>
 						<onright>52</onright>
@@ -330,7 +330,7 @@
 				</control>
 				<control type="button" id="24">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onleft>25</onleft>
 						<onright>52</onright>
@@ -339,7 +339,7 @@
 				</control>
 				<control type="button" id="25">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onleft>52</onleft>
 						<onright>26</onright>
@@ -348,7 +348,7 @@
 				</control>
 				<control type="button" id="26">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onleft>52</onleft>
 						<onright>27</onright>
@@ -357,7 +357,7 @@
 				</control>
 				<control type="button" id="27">
 						<description>Secret Code Button</description>
-						<posx>-5000</posx>
+						<left>-5000</left>
 						<label>-</label>
 						<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Edit Mode.py )</onclick>
 						<onclick>SetFocus(51)</onclick>
@@ -367,8 +367,6 @@
 						<ondown>52</ondown>
 				</control>
 				<!-- Had to add the exact date for each year :/ damn easter! -->
-				<include condition="StringCompare(System.Date,Sun, Apr 4, 2021)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 4 Apr 2021)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, Apr 17, 2022)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, 17 Apr 2022)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, Apr 9 2023)">easter</include>
@@ -397,6 +395,8 @@
 				<include condition="StringCompare(System.Date,Sun, 9 Apr 2034)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, Mar 25 2035)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, 25 Mar 2035)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 13 2036)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 13 Apr 2036)">easter</include>
 				<!-- birthdays -->
 				<include condition="SubString(System.Date,Jan)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jan.xml">Jan</include>
 				<include condition="SubString(System.Date,Feb)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Feb.xml">Feb</include>

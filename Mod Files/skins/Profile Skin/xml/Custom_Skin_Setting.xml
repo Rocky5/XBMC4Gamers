@@ -6,22 +6,22 @@
 				<include>WindowHeader</include>
 				<control type="button" id="9002">
 						<description>Hidden Button</description>
-						<posx>-1000</posx>
+						<left>-1000</left>
 						<onclick>-</onclick>
 				</control>
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<control type="image">
-								<posx>55</posx>
-								<posy>55</posy>
+								<left>55</left>
+								<top>55</top>
 								<width>1170</width>
 								<height>610</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\settings_categories\main.png</texture>
 						</control>
 						<control type="image">
-								<posx>75</posx>
-								<posy>75</posy>
+								<left>75</left>
+								<top>75</top>
 								<width>330</width>
 								<height>570</height>
 								<aspectratio>stretch</aspectratio>
@@ -29,8 +29,8 @@
 						</control>
 						<control type="grouplist">
 								<description>Control Info</description>
-								<posx>415</posx>
-								<posy>580</posy>
+								<left>415</left>
+								<top>580</top>
 								<width>775</width>
 								<height>80</height>
 								<itemgap>10</itemgap>
@@ -38,49 +38,49 @@
 								<align>center</align>
 								<!-- A Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\a_button.png</texture>
+										<texture>pad_buttons\dialogs\a_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>1111_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\b_button.png</texture>
+										<texture>pad_buttons\dialogs\b_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>1111_context_label</textcolor>
 										<label>$LOCALIZE[31021]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 						<control type="list" id="9000">
 								<description>button area</description>
-								<posx>75</posx>
-								<posy>105</posy>
+								<left>75</left>
+								<top>105</top>
 								<width>330</width>
 								<height>520</height>
 								<onleft>-</onleft>
@@ -89,8 +89,8 @@
 								<ondown>9000</ondown>
 								<itemlayout height="64" width="330">
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>330</width>
 												<height>60</height>
 												<aspectratio>stretch</aspectratio>
@@ -98,24 +98,24 @@
 										</control>
 										<!-- Item Name -->
 										<control type="label">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<height>60</height>
 												<width>400</width>
 												<textoffsetx>44</textoffsetx>
-												<textoffsety>0</textoffsety>
+												<textoffsety>10</textoffsety>
 												<font>size_27</font>
 												<align>left</align>
-												<aligny>center</aligny>
-												<textcolor>windows_settings_category_left_label_no_focus</textcolor>
+												<aligny>top</aligny>
+												<textcolor>1111_label_nofocus</textcolor>
 												<label>$INFO[ListItem.Label]</label>
 												<scroll>false</scroll>
 										</control>
 								</itemlayout>
 								<focusedlayout height="64" width="330">
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>330</width>
 												<height>60</height>
 												<aspectratio>stretch</aspectratio>
@@ -123,16 +123,16 @@
 										</control>
 										<!-- Item Name -->
 										<control type="label">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<height>60</height>
 												<width>400</width>
 												<textoffsetx>44</textoffsetx>
-												<textoffsety>0</textoffsety>
+												<textoffsety>10</textoffsety>
 												<font>size_27</font>
 												<align>left</align>
-												<aligny>center</aligny>
-												<textcolor>windows_settings_category_left_label_focus</textcolor>
+												<aligny>top</aligny>
+												<textcolor>1111_label_focus</textcolor>
 												<label>$INFO[ListItem.Label]</label>
 												<scroll>false</scroll>
 										</control>
@@ -175,8 +175,8 @@
 						<!-- General Toggles -->
 						<control type="grouplist" id="9001">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -211,7 +211,7 @@
 										<description>Launcher Label</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31038]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(Emulator_Name)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(Emulator_Name)][/COLOR]</label2>
 										<onclick>Skin.SetString(Emulator_Name,)</onclick>
 										<onclick>Skin.SetString(Emulator_Name)</onclick>
 										<visible>Skin.HasSetting(EmuButton)</visible>
@@ -220,7 +220,7 @@
 										<description>Launcher Path</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31039]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(Emulator_Path)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(Emulator_Path)][/COLOR]</label2>
 										<onclick>Skin.SetFile(Emulator_Path,,)</onclick>
 										<visible>Skin.HasSetting(EmuButton)</visible>
 								</control>
@@ -278,8 +278,8 @@
 						<!-- Home Window -->
 						<control type="grouplist" id="9001">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -292,7 +292,7 @@
 								<control type="label" id="510">
 										<description>Home Window Label</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
-										<label>[COLOR=windows_settings_category_no_focus_labels]$LOCALIZE[31076] [B]$INFO[Skin.String(HomeWindow)][/B][/COLOR]</label>
+										<label>[COLOR=1111_category_labels_nofocus]$LOCALIZE[31076] [B]$INFO[Skin.String(HomeWindow)][/B][/COLOR]</label>
 								</control>
 								<control type="button" id="511">
 										<description>Home Window Toggle</description>
@@ -323,13 +323,21 @@
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[20108]</label>
 										<onclick>Skin.SetString(HomeWindow,Root)</onclick>
+										<onclick>Skin.Reset(Random_Game)</onclick>
+								</control>
+								<control type="button" id="516">
+										<description>Home Window Toggle</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label> - $LOCALIZE[20190]</label>
+										<onclick>Skin.Reset(HomeWindow)</onclick>
+										<onclick>Skin.SetString(HomeWindow)</onclick>
 								</control>
 						</control>
 						<!-- Login -->
 						<control type="grouplist" id="9001">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -363,14 +371,14 @@
 								<control type="label" id="222">
 										<description>Advanced Stuff</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
-										<label>[COLOR=windows_settings_category_no_focus_labels]$LOCALIZE[31064][/COLOR]</label>
+										<label>[COLOR=1111_category_labels_nofocus]$LOCALIZE[31064][/COLOR]</label>
 								</control>
 						</control>
 						<!-- Quick Change Menu -->
 						<control type="grouplist" id="9001">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -391,7 +399,7 @@
 										<description>Custom Quick Change Entry variable</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31057]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange1)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(CustomQuickChange1)][/COLOR]</label2>
 										<onclick>Skin.SetString(CustomQuickChange1)</onclick>
 										<visible>Skin.HasSetting(CustomQuickChange1Enabled)</visible>
 								</control>
@@ -406,7 +414,7 @@
 										<description>Custom Quick Change Entry variable</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31057]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange2)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(CustomQuickChange2)][/COLOR]</label2>
 										<onclick>Skin.SetString(CustomQuickChange2)</onclick>
 										<visible>Skin.HasSetting(CustomQuickChange2Enabled)</visible>
 								</control>
@@ -421,7 +429,7 @@
 										<description>Custom Quick Change Entry variable</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31057]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange3)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(CustomQuickChange3)][/COLOR]</label2>
 										<onclick>Skin.SetString(CustomQuickChange3)</onclick>
 										<visible>Skin.HasSetting(CustomQuickChange3Enabled)</visible>
 								</control>
@@ -436,7 +444,7 @@
 										<description>Custom Quick Change Entry variable</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31057]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange4)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(CustomQuickChange4)][/COLOR]</label2>
 										<onclick>Skin.SetString(CustomQuickChange4)</onclick>
 										<visible>Skin.HasSetting(CustomQuickChange4Enabled)</visible>
 								</control>
@@ -451,7 +459,7 @@
 										<description>Custom Quick Change Entry variable</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31057]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange5)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(CustomQuickChange5)][/COLOR]</label2>
 										<onclick>Skin.SetString(CustomQuickChange5)</onclick>
 										<visible>Skin.HasSetting(CustomQuickChange5Enabled)</visible>
 								</control>
@@ -466,7 +474,7 @@
 										<description>Custom Quick Change Entry variable</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31057]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(CustomQuickChange6)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(CustomQuickChange6)][/COLOR]</label2>
 										<onclick>Skin.SetString(CustomQuickChange6)</onclick>
 										<visible>Skin.HasSetting(CustomQuickChange6Enabled)</visible>
 								</control>
@@ -474,8 +482,8 @@
 						<!-- Scripts -->
 						<control type="grouplist" id="9001">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -504,12 +512,18 @@
 										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Clear Cache.py )</onclick>
 								</control>
 								<control type="button" id="340">
+										<description>File Patcher</description>
+										<include>ButtonSkinSettingsCategoryButtonValues</include>
+										<label>$LOCALIZE[31069] - File Patcher (Widescreen Patches etc...)</label>
+										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers Extras/File Patcher/default.py )</onclick>
+								</control>
+								<control type="button" id="341">
 										<description>Remove Empty Save Folders</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label>$LOCALIZE[31069] - Remove Empty Save Folders Script</label>
 										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers Extras/Remove Empty Save Folders/default.py )</onclick>
 								</control>
-								<control type="button" id="341">
+								<control type="button" id="342">
 										<description>Rip game with DVD2Xbox</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label>$LOCALIZE[31069] - Rip Game Disc to HDD with DVD2Xbox</label>
@@ -544,8 +558,8 @@
 						<!-- Startup Options -->
 						<control type="grouplist" id="9001">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -561,28 +575,30 @@
 										<label>$LOCALIZE[10500] &gt;</label>
 										<onclick>ActivateWindow(501)</onclick>
 								</control>
-								<control type="radiobutton" id="621">
-										<description>Enable Intro</description>
+								<control type="radiobutton" id="620">
+										<description>Startup Random</description>
 										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
-										<label>$LOCALIZE[31086]</label>
-										<onclick>Skin.ToggleSetting(introenabled)</onclick>
-										<selected>Skin.HasSetting(introenabled)</selected>
+										<label>$LOCALIZE[31092] - $INFO[skin.String(HomeWindow)]</label>
+										<onclick>Skin.ToggleSetting(Random_Game)</onclick>
+										<onclick>Skin.SetBool(run_random_script,false)</onclick>
+										<selected>Skin.HasSetting(Random_Game)</selected>
+										<enable>!StringCompare(Skin.String(HomeWindow),Root)</enable>
 								</control>
-								<control type="radiobutton" id="622">
+								<control type="radiobutton" id="621">
 										<description>Startup Playback</description>
 										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
 										<label>$LOCALIZE[31087]</label>
 										<onclick>Skin.ToggleSetting(Use_Startup_Playback)</onclick>
 										<selected>Skin.HasSetting(Use_Startup_Playback)</selected>
 								</control>
-								<control type="button" id="623">
+								<control type="button" id="622">
 										<description>Startup Playback Path</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31088]</label>
 										<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Generate Random Playlist.py )</onclick>
 										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
 								</control>
-								<control type="radiobutton" id="624">
+								<control type="radiobutton" id="623">
 										<description>Startup Playback Themes</description>
 										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
 										<label> - $LOCALIZE[31091]</label>
@@ -590,20 +606,27 @@
 										<selected>Skin.HasSetting(UseThemePlaylist)</selected>
 										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
 								</control>
-								<control type="button" id="625">
+								<control type="button" id="624">
 										<description>Startup Playback Path</description>
 										<include>ButtonSkinSettingsCategoryButtonValues</include>
 										<label> - $LOCALIZE[31089]</label>
-										<label2>[COLOR=windows_settings_category_disabled_labels]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
+										<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
 										<onclick>Skin.SetFile(Startup_Playback_Path,.m3u,special://profile/playlists/music/)</onclick>
 										<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
+								</control>
+								<control type="radiobutton" id="625">
+										<description>Enable Intro</description>
+										<include>ButtonSkinSettingsCategoryRadioButtonValues</include>
+										<label>$LOCALIZE[31086]</label>
+										<onclick>Skin.ToggleSetting(introenabled)</onclick>
+										<selected>Skin.HasSetting(introenabled)</selected>
 								</control>
 						</control>
 						<!-- Theme Options -->
 						<control type="grouplist" id="9001">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -665,8 +688,8 @@
 						<!-- Debug -->
 						<control type="grouplist" id="9001">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -684,8 +707,8 @@
 								</control>
 						</control>
 						<control type="scrollbar" id="80">
-								<posx>1190</posx>
-								<posy>105</posy>
+								<left>1190</left>
+								<top>105</top>
 								<width>4</width>
 								<height>445</height>
 								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>

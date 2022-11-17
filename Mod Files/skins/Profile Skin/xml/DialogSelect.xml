@@ -1,16 +1,15 @@
-<window type="dialog" id="2000">
+<window type="window" id="2000">
 		<defaultcontrol always="true">3</defaultcontrol>
 		<coordinates>
 				<system>1</system>
-				<posx>335</posx>
-				<posy>35</posy>
+				<left>335</left>
+				<top>35</top>
 		</coordinates>
-		<include>dialogeffect</include>
 		<controls>
 				<control type="group">
 						<!-- Image Preview -->
-						<posx>260</posx>
-						<posy>0</posy>
+						<left>260</left>
+						<top>0</top>
 						<visible>Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)</visible>
 						<animation type="Visible" reversible="false">
 								<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="300" />
@@ -21,36 +20,36 @@
 								<effect type="fade" start="100" end="0" time="200" />
 						</animation>
 						<control type="image">
-								<posx>30</posx>
-								<posy>34</posy>
+								<left>30</left>
+								<top>34</top>
 								<width>580</width>
 								<height>580</height>
 								<texture border="20,20,20,20">thumbnofo.png</texture>
 						</control>
 						<control type="image">
 								<description>Heading Background</description>
-								<posx>30</posx>
-								<posy>34</posy>
+								<left>30</left>
+								<top>34</top>
 								<width>580</width>
 								<height>40</height>
 								<texture border="20,20,20,20">thumbfo.png</texture>
 						</control>
 						<control type="label">
 								<description>Heading label</description>
-								<posx>40</posx>
-								<posy>40</posy>
+								<left>40</left>
+								<top>40</top>
 								<width>560</width>
 								<height>30</height>
 								<align>center</align>
 								<aligny>center</aligny>
 								<font>size_21_bold</font>
 								<label>Preview</label>
-								<textcolor>black</textcolor>
+								<textcolor>2000_header_label</textcolor>
 						</control>
 						<control type="image">
 								<description>Current Icon image</description>
-								<posx>50</posx>
-								<posy>90</posy>
+								<left>50</left>
+								<top>90</top>
 								<width>540</width>
 								<height>510</height>
 								<aspectratio>keep</aspectratio>
@@ -62,8 +61,8 @@
 						</control>
 						<control type="image">
 								<description>Current Icon image</description>
-								<posx>50</posx>
-								<posy>90</posy>
+								<left>50</left>
+								<top>90</top>
 								<width>540</width>
 								<height>510</height>
 								<aspectratio>keep</aspectratio>
@@ -79,8 +78,8 @@
 						<animation effect="slide" start="0,0" end="-290,0" time="300" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
 						<control type="image">
 								<description>background image</description>
-								<posx>30</posx>
-								<posy>34</posy>
+								<left>30</left>
+								<top>34</top>
 								<width>550</width>
 								<height>580</height>
 								<texture border="20,20,20,20">thumbnofo.png</texture>
@@ -88,27 +87,28 @@
 						</control>
 						<control type="image">
 								<description>Heading Background</description>
-								<posx>30</posx>
-								<posy>34</posy>
+								<left>30</left>
+								<top>34</top>
 								<width>550</width>
 								<height>40</height>
 								<texture border="20,20,20,20">thumbfo.png</texture>
 						</control>
 						<control type="label" id="1">
 								<description>heading label</description>
-								<posx>40</posx>
-								<posy>35</posy>
+								<left>40</left>
+								<top>35</top>
 								<width>510</width>
 								<height>40</height>
 								<align>center</align>
 								<aligny>center</aligny>
 								<font>size_21_bold</font>
 								<label>13406</label>
-								<textcolor>black</textcolor>
+								<textcolor>2000_header_label</textcolor>
 						</control>
 						<control type="list" id="3">
-								<posx>45</posx>
-								<posy>90</posy>
+								<!-- <animation effect="slide" start="0,0" end="10,0" time="0" condition="!Control.IsVisible(61)">Conditional</animation> -->
+								<left>45</left>
+								<top>90</top>
 								<width>500</width>
 								<height>480</height>
 								<onup>3</onup>
@@ -117,54 +117,57 @@
 								<onright>61</onright>
 								<pagecontrol>61</pagecontrol>
 								<scrolltime>200</scrolltime>
-								<animation effect="slide" start="0,0" end="10,0" time="0" condition="!Control.IsVisible(61)">Conditional</animation>
-								<itemlayout height="40">
+								<itemlayout height="60">
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>500</width>
-												<height>35</height>
+												<height>55</height>
 												<texture border="3">button-nofocus.png</texture>
 										</control>
 										<control type="label">
-												<posx>10</posx>
-												<posy>-2</posy>
+												<left>10</left>
+												<top>0</top>
 												<width>480</width>
-												<height>35</height>
-												<font>size_20</font>
+												<height>50</height>
+												<font>size_18</font>
 												<align>left</align>
 												<aligny>center</aligny>
-												<selectedcolor>blue</selectedcolor>
+												<textcolor>2000_label</textcolor>
+												<selectedcolor>2000_label_selected</selectedcolor>
 												<info>ListItem.Label</info>
+												<wrapmultiline>true</wrapmultiline>
 										</control>
 								</itemlayout>
-								<focusedlayout height="40">
+								<focusedlayout height="60">
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>500</width>
-												<height>35</height>
+												<height>55</height>
 												<visible>!Control.HasFocus(3)</visible>
 												<texture border="3">button-nofocus.png</texture>
 										</control>
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>500</width>
-												<height>35</height>
+												<height>55</height>
 												<visible>Control.HasFocus(3)</visible>
 												<texture border="3">button-focus2.png</texture>
 										</control>
 										<control type="label">
-												<posx>10</posx>
-												<posy>-2</posy>
+												<left>10</left>
+												<top>0</top>
 												<width>480</width>
-												<height>35</height>
-												<font>size_20</font>
+												<height>50</height>
+												<font>size_18</font>
 												<align>left</align>
 												<aligny>center</aligny>
-												<selectedcolor>blue</selectedcolor>
+												<textcolor>2000_label</textcolor>
+												<selectedcolor>2000_label_selected</selectedcolor>
 												<info>ListItem.Label</info>
+												<wrapmultiline>true</wrapmultiline>
 										</control>
 								</focusedlayout>
 						</control>
@@ -173,8 +176,8 @@
 						<visible>Control.IsVisible(3)</visible>
 						<animation effect="slide" start="0,0" end="-290,0" time="300" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
 						<control type="scrollbar" id="61">
-								<posx>550</posx>
-								<posy>90</posy>
+								<left>550</left>
+								<top>90</top>
 								<width>20</width>
 								<height>475</height>
 								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
@@ -191,28 +194,29 @@
 						</control>
 						<control type="label">
 								<description>number of files/pages in list text label</description>
-								<posx>570</posx>
-								<posy>570</posy>
+								<left>570</left>
+								<top>570</top>
 								<width>300</width>
 								<height>35</height>
 								<font>size_20</font>
 								<align>right</align>
 								<aligny>center</aligny>
 								<scroll>true</scroll>
-								<textcolor>white</textcolor>
+								<textcolor>2000_label</textcolor>
 								<label>($INFO[Container(3).NumItems]) $LOCALIZE[31211] - $LOCALIZE[31210] ($INFO[Container(3).CurrentPage]/$INFO[Container(3).NumPages])</label>
 						</control>
 				</control>
 				<control type="button" id="5">
 						<description>OK button</description>
-						<posx>30</posx>
-						<posy>614</posy>
+						<left>30</left>
+						<top>614</top>
 						<width>550</width>
 						<height>40</height>
 						<label>186</label>
 						<font>size_20</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>black</focusedcolor>
+						<textcolor>126_button_label</textcolor>
+						<focusedcolor>126_button_label_focus</focusedcolor>
+						<disabledcolor>126_button_label</disabledcolor>
 						<align>center</align>
 						<texturenofocus border="3">thumbnf.png</texturenofocus>
 						<texturefocus border="3">thumbfo.png</texturefocus>

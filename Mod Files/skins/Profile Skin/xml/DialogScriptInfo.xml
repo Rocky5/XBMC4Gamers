@@ -1,50 +1,84 @@
 <window type="dialog" id="2004">
 		<defaultcontrol always="true">61</defaultcontrol>
-		<coordinates>
-				<system>1</system>
-				<posx>290</posx>
-				<posy>210</posy>
-		</coordinates>
-		<include>dialogeffect</include>
 		<controls>
 				<control type="image">
-						<description>background image</description>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>700</width>
-						<height>300</height>
-						<texture border="40">dialogback.png</texture>
+						<include>1280x720</include>
+						<texture>black-back.png</texture>
+						<include>dialogeffect</include>
 				</control>
-				<control type="image">
-						<description>Heading Background</description>
-						<posx>30</posx>
-						<posy>34</posy>
-						<width>640</width>
-						<height>40</height>
-						<texture border="5">thumbfo.png</texture>
-				</control>
-				<control type="label" id="1">
-						<description>heading label</description>
-						<posx>40</posx>
-						<posy>35</posy>
-						<width>620</width>
-						<height>40</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>size_21_bold</font>
-						<label>-</label>
-						<textcolor>black</textcolor>
-				</control>
-				<control type="textbox" id="5">
-						<description>textarea</description>
-						<posx>0</posx>
-						<posy>100</posy>
-						<width>700</width>
-						<height>300</height>
-						<font>size_23</font>
-						<align>center</align>
-						<textcolor>white</textcolor>
-						<shadowcolor>black</shadowcolor>
+				<control type="group">
+						<include>DialogEffectZoomFast</include>
+						<control type="image">
+								<left>52</left>
+								<top>51</top>
+								<width>1176</width>
+								<height>618</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\generic\main.png</texture>
+						</control>
+						<control type="image">
+								<left>77</left>
+								<top>70</top>
+								<width>1126</width>
+								<height>60</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\generic\header.png</texture>
+						</control>
+						<control type="label">
+								<description>heading label used to bold and upper-case</description>
+								<left>90</left>
+								<top>70</top>
+								<width>1126</width>
+								<height>60</height>
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>size_25</font>
+								<label>Script: $INFO[Control.GetLabel(1)]</label>
+								<textcolor>2004_header_label</textcolor>
+						</control>
+						<control type="label" id="1">
+								<description>heading label</description>
+								<left>90</left>
+								<top>75</top>
+								<width>1105</width>
+								<height>50</height>
+								<align>left</align>
+								<aligny>center</aligny>
+								<font>size_25</font>
+								<textcolor>2004_header_label</textcolor>
+								<visible>false</visible>
+						</control>
+						<control type="textbox" id="5">
+								<description>textarea</description>
+								<left>90</left>
+								<top>128</top>
+								<width>1100</width>
+								<height>520</height>
+								<font>size_16</font>
+								<align>left</align>
+								<textcolor>2004_label</textcolor>
+								<shadowcolor>-</shadowcolor>
+								<pagecontrol>61</pagecontrol>
+						</control>
+						<!-- Scroll bar fails to work due to the scrolltime being set to 200 :-/ -->
+						<control type="scrollbar" id="61">
+								<left>1193</left>
+								<top>130</top>
+								<width>10</width>
+								<height>517</height>
+								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+								<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
+								<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
+								<textureslidernib>-</textureslidernib>
+								<textureslidernibfocus>-</textureslidernibfocus>
+								<onleft>-</onleft>
+								<ondown>-</ondown>
+								<showonepage>false</showonepage>
+								<orientation>vertical</orientation>
+								<visible allowhiddenfocus="true">Control.HasFocus(61)</visible>
+								<animation reversible="false" effect="fade" start="100" end="20" time="100" condition="!Control.HasFocus(61)">Conditional</animation>
+								<animation reversible="false" effect="fade" start="20" end="100" time="100">Focus</animation>
+						</control>
 				</control>
 		</controls>
 </window>

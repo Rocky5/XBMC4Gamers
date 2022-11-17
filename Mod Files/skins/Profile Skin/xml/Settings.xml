@@ -7,36 +7,36 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<control type="image">
-								<posx>201</posx>
-								<posy>81</posy>
+								<left>201</left>
+								<top>81</top>
 								<width>878</width>
 								<height>558</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\settings\main.png</texture>
 						</control>
 						<control type="image">
-								<posx>219</posx>
-								<posy>99</posy>
+								<left>219</left>
+								<top>99</top>
 								<width>842</width>
 								<height>61</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\settings\header.png</texture>
 						</control>
 						<control type="label">
-								<posx>250</posx>
-								<posy>110</posy>
+								<left>250</left>
+								<top>110</top>
 								<width>780</width>
 								<height>28</height>
 								<font>size_28</font>
 								<scroll>true</scroll>
 								<align>left</align>
-								<textcolor>windows_header_label</textcolor>
+								<textcolor>4_header_label</textcolor>
 								<label>$LOCALIZE[5]</label>
 						</control>
 						<control type="grouplist">
 								<description>Control Info</description>
-								<posx>250</posx>
-								<posy>568</posy>
+								<left>250</left>
+								<top>568</top>
 								<width>780</width>
 								<height>80</height>
 								<itemgap>10</itemgap>
@@ -44,69 +44,69 @@
 								<align>center</align>
 								<!-- A Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\a_button.png</texture>
+										<texture>pad_buttons\dialogs\a_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\B_button.png</texture>
+										<texture>pad_buttons\dialogs\B_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[31151]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- Black Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\Black_button.png</texture>
+										<texture>pad_buttons\dialogs\Black_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[33073]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 						<!-- Content List -->
 						<control type="list" id="50">
-								<posx>250</posx>
-								<posy>180</posy>
+								<left>250</left>
+								<top>180</top>
 								<width>780</width>
 								<height>370</height>
 								<onleft>-</onleft>
@@ -117,90 +117,81 @@
 								<pagecontrol>80</pagecontrol>
 								<scrolltime>200</scrolltime>
 								<orientation>vertical</orientation>
-								<preloaditems>2</preloaditems>
 								<itemlayout height="74" width="796">
 										<control type="image">
-												<posx>0</posx>
-												<posy>-1</posy>
+												<left>0</left>
+												<top>-2</top>
 												<width>780</width>
-												<height>74</height>
+												<height>76</height>
 												<aspectratio>stretch</aspectratio>
 												<texture>windows\settings\button_no_focus.png</texture>
 										</control>
 										<control type="image">
-												<posx>4</posx>
-												<posy>6</posy>
+												<left>4</left>
+												<top>4</top>
 												<width>64</width>
 												<height>64</height>
 												<aspectratio>scale</aspectratio>
 												<texture background="true">$INFO[listitem.Icon]</texture>
 										</control>
 										<control type="label">
-												<posx>88</posx>
-												<posy>0</posy>
+												<left>88</left>
+												<top>0</top>
 												<width>655</width>
 												<height>23</height>
 												<align>left</align>
 												<font>size_24</font>
-												<textcolor>windows_label_no_focus</textcolor>
+												<textcolor>4_label_nofocus</textcolor>
 												<label>$INFO[listitem.Label]</label>
 										</control>
 										<control type="label">
-												<posx>88</posx>
-												<posy>41</posy>
+												<left>88</left>
+												<top>39</top>
 												<width>655</width>
 												<height>23</height>
 												<align>left</align>
 												<font>size_19</font>
-												<textcolor>windows_label_no_focus</textcolor>
+												<textcolor>4_label_nofocus</textcolor>
 												<label>$INFO[ListItem.label2]</label>
 										</control>
 								</itemlayout>
 								<focusedlayout height="74" width="780">
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>-2</top>
 												<width>780</width>
-												<height>74</height>
-												<aspectratio>stretch</aspectratio>
-												<texture>windows\settings\button_no_focus.png</texture>
-										</control>
-										<control type="image">
-												<posx>0</posx>
-												<posy>1</posy>
-												<width>780</width>
-												<height>74</height>
+												<height>76</height>
 												<aspectratio>stretch</aspectratio>
 												<texture>windows\settings\button_focus.png</texture>
 										</control>
 										<control type="image">
-												<posx>4</posx>
-												<posy>6</posy>
+												<left>4</left>
+												<top>4</top>
 												<width>64</width>
 												<height>64</height>
 												<aspectratio>scale</aspectratio>
 												<texture background="true">$INFO[listitem.Icon]</texture>
 										</control>
 										<control type="label">
-												<posx>88</posx>
-												<posy>0</posy>
+												<left>88</left>
+												<top>0</top>
 												<width>655</width>
 												<height>23</height>
 												<align>left</align>
 												<font>size_24</font>
-												<textcolor>windows_label_focus</textcolor>
-												<selectedcolor>windows_label_focus</selectedcolor>
+												<textcolor>4_label</textcolor>
+												<selectedcolor>4_label</selectedcolor>
 												<label>$INFO[listitem.Label]</label>
 										</control>
 										<control type="label">
-												<posx>88</posx>
-												<posy>41</posy>
+												<left>88</left>
+												<top>39</top>
 												<width>655</width>
 												<height>23</height>
 												<align>left</align>
 												<font>size_19</font>
-												<textcolor>windows_label_focus</textcolor>
-												<selectedcolor>windows_label_focus</selectedcolor>
+												<textcolor>4_label</textcolor>
+												<selectedcolor>4_label</selectedcolor>
 												<label>$INFO[ListItem.label2]</label>
 										</control>
 								</focusedlayout>
@@ -259,11 +250,17 @@
 												<onclick>ActivateWindow(VideosSettings)</onclick>
 												<icon>thumbs/Videos.png</icon>
 										</item>
+										<item id="10">
+												<label>138</label>
+												<label2>$LOCALIZE[31161]</label2>
+												<onclick>ActivateWindow(SystemInfo)</onclick>
+												<icon>thumbs/SystemInfo.png</icon>
+										</item>
 								</content>
 						</control>
 						<control type="scrollbar" id="80">
-								<posx>1030</posx>
-								<posy>180</posy>
+								<left>1030</left>
+								<top>180</top>
 								<width>4</width>
 								<height>370</height>
 								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>

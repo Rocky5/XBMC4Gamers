@@ -6,33 +6,8 @@
 				<include>CommonBackground</include>
 				<control type="group">
 						<include>ViewVisibleEffect</include>
-						<!-- view id = 50 -->
 						<include file="Viewtype_CommonRootView.xml">CommonRootView</include>
 				</control>
-				<control type="group">
-						<include>WindowHeader</include>
-						<control type="image">
-								<posx>20</posx>
-								<posy>5</posy>
-								<width>40</width>
-								<height>35</height>
-								<aspectratio>keep</aspectratio>
-								<texture>icon_addons.png</texture>
-						</control>
-						<control type="label">
-								<description>Header label</description>
-								<posx>70</posx>
-								<posy>5</posy>
-								<width>700</width>
-								<height>35</height>
-								<align>left</align>
-								<aligny>center</aligny>
-								<font>size_23</font>
-								<textcolor>white</textcolor>
-								<label>$LOCALIZE[247]</label>
-						</control>
-						<include>ScrollOffsetLabel</include>
-						<include>WindowFooter</include>
-				</control>
+				<include>WindowHeader</include>
 		</controls>
 </window>

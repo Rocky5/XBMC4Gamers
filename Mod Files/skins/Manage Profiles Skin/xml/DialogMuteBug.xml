@@ -2,8 +2,8 @@
 		<defaultcontrol>-</defaultcontrol>
 		<coordinates>
 				<system>1</system>
-				<posx>-10</posx>
-				<posy>-10</posy>
+				<left>-10</left>
+				<top>-10</top>
 		</coordinates>
 		<controls>
 		</controls>

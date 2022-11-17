@@ -8,24 +8,24 @@
 				</control>
 				<control type="image">
 						<description>background image</description>
-						<posx>326</posx>
-						<posy>252</posy>
+						<left>326</left>
+						<top>252</top>
 						<width>628</width>
 						<height>215</height>
 						<texture>windows\dialogs\main.png</texture>
 				</control>
 				<control type="image">
 						<description>Heading Background</description>
-						<posx>339</posx>
-						<posy>259</posy>
+						<left>339</left>
+						<top>259</top>
 						<width>602</width>
 						<height>61</height>
 						<texture>windows\dialogs\header.png</texture>
 				</control>
 				<control type="image" id="2">
 						<description>profile image</description>
-						<posx>345</posx>
-						<posy>330</posy>
+						<left>345</left>
+						<top>330</top>
 						<width>120</width>
 						<height>120</height>
 						<align>left</align>
@@ -36,68 +36,68 @@
 				</control>
 				<control type="label" id="1">
 						<description>heading label</description>
-						<posx>370</posx>
-						<posy>269</posy>
+						<left>370</left>
+						<top>269</top>
 						<width>240</width>
 						<height>40</height>
 						<font>size_28</font>
 						<scroll>true</scroll>
 						<align>left</align>
-						<textcolor>windows_header_label</textcolor>
+						<textcolor>130_header_label</textcolor>
 						<label>[UPPERCASE]$LOCALIZE[20067][/UPPERCASE]</label>
 				</control>
 				<control type="label">
 						<description>dialog line 1</description>
-						<posx>470</posx>
-						<posy>345</posy>
+						<left>470</left>
+						<top>345</top>
 						<width>240</width>
 						<height>40</height>
 						<font>size_20</font>
 						<scroll>true</scroll>
 						<align>left</align>
-						<textcolor>windows_label_no_focus</textcolor>
+						<textcolor>130_label_nofocus</textcolor>
 						<label>[B]$LOCALIZE[20093][/B]</label>
 				</control>
 				<control type="label" id="1000">
 						<description>dialog line 1</description>
-						<posx>470</posx>
-						<posy>365</posy>
+						<left>470</left>
+						<top>365</top>
 						<width>240</width>
 						<height>40</height>
 						<font>size_20</font>
 						<scroll>true</scroll>
 						<align>left</align>
-						<textcolor>windows_label_no_focus</textcolor>
+						<textcolor>130_label_nofocus</textcolor>
 						<label>-</label>
 				</control>
 				<control type="label">
 						<description>dialog line 2</description>
-						<posx>470</posx>
-						<posy>390</posy>
+						<left>470</left>
+						<top>390</top>
 						<width>240</width>
 						<height>40</height>
 						<font>size_20</font>
 						<scroll>true</scroll>
 						<align>left</align>
-						<textcolor>windows_label_no_focus</textcolor>
+						<textcolor>130_label_nofocus</textcolor>
 						<label>[B]$LOCALIZE[20070][/B]</label>
 				</control>
 				<control type="label" id="1001">
 						<description>dialog line 2</description>
-						<posx>470</posx>
-						<posy>410</posy>
+						<left>470</left>
+						<top>410</top>
 						<width>240</width>
 						<height>40</height>
 						<font>size_20</font>
 						<scroll>true</scroll>
 						<align>left</align>
-						<textcolor>windows_label_no_focus</textcolor>
+						<textcolor>130_label_nofocus</textcolor>
 						<label>-</label>
 				</control>
 				<control type="grouplist" id="5">
 						<description>control area</description>
-						<posx>720</posx>
-						<posy>330</posy>
+						<left>720</left>
+						<top>330</top>
 						<width>210</width>
 						<height>100</height>
 						<onleft>5</onleft>
@@ -111,8 +111,8 @@
 						<description>Default Button</description>
 						<height>40</height>
 						<font>size_20</font>
-						<textcolor>windows_label_no_focus</textcolor>
-						<focusedcolor>windows_label_focus</focusedcolor>
+						<textcolor>130_label_nofocus</textcolor>
+						<focusedcolor>130_label</focusedcolor>
 						<align>center</align>
 						<texturenofocus border="3">windows\dialogs\button_no_focus.png</texturenofocus>
 						<texturefocus border="3">windows\dialogs\button_focus.png</texturefocus>
@@ -121,21 +121,21 @@
 						<description>Default Button</description>
 						<height>40</height>
 						<font>size_20</font>
-						<textcolor>windows_label_no_focus</textcolor>
-						<focusedcolor>windows_label_focus</focusedcolor>
+						<textcolor>130_label_nofocus</textcolor>
+						<focusedcolor>130_label</focusedcolor>
 						<align>center</align>
 						<texturenofocus border="3">windows\dialogs\button_no_focus.png</texturenofocus>
 						<texturefocus border="3">windows\dialogs\button_focus.png</texturefocus>
 				</control>
 				<control type="button" id="28">
 						<description>Yes button</description>
-						<posx>720</posx>
-						<posy>420</posy>
+						<left>720</left>
+						<top>420</top>
 						<width>100</width>
 						<height>30</height>
 						<label>186</label>
-						<textcolor>windows_label_no_focus</textcolor>
-						<focusedcolor>windows_label_focus</focusedcolor>
+						<textcolor>130_label_nofocus</textcolor>
+						<focusedcolor>130_label</focusedcolor>
 						<align>center</align>
 						<texturenofocus border="3">windows\dialogs\button_no_focus.png</texturenofocus>
 						<texturefocus border="3">windows\dialogs\button_focus.png</texturefocus>
@@ -146,13 +146,13 @@
 				</control>
 				<control type="button" id="29">
 						<description>No button</description>
-						<posx>830</posx>
-						<posy>420</posy>
+						<left>830</left>
+						<top>420</top>
 						<width>100</width>
 						<height>30</height>
 						<label>222</label>
-						<textcolor>windows_label_no_focus</textcolor>
-						<focusedcolor>windows_label_focus</focusedcolor>
+						<textcolor>130_label_nofocus</textcolor>
+						<focusedcolor>130_label</focusedcolor>
 						<align>center</align>
 						<texturenofocus border="3">windows\dialogs\button_no_focus.png</texturenofocus>
 						<texturefocus border="3">windows\dialogs\button_focus.png</texturefocus>

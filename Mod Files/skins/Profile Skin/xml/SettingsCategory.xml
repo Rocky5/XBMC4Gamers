@@ -7,16 +7,16 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<control type="image">
-								<posx>55</posx>
-								<posy>55</posy>
+								<left>55</left>
+								<top>55</top>
 								<width>1170</width>
 								<height>610</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\settings_categories\main.png</texture>
 						</control>
 						<control type="image">
-								<posx>75</posx>
-								<posy>75</posy>
+								<left>75</left>
+								<top>75</top>
 								<width>330</width>
 								<height>570</height>
 								<aspectratio>stretch</aspectratio>
@@ -24,8 +24,8 @@
 						</control>
 						<control type="grouplist">
 								<description>Control Info</description>
-								<posx>415</posx>
-								<posy>580</posy>
+								<left>415</left>
+								<top>580</top>
 								<width>775</width>
 								<height>80</height>
 								<itemgap>10</itemgap>
@@ -33,49 +33,49 @@
 								<align>center</align>
 								<!-- A Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\a_button.png</texture>
+										<texture>pad_buttons\dialogs\a_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>12_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\b_button.png</texture>
+										<texture>pad_buttons\dialogs\b_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>12_context_label</textcolor>
 										<label>$LOCALIZE[31166]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 						<control type="grouplist" id="3">
 								<description>button area</description>
-								<posx>75</posx>
-								<posy>105</posy>
+								<left>75</left>
+								<top>105</top>
 								<width>330</width>
 								<height>510</height>
 								<itemgap>4</itemgap>
@@ -86,8 +86,8 @@
 						</control>
 						<control type="grouplist" id="5">
 								<description>control area</description>
-								<posx>415</posx>
-								<posy>105</posy>
+								<left>415</left>
+								<top>105</top>
 								<width>775</width>
 								<height>445</height>
 								<itemgap>4</itemgap>
@@ -98,8 +98,8 @@
 								<ondown>5</ondown>
 						</control>
 						<control type="scrollbar" id="90">
-								<posx>1190</posx>
-								<posy>105</posy>
+								<left>1190</left>
+								<top>105</top>
 								<width>4</width>
 								<height>445</height>
 								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
@@ -115,84 +115,21 @@
 								<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
 						</control>
 						<control type="button" id="10">
-								<description>Default Button</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<height>60</height>
-								<width>795</width>
-								<textoffsetx>44</textoffsetx>
-								<textoffsety>0</textoffsety>
-								<font>size_28</font>
-								<align>left</align>
-								<aligny>center</aligny>
-								<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-								<focusedcolor>windows_settings_category_left_label_focus</focusedcolor>
-								<disabledcolor>windows_settings_category_disabled_labels</disabledcolor>
-								<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-								<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+								<include>ButtonSettingsCategoryValues_alt</include>
 						</control>
 						<control type="button" id="7">
-								<description>Default Button</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<height>60</height>
-								<width>795</width>
-								<font>size_20</font>
-								<align>left</align>
-								<aligny>center</aligny>
-								<textoffsetx>44</textoffsetx>
-								<textoffsety>0</textoffsety>
-								<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-								<focusedcolor>windows_settings_category_right_label_focus</focusedcolor>
-								<disabledcolor>windows_settings_category_disabled_labels</disabledcolor>
-								<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-								<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+								<include>ButtonSkinSettingsCategoryButtonValues_alt</include>
 						</control>
 						<control type="radiobutton" id="8">
-								<description>Default RadioButton</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<height>60</height>
-								<width>795</width>
-								<radioposx>669</radioposx>
-								<radioposy>0</radioposy>
-								<radiowidth>73</radiowidth>
-								<radioheight>25</radioheight>
-								<font>size_20</font>
-								<align>left</align>
-								<aligny>center</aligny>
-								<textoffsetx>44</textoffsetx>
-								<textoffsety>0</textoffsety>
-								<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-								<focusedcolor>windows_settings_category_right_label_focus</focusedcolor>
-								<disabledcolor>windows_settings_category_disabled_labels</disabledcolor>
-								<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-								<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+								<include>ButtonSkinSettingsCategoryRadioButtonValues_alt</include>
 						</control>
 						<control type="spincontrolex" id="9">
-								<description>Default SpinControlex</description>
-								<posx>0</posx>
-								<posy>0</posy>
-								<height>60</height>
-								<width>795</width>
-								<spinwidth>25</spinwidth>
-								<spinheight>25</spinheight>
-								<font>size_20</font>
-								<align>left</align>
-								<aligny>center</aligny>
-								<reverse>yes</reverse>
-								<textoffsetx>44</textoffsetx>
-								<textoffsety>0</textoffsety>
-								<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-								<focusedcolor>windows_settings_category_right_label_focus</focusedcolor>
-								<disabledcolor>windows_settings_category_disabled_labels</disabledcolor>
-								<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-								<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+								<include>ButtonSkinSettingsCategoryRadioButtonValues_alt</include>
 						</control>
 						<control type="label" id="2">
 								<description>Fake Label so we can pass it value down to the one above</description>
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>0</width>
 								<height>0</height>
 								<font>-</font>

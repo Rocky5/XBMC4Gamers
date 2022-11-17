@@ -7,42 +7,48 @@
 						<include>ViewVisibleEffect</include>
 						<include file="Viewtype_GameSavesView.xml">GameSavesView</include>
 				</control>
+				<include>WindowHeader</include>
 				<control type="group">
-						<include>WindowHeader</include>
-						<include>WindowFooter</include>
-				</control>
-				<control type="group">
-						<posx>0</posx>
-						<posy>45</posy>
-						<animation effect="slide" reversible="true" start="-300,0" end="0,0" time="100">Visible</animation>
-						<animation effect="slide" reversible="true" start="0,0" end="-300,0" time="100">Hidden</animation>
-						<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus</visible>
+						<include>CommonOptionsMenuBack</include>
 						<control type="group" id="9000">
 								<control type="image">
 										<description>background image</description>
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>230</width>
+										<left>0</left>
+										<top>0</top>
+										<width>330</width>
 										<height>45</height>
 										<texture border="8">subback.png</texture>
 								</control>
 								<control type="button" id="3">
 										<description>Sort by button</description>
-										<posx>0</posx>
-										<posy>0</posy>
-										<width>230</width>
+										<left>0</left>
+										<top>45</top>
+										<width>270</width>
 										<include>ButtonCommonValues</include>
 										<label>103</label>
-										<onleft>50</onleft>
+										<onleft>9001</onleft>
 										<onright>4</onright>
-										<onup>50</onup>
-										<ondown>50</ondown>
+										<onup>2</onup>
+										<ondown>99</ondown>
+								</control>
+								<control type="image">
+										<description>NoFocus Background for Sort Direction Toggle</description>
+										<left>275</left>
+										<top>47</top>
+										<width>40</width>
+										<height>40</height>
+										<texture border="5">button-focus2.png</texture>
+										<visible>Control.HasFocus(4)</visible>
 								</control>
 								<control type="togglebutton" id="4">
 										<description>Sort asc</description>
-										<posx>200</posx>
-										<posy>13</posy>
+										<left>285</left>
+										<top>58</top>
 										<label>-</label>
+										<texturefocus>scroll-up.png</texturefocus>
+										<texturenofocus>scroll-up.png</texturenofocus>
+										<alttexturefocus>scroll-down.png</alttexturefocus>
+										<alttexturenofocus>scroll-down.png</alttexturenofocus>
 										<onleft>3</onleft>
 										<onright>50</onright>
 										<onup>50</onup>

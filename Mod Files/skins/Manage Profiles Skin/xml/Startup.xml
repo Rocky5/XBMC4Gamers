@@ -8,8 +8,8 @@
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">
-						<posx>523</posx>
-						<posy>243</posy>
+						<left>523</left>
+						<top>243</top>
 						<animation effect="fade" start="0" end="100" time="200" reversible="false">WindowOpen</animation>
 						<include>Startup_Window_Profile</include>
 				</control>

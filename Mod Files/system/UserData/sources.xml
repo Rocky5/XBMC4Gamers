@@ -12,14 +12,12 @@
 						<path pathversion="1">E:\Apps\</path>
 						<path pathversion="1">F:\Apps\</path>
 						<path pathversion="1">G:\Apps\</path>
-						<thumbnail pathversion="1">folder icons\applications.jpg</thumbnail>
 				</source>
 				<source>
 						<name>Demos</name>
 						<path pathversion="1">E:\Demos\</path>
 						<path pathversion="1">F:\Demos\</path>
 						<path pathversion="1">G:\Demos\</path>
-						<thumbnail pathversion="1">folder icons\demos.jpg</thumbnail>
 				</source>
 				<source>
 						<name>Emulators</name>
@@ -29,7 +27,6 @@
 						<path pathversion="1">E:\Emus\</path>
 						<path pathversion="1">F:\Emus\</path>
 						<path pathversion="1">G:\Emus\</path>
-						<thumbnail pathversion="1">folder icons\emulators.jpg</thumbnail>
 				</source>
 				<source>
 						<name>Homebrew</name>
@@ -39,14 +36,12 @@
 						<path pathversion="1">E:\Ports\</path>
 						<path pathversion="1">F:\Ports\</path>
 						<path pathversion="1">G:\Ports\</path>
-						<thumbnail pathversion="1">folder icons\homebrew.jpg</thumbnail>
 				</source>
 				<source>
 						<name>Games</name>
 						<path pathversion="1">E:\Games\</path>
 						<path pathversion="1">F:\Games\</path>
 						<path pathversion="1">G:\Games\</path>
-						<thumbnail pathversion="1">folder icons\games.jpg</thumbnail>
 				</source>
 		</programs>
 		<video>

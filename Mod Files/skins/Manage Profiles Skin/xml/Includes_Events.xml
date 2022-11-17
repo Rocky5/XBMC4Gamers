@@ -2,8 +2,8 @@
 		<include name="birthday">
 				<!-- Birthday -->
 				<control type="image">
-						<posx>120</posx>
-						<posy>30</posy>
+						<left>120</left>
+						<top>30</top>
 						<width>200</width>
 						<height>90</height>
 						<texture>windows\login\birthday\happy_birthday_banner.png</texture>
@@ -19,8 +19,8 @@
 						</animation>
 				</control>
 				<control type="image">
-						<posx>0</posx>
-						<posy>340</posy>
+						<left>0</left>
+						<top>340</top>
 						<width>295</width>
 						<height>436</height>
 						<texture>windows\login\birthday\balloons.png</texture>
@@ -32,8 +32,8 @@
 						</animation>
 				</control>
 				<control type="image">
-						<posx>985</posx>
-						<posy>340</posy>
+						<left>985</left>
+						<top>340</top>
 						<width>295</width>
 						<height>436</height>
 						<texture flipx="true">windows\login\birthday\balloons.png</texture>
@@ -48,8 +48,8 @@
 		<include name="easter">
 				<control type="group">
 						<control type="multiimage">
-								<posx>-512</posx>
-								<posy>470</posy>
+								<left>-512</left>
+								<top>470</top>
 								<width>256</width>
 								<height>256</height>
 								<visible>true</visible>
@@ -71,16 +71,16 @@
 		<include name="halloween">
 				<control type="group">
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>1280</width>
 								<height>720</height>
 								<texture background="false">windows\login\halloween\background.jpg</texture>
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 						</control>
 						<control type="multiimage">
-								<posx>50</posx>
-								<posy>80</posy>
+								<left>50</left>
+								<top>80</top>
 								<width>256</width>
 								<height>256</height>
 								<visible>true</visible>
@@ -100,11 +100,11 @@
 						<include>DialogEffectZoomFast</include>
 						<!-- dust_particles -->
 						<!-- Use this to space all the groups -->
-						<posx>-100</posx>
+						<left>-100</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -113,8 +113,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -123,8 +123,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -137,11 +137,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>200</posx>
+						<left>200</left>
 						<animation effect="rotate" start="10" end="60" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -150,8 +150,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -160,8 +160,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -174,11 +174,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>600</posx>
+						<left>600</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -187,8 +187,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -197,8 +197,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -211,11 +211,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>900</posx>
+						<left>900</left>
 						<animation effect="rotate" end="40" time="12000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -224,8 +224,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -234,8 +234,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -249,11 +249,11 @@
 						<include>DialogEffectZoomFast</include>
 						<!-- dust_particles -->
 						<!-- Use this to space all the groups -->
-						<posx>900</posx>
+						<left>900</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -262,8 +262,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -272,8 +272,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -286,11 +286,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>600</posx>
+						<left>600</left>
 						<animation effect="rotate" start="10" end="60" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -299,8 +299,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -309,8 +309,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -323,11 +323,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>-100</posx>
+						<left>-100</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -336,8 +336,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -346,8 +346,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -360,11 +360,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>200</posx>
+						<left>200</left>
 						<animation effect="rotate" end="40" time="12000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -373,8 +373,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -383,8 +383,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -398,11 +398,11 @@
 						<include>DialogEffectZoomFast</include>
 						<!-- dust_particles -->
 						<!-- Use this to space all the groups -->
-						<posx>600</posx>
+						<left>600</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -411,8 +411,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -421,8 +421,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -435,11 +435,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>900</posx>
+						<left>900</left>
 						<animation effect="rotate" start="10" end="60" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -448,8 +448,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -458,8 +458,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -472,11 +472,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>200</posx>
+						<left>200</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -485,8 +485,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -495,8 +495,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust2.png</texture>
@@ -509,11 +509,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>-100</posx>
+						<left>-100</left>
 						<animation effect="rotate" end="40" time="12000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -522,8 +522,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\dust\dust3.png</texture>
@@ -532,8 +532,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\dust\dust.png</texture>
@@ -549,11 +549,11 @@
 						<include>DialogEffectZoomFast</include>
 						<!-- snow -->
 						<!-- Use this to space all the groups -->
-						<posx>-100</posx>
+						<left>-100</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -562,8 +562,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -572,8 +572,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -586,11 +586,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>200</posx>
+						<left>200</left>
 						<animation effect="rotate" start="10" end="60" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -599,8 +599,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -609,8 +609,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -623,11 +623,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>600</posx>
+						<left>600</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -636,8 +636,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -646,8 +646,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -660,11 +660,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>900</posx>
+						<left>900</left>
 						<animation effect="rotate" end="40" time="12000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -673,8 +673,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -683,8 +683,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -698,11 +698,11 @@
 						<include>DialogEffectZoomFast</include>
 						<!-- snow -->
 						<!-- Use this to space all the groups -->
-						<posx>900</posx>
+						<left>900</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -711,8 +711,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -721,8 +721,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -735,11 +735,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>600</posx>
+						<left>600</left>
 						<animation effect="rotate" start="10" end="60" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -748,8 +748,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -758,8 +758,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -772,11 +772,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>-100</posx>
+						<left>-100</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -785,8 +785,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -795,8 +795,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -809,11 +809,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>200</posx>
+						<left>200</left>
 						<animation effect="rotate" end="40" time="12000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -822,8 +822,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -832,8 +832,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -847,11 +847,11 @@
 						<include>DialogEffectZoomFast</include>
 						<!-- snow -->
 						<!-- Use this to space all the groups -->
-						<posx>600</posx>
+						<left>600</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -860,8 +860,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -870,8 +870,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -884,11 +884,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>900</posx>
+						<left>900</left>
 						<animation effect="rotate" start="10" end="60" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -897,8 +897,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -907,8 +907,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -921,11 +921,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>200</posx>
+						<left>200</left>
 						<animation effect="rotate" end="20" time="9000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -934,8 +934,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -944,8 +944,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow2.png</texture>
@@ -958,11 +958,11 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<!-- Use this to space all the groups -->
-						<posx>-100</posx>
+						<left>-100</left>
 						<animation effect="rotate" end="40" time="12000" delay="300" pulse="true" condition="true">Conditional</animation>
 						<control type="image">
-								<posx>100</posx>
-								<posy>-100</posy>
+								<left>100</left>
+								<top>-100</top>
 								<width>20</width>
 								<height>20</height>
 								<texture background="true">windows\login\snow\snow.png</texture>
@@ -971,8 +971,8 @@
 								<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>260</posx>
-								<posy>-80</posy>
+								<left>260</left>
+								<top>-80</top>
 								<width>15</width>
 								<height>15</height>
 								<texture background="true">windows\login\snow\snow3.png</texture>
@@ -981,8 +981,8 @@
 								<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" pulse="true" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>390</posx>
-								<posy>-110</posy>
+								<left>390</left>
+								<top>-110</top>
 								<width>10</width>
 								<height>10</height>
 								<texture background="true">windows\login\snow\snow.png</texture>

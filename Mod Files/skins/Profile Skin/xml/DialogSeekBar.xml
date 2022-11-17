@@ -3,23 +3,23 @@
 		<visible>Player.Seeking | Player.DisplayAfterSeek | Player.Forwarding | Player.Rewinding</visible>
 		<coordinates>
 				<system>1</system>
-				<posx>0</posx>
-				<posy>0</posy>
+				<left>0</left>
+				<top>0</top>
 		</coordinates>
 		<controls>
 				<!-- Player Controls are visible -->
 				<control type="group">
 						<animation effect="slide" start="0,0" end="0,87" delay="0" time="250" tween="Quadratic" easing="out" condition="Skin.HasSetting(newplayer_large_artwork)">Conditional</animation>
 						<control type="group">
-								<posx>452</posx>
-								<posy>119</posy>
+								<left>452</left>
+								<top>119</top>
 								<control type="slider" id="401">
 										<description>Seek Slider</description>
-										<posx>1</posx>
-										<posy>-2</posy>
+										<left>1</left>
+										<top>-2</top>
 										<width>373</width>
 										<height>10</height>
-										<colordiffuse>FFFFFFFF</colordiffuse>
+										<colordiffuse>115_diffuse</colordiffuse>
 										<texturesliderbar>seekslider.png</texturesliderbar>
 										<textureslidernib>slider_nibFO.png</textureslidernib>
 										<textureslidernibfocus>slider_nibFO.png</textureslidernibfocus>
@@ -28,22 +28,22 @@
 						</control>
 				</control>
 				<control type="group">
-						<posx>452</posx>
-						<posy>0</posy>
+						<left>452</left>
+						<top>0</top>
 						<animation effect="slide" start="0,-301" end="0,0" delay="10" time="250" tween="Quadratic" easing="out">WindowOpen</animation>
 						<animation effect="slide" start="0,0" end="0,-115" delay="170" time="250" tween="Quadratic" easing="out">WindowClose</animation>
 						<visible>!Window.IsActive(114)</visible>
 						<control type="group">
 								<control type="image">
-										<posx>0</posx>
-										<posy>-75</posy>
+										<left>0</left>
+										<top>-75</top>
 										<width>375</width>
 										<height>119</height>
 										<texture>new player/upper_overlay.png</texture>
 								</control>
 								<control type="image">
-										<posx>327</posx>
-										<posy>7</posy>
+										<left>327</left>
+										<top>7</top>
 										<width>36</width>
 										<height>36</height>
 										<aspectratio>stretch</aspectratio>
@@ -51,59 +51,59 @@
 								</control>
 								<control type="label">
 										<description>Seeking Label</description>
-										<posx>0</posx>
-										<posy>-15</posy>
+										<left>0</left>
+										<top>-15</top>
 										<width>375</width>
 										<height>50</height>
 										<align>center</align>
 										<aligny>center</aligny>
-										<textcolor>grey</textcolor>
+										<textcolor>115_label</textcolor>
 										<font>size_14</font>
 										<label>[UPPERCASE]$LOCALIZE[773][/UPPERCASE]</label>
 								</control>
 								<!-- progressbar dialog -->
 								<control type="label" id="22">
 										<description>Elapsed Time Label</description>
-										<posx>10</posx>
-										<posy>7</posy>
+										<left>10</left>
+										<top>7</top>
 										<width>110</width>
 										<height>20</height>
 										<font>size_15</font>
 										<align>left</align>
 										<aligny>center</aligny>
-										<textcolor>grey</textcolor>
+										<textcolor>115_label</textcolor>
 										<info>Player.Time</info>
 										<visible>!Player.Seeking</visible>
 								</control>
 								<control type="label" id="22">
 										<description>Seek Time Label</description>
-										<posx>10</posx>
-										<posy>7</posy>
+										<left>10</left>
+										<top>7</top>
 										<width>110</width>
 										<height>20</height>
 										<font>size_15</font>
 										<align>left</align>
 										<aligny>center</aligny>
-										<textcolor>grey</textcolor>
+										<textcolor>115_label</textcolor>
 										<info>Player.SeekTime</info>
 										<visible>Player.Seeking</visible>
 								</control>
 								<control type="label" id="0">
 										<description>Duration Label</description>
-										<posx>365</posx>
-										<posy>7</posy>
+										<left>365</left>
+										<top>7</top>
 										<width>130</width>
 										<height>20</height>
 										<label>$INFO[Player.Duration]</label>
 										<font>size_15</font>
 										<align>right</align>
-										<textcolor>grey</textcolor>
+										<textcolor>115_label</textcolor>
 										<aligny>center</aligny>
 								</control>
 								<control type="progress" id="23">
 										<description>Progressbar</description>
-										<posx>10</posx>
-										<posy>25</posy>
+										<left>10</left>
+										<top>25</top>
 										<width>310</width>
 										<height>8</height>
 										<info>Player.Progress</info>
@@ -115,8 +115,8 @@
 								</control>
 								<control type="slider" id="401">
 										<description>Seek Slider</description>
-										<posx>10</posx>
-										<posy>25</posy>
+										<left>10</left>
+										<top>25</top>
 										<width>310</width>
 										<height>12</height>
 										<texturesliderbar>seekslider.png</texturesliderbar>

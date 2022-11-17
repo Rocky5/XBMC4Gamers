@@ -3,15 +3,15 @@
 		<controls>
 				<include>CommonBackground</include>
 				<control type="group">
-						<posx>523</posx>
-						<posy>243</posy>
+						<left>523</left>
+						<top>243</top>
 						<include>Window_OpenClose_Animation</include>
 						<include>Startup_Window_Profile</include>
 				</control>
 				<include>Startup_Window_Info</include>
 				<control type="button" id="1">
-						<posx>-500</posx>
-						<posy>0</posy>
+						<left>-500</left>
+						<top>0</top>
 						<width>0</width>
 						<height>0</height>
 						<label>-</label>

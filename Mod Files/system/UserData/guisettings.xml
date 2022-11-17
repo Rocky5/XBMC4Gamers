@@ -26,6 +26,13 @@
 				<httpapibroadcastport>8278</httpapibroadcastport>
 				<httpapibroadcastlevel>0</httpapibroadcastlevel>
 		</general>
+		<viewstates>
+			<programs>
+				<viewmode>65586</viewmode>
+				<sortmethod>2</sortmethod>
+				<sortorder>1</sortorder>
+			</programs>
+		</viewstates>
 		<defaultvideosettings>
 				<interlacemethod>0</interlacemethod>
 				<filmgrain>0.000000</filmgrain>

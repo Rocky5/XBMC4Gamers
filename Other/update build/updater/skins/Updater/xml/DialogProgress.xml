@@ -3,16 +3,16 @@
 	<controls>
 		<control type="image">
 			<description>background image</description>
-			<posx>0</posx>
-			<posy>0</posy>
+			<left>0</left>
+			<top>0</top>
 			<width>1280</width>
 			<height>720</height>
 			<texture>background.jpg</texture>
 		</control>
 		<control type="progress">
 			<description>Progressbar</description>
-			<posx>133</posx>
-			<posy>538</posy>
+			<left>133</left>
+			<top>538</top>
 			<width>1014</width>
 			<height>16</height>
 			<info>System.Progressbar</info>
@@ -26,24 +26,24 @@
 		<!-- Not complete images -->
 		<control type="image">
 			<description>not complete image</description>
-			<posx>133</posx>
-			<posy>273</posy>
+			<left>133</left>
+			<top>273</top>
 			<width>44</width>
 			<height>44</height>
 			<texture>complete.png</texture>
 		</control>
 		<control type="image">
 			<description>not complete image</description>
-			<posx>133</posx>
-			<posy>334</posy>
+			<left>133</left>
+			<top>334</top>
 			<width>44</width>
 			<height>44</height>
 			<texture>notcomplete.png</texture>
 		</control>
 		<control type="image">
 			<description>complete image</description>
-			<posx>133</posx>
-			<posy>334</posy>
+			<left>133</left>
+			<top>334</top>
 			<width>44</width>
 			<height>44</height>
 			<texture>complete.png</texture>
@@ -51,8 +51,8 @@
 		</control>
 		<control type="label">
 			<description>label</description>
-			<posx>133</posx>
-			<posy>518</posy>
+			<left>133</left>
+			<top>518</top>
 			<width>650</width>
 			<height>30</height>
 			<align>left</align>
@@ -62,8 +62,8 @@
 		<!-- Progress labels -->
 		<control type="label">
 			<description>progress label</description>
-			<posx>133</posx>
-			<posy>333</posy>
+			<left>133</left>
+			<top>333</top>
 			<width>44</width>
 			<height>44</height>
 			<align>center</align>
@@ -76,8 +76,8 @@
 		<!-- bottom right -->
 		<control type="label">
 			<description>progress label</description>
-			<posx>133r</posx>
-			<posy>518</posy>
+			<left>133r</left>
+			<top>518</top>
 			<width>150</width>
 			<height>30</height>
 			<align>right</align>
@@ -87,16 +87,16 @@
 		<!-- Main labels -->
 		<control type="label" id="1">
 			<description>heading label</description>
-			<posx>133</posx>
-			<posy>175</posy>
+			<left>133</left>
+			<top>175</top>
 			<width>0</width>
 			<height>0</height>
 			<font>font50</font>
 		</control>
 		<control type="label" id="2">
 			<description>dialog line 2</description>
-			<posx>186</posx>
-			<posy>283</posy>
+			<left>186</left>
+			<top>283</top>
 			<width>620</width>
 			<height>30</height>
 			<align>left</align>
@@ -106,8 +106,8 @@
 		</control>
 		<control type="label" id="3">
 			<description>dialog line 3</description>
-			<posx>186</posx>
-			<posy>344</posy>
+			<left>186</left>
+			<top>344</top>
 			<width>620</width>
 			<height>30</height>
 			<align>left</align>
@@ -117,8 +117,8 @@
 		</control>
 		<control type="label" id="4">
 			<description>dialog line 4</description>
-			<posx>186</posx>
-			<posy>404</posy>
+			<left>186</left>
+			<top>404</top>
 			<width>620</width>
 			<height>30</height>
 			<align>left</align>

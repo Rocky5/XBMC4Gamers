@@ -2,43 +2,43 @@
 		<defaultcontrol>5</defaultcontrol>
 		<coordinates>
 				<system>1</system>
-				<posx>290</posx>
-				<posy>75</posy>
+				<left>290</left>
+				<top>75</top>
 		</coordinates>
 		<include>dialogeffect</include>
 		<controls>
 				<control type="image">
 						<description>background image</description>
-						<posx>0</posx>
-						<posy>0</posy>
+						<left>0</left>
+						<top>0</top>
 						<width>700</width>
 						<height>570</height>
 						<texture border="40">dialogback.png</texture>
 				</control>
 				<control type="image">
 						<description>Heading Background</description>
-						<posx>30</posx>
-						<posy>35</posy>
+						<left>30</left>
+						<top>35</top>
 						<width>640</width>
 						<height>40</height>
 						<texture border="5">thumbfo.png</texture>
 				</control>
 				<control type="label">
 						<description>heading label</description>
-						<posx>40</posx>
-						<posy>35</posy>
+						<left>40</left>
+						<top>35</top>
 						<width>620</width>
 						<height>40</height>
 						<align>center</align>
 						<aligny>center</aligny>
 						<font>size_21_bold</font>
 						<label>$LOCALIZE[20043]</label>
-						<textcolor>black</textcolor>
+						<textcolor>131_header_label</textcolor>
 				</control>
 				<control type="grouplist" id="5">
 						<description>control area</description>
-						<posx>40</posx>
-						<posy>85</posy>
+						<left>40</left>
+						<top>85</top>
 						<width>620</width>
 						<height>340</height>
 						<itemgap>5</itemgap>
@@ -50,22 +50,22 @@
 				</control>
 				<control type="button" id="7">
 						<description>Default Button</description>
-						<posx>0</posx>
-						<posy>0</posy>
+						<left>0</left>
+						<top>0</top>
 						<height>35</height>
 						<font>size_20</font>
-						<textcolor>white</textcolor>
+						<textcolor>131_button_label</textcolor>
 						<textoffsetx>7</textoffsetx>
 						<texturefocus border="5">button-focus2.png</texturefocus>
 						<texturenofocus border="5">button-nofocus.png</texturenofocus>
 				</control>
 				<control type="radiobutton" id="8">
 						<description>Default RadioButton</description>
-						<posx>0</posx>
-						<posy>0</posy>
+						<left>0</left>
+						<top>0</top>
 						<height>35</height>
 						<font>size_20</font>
-						<textcolor>white</textcolor>
+						<textcolor>131_button_label</textcolor>
 						<texturefocus border="5">button-focus2.png</texturefocus>
 						<texturenofocus border="5">button-nofocus.png</texturenofocus>
 						<textoffsetx>7</textoffsetx>
@@ -74,8 +74,8 @@
 				</control>
 				<control type="spincontrolex" id="9">
 						<description>Default SpinControlex</description>
-						<posx>0</posx>
-						<posy>0</posy>
+						<left>0</left>
+						<top>0</top>
 						<height>35</height>
 						<texturefocus border="5">button-focus2.png</texturefocus>
 						<texturenofocus border="5">button-nofocus.png</texturenofocus>
@@ -84,7 +84,7 @@
 						<textureupfocus>scroll-up-focus.png</textureupfocus>
 						<texturedownfocus>scroll-down-focus.png</texturedownfocus>
 						<font>size_20</font>
-						<textcolor>white</textcolor>
+						<textcolor>131_button_label</textcolor>
 						<disabledcolor>disabled</disabledcolor>
 						<textoffsetx>7</textoffsetx>
 						<aligny>center</aligny>
@@ -98,12 +98,14 @@
 				</control>
 				<control type="button" id="28">
 						<description>Ok Button</description>
-						<posx>147</posx>
-						<posy>485</posy>
+						<left>147</left>
+						<top>485</top>
 						<width>200</width>
 						<height>35</height>
 						<align>center</align>
 						<aligny>center</aligny>
+						<textcolor>131_button_label</textcolor>
+						<focusedcolor>131_button_focus</focusedcolor>
 						<texturefocus border="3">button-focus2.png</texturefocus>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						<label>186</label>
@@ -114,12 +116,14 @@
 				</control>
 				<control type="button" id="29">
 						<description>Cancel Button</description>
-						<posx>352</posx>
-						<posy>485</posy>
+						<left>352</left>
+						<top>485</top>
 						<width>200</width>
 						<height>35</height>
 						<align>center</align>
 						<aligny>center</aligny>
+						<textcolor>131_button_label</textcolor>
+						<focusedcolor>131_button_focus</focusedcolor>
 						<texturefocus border="3">button-focus2.png</texturefocus>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						<label>222</label>

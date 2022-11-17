@@ -1,51 +1,52 @@
 <window type="dialog" id="114">
 		<defaultcontrol always="true">9001</defaultcontrol>
+		<onload condition="!Player.Playing">XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Random Select.py)</onload>
 		<controls>
 				<include>BehindDialogFadeOut</include>
 				<control type="button" id="9001">
-						<posx>-500</posx>
+						<left>-500</left>
 						<onfocus>dialog.close(114,true)</onfocus>
 						<visible>!Player.HasMedia</visible>
 				</control>
 				<control type="button" id="9001">
-						<posx>-500</posx>
+						<left>-500</left>
 						<onfocus>SetFocus(603)</onfocus>
 						<visible>Player.HasMedia</visible>
 				</control>
 				<control type="group">
-						<posx>452</posx>
-						<posy>0</posy>
+						<left>452</left>
+						<top>0</top>
 						<visible>Player.HasAudio</visible>
 						<animation effect="slide" start="0,-301" end="0,0" delay="10" time="250" tween="Quadratic" easing="out">WindowOpen</animation>
 						<animation effect="slide" start="0,0" end="0,-115" delay="170" time="250" tween="Quadratic" easing="out">WindowClose</animation>
 						<!-- Bottom Overlay Information -->
 						<control type="group">
-								<posx>0</posx>
-								<posy>119</posy>
+								<left>0</left>
+								<top>119</top>
 								<animation effect="slide" start="0,0" end="0,87" delay="0" time="250" tween="Quadratic" easing="out" condition="Skin.HasSetting(newplayer_large_artwork)">Conditional</animation>
 								<animation effect="slide" start="0,-119" end="0,0" delay="260" time="900" tween="Bounce" easing="out" condition="!Skin.HasSetting(newplayer_large_artwork)">WindowOpen</animation>
 								<animation effect="slide" start="0,0" end="0,-98" delay="70" time="240" tween="Quadratic" easing="out" condition="!Skin.HasSetting(newplayer_large_artwork)">WindowClose</animation>
 								<animation effect="slide" start="0,-155" end="0,0" delay="260" time="900" tween="Bounce" easing="out" condition="Skin.HasSetting(newplayer_large_artwork)">WindowOpen</animation>
 								<animation effect="slide" start="0,0" end="0,-155" delay="0" time="200" tween="Quadratic" easing="out" condition="Skin.HasSetting(newplayer_large_artwork)">WindowClose</animation>
 								<control type="image">
-										<posx>0</posx>
-										<posy>-92</posy>
+										<left>0</left>
+										<top>-92</top>
 										<width>375</width>
 										<height>150</height>
 										<aspectratio>stretch</aspectratio>
 										<texture diffuse="new player/player_lower_underlay_diffuse.png">new player/player_lower_underlay.png</texture>
 								</control>
 								<control type="image">
-										<posx>0</posx>
-										<posy>-92</posy>
+										<left>0</left>
+										<top>-92</top>
 										<width>375</width>
 										<height>150</height>
 										<aspectratio scalediffuse="false" aligny="middle">scale</aspectratio>
 										<texture diffuse="new player/player_lower_underlay_diffuse.png">$INFO[musicplayer.cover]</texture>
 								</control>
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>375</width>
 										<height>58</height>
 										<texture>new player/player_lower_underlay.png</texture>
@@ -53,8 +54,8 @@
 								</control>
 								<control type="progress">
 										<description>Progressbar Current Playing</description>
-										<posx>1</posx>
-										<posy>-2</posy>
+										<left>1</left>
+										<top>-2</top>
 										<width>373</width>
 										<height>5</height>
 										<info>Player.Progress</info>
@@ -65,71 +66,71 @@
 										<overlaytexture>-</overlaytexture>
 								</control>
 								<control type="label">
-										<posx>356</posx>
-										<posy>11</posy>
+										<left>356</left>
+										<top>11</top>
 										<width>40</width>
 										<height>40</height>
 										<font>size_11</font>
 										<align>right</align>
-										<textcolor>whitealt</textcolor>
+										<textcolor>114_label</textcolor>
 										<label>[B]$INFO[Player.Duration(mm:ss)][/B]</label>
 								</control>
 								<!-- Labels -->
 								<control type="fadelabel">
-										<posx>15</posx>
-										<posy>9</posy>
+										<left>15</left>
+										<top>9</top>
 										<width>300</width>
 										<height>14</height>
 										<font>size_14</font>
 										<align>left</align>
-										<textcolor>whitealt</textcolor>
+										<textcolor>114_label</textcolor>
 										<label>[B]$INFO[MusicPlayer.Album][/B]</label>
 								</control>
 								<control type="fadelabel">
-										<posx>15</posx>
-										<posy>30</posy>
+										<left>15</left>
+										<top>30</top>
 										<width>340</width>
 										<height>14</height>
 										<font>size_14</font>
 										<align>left</align>
-										<textcolor>whitealt</textcolor>
+										<textcolor>114_label</textcolor>
 										<label>$INFO[MusicPlayer.Title]</label>
 								</control>
 						</control>
 						<!-- Upper Overlay -->
 						<control type="image">
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>375</width>
 								<height>119</height>
 								<texture>new player/upper_overlay.png</texture>
 						</control>
 						<control type="image">
-								<posx>56</posx>
-								<posy>9</posy>
+								<left>56</left>
+								<top>9</top>
 								<width>2</width>
 								<height>96</height>
 								<texture>new player/player_sepirator.png</texture>
 						</control>
 						<control type="image">
-								<posx>316</posx>
-								<posy>9</posy>
+								<left>316</left>
+								<top>9</top>
 								<width>2</width>
 								<height>96</height>
 								<texture>new player/player_sepirator.png</texture>
 						</control>
 						<!-- Buttons -->
 						<control type="image">
-								<posx>88</posx>
-								<posy>15</posy>
+								<left>88</left>
+								<top>15</top>
 								<width>196</width>
 								<height>85</height>
 								<texture>new player/player_underlay.png</texture>
 						</control>
 						<!-- Volume Button -->
 						<control type="button" id="601">
-								<posx>95</posx>
-								<posy>35</posy>
+								<left>95</left>
+								<top>35</top>
 								<width>48</width>
 								<height>48</height>
 								<label>-</label>
@@ -143,8 +144,8 @@
 						</control>
 						<control type="progress" id="29999">
 								<description>Hidden Progressbar Volume</description>
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>0</width>
 								<height>0</height>
 								<info>Player.Volume</info>
@@ -155,21 +156,21 @@
 								<overlaytexture>-</overlaytexture>
 						</control>
 						<control type="label">
-								<posx>-8</posx>
-								<posy>48</posy>
-								<posy>48</posy>
+								<left>-8</left>
+								<top>48</top>
+								<top>48</top>
 								<width>40</width>
 								<height>20</height>
 								<font>size_11</font>
 								<align>center</align>
-								<textcolor>grey2</textcolor>
+								<textcolor>114_label_alt</textcolor>
 								<label>[B]$INFO[Control.GetLabel(29999),,%][/B]</label>
 								<visible>Control.HasFocus(601)</visible>
 								<animation effect="rotate" end="-90" center="auto" time="0" condition="true">Conditional</animation>
 						</control>
 						<control type="image">
-								<posx>5</posx>
-								<posy>27</posy>
+								<left>5</left>
+								<top>27</top>
 								<width>17</width>
 								<height>17</height>
 								<texture>new player/arrow.png</texture>
@@ -180,8 +181,8 @@
 								</animation>
 						</control>
 						<control type="image">
-								<posx>5</posx>
-								<posy>72</posy>
+								<left>5</left>
+								<top>72</top>
 								<width>17</width>
 								<height>17</height>
 								<texture flipy="true">new player/arrow.png</texture>
@@ -192,16 +193,16 @@
 								</animation>
 						</control>
 						<control type="image">
-								<posx>26</posx>
-								<posy>10</posy>
+								<left>26</left>
+								<top>10</top>
 								<width>9</width>
 								<height>99</height>
 								<texture>new player/progress_volume_underlay.png</texture>
 						</control>
 						<control type="progress">
 								<description>Progressbar</description>
-								<posx>-16</posx>
-								<posy>58</posy>
+								<left>-16</left>
+								<top>58</top>
 								<width>92</width>
 								<height>3</height>
 								<info>Player.Volume</info>
@@ -215,8 +216,8 @@
 						</control>
 						<!-- Previous Button -->
 						<control type="button" id="602">
-								<posx>95</posx>
-								<posy>35</posy>
+								<left>95</left>
+								<top>35</top>
 								<width>48</width>
 								<height>48</height>
 								<label>-</label>
@@ -230,8 +231,8 @@
 						</control>
 						<!-- Play Button -->
 						<control type="button" id="603">
-								<posx>148</posx>
-								<posy>21</posy>
+								<left>148</left>
+								<top>21</top>
 								<width>76</width>
 								<height>76</height>
 								<label>-</label>
@@ -244,32 +245,32 @@
 								<ondown>613</ondown>
 						</control>
 						<control type="image">
-								<posx>148</posx>
-								<posy>21</posy>
+								<left>148</left>
+								<top>21</top>
 								<width>76</width>
 								<height>76</height>
 								<texture>new player/pause_fo.png</texture>
 								<visible>Control.HasFocus(603) + !Control.HasFocus(613) + !Player.Paused</visible>
 						</control>
 						<control type="image">
-								<posx>148</posx>
-								<posy>21</posy>
+								<left>148</left>
+								<top>21</top>
 								<width>76</width>
 								<height>76</height>
 								<texture>new player/pause_nfo.png</texture>
 								<visible>!Control.HasFocus(603) + !Control.HasFocus(613) + !Player.Paused</visible>
 						</control>
 						<control type="image">
-								<posx>148</posx>
-								<posy>21</posy>
+								<left>148</left>
+								<top>21</top>
 								<width>76</width>
 								<height>76</height>
 								<texture>new player/play_fo.png</texture>
 								<visible>Control.HasFocus(603) + !Control.HasFocus(613) + Player.Paused</visible>
 						</control>
 						<control type="image">
-								<posx>148</posx>
-								<posy>21</posy>
+								<left>148</left>
+								<top>21</top>
 								<width>76</width>
 								<height>76</height>
 								<texture>new player/play_nfo.png</texture>
@@ -277,8 +278,8 @@
 						</control>
 						<!-- Next Button -->
 						<control type="button" id="604">
-								<posx>229</posx>
-								<posy>35</posy>
+								<left>229</left>
+								<top>35</top>
 								<width>48</width>
 								<height>48</height>
 								<label>-</label>
@@ -293,8 +294,8 @@
 						<control type="group" id="9002">
 								<!-- Visualisation Button -->
 								<control type="button" id="605">
-										<posx>334</posx>
-										<posy>30</posy>
+										<left>334</left>
+										<top>30</top>
 										<width>22</width>
 										<height>22</height>
 										<label>-</label>
@@ -309,8 +310,8 @@
 								</control>
 								<!-- Shuffle Button -->
 								<control type="button" id="605">
-										<posx>332</posx>
-										<posy>30</posy>
+										<left>332</left>
+										<top>30</top>
 										<width>28</width>
 										<height>22</height>
 										<label>-</label>
@@ -324,16 +325,16 @@
 										<visible>!Window.IsActive(2006)</visible>
 								</control>
 								<control type="image">
-										<posx>332</posx>
-										<posy>30</posy>
+										<left>332</left>
+										<top>30</top>
 										<width>28</width>
 										<height>22</height>
 										<texture>new player/shuffle_off.png</texture>
 										<visible>!Playlist.IsRandom + !Control.HasFocus(605) + !Window.IsActive(2006)</visible>
 								</control>
 								<control type="image">
-										<posx>332</posx>
-										<posy>30</posy>
+										<left>332</left>
+										<top>30</top>
 										<width>28</width>
 										<height>22</height>
 										<texture>new player/shuffle_on.png</texture>
@@ -341,8 +342,8 @@
 								</control>
 								<!-- Repeat Button -->
 								<control type="button" id="606">
-										<posx>332</posx>
-										<posy>62</posy>
+										<left>332</left>
+										<top>62</top>
 										<width>28</width>
 										<height>22</height>
 										<label>-</label>
@@ -355,48 +356,48 @@
 										<onright>-</onright>
 								</control>
 								<control type="image">
-										<posx>332</posx>
-										<posy>62</posy>
+										<left>332</left>
+										<top>62</top>
 										<width>28</width>
 										<height>22</height>
 										<texture>new player/repeat_track.png</texture>
 										<visible>Playlist.IsRepeatOne + !Control.HasFocus(606)</visible>
 								</control>
 								<control type="image">
-										<posx>332</posx>
-										<posy>62</posy>
+										<left>332</left>
+										<top>62</top>
 										<width>28</width>
 										<height>22</height>
 										<texture>new player/repeat_track_fo.png</texture>
 										<visible>Playlist.IsRepeatOne + Control.HasFocus(606)</visible>
 								</control>
 								<control type="image">
-										<posx>332</posx>
-										<posy>62</posy>
+										<left>332</left>
+										<top>62</top>
 										<width>28</width>
 										<height>22</height>
 										<texture>new player/repeat_all.png</texture>
 										<visible>Playlist.IsRepeat + !Playlist.IsRepeatOne + !Control.HasFocus(606)</visible>
 								</control>
 								<control type="image">
-										<posx>332</posx>
-										<posy>62</posy>
+										<left>332</left>
+										<top>62</top>
 										<width>28</width>
 										<height>22</height>
 										<texture>new player/repeat_all_fo.png</texture>
 										<visible>Playlist.IsRepeat + !Playlist.IsRepeatOne + Control.HasFocus(606)</visible>
 								</control>
 								<control type="image">
-										<posx>332</posx>
-										<posy>62</posy>
+										<left>332</left>
+										<top>62</top>
 										<width>28</width>
 										<height>22</height>
 										<texture>new player/repeat_off_fo.png</texture>
 										<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne + Control.HasFocus(606)</visible>
 								</control>
 								<control type="image">
-										<posx>332</posx>
-										<posy>62</posy>
+										<left>332</left>
+										<top>62</top>
 										<width>28</width>
 										<height>22</height>
 										<texture>new player/repeat_off.png</texture>
@@ -404,8 +405,8 @@
 								</control>
 								<!-- Toggle Artwork Size -->
 								<control type="button" id="607">
-										<posx>333</posx>
-										<posy>99</posy>
+										<left>333</left>
+										<top>99</top>
 										<width>24</width>
 										<height>15</height>
 										<label>-</label>
@@ -420,8 +421,8 @@
 						</control>
 						<!-- Stop Button -->
 						<control type="button" id="613">
-								<posx>148</posx>
-								<posy>21</posy>
+								<left>148</left>
+								<top>21</top>
 								<width>76</width>
 								<height>76</height>
 								<label>-</label>
@@ -436,16 +437,16 @@
 								<visible />
 						</control>
 						<control type="image">
-								<posx>148</posx>
-								<posy>21</posy>
+								<left>148</left>
+								<top>21</top>
 								<width>76</width>
 								<height>76</height>
 								<texture>new player/stop_fo.png</texture>
 								<visible>Control.HasFocus(613)</visible>
 						</control>
 						<control type="image">
-								<posx>139</posx>
-								<posy>10</posy>
+								<left>139</left>
+								<top>10</top>
 								<width>94</width>
 								<height>95</height>
 								<texture flipy="false">new player/play_indicator.png</texture>
@@ -456,8 +457,8 @@
 								</animation>
 						</control>
 						<control type="image">
-								<posx>139</posx>
-								<posy>10</posy>
+								<left>139</left>
+								<top>10</top>
 								<width>94</width>
 								<height>95</height>
 								<texture flipy="true">new player/play_indicator.png</texture>
@@ -474,27 +475,27 @@
 						<animation effect="slide" start="0,90" end="0,-30" delay="0" time="250">WindowOpen</animation>
 						<animation effect="slide" start="0,-30" end="0,90" delay="0" time="100">WindowClose</animation>
 						<control type="button" id="9002">
-								<posx>-500</posx>
+								<left>-500</left>
 								<onfocus>dialog.close(114,true)</onfocus>
 								<visible>!Player.HasMedia</visible>
 						</control>
 						<control type="image">
-								<posx>900</posx>
-								<posy>650</posy>
+								<left>900</left>
+								<top>650</top>
 								<width>380</width>
 								<height>70</height>
 								<texture border="20,20,20,20">thumbfo.png</texture>
 						</control>
 						<control type="image">
-								<posx>900</posx>
-								<posy>720</posy>
+								<left>900</left>
+								<top>720</top>
 								<width>380</width>
 								<height>30</height>
 								<texture border="20,20,20,20">thumbnofo.png</texture>
 						</control>
 						<control type="image">
-								<posx>900</posx>
-								<posy>650</posy>
+								<left>900</left>
+								<top>650</top>
 								<width>70</width>
 								<height>70</height>
 								<aspectratio>scale</aspectratio>
@@ -505,8 +506,8 @@
 						<!-- Progress Bar -->
 						<control type="progress">
 								<description>Progressbar</description>
-								<posx>970</posx>
-								<posy>650</posy>
+								<left>970</left>
+								<top>650</top>
 								<width>310</width>
 								<height>70</height>
 								<info>Player.Progress</info>
@@ -517,54 +518,54 @@
 								<overlaytexture>-</overlaytexture>
 						</control>
 						<control type="label">
-								<posx>1275</posx>
-								<posy>700</posy>
+								<left>1275</left>
+								<top>700</top>
 								<width>80</width>
 								<height>40</height>
 								<font>size_14</font>
 								<align>right</align>
-								<textcolor>black</textcolor>
+								<textcolor>114_label_alt</textcolor>
 								<label>$INFO[Player.Duration(hh:mm:ss)]</label>
 						</control>
 						<control type="label">
-								<posx>975</posx>
-								<posy>700</posy>
+								<left>975</left>
+								<top>700</top>
 								<width>80</width>
 								<height>40</height>
 								<font>size_14</font>
 								<align>left</align>
-								<textcolor>black</textcolor>
+								<textcolor>114_label_alt</textcolor>
 								<label>$INFO[Player.Time(hh:mm:ss)]</label>
 						</control>
 						<!-- Labels -->
 						<control type="fadelabel">
-								<posx>975</posx>
-								<posy>650</posy>
+								<left>975</left>
+								<top>650</top>
 								<width>300</width>
 								<height>40</height>
 								<font>size_22</font>
 								<align>left</align>
-								<textcolor>black</textcolor>
+								<textcolor>114_label_alt</textcolor>
 								<label>$INFO[MusicPlayer.Album]</label>
 						</control>
 						<control type="fadelabel">
-								<posx>975</posx>
-								<posy>680</posy>
+								<left>975</left>
+								<top>680</top>
 								<width>300</width>
 								<height>40</height>
 								<font>size_14</font>
 								<align>left</align>
-								<textcolor>black</textcolor>
+								<textcolor>114_label_alt</textcolor>
 								<label>$INFO[MusicPlayer.Title]</label>
 								<animation effect="fade" start="0" end="80" time="0" condition="true">Conditional</animation>
 						</control>
 						<!-- Buttons -->
 						<control type="group" id="9002">
-								<posx>1010</posx>
-								<posy>723</posy>
+								<left>1010</left>
+								<top>723</top>
 								<control type="button" id="600">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>48</width>
 										<height>24</height>
 										<label>-</label>
@@ -577,10 +578,10 @@
 										<ondown>-</ondown>
 								</control>
 								<control type="group">
-										<posx>53</posx>
+										<left>53</left>
 										<control type="button" id="603">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>24</width>
 												<height>24</height>
 												<label>-</label>
@@ -593,32 +594,32 @@
 												<ondown>-</ondown>
 										</control>
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>24</width>
 												<height>24</height>
 												<texture>playercontrols-pausefo.png</texture>
 												<visible>Control.HasFocus(603) + !Player.Paused</visible>
 										</control>
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>24</width>
 												<height>24</height>
 												<texture>playercontrols-pausenf.png</texture>
 												<visible>!Control.HasFocus(603) + !Player.Paused</visible>
 										</control>
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>24</width>
 												<height>24</height>
 												<texture>playercontrols-playfo.png</texture>
 												<visible>Control.HasFocus(603) + Player.Paused</visible>
 										</control>
 										<control type="image">
-												<posx>0</posx>
-												<posy>0</posy>
+												<left>0</left>
+												<top>0</top>
 												<width>24</width>
 												<height>24</height>
 												<texture>playercontrols-playnf.png</texture>
@@ -626,8 +627,8 @@
 										</control>
 								</control>
 								<control type="button" id="601">
-										<posx>81</posx>
-										<posy>0</posy>
+										<left>81</left>
+										<top>0</top>
 										<width>24</width>
 										<height>24</height>
 										<label>-</label>
@@ -641,8 +642,8 @@
 										<ondown>-</ondown>
 								</control>
 								<control type="button" id="602">
-										<posx>110</posx>
-										<posy>0</posy>
+										<left>110</left>
+										<top>0</top>
 										<width>48</width>
 										<height>24</height>
 										<label>-</label>
@@ -657,27 +658,27 @@
 						</control>
 						<!-- Shuffle Repeat buttons -->
 						<control type="group" id="9001">
-								<posx>969</posx>
-								<posy>723</posy>
+								<left>969</left>
+								<top>723</top>
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>24</height>
 										<texture>playercontrols-randomnf.png</texture>
 										<visible>!Playlist.IsRandom</visible>
 								</control>
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>24</height>
 										<texture>playercontrols-randomon.png</texture>
 										<visible>Playlist.IsRandom</visible>
 								</control>
 								<control type="button" id="605">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>24</height>
 										<label>-</label>
@@ -690,32 +691,32 @@
 										<onright>600</onright>
 								</control>
 								<control type="image">
-										<posx>208</posx>
-										<posy>0</posy>
+										<left>208</left>
+										<top>0</top>
 										<width>32</width>
 										<height>24</height>
 										<texture>playercontrols-repeatnf.png</texture>
 										<visible>!Playlist.IsRepeat + !Playlist.IsRepeatOne</visible>
 								</control>
 								<control type="image">
-										<posx>208</posx>
-										<posy>0</posy>
+										<left>208</left>
+										<top>0</top>
 										<width>32</width>
 										<height>24</height>
 										<texture>playercontrols-repeatonenf.png</texture>
 										<visible>Playlist.IsRepeatOne</visible>
 								</control>
 								<control type="image">
-										<posx>208</posx>
-										<posy>0</posy>
+										<left>208</left>
+										<top>0</top>
 										<width>32</width>
 										<height>24</height>
 										<texture>playercontrols-repeatallnf.png</texture>
 										<visible>Playlist.IsRepeat</visible>
 								</control>
 								<control type="button" id="604">
-										<posx>208</posx>
-										<posy>0</posy>
+										<left>208</left>
+										<top>0</top>
 										<width>32</width>
 										<height>24</height>
 										<label>-</label>

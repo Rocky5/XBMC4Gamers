@@ -55,3 +55,6 @@
 44) Other changes, forgot some lol
 45) Now will parse _resources/default.xml if found and use the title field as the game name.
 	( toggle in the My Programs settings menu )
+46) Hide edit xbe title when synopsis titles are enabled.
+47) Fixed and added to the auto video switching feature
+48) Stopped adding as I forgot lol

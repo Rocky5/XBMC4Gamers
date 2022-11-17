@@ -5,21 +5,21 @@
 						<include>BehindDialogFadeOut</include>
 				</control>
 				<control type="group">
-						<posy>-360</posy>
+						<top>-360</top>
 						<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus() | Control.HasFocus(9001)</visible>
 						<animation effect="slide" start="0,0" end="0,320" time="200">Visible</animation>
 						<animation effect="slide" start="0,320" end="0,0" time="200">Hidden</animation>
 						<control type="image">
-								<posx>201</posx>
-								<posy>31</posy>
+								<left>201</left>
+								<top>31</top>
 								<width>878</width>
 								<height>321</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\generic\main.png</texture>
 						</control>
 						<control type="image">
-								<posx>220</posx>
-								<posy>42</posy>
+								<left>220</left>
+								<top>42</top>
 								<width>230</width>
 								<height>299</height>
 								<aspectratio>stretch</aspectratio>
@@ -27,8 +27,8 @@
 						</control>
 						<control type="grouplist">
 								<description>Control Info</description>
-								<posx>450</posx>
-								<posy>297</posy>
+								<left>450</left>
+								<top>297</top>
 								<width>610</width>
 								<height>80</height>
 								<itemgap>10</itemgap>
@@ -36,49 +36,49 @@
 								<align>center</align>
 								<!-- A Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\a_button.png</texture>
+										<texture>pad_buttons\dialogs\a_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>view_options_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\b_button.png</texture>
+										<texture>pad_buttons\dialogs\b_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>view_options_context_label</textcolor>
 										<label>$LOCALIZE[31108]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 						<control type="grouplist" id="9000">
 								<description>button area</description>
-								<posx>220</posx>
-								<posy>56</posy>
+								<left>220</left>
+								<top>56</top>
 								<width>230</width>
 								<height>299</height>
 								<itemgap>5</itemgap>
@@ -88,8 +88,8 @@
 								<aligny>center</aligny>
 								<control type="button" id="101">
 										<description>Backgrounds</description>
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<height>40</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
@@ -98,15 +98,15 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[33068]</label>
-										<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-										<focusedcolor>windows_settings_category_left_label_focus</focusedcolor>
+										<textcolor>view_options_label_nofocus</textcolor>
+										<focusedcolor>view_options_label_focus</focusedcolor>
 										<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 										<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 								</control>
 								<control type="button" id="100">
 										<description>Views</description>
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<height>40</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
@@ -115,15 +115,15 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31146]</label>
-										<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-										<focusedcolor>windows_settings_category_left_label_focus</focusedcolor>
+										<textcolor>view_options_label_nofocus</textcolor>
+										<focusedcolor>view_options_label_focus</focusedcolor>
 										<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 										<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 								</control>
 								<control type="button" id="102">
 										<description>View Settings</description>
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<height>40</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
@@ -132,15 +132,15 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31145]</label>
-										<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-										<focusedcolor>windows_settings_category_left_label_focus</focusedcolor>
+										<textcolor>view_options_label_nofocus</textcolor>
+										<focusedcolor>view_options_label_focus</focusedcolor>
 										<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 										<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 								</control>
 								<control type="button" id="3">
 										<description>Sort by button</description>
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<height>40</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
@@ -149,16 +149,16 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[103]</label>
-										<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-										<focusedcolor>windows_settings_category_left_label_focus</focusedcolor>
+										<textcolor>view_options_label_nofocus</textcolor>
+										<focusedcolor>view_options_label_focus</focusedcolor>
 										<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 										<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 										<visible>true</visible>
 								</control>
 								<control type="togglebutton" id="4">
 										<description>Sort asc</description>
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<height>40</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
@@ -168,8 +168,8 @@
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31141]</label>
 										<altlabel>$LOCALIZE[31142]</altlabel>
-										<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-										<focusedcolor>windows_settings_category_left_label_focus</focusedcolor>
+										<textcolor>view_options_label_nofocus</textcolor>
+										<focusedcolor>view_options_label_focus</focusedcolor>
 										<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 										<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 										<alttexturefocus>windows\settings_categories\button_focus.png</alttexturefocus>
@@ -178,8 +178,8 @@
 								</control>
 								<control type="edit" id="19">
 										<description>Filter</description>
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<height>40</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
@@ -188,26 +188,26 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>137</label>
-										<textcolor>windows_settings_category_left_label_no_focus</textcolor>
-										<focusedcolor>windows_settings_category_left_label_focus</focusedcolor>
+										<textcolor>view_options_label_nofocus</textcolor>
+										<focusedcolor>view_options_label_focus</focusedcolor>
 										<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 										<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 								</control>
 						</control>
 						<control type="textbox">
-								<posx>460</posx>
-								<posy>53</posy>
+								<left>460</left>
+								<top>53</top>
 								<width>590</width>
 								<height>230</height>
 								<font>size_19</font>
 								<align>center</align>
-								<textcolor>windows_context_label</textcolor>
+								<textcolor>view_options_context_label</textcolor>
 								<label>Note:[CR]This will close this dialog and set focus on the sort options.</label>
 								<visible>ControlGroup(9000).HasFocus(103)</visible>
 						</control>
 						<control type="panel" id="9001">
-								<posx>460</posx>
-								<posy>53</posy>
+								<left>460</left>
+								<top>53</top>
 								<width>590</width>
 								<height>230</height>
 								<onleft>9000</onleft>
@@ -215,11 +215,12 @@
 								<onup>-</onup>
 								<ondown>-</ondown>
 								<onback>50</onback>
+								<pagecontrol>90</pagecontrol>
 								<visible>ControlGroup(9000).HasFocus(100)</visible>
 								<itemlayout height="57" width="118">
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture>$INFO[listitem.actualicon]</texture>
@@ -230,8 +231,8 @@
 								</itemlayout>
 								<focusedlayout height="57" width="118">
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture>$INFO[listitem.actualicon]</texture>
@@ -239,8 +240,8 @@
 												<aspectratio>stretch</aspectratio>
 										</control>
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture border="7,7,7,7">windows\generic\button_focus_alt.png</texture>
@@ -262,6 +263,11 @@
 												<label>-</label>
 												<onclick>Container.SetViewMode(52)</onclick>
 												<icon>windows\programs\views\loginview.jpg</icon>
+										</item>
+										<item id="221">
+												<label>-</label>
+												<onclick>Container.SetViewMode(70)</onclick>
+												<icon>windows\programs\views\loginaltview.jpg</icon>
 										</item>
 										<item id="204">
 												<label>-</label>
@@ -343,24 +349,11 @@
 												<onclick>Container.SetViewMode(68)</onclick>
 												<icon>windows\programs\views\cdfixedview.jpg</icon>
 										</item>
-										<!-- <item id="220"> -->
-										<!-- <label>-</label> -->
-										<!-- <onclick>Container.SetViewMode(69)</onclick> -->
-										<!-- <onclick>SetFocus(9001,19)</onclick> -->
-										<!-- <icon>windows\programs\views\.jpg</icon> -->
-										<!-- </item> -->
-										<!-- <item id="221"> -->
-										<!-- <label>-</label> -->
-										<!-- <onclick>Container.SetViewMode(70)</onclick> -->
-										<!-- <onclick>SetFocus(9001,20)</onclick> -->
-										<!-- <icon>windows\programs\views\.jpg</icon> -->
-										<!-- </item> -->
-										<!-- <item id="222"> -->
-										<!-- <label>-</label> -->
-										<!-- <onclick>Container.SetViewMode(71)</onclick> -->
-										<!-- <onclick>SetFocus(9001,21)</onclick> -->
-										<!-- <icon>windows\programs\views\.jpg</icon> -->
-										<!-- </item> -->
+										<item id="220">
+												<label>-</label>
+												<onclick>Container.SetViewMode(69)</onclick>
+												<icon>windows\programs\views\lgview.jpg</icon>
+										</item>
 										<item id="230">
 												<label>-</label>
 												<onclick>Container.SetViewMode(79)</onclick>
@@ -368,10 +361,28 @@
 										</item>
 								</content>
 						</control>
+						<control type="scrollbar" id="90">
+								<left>1046</left>
+								<top>58</top>
+								<width>4</width>
+								<height>223</height>
+								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+								<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
+								<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
+								<textureslidernib>-</textureslidernib>
+								<textureslidernibfocus>-</textureslidernibfocus>
+								<onleft>-</onleft>
+								<ondown>-</ondown>
+								<showonepage>false</showonepage>
+								<orientation>vertical</orientation>
+								<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(90)">Conditional</animation>
+								<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+								<visible>ControlGroup(9000).HasFocus(100)</visible>
+						</control>
 						<!-- Backgrounds -->
 						<control type="panel" id="9001">
-								<posx>460</posx>
-								<posy>53</posy>
+								<left>460</left>
+								<top>53</top>
 								<width>590</width>
 								<height>230</height>
 								<onleft>9000</onleft>
@@ -382,8 +393,8 @@
 								<visible>ControlGroup(9000).HasFocus(101)</visible>
 								<itemlayout height="57" width="118">
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture>$INFO[listitem.actualicon]</texture>
@@ -394,8 +405,8 @@
 								</itemlayout>
 								<focusedlayout height="57" width="118">
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture>$INFO[listitem.actualicon]</texture>
@@ -403,8 +414,8 @@
 												<aspectratio>stretch</aspectratio>
 										</control>
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture border="7,7,7,7">windows\generic\button_focus_alt.png</texture>
@@ -430,6 +441,7 @@
 										</item>
 										<item id="205">
 												<label>-</label>
+												<onclick>Skin.SetBool(hex_entry)</onclick>
 												<onclick>Skin.SetString(Background_Custom_Color)</onclick>
 												<onclick>Skin.Reset(Background_Color)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
@@ -551,8 +563,8 @@
 								</content>
 						</control>
 						<control type="panel" id="9001">
-								<posx>460</posx>
-								<posy>53</posy>
+								<left>460</left>
+								<top>53</top>
 								<width>590</width>
 								<height>230</height>
 								<onleft>9000</onleft>
@@ -563,8 +575,8 @@
 								<visible>ControlGroup(9000).HasFocus(102)</visible>
 								<itemlayout height="57" width="118">
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture>$INFO[listitem.actualicon]</texture>
@@ -575,8 +587,8 @@
 								</itemlayout>
 								<focusedlayout height="57" width="118">
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture>$INFO[listitem.actualicon]</texture>
@@ -584,8 +596,8 @@
 												<aspectratio>stretch</aspectratio>
 										</control>
 										<control type="image">
-												<posx>5</posx>
-												<posy>5</posy>
+												<left>5</left>
+												<top>5</top>
 												<width>100</width>
 												<height>52</height>
 												<texture border="7,7,7,7">windows\generic\button_focus_alt.png</texture>
@@ -670,21 +682,33 @@
 												<label>-</label>
 												<onclick>Skin.SetBool(hidefoldernames)</onclick>
 												<icon>windows\programs\both_labels.jpg</icon>
-												<visible>!Skin.HasSetting(hidefoldernames) + !Skin.HasSetting(hidegamenames)+ !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>!Skin.HasSetting(hidefoldernames) + !Skin.HasSetting(hidegamenames)+ !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
 										<item id="2012">
 												<label>-</label>
 												<onclick>Skin.reset(hidefoldernames)</onclick>
 												<onclick>Skin.SetBool(hidegamenames)</onclick>
 												<icon>windows\programs\folder_labels.jpg</icon>
-												<visible>Skin.HasSetting(hidefoldernames)+ !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(hidefoldernames)+ !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
 										<item id="2012">
 												<label>-</label>
 												<onclick>Skin.Reset(hidefoldernames)</onclick>
 												<onclick>Skin.Reset(hidegamenames)</onclick>
 												<icon>windows\programs\game_labels.jpg</icon>
-												<visible>Skin.HasSetting(hidegamenames) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(hidegamenames) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view79)</visible>
+										</item>
+										<item id="2013">
+												<label>-</label>
+												<onclick>Skin.SetBool(hideloginborder)</onclick>
+												<icon>windows\programs\hide_login_border.jpg</icon>
+												<visible>!Skin.HasSetting(hideloginborder) + StringCompare(Container.Viewmode,view52)</visible>
+										</item>
+										<item id="2013">
+												<label>-</label>
+												<onclick>Skin.Reset(hideloginborder)</onclick>
+												<icon>windows\programs\show_login_border.jpg</icon>
+												<visible>Skin.HasSetting(hideloginborder) + StringCompare(Container.Viewmode,view52)</visible>
 										</item>
 										<item id="2024">
 												<label>-</label>

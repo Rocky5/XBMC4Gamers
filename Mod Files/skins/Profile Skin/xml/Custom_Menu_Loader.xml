@@ -1,24 +1,24 @@
 <window id="1114">
 		<defaultcontrol always="true">1</defaultcontrol>
-		<onload condition="StringCompare(Skin.String(HomeWindow),)">Skin.SetString(HomeWindow,Games)</onload>
+		<onload condition="StringCompare(Skin.String(HomeWindow),)">Skin.SetString(HomeWindow,Root)</onload>
 		<!-- Unload, these are loaded as the window is closed -->
 		<onunload condition="[Skin.HasSetting(EditMode) | !Skin.HasSetting(AdultProfile)] + !Player.HasAudio + Skin.HasSetting(Use_Startup_Playback)">PlayMedia($INFO[Skin.String(Startup_Playback_Path)])</onunload>
 		<controls>
 				<control type="button" id="1">
-						<posx>-500</posx>
+						<left>-500</left>
 						<onclick>ActivateWindow(1116)</onclick>
 						<visible>!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile) + !Player.HasVideo</visible>
 						<animation effect="fade" start="0" end="100" delay="300" time="0">Focus</animation>
 				</control>
 				<control type="button" id="1">
-						<posx>-500</posx>
+						<left>-500</left>
 						<onfocus>Dialog.Close(1114,true)</onfocus>
 						<onfocus>ActivateWindow(Programs,$INFO[skin.String(HomeWindow)])</onfocus>
 						<animation effect="fade" start="0" end="100" delay="300" time="0">Focus</animation>
 						<visible>!Player.HasVideo + !StringCompare(Skin.String(HomeWindow),Root)</visible>
 				</control>
 				<control type="button" id="1">
-						<posx>-500</posx>
+						<left>-500</left>
 						<onfocus>Dialog.Close(1114,true)</onfocus>
 						<onfocus>ActivateWindow(Programs)</onfocus>
 						<animation effect="fade" start="0" end="100" delay="300" time="0">Focus</animation>
@@ -42,8 +42,8 @@
 				</control>
 				<include>Startup_Window_Info</include>
 				<control type="group">
-						<posx>523</posx>
-						<posy>243</posy>
+						<left>523</left>
+						<top>243</top>
 						<animation effect="fade" start="100" end="0" delay="0" time="100" condition="!Skin.HasSetting(EditMode) + Skin.HasSetting(AdultProfile) + !Player.HasVideo">Conditional</animation>
 						<animation effect="fade" time="300">WindowClose</animation>
 						<include>Startup_Window_Profile</include>

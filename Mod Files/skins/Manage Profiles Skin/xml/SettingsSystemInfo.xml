@@ -1,0 +1,371 @@
+<window id="7">
+		<defaultcontrol>95</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
+		<controls>
+				<include>DialogEffectZoomFast</include>
+				<include>CommonBackground</include>
+				<control type="group">
+						<control type="image">
+								<left>201</left>
+								<top>81</top>
+								<width>878</width>
+								<height>558</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\settings\main.png</texture>
+						</control>
+						<control type="image">
+								<left>219</left>
+								<top>99</top>
+								<width>842</width>
+								<height>61</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\settings\header.png</texture>
+						</control>
+						<control type="label" id="40">
+								<left>250</left>
+								<top>110</top>
+								<width>780</width>
+								<height>28</height>
+								<font>size_28</font>
+								<scroll>true</scroll>
+								<align>left</align>
+								<textcolor>7_header_label</textcolor>
+						</control>
+						<control type="grouplist">
+								<description>Control Info</description>
+								<left>250</left>
+								<top>568</top>
+								<width>780</width>
+								<height>80</height>
+								<itemgap>10</itemgap>
+								<orientation>Horizontal</orientation>
+								<align>center</align>
+								<!-- A Button -->
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\dialogs\a_button.png</texture>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="80" max="147">auto</width>
+										<height>20</height>
+										<font>size_19</font>
+										<align>left</align>
+										<textcolor>7_context_label</textcolor>
+										<label>$LOCALIZE[424]</label>
+										<include>Context_Buttons_Text_Align</include>
+								</control>
+								<!-- B Button -->
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\dialogs\B_button.png</texture>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="80" max="147">auto</width>
+										<height>20</height>
+										<font>size_19</font>
+										<align>left</align>
+										<textcolor>7_context_label</textcolor>
+										<label>Back</label>
+										<include>Context_Buttons_Text_Align</include>
+								</control>
+						</control>
+				</control>
+				<control type="group">
+						<control type="grouplist" id="9000">
+								<description>button area</description>
+								<left>250</left>
+								<top>180</top>
+								<width>780</width>
+								<height>370</height>
+								<itemgap>0</itemgap>
+								<onleft>9000</onleft>
+								<onright>9000</onright>
+								<onup>9000</onup>
+								<ondown>9000</ondown>
+								<control type="button" id="95">
+										<description>Button Default Values</description>
+										<width>210</width>
+										<height>50</height>
+										<font>size_18</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>7_label</textcolor>
+										<focusedcolor>7_label_focus</focusedcolor>
+										<shadowcolor>-</shadowcolor>
+										<textoffsetx>0</textoffsetx>
+										<texturefocus>windows\settings\button_focus.png</texturefocus>
+										<texturenofocus>windows\settings\button_no_focus.png</texturenofocus>
+										<label>20154</label>
+								</control>
+								<control type="button" id="92">
+										<description>Button HDD</description>
+										<width>210</width>
+										<height>50</height>
+										<font>size_18</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>7_label</textcolor>
+										<focusedcolor>7_label_focus</focusedcolor>
+										<shadowcolor>-</shadowcolor>
+										<textoffsetx>0</textoffsetx>
+										<texturefocus>windows\settings\button_focus.png</texturefocus>
+										<texturenofocus>windows\settings\button_no_focus.png</texturenofocus>
+										<label>20156</label>
+								</control>
+								<control type="button" id="93">
+										<description>Button DVD</description>
+										<width>210</width>
+										<height>50</height>
+										<font>size_18</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>7_label</textcolor>
+										<focusedcolor>7_label_focus</focusedcolor>
+										<shadowcolor>-</shadowcolor>
+										<textoffsetx>0</textoffsetx>
+										<texturefocus>windows\settings\button_focus.png</texturefocus>
+										<texturenofocus>windows\settings\button_no_focus.png</texturenofocus>
+										<label>20157</label>
+								</control>
+								<control type="button" id="94">
+										<description>Button Storage</description>
+										<width>210</width>
+										<height>50</height>
+										<font>size_18</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>7_label</textcolor>
+										<focusedcolor>7_label_focus</focusedcolor>
+										<shadowcolor>-</shadowcolor>
+										<textoffsetx>0</textoffsetx>
+										<texturefocus>windows\settings\button_focus.png</texturefocus>
+										<texturenofocus>windows\settings\button_no_focus.png</texturenofocus>
+										<label>20155</label>
+								</control>
+								<control type="button" id="96">
+										<description>Button Network</description>
+										<width>210</width>
+										<height>50</height>
+										<font>size_18</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>7_label</textcolor>
+										<focusedcolor>7_label_focus</focusedcolor>
+										<shadowcolor>-</shadowcolor>
+										<textoffsetx>0</textoffsetx>
+										<texturefocus>windows\settings\button_focus.png</texturefocus>
+										<texturenofocus>windows\settings\button_no_focus.png</texturenofocus>
+										<label>20158</label>
+								</control>
+								<control type="button" id="97">
+										<description>Button Video</description>
+										<width>210</width>
+										<height>50</height>
+										<font>size_18</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>7_label</textcolor>
+										<focusedcolor>7_label_focus</focusedcolor>
+										<shadowcolor>-</shadowcolor>
+										<textoffsetx>0</textoffsetx>
+										<texturefocus>windows\settings\button_focus.png</texturefocus>
+										<texturenofocus>windows\settings\button_no_focus.png</texturenofocus>
+										<label>20159</label>
+								</control>
+								<control type="button" id="98">
+										<description>Button Hardware</description>
+										<width>210</width>
+										<height>50</height>
+										<font>size_18</font>
+										<align>center</align>
+										<aligny>center</aligny>
+										<textcolor>7_label</textcolor>
+										<focusedcolor>7_label_focus</focusedcolor>
+										<shadowcolor>-</shadowcolor>
+										<textoffsetx>0</textoffsetx>
+										<texturefocus>windows\settings\button_focus.png</texturefocus>
+										<texturenofocus>windows\settings\button_no_focus.png</texturenofocus>
+										<label>20160</label>
+								</control>
+						</control>
+				</control>
+				<control type="group">
+						<control type="group">
+								<left>490</left>
+								<top>165</top>
+								<control type="label" id="2">
+										<description>Label 2</description>
+										<left>0</left>
+										<top>35</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="3">
+										<description>Label 3</description>
+										<left>0</left>
+										<top>65</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="4">
+										<description>Label 4</description>
+										<left>0</left>
+										<top>95</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="5">
+										<description>Label 5</description>
+										<left>0</left>
+										<top>125</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="6">
+										<description>Label 6</description>
+										<left>0</left>
+										<top>155</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="7">
+										<description>Label 7</description>
+										<left>0</left>
+										<top>185</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="8">
+										<description>Label 8</description>
+										<left>0</left>
+										<top>215</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="9">
+										<description>Label 9</description>
+										<left>0</left>
+										<top>245</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="10">
+										<description>Label 10</description>
+										<left>0</left>
+										<top>275</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+								<control type="label" id="11">
+										<description>Label 11</description>
+										<left>0</left>
+										<top>305</top>
+										<width>560</width>
+										<height>40</height>
+										<align>left</align>
+										<aligny>center</aligny>
+										<label>-</label>
+										<font>size_20</font>
+										<textcolor>7_label</textcolor>
+								</control>
+						</control>
+						<control type="label" id="52">
+								<description>XBMC XBE BUILD Version</description>
+								<left>15r</left>
+								<top>35r</top>
+								<width>1280</width>
+								<height>36</height>
+								<font>size_18</font>
+								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<align>right</align>
+								<aligny>center</aligny>
+						</control>
+						<control type="group">
+								<left>0</left>
+								<top>610</top>
+								<control type="label">
+										<description>Memory Text</description>
+										<left>15</left>
+										<top>50r</top>
+										<width>320</width>
+										<height>36</height>
+										<label>$LOCALIZE[31545] $INFO[system.memory(used.percent)]</label>
+										<align>left</align>
+										<aligny>center</aligny>
+										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<font>size_20</font>
+								</control>
+								<control type="progress">
+										<description>Memory BAR</description>
+										<left>15</left>
+										<top>15r</top>
+										<width>320</width>
+										<height>12</height>
+										<info>system.memory(used)</info>
+										<texturebg border="6,0,6,0">progressbackalt2.png</texturebg>
+										<lefttexture>-</lefttexture>
+										<midtexture border="6,0,6,0">progressfrontalt2.png</midtexture>
+										<righttexture>-</righttexture>
+										<overlaytexture>-</overlaytexture>
+								</control>
+						</control>
+				</control>
+		</controls>
+</window>

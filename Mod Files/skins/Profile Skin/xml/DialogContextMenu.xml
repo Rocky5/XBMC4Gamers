@@ -3,8 +3,8 @@
 		<include>DialogEffectZoomFast</include>
 		<controls>
 				<control type="image.">
-						<posx>-442</posx>
-						<posy>-321</posy>
+						<left>-442</left>
+						<top>-321</top>
 						<width>1280</width>
 						<height>720</height>
 						<texture>black-back.png</texture>
@@ -16,8 +16,8 @@
 						<include>ContextMenuOffsets</include>
 						<control type="image" id="997">
 								<description>background top image</description>
-								<posx>0</posx>
-								<posy>-37</posy>
+								<left>0</left>
+								<top>-37</top>
 								<width>396</width>
 								<height>37</height>
 								<texture border="40,0,40,0">contextmenu_top.png</texture>
@@ -25,15 +25,15 @@
 						</control>
 						<control type="image" id="999">
 								<description>background image</description>
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>396</width>
 								<texture border="40,0,40,0">contextmenu_middle.png</texture>
 								<visible>Skin.HasSetting(editmode)</visible>
 						</control>
 						<control type="image" id="998">
 								<description>background bottom image</description>
-								<posx>0</posx>
+								<left>0</left>
 								<width>396</width>
 								<height>34</height>
 								<texture border="40,0,40,0">contextmenu_bottom.png</texture>
@@ -41,15 +41,15 @@
 						</control>
 						<control type="button" id="1000">
 								<description>button template</description>
-								<posx>43</posx>
-								<posy>40</posy>
+								<left>43</left>
+								<top>40</top>
 								<width>310</width>
 								<height>35</height>
 								<onup>1000</onup>
 								<font>size_20</font>
 								<align>center</align>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -60,28 +60,28 @@
 				</control>
 				<control type="group">
 						<include>ContextMenuOffsets</include>
-						<posy>-50</posy>
+						<top>-50</top>
 						<visible>Window.IsVisible(1) + !Window.IsActive(134) + !Skin.HasSetting(editmode)</visible>
 						<control type="image">
 								<description>background top image</description>
-								<posx>0</posx>
-								<posy>11</posy>
+								<left>0</left>
+								<top>11</top>
 								<width>396</width>
 								<height>37</height>
 								<texture border="40,40,40,0">contextmenu_top.png</texture>
 						</control>
 						<control type="image">
 								<description>background image</description>
-								<posx>0</posx>
-								<posy>48</posy>
+								<left>0</left>
+								<top>48</top>
 								<width>396</width>
 								<height>225</height>
 								<texture border="40,0,40,0">contextmenu_middle.png</texture>
 						</control>
 						<control type="image">
 								<description>background bottom image</description>
-								<posx>0</posx>
-								<posy>273</posy>
+								<left>0</left>
+								<top>273</top>
 								<width>396</width>
 								<height>34</height>
 								<texture border="40,0,40,0">contextmenu_bottom.png</texture>
@@ -89,8 +89,8 @@
 				</control>
 				<control type="grouplist" id="3000">
 						<description>custom grouplist for context buttons</description>
-						<posx>50</posx>
-						<posy>5</posy>
+						<left>50</left>
+						<top>5</top>
 						<width>310</width>
 						<height>304</height>
 						<itemgap>2</itemgap>
@@ -101,8 +101,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1001)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -114,8 +114,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1002)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -127,8 +127,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1003)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -140,8 +140,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1004)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -153,8 +153,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1005)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -166,8 +166,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1006)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -179,8 +179,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1007)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -192,8 +192,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1008)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
@@ -205,8 +205,8 @@
 								<font>size_20</font>
 								<align>center</align>
 								<label>$INFO[Control.GetLabel(1009)]</label>
-								<textcolor>windows_options_label_no_focus</textcolor>
-								<focusedcolor>windows_options_label_focus</focusedcolor>
+								<textcolor>106_label_nofocus</textcolor>
+								<focusedcolor>106_label_focus</focusedcolor>
 								<shadowcolor>-</shadowcolor>
 								<texturefocus>windows\options\button_focus.png</texturefocus>
 								<texturenofocus>windows\options\button_no_focus.png</texturenofocus>

@@ -1,64 +1,69 @@
 <includes>
 		<default type="image">
-				<posx>0</posx>
-				<posy>0</posy>
+				<left>0</left>
+				<top>0</top>
 				<texture>-</texture>
 				<colorkey>0</colorkey>
 		</default>
 		<default type="label">
-				<posx>80</posx>
-				<posy>60</posy>
+				<left>80</left>
+				<top>60</top>
 				<label>-</label>
 				<font>size_23</font>
-				<textcolor>white</textcolor>
+				<textcolor>default_label</textcolor>
 		</default>
 		<default type="fadelabel">
-				<posx>80</posx>
-				<posy>60</posy>
+				<left>80</left>
+				<top>60</top>
 				<font>size_23</font>
-				<textcolor>white</textcolor>
+				<textcolor>default_label</textcolor>
 		</default>
 		<default type="button">
-				<posx>300</posx>
-				<posy>200</posy>
+				<left>300</left>
+				<top>200</top>
 				<width>300</width>
 				<height>42</height>
 				<texturefocus>button-focus2.png</texturefocus>
 				<texturenofocus>button-nofocus.png</texturenofocus>
 				<font>size_20</font>
-				<textcolor>white</textcolor>
-				<disabledcolor>grey3</disabledcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<textoffsetx>7</textoffsetx>
 				<aligny>center</aligny>
 				<pulseonselect>no</pulseonselect>
 		</default>
 		<default type="togglebutton">
-				<posx>140</posx>
-				<posy>167</posy>
+				<left>140</left>
+				<top>167</top>
 				<width>20</width>
 				<height>20</height>
 				<texturefocus>scroll-up-focus.png</texturefocus>
 				<texturenofocus>scroll-up.png</texturenofocus>
 				<alttexturefocus>scroll-down-focus.png</alttexturefocus>
 				<alttexturenofocus>scroll-down.png</alttexturenofocus>
-				<textcolor>white</textcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<label>-</label>
 				<font>size_23</font>
-				<disabledcolor>grey3</disabledcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<pulseonselect>no</pulseonselect>
 		</default>
 		<default type="textbox">
-				<posx>220</posx>
-				<posy>220</posy>
+				<left>220</left>
+				<top>220</top>
 				<width>410</width>
 				<height>215</height>
 				<spinwidth>18</spinwidth>
 				<spinheight>16</spinheight>
 				<spinposx>410</spinposx>
 				<spinposy>305</spinposy>
-				<spincolor>white</spincolor>
+				<spincolor>default_label</spincolor>
 				<spinfont>size_13</spinfont>
-				<textcolor>white</textcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<textureup>scroll-up.png</textureup>
 				<texturedown>scroll-down.png</texturedown>
 				<textureupfocus>scroll-up-focus.png</textureupfocus>
@@ -66,8 +71,8 @@
 				<font>size_23</font>
 		</default>
 		<default type="progress">
-				<posx>100</posx>
-				<posy>325</posy>
+				<left>100</left>
+				<top>325</top>
 				<texturebg border="4,0,4,0">ProgressBack.png</texturebg>
 				<lefttexture>-</lefttexture>
 				<midtexture border="4,0,4,0">ProgressFront.png</midtexture>
@@ -75,8 +80,8 @@
 				<overlaytexture>-</overlaytexture>
 		</default>
 		<default type="spincontrol">
-				<posx>330</posx>
-				<posy>126</posy>
+				<left>330</left>
+				<top>126</top>
 				<textureup>scroll-up-2.png</textureup>
 				<texturedown>scroll-down-2.png</texturedown>
 				<textureupfocus>scroll-up-focus-2.png</textureupfocus>
@@ -86,8 +91,9 @@
 				<height>22</height>
 				<font>size_23</font>
 				<reverse>yes</reverse>
-				<textcolor>white</textcolor>
-				<disabledcolor>grey3</disabledcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<subtype>text</subtype>
 				<textoffsetx>-5</textoffsetx>
 				<textoffsety>0</textoffsety>
@@ -95,8 +101,8 @@
 				<pulseonselect>no</pulseonselect>
 		</default>
 		<default type="spincontrolex">
-				<posx>530</posx>
-				<posy>160</posy>
+				<left>530</left>
+				<top>160</top>
 				<width>300</width>
 				<height>42</height>
 				<spinwidth>25</spinwidth>
@@ -108,16 +114,17 @@
 				<textureupfocus>scroll-up-focus-2.png</textureupfocus>
 				<texturedownfocus>scroll-down-focus-2.png</texturedownfocus>
 				<font>size_23</font>
-				<textcolor>white</textcolor>
-				<disabledcolor>grey3</disabledcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<textoffsetx>7</textoffsetx>
 				<aligny>center</aligny>
 				<reverse>yes</reverse>
 				<pulseonselect>no</pulseonselect>
 		</default>
 		<default type="radiobutton">
-				<posx>300</posx>
-				<posy>200</posy>
+				<left>300</left>
+				<top>200</top>
 				<width>300</width>
 				<height>42</height>
 				<radiowidth>50</radiowidth>
@@ -128,15 +135,16 @@
 				<texturenofocus>button-nofocus.png</texturenofocus>
 				<label>215</label>
 				<font>size_20</font>
-				<textcolor>white</textcolor>
-				<disabledcolor>grey3</disabledcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<textoffsetx>7</textoffsetx>
 				<aligny>center</aligny>
 				<pulseonselect>no</pulseonselect>
 		</default>
 		<default type="selectbutton">
-				<posx>490</posx>
-				<posy>335</posy>
+				<left>490</left>
+				<top>335</top>
 				<width>300</width>
 				<height>50</height>
 				<label>-</label>
@@ -149,8 +157,9 @@
 				<textureright>scroll-right.png</textureright>
 				<texturerightfocus>scroll-right-focus.png</texturerightfocus>
 				<font>size_23</font>
-				<textcolor>white</textcolor>
-				<disabledcolor>grey3</disabledcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<aligny>center</aligny>
 		</default>
 		<default type="slider">
@@ -169,31 +178,33 @@
 				<textureslidernib>osd_slider_nibNF.png</textureslidernib>
 				<textureslidernibfocus>osd_slider_nib.png</textureslidernibfocus>
 				<font>size_20</font>
-				<textcolor>white</textcolor>
-				<disabledcolor>grey3</disabledcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 		</default>
 		<default type="mover">
-				<posx>60</posx>
-				<posy>192</posy>
+				<left>60</left>
+				<top>192</top>
 				<texturefocus>button-focus2.png</texturefocus>
 				<texturenofocus>button-nofocus.png</texturenofocus>
 		</default>
 		<default type="resize">
-				<posx>60</posx>
-				<posy>192</posy>
+				<left>60</left>
+				<top>192</top>
 				<texturefocus>button-focus2.png</texturefocus>
 				<texturenofocus>button-nofocus.png</texturenofocus>
 		</default>
 		<default type="edit">
-				<posx>300</posx>
-				<posy>200</posy>
+				<left>300</left>
+				<top>200</top>
 				<width>300</width>
 				<height>42</height>
 				<texturefocus>button-focus2.png</texturefocus>
 				<texturenofocus>button-nofocus.png</texturenofocus>
 				<font>size_20</font>
-				<textcolor>white</textcolor>
-				<disabledcolor>grey3</disabledcolor>
+				<textcolor>default_label</textcolor>
+				<focusedcolor>default_label_focus</focusedcolor>
+				<disabledcolor>default_disabled_label</disabledcolor>
 				<textoffsetx>7</textoffsetx>
 				<aligny>center</aligny>
 				<pulseonselect>no</pulseonselect>

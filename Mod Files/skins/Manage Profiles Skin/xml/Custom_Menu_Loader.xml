@@ -2,14 +2,14 @@
 		<defaultcontrol always="true">1</defaultcontrol>
 		<controls>
 				<control type="button" id="1">
-						<posx>-500</posx>
+						<left>-500</left>
 						<onfocus>Dialog.Close(1114,true)</onfocus>
 						<onfocus>ReplaceWindow(Profiles)</onfocus>
 						<visible>Skin.HasSetting(EditMode)</visible>
 						<animation effect="fade" start="0" end="100" delay="300" time="0">Focus</animation>
 				</control>
 				<control type="button" id="1">
-						<posx>-500</posx>
+						<left>-500</left>
 						<onclick>ActivateWindow(1116)</onclick>
 						<visible>!Skin.HasSetting(EditMode)</visible>
 						<animation effect="fade" start="0" end="100" delay="300" time="0">Focus</animation>
@@ -17,8 +17,8 @@
 				<include>CommonBackground</include>
 				<include>Startup_Window_Info</include>
 				<control type="group">
-						<posx>523</posx>
-						<posy>243</posy>
+						<left>523</left>
+						<top>243</top>
 						<animation effect="fade" start="100" end="0" delay="0" time="100" condition="!Skin.HasSetting(EditMode)">Conditional</animation>
 						<animation effect="fade" time="300">WindowClose</animation>
 						<include>Startup_Window_Profile</include>

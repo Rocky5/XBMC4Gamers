@@ -7,24 +7,24 @@
 				</control>
 				<control type="image">
 						<description>background image</description>
-						<posx>326</posx>
-						<posy>252</posy>
+						<left>326</left>
+						<top>252</top>
 						<width>628</width>
 						<height>215</height>
 						<texture>windows\dialogs\main.png</texture>
 				</control>
 				<control type="image">
 						<description>Heading Background</description>
-						<posx>339</posx>
-						<posy>259</posy>
+						<left>339</left>
+						<top>259</top>
 						<width>602</width>
 						<height>61</height>
 						<texture>windows\dialogs\header.png</texture>
 				</control>
 				<control type="progress">
 						<description>Progressbar</description>
-						<posx>370</posx>
-						<posy>420</posy>
+						<left>370</left>
+						<top>420</top>
 						<width>332</width>
 						<height>23</height>
 						<info>System.Progressbar</info>
@@ -37,64 +37,64 @@
 				</control>
 				<control type="label">
 						<description>Progress Label</description>
-						<posx>723</posx>
-						<posy>420</posy>
+						<left>723</left>
+						<top>420</top>
 						<width>60</width>
 						<height>20</height>
 						<font>size_20</font>
 						<align>center</align>
 						<aligny>center</aligny>
-						<textcolor>windows_label_no_focus</textcolor>
+						<textcolor>101_label</textcolor>
 						<label>$INFO[System.Progressbar,,%]</label>
 				</control>
 				<control type="group">
 						<visible>!Skin.HasSetting(SynopsisPreviewThere)</visible>
 						<control type="label" id="1">
 								<description>heading label</description>
-								<posx>370</posx>
-								<posy>269</posy>
+								<left>370</left>
+								<top>269</top>
 								<width>540</width>
 								<height>40</height>
 								<font>size_28</font>
 								<scroll>true</scroll>
 								<align>left</align>
-								<textcolor>windows_header_label</textcolor>
+								<textcolor>101_header_label</textcolor>
 								<label>-</label>
 						</control>
 						<control type="label" id="2">
 								<description>dialog line 1</description>
-								<posx>370</posx>
-								<posy>324</posy>
+								<left>370</left>
+								<top>324</top>
 								<width>540</width>
 								<height>40</height>
 								<font>size_28</font>
 								<scroll>true</scroll>
 								<align>left</align>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>101_label</textcolor>
 								<label>-</label>
 						</control>
 						<control type="label" id="3">
 								<description>dialog line 2</description>
-								<posx>370</posx>
-								<posy>356</posy>
+								<left>370</left>
+								<top>356</top>
 								<width>540</width>
 								<height>40</height>
 								<font>size_20</font>
 								<scroll>true</scroll>
 								<align>left</align>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>101_label</textcolor>
 								<label>-</label>
 						</control>
 						<control type="label" id="4">
 								<description>dialog line 3</description>
-								<posx>370</posx>
-								<posy>380</posy>
+								<left>370</left>
+								<top>380</top>
 								<width>540</width>
 								<height>40</height>
 								<font>size_20</font>
 								<scroll>true</scroll>
 								<align>left</align>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>101_label</textcolor>
 								<label>-</label>
 						</control>
 				</control>
@@ -102,8 +102,8 @@
 						<visible>Skin.HasSetting(SynopsisPreviewThere)</visible>
 						<control type="label">
 								<description>heading label</description>
-								<posx>370</posx>
-								<posy>269</posy>
+								<left>370</left>
+								<top>269</top>
 								<width>540</width>
 								<height>40</height>
 								<font>size_28</font>
@@ -114,26 +114,26 @@
 						</control>
 						<control type="label" id="2">
 								<description>dialog line 2</description>
-								<posx>370</posx>
-								<posy>345</posy>
+								<left>370</left>
+								<top>345</top>
 								<width>540</width>
 								<height>40</height>
 								<font>size_22</font>
 								<scroll>true</scroll>
 								<align>left</align>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>101_label</textcolor>
 								<label>-</label>
 						</control>
 				</control>
 				<control type="button" id="10">
 						<description>Cancel button</description>
-						<posx>810</posx>
-						<posy>412</posy>
+						<left>810</left>
+						<top>412</top>
 						<width>100</width>
 						<height>36</height>
 						<label>222</label>
-						<textcolor>windows_label_no_focus</textcolor>
-						<focusedcolor>windows_label_focus</focusedcolor>
+						<textcolor>101_button_label</textcolor>
+						<focusedcolor>101_button_focus</focusedcolor>
 						<align>center</align>
 						<texturenofocus border="3">windows\dialogs\button_no_focus.png</texturenofocus>
 						<texturefocus border="3">windows\dialogs\button_focus.png</texturefocus>

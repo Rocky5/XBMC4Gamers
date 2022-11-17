@@ -1,8 +1,9 @@
 <window id="2999">
 		<!-- Onload, these are loaded when the window is first loaded -->
 		<onload>RunScript(Special://root/system/scripts/XBMC4Gamers/default.py)</onload>
-		<onload>Skin.SetBool(xbmc4gamers)</onload>
-		<onload>Skin.SetString(urldownloader,Special://urldownloader/)</onload>
+		<onunload condition="Skin.HasSetting(Random_Game)">Skin.SetBool(run_random_script,true)</onunload>
+		<onunload>Skin.SetBool(xbmc4gamers)</onunload>
+		<onunload>Skin.SetString(urldownloader,Special://urldownloader/)</onunload>
 		<defaultcontrol always="true">1</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
@@ -23,8 +24,8 @@
 						<aspectratio>stretch</aspectratio>
 				</control>
 				<control type="group">
-						<posx>523</posx>
-						<posy>243</posy>
+						<left>523</left>
+						<top>243</top>
 						<animation effect="fade" start="0" end="100" time="200" reversible="false">WindowOpen</animation>
 						<include>Startup_Window_Profile</include>
 				</control>

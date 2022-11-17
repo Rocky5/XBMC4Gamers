@@ -11,8 +11,8 @@
 				<control type="group">
 						<include>Window_OpenClose_Animation</include>
 						<control type="panel" id="1">
-								<posx>382</posx>
-								<posy>270</posy>
+								<left>382</left>
+								<top>270</top>
 								<width>1279</width>
 								<height>720</height>
 								<onleft>50</onleft>
@@ -27,16 +27,16 @@
 								<animation effect="slide" end="128" time="0" condition="!Skin.HasSetting(editmode)">conditional</animation>
 								<itemlayout height="130" width="256">
 										<control type="image">
-												<posx>2</posx>
-												<posy>2</posy>
+												<left>2</left>
+												<top>2</top>
 												<width>252</width>
 												<height>126</height>
 												<texture>ThumbNF.png</texture>
 												<aspectratio>scale</aspectratio>
 										</control>
 										<control type="image">
-												<posx>7</posx>
-												<posy>7</posy>
+												<left>7</left>
+												<top>7</top>
 												<width>242</width>
 												<height>90</height>
 												<texture>$INFO[Listitem.Icon]</texture>
@@ -45,8 +45,8 @@
 												<aspectratio>scale</aspectratio>
 										</control>
 										<control type="label">
-												<posx>10</posx>
-												<posy>100</posy>
+												<left>10</left>
+												<top>100</top>
 												<width>236</width>
 												<height>20</height>
 												<font>size_20</font>
@@ -59,16 +59,16 @@
 								</itemlayout>
 								<focusedlayout height="256" width="190">
 										<control type="image">
-												<posx>2</posx>
-												<posy>2</posy>
+												<left>2</left>
+												<top>2</top>
 												<width>252</width>
 												<height>126</height>
 												<texture>ThumbFO.png</texture>
 												<aspectratio>scale</aspectratio>
 										</control>
 										<control type="image">
-												<posx>7</posx>
-												<posy>7</posy>
+												<left>7</left>
+												<top>7</top>
 												<width>242</width>
 												<height>90</height>
 												<texture>$INFO[Listitem.Icon]</texture>
@@ -77,8 +77,8 @@
 												<aspectratio>scale</aspectratio>
 										</control>
 										<control type="label">
-												<posx>10</posx>
-												<posy>100</posy>
+												<left>10</left>
+												<top>100</top>
 												<width>236</width>
 												<height>20</height>
 												<font>size_20</font>
@@ -113,30 +113,30 @@
 						</control>
 				</control>
 				<control type="group" id="2">
-						<posx>290</posx>
-						<posy>210</posy>
+						<left>290</left>
+						<top>210</top>
 						<visible allowhiddenfocus="true">ControlGroup(2).HasFocus()</visible>
 						<include>VisibleFadeEffect</include>
 						<control type="image">
 								<description>background image</description>
-								<posx>0</posx>
-								<posy>0</posy>
+								<left>0</left>
+								<top>0</top>
 								<width>700</width>
 								<height>300</height>
 								<texture border="40">DialogBack.png</texture>
 						</control>
 						<control type="image">
 								<description>Heading Background</description>
-								<posx>30</posx>
-								<posy>34</posy>
+								<left>30</left>
+								<top>34</top>
 								<width>640</width>
 								<height>40</height>
 								<texture border="5">ThumbFO.png</texture>
 						</control>
 						<control type="label">
 								<description>heading label</description>
-								<posx>40</posx>
-								<posy>35</posy>
+								<left>40</left>
+								<top>35</top>
 								<width>620</width>
 								<height>40</height>
 								<align>center</align>
@@ -147,8 +147,8 @@
 						</control>
 						<control type="label">
 								<description>dialog line 2</description>
-								<posx>40</posx>
-								<posy>115</posy>
+								<left>40</left>
+								<top>115</top>
 								<width>620</width>
 								<height>30</height>
 								<align>center</align>
@@ -158,8 +158,8 @@
 						</control>
 						<control type="button" id="11">
 								<description>Yes button</description>
-								<posx>145</posx>
-								<posy>215</posy>
+								<left>145</left>
+								<top>215</top>
 								<width>200</width>
 								<height>35</height>
 								<label>107</label>
@@ -176,8 +176,8 @@
 						</control>
 						<control type="button" id="10">
 								<description>No button</description>
-								<posx>355</posx>
-								<posy>215</posy>
+								<left>355</left>
+								<top>215</top>
 								<width>200</width>
 								<height>35</height>
 								<label>106</label>
@@ -196,8 +196,8 @@
 				<include>WindowHeader</include>
 				<include>WindowFooter</include>
 				<control type="image">
-						<posx>20</posx>
-						<posy>5</posy>
+						<left>20</left>
+						<top>5</top>
 						<width>40</width>
 						<height>35</height>
 						<aspectratio>keep</aspectratio>
@@ -205,8 +205,8 @@
 				</control>
 				<control type="label">
 						<description>Header label</description>
-						<posx>70</posx>
-						<posy>5</posy>
+						<left>70</left>
+						<top>5</top>
 						<width>700</width>
 						<height>35</height>
 						<align>left</align>

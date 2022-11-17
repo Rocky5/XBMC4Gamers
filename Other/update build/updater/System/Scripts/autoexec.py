@@ -14,9 +14,9 @@ if os.path.isfile(zip_file):
 		shutil.rmtree(Root_Directory+'system/backup')
 	elif os.path.isdir(Root_Directory+'system/backup'):
 		os.rename(Root_Directory+'system/backup', Root_Directory+'system/backups')
-	# Update older .modules to _modules
+	# Remove older .modules folder
 	if os.path.isdir(Root_Directory+'system/scripts/.modules'):
-		os.rename(Root_Directory+'system/scripts/.modules', Root_Directory+'system/scripts/_modules')
+		shutil.rmtree(Root_Directory+'system/scripts/.modules')
 	# Remove old folders or files that are no longer needed.
 	if os.path.isdir(Root_Directory+'system/toggles'):
 		shutil.rmtree(Root_Directory+'system/toggles')
@@ -48,8 +48,8 @@ if os.path.isfile(zip_file):
 		for viewfile in os.listdir(os.path.join(Root_Directory,'skins/Profile Skin/xml')):
 			if viewfile.startswith('Viewtype_View'):
 				os.remove(os.path.join(Root_Directory,'skins/Profile Skin/xml',viewfile))
-	if os.path.isdir(Root_Directory+'skins/Profile Skin/media/disc artwork'):
-		shutil.rmtree(Root_Directory+'skins/Profile Skin/media/disc artwork')
+	# if os.path.isdir(Root_Directory+'skins/Profile Skin/media/disc artwork'):
+		# shutil.rmtree(Root_Directory+'skins/Profile Skin/media/disc artwork')
 	if os.path.isdir(Root_Directory+'skins/Profile Skin/media/folder fanart'):
 		if os.path.isdir(Root_Directory+'skins/Profile Skin/extras/folder fanart'):
 			shutil.rmtree(Root_Directory+'skins/Profile Skin/extras/folder fanart')
@@ -67,7 +67,6 @@ if os.path.isfile(zip_file):
 	if os.path.isdir('E:/UDATA/09999990'):
 		shutil.rmtree('E:/UDATA/09999990')
 ## Extract the dashboard zip
-	time.sleep(2)
 	with zipfile.ZipFile(zip_file) as zip:
 		Total_TXT_Files = len(zip.namelist()) or 1
 		Devide = 100.0 / Total_TXT_Files
@@ -92,12 +91,19 @@ if os.path.isfile(zip_file):
 					 next(input, None)
 			 else:
 				 print line,
+	if os.path.isfile(Root_Directory+'system/userdata/guisettings.xml'): # set the master profile to default(dashboard)
+		for line in fileinput.input(Root_Directory+'system/userdata/guisettings.xml', inplace=1):
+			line = line.replace('<assignment>1','<assignment>0')
+			line = line.replace('<assignment>2','<assignment>0')
+			print line,
 else:
 	pDialog.create('Error')
 	pDialog.update(0,"Download complete","Files are missing")
 	time.sleep(5)
 ## Write the cleanup script and reload the dashboard xbe
-autoexec_data = "import os, shutil, time, xbmcgui, zipfile\nif os.path.isdir('Q:/Updater'):\n	shutil.copy2('Q:/Updater/system/xbmc.log','Q:/system/xbmc-updater.log')\n	shutil.rmtree('Q:/Updater')\n	if os.path.isfile('Q:/system/keymaps/Enabled'): xbmc.executebuiltin('Skin.SetBool(editmode)')\n	time.sleep(2)\n	with open('Special://root/system/SystemInfo/changes.txt','r') as changes:\n		xbmcgui.Dialog().textviewer('Changes.txt', changes.read())\n	if os.path.isfile('Q:/skins/Profile Skin/extras/disc artwork.zip'):\n		with zipfile.ZipFile('Q:/skins/Profile Skin/extras/disc artwork.zip') as zip:\n			for item in zip.namelist():\n				try:\n					zip.extract(item,'Q:/skins/Profile Skin/extras/')\n				except:\n					print 'Failed - '+item\n		os.remove('Q:/skins/Profile Skin/extras/disc artwork.zip')"
+autoexec_data = "import os, xbmcgui\nzip = 'Special://root/skins/profile skin/extras/disc artwork.zip'\ntmp = 'E:/CACHE/tmp.bin'\nif os.path.isfile(zip):\n	if os.path.isfile('Q:/system/keymaps/Enabled'): xbmc.executebuiltin('Skin.SetBool(editmode)')\n	os.remove(zip)\n	if os.path.isfile(tmp):\n		os.remove(tmp)\n		xbmcgui.Dialog().textviewer('Changes.txt', open('Special://root/system/SystemInfo/changes.txt').read())"
 with open(os.path.join(Root_Directory,'system/scripts/autoexec.py') , 'w') as autoexec: autoexec.write(autoexec_data)
+with open("E:/CACHE/tmp.bin", 'w') as tmp: tmp.write('')
 time.sleep(3)
+os.remove(xbmc.translatePath("Special://root/default.xbe"))
 xbmc.executebuiltin('RunXBE('+ Root_Directory +'default.xbe)')

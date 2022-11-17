@@ -1,4 +1,6 @@
 <window id="1">
+		<onload condition="Skin.HasSetting(run_random_script)">RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Random Select.py)</onload>
+		<onunload>Skin.SetBool(showloading,false)</onunload>
 		<defaultcontrol always="true">50</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<onload>Skin.Reset(SynopsisPreviewThere)</onload>
@@ -7,6 +9,7 @@
 		<controls>
 				<include>CommonBackground</include>
 				<include>Fanart</include>
+				<!-- Views -->
 				<control type="group">
 						<include file="Viewtype_50_Poster.xml">PosterView</include>
 						<include file="Viewtype_51_PosterSmall.xml">PosterViewSmall</include>
@@ -27,9 +30,13 @@
 						<include file="Viewtype_66_PS.xml">PSView</include>
 						<include file="Viewtype_67_PosterFixed.xml">PosterFixed</include>
 						<include file="Viewtype_68_CD.xml">CDFixed</include>
+						<include file="Viewtype_69_LG.xml">LGView</include>
+						<include file="Viewtype_70_LoginAlt.xml">LoginAltView</include>
 						<include file="Viewtype_79_Resources.xml">ResourcesView</include>
+						<include file="Viewtype_fallback_view.xml">Fall-back Views - Ignore this warning</include>
 				</control>
 				<control type="group">
+						<include>dialogeffect2</include>
 						<visible>!Window.IsVisible(3000)</visible>
 						<include>WindowHeader</include>
 						<include>WindowFooter</include>

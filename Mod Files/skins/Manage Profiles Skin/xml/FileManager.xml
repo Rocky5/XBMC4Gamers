@@ -7,16 +7,16 @@
 				<control type="group">
 						<include>DialogEffectZoomFast</include>
 						<control type="image">
-								<posx>52</posx>
-								<posy>51</posy>
+								<left>52</left>
+								<top>51</top>
 								<width>1176</width>
 								<height>618</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\file manager\main.png</texture>
 						</control>
 						<control type="image">
-								<posx>75</posx>
-								<posy>74</posy>
+								<left>75</left>
+								<top>74</top>
 								<width>565</width>
 								<height>50</height>
 								<aspectratio>stretch</aspectratio>
@@ -24,21 +24,21 @@
 								<visible>Control.HasFocus(21)</visible>
 						</control>
 						<control type="image">
-								<posx>110</posx>
-								<posy>84</posy>
+								<left>110</left>
+								<top>84</top>
 								<width>30</width>
 								<height>30</height>
 								<aspectratio>stretch</aspectratio>
-								<texture>pad_buttons\dpad_left_button.png</texture>
+								<texture>pad_buttons\dialogs\dpad_left_button.png</texture>
 								<animation effect="fade" start="100" end="50" time="0" condition="Control.HasFocus(21)">Conditional</animation>
 						</control>
 						<control type="label" id="103">
-								<posx>150</posx>
-								<posy>84</posy>
+								<left>150</left>
+								<top>84</top>
 								<width>565</width>
 								<height>27</height>
 								<font>size_27</font>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>3_header_label</textcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<scroll>true</scroll>
@@ -46,24 +46,24 @@
 						</control>
 						<control type="label" id="101">
 								<description>current directory text label left</description>
-								<posx>105</posx>
-								<posy>150</posy>
+								<left>105</left>
+								<top>150</top>
 								<width>1070</width>
 								<height>27</height>
 								<font>size_27</font>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>3_header_label</textcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<scroll>true</scroll>
 								<visible>Control.HasFocus(20)</visible>
 						</control>
 						<control type="label">
-								<posx>85r</posx>
-								<posy>105r</posy>
+								<left>85r</left>
+								<top>105r</top>
 								<width>500</width>
 								<height>20</height>
 								<font>size_17</font>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>3_other_label</textcolor>
 								<scroll>false</scroll>
 								<align>right</align>
 								<aligny>center</aligny>
@@ -74,8 +74,8 @@
 						<include condition="Skin.HasSetting(File_Manager_Compact_Mode)">File_Manager_Compact_Mode_Left</include>
 						<include condition="!Skin.HasSetting(File_Manager_Compact_Mode)">File_Manager_Normal_Mode_Left</include>
 						<control type="image">
-								<posx>640</posx>
-								<posy>74</posy>
+								<left>640</left>
+								<top>74</top>
 								<width>565</width>
 								<height>50</height>
 								<aspectratio>stretch</aspectratio>
@@ -83,21 +83,21 @@
 								<visible>Control.HasFocus(20)</visible>
 						</control>
 						<control type="image">
-								<posx>1135</posx>
-								<posy>85</posy>
+								<left>1135</left>
+								<top>85</top>
 								<width>30</width>
 								<height>30</height>
 								<aspectratio>stretch</aspectratio>
-								<texture>pad_buttons\dpad_right_button.png</texture>
+								<texture>pad_buttons\dialogs\dpad_right_button.png</texture>
 								<animation effect="fade" start="100" end="50" time="0" condition="Control.HasFocus(20)">Conditional</animation>
 						</control>
 						<control type="label" id="104">
-								<posx>670</posx>
-								<posy>84</posy>
+								<left>670</left>
+								<top>84</top>
 								<width>565</width>
 								<height>27</height>
 								<font>size_27</font>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>3_header_label</textcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<scroll>true</scroll>
@@ -105,24 +105,24 @@
 						</control>
 						<control type="label" id="102">
 								<description>current directory text label right</description>
-								<posx>105</posx>
-								<posy>150</posy>
+								<left>105</left>
+								<top>150</top>
 								<width>1070</width>
 								<height>27</height>
 								<font>size_27</font>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>3_header_label</textcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<scroll>true</scroll>
 								<visible>Control.HasFocus(21)</visible>
 						</control>
 						<control type="label">
-								<posx>85r</posx>
-								<posy>105r</posy>
+								<left>85r</left>
+								<top>105r</top>
 								<width>500</width>
 								<height>20</height>
 								<font>size_17</font>
-								<textcolor>windows_label_no_focus</textcolor>
+								<textcolor>3_other_label</textcolor>
 								<scroll>false</scroll>
 								<align>right</align>
 								<aligny>center</aligny>
@@ -134,8 +134,8 @@
 						<include condition="!Skin.HasSetting(File_Manager_Compact_Mode)">File_Manager_Normal_Mode_Right</include>
 						<control type="grouplist">
 								<description>Control Info</description>
-								<posx>52</posx>
-								<posy>580</posy>
+								<left>52</left>
+								<top>580</top>
 								<width>1176</width>
 								<height>80</height>
 								<itemgap>10</itemgap>
@@ -143,113 +143,113 @@
 								<align>center</align>
 								<!-- A Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\a_button.png</texture>
+										<texture>pad_buttons\dialogs\a_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\b_button.png</texture>
+										<texture>pad_buttons\dialogs\b_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31021]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- Y Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\y_button.png</texture>
+										<texture>pad_buttons\dialogs\y_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31530]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- White Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\white_button.png</texture>
+										<texture>pad_buttons\dialogs\white_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31521]</label>
 										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- Black Button -->
 								<control type="image">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width>32</width>
 										<height>32</height>
 										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\black_button.png</texture>
+										<texture>pad_buttons\dialogs\black_button.png</texture>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31531]</label>
 										<include>Context_Buttons_Text_Align</include>
 										<visible>Skin.HasSetting(File_Manager_Compact_Mode)</visible>
 								</control>
 								<control type="label">
-										<posx>0</posx>
-										<posy>0</posy>
+										<left>0</left>
+										<top>0</top>
 										<width min="80" max="147">auto</width>
 										<height>20</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>windows_context_label</textcolor>
+										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31532]</label>
 										<include>Context_Buttons_Text_Align</include>
 										<visible>!Skin.HasSetting(File_Manager_Compact_Mode)</visible>

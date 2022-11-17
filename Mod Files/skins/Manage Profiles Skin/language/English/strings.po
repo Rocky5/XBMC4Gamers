@@ -31,6 +31,14 @@ msgctxt "#32002"
 msgid "Enable fast game parsing"
 msgstr ""
 
+msgctxt "#32003"
+msgid "Use synopsis naming if available"
+msgstr ""
+
+msgctxt "#32004"
+msgid "This option will not work with forced 480p bios"
+msgstr ""
+
 ## Custom_Dialog_Quick_Change.xml - 31000 to 31010
 msgctxt "#31001"
 msgid "applications"
@@ -249,6 +257,10 @@ msgctxt "#31091"
 msgid "Use theme playlist"
 msgstr ""
 
+msgctxt "#31092"
+msgid "Enable Random Select"
+msgstr ""
+
 ## DialogKeyboard.xml - 310101 to 31105
 msgctxt "#31101"
 msgid "6 digit hex colour code (0-F)"
@@ -331,6 +343,10 @@ msgctxt "#31124"
 msgid "Reload Skin"
 msgstr ""
 
+msgctxt "#31125"
+msgid "Random Pick"
+msgstr ""
+
 ## Custom_View_Options.xml - 31141 to 31150
 msgctxt "#31141"
 msgid "Sort: Descending"
@@ -356,7 +372,7 @@ msgctxt "#31146"
 msgid "Switch View"
 msgstr ""
 
-## Settings.xml - 31151 to 31169
+## Settings.xml - 31151 to 31165
 msgctxt "#31151"
 msgid "Back"
 msgstr ""
@@ -397,6 +413,10 @@ msgctxt "#31160"
 msgid "Toggles · Scripts · Startup playlist"
 msgstr ""
 
+msgctxt "#31161"
+msgid "Temps · HDD Info · Hardware Info"
+msgstr ""
+
 ## SettingsCategory.xml - 31166 to 31170
 msgctxt "#31166"
 msgid "Back"
@@ -422,11 +442,11 @@ msgid "loading"
 msgstr ""
 
 msgctxt "#31180"
-msgid "Running Scripts, please wait..."
+msgid "Initialising please wait..."
 msgstr ""
 
 msgctxt "#31181"
-msgid "Error Script is missing or is taking to long to finish. Please send me a copy of your [B]"xbmc.log"[/B] file."
+msgid "Error has accrued. Please send me a copy of your [B]"xbmc.log"[/B] file, or try restarting the xbox."
 msgstr ""
 
 ## View files - 31186 to 31209
