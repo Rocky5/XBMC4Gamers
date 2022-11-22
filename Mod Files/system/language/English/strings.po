@@ -8144,7 +8144,7 @@ msgid "OpenGL version:"
 msgstr ""
 
 msgctxt "#22010"
-msgid "MB temperature:"
+msgid "GPU temperature:"
 msgstr ""
 
 msgctxt "#22011"
@@ -8687,4 +8687,12 @@ msgstr ""
 
 msgctxt "#34005"
 msgid "Flac"
+msgstr ""
+
+msgctxt "#34006"
+msgid "- Primary DNS"
+msgstr ""
+
+msgctxt "#34007"
+msgid "- Secondary DNS"
 msgstr ""

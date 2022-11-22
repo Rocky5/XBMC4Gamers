@@ -1,3 +1,15 @@
+Patron Supporters:
+	Richard, Giovany Rodriguez, Alf John Hammervik, Rick Girton, thePiratePimp, Michael Bergeron, Wayne Starr, Stian Tofte, Johnny Andersen, Wayne Swift
+	Clayton Beeney, Andrew Ryan, Tktagmedia, Darren Titchmarsh, Jay Jay, Natetronn, Incursion64 ., Roger Serres, Darren Old, Joel Peterson, Jamie Eubank
+
+Thank you for your support.
+Would also like to thank everyone that donates its much appreciated.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+22/11/2022
+	1) Added support for alternative DNS entry.
+
 15/11/2022
 	1) Master Profile is set to default (Dashboard) for its network, user profiles will need to manually change theirs.
 

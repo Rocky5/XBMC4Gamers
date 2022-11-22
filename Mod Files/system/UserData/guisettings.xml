@@ -172,7 +172,7 @@
 				<usedashpath>true</usedashpath>
 		</myprograms>
 		<network>
-				<assignment>1</assignment>
+				<assignment>0</assignment>
 				<bandwidth>0</bandwidth>
 				<dns>8.8.8.8</dns>
 				<gateway>192.168.0.1</gateway>
