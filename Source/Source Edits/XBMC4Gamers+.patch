@@ -2734,6 +2734,75 @@ Index: sources/visualisations/Milkdrop/vis_milkdrop/pluginshell.cpp
  //		sprintf(m_szPluginsDirPath, "d:\\");
  	}    
      sprintf(m_szConfigIniFile, "%s%s", m_szPluginsDirPath, INIFILE);
+Index: system/SystemInfo/BiosIDs.ini
+===================================================================
+--- system/SystemInfo/BiosIDs.ini	(revision 33032)
++++ system/SystemInfo/BiosIDs.ini	(working copy)
+@@ -1226,3 +1226,64 @@
+ (1MB) Xecuter2 4981.06 - Kyle = 4DC81B1020C4A9C6B578EE50239953C9
+ (1MB) Xecuter2 4980.06 - Blue = A068700CC8AB40499E141DDF144EA7DF
+ 
++# Cerbios
++
++(1MB)Cerbios_Alpha_V1 = 44B590A9D89ACFFDEAF4B90279856E9C
++(512)Cerbios_Alpha_V1 = 9798B7BF94E9A6D953F7A8CBD42B893D
++(256)Cerbios_Alpha_V1 = C8836AD03C618792161604F779F89751
++
++(1MB)Cerbios Alpha V1.01 = FA4E0C67D6E1F8BE718AB0ABC7907EAF
++(512)Cerbios Alpha V1.01 = D7AE454E0FE5505A4519870A002C3551
++(256)Cerbios Alpha V1.01 = 919D9A0D1C66882BF37F9120EDEC7F60
++
++(1MB)Cerbios Alpha V1.02 = 2A9E0ACF6F34FCB70E2BC1A92B56AAD3
++(512)Cerbios Alpha V1.02 = DA87845449192C89548EFFABEBE07001
++(256)Cerbios Alpha V1.02 = 591443C7F241FB8F7BB8784C427D0D04
++
++(1MB)Cerbios Beta Retail V2.00 = D8EC8FDC4519778690876286ABFEDF18
++(512)Cerbios Beta Retail V2.00 = EA233BFF69099DFE13B7EA57FC3D81EE
++(256)Cerbios Beta Retail V2.00 = 1EE486DFD2D713B0C27C486C197D2CA9
++
++(1MB)Cerbios Beta Debug V2.00 = 1B9F2C5577FDADE0070E861744C13650
++(512)Cerbios Beta Debug V2.00 = 20400B248EBFC7610BDDA5529DB974FE
++(256)Cerbios Beta Debug V2.00 = 305545D8B68492FED86E8CBD78BD2A4E
++
++(1MB)Cerbios Beta Retail V2.01 = 796E87B8226DA287BAA97F6804494B55
++(512)Cerbios Beta Retail V2.01 = B2DDD5214C1DA11B10F402B78F69B178
++(256)Cerbios Beta Retail V2.01 = BF883FE16E53C13471026160058AFC7C
++
++(1MB)Cerbios Beta Debug V2.01 = 8895E44308CBF03706F3F78A5CCCBD4D
++(512)Cerbios Beta Debug V2.01 = 6BC042A219A776C673155CE5F8BD37A1
++(256)Cerbios Beta Debug V2.01 = 0755BF826B145387D9E1AB2EA842C0E5
++
++(1MB)Cerbios Retail V2.02 = CC650907789E5C7B3F2482587B9E75F2
++(512)Cerbios Retail V2.02 = 939B369DCD3E7CC7F4DEAE93DD6D79CA
++(256)Cerbios Retail V2.02 = 69826A4833112D3AC397733152BBA0A8
++
++(1MB)Cerbios Retail V2.02 UDMA 5 = A5D00B05DFFF4B8826B454E9BEC45F5D
++(512)Cerbios Retail V2.02 UDMA 5 = 5881C97A4DAE29AA49F09415689DCF79
++(256)Cerbios Retail V2.02 UDMA 5 = 3F7A53719206B1ECB416BDD0A83942CB
++
++(1MB)Cerbios Debug V2.02 = 92892DFDAEA3673F4211349DBE4FE760
++(512)Cerbios Debug V2.02 = 067F50B60EB2D9F98E16C572107C2C93
++(256)Cerbios Debug V2.02 = 2A20100346A6D1231D4C7F7B194103A3
++
++(1MB)Cerbios Debug V2.02 UDMA 5 = 9E18225B364919AC4E8E595FC5F7EA97
++(512)Cerbios Debug V2.02 UDMA 5 = 0AF32105DCA66EABBDF2D7D1801A00E4
++(256)Cerbios Debug V2.02 UDMA 5 = DB14FB2AE8D37E0E4CA408137946046C
++
++(1MB)Cerbios Hybrid V2.03R = C8C579E09DAB1E9E5BA358CA6C5E14A2
++(512)Cerbios Hybrid V2.03R = 3965AD27D152D8619B4616E358F6F49E
++(256)Cerbios Hybrid V2.03R = 9FA861CF0170AA294EE8EDF44839A531
++
++(1MB)Cerbios Hybrid V2.03R UDMA5 = 22131E117FD51BE048276895A7F6DD6F
++(512)Cerbios Hybrid V2.03R UDMA5 = BF66C29CC455E3A9A55AE117D1AF2E30
++(256)Cerbios Hybrid V2.03R UDMA5 = 85DA59381616B629CAC8D5D64B1B6084
++
++(1MB)Cerbios Hybrid V2.1.0 BETA = 5E100BBF37942670993262EB0EC8731F
++(512)Cerbios Hybrid V2.1.0 BETA = A559558AF846446CDD32018853BFE31C
++(256)Cerbios Hybrid V2.1.0 BETA = 224CED706F21BD965ABF8EA28F1C478A
++
++(1MB)Cerbios Hybrid V2.1.0 BETA UDMA5 = 6C633217ED560F874F666F32CD676C5C
++(512)Cerbios Hybrid V2.1.0 BETA UDMA5 = 96944C4F14C1FC7E87626B018E6A231D
++(256)Cerbios Hybrid V2.1.0 BETA UDMA5 = D17E21494110CF0E3CC417AC9D787047
 Index: xbelogo
 ===================================================================
 --- xbelogo	(revision 33032)
@@ -27500,6 +27569,24 @@ Index: xbmc/utils/SystemInfo.cpp
 ===================================================================
 --- xbmc/utils/SystemInfo.cpp	(revision 33032)
 +++ xbmc/utils/SystemInfo.cpp	(working copy)
+@@ -275,7 +275,7 @@
+   }
+   else
+   {
+-    struct Bios * Listone = (struct Bios *)calloc(1000, sizeof(struct Bios));
++    struct Bios * Listone = (struct Bios *)calloc(1500, sizeof(struct Bios));
+     int cntBioses=0;
+     char buffer[255];
+     char stringone[255];
+@@ -291,7 +291,7 @@
+           cntBioses++;
+         }
+       }
+-    } while( !feof( infile ) && cntBioses < 999 );
++    } while( !feof( infile ) && cntBioses < 1499 );
+     fclose(infile);
+     strcpy(Listone[cntBioses++].Name,"\0");
+     strcpy(Listone[cntBioses++].Signature,"\0");
 @@ -1207,8 +1207,8 @@
  CStdString CSysInfo::GetKernelVersion()
  {
