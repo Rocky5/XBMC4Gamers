@@ -7,6 +7,10 @@ Would also like to thank everyone that donates its much appreciated.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+29/11/2022
+	1) Fixed the long load times, I forgot to remove a zip I extract :/
+	(Thanks to Zaper for sending logs)
+
 22/11/2022
 	1) Added support for alternative DNS entry.
 

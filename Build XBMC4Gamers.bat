@@ -31,7 +31,7 @@ if exist "..\other\build for release.bin" (
 ) else (
 	Set daytotal=000
 )
-Set "daytotal=002"
+Set "daytotal=003"
 title XBMC4Gamers Builder - %version%.%daytotal%
 cls
 Echo: & Echo: & Echo: & Echo   Preping files & Echo   Please wait...
