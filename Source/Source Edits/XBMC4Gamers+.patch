@@ -5386,7 +5386,7 @@ Index: xbmc/Application.cpp
 +		CopyFile("Special://root/updater/system/xbmc.log","Special://root/system/xbmc-updater.log",1);
 +		CUtil::WipeDir("Special://root/updater");
 +		CBuiltins::Execute("Extract(Special://root/skins/profile skin/extras/disc artwork.zip,Special://root/skins/profile skin/extras)");
-+		CFile::Delete("Special://root/skins/profile skin/extras/disc artwork.zip");
++		// CFile::Delete("Special://root/skins/profile skin/extras/disc artwork.zip");
 +	}
 +	
 +	int iResolution = g_graphicsContext.GetVideoResolution();
