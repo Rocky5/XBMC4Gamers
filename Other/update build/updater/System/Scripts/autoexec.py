@@ -101,8 +101,9 @@ else:
 	pDialog.update(0,"Download complete","Files are missing")
 	time.sleep(5)
 ## Write the cleanup script and reload the dashboard xbe
-autoexec_data = "import os, xbmcgui\nzip = 'Special://root/skins/profile skin/extras/disc artwork.zip'\ntmp = 'E:/CACHE/tmp.bin'\nif os.path.isfile(zip):\n	if os.path.isfile('Q:/system/keymaps/Enabled'): xbmc.executebuiltin('Skin.SetBool(editmode)')\n	os.remove(zip)\n	if os.path.isfile(tmp):\n		os.remove(tmp)\n		xbmcgui.Dialog().textviewer('Changes.txt', open('Special://root/system/SystemInfo/changes.txt').read())"
+autoexec_data = "import os, xbmcgui\ntmp = 'E:/CACHE/tmp.bin'\nif os.path.isfile(tmp):\n	if os.path.isfile('Q:/system/keymaps/Enabled'): xbmc.executebuiltin('Skin.SetBool(editmode)')\n	os.remove(tmp)\n	xbmcgui.Dialog().textviewer('Changes.txt', open('Special://root/system/SystemInfo/changes.txt').read())"
 with open(os.path.join(Root_Directory,'system/scripts/autoexec.py') , 'w') as autoexec: autoexec.write(autoexec_data)
+if not os.path.exists("E:/CACHE"): os.mkdir("E:/CACHE")
 with open("E:/CACHE/tmp.bin", 'w') as tmp: tmp.write('')
 time.sleep(3)
 os.remove(xbmc.translatePath("Special://root/default.xbe"))
