@@ -47,7 +47,7 @@ def prepare_loaderxbe(self):
 		attach_xbe_file.seek(280, 0)
 		attach_xbe_file.write(MOV_Fix)
 	attach_xbe_file.close()
-	if not os.path.isfile(os.path.join(Game_Path,'default.tbn'):
+	if not os.path.isfile(os.path.join(Game_Path,'default.tbn')):
 		try: # this is to move on if there is an error with extracting the image.
 			xbeinfo(os.path.join(Game_Path,"default.xbe")).image_png()
 		except:
