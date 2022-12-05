@@ -37,7 +37,7 @@
 						<top>5</top>
 						<width>205</width>
 						<height>280</height>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture background="true">$INFO[listitem.icon]</texture>
 				</control>
 				<control type="image">
@@ -98,7 +98,7 @@
 						<top>5</top>
 						<width>204</width>
 						<height>280</height>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture background="true">$INFO[listitem.icon]</texture>
 						<animation reversible="false" effect="zoom" start="5,5,204,280" end="-5,-31,224,320" time="100">focus</animation>
 						<animation reversible="false" effect="zoom" end="5,5,204,280" start="-5,-31,224,320" time="100">unfocus</animation>
@@ -175,7 +175,7 @@
 						<top>145</top>
 						<width>136</width>
 						<height>190</height>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture background="true">$INFO[listitem.icon]</texture>
 				</control>
 				<control type="image">
@@ -233,7 +233,7 @@
 						<top>0</top>
 						<width>275</width>
 						<height>385</height>
-						<aspectratio>scale</aspectratio>
+						<aspectratio>stretch</aspectratio>
 						<texture background="true">$INFO[listitem.icon]</texture>
 				</control>
 				<control type="label">

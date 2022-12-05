@@ -43,7 +43,7 @@
 														<top>0</top>
 														<width>214</width>
 														<height>290</height>
-														<aspectratio>scale</aspectratio>
+														<aspectratio>stretch</aspectratio>
 														<texture background="true">$INFO[listitem.icon]</texture>
 														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 												</control>
@@ -149,7 +149,7 @@
 														<top>0</top>
 														<width>214</width>
 														<height>290</height>
-														<aspectratio>scale</aspectratio>
+														<aspectratio>stretch</aspectratio>
 														<texture background="true">$INFO[listitem.icon]</texture>
 														<animation reversible="false" effect="zoom" start="0,0,214,290" end="-10,-36,234,330" time="100">focus</animation>
 														<animation reversible="false" effect="zoom" end="0,0,214,290" start="-10,-36,234,330" time="100">unfocus</animation>
