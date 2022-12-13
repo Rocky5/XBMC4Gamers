@@ -1,0 +1,7 @@
+Texture saveimage
+{
+   Source saveimage-xai.bmp
+   Format D3DFMT_DXT1
+   Width 64
+   Height 64
+}
