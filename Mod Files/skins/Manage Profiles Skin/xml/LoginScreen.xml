@@ -410,5 +410,7 @@
 				<include condition="SubString(System.Date,Oct)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Oct.xml">Oct</include>
 				<include condition="SubString(System.Date,Nov)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Nov.xml">Nov</include>
 				<include condition="SubString(System.Date,Dec)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Dec.xml">Dec</include>
+				
+				<include>View_Options</include>
 		</controls>
 </window>

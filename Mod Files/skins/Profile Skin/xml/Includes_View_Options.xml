@@ -710,6 +710,18 @@
 												<icon>windows\programs\show_login_border.jpg</icon>
 												<visible>Skin.HasSetting(hideloginborder) + StringCompare(Container.Viewmode,view52)</visible>
 										</item>
+										<item id="2014">
+												<label>-</label>
+												<onclick>Skin.SetBool(hidecdartwork)</onclick>
+												<icon>windows\programs\show_listcd.jpg</icon>
+												<visible>!Skin.HasSetting(hidecdartwork) + StringCompare(Container.Viewmode,view58)</visible>
+										</item>
+										<item id="2014">
+												<label>-</label>
+												<onclick>Skin.Reset(hidecdartwork)</onclick>
+												<icon>windows\programs\hide_listcd.jpg</icon>
+												<visible>Skin.HasSetting(hidecdartwork) + StringCompare(Container.Viewmode,view58)</visible>
+										</item>
 										<item id="2024">
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(_resourcesenabled)</onclick>

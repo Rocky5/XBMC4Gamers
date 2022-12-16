@@ -250,7 +250,7 @@ msgid "Custom playlist"
 msgstr ""
 
 msgctxt "#31090"
-msgid "Update check"
+msgid "View Options"
 msgstr ""
 
 msgctxt "#31091"

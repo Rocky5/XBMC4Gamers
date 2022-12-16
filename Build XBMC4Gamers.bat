@@ -12,9 +12,8 @@ if not exist "%foldername%" (
 	Exit
 )
 :Start
-Set "version=1.4"
-Set "daytotal=002"
-Set "fromDate=23/06/2022"
+Set /p "version="<version.txt
+REM Set "fromDate=23/06/2022"
 for /F "usebackq tokens=1,2 delims==" %%i in (`wmic os get LocalDateTime /VALUE 2^>NUL`) do if '.%%i.'=='.LocalDateTime.' set dateformat=%%j
 Set toDate=%dateformat:~6,2%^/%dateformat:~4,2%^/%dateformat:~0,4%
 REM if exist "..\other\build for release.bin" (
@@ -32,7 +31,7 @@ REM if exist "..\other\build for release.bin" (
 REM ) else (
 	REM Set daytotal=000
 REM )
-title XBMC4Gamers Builder - %version%.%daytotal%
+title XBMC4Gamers Builder - %version%
 cls
 Echo: & Echo: & Echo: & Echo   Preping files & Echo   Please wait...
 (
@@ -66,7 +65,7 @@ move "%foldername%\screenshots" "%foldername%\system\"
 move "%foldername%\UserData" "%foldername%\system\"
 XCopy /s /e /i /h /r /y "Mod Files" "%foldername%"
 REM if exist "Other\build for release" (
-	Call Other\Tools\repl.bat "XBMC4Gamers 0.0.000" "XBMC4Gamers %version%.%daytotal%" L < "%foldername%\skins\Profile Skin\language\English\strings.po" >"%foldername%\skins\Profile Skin\language\English\strings.tmp"
+	Call Other\Tools\repl.bat "XBMC4Gamers 0.0.000" "XBMC4Gamers %version%" L < "%foldername%\skins\Profile Skin\language\English\strings.po" >"%foldername%\skins\Profile Skin\language\English\strings.tmp"
 	Del "%foldername%\skins\Profile Skin\language\English\strings.po"
 	rename "%foldername%\skins\Profile Skin\language\English\strings.tmp" "strings.po"
 	MD "%foldername%\system\SystemInfo"

@@ -1,11 +1,20 @@
+16/12/2022
+	1) Can now hide the cd artwork on the list view & they wont show on folders regardless of the setting.
+	2) Can now change the wallpaper on the Manage Profiles profile.
+		(Press start when at the login screen to change wallpapers)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 Patron Supporters:
-	Richard, Giovany Rodriguez, Alf John Hammervik, Rick Girton, thePiratePimp, Michael Bergeron, Wayne Starr, Stian Tofte, Johnny Andersen, Wayne Swift
-	Clayton Beeney, Andrew Ryan, Tktagmedia, Darren Titchmarsh, Jay Jay, Natetronn, Incursion64 ., Roger Serres, Darren Old, Joel Peterson, Jamie Eubank
+	Víctor Hugo Valdez Soto, neakmenter, Zé Miguel, Martin Clausius, TeleTubby666, Wimpy, Alf John Hammervik, Rick Girton, thePiratePimp, Michael Bergeron,
+	Wayne Starr, Stian Tofte, Johnny Andersen, Clayton Beeney, Andrew Ryan, Incursion64 ., Roger Serres & Joel Peterson
 
 Thank you for your support.
 Would also like to thank everyone that donates its much appreciated.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Previous Updates:
 
 22/11/2022
 	1) Added support for alternative DNS entry.
@@ -52,18 +61,6 @@ Would also like to thank everyone that donates its much appreciated.
 	27) Resizes splashes and remade them.
 	28) More back-end changes here and there.
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Patron Supporters & Testers:
-	Richard, Giovany Rodriguez, Alf John Hammervik, Rick Girton, thePiratePimp, Michael Bergeron, Wayne Starr, Stian Tofte, Johnny Andersen, Wayne Swift
-	Clayton Beeney, Andrew Ryan, Tktagmedia, Darren Titchmarsh, Jay Jay, Natetronn, Incursion64 ., Roger Serres, Darren Old, Joel Peterson, Jamie Eubank, EnsignRutherford
-
-Thank you for your support.
-Would also like to thank everyone that donates it's much appreciated.
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-Previous Updates:
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 22/06/2022
 	1) Progress dialog will only show when adding games.
 	2) Added support for parsing _resources/default.xml if found. This will allow the use of the <title> value as the game title.

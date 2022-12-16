@@ -81,67 +81,120 @@
 														<height>90</height>
 														<texture background="true" border="5">views/list/listnf.png</texture>
 												</control>
-												<control type="image">
-														<left>10</left>
-														<top>10</top>
-														<width>70</width>
-														<height>70</height>
-														<texture background="true">no_cd_small.png</texture>
+												<control type="group">
+													<visible>!Skin.HasSetting(hidecdartwork) + !ListItem.IsFolder</visible>
+													<control type="image">
+															<left>10</left>
+															<top>10</top>
+															<width>70</width>
+															<height>70</height>
+															<texture background="true">no_cd_small.png</texture>
+													</control>
+													<control type="image">
+															<left>10</left>
+															<top>10</top>
+															<width>70</width>
+															<height>70</height>
+															<texture background="true" diffuse="views/list/CD_diffuse_listview.png">$INFO[listitem.path,,_resources\artwork\cd_small.jpg]</texture>
+															<visible>Skin.HasSetting(_resourcesenabled)</visible>
+													</control>
+													<control type="label">
+															<left>90</left>
+															<top>10</top>
+															<width>620</width>
+															<height>45</height>
+															<font>size_35</font>
+															<textcolor>view58_info_label</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$INFO[ListItem.Label]</label>
+													</control>
+													<control type="label">
+															<left>90</left>
+															<top>55</top>
+															<width>620</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+													</control>
+													<control type="label">
+															<left>90</left>
+															<top>55</top>
+															<width>620</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+													</control>
+													<control type="label">
+															<left>90</left>
+															<top>55</top>
+															<width>620</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+													</control>
 												</control>
-												<control type="image">
-														<left>10</left>
-														<top>10</top>
-														<width>70</width>
-														<height>70</height>
-														<texture background="true" diffuse="views/list/CD_diffuse_listview.png">$INFO[listitem.path,,_resources\artwork\cd_small.jpg]</texture>
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-												</control>
-												<control type="label">
-														<left>90</left>
-														<top>10</top>
-														<width>620</width>
-														<height>45</height>
-														<font>size_35</font>
-														<textcolor>view58_info_label</textcolor>
-														<align>left</align>
-														<aligny>center</aligny>
-														<label>$INFO[ListItem.Label]</label>
-												</control>
-												<control type="label">
-														<left>90</left>
-														<top>55</top>
-														<width>620</width>
-														<height>20</height>
-														<font>size_15</font>
-														<textcolor>view58_info_label</textcolor>
-														<align>left</align>
-														<aligny>center</aligny>
-														<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
-												</control>
-												<control type="label">
-														<left>90</left>
-														<top>55</top>
-														<width>620</width>
-														<height>20</height>
-														<font>size_15</font>
-														<textcolor>view58_info_label</textcolor>
-														<align>left</align>
-														<aligny>center</aligny>
-														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
-												</control>
-												<control type="label">
-														<left>90</left>
-														<top>55</top>
-														<width>620</width>
-														<height>20</height>
-														<font>size_15</font>
-														<textcolor>view58_info_label</textcolor>
-														<align>left</align>
-														<aligny>center</aligny>
-														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+												<control type="group">
+													<visible>Skin.HasSetting(hidecdartwork) | ListItem.IsFolder</visible>
+													<control type="label">
+															<left>20</left>
+															<top>10</top>
+															<width>690</width>
+															<height>45</height>
+															<font>size_35</font>
+															<textcolor>view58_info_label</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$INFO[ListItem.Label]</label>
+													</control>
+													<control type="label">
+															<left>20</left>
+															<top>55</top>
+															<width>690</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+													</control>
+													<control type="label">
+															<left>20</left>
+															<top>55</top>
+															<width>690</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+													</control>
+													<control type="label">
+															<left>20</left>
+															<top>55</top>
+															<width>690</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+													</control>
 												</control>
 												<control type="image">
 														<left>680</left>
@@ -161,21 +214,6 @@
 														<texture background="true" border="5">views/list/thumbfo.png</texture>
 												</control>
 												<control type="image">
-														<left>10</left>
-														<top>10</top>
-														<width>70</width>
-														<height>70</height>
-														<texture background="true">no_cd_small.png</texture>
-												</control>
-												<control type="image">
-														<left>10</left>
-														<top>10</top>
-														<width>70</width>
-														<height>70</height>
-														<texture background="true" diffuse="views/list/CD_diffuse_listview.png">$INFO[listitem.path,,_resources\artwork\cd_small.jpg]</texture>
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-												</control>
-												<control type="image">
 														<left>680</left>
 														<top>50</top>
 														<width>30</width>
@@ -183,52 +221,120 @@
 														<aspectratio>stretch</aspectratio>
 														<texture>$INFO[listitem.overlay]</texture>
 												</control>
-												<control type="label">
-														<left>90</left>
-														<top>10</top>
-														<width>620</width>
-														<height>45</height>
-														<font>size_35</font>
-														<textcolor>view58_info_label_alt</textcolor>
-														<align>left</align>
-														<aligny>center</aligny>
-														<label>$INFO[ListItem.Label]</label>
+												<control type="group">
+													<visible>!Skin.HasSetting(hidecdartwork) + !ListItem.IsFolder</visible>
+													<control type="image">
+															<left>10</left>
+															<top>10</top>
+															<width>70</width>
+															<height>70</height>
+															<texture background="true">no_cd_small.png</texture>
+													</control>
+													<control type="image">
+															<left>10</left>
+															<top>10</top>
+															<width>70</width>
+															<height>70</height>
+															<texture background="true" diffuse="views/list/CD_diffuse_listview.png">$INFO[listitem.path,,_resources\artwork\cd_small.jpg]</texture>
+															<visible>Skin.HasSetting(_resourcesenabled)</visible>
+													</control>
+													<control type="label">
+															<left>90</left>
+															<top>10</top>
+															<width>620</width>
+															<height>45</height>
+															<font>size_35</font>
+															<textcolor>view58_info_label_alt</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$INFO[ListItem.Label]</label>
+													</control>
+													<control type="label">
+															<left>90</left>
+															<top>55</top>
+															<width>620</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label_alt</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+													</control>
+													<control type="label">
+															<left>90</left>
+															<top>55</top>
+															<width>620</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label_alt</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+													</control>
+													<control type="label">
+															<left>90</left>
+															<top>55</top>
+															<width>620</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label_alt</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+													</control>
 												</control>
-												<control type="label">
-														<left>90</left>
-														<top>55</top>
-														<width>620</width>
-														<height>20</height>
-														<font>size_15</font>
-														<textcolor>view58_info_label_alt</textcolor>
-														<align>left</align>
-														<aligny>center</aligny>
-														<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
-												</control>
-												<control type="label">
-														<left>90</left>
-														<top>55</top>
-														<width>620</width>
-														<height>20</height>
-														<font>size_15</font>
-														<textcolor>view58_info_label_alt</textcolor>
-														<align>left</align>
-														<aligny>center</aligny>
-														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
-												</control>
-												<control type="label">
-														<left>90</left>
-														<top>55</top>
-														<width>620</width>
-														<height>20</height>
-														<font>size_15</font>
-														<textcolor>view58_info_label_alt</textcolor>
-														<align>left</align>
-														<aligny>center</aligny>
-														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+												<control type="group">
+													<visible>Skin.HasSetting(hidecdartwork) | ListItem.IsFolder</visible>
+													<control type="label">
+															<left>20</left>
+															<top>10</top>
+															<width>690</width>
+															<height>45</height>
+															<font>size_35</font>
+															<textcolor>view58_info_label_alt</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$INFO[ListItem.Label]</label>
+													</control>
+													<control type="label">
+															<left>20</left>
+															<top>55</top>
+															<width>690</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label_alt</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+													</control>
+													<control type="label">
+															<left>20</left>
+															<top>55</top>
+															<width>690</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label_alt</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+													</control>
+													<control type="label">
+															<left>20</left>
+															<top>55</top>
+															<width>690</width>
+															<height>20</height>
+															<font>size_15</font>
+															<textcolor>view58_info_label_alt</textcolor>
+															<align>left</align>
+															<aligny>center</aligny>
+															<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+															<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+													</control>
 												</control>
 										</focusedlayout>
 								</control>

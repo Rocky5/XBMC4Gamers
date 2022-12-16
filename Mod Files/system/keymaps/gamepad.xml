@@ -51,7 +51,7 @@
 		<LoginScreen>
 				<gamepad>
 						<black>XBMC.SetFocus(19)</black>
-						<start>RunScript(Special://scripts/XBMC4Gamers/Utilities/dialog ok.py,run_script,NOTICE,,About to check for an update[CR]This can take a few seconds.,,Special://scripts/XBMC4Gamers/Utilities/Update Check.py)</start>
+						<start>SetFocus(9001)</start>
 				</gamepad>
 		</LoginScreen>
 		<Home>
