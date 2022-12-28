@@ -208,18 +208,12 @@
 												<onclick>ActivateWindow(AppearanceSettings)</onclick>
 												<icon>thumbs/Appearance.png</icon>
 										</item>
-										<!-- <item> -->
-										<!-- <label>157</label> -->
-										<!-- <label2>$LOCALIZE[31153]</label2> -->
-										<!-- <onclick>ActivateWindow(VideosSettings)</onclick> -->
-										<!-- <icon>thumbs/Videos.png</icon> -->
-										<!-- </item> -->
-										<!-- <item> -->
-										<!-- <label>0</label> -->
-										<!-- <label2>$LOCALIZE[31154]</label2> -->
-										<!-- <onclick>ActivateWindow(ProgramsSettings)</onclick> -->
-										<!-- <icon>thumbs/Programs.png</icon> -->
-										<!-- </item> -->
+										<item>
+												<label>7</label>
+												<label2>$LOCALIZE[31158]</label2>
+												<onclick>ActivateWindow(FileManager)</onclick>
+												<icon>thumbs/FileManager.png</icon>
+										</item>
 										<item>
 												<label>705</label>
 												<label2>$LOCALIZE[31155]</label2>
@@ -233,12 +227,6 @@
 												<icon>thumbs/Settings.png</icon>
 										</item>
 										<item>
-												<label>7</label>
-												<label2>$LOCALIZE[31158]</label2>
-												<onclick>ActivateWindow(FileManager)</onclick>
-												<icon>thumbs/FileManager.png</icon>
-										</item>
-										<item id="9">
 												<label>138</label>
 												<label2>$LOCALIZE[31161]</label2>
 												<onclick>ActivateWindow(SystemInfo)</onclick>

@@ -1,3 +1,6 @@
+
+I have stopped adding to this file, so you will need to look through the source for changes.
+
 ..:: XBMC4Xbox 3.5.3 Modifications ::..
 
 1) Changed how the game save menu works, it now doesn't list "TitleMeta.xbx" files as files, there in the own directory like the rest.

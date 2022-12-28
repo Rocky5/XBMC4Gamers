@@ -245,16 +245,16 @@
 												<icon>thumbs/Settings.png</icon>
 										</item>
 										<item id="9">
-												<label>157</label>
-												<label2>$LOCALIZE[31153]</label2>
-												<onclick>ActivateWindow(VideosSettings)</onclick>
-												<icon>thumbs/Videos.png</icon>
-										</item>
-										<item id="10">
 												<label>138</label>
 												<label2>$LOCALIZE[31161]</label2>
 												<onclick>ActivateWindow(SystemInfo)</onclick>
 												<icon>thumbs/SystemInfo.png</icon>
+										</item>
+										<item id="10">
+												<label>157</label>
+												<label2>$LOCALIZE[31153]</label2>
+												<onclick>ActivateWindow(VideosSettings)</onclick>
+												<icon>thumbs/Videos.png</icon>
 										</item>
 								</content>
 						</control>

@@ -90,6 +90,7 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+										<visible>Skin.HasSetting(_resourcesenabled)</visible>
 								</control>
 								<control type="label">
 										<left>595</left>
@@ -234,10 +235,10 @@
 												<control type="group">
 														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 														<control type="image">
-																<left>0</left>
-																<top>0</top>
-																<width>570</width>
-																<height>120</height>
+																<left>10</left>
+																<top>10</top>
+																<width>100</width>
+																<height>100</height>
 																<aspectratio>scale</aspectratio>
 																<texture background="true">$INFO[listitem.icon]</texture>
 																<bordertexture border="5">-</bordertexture>
@@ -245,15 +246,28 @@
 																<visible>!Skin.HasSetting(imagestretchmode)</visible>
 														</control>
 														<control type="image">
-																<left>0</left>
-																<top>0</top>
-																<width>570</width>
-																<height>120</height>
+																<left>10</left>
+																<top>10</top>
+																<width>100</width>
+																<height>100</height>
 																<aspectratio>stretch</aspectratio>
 																<texture background="true">$INFO[listitem.icon]</texture>
 																<bordertexture border="5">-</bordertexture>
 																<bordersize>1</bordersize>
 																<visible>Skin.HasSetting(imagestretchmode)</visible>
+														</control>
+														<control type="label">
+																<left>120</left>
+																<top>10</top>
+																<width>420</width>
+																<height>100</height>
+																<font>size_24</font>
+																<textcolor>view55_info_label</textcolor>
+																<scroll>true</scroll>
+																<align>left</align>
+																<aligny>center</aligny>
+																<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+																<wrapmultiline>true</wrapmultiline>
 														</control>
 												</control>
 												<control type="group">
@@ -284,10 +298,10 @@
 												<control type="group">
 														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 														<control type="image">
-																<left>0</left>
-																<top>0</top>
-																<width>570</width>
-																<height>120</height>
+																<left>10</left>
+																<top>10</top>
+																<width>100</width>
+																<height>100</height>
 																<aspectratio>scale</aspectratio>
 																<texture background="true">$INFO[listitem.icon]</texture>
 																<bordertexture border="5">-</bordertexture>
@@ -295,15 +309,28 @@
 																<visible>!Skin.HasSetting(imagestretchmode)</visible>
 														</control>
 														<control type="image">
-																<left>0</left>
-																<top>0</top>
-																<width>570</width>
-																<height>120</height>
+																<left>10</left>
+																<top>10</top>
+																<width>100</width>
+																<height>100</height>
 																<aspectratio>stretch</aspectratio>
 																<texture background="true">$INFO[listitem.icon]</texture>
 																<bordertexture border="5">-</bordertexture>
 																<bordersize>1</bordersize>
 																<visible>Skin.HasSetting(imagestretchmode)</visible>
+														</control>
+														<control type="label">
+																<left>120</left>
+																<top>10</top>
+																<width>420</width>
+																<height>100</height>
+																<font>size_24</font>
+																<textcolor>view55_info_label</textcolor>
+																<scroll>true</scroll>
+																<align>left</align>
+																<aligny>center</aligny>
+																<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+																<wrapmultiline>true</wrapmultiline>
 														</control>
 												</control>
 												<control type="group">

@@ -1,7 +1,10 @@
-16/12/2022
-	1) Can now hide the cd artwork on the list view & they wont show on folders regardless of the setting.
-	2) Can now change the wallpaper on the Manage Profiles profile.
-		(Press start when at the login screen to change wallpapers)
+28/12/2022
+	1) Added X3 3294 and X2 5035 bios support for the auto video mode switching.
+	2) Updated the banner view to use a different layout when resources are disabled.
+		(thank you to someone who gave me the idea, sorry forgot who it was and where :/)
+	3) Removed the 1080i menu option from system > video output
+	4) Slight changes to settings.
+	5) Added disable progressive video modes when holding X+B on load.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -15,6 +18,11 @@ Would also like to thank everyone that donates its much appreciated.
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Previous Updates:
+
+16/12/2022
+	1) Can now hide the cd artwork on the list view & they wont show on folders regardless of the setting.
+	2) Can now change the wallpaper on the Manage Profiles profile.
+		(Press start when at the login screen to change wallpapers)
 
 22/11/2022
 	1) Added support for alternative DNS entry.
