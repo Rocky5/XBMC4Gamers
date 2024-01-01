@@ -236,7 +236,7 @@
 										<description>Colour Type</description>
 										<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 										<label> - $LOCALIZE[31041]</label>
-										<label2>[COLOR=$VAR[var-xbmc4gamerslabelcolour]]$INFO[Skin.String(XBMC4GamersLogoColour)][/COLOR]</label2>
+										<label2>[COLOR=$VAR[Custom_Gamers_Logo_Colour]]$INFO[Skin.String(XBMC4GamersLogoColour)][/COLOR]</label2>
 										<onclick>Skin.SetString(XBMC4GamersLogoColour)</onclick>
 										<visible>Skin.HasSetting(EnabledXBMC4GamersLogoColour)</visible>
 								</control>
