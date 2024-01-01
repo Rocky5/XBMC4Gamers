@@ -9,7 +9,7 @@
 										<top>433</top>
 										<width>1280</width>
 										<height>227</height>
-										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<aspectratio>stretch</aspectratio>
 										<texture background="true" border="10,10,10,10">views/lg/lg_thumb_underlay.png</texture>
 								</control>
 								<control type="fixedlist" id="69">
@@ -22,21 +22,20 @@
 										<onright>69</onright>
 										<onup>9000</onup>
 										<ondown>90</ondown>
-										<viewtype label="view69">list</viewtype>
+										<viewtype label="view69">biglist</viewtype>
 										<pagecontrol>90</pagecontrol>
 										<scrolltime>210</scrolltime>
 										<focusposition>1</focusposition>
-										<movement>0</movement>
 										<orientation>horizontal</orientation>
-										<preloaditems>6</preloaditems>
-										<itemlayout height="300" width="146">
+										<preloaditems>2</preloaditems>
+										<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" height="300" width="146">
 												<control type="image">
 														<left>0</left>
 														<top>20</top>
 														<width>134</width>
 														<height>200</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true">no_poster.jpg</texture>
+														<texture background="true" diffuse="views/lg/diffuse.png">no_poster.jpg</texture>
 												</control>
 												<control type="image">
 														<left>0</left>
@@ -44,38 +43,44 @@
 														<width>134</width>
 														<height>200</height>
 														<aspectratio>keep</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-												</control>
-												<control type="group">
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="image">
-																<left>0</left>
-																<top>20</top>
-																<width>134</width>
-																<height>200</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
-																<visible>ListItem.IsFolder</visible>
-														</control>
-														<control type="largeimage">
-																<left>0</left>
-																<top>20</top>
-																<width>134</width>
-																<height>200</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
-														</control>
+														<texture background="true" diffuse="views/lg/diffuse.png">$INFO[listitem.icon]</texture>
 												</control>
 										</itemlayout>
-										<focusedlayout height="300" width="146">
+										<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="300" width="146">
+												<control type="image">
+														<left>0</left>
+														<top>20</top>
+														<width>134</width>
+														<height>200</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" diffuse="views/lg/diffuse.png">no_poster.jpg</texture>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>20</top>
+														<width>134</width>
+														<height>200</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" diffuse="views/lg/diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>20</top>
+														<width>134</width>
+														<height>200</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" diffuse="views/lg/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View69_Thumbs]</texture>
+												</control>
+										</itemlayout>
+										<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="300" width="146">
 												<control type="image">
 														<left>-15</left>
 														<top>0</top>
 														<width>161</width>
 														<height>240</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true">no_poster.jpg</texture>
+														<texture background="true" diffuse="views/lg/diffuse.png">no_poster.jpg</texture>
 												</control>
 												<control type="image">
 														<left>-15</left>
@@ -83,39 +88,53 @@
 														<width>161</width>
 														<height>240</height>
 														<aspectratio>keep</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+														<texture background="true" diffuse="views/lg/diffuse.png">$INFO[listitem.icon]</texture>
 												</control>
-												<control type="group">
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="image">
-																<left>-15</left>
-																<top>0</top>
-																<width>161</width>
-																<height>240</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
-																<visible>ListItem.IsFolder</visible>
-																<bordersize>5</bordersize>
-														</control>
-														<control type="largeimage">
-																<left>-15</left>
-																<top>0</top>
-																<width>161</width>
-																<height>240</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
-																<bordersize>5</bordersize>
-														</control>
-												</control>
-												<!-- Shared image -->
 												<control type="image">
 														<left>-15</left>
 														<top>0</top>
 														<width>161</width>
 														<height>240</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" border="5">views/lg/poster-border.png</texture>
+														<texture background="true" diffuse="views/lg/diffuse.png">views/lg/poster-border.png</texture>
+												</control>
+										</focusedlayout>
+										<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="300" width="140">
+												<control type="image">
+														<left>-17</left>
+														<top>-1</top>
+														<width>164</width>
+														<height>242</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" diffuse="views/lg/diffuse.png">no_poster.jpg</texture>
+														<bordersize>5</bordersize>
+												</control>
+												<control type="image">
+														<left>-17</left>
+														<top>-1</top>
+														<width>164</width>
+														<height>242</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" diffuse="views/lg/diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+														<bordersize>5</bordersize>
+												</control>
+												<control type="image">
+														<left>-17</left>
+														<top>-1</top>
+														<width>164</width>
+														<height>242</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" diffuse="views/lg/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View69_Thumbs]</texture>
+														<bordersize>5</bordersize>
+												</control>
+												<control type="image">
+														<left>-15</left>
+														<top>0</top>
+														<width>161</width>
+														<height>240</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" diffuse="views/lg/diffuse.png">views/lg/poster-border.png</texture>
 												</control>
 										</focusedlayout>
 								</control>
@@ -124,18 +143,19 @@
 										<top>0</top>
 										<width>1280</width>
 										<height>720</height>
-										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<aspectratio>stretch</aspectratio>
 										<texture>views/lg/lg_blur_underlay.png</texture>
 								</control>
-								<control type="image">
+								<!-- Disabled for now -->
+								<control type="image.">
 										<left>0</left>
 										<top>0</top>
 										<width>1280</width>
 										<height>720</height>
-										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<aspectratio>stretch</aspectratio>
 										<colordiffuse>27FFFFFF</colordiffuse>
 										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture background="true" diffuse="views/lg/lg_blur_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart-blur.jpg]</texture>
+										<texture background="true" diffuse="views/lg/lg_blur_diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</texture>
 										<visible>Skin.HasSetting(fanartenabled)</visible>
 								</control>
 								<control type="label">
@@ -151,7 +171,7 @@
 										<wrapmultiline>true</wrapmultiline>
 								</control>
 								<control type="group">
-										<visible>!ListItem.IsFolder</visible>
+										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 										<control type="label">
 												<left>15</left>
 												<top>555</top>
@@ -239,7 +259,7 @@
 						</control>
 						<control type="scrollbar" id="90">
 								<onup>69</onup>
-								<include condition="Control.IsVisible(69)">ViewScrollBarHor</include>
+								<include>View.ScrollBar.Horizontal</include>
 						</control>
 				</control>
 		</include>

@@ -2,10 +2,10 @@
 		<defaultcontrol>20</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>CommonBackground</include>
-				<include>WindowHeader</include>
+				<include>Global.Backgrounds</include>
+				<include>Window.Header</include>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
 								<left>52</left>
 								<top>51</top>
@@ -29,7 +29,7 @@
 								<width>30</width>
 								<height>30</height>
 								<aspectratio>stretch</aspectratio>
-								<texture>pad_buttons\dialogs\dpad_left_button.png</texture>
+								<texture>pad_buttons\dialogs\dpad_right_button.png</texture>
 								<animation effect="fade" start="100" end="50" time="0" condition="Control.HasFocus(21)">Conditional</animation>
 						</control>
 						<control type="label" id="103">
@@ -71,8 +71,8 @@
 								<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
 								<visible>Control.HasFocus(20)</visible>
 						</control>
-						<include condition="Skin.HasSetting(File_Manager_Compact_Mode)">File_Manager_Compact_Mode_Left</include>
-						<include condition="!Skin.HasSetting(File_Manager_Compact_Mode)">File_Manager_Normal_Mode_Left</include>
+						<include condition="Skin.HasSetting(File_Manager_Compact_Mode)">FileManager.Compact_Mode_Left</include>
+						<include condition="!Skin.HasSetting(File_Manager_Compact_Mode)">FileManager.Normal_Mode_Left</include>
 						<control type="image">
 								<left>640</left>
 								<top>74</top>
@@ -88,7 +88,7 @@
 								<width>30</width>
 								<height>30</height>
 								<aspectratio>stretch</aspectratio>
-								<texture>pad_buttons\dialogs\dpad_right_button.png</texture>
+								<texture>pad_buttons\dialogs\dpad_left_button.png</texture>
 								<animation effect="fade" start="100" end="50" time="0" condition="Control.HasFocus(20)">Conditional</animation>
 						</control>
 						<control type="label" id="104">
@@ -130,8 +130,8 @@
 								<animation effect="fade" start="100" end="50" time="0" condition="true">Conditional</animation>
 								<visible>Control.HasFocus(21)</visible>
 						</control>
-						<include condition="Skin.HasSetting(File_Manager_Compact_Mode)">File_Manager_Compact_Mode_Right</include>
-						<include condition="!Skin.HasSetting(File_Manager_Compact_Mode)">File_Manager_Normal_Mode_Right</include>
+						<include condition="Skin.HasSetting(File_Manager_Compact_Mode)">FileManager.Compact_Mode_Right</include>
+						<include condition="!Skin.HasSetting(File_Manager_Compact_Mode)">FileManager.Normal_Mode_Right</include>
 						<control type="grouplist">
 								<description>Control Info</description>
 								<left>52</left>
@@ -154,12 +154,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -174,12 +174,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31021]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- Y Button -->
 								<control type="image">
@@ -194,12 +194,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31530]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- White Button -->
 								<control type="image">
@@ -214,12 +214,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31521]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- Black Button -->
 								<control type="image">
@@ -234,27 +234,43 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31531]</label>
-										<include>Context_Buttons_Text_Align</include>
 										<visible>Skin.HasSetting(File_Manager_Compact_Mode)</visible>
 								</control>
 								<control type="label">
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>3_context_label</textcolor>
 										<label>$LOCALIZE[31532]</label>
-										<include>Context_Buttons_Text_Align</include>
 										<visible>!Skin.HasSetting(File_Manager_Compact_Mode)</visible>
 								</control>
 						</control>
+				</control>
+				<control type="button" id="9006">
+						<left>-5000</left>
+						<top>0</top>
+						<onfocus>Skin.Reset(File_Manager_Compact_Mode)</onfocus>
+						<onfocus>SetFocus(20)</onfocus>
+						<onfocus>ActivateWindow(3)</onfocus>
+						<visible>Skin.HasSetting(File_Manager_Compact_Mode)</visible>
+				</control>
+				<control type="button" id="9006">
+						<left>-5000</left>
+						<top>0</top>
+						<onfocus>Skin.SetBool(File_Manager_Compact_Mode)</onfocus>
+						<onfocus>SetFocus(20)</onfocus>
+						<onfocus>ActivateWindow(3)</onfocus>
+						<visible>!Skin.HasSetting(File_Manager_Compact_Mode)</visible>
 				</control>
 		</controls>
 </window>

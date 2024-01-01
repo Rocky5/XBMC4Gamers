@@ -5,29 +5,22 @@
 import os
 import xbmcgui
 import xbmc
-import shutil
-import time
-Gamepad = xbmc.translatePath("special://xbmc/system/keymaps/gamepad.xml")
-NormalMode = xbmc.translatePath("special://xbmc/system/keymaps/UserMode.file")
-EditMode = xbmc.translatePath("special://xbmc/system/keymaps/EditMode.file")
-Enabler = xbmc.translatePath("special://xbmc/system/keymaps/Enabled")
 dialog = xbmcgui.Dialog()
+Enabler = "Q:/system/keymaps/Enabled"
 print "| Scripts\XBMC4Gamers\Utilities\Edit Mode.py loaded."
 if os.path.isfile(Enabler):
 	os.remove(Enabler)
-	shutil.copy2(NormalMode, Gamepad)
-	xbmc.executebuiltin('Skin.reset(editmode)')
-	dialog.ok("My young padawan","","User mode is enabled, I need to restart XBMC","so that the changes take affect.")
-	#dialog.ok("My young padawan","","User Mode Enabled","Press [B](A)[/B] to restart XBMC4Gamers.")
-	print "| User mode enabled."
+	dialog.ok("Kios Mode","","Enabled, you have limited access to features.")
+	xbmc.executebuiltin('Skin.reset(kioskmode)')
 else:
-	profile = open(Enabler,"w")
-	profile.write(" ")
-	profile.close()	
-	shutil.copy2(EditMode, Gamepad)
-	xbmc.executebuiltin('Skin.SetBool(editmode)')
-	dialog.ok("Now, I am the Master","","Edit mode is enabled, I need to restart XBMC","so that the changes take affect.")
-	#dialog.ok("Now, I am the Master","","Edit Mode Enabled","Press [B](A)[/B] to restart XBMC4Gamers.")
-	print "| Edit mode enabled."
+	with open(Enabler,"w") as profile: profile.write(" ")
+	dialog.ok("Kios Mode","","Disabled, you now have full access to all features.")
+	xbmc.executebuiltin('Skin.SetBool(kioskmode)')
+
+xbmc.executebuiltin("ReloadSkin")
+
+if xbmcgui.getCurrentWindowId() == 11111:
+	xbmc.executebuiltin('ReplaceWindow('+xbmc.getInfoLabel('skin.String(HomeWindowSource)')+')')
+
 #xbmc.executebuiltin("Action(reloadkeymaps)")
-xbmc.executebuiltin("RestartApp")
+#xbmc.executebuiltin("RestartApp")

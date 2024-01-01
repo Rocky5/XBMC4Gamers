@@ -19,7 +19,7 @@ try:
 except:
 	UseGamesTBNFiles = "0"
 	RemoveThumbnails = "0"
-MyPrograms6_db			= xbmc.translatePath("special://profile/database/MyPrograms6.db")
+MyPrograms_db			= xbmc.translatePath("special://profile/database/MyPrograms6.db")
 ThumbDirectory			= xbmc.translatePath("special://profile/thumbnails/programs/")
 Temp_Profile_Directory	= xbmc.translatePath("special://profile/thumbnails/temp/")
 Sub_Directories			= [ "0", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c", "d", "e", "f" ]
@@ -27,12 +27,17 @@ pDialog					= xbmcgui.DialogProgress()
 dialog					= xbmcgui.Dialog()
 pDialog.update(0)
 print "| Scripts\XBMC4Gamers Extras\Clean Program Thumbs\resources\lib\default.py loaded."
-if os.path.isfile(MyPrograms6_db):
+if os.path.isfile(MyPrograms_db):
 	for Sub_Directories in Sub_Directories:
 		if not os.path.isdir(Temp_Profile_Directory): os.mkdir(Temp_Profile_Directory)
 		if not os.path.isdir(os.path.join(Temp_Profile_Directory, Sub_Directories)): os.mkdir(os.path.join(Temp_Profile_Directory, Sub_Directories))
 	try:
-		rows = sqlite3.connect(xbmc.translatePath(MyPrograms6_db)).cursor().execute("SELECT * FROM files").fetchall()
+		con = sqlite3.connect(MyPrograms_db)
+		cur = con.cursor()
+		con.text_factory = str
+		cur.execute("SELECT * FROM files")
+		rows = cur.fetchall()
+		
 		if UseGamesTBNFiles == "0" and RemoveThumbnails == "0":
 			CountList = 1
 			for row in rows:

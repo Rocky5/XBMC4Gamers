@@ -6,30 +6,21 @@
 								<control type="fixedlist" id="70">
 										<left>0</left>
 										<top>375</top>
-										<width>1280</width>
+										<width>1380</width>
 										<height>460</height>
 										<onleft>70</onleft>
 										<onright>70</onright>
 										<onup>9000</onup>
 										<ondown>90</ondown>
-										<viewtype label="view70">list</viewtype>
+										<viewtype label="view70">biglist</viewtype>
 										<pagecontrol>90</pagecontrol>
 										<scrolltime>230</scrolltime>
 										<focusposition>2</focusposition>
-										<movement>0</movement>
 										<orientation>horizontal</orientation>
-										<preloaditems>6</preloaditems>
-										<itemlayout height="428" width="322">
+										<preloaditems>2</preloaditems>
+										<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" ight="428" width="322">
 												<control type="group">
 														<left>-96.5</left>
-														<control type="image">
-																<left>0</left>
-																<top>35</top>
-																<width>185</width>
-																<height>185</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">views/loginalt/thumbnf.png</texture>
-														</control>
 														<control type="image">
 																<left>-10</left>
 																<top>213</top>
@@ -44,37 +35,8 @@
 																<top>35</top>
 																<width>185</width>
 																<height>185</height>
-																<aspectratio>scale</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
-																<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-														</control>
-														<control type="group">
-																<visible>Skin.HasSetting(_resourcesenabled)</visible>
-																<control type="image">
-																		<left>0</left>
-																		<top>35</top>
-																		<width>185</width>
-																		<height>185</height>
-																		<aspectratio>scale</aspectratio>
-																		<texture background="true">no_loginIcon.jpg</texture>
-																</control>
-																<control type="image">
-																		<left>0</left>
-																		<top>35</top>
-																		<width>185</width>
-																		<height>185</height>
-																		<aspectratio>scale</aspectratio>
-																		<texture background="true">$INFO[listitem.icon]</texture>
-																		<visible>ListItem.IsFolder</visible>
-																</control>
-																<control type="largeimage">
-																		<left>0</left>
-																		<top>35</top>
-																		<width>185</width>
-																		<height>185</height>
-																		<aspectratio>scale</aspectratio>
-																		<texture>$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
-																</control>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/loginalt/diffuse.png">$INFO[listitem.icon]</texture>
 														</control>
 														<control type="image">
 																<left>5</left>
@@ -84,48 +46,50 @@
 																<aspectratio>stretch</aspectratio>
 																<texture>$INFO[listitem.overlay]</texture>
 														</control>
-														<!-- Flipped images -->
-														<control type="image">
-																<left>0</left>
-																<top>220</top>
-																<width>185</width>
-																<height>185</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true" flipy="true" diffuse="views/loginalt/diffuse_mirror.png">views/loginalt/thumbnf.png</texture>
-														</control>
-														<control type="image">
-																<left>0</left>
-																<top>220</top>
-																<width>185</width>
-																<height>185</height>
-																<aspectratio>scale</aspectratio>
-																<texture background="true" flipy="true" diffuse="views/loginalt/diffuse_mirror.png">$INFO[listitem.icon]</texture>
-																<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-														</control>
-														<control type="largeimage">
-																<left>0</left>
-																<top>220</top>
-																<width>185</width>
-																<height>185</height>
-																<aspectratio>scale</aspectratio>
-																<texture flipy="true" diffuse="views/loginalt/diffuse_mirror.png">$INFO[listitem.path,,_resources\artwork\poster_small.jpg]</texture>
-																<visible>Skin.HasSetting(_resourcesenabled)</visible>
-														</control>
 												</control>
 										</itemlayout>
-										<focusedlayout height="428" width="322">
+										<itemlayout condition="Skin.HasSetting(_resourcesenabled)" ight="428" width="322">
 												<control type="group">
 														<left>-96.5</left>
+														<control type="image">
+																<left>-10</left>
+																<top>213</top>
+																<width>205</width>
+																<height>14</height>
+																<aspectratio>stretch</aspectratio>
+																<colordiffuse>F0FFFFFF</colordiffuse>
+																<texture background="true">views/loginalt/poster_shadow.png</texture>
+														</control>
 														<control type="image">
 																<left>0</left>
 																<top>35</top>
 																<width>185</width>
 																<height>185</height>
-																<aspectratio>scale</aspectratio>
-																<texture background="true">views/loginalt/thumbnf.png</texture>
-																<animation reversible="false" effect="zoom" start="0,35,185,185" end="-17.5,0,220,220" time="200">focus</animation>
-																<animation reversible="false" effect="zoom" end="0,35,185,185" start="-17.5,0,220,220" time="200">unfocus</animation>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/loginalt/diffuse.png">no_loginIcon.jpg</texture>
 														</control>
+														<control type="image">
+																<left>0</left>
+																<top>35</top>
+																<width>185</width>
+																<height>185</height>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/loginalt/diffuse.png">$INFO[listitem.icon]</texture>
+																<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+														</control>
+														<control type="image">
+																<left>0</left>
+																<top>35</top>
+																<width>185</width>
+																<height>185</height>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/loginalt/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\poster.jpg</texture>
+														</control>
+												</control>
+										</itemlayout>
+										<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="428" width="322">
+												<control type="group">
+														<left>-96.5</left>
 														<control type="image">
 																<left>-10</left>
 																<top>213</top>
@@ -142,45 +106,10 @@
 																<top>35</top>
 																<width>185</width>
 																<height>185</height>
-																<aspectratio>scale</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/loginalt/diffuse.png">$INFO[listitem.icon]</texture>
 																<animation reversible="false" effect="zoom" start="0,35,185,185" end="-17.5,0,220,220" time="200">focus</animation>
 																<animation reversible="false" effect="zoom" end="0,35,185,185" start="-17.5,0,220,220" time="200">unfocus</animation>
-																<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-														</control>
-														<control type="group">
-																<visible>Skin.HasSetting(_resourcesenabled)</visible>
-																<control type="image">
-																		<left>0</left>
-																		<top>35</top>
-																		<width>185</width>
-																		<height>185</height>
-																		<aspectratio>scale</aspectratio>
-																		<texture background="true">no_loginIcon.jpg</texture>
-																		<animation reversible="false" effect="zoom" start="0,35,185,185" end="-17.5,0,220,220" time="200">focus</animation>
-																		<animation reversible="false" effect="zoom" end="0,35,185,185" start="-17.5,0,220,220" time="200">unfocus</animation>
-																</control>
-																<control type="image">
-																		<left>0</left>
-																		<top>35</top>
-																		<width>185</width>
-																		<height>185</height>
-																		<aspectratio>scale</aspectratio>
-																		<texture background="true">$INFO[listitem.icon]</texture>
-																		<animation reversible="false" effect="zoom" start="0,35,185,185" end="-17.5,0,220,220" time="200">focus</animation>
-																		<animation reversible="false" effect="zoom" end="0,35,185,185" start="-17.5,0,220,220" time="200">unfocus</animation>
-																		<visible>ListItem.IsFolder</visible>
-																</control>
-																<control type="largeimage">
-																		<left>0</left>
-																		<top>35</top>
-																		<width>185</width>
-																		<height>185</height>
-																		<aspectratio>scale</aspectratio>
-																		<texture>$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
-																		<animation reversible="false" effect="zoom" start="0,35,185,185" end="-17.5,0,220,220" time="200">focus</animation>
-																		<animation reversible="false" effect="zoom" end="0,35,185,185" start="-17.5,0,220,220" time="200">unfocus</animation>
-																</control>
 														</control>
 														<control type="image">
 																<left>5</left>
@@ -192,38 +121,62 @@
 																<animation reversible="false" effect="zoom" start="5,38,25,25" end="-13,4,30,30" time="200">focus</animation>
 																<animation reversible="false" effect="zoom" end="5,38,25,25" start="-13,4,30,30" time="200">unfocus</animation>
 														</control>
-														<!-- Flipped images -->
+												</control>
+										</focusedlayout>
+										<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="428" width="322">
+												<control type="group">
+														<left>-96.5</left>
 														<control type="image">
-																<left>0</left>
-																<top>220</top>
-																<width>185</width>
-																<height>185</height>
+																<left>-10</left>
+																<top>213</top>
+																<width>205</width>
+																<height>14</height>
 																<aspectratio>stretch</aspectratio>
-																<texture background="true" flipy="true" diffuse="views/loginalt/diffuse_mirror.png">views/loginalt/thumbnf.png</texture>
-																<animation reversible="false" effect="zoom" start="0,220,185,185" end="-17.5,220,220,220" time="200">focus</animation>
-																<animation reversible="false" effect="zoom" end="0,220,185,185" start="-17.5,220,220,220" time="200">unfocus</animation>
+																<texture background="true">views/loginalt/poster_shadow.png</texture>
+																<colordiffuse>F0FFFFFF</colordiffuse>
+																<animation reversible="false" effect="zoom" start="-10,213,205,14" end="-27.5,5,240,14" time="200">focus</animation>
+																<animation reversible="false" effect="zoom" end="-10,213,205,14" start="-27.5,5,240,14" time="200">unfocus</animation>
 														</control>
 														<control type="image">
 																<left>0</left>
-																<top>220</top>
+																<top>35</top>
 																<width>185</width>
 																<height>185</height>
-																<aspectratio>scale</aspectratio>
-																<texture background="true" flipy="true" diffuse="views/loginalt/diffuse_mirror.png">$INFO[listitem.icon]</texture>
-																<animation reversible="false" effect="zoom" start="0,220,185,185" end="-17.5,220,220,220" time="200">focus</animation>
-																<animation reversible="false" effect="zoom" end="0,220,185,185" start="-17.5,220,220,220" time="200">unfocus</animation>
-																<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/loginalt/diffuse.png">no_loginIcon.jpg</texture>
+																<animation reversible="false" effect="zoom" start="0,35,185,185" end="-17.5,0,220,220" time="200">focus</animation>
+																<animation reversible="false" effect="zoom" end="0,35,185,185" start="-17.5,0,220,220" time="200">unfocus</animation>
 														</control>
-														<control type="largeimage">
+														<control type="image">
 																<left>0</left>
-																<top>220</top>
+																<top>35</top>
 																<width>185</width>
 																<height>185</height>
-																<aspectratio>scale</aspectratio>
-																<texture flipy="true" diffuse="views/loginalt/diffuse_mirror.png">$INFO[listitem.path,,_resources\artwork\poster_small.jpg]</texture>
-																<animation reversible="false" effect="zoom" start="0,220,185,185" end="-17.5,220,220,220" time="200">focus</animation>
-																<animation reversible="false" effect="zoom" end="0,220,185,185" start="-17.5,220,220,220" time="200">unfocus</animation>
-																<visible>Skin.HasSetting(_resourcesenabled)</visible>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/loginalt/diffuse.png">$INFO[listitem.icon]</texture>
+																<animation reversible="false" effect="zoom" start="0,35,185,185" end="-17.5,0,220,220" time="200">focus</animation>
+																<animation reversible="false" effect="zoom" end="0,35,185,185" start="-17.5,0,220,220" time="200">unfocus</animation>
+																<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+														</control>
+														<control type="image">
+																<left>0</left>
+																<top>35</top>
+																<width>185</width>
+																<height>185</height>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/loginalt/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\poster.jpg</texture>
+																<animation reversible="false" effect="zoom" start="0,35,185,185" end="-17.5,0,220,220" time="200">focus</animation>
+																<animation reversible="false" effect="zoom" end="0,35,185,185" start="-17.5,0,220,220" time="200">unfocus</animation>
+														</control>
+														<control type="image">
+																<left>5</left>
+																<top>38</top>
+																<width>25</width>
+																<height>25</height>
+																<aspectratio>stretch</aspectratio>
+																<texture>$INFO[listitem.overlay]</texture>
+																<animation reversible="false" effect="zoom" start="5,38,25,25" end="-13,4,30,30" time="200">focus</animation>
+																<animation reversible="false" effect="zoom" end="5,38,25,25" start="-13,4,30,30" time="200">unfocus</animation>
 														</control>
 												</control>
 										</focusedlayout>
@@ -234,13 +187,13 @@
 										<width>1280</width>
 										<height>36</height>
 										<font>size_35</font>
-										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 										<scroll>true</scroll>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(70).ListItem.IsFolder">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(70).ListItem.IsFolder">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 								</control>
 								<control type="label">
 										<left>0</left>
@@ -248,14 +201,14 @@
 										<width>1280</width>
 										<height>30</height>
 										<font>size_15</font>
-										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 										<scroll>true</scroll>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31186]</label>
-										<visible>StringCompare(ListItem.ProgramCount,0) + !ListItem.IsFolder</visible>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(70).ListItem.IsFolder">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(70).ListItem.IsFolder">Conditional</animation>
+										<visible>StringCompare(ListItem.ProgramCount,0) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 								</control>
 								<control type="label">
 										<left>0</left>
@@ -263,14 +216,14 @@
 										<width>1280</width>
 										<height>30</height>
 										<font>size_15</font>
-										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 										<scroll>true</scroll>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
-										<visible>StringCompare(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(70).ListItem.IsFolder">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(70).ListItem.IsFolder">Conditional</animation>
+										<visible>StringCompare(ListItem.ProgramCount,1) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 								</control>
 								<control type="label">
 										<left>0</left>
@@ -278,18 +231,18 @@
 										<width>1280</width>
 										<height>30</height>
 										<font>size_15</font>
-										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 										<scroll>true</scroll>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
-										<visible>IntegerGreaterThan(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(70).ListItem.IsFolder">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(70).ListItem.IsFolder">Conditional</animation>
+										<visible>IntegerGreaterThan(ListItem.ProgramCount,1) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 								</control>
 								<control type="scrollbar" id="90">
 										<onup>70</onup>
-										<include condition="Control.IsVisible(70)">ViewScrollBarHor</include>
+										<include>View.ScrollBar.Horizontal</include>
 								</control>
 						</control>
 				</control>

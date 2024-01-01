@@ -2,8 +2,8 @@
 		<defaultcontrol always="true">2</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>CommonBackground</include>
-				<include>WindowHeader</include>
+				<include>Global.Backgrounds</include>
+				<include>Window.Header</include>
 				<control type="group">
 						<animation effect="fade" time="100">WindowOpen</animation>
 						<animation effect="fade" time="400" delay="300">WindowClose</animation>
@@ -12,7 +12,7 @@
 								<top>75r</top>
 								<width>1280</width>
 								<height>36</height>
-								<font>size_25</font>
+								<font>size_24</font>
 								<textcolor>FFFFFFFF</textcolor>
 								<align>right</align>
 								<aligny>center</aligny>
@@ -20,7 +20,7 @@
 						</control>
 				</control>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
 								<left>201</left>
 								<top>81</top>
@@ -75,7 +75,7 @@
 										<align>left</align>
 										<textcolor>34_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 								</control>
 								<!-- D-Pad Right Button -->
 								<control type="image">
@@ -96,7 +96,7 @@
 										<align>left</align>
 										<textcolor>34_context_label</textcolor>
 										<label>$LOCALIZE[31505]</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 										<visible allowhiddenfocus="true">!Control.HasFocus(9002) + !Control.HasFocus(9003) + !Control.HasFocus(9004)</visible>
 								</control>
 								<!-- D-Pad left Button -->
@@ -118,7 +118,7 @@
 										<align>left</align>
 										<textcolor>34_context_label</textcolor>
 										<label>13200</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 										<visible allowhiddenfocus="true">Control.HasFocus(9002) | Control.HasFocus(9003) | Control.HasFocus(9004)</visible>
 								</control>
 								<!-- White Button -->
@@ -140,7 +140,7 @@
 										<align>left</align>
 										<textcolor>34_context_label</textcolor>
 										<label>$LOCALIZE[31506]</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 										<visible allowhiddenfocus="true">!Control.HasFocus(9002) + !Control.HasFocus(9003) + !Control.HasFocus(9004)</visible>
 								</control>
 								<!-- Start Button -->
@@ -161,7 +161,7 @@
 										<align>left</align>
 										<textcolor>34_context_label</textcolor>
 										<label>$LOCALIZE[5]</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 								</control>
 								<!-- R Stick Button -->
 								<control type="image">
@@ -181,7 +181,7 @@
 										<align>left</align>
 										<textcolor>34_context_label</textcolor>
 										<label>$LOCALIZE[31123]</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 								</control>
 						</control>
 						<!-- Content List -->
@@ -288,7 +288,7 @@
 						</control>
 				</control>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<left>55</left>
 						<top>55</top>
 						<visible allowhiddenfocus="true">Control.HasFocus(9002) | Control.HasFocus(9003) | Control.HasFocus(9004)</visible>
@@ -314,21 +314,6 @@
 										<scroll>true</scroll>
 										<align>center</align>
 										<label>$LOCALIZE[31500]</label>
-								</control>
-								<control type="radiobutton" id="9002">
-										<description>Individual saves Button</description>
-										<left>595</left>
-										<top>370</top>
-										<width>570</width>
-										<height>45</height>
-										<font>size_20</font>
-										<label>  $LOCALIZE[31501]</label>
-										<textcolor>34_context_label</textcolor>
-										<focusedcolor>34_context_label</focusedcolor>
-										<texturefocus border="5">thumbfO.png</texturefocus>
-										<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
-										<onclick>Skin.ToggleSetting(UseProfiles)</onclick>
-										<selected>Skin.HasSetting(UseProfiles)</selected>
 								</control>
 								<control type="button" id="9003">
 										<description>Birthdays Button</description>

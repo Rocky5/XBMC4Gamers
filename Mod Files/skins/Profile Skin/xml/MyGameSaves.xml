@@ -2,14 +2,14 @@
 		<defaultcontrol always="true">50</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>CommonBackground</include>
+				<include>Global.Backgrounds</include>
 				<control type="group">
-						<include>ViewVisibleEffect</include>
+						<include>View.Visible.Effect</include>
 						<include file="Viewtype_GameSavesView.xml">GameSavesView</include>
 				</control>
-				<include>WindowHeader</include>
+				<include>Window.Header</include>
 				<control type="group">
-						<include>CommonOptionsMenuBack</include>
+						<include>Common.Options.Menu.Back</include>
 						<control type="group" id="9000">
 								<control type="image">
 										<description>background image</description>
@@ -24,7 +24,7 @@
 										<left>0</left>
 										<top>45</top>
 										<width>270</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>103</label>
 										<onleft>9001</onleft>
 										<onright>4</onright>

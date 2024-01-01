@@ -1,34 +1,75 @@
 <includes>
+		<include name="PanelValues">
+				<left>460</left>
+				<top>40</top>
+				<width>620</width>
+				<height>320</height>
+				<onleft>9000</onleft>
+				<onright>9000</onright>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
+				<onback>50</onback>
+				<itemlayout height="80" width="147">
+						<control type="image">
+								<left>5</left>
+								<top>5</top>
+								<width>137</width>
+								<height>71</height>
+								<texture>$INFO[listitem.actualicon]</texture>
+								<bordertexture>windows\generic\header.png</bordertexture>
+								<bordersize>3</bordersize>
+								<aspectratio>stretch</aspectratio>
+						</control>
+				</itemlayout>
+				<focusedlayout height="80" width="147">
+						<control type="image">
+								<left>5</left>
+								<top>5</top>
+								<width>137</width>
+								<height>71</height>
+								<texture>$INFO[listitem.actualicon]</texture>
+								<aspectratio>stretch</aspectratio>
+						</control>
+						<control type="image">
+								<left>2.5</left>
+								<top>2.5</top>
+								<width>142</width>
+								<height>76</height>
+								<texture border="5,5,5,5">windows\generic\button_focus_alt.png</texture>
+								<aspectratio>stretch</aspectratio>
+						</control>
+				</focusedlayout>
+		</include>
 		<include name="View_Options">
 				<control type="group">
 						<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus() | Control.HasFocus(9001)</visible>
-						<include>BehindDialogFadeOut</include>
+						<include>Behind.Dialog.FadeOut</include>
 				</control>
 				<control type="group">
-						<top>-360</top>
+						<top>-460</top>
 						<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus() | Control.HasFocus(9001)</visible>
-						<animation effect="slide" start="0,0" end="0,320" time="200">Visible</animation>
-						<animation effect="slide" start="0,320" end="0,0" time="200">Hidden</animation>
+						<animation effect="slide" start="0,0" end="0,440" time="250">Visible</animation>
+						<animation effect="slide" start="0,440" end="0,0" time="100">Hidden</animation>
 						<control type="image">
 								<left>201</left>
-								<top>31</top>
+								<top>0</top>
 								<width>878</width>
-								<height>321</height>
+								<height>440</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\generic\main.png</texture>
 						</control>
 						<control type="image">
 								<left>220</left>
-								<top>42</top>
+								<top>15</top>
 								<width>230</width>
-								<height>299</height>
+								<height>410</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\generic\main_overlay.png</texture>
 						</control>
 						<control type="grouplist">
 								<description>Control Info</description>
 								<left>450</left>
-								<top>297</top>
+								<top>375</top>
 								<width>610</width>
 								<height>80</height>
 								<itemgap>10</itemgap>
@@ -47,12 +88,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>view_options_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -67,30 +108,30 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>view_options_context_label</textcolor>
 										<label>$LOCALIZE[31108]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 						<control type="grouplist" id="9000">
 								<description>button area</description>
 								<left>220</left>
-								<top>56</top>
-								<width>230</width>
-								<height>299</height>
+								<top>15</top>
+								<width max="230">auto</width>
+								<height max="410">auto</height>
 								<itemgap>5</itemgap>
 								<onleft>-</onleft>
 								<onright>9001</onright>
 								<onback>50</onback>
-								<aligny>center</aligny>
-								<control type="button" id="101">
+								<align>center</align>
+								<control type="button" id="100">
 										<description>Backgrounds</description>
 										<left>0</left>
 										<top>0</top>
-										<height>40</height>
+										<height>50</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
 										<textoffsety>0</textoffsety>
@@ -103,11 +144,11 @@
 										<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 										<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 								</control>
-								<control type="button" id="100">
+								<control type="button" id="101">
 										<description>Views</description>
 										<left>0</left>
 										<top>0</top>
-										<height>40</height>
+										<height>50</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
 										<textoffsety>0</textoffsety>
@@ -124,7 +165,7 @@
 										<description>View Settings</description>
 										<left>0</left>
 										<top>0</top>
-										<height>40</height>
+										<height>50</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
 										<textoffsety>0</textoffsety>
@@ -141,7 +182,7 @@
 										<description>Sort by button</description>
 										<left>0</left>
 										<top>0</top>
-										<height>40</height>
+										<height>50</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
 										<textoffsety>0</textoffsety>
@@ -159,7 +200,7 @@
 										<description>Sort asc</description>
 										<left>0</left>
 										<top>0</top>
-										<height>40</height>
+										<height>50</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
 										<textoffsety>0</textoffsety>
@@ -180,7 +221,7 @@
 										<description>Filter</description>
 										<left>0</left>
 										<top>0</top>
-										<height>40</height>
+										<height>50</height>
 										<width>230</width>
 										<textoffsetx>24</textoffsetx>
 										<textoffsety>0</textoffsety>
@@ -194,252 +235,20 @@
 										<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 								</control>
 						</control>
-						<control type="textbox">
-								<left>460</left>
-								<top>53</top>
-								<width>590</width>
-								<height>230</height>
-								<font>size_19</font>
-								<align>center</align>
-								<textcolor>view_options_context_label</textcolor>
-								<label>Note:[CR]This will close this dialog and set focus on the sort options.</label>
-								<visible>ControlGroup(9000).HasFocus(103)</visible>
-						</control>
-						<control type="panel" id="9001">
-								<left>460</left>
-								<top>53</top>
-								<width>590</width>
-								<height>230</height>
-								<onleft>9000</onleft>
-								<onright>9000</onright>
-								<onup>-</onup>
-								<ondown>-</ondown>
-								<onback>50</onback>
-								<pagecontrol>90</pagecontrol>
-								<visible>ControlGroup(9000).HasFocus(100)</visible>
-								<itemlayout height="57" width="118">
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture>$INFO[listitem.actualicon]</texture>
-												<bordertexture>windows\generic\header.png</bordertexture>
-												<bordersize>3</bordersize>
-												<aspectratio>stretch</aspectratio>
-										</control>
-								</itemlayout>
-								<focusedlayout height="57" width="118">
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture>$INFO[listitem.actualicon]</texture>
-												<bordersize>3</bordersize>
-												<aspectratio>stretch</aspectratio>
-										</control>
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture border="7,7,7,7">windows\generic\button_focus_alt.png</texture>
-												<aspectratio>stretch</aspectratio>
-										</control>
-								</focusedlayout>
-								<content>
-										<item id="200">
-												<label>-</label>
-												<onclick>Container.SetViewMode(50)</onclick>
-												<icon>windows\programs\views\posterview.jpg</icon>
-										</item>
-										<item id="201">
-												<label>-</label>
-												<onclick>Container.SetViewMode(51)</onclick>
-												<icon>windows\programs\views\posterviewmall.jpg</icon>
-										</item>
-										<item id="203">
-												<label>-</label>
-												<onclick>Container.SetViewMode(52)</onclick>
-												<icon>windows\programs\views\loginview.jpg</icon>
-										</item>
-										<item id="221">
-												<label>-</label>
-												<onclick>Container.SetViewMode(70)</onclick>
-												<icon>windows\programs\views\loginaltview.jpg</icon>
-										</item>
-										<item id="204">
-												<label>-</label>
-												<onclick>Container.SetViewMode(53)</onclick>
-												<icon>windows\programs\views\landscapeview.jpg</icon>
-										</item>
-										<item id="205">
-												<label>-</label>
-												<onclick>Container.SetViewMode(54)</onclick>
-												<icon>windows\programs\views\panelview.jpg</icon>
-										</item>
-										<item id="206">
-												<label>-</label>
-												<onclick>Container.SetViewMode(55)</onclick>
-												<icon>windows\programs\views\bannerview.jpg</icon>
-										</item>
-										<item id="207">
-												<label>-</label>
-												<onclick>Container.SetViewMode(56)</onclick>
-												<icon>windows\programs\views\cardview.jpg</icon>
-										</item>
-										<item id="208">
-												<label>-</label>
-												<onclick>Container.SetViewMode(57)</onclick>
-												<icon>windows\programs\views\fanartview.jpg</icon>
-										</item>
-										<item id="209">
-												<label>-</label>
-												<onclick>Container.SetViewMode(58)</onclick>
-												<icon>windows\programs\views\listview.jpg</icon>
-										</item>
-										<item id="210">
-												<label>-</label>
-												<onclick>Container.SetViewMode(59)</onclick>
-												<icon>windows\programs\views\carouselview.jpg</icon>
-										</item>
-										<item id="211">
-												<label>-</label>
-												<onclick>Container.SetViewMode(60)</onclick>
-												<icon>windows\programs\views\carouselsmallview.jpg</icon>
-										</item>
-										<item id="212">
-												<label>-</label>
-												<onclick>Container.SetViewMode(61)</onclick>
-												<icon>windows\programs\views\carouselsmallerview.jpg</icon>
-										</item>
-										<item id="213">
-												<label>-</label>
-												<onclick>Container.SetViewMode(62)</onclick>
-												<icon>windows\programs\views\iconview.jpg</icon>
-										</item>
-										<item id="214">
-												<label>-</label>
-												<onclick>Container.SetViewMode(63)</onclick>
-												<icon>windows\programs\views\opencaseview.jpg</icon>
-										</item>
-										<item id="215">
-												<label>-</label>
-												<onclick>Container.SetViewMode(64)</onclick>
-												<icon>windows\programs\views\dual3dview.jpg</icon>
-										</item>
-										<item id="216">
-												<label>-</label>
-												<onclick>Container.SetViewMode(65)</onclick>
-												<icon>windows\programs\views\iconaltview.jpg</icon>
-										</item>
-										<item id="217">
-												<label>-</label>
-												<onclick>Container.SetViewMode(66)</onclick>
-												<icon>windows\programs\views\psview.jpg</icon>
-										</item>
-										<item id="218">
-												<label>-</label>
-												<onclick>Container.SetViewMode(67)</onclick>
-												<icon>windows\programs\views\posterfixedview.jpg</icon>
-										</item>
-										<item id="219">
-												<label>-</label>
-												<onclick>Container.SetViewMode(68)</onclick>
-												<icon>windows\programs\views\cdfixedview.jpg</icon>
-										</item>
-										<item id="220">
-												<label>-</label>
-												<onclick>Container.SetViewMode(69)</onclick>
-												<icon>windows\programs\views\lgview.jpg</icon>
-										</item>
-										<item id="230">
-												<label>-</label>
-												<onclick>Container.SetViewMode(79)</onclick>
-												<icon>windows\programs\views\resourcesview.jpg</icon>
-										</item>
-								</content>
-						</control>
-						<control type="scrollbar" id="90">
-								<left>1046</left>
-								<top>58</top>
-								<width>4</width>
-								<height>223</height>
-								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-								<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
-								<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
-								<textureslidernib>-</textureslidernib>
-								<textureslidernibfocus>-</textureslidernibfocus>
-								<onleft>-</onleft>
-								<ondown>-</ondown>
-								<showonepage>false</showonepage>
-								<orientation>vertical</orientation>
-								<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(90)">Conditional</animation>
-								<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
-								<visible>ControlGroup(9000).HasFocus(100)</visible>
-						</control>
 						<!-- Backgrounds -->
 						<control type="panel" id="9001">
-								<left>460</left>
-								<top>53</top>
-								<width>590</width>
-								<height>230</height>
-								<onleft>9000</onleft>
-								<onright>9000</onright>
-								<onup>-</onup>
-								<ondown>-</ondown>
-								<onback>50</onback>
-								<visible>ControlGroup(9000).HasFocus(101)</visible>
-								<itemlayout height="57" width="118">
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture>$INFO[listitem.actualicon]</texture>
-												<bordertexture>windows\generic\header.png</bordertexture>
-												<bordersize>3</bordersize>
-												<aspectratio>stretch</aspectratio>
-										</control>
-								</itemlayout>
-								<focusedlayout height="57" width="118">
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture>$INFO[listitem.actualicon]</texture>
-												<bordersize>3</bordersize>
-												<aspectratio>stretch</aspectratio>
-										</control>
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture border="7,7,7,7">windows\generic\button_focus_alt.png</texture>
-												<aspectratio>stretch</aspectratio>
-										</control>
-								</focusedlayout>
+								<visible>ControlGroup(9000).HasFocus(100)</visible>
+								<pagecontrol>90</pagecontrol>
+								<include>PanelValues</include>
 								<content>
-										<item id="204">
-												<label>-</label>
-												<onclick>Skin.SetImage(Background_Image)</onclick>
-												<onclick>Skin.Reset(Background_Color)</onclick>
-												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
-												<icon>$INFO[Skin.String(Background_Image)]</icon>
-												<visible>IsEmpty.($INFO[Skin.String(Background_Image)])</visible>
-										</item>
-										<item id="204">
+										<item id="300">
 												<label>-</label>
 												<onclick>Skin.SetImage(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Color)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows\programs\hdd.jpg</icon>
-												<visible>!IsEmpty.($INFO[Skin.String(Background_Image)])</visible>
 										</item>
-										<item id="205">
+										<item id="301">
 												<label>-</label>
 												<onclick>Skin.SetBool(hex_entry)</onclick>
 												<onclick>Skin.SetString(Background_Custom_Color)</onclick>
@@ -447,113 +256,118 @@
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<icon>windows\programs\custom_color.jpg</icon>
 										</item>
-										<item id="206">
+										<item id="302">
 												<label>-</label>
 												<onclick>Skin.Reset(Background_Color)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<icon>windows\programs\reset.jpg</icon>
 										</item>
+										<item id="302">
+												<label>-</label>
+												<onclick>Skin.ToggleSetting(AltTextColour)</onclick>
+												<icon>windows\programs\text_color.jpg</icon>
+										</item>
 										<!-- Backgrounds -->
-										<item id="210">
+										<item id="310">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/1.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/1.jpg</icon>
 										</item>
-										<item id="211">
+										<item id="311">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/2.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/2.jpg</icon>
 										</item>
-										<item id="212">
+										<item id="312">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/3.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/3.jpg</icon>
 										</item>
-										<item id="213">
+										<item id="313">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/4.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/4.jpg</icon>
 										</item>
-										<item id="214">
+										<item id="314">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/5.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/5.jpg</icon>
 										</item>
-										<item id="215">
+										<item id="315">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/6.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/6.jpg</icon>
 										</item>
-										<item id="216">
+										<item id="316">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/7.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/7.jpg</icon>
 										</item>
-										<item id="217">
+										<item id="317">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/8.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/8.jpg</icon>
 										</item>
-										<item id="218">
+										<item id="318">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/9.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/9.jpg</icon>
 										</item>
-										<item id="219">
+										<item id="319">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/10.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/10.jpg</icon>
 										</item>
-										<item id="220">
+										<item id="320">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/11.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/11.jpg</icon>
 										</item>
-										<item id="221">
+										<item id="321">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/12.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/12.jpg</icon>
 										</item>
-										<item id="222">
+										<item id="322">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/13.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/13.jpg</icon>
 										</item>
-										<item id="223">
+										<item id="323">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/14.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/14.jpg</icon>
 										</item>
-										<item id="224">
+										<item id="324">
 												<label>-</label>
 												<onclick>Skin.SetString(Background_Color,backgrounds/15.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
@@ -562,109 +376,289 @@
 										</item>
 								</content>
 						</control>
+						<!-- Views -->
 						<control type="panel" id="9001">
-								<left>460</left>
-								<top>53</top>
-								<width>590</width>
-								<height>230</height>
-								<onleft>9000</onleft>
-								<onright>9000</onright>
-								<onup>-</onup>
-								<ondown>-</ondown>
-								<onback>50</onback>
-								<visible>ControlGroup(9000).HasFocus(102)</visible>
-								<itemlayout height="57" width="118">
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture>$INFO[listitem.actualicon]</texture>
-												<bordertexture>windows\generic\header.png</bordertexture>
-												<bordersize>3</bordersize>
-												<aspectratio>stretch</aspectratio>
-										</control>
-								</itemlayout>
-								<focusedlayout height="57" width="118">
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture>$INFO[listitem.actualicon]</texture>
-												<bordersize>3</bordersize>
-												<aspectratio>stretch</aspectratio>
-										</control>
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>100</width>
-												<height>52</height>
-												<texture border="7,7,7,7">windows\generic\button_focus_alt.png</texture>
-												<aspectratio>stretch</aspectratio>
-										</control>
-								</focusedlayout>
+								<visible>ControlGroup(9000).HasFocus(101)</visible>
+								<pagecontrol>91</pagecontrol>
+								<include>PanelValues</include>
 								<content>
-										<item id="201">
+										<item id="200">
 												<label>-</label>
-												<onclick>Skin.SetBool(fanartenabled)</onclick>
-												<icon>windows\programs\fanart_disabled.jpg</icon>
-												<visible>!Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view79)</visible>
+												<onclick>Container.SetViewMode(71)</onclick>
+												<icon>windows\programs\views\largeposter.jpg</icon>
 										</item>
 										<item id="201">
 												<label>-</label>
-												<onclick>Skin.SetBool(fanartblur)</onclick>
-												<icon>windows\programs\fanart.jpg</icon>
-												<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view79)</visible>
+												<onclick>Container.SetViewMode(57)</onclick>
+												<icon>windows\programs\views\fanartview.jpg</icon>
 										</item>
+										<item id="202">
+												<label>-</label>
+												<onclick>Container.SetViewMode(56)</onclick>
+												<icon>windows\programs\views\synopsispostercenter.jpg</icon>
+										</item>
+										<item id="203">
+												<label>-</label>
+												<onclick>Container.SetViewMode(54)</onclick>
+												<icon>windows\programs\views\textlistview.jpg</icon>
+										</item>
+										<item id="204">
+												<label>-</label>
+												<onclick>Container.SetViewMode(61)</onclick>
+												<icon>windows\programs\views\synopsislist.jpg</icon>
+										</item>
+										<item id="205">
+												<label>-</label>
+												<onclick>Container.SetViewMode(72)</onclick>
+												<icon>windows\programs\views\synopsisinfolist.jpg</icon>
+										</item>
+										<item id="206">
+												<label>-</label>
+												<onclick>Container.SetViewMode(50)</onclick>
+												<icon>windows\programs\views\posterview.jpg</icon>
+										</item>
+										<item id="207">
+												<label>-</label>
+												<onclick>Container.SetViewMode(51)</onclick>
+												<icon>windows\programs\views\posterviewmall.jpg</icon>
+										</item>
+										<item id="208">
+												<label>-</label>
+												<onclick>Container.SetViewMode(52)</onclick>
+												<icon>windows\programs\views\loginview.jpg</icon>
+										</item>
+										<item id="209">
+												<label>-</label>
+												<onclick>Container.SetViewMode(70)</onclick>
+												<icon>windows\programs\views\loginaltview.jpg</icon>
+										</item>
+										<item id="210">
+												<label>-</label>
+												<onclick>Container.SetViewMode(53)</onclick>
+												<icon>windows\programs\views\landscapeview.jpg</icon>
+										</item>
+										<item id="211">
+												<label>-</label>
+												<onclick>Container.SetViewMode(55)</onclick>
+												<icon>windows\programs\views\bannerview.jpg</icon>
+										</item>
+										<item id="212">
+												<label>-</label>
+												<onclick>Container.SetViewMode(58)</onclick>
+												<icon>windows\programs\views\listview.jpg</icon>
+										</item>
+										<item id="213">
+												<label>-</label>
+												<onclick>Container.SetViewMode(59)</onclick>
+												<icon>windows\programs\views\carouselview.jpg</icon>
+										</item>
+										<item id="214">
+												<label>-</label>
+												<onclick>Container.SetViewMode(60)</onclick>
+												<icon>windows\programs\views\carouselsmallview.jpg</icon>
+										</item>
+										<item id="215">
+												<label>-</label>
+												<onclick>Container.SetViewMode(66)</onclick>
+												<icon>windows\programs\views\psview.jpg</icon>
+										</item>
+										<item id="216">
+												<label>-</label>
+												<onclick>Container.SetViewMode(67)</onclick>
+												<icon>windows\programs\views\posterfixedview.jpg</icon>
+										</item>
+										<item id="217">
+												<label>-</label>
+												<onclick>Container.SetViewMode(69)</onclick>
+												<icon>windows\programs\views\lgview.jpg</icon>
+										</item>
+										<item id="218">
+												<label>-</label>
+												<onclick>Container.SetViewMode(62)</onclick>
+												<icon>windows\programs\views\iconview.jpg</icon>
+										</item>
+										<item id="219">
+												<label>-</label>
+												<onclick>Container.SetViewMode(63)</onclick>
+												<icon>windows\programs\views\opencaseview.jpg</icon>
+										</item>
+										<item id="220">
+												<label>-</label>
+												<onclick>Container.SetViewMode(64)</onclick>
+												<icon>windows\programs\views\dual3dview.jpg</icon>
+										</item>
+										<item id="221">
+												<label>-</label>
+												<onclick>Container.SetViewMode(65)</onclick>
+												<icon>windows\programs\views\iconaltview.jpg</icon>
+										</item>
+										<item id="222">
+												<label>-</label>
+												<onclick>Container.SetViewMode(68)</onclick>
+												<icon>windows\programs\views\cdfixedview.jpg</icon>
+										</item>
+										<item id="230">
+												<label>-</label>
+												<onclick>Container.SetViewMode(79)</onclick>
+												<icon>windows\programs\views\resourcesview.jpg</icon>
+										</item>
+										<!-- Custom Views -->
+										<item id="240">
+												<label>-</label>
+												<onclick>Container.SetViewMode(80)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_80.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_80)</visible>
+										</item>
+										<item id="241">
+												<label>-</label>
+												<onclick>Container.SetViewMode(81)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_81.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_81)</visible>
+										</item>
+										<item id="242">
+												<label>-</label>
+												<onclick>Container.SetViewMode(82)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_82.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_82)</visible>
+										</item>
+										<item id="243">
+												<label>-</label>
+												<onclick>Container.SetViewMode(83)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_83.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_83)</visible>
+										</item>
+										<item id="244">
+												<label>-</label>
+												<onclick>Container.SetViewMode(84)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_84.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_84)</visible>
+										</item>
+										<item id="245">
+												<label>-</label>
+												<onclick>Container.SetViewMode(85)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_85.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_85)</visible>
+										</item>
+										<item id="246">
+												<label>-</label>
+												<onclick>Container.SetViewMode(86)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_86.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_86)</visible>
+										</item>
+										<item id="247">
+												<label>-</label>
+												<onclick>Container.SetViewMode(87)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_87.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_87)</visible>
+										</item>
+										<item id="248">
+												<label>-</label>
+												<onclick>Container.SetViewMode(88)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_88.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_88)</visible>
+										</item>
+										<item id="249">
+												<label>-</label>
+												<onclick>Container.SetViewMode(89)</onclick>
+												<icon>Special://skin/xml/custom views/CustomViewtype_id_89.jpg</icon>
+												<visible>Skin.HasSetting(CustomViewtype_id_89)</visible>
+										</item>
+								</content>
+						</control>
+						<!-- View Specific Options -->
+						<control type="panel" id="9001">
+								<visible>ControlGroup(9000).HasFocus(102)</visible>
+								<include>PanelValues</include>
+								<content>
+										<!-- Synopsis view 57/71 and jumps to blurred -->
 										<item id="201">
 												<label>-</label>
 												<onclick>Skin.Reset(fanartenabled)</onclick>
+												<onclick>Skin.Reset(fanartblur)</onclick>
+												<onclick>Skin.Reset(fadedfanart)</onclick>
 												<icon>windows\programs\fanart.jpg</icon>
-												<visible>!Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(fanartenabled) + [StringCompare(Container.Viewmode,view57) | StringCompare(Container.Viewmode,view61) | StringCompare(Container.Viewmode,view71) | StringCompare(Container.Viewmode,view72)]</visible>
+										</item>
+										<!-- Synopsis view 54/56/61 and jumps to blurred -->
+										<item id="201">
+												<label>-</label>
+												<onclick>Skin.SetBool(fanartblur)</onclick>
+												<onclick>Skin.Reset(fadedfanart)</onclick>
+												<icon>windows\programs\fanart.jpg</icon>
+												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur) + [StringCompare(Container.Viewmode,view54) | StringCompare(Container.Viewmode,view56)]</visible>
 										</item>
 										<item id="201">
 												<label>-</label>
 												<onclick>Skin.Reset(fanartblur)</onclick>
 												<onclick>Skin.Reset(fanartenabled)</onclick>
 												<icon>windows\programs\fanart_blur.jpg</icon>
-												<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fanartblur) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fanartblur) + [StringCompare(Container.Viewmode,view54) | StringCompare(Container.Viewmode,view56)]</visible>
+										</item>
+										<!-- Resources disabled but global fanart -->
+										<item id="201">
+												<label>-</label>
+												<onclick>Skin.SetBool(fadedfanart)</onclick>
+												<onclick>Skin.Reset(fanartblur)</onclick>
+												<icon>windows\programs\fanart.jpg</icon>
+												<visible>!Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur) + !Skin.HasSetting(fadedfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view79)</visible>
+										</item>
+										<!-- Global -->
+										<item id="201">
+												<label>-</label>
+												<onclick>Skin.SetBool(fanartenabled)</onclick>
+												<icon>windows\programs\fanart_disabled.jpg</icon>
+												<visible>!Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur) + !Skin.HasSetting(fadedfanart) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view79)</visible>
+										</item>
+										<item id="201">
+												<label>-</label>
+												<onclick>Skin.SetBool(fanartblur)</onclick>
+												<icon>windows\programs\fanart.jpg</icon>
+												<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur) + !Skin.HasSetting(fadedfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view79)</visible>
+										</item>
+										<item id="201">
+												<label>-</label>
+												<onclick>Skin.SetBool(fadedfanart)</onclick>
+												<onclick>Skin.Reset(fanartblur)</onclick>
+												<icon>windows\programs\fanart_blur.jpg</icon>
+												<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fanartblur) + !Skin.HasSetting(fadedfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view79)</visible>
+										</item>
+										<item id="201">
+												<label>-</label>
+												<onclick>Skin.SetBool(fanartblur)</onclick>
+												<icon>windows\programs\fanart_faded.jpg</icon>
+												<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadedfanart) + !Skin.HasSetting(fanartblur) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view79)</visible>
+										</item>
+										<item id="201">
+												<label>-</label>
+												<onclick>Skin.Reset(fanartblur)</onclick>
+												<onclick>Skin.Reset(fadedfanart)</onclick>
+												<onclick>Skin.Reset(fanartenabled)</onclick>
+												<icon>windows\programs\fanart_faded_blur.jpg</icon>
+												<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(fadedfanart) + Skin.HasSetting(fanartblur) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
 										<item id="203">
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(customfanartfog)</onclick>
 												<icon>windows\programs\fanart_fog_disabled.jpg</icon>
-												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(customfanartfog) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(customfanartfog) + !Skin.HasSetting(fadedfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57 + !StringCompare(Container.Viewmode,view61)) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
 										<item id="203">
 												<label>-</label>
 												<onclick>Skin.Reset(customfanartfog)</onclick>
 												<icon>windows\programs\fanart_fog.jpg</icon>
-												<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(customfanartfog) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(customfanartfog) + !Skin.HasSetting(fadedfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
 										<item id="204">
 												<label>-</label>
 												<onclick>Skin.ToggleSetting(higherfanart)</onclick>
 												<icon>windows\programs\fanart_alt_disabled.jpg</icon>
-												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(higherfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(fanartenabled) + !Skin.HasSetting(higherfanart) + !Skin.HasSetting(fadedfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
 										<item id="204">
 												<label>-</label>
 												<onclick>Skin.Reset(higherfanart)</onclick>
 												<icon>windows\programs\fanart_alt.jpg</icon>
-												<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(higherfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view79)</visible>
-										</item>
-										<item id="2010">
-												<label>-</label>
-												<onclick>Skin.ToggleSetting(fanartoverlayenabled)</onclick>
-												<icon>windows\programs\fanart_overlay_enabled.jpg</icon>
-												<visible>!Skin.HasSetting(fanartoverlayenabled) + StringCompare(Container.Viewmode,view57)</visible>
-										</item>
-										<item id="2010">
-												<label>-</label>
-												<onclick>Skin.Reset(fanartoverlayenabled)</onclick>
-												<icon>windows\programs\fanart_overlay_disabled.jpg</icon>
-												<visible>Skin.HasSetting(fanartoverlayenabled) + StringCompare(Container.Viewmode,view57)</visible>
+												<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(higherfanart) + !Skin.HasSetting(fadedfanart) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
 										<item id="2011">
 												<label>-</label>
@@ -678,45 +672,57 @@
 												<icon>windows\programs\fanart_full_screen.jpg</icon>
 												<visible>Skin.HasSetting(fanartfullscreen) + StringCompare(Container.Viewmode,view57)</visible>
 										</item>
-										<item id="2012">
+										<item id="212">
+												<label>-</label>
+												<onclick>Skin.ToggleSetting(multiimagefanartview)</onclick>
+												<icon>windows\programs\enable_fanart_view_multiimage.jpg</icon>
+												<visible>!Skin.HasSetting(multiimagefanartview) + StringCompare(Container.Viewmode,view57)</visible>
+										</item>
+										<item id="212">
+												<label>-</label>
+												<onclick>Skin.Reset(multiimagefanartview)</onclick>
+												<icon>windows\programs\disable_fanart_view_multiimage.jpg</icon>
+												<visible>Skin.HasSetting(multiimagefanartview) + StringCompare(Container.Viewmode,view57)</visible>
+										</item>
+										<item id="2013">
 												<label>-</label>
 												<onclick>Skin.SetBool(hidefoldernames)</onclick>
 												<icon>windows\programs\both_labels.jpg</icon>
-												<visible>!Skin.HasSetting(hidefoldernames) + !Skin.HasSetting(hidegamenames)+ !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>!Skin.HasSetting(hidefoldernames) + !Skin.HasSetting(hidegamenames)+ !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
-										<item id="2012">
+										<item id="2013">
 												<label>-</label>
 												<onclick>Skin.reset(hidefoldernames)</onclick>
 												<onclick>Skin.SetBool(hidegamenames)</onclick>
 												<icon>windows\programs\folder_labels.jpg</icon>
-												<visible>Skin.HasSetting(hidefoldernames)+ !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(hidefoldernames)+ !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
-										<item id="2012">
+										<item id="2013">
 												<label>-</label>
 												<onclick>Skin.Reset(hidefoldernames)</onclick>
 												<onclick>Skin.Reset(hidegamenames)</onclick>
 												<icon>windows\programs\game_labels.jpg</icon>
-												<visible>Skin.HasSetting(hidegamenames) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view79)</visible>
+												<visible>Skin.HasSetting(hidegamenames) + !StringCompare(Container.Viewmode,view54) + !StringCompare(Container.Viewmode,view55) + !StringCompare(Container.Viewmode,view56) + !StringCompare(Container.Viewmode,view57) + !StringCompare(Container.Viewmode,view58) + !StringCompare(Container.Viewmode,view61) + !StringCompare(Container.Viewmode,view69) + !StringCompare(Container.Viewmode,view72) + !StringCompare(Container.Viewmode,view71) + !StringCompare(Container.Viewmode,view79)</visible>
 										</item>
-										<item id="2013">
+										<item id="2014">
 												<label>-</label>
 												<onclick>Skin.SetBool(hideloginborder)</onclick>
 												<icon>windows\programs\hide_login_border.jpg</icon>
 												<visible>!Skin.HasSetting(hideloginborder) + StringCompare(Container.Viewmode,view52)</visible>
 										</item>
-										<item id="2013">
+										<item id="2014">
 												<label>-</label>
 												<onclick>Skin.Reset(hideloginborder)</onclick>
 												<icon>windows\programs\show_login_border.jpg</icon>
 												<visible>Skin.HasSetting(hideloginborder) + StringCompare(Container.Viewmode,view52)</visible>
 										</item>
-										<item id="2014">
+										<item id="2015">
 												<label>-</label>
 												<onclick>Skin.SetBool(hidecdartwork)</onclick>
 												<icon>windows\programs\show_listcd.jpg</icon>
 												<visible>!Skin.HasSetting(hidecdartwork) + StringCompare(Container.Viewmode,view58)</visible>
 										</item>
-										<item id="2014">
+										<item id="2015">
 												<label>-</label>
 												<onclick>Skin.Reset(hidecdartwork)</onclick>
 												<icon>windows\programs\hide_listcd.jpg</icon>
@@ -748,6 +754,22 @@
 												<visible>Skin.HasSetting(imagestretchmode) + StringCompare(Container.Viewmode,view55)</visible>
 										</item>
 								</content>
+						</control>
+						<control type="scrollbar" id="90">
+								<left>1051</left>
+								<top>40</top>
+								<width>4</width>
+								<height>360</height>
+								<include>Fake.ScrollBar.Vertical</include>
+								<visible>ControlGroup(9000).HasFocus(100)</visible>
+						</control>
+						<control type="scrollbar" id="91">
+								<left>1051</left>
+								<top>40</top>
+								<width>4</width>
+								<height>360</height>
+								<include>Fake.ScrollBar.Vertical</include>
+								<visible>ControlGroup(9000).HasFocus(101)</visible>
 						</control>
 				</control>
 		</include>

@@ -3,20 +3,20 @@
 		<allowoverlay>no</allowoverlay>
 		<views>50</views>
 		<controls>
-				<include>CommonBackground</include>
+				<include>Global.Backgrounds</include>
 				<control type="group">
-						<include>ViewVisibleEffect</include>
+						<include>View.Visible.Effect</include>
 						<include file="Viewtype_CommonRootView.xml">CommonRootView</include>
 				</control>
 				<control type="group">
-						<include>CommonOptionsMenuBack</include>
+						<include>Common.Options.Menu.Back</include>
 						<control type="group" id="9000">
 								<control type="button" id="2">
 										<description>View As button</description>
 										<left>0</left>
 										<top>0</top>
 										<width>330</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>-</label>
 										<onleft>9001</onleft>
 										<onright>50</onright>
@@ -28,7 +28,7 @@
 										<left>0</left>
 										<top>45</top>
 										<width>270</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>103</label>
 										<onleft>9001</onleft>
 										<onright>4</onright>
@@ -66,7 +66,7 @@
 										<label>$LOCALIZE[29800]</label>
 										<onclick>ReplaceWindow(MusicFiles)</onclick>
 										<selected>Window.IsVisible(MusicLibrary)</selected>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<onleft>9001</onleft>
 										<onright>50</onright>
 										<onup>3</onup>
@@ -77,7 +77,7 @@
 										<left>0</left>
 										<top>135</top>
 										<width>330</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>137</label>
 										<onleft>9001</onleft>
 										<onright>50</onright>
@@ -89,7 +89,7 @@
 										<left>0</left>
 										<top>180</top>
 										<width>330</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>587</label>
 										<onleft>9001</onleft>
 										<onright>50</onright>
@@ -101,7 +101,7 @@
 										<left>0</left>
 										<top>225</top>
 										<width>330</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>589</label>
 										<onleft>9001</onleft>
 										<onright>50</onright>
@@ -110,7 +110,7 @@
 								</control>
 						</control>
 				</control>
-				<include>WindowHeader</include>
+				<include>Window.Header</include>
 				<include>ScrollOffsetLabel</include>
 		</controls>
 </window>

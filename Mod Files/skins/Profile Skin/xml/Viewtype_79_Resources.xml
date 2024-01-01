@@ -3,215 +3,182 @@
 				<control type="group">
 						<visible>Control.IsVisible(79) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<control type="group">
-								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(79).OnScrollNext">Conditional</animation>
-								<animation reversible="true" effect="fade" start="100" end="0" delay="" time="300" condition="Container(79).OnScrollPrevious">Conditional</animation>
+								<left>15</left>
 								<!-- Poster.jpg -->
-								<control type="group">
-										<left>30</left>
-										<top>120</top>
-										<control type="image">
-												<left>0</left>
-												<top>0</top>
-												<width>214</width>
-												<height>290</height>
-												<aspectratio>stretch</aspectratio>
-												<texture border="5">views/resources/thumbnf.png</texture>
-										</control>
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>205</width>
-												<height>280</height>
-												<aspectratio>stretch</aspectratio>
-												<texture background="true" fallback="no_poster.jpg">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
-												<bordertexture border="5">-</bordertexture>
-												<bordersize>1</bordersize>
-										</control>
-								</control>
-								<!-- icon.png -->
-								<control type="group">
-										<left>30</left>
-										<top>420</top>
-										<control type="image">
-												<left>2</left>
-												<top>0</top>
-												<width>214</width>
-												<height>214</height>
-												<aspectratio>stretch</aspectratio>
-												<texture border="5">views/resources/thumb-border.png</texture>
-										</control>
-										<control type="image">
-												<left>7</left>
-												<top>5</top>
-												<width>204</width>
-												<height>204</height>
-												<aspectratio>stretch</aspectratio>
-												<texture>views/resources/black-back.png</texture>
-										</control>
-										<control type="image">
-												<left>7</left>
-												<top>5</top>
-												<width>204</width>
-												<height>204</height>
-												<aspectratio>keep</aspectratio>
-												<texture background="true" fallback="no_icon.png">$INFO[listitem.path,,_resources\artwork\icon.png]</texture>
-										</control>
+								<control type="image">
+										<left>10</left>
+										<top>110</top>
+										<width>205</width>
+										<height>280</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_poster.jpg">$INFO[listitem.Synopsis_Resources]artwork\poster.jpg</texture>
 								</control>
 								<!-- Thumb.jpg -->
-								<control type="group">
-										<left>270</left>
-										<top>120</top>
-										<control type="image">
-												<left>0</left>
-												<top>0</top>
-												<width>320</width>
-												<height>180</height>
-												<aspectratio>stretch</aspectratio>
-												<texture border="5">views/resources/thumb-border.png</texture>
-										</control>
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>310</width>
-												<height>170</height>
-												<aspectratio>stretch</aspectratio>
-												<texture>views/resources/black-back.png</texture>
-										</control>
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>310</width>
-												<height>170</height>
-												<aspectratio>stretch</aspectratio>
-												<texture background="true" fallback="no_thumb.jpg">$INFO[listitem.path,,_resources\artwork\thumb.jpg]</texture>
-										</control>
+								<control type="image">
+										<left>225</left>
+										<top>110</top>
+										<width>310</width>
+										<height>170</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_thumb.jpg">$INFO[listitem.Synopsis_Resources]artwork\thumb.jpg</texture>
 								</control>
-								<!-- Screenshot.jpg -->
-								<control type="group">
-										<left>270</left>
-										<top>310</top>
-										<control type="image">
-												<left>0</left>
-												<top>0</top>
-												<width>320</width>
-												<height>180</height>
-												<aspectratio>stretch</aspectratio>
-												<texture border="5">views/resources/thumb-border.png</texture>
-										</control>
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>310</width>
-												<height>170</height>
-												<aspectratio>stretch</aspectratio>
-												<texture>views/resources/black-back.png</texture>
-										</control>
-										<control type="image">
-												<left>5</left>
-												<top>5</top>
-												<width>310</width>
-												<height>170</height>
-												<aspectratio>stretch</aspectratio>
-												<texture background="true" fallback="no_screenshots.png">$INFO[listitem.path,,_resources\screenshots\screenshot-1.jpg]</texture>
-										</control>
-								</control>
-								<!-- CD.png -->
-								<control type="group">
-										<left>335</left>
-										<top>500</top>
-										<control type="image">
-												<left>2</left>
-												<top>0</top>
-												<width>174</width>
-												<height>174</height>
-												<aspectratio>stretch</aspectratio>
-												<texture border="5">views/resources/thumb-border.png</texture>
-										</control>
-										<control type="image">
-												<left>7</left>
-												<top>5</top>
-												<width>164</width>
-												<height>164</height>
-												<aspectratio>stretch</aspectratio>
-												<texture>views/resources/black-back.png</texture>
-										</control>
-										<control type="image">
-												<left>7</left>
-												<top>5</top>
-												<width>164</width>
-												<height>164</height>
-												<aspectratio>stretch</aspectratio>
-												<texture background="true" fallback="no_cd.png">$INFO[listitem.path,,_resources\artwork\cd.png]</texture>
-										</control>
+								<!-- cdposter.png -->
+								<control type="image">
+										<left>10</left>
+										<top>400</top>
+										<width>205</width>
+										<height>280</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_cdposter.png">$INFO[listitem.Synopsis_Resources]artwork\cdposter.png</texture>
 								</control>
 								<!-- banner.png -->
-								<control type="group">
-										<left>670r</left>
-										<top>500</top>
-										<control type="image">
-												<left>2</left>
-												<top>0</top>
-												<width>580</width>
-												<height>130</height>
-												<aspectratio>stretch</aspectratio>
-												<texture border="5">views/resources/thumb-border.png</texture>
-										</control>
-										<control type="image">
-												<left>7</left>
-												<top>5</top>
-												<width>570</width>
-												<height>120</height>
-												<aspectratio>stretch</aspectratio>
-												<texture>views/resources/black-back.png</texture>
-										</control>
-										<control type="image">
-												<left>7</left>
-												<top>5</top>
-												<width>570</width>
-												<height>120</height>
-												<aspectratio>stretch</aspectratio>
-												<texture background="true" fallback="no_banner.png">$INFO[listitem.path,,_resources\artwork\banner.png]</texture>
-										</control>
+								<control type="image">
+										<left>225</left>
+										<top>250</top>
+										<width>310</width>
+										<height>130</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_banner.png">$INFO[listitem.Synopsis_Resources]artwork\banner.png</texture>
+								</control>
+								<!-- icon.png -->
+								<control type="image">
+										<left>225</left>
+										<top>360</top>
+										<width>155</width>
+										<height>155</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_icon.png">$INFO[listitem.Synopsis_Resources]artwork\icon.png</texture>
+								</control>
+								<!-- dual3d.png -->
+								<control type="image">
+										<left>370</left>
+										<top>360</top>
+										<width>155</width>
+										<height>155</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_dual3d.png">$INFO[listitem.Synopsis_Resources]artwork\dual3d.png</texture>
+								</control>
+								<!-- opencase.png -->
+								<control type="image">
+										<left>225</left>
+										<top>515</top>
+										<width>155</width>
+										<height>155</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_opencase.png">$INFO[listitem.Synopsis_Resources]artwork\opencase.png</texture>
+								</control>
+								<!-- poster_small.jpg -->
+								<control type="image">
+										<left>380</left>
+										<top>515</top>
+										<width>45</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_poster.jpg">$INFO[listitem.Synopsis_Resources]artwork\poster_small.jpg</texture>
+								</control>
+								<!-- poster_small_blurred.jpg -->
+								<control type="image">
+										<left>435</left>
+										<top>515</top>
+										<width>45</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_poster.jpg">$INFO[listitem.Synopsis_Resources]artwork\poster_small_blurred.jpg</texture>
+								</control>
+								<!-- cd_small.jpg -->
+								<control type="image">
+										<left>400</left>
+										<top>585</top>
+										<width>64</width>
+										<height>64</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" diffuse="views/list/CD_diffuse_listview.png" fallback="no_cd_small.png">$INFO[listitem.Synopsis_Resources]artwork\cd_small.jpg</texture>
+								</control>
+								<!-- cd.png -->
+								<control type="image">
+										<left>500</left>
+										<top>485</top>
+										<width>200</width>
+										<height>200</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_cd.png">$INFO[listitem.Synopsis_Resources]artwork\cd.png</texture>
+								</control>
+								<!-- Screenshots -->
+								<control type="image">
+										<left>540</left>
+										<top>290</top>
+										<width>310</width>
+										<height>170</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true">no_screenshots.jpg</texture>
+								</control>
+								<control type="multiimage">
+										<left>540</left>
+										<top>290</top>
+										<width>310</width>
+										<height>170</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>2000</fadetime>
+										<colordiffuse>FFFFFFFF</colordiffuse>
+										<timeperimage>5000</timeperimage>
+										<pauseatend>10000</pauseatend>
+										<randomize>false</randomize>
+										<loop>true</loop>
+										<imagepath falback="">$INFO[listitem.Synopsis_Resources]screenshots</imagepath>
 								</control>
 								<!-- Fanart.jpg -->
-								<control type="group">
-										<left>670r</left>
-										<top>130</top>
-										<control type="image">
-												<left>0</left>
-												<top>0</top>
-												<width>640</width>
-												<height>360</height>
-												<aspectratio>stretch</aspectratio>
-												<texture>views/resources/black-back.png</texture>
-												<bordersize>5</bordersize>
-										</control>
-										<control type="largeimage">
-												<left>0</left>
-												<top>0</top>
-												<width>640</width>
-												<height>360</height>
-												<aspectratio>scale</aspectratio>
-												<texture background="true">no_fanart.jpg</texture>
-												<bordersize>5</bordersize>
-										</control>
-										<control type="largeimage">
-												<left>0</left>
-												<top>0</top>
-												<width>640</width>
-												<height>360</height>
-												<aspectratio>scale</aspectratio>
-												<texture background="true">$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-												<bordersize>5</bordersize>
-										</control>
-										<control type="image">
-												<left>0</left>
-												<top>0</top>
-												<width>640</width>
-												<height>360</height>
-												<aspectratio>stretch</aspectratio>
-												<texture border="5">views/resources/poster-border.png</texture>
-										</control>
+								<control type="largeimage">
+										<left>540</left>
+										<top>110</top>
+										<width>310</width>
+										<height>170</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_fanart.jpg">$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</texture>
+								</control>
+								<!-- fanart_thumb.jpg -->
+								<control type="image">
+										<left>860</left>
+										<top>110</top>
+										<width>310</width>
+										<height>80</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_fanart.jpg">$INFO[listitem.Synopsis_Resources]artwork\fanart_thumb.jpg</texture>
+								</control>
+								<!-- fanart-blur.jpg -->
+								<control type="image">
+										<left>860</left>
+										<top>200</top>
+										<width>310</width>
+										<height>80</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_fanart.jpg">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</texture>
+								</control>
+								<!-- synopsis.jpg -->
+								<control type="image">
+										<left>860</left>
+										<top>290</top>
+										<width>205</width>
+										<height>280</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_poster.jpg">$INFO[listitem.Synopsis_Resources]artwork\synopsis.jpg</texture>
+								</control>
+								<!-- alt_synopsis.jpg -->
+								<control type="image">
+										<left>1060</left>
+										<top>290</top>
+										<width>205</width>
+										<height>280</height>
+										<aspectratio>keep</aspectratio>
+										<texture background="true" fallback="no_poster.jpg">$INFO[listitem.Synopsis_Resources]artwork\alt_synopsis.jpg</texture>
+								</control>
+								<!-- fog.jpg -->
+								<control type="image">
+										<left>760</left>
+										<top>580</top>
+										<width>405</width>
+										<height>60</height>
+										<aspectratio>stretch</aspectratio>
+										<texture background="true" fallback="no_fanart.jpg">$INFO[listitem.Synopsis_Resources]artwork\fog.jpg</texture>
 								</control>
 						</control>
 						<control type="fixedlist" id="79">
@@ -223,13 +190,12 @@
 								<onright>79</onright>
 								<onup>9000</onup>
 								<ondown>-</ondown>
-								<viewtype label="view79">list</viewtype>
+								<viewtype label="view79">biglist</viewtype>
 								<pagecontrol>-</pagecontrol>
 								<scrolltime>0</scrolltime>
 								<focusposition>1</focusposition>
-								<movement>1</movement>
 								<orientation>horizontal</orientation>
-								<preloaditems>3</preloaditems>
+								<preloaditems>0</preloaditems>
 								<itemlayout />
 								<focusedlayout />
 						</control>
@@ -239,19 +205,19 @@
 								<width>1220</width>
 								<height>36</height>
 								<font>size_35</font>
-								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 								<scroll>false</scroll>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 						</control>
 						<control type="label">
-								<left>670r</left>
-								<top>80r</top>
-								<width>640</width>
-								<height>36</height>
+								<left>770</left>
+								<bottom>85</bottom>
+								<width>405</width>
+								<height>60</height>
 								<font>size_15</font>
-								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 								<scroll>false</scroll>
 								<align>center</align>
 								<aligny>center</aligny>

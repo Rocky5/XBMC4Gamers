@@ -1,10 +1,10 @@
 <window type="window" id="1901">
 		<defaultcontrol always="true">1</defaultcontrol>
-		<onload>RunScript(Special://urldownloader/default.py,1kENriKoSIVU_31LTerhsWIknndbfAjh7,URLDownloader.zip,3136624,3675565,Q:/system/scripts/)</onload>
+		<onload>RunScript(Special://urldownloader/ForceUpdate.py)</onload>
 		<controls>
 				<!-- Background Images -->
-				<include>CommonBackground</include>
-				<include>WindowHeader</include>
+				<include>Global.Backgrounds</include>
+				<include>Window.Header</include>
 				<include>ContextButtonsSettings</include>
 		</controls>
 </window>

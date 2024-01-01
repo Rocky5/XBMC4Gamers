@@ -6,19 +6,18 @@
 								<control type="fixedlist" id="66">
 										<left>0</left>
 										<top>360</top>
-										<width>1280</width>
+										<width>1380</width>
 										<height>430</height>
 										<onleft>66</onleft>
 										<onright>66</onright>
 										<onup>9000</onup>
 										<ondown>90</ondown>
-										<viewtype label="view66">list</viewtype>
+										<viewtype label="view66">biglist</viewtype>
 										<pagecontrol>90</pagecontrol>
 										<scrolltime>230</scrolltime>
 										<focusposition>2</focusposition>
-										<movement>0</movement>
 										<orientation>horizontal</orientation>
-										<preloaditems>6</preloaditems>
+										<preloaditems>2</preloaditems>
 										<itemlayout height="147" width="149">
 												<control type="group">
 														<left>-86</left>
@@ -27,16 +26,17 @@
 																<top>90</top>
 																<width>141</width>
 																<height>141</height>
-																<aspectratio aligny="middle">scale</aspectratio>
-																<texture background="true">no_loginIcon.jpg</texture>
+																<aspectratio aligny="middle" scalediffuse="false">scale</aspectratio>
+																<texture diffuse="views/ps/diffuse.png">no_loginIcon.jpg</texture>
 														</control>
 														<control type="image">
 																<left>5</left>
 																<top>97</top>
 																<width>137</width>
 																<height>137</height>
-																<aspectratio aligny="middle">scale</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
+																<fadetime>ThumbCrossfadeTime</fadetime>
+																<aspectratio aligny="middle" scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/ps/diffuse.png">$INFO[listitem.icon]</texture>
 																<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 														</control>
 														<control type="group">
@@ -46,17 +46,19 @@
 																		<top>92</top>
 																		<width>137</width>
 																		<height>137</height>
-																		<aspectratio aligny="middle">scale</aspectratio>
-																		<texture background="true">$INFO[listitem.icon]</texture>
-																		<visible>ListItem.IsFolder</visible>
+																		<fadetime>ThumbCrossfadeTime</fadetime>
+																		<aspectratio aligny="middle" scalediffuse="false">scale</aspectratio>
+																		<texture background="true" diffuse="views/ps/diffuse.png">$INFO[listitem.icon]</texture>
+																		<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
 																</control>
-																<control type="largeimage">
+																<control type="image">
 																		<left>5</left>
 																		<top>92</top>
 																		<width>137</width>
 																		<height>137</height>
-																		<aspectratio aligny="middle">scale</aspectratio>
-																		<texture background="true">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+																		<fadetime>ThumbCrossfadeTime</fadetime>
+																		<aspectratio aligny="middle" scalediffuse="false">scale</aspectratio>
+																		<texture background="true" diffuse="views/ps/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View66_Thumbs]</texture>
 																</control>
 														</control>
 												</control>
@@ -72,16 +74,17 @@
 												<top>0</top>
 												<width>240</width>
 												<height>286</height>
-												<aspectratio aligny="top">scale</aspectratio>
-												<texture background="true">no_loginIcon.jpg</texture>
+												<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+												<texture diffuse="views/ps/diffuse_large.png">no_loginIcon.jpg</texture>
 										</control>
 										<control type="image">
 												<left>13</left>
 												<top>5</top>
 												<width>230</width>
 												<height>276</height>
-												<aspectratio aligny="top">scale</aspectratio>
-												<texture background="true">$INFO[listitem.icon]</texture>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+												<texture background="true" diffuse="views/ps/diffuse_large.png">$INFO[listitem.icon]</texture>
 												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 										</control>
 										<control type="group">
@@ -91,17 +94,19 @@
 														<top>5</top>
 														<width>230</width>
 														<height>276</height>
-														<aspectratio aligny="top">scale</aspectratio>
-														<texture background="true">$INFO[listitem.icon]</texture>
-														<visible>ListItem.IsFolder</visible>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+														<texture background="true" diffuse="views/ps/diffuse_large.png">$INFO[listitem.icon]</texture>
+														<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
-												<control type="largeimage">
+												<control type="image">
 														<left>13</left>
 														<top>5</top>
 														<width>230</width>
 														<height>276</height>
-														<aspectratio aligny="top">scale</aspectratio>
-														<texture background="true">$INFO[listitem.path,,_resources\artwork\poster.jpg]</texture>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+														<texture background="true" diffuse="views/ps/diffuse_large.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View66_Thumbs]</texture>
 												</control>
 										</control>
 										<control type="image">
@@ -110,9 +115,8 @@
 												<width>230</width>
 												<height>31</height>
 												<aspectratio>stretch</aspectratio>
-												<colordiffuse>FF202020</colordiffuse>
-												<texture background="true">background diffuse.png</texture>
-												<visible>!ListItem.IsFolder</visible>
+												<texture background="true" diffuse="views/ps/diffuse_name_underlay.png">views\ps\name_underlay.png</texture>
+												<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 										</control>
 										<control type="image">
 												<left>210</left>
@@ -124,7 +128,7 @@
 												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(66).OnScrollNext">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(66).OnScrollPrevious">Conditional</animation>
-												<visible>!Skin.HasSetting(HidePlayedIndicator) + !ListItem.IsFolder</visible>
+												<visible>!Skin.HasSetting(HidePlayedIndicator) + !IsEmpty(listitem.Synopsis_Resources)</visible>
 										</control>
 										<control type="image">
 												<left>20</left>
@@ -135,7 +139,7 @@
 												<texture>$INFO[listitem.overlay]</texture>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(66).OnScrollNext">Conditional</animation>
 												<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(66).OnScrollPrevious">Conditional</animation>
-												<visible>!Skin.HasSetting(HideTrainerIndicator) + !ListItem.IsFolder</visible>
+												<visible>!Skin.HasSetting(HideTrainerIndicator) + !IsEmpty(listitem.Synopsis_Resources)</visible>
 										</control>
 										<control type="label">
 												<left>13</left>
@@ -148,9 +152,9 @@
 												<align>center</align>
 												<aligny>center</aligny>
 												<label>[UPPERCASE]$LOCALIZE[31186][/UPPERCASE]</label>
-												<visible>StringCompare(ListItem.ProgramCount,0) + !ListItem.IsFolder</visible>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(66).ListItem.IsFolder">Conditional</animation>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(66).ListItem.IsFolder">Conditional</animation>
+												<visible>StringCompare(ListItem.ProgramCount,0) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 										</control>
 										<control type="label">
 												<left>13</left>
@@ -163,9 +167,9 @@
 												<align>center</align>
 												<aligny>center</aligny>
 												<label>[UPPERCASE]$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]][/UPPERCASE]</label>
-												<visible>StringCompare(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(66).ListItem.IsFolder">Conditional</animation>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(66).ListItem.IsFolder">Conditional</animation>
+												<visible>StringCompare(ListItem.ProgramCount,1) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 										</control>
 										<control type="label">
 												<left>13</left>
@@ -178,9 +182,9 @@
 												<align>center</align>
 												<aligny>center</aligny>
 												<label>[UPPERCASE]$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]][/UPPERCASE]</label>
-												<visible>IntegerGreaterThan(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(66).ListItem.IsFolder">Conditional</animation>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(66).ListItem.IsFolder">Conditional</animation>
+												<visible>IntegerGreaterThan(ListItem.ProgramCount,1) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 										</control>
 										<control type="label">
 												<left>270</left>
@@ -188,18 +192,18 @@
 												<width>1040</width>
 												<height>36</height>
 												<font>size_35</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<align>left</align>
 												<aligny>center</aligny>
 												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(66).ListItem.IsFolder">Conditional</animation>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(66).ListItem.IsFolder">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 										</control>
 								</control>
 								<control type="scrollbar" id="90">
 										<onup>66</onup>
-										<include condition="Control.IsVisible(66)">ViewScrollBarHor</include>
+										<include>View.ScrollBar.Horizontal</include>
 								</control>
 						</control>
 				</control>

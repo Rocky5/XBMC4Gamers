@@ -234,6 +234,9 @@ def extract_title_image(game_iso_folder):
 		try:  # if the memory runs out this one should work.
 			log("Using alternative extraction method for TitleImage.xbx.", LOGINFO)
 			xbeinfo(default_xbe).image_png()
+			if os.path.isfile('Z:\\default.png'):
+				# shutil.copy2('Z:\\default.png', join(game_iso_folder, 'default.tbn'))
+				os.remove('Z:\\default.png')
 		except:
 			log("Cannot extract TitleImage.xbx.", LOGERROR)
 			log("Unsupported format or XBE is to large for current system memory.", LOGERROR)
@@ -315,7 +318,7 @@ def process_iso(iso_files, root_iso_directory, artwork_resources):
 
 			install_artwork_resources(game_iso_folder, artwork_resources[title_id])  # Install resources from artwork installer
 			log(str.format("Artwork installed to '_resources'-folder for title id '{}' in '{}'", title_id, game_iso_folder), LOGINFO)
-
+		
 		try:
 			# Patch the title+id into attach.xbe...
 			prepare_attachxbe(game_iso_folder)
@@ -340,11 +343,17 @@ if __name__ == "__main__":
 	progress_dialog = DialogProgress()
 	dialog = Dialog()
 	search_directory = dialog.browse(0, "Select a folder", "files")
+	artwork_installer = join("E:\\", "UDATA", "09999993", "location.bin")
 
 	if search_directory:
 		log(str.format("Searching '{}' for iso files!", search_directory), LOGDEBUG)
 
-		artwork_resources = get_artwork_resources()  # Prefetch artwork resource locations
+		artwork_resources = "Null"
+		if os.path.isfile(artwork_installer):
+			artwork_installer = open(artwork_installer).readline()
+			if os.path.isfile(join(artwork_installer, 'default.xbe')):
+				artwork_resources = get_artwork_resources()  # Prefetch artwork resource locations
+		
 		num_iso_files = len([iso for iso in glob.iglob(search_directory + "*.iso")])
 
 		grouped_iso_files = groupby(
@@ -355,30 +364,32 @@ if __name__ == "__main__":
 		progress_dialog.create("XISO to HDD Installer")
 		progress_dialog.update(0)
 
-		for idx, entry in enumerate(grouped_iso_files):
-			name = entry[0]
-			iso_files = list(entry[1])
-			log(str.format("Processing {} - {}", name, iso_files))
-
-			progress_dialog.update(((idx + 1) * 100) / num_iso_files, "Scanning XISO Files", iso_files[0],)  # TODO fix this after adding grouping
-			try:
-				process_iso(iso_files, search_directory, artwork_resources)
-			except:
-				log("Script has failed", LOGERROR)
-				traceback.print_exc()
-				dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_files[0])
-				continue
-
-			if progress_dialog.iscanceled():
-				log(str.format("User terminated scanning, stopping after '{}'", iso_files[0]), LOGDEBUG)
-				progress_dialog.close()
-				break
-		else:
-			progress_dialog.close()
-			dialog.ok("XISO to HDD Installer", "", "Everything is setup.", "You just launch the game/s like normal.")
-
 		if num_iso_files == 0:
+			progress_dialog.close()
 			dialog.ok("ERROR:", "", "No XISO files found")
+		else:
+			for idx, entry in enumerate(grouped_iso_files):
+				name = entry[0]
+				iso_files = list(entry[1])
+				log(str.format("Processing {} - {}", name, iso_files))
+
+				progress_dialog.update(((idx + 1) * 100) / num_iso_files, "Scanning XISO Files", iso_files[0],)  # TODO fix this after adding grouping
+				try:
+					process_iso(iso_files, search_directory, artwork_resources)
+				except:
+					log("Script has failed", LOGERROR)
+					traceback.print_exc()
+					dialog.ok("ERROR:", "", 'Script has failed\nlast entry = ' + iso_files[0])
+					continue
+
+				if progress_dialog.iscanceled():
+					log(str.format("User terminated scanning, stopping after '{}'", iso_files[0]), LOGDEBUG)
+					progress_dialog.close()
+					break
+			else:
+				progress_dialog.close()
+				dialog.ok("XISO to HDD Installer", "", "Everything is setup.", "You just launch the game/s like normal.")
+
 	else:
 		log("No search directory was defined!", LOGDEBUG)
 

@@ -1,7 +1,7 @@
 <includes>
 		<include name="CommonRootView">
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
 								<left>55</left>
 								<top>55</top>
@@ -84,12 +84,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>common_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -104,12 +104,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="60" max="80">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>common_context_label</textcolor>
 										<label>$LOCALIZE[31151]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- Y Button -->
 								<control type="image">
@@ -125,24 +125,24 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>context_buttons_label</textcolor>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
 										<label>$LOCALIZE[31111]</label>
-										<include>Context_Buttons_Text_Align</include>
 										<visible>Window.IsVisible(501)</visible>
 								</control>
 								<control type="label">
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>context_buttons_label</textcolor>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
 										<label>$LOCALIZE[31112]</label>
-										<include>Context_Buttons_Text_Align</include>
 										<visible>Window.IsVisible(500)</visible>
 								</control>
 								<!-- White Button -->
@@ -158,12 +158,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>common_context_label</textcolor>
 										<label>$LOCALIZE[31113]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- Black Button -->
 								<control type="image">
@@ -179,24 +179,24 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>context_buttons_label</textcolor>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
 										<label>$LOCALIZE[31117]</label>
-										<include>Context_Buttons_Text_Align</include>
 										<visible>Window.IsVisible(500)</visible>
 								</control>
 								<control type="label">
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
-										<textcolor>context_buttons_label</textcolor>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
 										<label>$LOCALIZE[31118]</label>
-										<include>Context_Buttons_Text_Align</include>
 										<visible>Window.IsVisible(501)</visible>
 								</control>
 						</control>
@@ -210,24 +210,14 @@
 						</control>
 						<!-- Content List -->
 						<control type="list" id="50">
-								<include>CommonViewLayout</include>
+								<include>Common.View.Layout</include>
 						</control>
 						<control type="scrollbar" id="90">
 								<left>1190</left>
 								<top>105</top>
 								<width>4</width>
 								<height>420</height>
-								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-								<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
-								<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
-								<textureslidernib>-</textureslidernib>
-								<textureslidernibfocus>-</textureslidernibfocus>
-								<onleft>-</onleft>
-								<ondown>-</ondown>
-								<showonepage>false</showonepage>
-								<orientation>vertical</orientation>
-								<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(90)">Conditional</animation>
-								<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+								<include>Fake.ScrollBar.Vertical</include>
 						</control>
 				</control>
 		</include>

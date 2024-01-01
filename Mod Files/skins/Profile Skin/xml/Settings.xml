@@ -1,11 +1,12 @@
 <window id="4">
 		<defaultcontrol>50</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
+		<onload>Skin.Reset(SelectPreviewMode)</onload>
 		<controls>
-				<include>CommonBackground</include>
-				<include>WindowHeader</include>
+				<include>Global.Backgrounds</include>
+				<include>Window.Header</include>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
 								<left>201</left>
 								<top>81</top>
@@ -55,12 +56,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -75,12 +76,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[31151]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- Black Button -->
 								<control type="image">
@@ -95,12 +96,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[33073]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 						<!-- Content List -->
@@ -122,7 +123,7 @@
 												<left>0</left>
 												<top>-2</top>
 												<width>780</width>
-												<height>76</height>
+												<height>72</height>
 												<aspectratio>stretch</aspectratio>
 												<texture>windows\settings\button_no_focus.png</texture>
 										</control>
@@ -158,9 +159,9 @@
 								<focusedlayout height="74" width="780">
 										<control type="image">
 												<left>0</left>
-												<top>-2</top>
+												<top>0</top>
 												<width>780</width>
-												<height>76</height>
+												<height>72</height>
 												<aspectratio>stretch</aspectratio>
 												<texture>windows\settings\button_focus.png</texture>
 										</control>
@@ -263,17 +264,7 @@
 								<top>180</top>
 								<width>4</width>
 								<height>370</height>
-								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-								<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
-								<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
-								<textureslidernib>-</textureslidernib>
-								<textureslidernibfocus>-</textureslidernibfocus>
-								<onleft>50</onleft>
-								<ondown>-</ondown>
-								<showonepage>false</showonepage>
-								<orientation>vertical</orientation>
-								<animation reversible="false" effect="fade" start="100" end="20" time="100" condition="!Control.HasFocus(80)">Conditional</animation>
-								<animation reversible="false" effect="fade" start="20" end="100" time="100">Focus</animation>
+								<include>Fake.ScrollBar.Vertical</include>
 						</control>
 				</control>
 		</controls>

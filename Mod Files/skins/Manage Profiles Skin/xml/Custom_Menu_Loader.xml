@@ -3,25 +3,27 @@
 		<controls>
 				<control type="button" id="1">
 						<left>-500</left>
-						<onfocus>Dialog.Close(1114,true)</onfocus>
 						<onfocus>ReplaceWindow(Profiles)</onfocus>
-						<visible>Skin.HasSetting(EditMode)</visible>
+						<visible>Skin.HasSetting(kioskmode)</visible>
 						<animation effect="fade" start="0" end="100" delay="300" time="0">Focus</animation>
 				</control>
 				<control type="button" id="1">
 						<left>-500</left>
-						<onclick>ActivateWindow(1116)</onclick>
-						<visible>!Skin.HasSetting(EditMode)</visible>
+						<onclick>System.LogOff</onclick>
+						<visible>!Skin.HasSetting(kioskmode)</visible>
 						<animation effect="fade" start="0" end="100" delay="300" time="0">Focus</animation>
 				</control>
-				<include>CommonBackground</include>
-				<include>Startup_Window_Info</include>
 				<control type="group">
-						<left>523</left>
-						<top>243</top>
-						<animation effect="fade" start="100" end="0" delay="0" time="100" condition="!Skin.HasSetting(EditMode)">Conditional</animation>
-						<animation effect="fade" time="300">WindowClose</animation>
-						<include>Startup_Window_Profile</include>
+						<animation effect="fade" start="100" end="70" delay="0" time="300" condition="!Skin.HasSetting(kioskmode)">WindowOpen</animation>
+						<animation effect="fade" start="70" end="100" delay="0" time="100" condition="!Skin.HasSetting(kioskmode)">WindowClose</animation>
+						<include>Global.Backgrounds</include>
 				</control>
+				<control type="group">
+						<include>Startup.Window.Profile</include>
+						<animation effect="fade" start="100" end="20" time="300" condition="!Skin.HasSetting(kioskmode)">WindowOpen</animation>
+						<animation effect="fade" start="20" end="100" time="0" condition="!Skin.HasSetting(kioskmode)">WindowClose</animation>
+						<animation effect="fade" start="100" end="0" time="300" condition="Skin.HasSetting(kioskmode)">WindowClose</animation>
+				</control>
+				<include>Startup.Window.Info</include>
 		</controls>
 </window>

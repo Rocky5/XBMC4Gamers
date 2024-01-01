@@ -34,7 +34,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-3).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-3).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -58,7 +58,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-2).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-2).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -82,7 +82,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-1).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-1).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -106,7 +106,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(0).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(0).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -130,7 +130,7 @@
 														<width>188</width>
 														<height>327</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(1).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(1).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -154,7 +154,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(2).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(2).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -178,7 +178,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(3).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(3).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -205,7 +205,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(4).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(4).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 								</control>
@@ -238,7 +238,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-4).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-4).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -262,7 +262,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-3).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-3).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -286,7 +286,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-2).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-2).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -310,7 +310,7 @@
 														<width>188</width>
 														<height>327</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-1).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-1).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -334,7 +334,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(0).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(0).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -358,7 +358,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(1).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(1).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -382,7 +382,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(2).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(2).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -410,7 +410,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(3).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(3).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 								</control>
@@ -429,7 +429,7 @@
 														<width>0</width>
 														<height>0</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-4).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-4).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -452,7 +452,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-3).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-3).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -475,7 +475,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-2).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-2).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -498,7 +498,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(-1).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(-1).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -521,7 +521,7 @@
 														<width>188</width>
 														<height>327</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(0).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(0).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -544,7 +544,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(1).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(1).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -567,7 +567,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(2).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(2).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -590,7 +590,7 @@
 														<width>141</width>
 														<height>249</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(3).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(3).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 										<control type="group">
@@ -604,7 +604,7 @@
 														<width>0</width>
 														<height>0</height>
 														<aspectratio align="" aligny="bottom">stretch</aspectratio>
-														<texture>$INFO[Container(65).ListItem(4).path,,_resources\artwork\icon.png]</texture>
+														<texture>$INFO[Container(65).ListItem(4).Synopsis_Resources]artwork\icon.png</texture>
 												</control>
 										</control>
 								</control>
@@ -614,13 +614,13 @@
 										<width>1280</width>
 										<height>36</height>
 										<font>size_40</font>
-										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 										<scroll>true</scroll>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(65).ListItem.IsFolder">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(65).ListItem.IsFolder">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 								</control>
 								<control type="grouplist">
 										<left>0</left>
@@ -629,14 +629,14 @@
 										<itemgap>5</itemgap>
 										<align>center</align>
 										<orientation>horizontal</orientation>
-										<visible>!ListItem.IsFolder</visible>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(65).ListItem.IsFolder">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(65).ListItem.IsFolder">Conditional</animation>
+										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 										<control type="label">
 												<width min="0" max="640">auto</width>
 												<height>30</height>
 												<font>size_15</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<aligny>center</aligny>
 												<label>$LOCALIZE[31186]</label>
@@ -646,7 +646,7 @@
 												<width min="0" max="640">auto</width>
 												<height>30</height>
 												<font>size_15</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<aligny>center</aligny>
 												<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
@@ -656,7 +656,7 @@
 												<width min="0" max="640">auto</width>
 												<height>30</height>
 												<font>size_15</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<aligny>center</aligny>
 												<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
@@ -666,7 +666,7 @@
 												<width min="0" max="640">auto</width>
 												<height>30</height>
 												<font>size_15</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<aligny>center</aligny>
 												<label>- Has Trainer</label>
@@ -683,13 +683,12 @@
 								<onright>65</onright>
 								<onup>9000</onup>
 								<ondown>90</ondown>
-								<viewtype label="view65">list</viewtype>
+								<viewtype label="view65">bigwrap</viewtype>
 								<pagecontrol>90</pagecontrol>
 								<scrolltime>230</scrolltime>
 								<focusposition>2</focusposition>
-								<movement>0</movement>
 								<orientation>horizontal</orientation>
-								<preloaditems>4</preloaditems>
+								<preloaditems>2</preloaditems>
 								<itemlayout height="290" width="414">
 										<control type="group">
 												<animation effect="slide" reversable="true" start="0,0" end="0,-20" time="0" condition="!Skin.HasSetting(_resourcesenabled)">Conditional</animation>
@@ -711,7 +710,7 @@
 						</control>
 						<control type="scrollbar" id="90">
 								<onup>65</onup>
-								<include condition="Control.IsVisible(65)">ViewScrollBarHor</include>
+								<include>View.ScrollBar.Horizontal</include>
 						</control>
 				</control>
 		</include>

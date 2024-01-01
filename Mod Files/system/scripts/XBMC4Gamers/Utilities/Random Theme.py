@@ -22,9 +22,9 @@ if xbmc.getCondVisibility('Skin.HasSetting(randomthemewallpaper)'):
 	xbmc.executebuiltin('Skin.Reset(Background_Image)')
 	xbmc.executebuiltin('Skin.Reset(Background_Custom_Color)')
 
-# Check if it's a v1.4_ Gamers theme.
+# Check if it's a v2.0+ Gamers theme.
 with open(os.path.join(xbmc.translatePath('Special://skin/colors'),ThemeColorFile+".xml")) as test_theme:
-	if "XBMC4Gamers v1.4+" in test_theme.read():
+	if "XBMC4Gamers v2.0+" in test_theme.read():
 		xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skintheme;%s.xpr)'%ThemeFile)
 		xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skincolors;%s.xml)'%ThemeFile)
 		xbmc.executehttpapi('SetGUISetting(3;lookandfeel.font;%s.ttf)'%ThemeFile)

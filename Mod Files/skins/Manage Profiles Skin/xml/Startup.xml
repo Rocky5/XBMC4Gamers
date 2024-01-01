@@ -6,13 +6,8 @@
 		<defaultcontrol always="true">1</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>CommonBackground</include>
-				<control type="group">
-						<left>523</left>
-						<top>243</top>
-						<animation effect="fade" start="0" end="100" time="200" reversible="false">WindowOpen</animation>
-						<include>Startup_Window_Profile</include>
-				</control>
-				<include>Startup_Window_Info</include>
+				<include>Global.Backgrounds</include>
+				<include>Startup.Window.Profile</include>
+				<include>Startup.Window.Info</include>
 		</controls>
 </window>

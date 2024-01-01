@@ -2,10 +2,10 @@
 		<defaultcontrol always="true">4</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>CommonBackground</include>
-				<include>WindowHeader</include>
+				<include>Global.Backgrounds</include>
+				<include>Window.Header</include>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
 								<left>55</left>
 								<top>55</top>
@@ -36,12 +36,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>34_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -56,12 +56,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>34_context_label</textcolor>
 										<label>$LOCALIZE[31021]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 						<control type="textbox">
@@ -95,7 +95,7 @@
 								<width>360</width>
 								<height>200</height>
 								<label>$LOCALIZE[24022] $LOCALIZE[20096]</label>
-								<font>size_25</font>
+								<font>size_24</font>
 								<align>center</align>
 								<textcolor>34_label</textcolor>
 								<focusedcolor>windows_context_alt_label</focusedcolor>

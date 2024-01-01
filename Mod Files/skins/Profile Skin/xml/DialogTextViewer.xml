@@ -4,80 +4,71 @@
 				<control type="image">
 						<include>1280x720</include>
 						<texture>black-back.png</texture>
-						<include>dialogeffect</include>
+						<include>Dialog.Effect</include>
 				</control>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
-								<left>52</left>
-								<top>51</top>
-								<width>1176</width>
-								<height>618</height>
+								<left>0</left>
+								<top>0</top>
+								<width>1280</width>
+								<height>720</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\generic\main.png</texture>
 						</control>
 						<control type="image">
-								<left>77</left>
-								<top>70</top>
-								<width>1126</width>
+								<left>28</left>
+								<top>25</top>
+								<width>1224</width>
 								<height>60</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>windows\generic\header.png</texture>
 						</control>
 						<control type="label">
 								<description>heading label used to bold and upper-case</description>
-								<left>90</left>
-								<top>70</top>
-								<width>1126</width>
+								<left>40</left>
+								<top>25</top>
+								<width>1204</width>
 								<height>60</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<font>size_25</font>
+								<font>size_24</font>
 								<label>File: $INFO[Control.GetLabel(1)]</label>
 								<textcolor>147_header_label</textcolor>
 						</control>
 						<control type="label" id="1">
 								<description>heading label</description>
-								<left>90</left>
+								<left>40</left>
 								<top>75</top>
 								<width>1105</width>
 								<height>50</height>
 								<align>left</align>
 								<aligny>center</aligny>
-								<font>size_25</font>
+								<font>size_27</font>
 								<textcolor>147_header_label</textcolor>
 								<visible>false</visible>
 						</control>
 						<control type="textbox" id="5">
 								<description>textarea</description>
-								<left>90</left>
-								<top>128</top>
-								<width>1100</width>
-								<height>520</height>
-								<font>size_16</font>
-								<align>left</align>
+								<left>40</left>
+								<top>85</top>
+								<width>1185</width>
+								<height>610</height>
+								<font>size_19</font>
 								<textcolor>147_label</textcolor>
 								<shadowcolor>-</shadowcolor>
+								<align>left</align>
+								<aligny>top</aligny>
 								<pagecontrol>61</pagecontrol>
+								<autoscroll delay="15000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
 						</control>
 						<!-- Scroll bar fails to work due to the scrolltime being set to 200 :-/ -->
 						<control type="scrollbar" id="61">
-								<left>1193</left>
+								<left>1235</left>
 								<top>130</top>
 								<width>10</width>
 								<height>517</height>
-								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-								<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
-								<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
-								<textureslidernib>-</textureslidernib>
-								<textureslidernibfocus>-</textureslidernibfocus>
-								<onleft>-</onleft>
-								<ondown>-</ondown>
-								<showonepage>false</showonepage>
-								<orientation>vertical</orientation>
-								<visible allowhiddenfocus="true">Control.HasFocus(61)</visible>
-								<animation reversible="false" effect="fade" start="100" end="20" time="100" condition="!Control.HasFocus(61)">Conditional</animation>
-								<animation reversible="false" effect="fade" start="20" end="100" time="100">Focus</animation>
+								<include>Fake.ScrollBar.Vertical</include>
 						</control>
 				</control>
 		</controls>

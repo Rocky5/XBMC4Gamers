@@ -4,60 +4,58 @@
 						<visible>Control.IsVisible(68) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<control type="group">
 								<control type="fixedlist" id="68">
-										<left>-109</left>
+										<left>190</left>
 										<top>260</top>
-										<width>1440</width>
+										<width>1310</width>
 										<height>480</height>
 										<onleft>68</onleft>
 										<onright>68</onright>
 										<onup>9000</onup>
 										<ondown>90</ondown>
-										<viewtype label="view68">list</viewtype>
+										<viewtype label="view68">biglist</viewtype>
 										<pagecontrol>90</pagecontrol>
-										<scrolltime>150</scrolltime>
-										<focusposition>1</focusposition>
-										<movement>0</movement>
+										<scrolltime>100</scrolltime>
+										<focusposition>0</focusposition>
 										<orientation>horizontal</orientation>
-										<preloaditems>6</preloaditems>
-										<itemlayout height="190" width="144">
+										<preloaditems>2</preloaditems>
+										<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" height="200" width="144">
 												<control type="group">
-														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+														<left>-145</left>
 														<include>fallback_view_itemlayout_CD</include>
 												</control>
-												<control type="group">
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="largeimage">
-																<left>0</left>
-																<top>195</top>
-																<width>136</width>
-																<height>136</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">no_cd.png</texture>
-														</control>
-														<control type="largeimage">
-																<left>0</left>
-																<top>195</top>
-																<width>136</width>
-																<height>136</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.path,,_resources\artwork\cd.png]</texture>
-														</control>
-														<control type="image">
-																<left>0</left>
-																<top>335</top>
-																<width>136</width>
-																<height>136</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true" flipy="true" diffuse="views/cd/cd_diffuse_cdview.png">no_cd.png</texture>
-														</control>
-														<control type="largeimage">
-																<left>0</left>
-																<top>335</top>
-																<width>136</width>
-																<height>136</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true" flipy="true" diffuse="views/cd/cd_diffuse_cdview.png">$INFO[listitem.path,,_resources\artwork\cd_small.jpg]</texture>
-														</control>
+										</itemlayout>
+										<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="200" width="144">
+												<control type="largeimage">
+														<left>-150</left>
+														<top>195</top>
+														<width>136</width>
+														<height>136</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">no_cd.png</texture>
+												</control>
+												<control type="largeimage">
+														<left>-150</left>
+														<top>195</top>
+														<width>136</width>
+														<height>136</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\cd.png</texture>
+												</control>
+												<control type="image.">
+														<left>-150</left>
+														<top>335</top>
+														<width>136</width>
+														<height>136</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" flipy="true" diffuse="views/cd/cd_diffuse_cdview.png">no_cd.png</texture>
+												</control>
+												<control type="largeimage.">
+														<left>-150</left>
+														<top>335</top>
+														<width>136</width>
+														<height>136</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" flipy="true" diffuse="views/cd/cd_diffuse_cdview.png">$INFO[listitem.Synopsis_Resources]artwork\cd_small.jpg</texture>
 												</control>
 										</itemlayout>
 										<focusedlayout height="385" width="265">
@@ -82,7 +80,7 @@
 												<width>275</width>
 												<height>275</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true">$INFO[listitem.path,,_resources\artwork\cd.png]</texture>
+												<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\cd.png</texture>
 												<animation effect="rotate" start="0" end="-360" center="auto" time="15000" loop="true" condition="true">conditional</animation>
 										</control>
 										<control type="label">
@@ -91,13 +89,13 @@
 												<width>1030</width>
 												<height>36</height>
 												<font>size_35</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<align>left</align>
 												<aligny>center</aligny>
 												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(68).ListItem.IsFolder">Conditional</animation>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(68).ListItem.IsFolder">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 										</control>
 										<control type="grouplist">
 												<left>280</left>
@@ -107,14 +105,14 @@
 												<itemgap>5</itemgap>
 												<align>left</align>
 												<orientation>horizontal</orientation>
-												<visible>!ListItem.IsFolder + Skin.HasSetting(_resourcesenabled)</visible>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(68).ListItem.IsFolder">Conditional</animation>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(68).ListItem.IsFolder">Conditional</animation>
+												<visible>!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled)</visible>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 												<control type="label">
 														<width min="0" max="640">auto</width>
 														<height>30</height>
 														<font>size_15</font>
-														<textcolor>$VAR[var-labelcolour]</textcolor>
+														<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 														<scroll>true</scroll>
 														<align>left</align>
 														<aligny>center</aligny>
@@ -125,7 +123,7 @@
 														<width min="0" max="640">auto</width>
 														<height>30</height>
 														<font>size_15</font>
-														<textcolor>$VAR[var-labelcolour]</textcolor>
+														<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 														<scroll>true</scroll>
 														<align>left</align>
 														<aligny>center</aligny>
@@ -136,7 +134,7 @@
 														<width min="0" max="640">auto</width>
 														<height>30</height>
 														<font>size_15</font>
-														<textcolor>$VAR[var-labelcolour]</textcolor>
+														<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 														<scroll>true</scroll>
 														<align>left</align>
 														<aligny>center</aligny>
@@ -147,7 +145,7 @@
 														<width min="0" max="640">auto</width>
 														<height>30</height>
 														<font>size_15</font>
-														<textcolor>$VAR[var-labelcolour]</textcolor>
+														<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 														<scroll>true</scroll>
 														<align>left</align>
 														<aligny>center</aligny>
@@ -162,7 +160,7 @@
 												<width>275</width>
 												<height>275</height>
 												<aspectratio>stretch</aspectratio>
-												<texture background="true" flipy="true" diffuse="views/cd/cd_diffuse_cdview_focus.png">$INFO[listitem.path,,_resources\artwork\cd_small.jpg]</texture>
+												<texture background="true" flipy="true" diffuse="views/cd/cd_diffuse_cdview_focus.png">$INFO[listitem.Synopsis_Resources]artwork\cd_small.jpg</texture>
 												<visible>Skin.HasSetting(_resourcesenabled)</visible>
 												<animation effect="rotate" start="0" end="360" center="auto" time="15000" loop="true" condition="true">conditional</animation>
 										</control>
@@ -175,7 +173,7 @@
 								</control>
 								<control type="scrollbar" id="90">
 										<onup>68</onup>
-										<include condition="Control.IsVisible(68)">ViewScrollBarHor</include>
+										<include>View.ScrollBar.Horizontal</include>
 								</control>
 						</control>
 				</control>

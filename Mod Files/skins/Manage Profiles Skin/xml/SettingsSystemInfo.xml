@@ -2,8 +2,8 @@
 		<defaultcontrol>95</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>DialogEffectZoomFast</include>
-				<include>CommonBackground</include>
+				<include>Dialog.Effect.Zoom.Fast</include>
+				<include>Global.Backgrounds</include>
 				<control type="group">
 						<control type="image">
 								<left>201</left>
@@ -53,12 +53,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>7_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -73,12 +73,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>7_context_label</textcolor>
 										<label>Back</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 				</control>
@@ -333,38 +333,9 @@
 								<width>1280</width>
 								<height>36</height>
 								<font>size_18</font>
-								<textcolor>$VAR[var-labelcolour]</textcolor>
+								<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 								<align>right</align>
 								<aligny>center</aligny>
-						</control>
-						<control type="group">
-								<left>0</left>
-								<top>610</top>
-								<!-- <control type="label"> -->
-										<!-- <description>Memory Text</description> -->
-										<!-- <left>15</left> -->
-										<!-- <top>50r</top> -->
-										<!-- <width>320</width> -->
-										<!-- <height>36</height> -->
-										<!-- <label>$LOCALIZE[31545] $INFO[system.memory(used.percent)]</label> -->
-										<!-- <align>left</align> -->
-										<!-- <aligny>center</aligny> -->
-										<!-- <textcolor>$VAR[var-labelcolour]</textcolor> -->
-										<!-- <font>size_20</font> -->
-								<!-- </control> -->
-								<!-- <control type="progress"> -->
-										<!-- <description>Memory BAR</description> -->
-										<!-- <left>15</left> -->
-										<!-- <top>15r</top> -->
-										<!-- <width>320</width> -->
-										<!-- <height>12</height> -->
-										<!-- <info>system.memory(used)</info> -->
-										<!-- <texturebg border="6,0,6,0">progressbackalt2.png</texturebg> -->
-										<!-- <lefttexture>-</lefttexture> -->
-										<!-- <midtexture border="6,0,6,0">progressfrontalt2.png</midtexture> -->
-										<!-- <righttexture>-</righttexture> -->
-										<!-- <overlaytexture>-</overlaytexture> -->
-								<!-- </control> -->
 						</control>
 				</control>
 		</controls>

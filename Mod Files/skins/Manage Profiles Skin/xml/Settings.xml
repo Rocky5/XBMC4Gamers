@@ -2,10 +2,10 @@
 		<defaultcontrol>50</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>CommonBackground</include>
-				<include>WindowHeader</include>
+				<include>Global.Backgrounds</include>
+				<include>Window.Header</include>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
 								<left>201</left>
 								<top>81</top>
@@ -60,7 +60,7 @@
 										<align>left</align>
 										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -80,7 +80,7 @@
 										<align>left</align>
 										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[31151]</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 								</control>
 								<!-- Black Button -->
 								<control type="image">
@@ -100,7 +100,7 @@
 										<align>left</align>
 										<textcolor>4_context_label</textcolor>
 										<label>$LOCALIZE[33073]</label>
-										<include>Context_Buttons_Text_Align</include>
+										<include>Context.Buttons.Text.Align</include>
 								</control>
 						</control>
 						<!-- Content List -->

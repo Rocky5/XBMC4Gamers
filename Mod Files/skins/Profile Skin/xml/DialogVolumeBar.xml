@@ -1,6 +1,6 @@
 <window id="104">
 		<defaultcontrol>1</defaultcontrol>
-		<include>dialogeffect</include>
+		<include>Dialog.Effect</include>
 		<controls>
 				<control type="progress" id="29999">
 						<description>Hidden Progressbar Volume</description>

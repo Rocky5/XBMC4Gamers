@@ -2,7 +2,7 @@
 		<defaultcontrol always="true">9001</defaultcontrol>
 		<onload condition="!Player.Playing">XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Random Select.py)</onload>
 		<controls>
-				<include>BehindDialogFadeOut</include>
+				<include>Behind.Dialog.FadeOut</include>
 				<control type="button" id="9001">
 						<left>-500</left>
 						<onfocus>dialog.close(114,true)</onfocus>
@@ -70,7 +70,7 @@
 										<top>11</top>
 										<width>40</width>
 										<height>40</height>
-										<font>size_11</font>
+										<font>size_13</font>
 										<align>right</align>
 										<textcolor>114_label</textcolor>
 										<label>[B]$INFO[Player.Duration(mm:ss)][/B]</label>
@@ -156,12 +156,12 @@
 								<overlaytexture>-</overlaytexture>
 						</control>
 						<control type="label">
-								<left>-8</left>
+								<left>-7</left>
 								<top>48</top>
 								<top>48</top>
 								<width>40</width>
 								<height>20</height>
-								<font>size_11</font>
+								<font>size_13</font>
 								<align>center</align>
 								<textcolor>114_label_alt</textcolor>
 								<label>[B]$INFO[Control.GetLabel(29999),,%][/B]</label>
@@ -170,7 +170,7 @@
 						</control>
 						<control type="image">
 								<left>5</left>
-								<top>27</top>
+								<top>25</top>
 								<width>17</width>
 								<height>17</height>
 								<texture>new player/arrow.png</texture>
@@ -182,7 +182,7 @@
 						</control>
 						<control type="image">
 								<left>5</left>
-								<top>72</top>
+								<top>74</top>
 								<width>17</width>
 								<height>17</height>
 								<texture flipy="true">new player/arrow.png</texture>

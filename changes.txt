@@ -1,3 +1,147 @@
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Welcome to XBMC4Gamers v2.0
+
+A lot has changed since the last Stable build, we now have full synopsis support, more views to shake a stick at and all round better experience.
+We now have a HOME MENU! yeah, it lets you launch menus and recently launched, random games, homebrew, emus, applications and up to 4 custom entries.
+I fixed all bugs I could find and some I missed or created from the last stable or test builds.
+
+So hopefully you enjoy your time in the dash and have a great New Year!
+
+Thank you for your support.
+I would also like to thank everyone that has donated it's very much appreciated.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Change log for v2.0.000
+1/1/2024
+	1) Removed the old Synopsis script as its no longer used.
+	2) Added Double STEAL to the 480p loader.
+	3) Added support for 11 custom views.
+		(check xml\custom views\Information.txt)
+	4) FTP 4GB file transfer issue fixed
+		(Big thanks to Team Resurgent / EqUiNoX)
+	5) Reduced the memory footprint.
+		(New artwork installer also helps v 2.2 onwards)
+	6) Removed the individual saves support.
+		(I may add this back at some point, but the script was causing issues and this was the best way to fix that)
+	7) Profiles.xml is backed up each time it's saved, and restored on each boot.
+		(hopefully this will fix any corruption issues. Try not to restart the xbox when moving between windows.)
+	8) New login screen.
+	9) QWERTY keyboard.
+	10) Synopsis info is parsed by default now when scanning in games if found.
+	11) Fixed all the context sensitive buttons.
+		(labels and buttons along the bottom of the screen)
+	12) Added a new python command xbmc.setSkin() this is to fix the guisettings corrupting on profiles and the system sitting there.
+	13) New transition when login into a profile to make different themes, wallpaper transition smoother.
+	14) Added back in the option to edit the profiles name, since I no longer use the individual saves script.
+	15) Fixed all context menu placements.
+	16) New views.
+	17) Bumped themes to v2.0+ as they have some new values and need to be redownloaded.
+	18) New text list view added.
+	19) Removed 2 views and replaced 2.
+	20) New images to show these new views etc...
+	21) Updating views again, so they function better when features are enabled/disabled.
+	22) Added CPU and MB temps to the debug info and rearranged it a bit.
+	23) New Synopsis Poster view. Looks really nice.
+	24) Some changes to elements of the UI.
+	25) New synopsis overview window (Y button)
+	26) Hide the show logout and reload skin context buttons by default.
+	27) Changed the view options menu a tad to use higher rez images for previews of views etc...
+	28) Option to hide the context buttons at the bottom of the screen for a cleaner look if you wish it.
+	29) Added preview detection, so now if there is no preview it will hide the icon for the video.
+	30) Updated the "XISO to HDD Installer" script to not error if the artwork installer isn't installed. Also updated its thumbnail.
+	31) Don't use synopsis naming toggle added to Program Settings.
+		(This will let you use the xbe naming if you with and alse enable default.xbe title naming support.)
+	32) If you are running 128MB of ram it will default to higher res artwork.
+	33) Added a toggle under programs settings > advanced to disable the high res artwork.
+		(Will able to toggle on 128MB systems and is for people how are running older artwork.)
+	34) Disabled multipaths, so duplicate games can be on different partitions with the same folder name and not break.
+		(this is still an issue in legacy XBMC)
+	35) Added support for diffuse images on thumbs, there are two new themes on the downloader using these images.
+	36) Fixed the remove empty folder script from removing folders that contain homebrew settings.
+	37) Added player count to the views synopsis info.
+	38) Fixed and reorganised the synopsis info on the new views.
+		(They all match order)
+	39) Added support for parsing translated synopsis information.
+		(based on system language and requires users to translate the info)
+	40) Italian translation add.
+		(Thank you XGekoX)
+	41) New synopsis list view.
+		(color.xmls will need updating for James themes, I have updated all mine.)
+	42) Added some of the missing strings in the strings.po for the skin settings windows .
+	43) Now Home window entries will be translated.
+		(still use english folder names though)
+	44) Removed the "disc artwork.zip" it will now be on the downloader under the other tab.
+	45) Adjusted the font sizes in the file manager window.
+		(compact looks a lot nicer)
+	46) Updated the view options menu/
+		(bigger)
+	47) Added a new fanart faded type.
+	48) Updated some LargePoster, Fanart & banner views.
+	49) Another new view :D and fixes some other minor things in other views.
+	50) Changes to some settings to fix preview mp4 files going out of sync.
+	51) Added Kiosk Mode, this replaces Edit Mode now. Cant change anything when enabled for profiles.
+		(Kid safe basically)
+	52) New script to let you select a source for the "Quick Change menu"
+	53) You can now choose a script/xbe to run/launch for the custom button.
+	54) Home screen added, with random items pulled from the DB (Like origins)
+		(You toggle the home screen in the skin settings > Home Window menu)
+	55) Added support for last played on the homescreen.
+	56) Multiimage added to the new home screen, will cycle through 45 fanart images.
+	57) You can enable kiosk mode without using the login screen.
+		(do the same code at the skin settings > Login > Auto login screen, to disable, press Y on the default root menu and enter the code.)
+	58) new option to have screensaver fanart on home screen.
+		(Requires downloading it from the downloader under the Other section)
+	59) Updated the select and uninstall scripts for themes.
+		(instant now)
+	60) Folders should now act the same as other entries in a list as long as fast game parsing is disabled.
+		(folder fanart also works here)
+	61) Home screen can have 4 custom buttons added.
+		(should be self explanitory in the settings menu)
+	62) loading indicator added to the startup and menu loader screens so you know it's doing something.
+		(this is mainly for when it loading the home menu and parsing the DB with lots of entries)
+	63) Fixed the theme startup playlist not playing.
+	**) Other bits and bobs, find them :D
+	
+	New XBE additions
+	1) Skin debug info.
+		(ported from kodi)
+	2) Justify text align spacing.
+		(ported from kodi)
+	3) Textbox center align.
+		(ported from kodi)
+	4) Justify align to grouplists.
+		(ported from kodi)
+	5) Now adds synopsis info to db if _resources\default.xml is found.
+	6) TextBoxs now support bottom aligny.
+	7) Some settings variables names changed.
+		(You may need to enable fast game parsing again)
+	8) New "Refresh synopsis info" & "Refresh all synopsis info" added to the context menu.
+		(now you can refresh all the synopsis info without having to delete db files)
+	9) Fixed the Alarm silent peram not working for cancelling/resetting an alarm when the silent peram was there.
+		(cancelling an alarm will now use the silent peram, it wasn't coded to use it lol)
+	10) 2 new info labels system.memory(free_no_mb) & system.memory(used_no_mb)
+		(handy for IntegerGreaterThan)
+	11) Added last played time stamp so we can do last played.
+	12) Will update the db file to newer version instead of requiring a clean one.
+	13) antonic901 - GUILIB: allow <width>auto</width> for label controls
+		(https://redmine.exotica.org.uk/issues/367)
+	14) antonic901 - GUILIB: added colordiffuse attribute on texture definition
+		(https://redmine.exotica.org.uk/issues/371)
+	15) antonic901 - GUILIB: Allow use of $NUMBER[] to specify a number in XML tag
+		(https://redmine.exotica.org.uk/issues/370)
+	16) Doesn't deinit the network when logging out of a profile
+		(this fixes the issue, if you log out of the manage profile when using the dashbaord network settings it stops working)
+	
+	Other
+	1) Reverted to 3.5.3 _sqlite3.pyd as the newer one breaks "sqlite3.connect".
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Previous Updates:
+
 28/12/2022
 	1) Added X3 3294 and X2 5035 bios support for the auto video mode switching.
 	2) Updated the banner view to use a different layout when resources are disabled.
@@ -5,19 +149,6 @@
 	3) Removed the 1080i menu option from system > video output
 	4) Slight changes to settings.
 	5) Added disable progressive video modes when holding X+B on load.
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Patron Supporters:
-	Víctor Hugo Valdez Soto, neakmenter, Zé Miguel, Martin Clausius, TeleTubby666, Wimpy, Alf John Hammervik, Rick Girton, thePiratePimp, Michael Bergeron,
-	Wayne Starr, Stian Tofte, Johnny Andersen, Clayton Beeney, Andrew Ryan, Incursion64 ., Roger Serres & Joel Peterson
-
-Thank you for your support.
-Would also like to thank everyone that donates its much appreciated.
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Previous Updates:
 
 16/12/2022
 	1) Can now hide the cd artwork on the list view & they wont show on folders regardless of the setting.

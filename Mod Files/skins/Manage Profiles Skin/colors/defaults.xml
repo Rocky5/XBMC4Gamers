@@ -1,12 +1,20 @@
 <colors>
-		<!-- XBMC4Gamers v1.4+ -->
+		<!-- XBMC4Gamers v2.0+ -->
+		<!-- Home -->
+		<color name="1_label">FFFFFFFF</color>
+		<color name="1_label_alt">FFFFFFFF</color>
+		<color name="1_title">FFFFFFFF</color>
+		<color name="1_stars">FFFFFFFF</color>
+		<color name="1_extrainfo">FFFFFFFF</color>
+		<color name="1_synopsis">FFFFFFFF</color>
+		<color name="1_sidebar_labels_fo">FFFFFFFF</color>
+		<color name="1_sidebar_labels_nofo">FF666666</color>
 		<!-- _Script_DialogBusy  -->
 		<color name="1100_diffuse">FFFFFFFF</color>
 		<color name="1100_label">FFFFFFFF</color>
 		<!-- _Script_Synopsis  -->
 		<color name="1101_label">FFFFFFFF</color>
 		<color name="1101_disabled_label">FF7a7c7d</color>
-		<color name="1101_fade_label">30FFFFFF</color>
 		<!-- Custom_Dialog_Options -->
 		<color name="1112_header_label">FFFFFFFF</color>
 		<color name="1112_context_label">FF5c5c5c</color>
@@ -180,23 +188,26 @@
 		<!-- Viewtype_53_Landscape -->
 		<color name="view53_label">FFFFFFFF</color>
 		<color name="view53_label_alt">FF333333</color>
-		<!-- Viewtype_54_Panel -->
+		<!-- Viewtype_54_TextList -->
 		<color name="view54_label">FFFFFFFF</color>
-		<color name="view54_label_alt">FF333333</color>
+		<color name="view54_label_alt">FFFFFFFF</color>
 		<color name="view54_info_label">FFFFFFFF</color>
-		<color name="view54_info_label_alt">FF399EDA</color>
+		<color name="view54_info_label_alt">FFFFFFFF</color>
 		<!-- Viewtype_55_Banner -->
 		<color name="view55_label">FFFFFFFF</color>
-		<color name="view55_label_alt">FF333333</color>
+		<color name="view55_label_alt">FFFFFFFF</color>
 		<color name="view55_info_label">FFFFFFFF</color>
-		<color name="view55_info_label_alt">FF399EDA</color>
-		<!-- Viewtype_56_Card -->
+		<color name="view55_info_label_alt">FFFFFFFF</color>
+		<!-- Viewtype_56_SynopsisPoster -->
 		<color name="view56_label">FFFFFFFF</color>
-		<color name="view56_label_alt">FF333333</color>
+		<color name="view56_label_alt">FFFFFFFF</color>
+		<color name="view56_info_label">FFFFFFFF</color>
+		<color name="view56_info_label_alt">FFFFFFFF</color>
 		<!-- Viewtype_57_Fanart -->
 		<color name="view57_label">FFFFFFFF</color>
-		<color name="view57_label_alt">FF333333</color>
+		<color name="view57_label_alt">FFFFFFFF</color>
 		<color name="view57_info_label">FFFFFFFF</color>
+		<color name="view57_info_label_alt">FFFFFFFF</color>
 		<!-- Viewtype_58_List -->
 		<color name="view58_label">FFFFFFFF</color>
 		<color name="view58_label_alt">FF333333</color>
@@ -208,9 +219,14 @@
 		<!-- Viewtype_60_CarouselSmall -->
 		<color name="view60_label">FFFFFFFF</color>
 		<color name="view60_label_alt">FF333333</color>
-		<!-- Viewtype_61_CarouselSmaller -->
+		<!-- Viewtype_61_SynopsosList -->
 		<color name="view61_label">FFFFFFFF</color>
-		<color name="view61_label_alt">FF333333</color>
+		<color name="view61_label_alt">FFFFFFFF</color>
+		<color name="view61_info_label">FFFFFFFF</color>
+		<color name="view61_info_label_alt">FFFFFFFF</color>
+		<color name="view61_info_synopsis">FFFFFFFF</color>
+		<color name="view61_info_star">FFFFFFFF</color>
+		<color name="view61_info_star_alt">60101010</color>
 		<!-- Viewtype_62_Icon -->
 		<color name="view62_label">FFFFFFFF</color>
 		<color name="view62_label_alt">FF333333</color>
@@ -241,6 +257,19 @@
 		<!-- Viewtype_70_LoginAlt -->
 		<color name="view70_label">FFFFFFFF</color>
 		<color name="view70_label_alt">FF333333</color>
+		<!-- Viewtype_71_LargePoster -->
+		<color name="view71_label">FFFFFFFF</color>
+		<color name="view71_label_alt">FFFFFFFF</color>
+		<color name="view71_info_label">FFFFFFFF</color>
+		<color name="view71_info_label_alt">FFFFFFFF</color>
+		<!-- Viewtype_72_SynopsisInfoList -->
+		<color name="view72_label">FFFFFFFF</color>
+		<color name="view72_label_alt">FFFFFFFF</color>
+		<color name="view72_info_label">FFFFFFFF</color>
+		<color name="view72_info_label_alt">FFFFFFFF</color>
+		<color name="view72_info_synopsis">FFFFFFFF</color>
+		<color name="view72_info_star">FFFFFFFF</color>
+		<color name="view72_info_star_alt">60101010</color>
 		<!-- Viewtype_79_Resources -->
 		<color name="view79_label">FFFFFFFF</color>
 		<color name="view79_label_alt">FF333333</color>

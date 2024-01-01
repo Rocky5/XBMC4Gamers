@@ -507,22 +507,18 @@
 				<usedashpath>true</usedashpath>
 		</myprograms>
 		<network>
-				<assignment>1</assignment>
+				<assignment>0</assignment>
 				<bandwidth>0</bandwidth>
-				<dns>192.168.1.1</dns>
-				<dnssuffix>
-				</dnssuffix>
-				<gateway>192.168.1.1</gateway>
-				<httpproxypassword>
-				</httpproxypassword>
+				<dns>8.8.8.8</dns>
+				<dns2>0.0.0.0</dns2>
+				<dnssuffix></dnssuffix>
+				<gateway>192.168.0.1</gateway>
+				<httpproxypassword></httpproxypassword>
 				<httpproxyport>8080</httpproxyport>
-				<httpproxyserver>
-				</httpproxyserver>
-				<httpproxyusername>
-				</httpproxyusername>
-				<ipaddress>192.168.1.6</ipaddress>
-				<sep1>
-				</sep1>
+				<httpproxyserver></httpproxyserver>
+				<httpproxyusername></httpproxyusername>
+				<ipaddress>192.168.0.6</ipaddress>
+				<sep1></sep1>
 				<subnet>255.255.255.0</subnet>
 				<usehttpproxy>false</usehttpproxy>
 		</network>

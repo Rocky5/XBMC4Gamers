@@ -1,6 +1,5 @@
 <includes>
 		<include file="defaults.xml" />
-		<include file="includes_context_buttons.xml" />
 		<include file="includes_events.xml" />
 		<include file="includes_variables.xml" />
 		<include file="Includes_View_Options.xml" />
@@ -11,10 +10,10 @@
 				<width>1280</width>
 				<height>720</height>
 		</include>
-		<include name="Context_Buttons_Text_Align">
+		<include name="Context.Buttons.Text.Align">
 				<animation effect="slide" start="0,0" end="0,3" time="0" condition="true">Conditional</animation>
 		</include>
-		<include name="CommonBackground">
+		<include name="Global.Backgrounds">
 				<control type="image">
 						<include>1280x720</include>
 						<texture fallback="background.jpg">$INFO[skin.string(background_color)]</texture>
@@ -35,124 +34,194 @@
 						<visible>!StringCompare(skin.string(background_image),)</visible>
 				</control>
 		</include>
-		<include name="Fanart">
+		<include name="Kiosk.Mode.Secret.Code">
+				<!-- Secret Passcode -->
+				<control type="button" id="19">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>20</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="20">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>21</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="21">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>22</ondown>
+				</control>
+				<control type="button" id="22">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>23</ondown>
+				</control>
+				<control type="button" id="23">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onleft>24</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="24">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onleft>25</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="25">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>26</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="26">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onleft>52</onleft>
+						<onright>27</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+				<control type="button" id="27">
+						<description>Secret Code Button</description>
+						<left>-5000</left>
+						<label>-</label>
+						<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Edit Mode.py )</onclick>
+						<onclick>SetFocus(51)</onclick>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>52</onup>
+						<ondown>52</ondown>
+				</control>
+		</include>
+		<include name="Login.Screen.Background.Stuff">
+				<include>Global.Backgrounds</include>
+				<!-- Snow effect at winter time -->
+				<include condition="System.Date(12-20,1-1)">snow</include>
+				<!-- Halloween -->
+				<include condition="System.Date(10-24,11-1)">halloween</include>
+				<!-- Had to add the exact date for each year :/ damn easter! -->
+				<include condition="StringCompare(System.Date,Sun, Apr 17, 2022)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 17 Apr 2022)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 9 2023)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 9 Apr 2023)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Mar 31 2024)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 31 Mar 2024)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 20 2025)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 20 Apr 2025)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 5 2026)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 5 Apr 2026)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Mar 28 2027)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 28 Mar 2027)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 16 2028)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 16 Apr 2028)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 1 2029)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 1 Apr 2029)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 21 2030)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 21 Apr 2030)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 13 2031)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 13 Apr 2031)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Mar 28 2032)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 28 Mar 2032)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 17 2033)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 17 Apr 2033)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 9 2034)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 9 Apr 2034)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Mar 25 2035)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 25 Mar 2035)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 13 2036)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 13 Apr 2036)">easter</include>
+				<!-- birthdays -->
+				<include condition="SubString(System.Date,Jan)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jan.xml">Jan</include>
+				<include condition="SubString(System.Date,Feb)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Feb.xml">Feb</include>
+				<include condition="SubString(System.Date,Mar)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Mar.xml">Mar</include>
+				<include condition="SubString(System.Date,Apr)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Apr.xml">Apr</include>
+				<include condition="SubString(System.Date,May)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_May.xml">May</include>
+				<include condition="SubString(System.Date,Jun)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jun.xml">Jun</include>
+				<include condition="SubString(System.Date,Jul)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jul.xml">Jul</include>
+				<include condition="SubString(System.Date,Aug)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Aug.xml">Aug</include>
+				<include condition="SubString(System.Date,Sep)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Sep.xml">Sep</include>
+				<include condition="SubString(System.Date,Oct)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Oct.xml">Oct</include>
+				<include condition="SubString(System.Date,Nov)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Nov.xml">Nov</include>
+				<include condition="SubString(System.Date,Dec)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Dec.xml">Dec</include>
+				<!-- Fade effect -->
+				<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1280</width>
+						<height>720</height>
+						<aspectratio>stretch</aspectratio>
+						<texture background="true" flipy="true">windows\login\fade.png</texture>
+						<animation effect="fade" start="0" end="0" time="0">WindowClose</animation>
+						<animation type="WindowOpen" reversible="false">
+								<effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle" />
+								<effect type="slide" start="0,0" end="0,720" time="1000" />
+						</animation>
+						<visible>!Window.Previous(1113) + Window.Previous(1116)</visible>
+				</control>
+				<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1280</width>
+						<height>720</height>
+						<aspectratio>stretch</aspectratio>
+						<texture background="true">windows\login\fade.png</texture>
+						<animation effect="fade" start="0" end="0" time="0">WindowOpen</animation>
+						<animation type="WindowClose" reversible="false">
+								<effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle" />
+								<effect type="slide" start="0,-720" end="0,0" time="1000" />
+						</animation>
+						<visible>!Window.Next(2900) + !Window.Next(2999)</visible>
+				</control>
 				<control type="group">
-						<visible>Skin.HasSetting(fanartenabled) + !Control.IsVisible(54) + !Control.IsVisible(55) + !Control.IsVisible(56) + !Control.IsVisible(57) + !Control.IsVisible(79) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
-						<animation effect="fade" reversable="true" start="100" end="0" delay="1000" time="500" condition="Window.IsVisible(3000)">Hidden</animation>
-						<control type="group">
-								<visible>!Skin.HasSetting(higherfanart)</visible>
-								<control type="group">
-										<visible>!ListItem.IsFolder</visible>
-										<control type="largeimage">
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">stretch</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_low_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart-blur.jpg]</texture>
-												<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)</visible>
-										</control>
-										<control type="largeimage">
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">stretch</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_low_diffuse.png">$INFO[listitem.path,,fanart.jpg]</texture>
-												<visible>!Skin.HasSetting(fanartblur)</visible>
-										</control>
-										<control type="largeimage">
-												<top>514</top>
-												<height>206</height>
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">scale</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_low_diffuse_Custom.png">$INFO[listitem.path,,_resources\artwork\fog.jpg]</texture>
-												<visible>Skin.HasSetting(customfanartfog)</visible>
-										</control>
-								</control>
-								<!-- Folder fanart -->
-								<control type="group">
-										<visible>ListItem.IsFolder</visible>
-										<control type="largeimage">
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">stretch</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_low_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label]-blur.jpg]</texture>
-												<visible>Skin.HasSetting(fanartblur)</visible>
-										</control>
-										<control type="largeimage">
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">stretch</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_low_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
-										</control>
-										<control type="largeimage">
-												<top>514</top>
-												<height>206</height>
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">scale</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_low_diffuse_Custom.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label]_fog.jpg</texture>
-												<visible>Skin.HasSetting(customfanartfog)</visible>
-										</control>
-								</control>
+						<animation reversible="false" effect="fade" start="100" end="0" delay="0" time="0">WindowOpen</animation>
+						<animation reversible="false" effect="fade" start="0" end="100" delay="0" time="10">WindowClose</animation>
+						<control type="image">
+								<left>547</left>
+								<top>238</top>
+								<width>185</width>
+								<height>185</height>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="$INFO[system.profilethumb]">$INFO[ListItem.Thumb]</texture>
 						</control>
-						<control type="group">
-								<visible>Skin.HasSetting(higherfanart)</visible>
-								<control type="group">
-										<visible>!ListItem.IsFolder</visible>
-										<!-- Alternative Diffuse -->
-										<control type="largeimage">
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">stretch</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_diffuse.png">$INFO[listitem.path,,_resources\artwork\fanart-blur.jpg]</texture>
-												<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)</visible>
-										</control>
-										<control type="largeimage">
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">stretch</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_diffuse.png">$INFO[listitem.path,,fanart.jpg]</texture>
-												<visible>!Skin.HasSetting(fanartblur)</visible>
-										</control>
-										<control type="largeimage">
-												<top>514</top>
-												<height>206</height>
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">scale</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_diffuse_Custom.png">$INFO[listitem.path,,_resources\artwork\fog.jpg]</texture>
-												<visible>Skin.HasSetting(customfanartfog)</visible>
-										</control>
-								</control>
-								<!-- Folder fanart -->
-								<control type="group">
-										<visible>ListItem.IsFolder</visible>
-										<control type="largeimage">
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">stretch</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label]-blur.jpg]</texture>
-												<visible>Skin.HasSetting(fanartblur)</visible>
-										</control>
-										<control type="largeimage">
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">stretch</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_diffuse.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
-										</control>
-										<control type="largeimage">
-												<top>514</top>
-												<height>206</height>
-												<include>1280x720</include>
-												<aspectratio scalediffuse="false">scale</aspectratio>
-												<fadetime>FanartCrossfadeTime</fadetime>
-												<texture diffuse="fanart_diffuse_Custom.png">Special://skin/extras/folder fanart/$INFO[ListItem.Label]_fog.jpg</texture>
-												<visible>Skin.HasSetting(customfanartfog)</visible>
-										</control>
-								</control>
+						<control type="image">
+								<left>547</left>
+								<top>238</top>
+								<width>185</width>
+								<height>185</height>
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<colordiffuse>80000000</colordiffuse>
+								<texture background="true">windows\login\user_thumb_overlay.png</texture>
 						</control>
 				</control>
 		</include>
-		<include name="BehindDialogFadeOut">
+		<include name="Behind.Dialog.FadeOut">
 				<control type="image">
 						<include>1280x720</include>
 						<texture>black-back.png</texture>
@@ -162,119 +231,83 @@
 						<animation effect="fade" delay="200" time="100">Hidden</animation>
 				</control>
 		</include>
-		<include name="Startup_Window_Profile">
-				<visible>System.HasLoginScreen | [!System.HasLoginScreen + !Skin.HasSetting(HideProfilePic)]</visible>
+		<include name="Startup.Window.Profile">
 				<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>234</width>
-						<height>234</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="5">black-back.png</texture>
+						<left>547</left>
+						<top>238</top>
+						<width>185</width>
+						<height>185</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[system.profilethumb]</texture>
 				</control>
 				<control type="image">
-						<left>5</left>
-						<top>5</top>
-						<width>224</width>
-						<height>224</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>black-back.png</texture>
-						<bordersize>1</bordersize>
-				</control>
-				<control type="image">
-						<left>5</left>
-						<top>5</top>
-						<width>224</width>
-						<height>224</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>$INFO[system.profilethumb]</texture>
+						<left>547</left>
+						<top>238</top>
+						<width>185</width>
+						<height>185</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<colordiffuse>80000000</colordiffuse>
+						<texture background="true">windows\login\user_thumb_overlay.png</texture>
 				</control>
 		</include>
-		<include name="Startup_Window_Info">
-				<control type="label.">
-						<left>5</left>
-						<top>35r</top>
-						<width>1280</width>
-						<height>36</height>
-						<font>size_18</font>
-						<textcolor>$VAR[var-labelcolour]</textcolor>
-						<label> $LOCALIZE[31180]</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<animation type="WindowOpen" reversible="false">
-								<effect type="fade" start="0" end="100" delay="0" time="0" />
-								<effect type="fade" start="100" end="0" delay="39000" time="1000" />
-						</animation>
-						<visible>Window.IsActive(2999)</visible>
+		<include name="Startup.Window.Info">
+				<control type="image">
+						<left>625</left>
+						<top>500</top>
+						<width>30</width>
+						<height>30</height>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<colordiffuse>8FFFFFFF</colordiffuse>
+						<texture>windows\login\busy.png</texture>
+						<animation effect="fade" start="0" end="100" time="500" condition="Window.IsActive(2999)">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="100" condition="Window.IsActive(1114)">WindowClose</animation>
+						<!-- <animation effect="slide" end="0,-140" time="0" condition="Skin.HasSetting(HideProfilePic)">Conditional</animation> -->
+						<animation effect="rotate" end="360" time="500" center="auto" loop="true" condition="true">Conditional</animation>
+						<visible>Skin.HasSetting(kioskmode)</visible>
 				</control>
-				<control type="label">
-						<left>5</left>
-						<top>35r</top>
-						<width>1280</width>
-						<height>36</height>
-						<font>size_18</font>
-						<textcolor>$VAR[var-labelcolour]</textcolor>
-						<label> $LOCALIZE[31181]</label>
-						<align>left</align>
-						<aligny>center</aligny>
-						<animation effect="fade" end="100" delay="40000" time="1000">WindowOpen</animation>
-						<visible>Window.IsActive(2999)</visible>
+				<control type="image">
+						<left>620</left>
+						<top>495</top>
+						<width>40</width>
+						<height>40</height>
+						<aspectratio scalediffuse="false">keep</aspectratio>
+						<colordiffuse>FFFFFFFF</colordiffuse>
+						<texture>windows\login\error.png</texture>
+						<animation effect="fade" start="0" end="100" time="0" delay="90000">WindowOpen</animation>
+						<!-- <animation effect="slide" end="0,-140" time="0" condition="Skin.HasSetting(HideProfilePic)">Conditional</animation> -->
+						<visible>Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="textbox">
-						<left>355</left>
-						<top>305</top>
-						<width>570</width>
-						<height>321</height>
+						<include>1280x720</include>
 						<font>size_50</font>
-						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<textcolor>130_header_label</textcolor>
 						<scroll>true</scroll>
 						<align>center</align>
+						<aligny>center</aligny>
 						<label>$LOCALIZE[31017]</label>
-						<visible>!Skin.HasSetting(EditMode) + Window.IsVisible(1114) + Skin.HasSetting(AdultProfile) + !Player.HasVideo</visible>
-						<animation effect="fade" start="0" end="100" delay="500" time="0">WindowOpen</animation>
+						<visible>!Skin.HasSetting(kioskmode) + Window.IsActive(1114)</visible>
+						<animation effect="fade" start="0" end="100" delay="500" time="200">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
 				</control>
 		</include>
-		<include name="ContextMenuOffsets">
-				<animation effect="slide" start="0,0" end="0,-82" time="0" condition="StringCompare(Container.Viewmode,view50)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-160,-90" time="0" condition="StringCompare(Container.Viewmode,view51)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-90" time="0" condition="StringCompare(Container.Viewmode,view52)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-90" time="0" condition="StringCompare(Container.Viewmode,view53)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="253,35" time="0" condition="StringCompare(Container.Viewmode,view54)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="297,86" time="0" condition="StringCompare(Container.Viewmode,view55)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="2,91" time="0" condition="StringCompare(Container.Viewmode,view56)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="2,91" time="0" condition="StringCompare(Container.Viewmode,view57)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-168,76" time="0" condition="StringCompare(Container.Viewmode,view58)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-89" time="0" condition="StringCompare(Container.Viewmode,view59)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-150,-89" time="0" condition="StringCompare(Container.Viewmode,view60)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-270,-89" time="0" condition="StringCompare(Container.Viewmode,view61)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view62)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view63)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view64)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="87,-89" time="0" condition="StringCompare(Container.Viewmode,view65)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="8,-89" time="0" condition="StringCompare(Container.Viewmode,view66)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="31,-49" time="0" condition="StringCompare(Container.Viewmode,view67)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="31,-49" time="0" condition="StringCompare(Container.Viewmode,view68)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-200,-40" time="0" condition="StringCompare(Container.Viewmode,view69)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="60,-90" time="0" condition="StringCompare(Container.Viewmode,view70)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="2,221" time="0" condition="StringCompare(Container.Viewmode,view79)">Conditional</animation>
-		</include>
-		<include name="WindowHeader">
+		<include name="Window.Header">
+				<control type="image">
+						<left>24</left>
+						<top>11</top>
+						<width>25</width>
+						<height>25</height>
+						<aspectratio>stretch</aspectratio>
+						<colordiffuse>50000000</colordiffuse>
+						<texture>icon_xbmc4gamers.png</texture>
+				</control>
 				<control type="image">
 						<left>23</left>
-						<top>3</top>
-						<width>123</width>
-						<height>44</height>
-						<aspectratio>stretch</aspectratio>
-						<texture>xbmc4gamers_logo_shadow.png</texture>
-				</control>
-				<control type="image">
-						<left>25</left>
-						<top>5</top>
-						<width>119</width>
-						<height>40</height>
+						<top>10</top>
+						<width>25</width>
+						<height>25</height>
 						<aspectratio>stretch</aspectratio>
 						<colordiffuse>$VAR[var-xbmc4gamerslabelcolour]</colordiffuse>
-						<texture>xbmc4gamers_logo.png</texture>
+						<texture>icon_xbmc4gamers.png</texture>
 				</control>
 				<control type="label">
 						<left>1257</left>
@@ -287,10 +320,9 @@
 						<animation effect="slide" start="223,0" end="0,0" delay="300" time="1000" reversible="false" condition="!System.HasMediaDVD">Conditional</animation>
 						<visible>!Skin.HasSetting(DisplayTime)</visible>
 				</control>
-				<include>DiscPressentIdicator</include>
+				<include>Disc.Present.Indicator</include>
 		</include>
-		<include name="WindowFooter">
-				<include>Context_Buttons</include>
+		<include name="Window.Footer">
 				<control type="image">
 						<description>shadow border</description>
 						<left>0</left>
@@ -317,7 +349,7 @@
 						<animation effect="fade" start="60" end="0" delay="0" time="100">Hidden</animation>
 				</control>
 		</include>
-		<include name="DiscPressentIdicator">
+		<include name="Disc.Present.Indicator">
 				<control type="label">
 						<left>1705</left>
 						<top>14</top>
@@ -342,125 +374,6 @@
 						<animation effect="rotate" start="0" end="-360" center="auto" time="3000" loop="true" condition="System.HasMediaDVD">Conditional</animation>
 				</control>
 		</include>
-		<include name="ViewScrollBarVer">
-				<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-				<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="2,16,2,16">scrollbar_bar.png</texturesliderbarfocus>
-				<textureslidernib>-</textureslidernib>
-				<textureslidernibfocus>-</textureslidernibfocus>
-				<ondown>-</ondown>
-				<showonepage>true</showonepage>
-				<orientation>vertical</orientation>
-				<visible allowhiddenfocus="true">Control.HasFocus(90)</visible>
-				<animation reversible="true" effect="fade" start="0" end="60" delay="" time="300">visible</animation>
-				<animation reversible="true" effect="fade" start="60" end="0" delay="" time="300">hidden</animation>
-		</include>
-		<include name="ViewScrollBarHor">
-				<left>150</left>
-				<top>48r</top>
-				<width>980</width>
-				<height>8</height>
-				<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-				<texturesliderbar border="16,2,16,2">scrollbar_bar-vertical.png</texturesliderbar>
-				<texturesliderbarfocus border="16,2,16,2">scrollbar_bar-vertical.png</texturesliderbarfocus>
-				<textureslidernib>-</textureslidernib>
-				<textureslidernibfocus>-</textureslidernibfocus>
-				<ondown>-</ondown>
-				<showonepage>true</showonepage>
-				<orientation>horizontal</orientation>
-				<visible allowhiddenfocus="true">Control.HasFocus(90)</visible>
-				<animation reversible="true" effect="fade" start="0" end="60" delay="" time="300">visible</animation>
-				<animation reversible="true" effect="fade" start="60" end="0" delay="" time="300">hidden</animation>
-		</include>
-		<include name="CommonViewLayout">
-				<left>415</left>
-				<top>105</top>
-				<width>775</width>
-				<height>420</height>
-				<onleft>9000</onleft>
-				<onright>9000</onright>
-				<onup>50</onup>
-				<ondown>50</ondown>
-				<viewtype>list</viewtype>
-				<pagecontrol>90</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<orientation>vertical</orientation>
-				<preloaditems>2</preloaditems>
-				<itemlayout height="60" width="496">
-						<control type="image">
-								<left>0</left>
-								<top>-1</top>
-								<width>780</width>
-								<height>60</height>
-								<aspectratio>stretch</aspectratio>
-								<texture>windows\settings\button_no_focus.png</texture>
-						</control>
-						<control type="label">
-								<left>8</left>
-								<top>0</top>
-								<width>464</width>
-								<height>23</height>
-								<align>left</align>
-								<font>size_24</font>
-								<textcolor>common_label_nofocus</textcolor>
-								<selectedcolor>context_buttons_label_selected</selectedcolor>
-								<label>$INFO[listitem.Label]</label>
-						</control>
-						<control type="label">
-								<left>8</left>
-								<top>30</top>
-								<width>464</width>
-								<height>20</height>
-								<align>left</align>
-								<font>size_18</font>
-								<textcolor>common_label_nofocus</textcolor>
-								<selectedcolor>context_buttons_label_selected</selectedcolor>
-								<label> $INFO[ListItem.label2]</label>
-						</control>
-				</itemlayout>
-				<focusedlayout height="60" width="480">
-						<control type="image">
-								<left>0</left>
-								<top>0</top>
-								<width>780</width>
-								<height>60</height>
-								<aspectratio>stretch</aspectratio>
-								<texture>windows\settings\button_no_focus.png</texture>
-						</control>
-						<control type="image">
-								<left>0</left>
-								<top>1</top>
-								<width>780</width>
-								<height>60</height>
-								<aspectratio>stretch</aspectratio>
-								<texture>windows\settings\button_focus.png</texture>
-						</control>
-						<control type="label">
-								<left>8</left>
-								<top>0</top>
-								<width>464</width>
-								<height>23</height>
-								<align>left</align>
-								<font>size_24</font>
-								<textcolor>common_label_focus</textcolor>
-								<selectedcolor>common_label_focus</selectedcolor>
-								<selectedcolor>context_buttons_label_selected</selectedcolor>
-								<label>$INFO[listitem.Label]</label>
-						</control>
-						<control type="label">
-								<left>8</left>
-								<top>30</top>
-								<width>464</width>
-								<height>20</height>
-								<align>left</align>
-								<font>size_18</font>
-								<textcolor>common_label_focus</textcolor>
-								<selectedcolor>common_label_focus</selectedcolor>
-								<selectedcolor>context_buttons_label_selected</selectedcolor>
-								<label> $INFO[ListItem.label2]</label>
-						</control>
-				</focusedlayout>
-		</include>
 		<include name="CommonOptionsMenuBack">
 				<include>VisibleFadeEffect</include>
 				<visible allowhiddenfocus="true">ControlGroup(9000).HasFocus | ControlGroup(9001).HasFocus</visible>
@@ -477,16 +390,41 @@
 						<texture>subback.png</texture>
 				</control>
 		</include>
-		<include name="CustomSettingsButtons">
-				<width>1170</width>
-				<height>51</height>
+		<include name="Birthday.Month.Date.Buttons">
+				<width>70</width>
+				<height>42</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>includes_label</textcolor>
+				<focusedcolor>includes_label_focus</focusedcolor>
+				<texturefocus border="2,2,2,2">button-focus2.png</texturefocus>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+		</include>
+		<include name="Birthday.Buttons">
+				<width>280</width>
+				<height>42</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>includes_label</textcolor>
+				<focusedcolor>includes_label_focus</focusedcolor>
+				<texturefocus border="2,2,2,2">button-focus2.png</texturefocus>
+				<texturenofocus>button-nofocus.png</texturenofocus>
+		</include>
+		<include name="Button.Common.Values">
+				<height>44</height>
+				<width>280</width>
 				<font>size_20</font>
 				<textcolor>includes_label</textcolor>
-				<focusedcolor>black</focusedcolor>
-				<texturefocus border="5">thumbfO.png</texturefocus>
-				<texturenofocus border="5">list_seperator_alt.png</texturenofocus>
+				<focusedcolor>includes_label_focus</focusedcolor>
+				<shadowcolor>includes_label_shadow</shadowcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>10</textoffsetx>
+				<texturefocus border="5">button-focus2.png</texturefocus>
+				<texturenofocus>-</texturenofocus>
+				<pulseonselect>true</pulseonselect>
 		</include>
-		<include name="ButtonSettingsOptionsValues">
+		<include name="Button.Settings.Options.Values">
 				<description>Default Category Button</description>
 				<left>0</left>
 				<top>0</top>
@@ -503,24 +441,7 @@
 				<texturefocus>windows\options\button_focus.png</texturefocus>
 				<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
 		</include>
-		<include name="ButtonSettingsCategoryValues">
-				<description>Default Category Button</description>
-				<left>0</left>
-				<top>0</top>
-				<height>60</height>
-				<width>795</width>
-				<textoffsetx>44</textoffsetx>
-				<textoffsety>10</textoffsety>
-				<font>size_28</font>
-				<align>left</align>
-				<aligny>top</aligny>
-				<textcolor>includes_settings_category_left_label_no_focus</textcolor>
-				<focusedcolor>includes_settings_category_left_label_focus</focusedcolor>
-				<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
-				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
-		</include>
-		<include name="ButtonSettingsCategoryValues_alt">
+		<include name="Button.Settings.Category.Values_Alt">
 				<description>Default Category Button</description>
 				<left>0</left>
 				<top>0</top>
@@ -539,7 +460,7 @@
 				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 		</include>
-		<include name="ButtonSkinSettingsCategoryButtonValues">
+		<include name="Button.SkinSettings.Category.Button.Values">
 				<description>Default Button</description>
 				<left>0</left>
 				<top>0</top>
@@ -556,7 +477,7 @@
 				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 		</include>
-		<include name="ButtonSkinSettingsCategoryButtonValues_alt">
+		<include name="Button.SkinSettings.Category.Button.Values_Alt">
 				<description>Default Button</description>
 				<left>0</left>
 				<top>0</top>
@@ -573,7 +494,7 @@
 				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 		</include>
-		<include name="ButtonSkinSettingsCategoryRadioButtonValues">
+		<include name="Button.SkinSettings.Category.RadioButton.Values">
 				<description>Default RadioButton</description>
 				<left>0</left>
 				<top>0</top>
@@ -594,7 +515,7 @@
 				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 		</include>
-		<include name="ButtonSkinSettingsCategoryRadioButtonValues_alt">
+		<include name="Button.SkinSettings.Category.RadioButton.Values_alt">
 				<description>Default RadioButton</description>
 				<left>0</left>
 				<top>0</top>
@@ -615,59 +536,7 @@
 				<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
 				<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
 		</include>
-		<include name="ButtonCommonValues">
-				<height>44</height>
-				<width>280</width>
-				<font>size_20</font>
-				<textcolor>includes_label</textcolor>
-				<focusedcolor>includes_label_focus</focusedcolor>
-				<shadowcolor>includes_label_shadow</shadowcolor>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textoffsetx>10</textoffsetx>
-				<texturefocus border="5">button-focus2.png</texturefocus>
-				<texturenofocus>-</texturenofocus>
-				<pulseonselect>true</pulseonselect>
-		</include>
-		<include name="ButtonViewOptionsValues">
-				<height>45</height>
-				<width>240</width>
-				<textwidth>205</textwidth>
-				<font>size_20</font>
-				<textcolor>includes_label</textcolor>
-				<focusedcolor>includes_label_focus</focusedcolor>
-				<align>left</align>
-				<aligny>center</aligny>
-				<textoffsetx>20</textoffsetx>
-				<texturenofocus>listnf.png</texturenofocus>
-				<texturefocus border="5">listnf.png</texturefocus>
-		</include>
-		<include name="ButtonHomeSubCommonValues">
-				<height>37</height>
-				<width>246</width>
-				<textcolor>includes_label_ButtonHomeSubCommonValues</textcolor>
-				<focusedcolor>includes_label_focus</focusedcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<font>size_20</font>
-				<texturefocus border="5">button-focus2.png</texturefocus>
-				<texturenofocus border="5">-</texturenofocus>
-				<pulseonselect>true</pulseonselect>
-		</include>
-		<include name="ButtonInfoDialogsCommonValues">
-				<height>25</height>
-				<width>200</width>
-				<font>size_20</font>
-				<textcolor>includes_label</textcolor>
-				<focusedcolor>includes_label_focus</focusedcolor>
-				<shadowcolor>includes_label_shadow</shadowcolor>
-				<align>center</align>
-				<aligny>center</aligny>
-				<texturefocus border="2">button-focus2.png</texturefocus>
-				<texturenofocus border="2">button-nofocus.png</texturenofocus>
-				<pulseonselect>no</pulseonselect>
-		</include>
-		<include name="File_Manager_Compact_Mode_Left">
+		<include name="FileManager.Compact_Mode_Left">
 				<control type="panel" id="20">
 						<left>105</left>
 						<top>195</top>
@@ -755,7 +624,7 @@
 						</focusedlayout>
 				</control>
 		</include>
-		<include name="File_Manager_Compact_Mode_Right">
+		<include name="FileManager.Compact_Mode_Right">
 				<control type="panel" id="21">
 						<left>640</left>
 						<top>195</top>
@@ -843,7 +712,7 @@
 						</focusedlayout>
 				</control>
 		</include>
-		<include name="File_Manager_Normal_Mode_Left">
+		<include name="FileManager.Normal_Mode_Left">
 				<control type="panel" id="20">
 						<left>105</left>
 						<top>195</top>
@@ -932,7 +801,7 @@
 						</focusedlayout>
 				</control>
 		</include>
-		<include name="File_Manager_Normal_Mode_Right">
+		<include name="FileManager.Normal_Mode_Right">
 				<control type="panel" id="21">
 						<left>105</left>
 						<top>195</top>
@@ -1021,59 +890,59 @@
 						</focusedlayout>
 				</control>
 		</include>
-		<include name="Window_OpenClose_Animation">
-				<animation effect="fade" time="0">WindowOpen</animation>
-				<animation effect="fade" time="0">WindowClose</animation>
-		</include>
-		<include name="dialogeffect">
-				<animation effect="fade" time="200">WindowOpen</animation>
-				<animation effect="fade" time="200">WindowClose</animation>
-		</include>
-		<include name="dialogeffect2">
-				<animation effect="fade" time="100">WindowOpen</animation>
-				<animation effect="fade" time="100">WindowClose</animation>
-		</include>
-		<include name="DialogEffectZoom">
-				<animation type="WindowOpen" reversible="false">
-						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="300" delay="200" />
-						<effect type="fade" start="0" end="100" time="300" delay="200" />
-				</animation>
-				<animation type="WindowClose" reversible="false">
-						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="300" />
-						<effect type="fade" start="100" end="0" time="300" />
-				</animation>
-		</include>
-		<include name="XBELoadingEffect">
-				<animation type="Visible" reversible="false">
-						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" delay="1000" time="500" />
-						<effect type="fade" start="0" end="100" delay="1000" time="500" />
-				</animation>
-				<animation type="Hidden" reversible="false">
-						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="200" />
-						<effect type="fade" start="100" end="0" time="200" />
-				</animation>
-		</include>
-		<include name="XBELoadingEffectViews">
+		<include name="LoginView">
 				<animation type="WindowOpen" reversible="false">
 						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="500" />
 						<effect type="fade" start="0" end="100" time="500" />
 				</animation>
-				<animation type="WindowClose" reversible="false">
-						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100" />
-						<effect type="fade" start="100" end="0" time="100" />
-				</animation>
+				<!-- <animation type="WindowClose" reversible="false"> -->
+				<!-- <effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100" /> -->
+				<!-- <effect type="fade" start="100" end="0" time="100" /> -->
+				<!-- </animation> -->
 		</include>
-		<include name="DialogEffectZoomFast">
+		<include name="Dialog.Effect">
+				<animation effect="fade" time="200">WindowOpen</animation>
+				<animation effect="fade" time="200">WindowClose</animation>
+		</include>
+		<include name="Dialog.Effect.Fast">
+				<animation effect="fade" time="100">WindowOpen</animation>
+				<animation effect="fade" time="100">WindowClose</animation>
+		</include>
+		<include name="Dialog.Effect.Slow">
+				<animation effect="fade" time="300">WindowOpen</animation>
+				<animation effect="fade" time="300">WindowClose</animation>
+		</include>
+		<include name="Dialog.Effect.Zoom.Fast">
 				<animation type="WindowOpen" reversible="false">
 						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="100" />
-						<effect type="fade" start="0" end="100" time="100" />
+						<effect type="fade" start="0" end="100" time="110" />
 				</animation>
 				<animation type="WindowClose" reversible="false">
 						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100" />
-						<effect type="fade" start="100" end="0" time="100" />
+						<effect type="fade" start="100" end="0" time="110" />
 				</animation>
 		</include>
-		<include name="ViewVisibleEffect">
+		<include name="Game.List.OpenClose">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="100" />
+						<effect type="fade" start="0" end="100" time="110" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100" />
+						<effect type="fade" start="100" end="0" time="110" />
+				</animation>
+		</include>
+		<include name="Context.Menu.OpenClose">
+				<animation type="WindowOpen" reversible="false">
+						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="100" />
+						<effect type="fade" start="0" end="100" time="110" />
+				</animation>
+				<animation type="WindowClose" reversible="false">
+						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100" />
+						<effect type="fade" start="100" end="0" time="110" />
+				</animation>
+		</include>
+		<include name="View.Visible.Effect">
 				<animation type="WindowOpen" reversible="false">
 						<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="200" />
 						<effect type="fade" start="0" end="100" time="200" />
@@ -1082,9 +951,5 @@
 						<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="200" />
 						<effect type="fade" start="100" end="0" time="200" />
 				</animation>
-		</include>
-		<include name="VisibleFadeEffect">
-				<animation effect="fade" time="200">Visible</animation>
-				<animation effect="fade" time="200">Hidden</animation>
 		</include>
 </includes>

@@ -18,7 +18,7 @@ except:
 	Select		= 0
 	RollBack	= 0
 if Select == 0:
-	Select = dialog.yesno("Uninstaller","Note:","Auto Uninstaller uninstalls loaders from [CR]E:\Games\, F:\Games\ & G:\Games","","Manual Uninstaller","Auto Uninstaller")
+	Select = dialog.yesno("Uninstaller","Note:","Auto Uninstaller uninstalls loaders from [CR]E:\Games\, F:\Games\ & G:\Games","","Manual","Auto")
 Cleaned	= ""
 Install	= ""
 if Select:

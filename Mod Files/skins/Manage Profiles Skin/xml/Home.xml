@@ -6,7 +6,7 @@
 						<!-- dummy group so setting is placed inside the guisettings.xml upon load. -->
 						<visible>Skin.HasSetting(UseProfiles)</visible>
 				</control>
-				<include>CommonBackground</include>
+				<include>Global.Backgrounds</include>
 				<!-- Disabled
 				<control type="group">
 						<include>Window_OpenClose_Animation</include>
@@ -24,7 +24,7 @@
 								<scrolltime>200</scrolltime>
 								<focusposition>3</focusposition>
 								<orientation>-</orientation>
-								<animation effect="slide" end="128" time="0" condition="!Skin.HasSetting(editmode)">conditional</animation>
+								<animation effect="slide" end="128" time="0" condition="!Skin.HasSetting(kioskmode)">conditional</animation>
 								<itemlayout height="130" width="256">
 										<control type="image">
 												<left>2</left>
@@ -95,19 +95,19 @@
 												<onclick>system.logoff</onclick>
 												<onclick>dialog.close(all,true)</onclick>
 												<icon>unknown-user.png</icon>
-												<visible>!Skin.HasSetting(editmode)</visible>
+												<visible>!Skin.HasSetting(kioskmode)</visible>
 										</item>
 										<item>
 												<label>Manage Profiles</label>
 												<onclick>ActivateWindow(Profiles)</onclick>
 												<icon>unknown-user.png</icon>
-												<visible>Skin.HasSetting(editmode)</visible>
+												<visible>Skin.HasSetting(kioskmode)</visible>
 										</item>
 										<item>
 												<label>Settings</label>
 												<onclick>ActivateWindow(Settings)</onclick>
 												<icon>defaultharddisk.png</icon>
-												<visible>Skin.HasSetting(editmode)</visible>
+												<visible>Skin.HasSetting(kioskmode)</visible>
 										</item>
 								</content>
 						</control>
@@ -193,8 +193,8 @@
 								<onclick>Control.SetFocus(1,2)</onclick>
 						</control>
 				</control>
-				<include>WindowHeader</include>
-				<include>WindowFooter</include>
+				<include>Window.Header</include>
+				<include>Window.Footer</include>
 				<control type="image">
 						<left>20</left>
 						<top>5</top>

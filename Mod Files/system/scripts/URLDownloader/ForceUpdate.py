@@ -1,1 +1,1 @@
-xbmc.executebuiltin('RunScript(Special://scripts/urldownloader/default.py,1kENriKoSIVU_31LTerhsWIknndbfAjh7,URLDownloader.zip,3055001,3585632,Q:/system/scripts/)')
+xbmc.executebuiltin('RunScript(Special://urldownloader/default.py,1kENriKoSIVU_31LTerhsWIknndbfAjh7,URLDownloader.zip,3055001,3585632,Q:/system/scripts/)')

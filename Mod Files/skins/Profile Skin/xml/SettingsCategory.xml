@@ -2,10 +2,10 @@
 		<defaultcontrol>3</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>CommonBackground</include>
-				<include>WindowHeader</include>
+				<include>Global.Backgrounds</include>
+				<include>Window.Header</include>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
 								<left>55</left>
 								<top>55</top>
@@ -44,12 +44,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>12_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -64,12 +64,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>12_context_label</textcolor>
 										<label>$LOCALIZE[31166]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 						</control>
 						<control type="grouplist" id="3">
@@ -102,29 +102,19 @@
 								<top>105</top>
 								<width>4</width>
 								<height>445</height>
-								<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-								<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
-								<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
-								<textureslidernib>-</textureslidernib>
-								<textureslidernibfocus>-</textureslidernibfocus>
-								<onleft>-</onleft>
-								<ondown>-</ondown>
-								<showonepage>false</showonepage>
-								<orientation>vertical</orientation>
-								<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(90)">Conditional</animation>
-								<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+								<include>Fake.ScrollBar.Vertical</include>
 						</control>
 						<control type="button" id="10">
-								<include>ButtonSettingsCategoryValues_alt</include>
+								<include>Button.Settings.Category.Values_Alt</include>
 						</control>
 						<control type="button" id="7">
-								<include>ButtonSkinSettingsCategoryButtonValues_alt</include>
+								<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 						</control>
 						<control type="radiobutton" id="8">
-								<include>ButtonSkinSettingsCategoryRadioButtonValues_alt</include>
+								<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
 						</control>
 						<control type="spincontrolex" id="9">
-								<include>ButtonSkinSettingsCategoryRadioButtonValues_alt</include>
+								<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
 						</control>
 						<control type="label" id="2">
 								<description>Fake Label so we can pass it value down to the one above</description>

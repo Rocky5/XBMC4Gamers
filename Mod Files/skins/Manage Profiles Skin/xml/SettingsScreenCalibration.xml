@@ -101,12 +101,12 @@
 								<left>0</left>
 								<top>0</top>
 								<width min="80" max="147">auto</width>
-								<height>20</height>
+								<height>32</height>
 								<font>size_19</font>
 								<align>left</align>
+								<aligny>center</aligny>
 								<textcolor>11_context_label</textcolor>
 								<label>$LOCALIZE[209]</label>
-								<include>Context_Buttons_Text_Align</include>
 						</control>
 						<!-- B Button -->
 						<control type="image">
@@ -121,12 +121,12 @@
 								<left>0</left>
 								<top>0</top>
 								<width min="80" max="147">auto</width>
-								<height>20</height>
+								<height>32</height>
 								<font>size_19</font>
 								<align>left</align>
+								<aligny>center</aligny>
 								<textcolor>11_context_label</textcolor>
 								<label>$LOCALIZE[31021]</label>
-								<include>Context_Buttons_Text_Align</include>
 						</control>
 				</control>
 		</controls>

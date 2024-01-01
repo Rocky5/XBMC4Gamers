@@ -6,9 +6,10 @@ import os, xbmcgui, shutil
 Save_Directories		= [ "E:\\TDATA\\", "E:\\UDATA\\" ]
 pDialog					= xbmcgui.DialogProgress()
 dialog					= xbmcgui.Dialog()
+skip					= 0
 pDialog.update(0)
 pDialog.create("Cleaning Save Folders")
-print "| Scripts\XBMC4Gamers\Utilities\Remove Empty Save Folders.py loaded."
+print "| Scripts\XBMC4Gamers Extras\Remove Empty Save Folders\default.py loaded."
 for Save_Directories in Save_Directories:
 	CountList = 1
 	if os.path.isdir(Save_Directories):
@@ -18,17 +19,21 @@ for Save_Directories in Save_Directories:
 				pDialog.update((CountList * 100) / len(os.listdir(Save_Directories)),"Processing",Save_Directories,Save_Dir)
 				try:
 					if os.walk(Save_Path).next()[1]:
-						print Save_Path+"\\ is not empty."
-						CountList = CountList+1
+						print Save_Path+"\\ - skipping"
 					else:
-						if Save_Path == Save_Path[:-8]+"0facfac0":
-							print "Kept "+Save_Path+"\\ - (DVD2Xbox stores its settings here)"
-						elif Save_Path == Save_Path[:-8]+"54540003":
-							print "Kept "+Save_Path+"\\ - (Max Payne stores its settings here)"
-						else:
+						if len(Save_Path) > 0:
+							for fname in os.listdir(Save_Path):
+								if not fname.endswith('.xbx'):
+									print Save_Path+"\\ - skipping"
+									skip = 1
+									break
+						if not skip:
 							shutil.rmtree(Save_Path)
-							print "Removed "+Save_Path+"\\"
+							print Save_Path+"\\ - removed"
+						else:
+							skip = 0
+					CountList = CountList+1
 				except:
-					print Save_Path+"\\ is write protected."
+					print Save_Path+"\\ is write protected?"
 pDialog.close()
 dialog.ok("Cleaning Save Folders","","Process Complete")

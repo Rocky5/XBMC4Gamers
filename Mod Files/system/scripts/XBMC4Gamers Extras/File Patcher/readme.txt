@@ -1,6 +1,5 @@
 Binary patcher for XBMC4Gamers
-This I made for fun as I was bored and wanted something people could
-use to patch games easily.
+This I made for fun as I was bored and wanted something people could use to patch games easily.
 
 How it works is you have 6 options available to use.
 
@@ -13,7 +12,7 @@ How it works is you have 6 options available to use.
 		Example:
 			CP|default.xbe|default_orig.xbe
 		
-		You can use this to copy an file to a new filename and then patch that xbe instead.
+		You can use this to copy a file to a new filename and then patch that xbe instead.
 		Example:
 			CP|default.xbe|defaultws.xbe
 			HR|defaultws.xbe|2|DDDD|2222
@@ -103,8 +102,7 @@ How it works is you have 6 options available to use.
 		u	=	USA
 		j	=	JPN
 
+	Below is a multi patch and region free patch
 	Example:
 		mp-a-toca race driver 3.pf
-
-
 

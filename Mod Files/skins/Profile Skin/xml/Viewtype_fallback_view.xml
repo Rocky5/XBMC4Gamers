@@ -6,7 +6,7 @@
 						<width>1280</width>
 						<height>36</height>
 						<font>size_35</font>
-						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 						<scroll>true</scroll>
 						<align>center</align>
 						<aligny>center</aligny>
@@ -22,7 +22,7 @@
 						<width>214</width>
 						<height>290</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">no_poster.jpg</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">no_poster.jpg</texture>
 				</control>
 				<control type="image">
 						<left>-6</left>
@@ -30,15 +30,15 @@
 						<width>226</width>
 						<height>6</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">views/icon/poster_shadow.png</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">views/fallback/poster_shadow.png</texture>
 				</control>
 				<control type="image">
-						<left>5</left>
-						<top>5</top>
-						<width>205</width>
-						<height>280</height>
+						<left>0</left>
+						<top>0</top>
+						<width>214</width>
+						<height>290</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">$INFO[listitem.icon]</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">$INFO[listitem.icon]</texture>
 				</control>
 				<control type="image">
 						<left>10</left>
@@ -62,15 +62,6 @@
 						<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(62).OnScrollNext">Conditional</animation>
 						<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(62).OnScrollPrevious">Conditional</animation>
 				</control>
-				<!-- Flipped images -->
-				<control type="image">
-						<left>0</left>
-						<top>290</top>
-						<width>214</width>
-						<height>290</height>
-						<aspectratio>stretch</aspectratio>
-						<texture background="true" flipy="true" diffuse="views/icon/diffuse_mirror.png">no_poster.jpg</texture>
-				</control>
 		</include>
 		<include name="fallback_view_focusedlayout">
 				<control type="image">
@@ -79,7 +70,7 @@
 						<width>214</width>
 						<height>290</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">no_poster.jpg</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">no_poster.jpg</texture>
 						<animation reversible="false" effect="zoom" start="0,0,214,290" end="-10,-36,234,330" time="100">focus</animation>
 						<animation reversible="false" effect="zoom" end="0,0,214,290" start="-10,-36,234,330" time="100">unfocus</animation>
 				</control>
@@ -89,19 +80,9 @@
 						<width>248</width>
 						<height>8</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">views/icon/poster_shadow.png</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">views/fallback/poster_shadow.png</texture>
 						<animation reversible="false" effect="zoom" start="-6,287,226,6" end="-17,290,248,8" time="100">focus</animation>
 						<animation reversible="false" effect="zoom" end="-6,287,226,6" start="-17,290,248,8" time="100">unfocus</animation>
-				</control>
-				<control type="image">
-						<left>5</left>
-						<top>5</top>
-						<width>204</width>
-						<height>280</height>
-						<aspectratio>stretch</aspectratio>
-						<texture background="true">$INFO[listitem.icon]</texture>
-						<animation reversible="false" effect="zoom" start="5,5,204,280" end="-5,-31,224,320" time="100">focus</animation>
-						<animation reversible="false" effect="zoom" end="5,5,204,280" start="-5,-31,224,320" time="100">unfocus</animation>
 				</control>
 				<control type="image">
 						<left>0</left>
@@ -109,9 +90,9 @@
 						<width>214</width>
 						<height>290</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true" border="5">views/icon/poster-border.png</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">$INFO[listitem.icon]</texture>
 						<animation reversible="false" effect="zoom" start="0,0,214,290" end="-10,-36,234,330" time="100">focus</animation>
-						<animation reversible="false" effect="fade" start="100" end="0" time="0">unfocus</animation>
+						<animation reversible="false" effect="zoom" end="0,0,214,290" start="-10,-36,234,330" time="100">unfocus</animation>
 				</control>
 				<control type="image">
 						<left>10</left>
@@ -139,27 +120,6 @@
 						<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(62).OnScrollNext">Conditional</animation>
 						<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(62).OnScrollPrevious">Conditional</animation>
 				</control>
-				<!-- Flipped images -->
-				<control type="image">
-						<left>0</left>
-						<top>290</top>
-						<width>214</width>
-						<height>290</height>
-						<aspectratio>stretch</aspectratio>
-						<texture background="true" flipy="true" diffuse="views/icon/diffuse_mirror.png">no_poster.jpg</texture>
-						<animation reversible="false" effect="zoom" start="5,294,214,280" end="-5,300,234,330" time="100">focus</animation>
-						<animation reversible="false" effect="zoom" end="0,294,214,280" start="-5,300,234,330" time="100">unfocus</animation>
-				</control>
-				<control type="image">
-						<left>0</left>
-						<top>290</top>
-						<width>214</width>
-						<height>290</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="5" background="true" flipy="true" diffuse="views/icon/diffuse_mirror.png">views/icon/poster-border.png</texture>
-						<animation reversible="false" effect="zoom" start="0,290,214,290" end="-10,294,234,330" time="100">focus</animation>
-						<animation reversible="false" effect="fade" start="100" end="0" time="0">unfocus</animation>
-				</control>
 		</include>
 		<include name="fallback_view_itemlayout_CD">
 				<control type="image">
@@ -168,7 +128,7 @@
 						<width>136</width>
 						<height>190</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">no_poster.jpg</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">no_poster.jpg</texture>
 				</control>
 				<control type="image">
 						<left>0</left>
@@ -176,7 +136,7 @@
 						<width>136</width>
 						<height>190</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">$INFO[listitem.icon]</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">$INFO[listitem.icon]</texture>
 				</control>
 				<control type="image">
 						<left>2</left>
@@ -200,15 +160,6 @@
 						<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(67).OnScrollNext">Conditional</animation>
 						<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(67).OnScrollPrevious">Conditional</animation>
 				</control>
-				<!-- Flipped images -->
-				<control type="image">
-						<left>0</left>
-						<top>335</top>
-						<width>136</width>
-						<height>190</height>
-						<aspectratio>stretch</aspectratio>
-						<texture background="true" flipy="true" diffuse="views/cd/diffuse_mirror2.png">no_poster.jpg</texture>
-				</control>
 		</include>
 		<include name="fallback_view_focusedlayout_CD">
 				<control type="image">
@@ -217,7 +168,7 @@
 						<width>275</width>
 						<height>385</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">no_poster.jpg</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">no_poster.jpg</texture>
 				</control>
 				<control type="image">
 						<left>-20</left>
@@ -226,7 +177,7 @@
 						<height>15</height>
 						<aspectratio>stretch</aspectratio>
 						<colordiffuse>FF000000</colordiffuse>
-						<texture background="true">views/cd/listview_shadow.png</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">views/fallback/poster_shadow.png</texture>
 				</control>
 				<control type="image">
 						<left>-10</left>
@@ -234,7 +185,7 @@
 						<width>275</width>
 						<height>385</height>
 						<aspectratio>stretch</aspectratio>
-						<texture background="true">$INFO[listitem.icon]</texture>
+						<texture background="true" diffuse="views/fallback/diffuse.png">$INFO[listitem.icon]</texture>
 				</control>
 				<control type="label">
 						<left>280</left>
@@ -242,7 +193,7 @@
 						<width>1030</width>
 						<height>36</height>
 						<font>size_35</font>
-						<textcolor>$VAR[var-labelcolour]</textcolor>
+						<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 						<scroll>true</scroll>
 						<align>left</align>
 						<aligny>center</aligny>
@@ -271,15 +222,6 @@
 						<animation reversible="false" effect="slide" start="0,0" end="0,30" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 						<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(67).OnScrollNext">Conditional</animation>
 						<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(67).OnScrollPrevious">Conditional</animation>
-				</control>
-				<!-- Flipped images -->
-				<control type="image">
-						<left>-10</left>
-						<top>385</top>
-						<width>275</width>
-						<height>385</height>
-						<aspectratio>stretch</aspectratio>
-						<texture background="true" flipy="true" diffuse="views/cd/diffuse_mirror4.png">no_poster.jpg</texture>
 				</control>
 		</include>
 </includes>

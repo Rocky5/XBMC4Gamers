@@ -29,11 +29,11 @@ class GoogleDriveDownloader:
 					f.write(chunk)
 ### ---------------------------------------------------------------------------------
 if xbmc.getInfoLabel('Skin.HasSetting(xbmc-emustation)'):
-	releasebuild = "1r2lqgNXDIzWclXPh6Fmql2YqixJg1sWT"
-	testbuild = "1fCozD6I8VZ_I7ZGAE6sWrQCmJ5L5jrOB"
+	releasebuild = "1IufeNaq8w_7um65USfvNyvXodmJofDmP"
+	testbuild = "1IrtlcWE6dXpTOpsrhzp2XgSvJTWA6lsb"
 elif xbmc.getInfoLabel('Skin.HasSetting(xbmc4gamers)'):
-	releasebuild = "13n7qaptf57qtlPu-mmQRLSd6PxPpRliU"
-	testbuild = "1f-fU6zWrCY1nqWcPTENKboxpLeXJy1k_"
+	releasebuild = "1ItDNjDp87usPNDAH3CLqfsSEbgxGX0q9"
+	testbuild = "1IgoazImJFEt6nHzQVanmqO5s5tRqOnaQ"
 download_path = 'Z:\\temp'
 if not os.path.exists(download_path): os.makedirs(download_path)
 xbmc.executebuiltin('Notification(Checking for updates,Please wait)')

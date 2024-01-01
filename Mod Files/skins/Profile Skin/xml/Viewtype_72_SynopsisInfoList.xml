@@ -1,0 +1,344 @@
+<includes>
+		<include name="SynopsisInfoList">
+				<control type="group">
+						<visible>Control.IsVisible(72) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+						<control type="largeimage">
+								<include>1280x720</include>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<fadetime>FanartCrossfadeTime</fadetime>
+								<colordiffuse>30FFFFFF</colordiffuse>
+								<texture diffuse="views/synopsisinfolist/fanart_diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\poster_small_blurred.jpg</texture>
+								<visible>!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(fanartenabled)</visible>
+						</control>
+						<control type="largeimage">
+								<include>1280x720</include>
+								<aspectratio scalediffuse="false">scale</aspectratio>
+								<fadetime>FanartCrossfadeTime</fadetime>
+								<colordiffuse>30FFFFFF</colordiffuse>
+								<texture diffuse="views/synopsisinfolist/fanart_diffuse.png">$VAR[View_Fanart]</texture>
+								<visible>IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(fanartenabled)</visible>
+						</control>
+						<control type="list" id="72">
+								<left>400</left>
+								<top>100</top>
+								<width>840</width>
+								<height>367</height>
+								<onleft>9000</onleft>
+								<onright>90</onright>
+								<onup>72</onup>
+								<ondown>72</ondown>
+								<viewtype label="view72">biglist</viewtype>
+								<pagecontrol>90</pagecontrol>
+								<scrolltime>230</scrolltime>
+								<orientation>vertical</orientation>
+								<preloaditems>2</preloaditems>
+								<itemlayout height="52" width="840">
+										<control type="label">
+												<left>5</left>
+												<top>0</top>
+												<width>70</width>
+												<height>52</height>
+												<font>size_18</font>
+												<align>center</align>
+												<aligny>center</aligny>
+												<textcolor>view72_label_alt</textcolor>
+												<label>$INFO[listitem.Synopsis_Year]</label>
+												<visible>!IsEmpty(listitem.Synopsis_Year)</visible>
+										</control>
+										<control type="label">
+												<left>5</left>
+												<top>0</top>
+												<width>70</width>
+												<height>52</height>
+												<font>size_18</font>
+												<align>center</align>
+												<aligny>center</aligny>
+												<textcolor>view72_label_alt</textcolor>
+												<label> - </label>
+												<visible>IsEmpty(listitem.Synopsis_Year)</visible>
+										</control>
+										<control type="label">
+												<left>90</left>
+												<top>0</top>
+												<width>700</width>
+												<height>52</height>
+												<font>size_20</font>
+												<textcolor>view72_label_alt</textcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>$INFO[ListItem.Label]</label>
+										</control>
+										<control type="label">
+												<left>795</left>
+												<top>0</top>
+												<width>40</width>
+												<height>52</height>
+												<font>size_18</font>
+												<align>center</align>
+												<aligny>center</aligny>
+												<textcolor>view72_label_alt</textcolor>
+												<label>$INFO[listitem.Synopsis_Rating]</label>
+												<visible>!IsEmpty(listitem.Synopsis_Rating)</visible>
+										</control>
+										<control type="label">
+												<left>795</left>
+												<top>0</top>
+												<width>40</width>
+												<height>52</height>
+												<font>size_18</font>
+												<align>center</align>
+												<aligny>center</aligny>
+												<textcolor>view72_label_alt</textcolor>
+												<label> - </label>
+												<visible>IsEmpty(listitem.Synopsis_Rating)</visible>
+										</control>
+								</itemlayout>
+								<focusedlayout height="52" width="840">
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>840</width>
+												<height>52</height>
+												<texture>views/synopsisinfolist/listfo.png</texture>
+										</control>
+										<control type="label">
+												<left>5</left>
+												<top>0</top>
+												<width>70</width>
+												<height>52</height>
+												<font>size_18</font>
+												<align>center</align>
+												<aligny>center</aligny>
+												<textcolor>view72_label</textcolor>
+												<label>$INFO[listitem.Synopsis_Year]</label>
+												<visible>!IsEmpty(listitem.Synopsis_Year)</visible>
+										</control>
+										<control type="label">
+												<left>5</left>
+												<top>0</top>
+												<width>70</width>
+												<height>52</height>
+												<font>size_18</font>
+												<align>center</align>
+												<aligny>center</aligny>
+												<textcolor>view72_label</textcolor>
+												<label> - </label>
+												<visible>IsEmpty(listitem.Synopsis_Year)</visible>
+										</control>
+										<control type="label">
+												<left>90</left>
+												<top>0</top>
+												<width>700</width>
+												<height>52</height>
+												<font>size_20</font>
+												<textcolor>view72_label</textcolor>
+												<align>left</align>
+												<aligny>center</aligny>
+												<label>$INFO[ListItem.Label]</label>
+										</control>
+										<control type="label">
+												<left>795</left>
+												<top>0</top>
+												<width>40</width>
+												<height>52</height>
+												<font>size_18</font>
+												<align>center</align>
+												<aligny>center</aligny>
+												<textcolor>view72_label</textcolor>
+												<label>$INFO[listitem.Synopsis_Rating]</label>
+												<visible>!IsEmpty(listitem.Synopsis_Rating)</visible>
+										</control>
+										<control type="label">
+												<left>795</left>
+												<top>0</top>
+												<width>40</width>
+												<height>52</height>
+												<font>size_18</font>
+												<align>center</align>
+												<aligny>center</aligny>
+												<textcolor>view72_label</textcolor>
+												<label> - </label>
+												<visible>IsEmpty(listitem.Synopsis_Rating)</visible>
+										</control>
+								</focusedlayout>
+						</control>
+						<control type="image">
+								<left>40</left>
+								<top>100</top>
+								<width>340</width>
+								<height>499</height>
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<texture diffuse="views/synopsisinfolist/diffuse_poster.png">no_poster.jpg</texture>
+						</control>
+						<control type="image">
+								<left>40</left>
+								<top>100</top>
+								<width>340</width>
+								<height>499</height>
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<fadetime>ThumbCrossfadeTime</fadetime>
+								<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+								<visible>IsEmpty(listitem.Synopsis_Resources) | !Skin.HasSetting(_resourcesenabled)</visible>
+						</control>
+						<control type="image">
+								<left>40</left>
+								<top>100</top>
+								<width>340</width>
+								<height>499</height>
+								<aspectratio scalediffuse="false">stretch</aspectratio>
+								<fadetime>ThumbCrossfadeTime</fadetime>
+								<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View72_Thumbs]</texture>
+								<visible>!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled)</visible>
+						</control>
+						<!-- Star ratings and ESRB rating -->
+						<control type="image">
+								<left>400</left>
+								<top>473</top>
+								<width>107</width>
+								<height>15</height>
+								<colordiffuse>view72_info_star_alt</colordiffuse>
+								<texture>windows\synopsis\ratings\10.png</texture>
+								<aspectratio>stretch</aspectratio>
+								<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+						</control>
+						<control type="image">
+								<left>400</left>
+								<top>473</top>
+								<width>107</width>
+								<height>15</height>
+								<colordiffuse>view72_info_star</colordiffuse>
+								<texture>windows\synopsis\ratings\$INFO[listitem.Synopsis_Rating].png</texture>
+								<aspectratio>stretch</aspectratio>
+								<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+						</control>
+						<control type="grouplist">
+								<description>Control Info</description>
+								<left>515</left>
+								<top>470</top>
+								<width>723</width>
+								<height>20</height>
+								<itemgap>0</itemgap>
+								<align>left</align>
+								<orientation>horizontal</orientation>
+								<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>20</width>
+										<height>20</height>
+										<colordiffuse>view72_info_label_alt</colordiffuse>
+										<texture>synopsis icons/medium_trainer.png</texture>
+										<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayHasTrainer.png)</visible>
+								</control>
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>20</width>
+										<height>20</height>
+										<colordiffuse>view72_info_label_alt</colordiffuse>
+										<texture>synopsis icons/medium_trained.png</texture>
+										<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayTrained.png)</visible>
+								</control>
+								<!-- dummy label (spacer)  -->
+								<control type="label">
+										<height>22</height>
+										<width min="5" max="10">auto</width>
+										<font>size_13</font>
+										<textcolor>view72_info_label</textcolor>
+										<label />
+										<visible>!IsEmpty(listitem.overlay)</visible>
+								</control>
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>20</width>
+										<height>20</height>
+										<colordiffuse>view72_info_label_alt</colordiffuse>
+										<texture>synopsis icons/medium_played.png</texture>
+								</control>
+								<control type="label">
+										<height>22</height>
+										<width min="5" max="400">auto</width>
+										<font>size_15</font>
+										<aligny>center</aligny>
+										<textcolor>view72_info_label</textcolor>
+										<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
+								</control>
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>20</width>
+										<height>20</height>
+										<colordiffuse>view72_info_label_alt</colordiffuse>
+										<texture>synopsis icons/medium_playercount.png</texture>
+								</control>
+								<control type="label">
+										<height>22</height>
+										<width min="5" max="400">auto</width>
+										<font>size_15</font>
+										<aligny>center</aligny>
+										<textcolor>view72_info_label</textcolor>
+										<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
+								</control>
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>20</width>
+										<height>20</height>
+										<colordiffuse>view72_info_label_alt</colordiffuse>
+										<texture>synopsis icons/medium_genre.png</texture>
+										<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+								</control>
+								<control type="label">
+										<height>22</height>
+										<width min="5" max="400">auto</width>
+										<font>size_15</font>
+										<aligny>center</aligny>
+										<textcolor>view72_info_label</textcolor>
+										<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
+										<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+								</control>
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>20</width>
+										<height>20</height>
+										<colordiffuse>view72_info_label_alt</colordiffuse>
+										<texture>synopsis icons/medium_esrb.png</texture>
+										<visible>!IsEmpty(listitem.Synopsis_ESRB_Descriptors)</visible>
+								</control>
+								<control type="label">
+										<height>22</height>
+										<width min="5" max="400">auto</width>
+										<font>size_15</font>
+										<aligny>center</aligny>
+										<textcolor>view72_info_label</textcolor>
+										<label>[UPPERCASE] $INFO[listitem.Synopsis_ESRB_Descriptors][/UPPERCASE]</label>
+										<visible>!IsEmpty(listitem.Synopsis_ESRB_Descriptors)</visible>
+								</control>
+						</control>
+						<!-- Synopsis -->
+						<control type="textbox">
+								<left>400</left>
+								<top>493</top>
+								<width>840</width>
+								<height>104</height>
+								<font>size_17</font>
+								<align>justify</align>
+								<textcolor>view72_info_synopsis</textcolor>
+								<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(10)">Conditional</autoscroll>
+								<label>$INFO[listitem.Synopsis_Overview]</label>
+						</control>
+						<control type="scrollbar" id="90">
+								<onup>90</onup>
+								<top>100</top>
+								<left>1247</left>
+								<height>367</height>
+								<width>7</width>
+								<onleft>72</onleft>
+								<orientation>vertical</orientation>
+								<include>View.ScrollBar.Vertical</include>
+						</control>
+				</control>
+		</include>
+</includes>

@@ -62,10 +62,10 @@
 										<label>[UPPERCASE]$LOCALIZE[773][/UPPERCASE]</label>
 								</control>
 								<!-- progressbar dialog -->
-								<control type="label" id="22">
+								<control type="label">
 										<description>Elapsed Time Label</description>
 										<left>10</left>
-										<top>7</top>
+										<top>5</top>
 										<width>110</width>
 										<height>20</height>
 										<font>size_15</font>
@@ -75,10 +75,10 @@
 										<info>Player.Time</info>
 										<visible>!Player.Seeking</visible>
 								</control>
-								<control type="label" id="22">
+								<control type="label">
 										<description>Seek Time Label</description>
 										<left>10</left>
-										<top>7</top>
+										<top>5</top>
 										<width>110</width>
 										<height>20</height>
 										<font>size_15</font>
@@ -88,29 +88,29 @@
 										<info>Player.SeekTime</info>
 										<visible>Player.Seeking</visible>
 								</control>
-								<control type="label" id="0">
+								<control type="label">
 										<description>Duration Label</description>
 										<left>365</left>
-										<top>7</top>
+										<top>5</top>
 										<width>130</width>
 										<height>20</height>
-										<label>$INFO[Player.Duration]</label>
+										<info>Player.Duration</info>
 										<font>size_15</font>
 										<align>right</align>
 										<textcolor>115_label</textcolor>
 										<aligny>center</aligny>
 								</control>
-								<control type="progress" id="23">
+								<control type="progress">
 										<description>Progressbar</description>
 										<left>10</left>
 										<top>25</top>
 										<width>310</width>
 										<height>8</height>
 										<info>Player.Progress</info>
-										<texturebg>windows/dialogs/progressbackalt.png</texturebg>
-										<lefttexture>windows/dialogs/progressleftalt.png</lefttexture>
-										<midtexture>windows/dialogs/progressfrontalt.png</midtexture>
-										<righttexture>windows/dialogs/progressrightalt.png</righttexture>
+										<texturebg border="1,1,1,1">windows/dialogs/progressbackalt.png</texturebg>
+										<lefttexture border="2,2,2,2">windows/dialogs/progressleftalt.png</lefttexture>
+										<midtexture border="1,1,1,1">windows/dialogs/progressfrontalt.png</midtexture>
+										<righttexture border="2,2,2,2">windows/dialogs/progressrightalt.png</righttexture>
 										<visible>true</visible>
 								</control>
 								<control type="slider" id="401">

@@ -1,6 +1,6 @@
 <window type="dialog" id="134">
 		<defaultcontrol always="true">450</defaultcontrol>
-		<include>DialogEffectZoomFast</include>
+		<include>Dialog.Effect.Zoom.Fast</include>
 		<controls>
 				<control type="image">
 						<left>55</left>
@@ -59,12 +59,12 @@
 								<left>0</left>
 								<top>0</top>
 								<width min="80" max="147">auto</width>
-								<height>20</height>
+								<height>32</height>
 								<font>size_19</font>
 								<align>left</align>
+								<aligny>center</aligny>
 								<textcolor>common_context_label</textcolor>
 								<label>$LOCALIZE[424]</label>
-								<include>Context_Buttons_Text_Align</include>
 						</control>
 						<!-- B Button -->
 						<control type="image">
@@ -79,12 +79,12 @@
 								<left>0</left>
 								<top>0</top>
 								<width min="60" max="80">auto</width>
-								<height>20</height>
+								<height>32</height>
 								<font>size_19</font>
 								<align>left</align>
+								<aligny>center</aligny>
 								<textcolor>common_context_label</textcolor>
 								<label>$LOCALIZE[31151]</label>
-								<include>Context_Buttons_Text_Align</include>
 						</control>
 						<!-- White Button -->
 						<control type="image">
@@ -94,17 +94,19 @@
 								<height>32</height>
 								<aspectratio>stretch</aspectratio>
 								<texture>pad_buttons\dialogs\White_button.png</texture>
+								<visible>Skin.HasSetting(kioskmode)</visible>
 						</control>
 						<control type="label">
 								<left>0</left>
 								<top>0</top>
 								<width min="80" max="147">auto</width>
-								<height>20</height>
+								<height>32</height>
 								<font>size_19</font>
 								<align>left</align>
+								<aligny>center</aligny>
 								<textcolor>common_context_label</textcolor>
 								<label>$LOCALIZE[31113]</label>
-								<include>Context_Buttons_Text_Align</include>
+								<visible>Skin.HasSetting(kioskmode)</visible>
 						</control>
 				</control>
 				<control type="image">
@@ -119,24 +121,14 @@
 				<control type="list" id="450">
 						<onup>450</onup>
 						<ondown>450</ondown>
-						<include>CommonViewLayout</include>
+						<include>Common.View.Layout</include>
 				</control>
 				<control type="scrollbar" id="90">
 						<left>1190</left>
 						<top>105</top>
 						<width>4</width>
 						<height>420</height>
-						<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-						<texturesliderbar border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbar>
-						<texturesliderbarfocus border="2,2,2,2">scrollbar_bar_focus-vertical.png</texturesliderbarfocus>
-						<textureslidernib>-</textureslidernib>
-						<textureslidernibfocus>-</textureslidernibfocus>
-						<onleft>-</onleft>
-						<ondown>-</ondown>
-						<showonepage>false</showonepage>
-						<orientation>vertical</orientation>
-						<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(90)">Conditional</animation>
-						<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+						<include>Fake.ScrollBar.Vertical</include>
 				</control>
 		</controls>
 </window>

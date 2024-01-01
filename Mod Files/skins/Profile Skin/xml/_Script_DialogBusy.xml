@@ -1,6 +1,6 @@
 <window type="dialog" id="1100">
 		<controls>
-				<include>BehindDialogFadeOut</include>
+				<include>Behind.Dialog.FadeOut</include>
 				<control type="multiimage">
 						<left>20</left>
 						<top>20</top>

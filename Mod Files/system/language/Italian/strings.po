@@ -717,6 +717,34 @@ msgctxt "#239"
 msgid "Clear playlist on finish"
 msgstr "Cancella playlist alla fine"
 
+msgctxt "#240"
+msgid "Autoplay DVD-Video"
+msgstr "Avvio automatico DVD-Video"
+
+msgctxt "#241"
+msgid "Autoplay VCD/SVCD"
+msgstr "Avvio automatico VCD/SVCD"
+
+msgctxt "#242"
+msgid "Autoplay Audio-CD"
+msgstr "Avvio automatico CD-Audio"
+
+msgctxt "#243"
+msgid "Autoplay Xbox games"
+msgstr "Avvio automatico giochi Xbox"
+
+msgctxt "#244"
+msgid "Autoplay videos"
+msgstr "Avvio automatico video"
+
+msgctxt "#245"
+msgid "Autoplay music"
+msgstr "Avvio automatico musica"
+
+msgctxt "#246"
+msgid "Autoplay pictures"
+msgstr "Avvio automatico immagini"
+
 msgctxt "#247"
 msgid "Scripts"
 msgstr "Script"
@@ -1581,6 +1609,10 @@ msgctxt "#482"
 msgid "About XBMC"
 msgstr "Informazioni su XBMC"
 
+msgctxt "#483"
+msgid "DVDPlayer cache"
+msgstr "Cache lettore DVD"
+
 msgctxt "#485"
 msgid "Delete album"
 msgstr "Elimina album"
@@ -1688,6 +1720,10 @@ msgstr "Impostazioni manuali"
 msgctxt "#515"
 msgid "Genre"
 msgstr "Genere"
+
+msgctxt "#516"
+msgid "Make stored archives with one file transparent"
+msgstr "Rendi trasparenti gli archivi memorizzati"
 
 msgctxt "#517"
 msgid "Recently played albums"
@@ -3639,7 +3675,7 @@ msgstr "Esci"
 
 msgctxt "#13013"
 msgid "Reboot"
-msgstr "Riavvia"
+msgstr "Riavvia Xbox"
 
 msgctxt "#13014"
 msgid "Minimize"
@@ -4119,7 +4155,7 @@ msgstr "Riduzione banda nera"
 
 msgctxt "#13313"
 msgid "Restart"
-msgstr "Riavvia"
+msgstr "Riavvia X4G"
 
 msgctxt "#13314"
 msgid "Crossfade between songs"
@@ -4679,11 +4715,11 @@ msgstr "Inserisci la città più grande vicina a te"
 
 msgctxt "#14025"
 msgid "Video/Audio/DVD cache - Harddisk"
-msgstr "Video/Audio/DVD cache - HardDisk"
+msgstr "Cache Video/Audio/DVD - HardDisk"
 
 msgctxt "#14026"
 msgid "Video cache - DVD-ROM"
-msgstr "cache Video - DVD-ROM"
+msgstr "Cache Video - DVD-ROM"
 
 msgctxt "#14027"
 msgid "- Local Network"
@@ -4695,7 +4731,7 @@ msgstr "- Internet"
 
 msgctxt "#14030"
 msgid "Audio cache - DVD-ROM"
-msgstr "cache Audio - DVD-ROM"
+msgstr "Cache Audio - DVD-ROM"
 
 msgctxt "#14031"
 msgid "- Local Network"
@@ -4932,6 +4968,22 @@ msgstr "Dispositivi di input"
 msgctxt "#14095"
 msgid "Power saving"
 msgstr "Risparmio energetico"
+
+msgctxt "#14096"
+msgid "Video cache"
+msgstr "Cache Video"
+
+msgctxt "#14097"
+msgid "Video cache - max time"
+msgstr "Cache Video - tempo massimo"
+
+msgctxt "#14098"
+msgid "Audio cache"
+msgstr "Cache Audio"
+
+msgctxt "#14099"
+msgid "Audio cache - max time"
+msgstr "Cache Audio - tempo massimo"
 
 msgctxt "#15015"
 msgid "Remove"
@@ -8059,11 +8111,11 @@ msgstr "Sfondi personalizzati"
 
 msgctxt "#33072"
 msgid "View Readme"
-msgstr "Visualizza Readme"
+msgstr "Readme"
 
 msgctxt "#33073"
 msgid "View Changelog"
-msgstr "Visualizza Changelog"
+msgstr "Changelog"
 
 msgctxt "#33074"
 msgid "This version of %s requires an"
@@ -8108,3 +8160,11 @@ msgstr "Abilita il pulsante per lo script personalizzato"
 msgctxt "#34005"
 msgid "Flac"
 msgstr "Flac"
+
+msgctxt "#34006"
+msgid "- Primary DNS"
+msgstr "- DNS Primario"
+
+msgctxt "#34007"
+msgid "- Secondary DNS"
+msgstr "- DNS Secondario"

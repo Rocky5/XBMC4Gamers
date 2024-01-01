@@ -2,18 +2,18 @@
 		<defaultcontrol always="true">50</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
 		<controls>
-				<include>CommonBackground</include>
-				<include>ViewVisibleEffect</include>
+				<include>Global.Backgrounds</include>
+				<include>View.Visible.Effect</include>
 				<include file="Viewtype_CommonRootView.xml">CommonRootView</include>
 				<control type="group">
-						<include>CommonOptionsMenuBack</include>
+						<include>Common.Options.Menu.Back</include>
 						<control type="group" id="9000">
 								<control type="button" id="2">
 										<description>View As button</description>
 										<left>0</left>
 										<top>0</top>
 										<width>330</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>-</label>
 										<onleft>9001</onleft>
 										<onright>50</onright>
@@ -25,7 +25,7 @@
 										<left>0</left>
 										<top>45</top>
 										<width>330</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>191</label>
 										<onleft>9001</onleft>
 										<onright>50</onright>
@@ -37,7 +37,7 @@
 										<left>0</left>
 										<top>90</top>
 										<width>330</width>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<label>-</label>
 										<onleft>9001</onleft>
 										<onright>50</onright>
@@ -50,7 +50,7 @@
 										<top>135</top>
 										<width>330</width>
 										<label>190</label>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<onleft>9001</onleft>
 										<onright>50</onright>
 										<onup>26</onup>
@@ -63,7 +63,7 @@
 										<width>330</width>
 										<label>192</label>
 										<onclick>ReplaceWindow(music)</onclick>
-										<include>ButtonCommonValues</include>
+										<include>Button.Common.Values</include>
 										<onleft>9001</onleft>
 										<onright>50</onright>
 										<onup>21</onup>
@@ -71,7 +71,7 @@
 								</control>
 						</control>
 				</control>
-				<include>WindowHeader</include>
+				<include>Window.Header</include>
 				<include>ScrollOffsetLabel</include>
 		</controls>
 </window>

@@ -33,10 +33,11 @@
 						<control type="label">
 								<description>heading label</description>
 								<left>0</left>
-								<top>28</top>
+								<top>35</top>
 								<width>386</width>
 								<height>0</height>
 								<align>center</align>
+								<aligny>center</aligny>
 								<font>size_20</font>
 								<label>Clean Program Thumbs</label>
 								<textcolor>FF000000</textcolor>

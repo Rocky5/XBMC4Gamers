@@ -1,15 +1,14 @@
-<!-- Edit Mode -->
 <keymap>
 		<FileManager>
 				<gamepad>
-						<black>XBMC.RunScript(Special://scripts/XBMC4Gamers/Utilities/Toggle Filemanager Mode.py)</black>
+						<black>XBMC.SetFocus(9006)</black>
 				</gamepad>
 		</FileManager>
 		<MyPrograms>
 				<gamepad>
 						<black>XBMC.ActivateWindow(1112)</black>
 						<back>XBMC.ActivateWindow(1115)</back>
-						<Y>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers Extras/Synopsis/Y_button_loader.py)</Y>
+						<Y>SetFocus(9099)</Y>
 				</gamepad>
 		</MyPrograms>
 		<Settings>
@@ -21,7 +20,6 @@
 				<gamepad>
 						<Back>Highlight</Back>
 						<start>ActivateWindow(Settings)</start>
-						<black>XBMC.RunScript(Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Clear Cache.py)</black>
 				</gamepad>
 		</Profiles>
 		<global>
@@ -50,15 +48,15 @@
 		</global>
 		<LoginScreen>
 				<gamepad>
-						<black>XBMC.SetFocus(19)</black>
+						<black />
 						<start>SetFocus(9001)</start>
+						<black>XBMC.SetFocus(19)</black>
 				</gamepad>
 		</LoginScreen>
 		<Home>
 				<gamepad>
-						<back />
-						<lefttrigger>left</lefttrigger>
-						<righttrigger>right</righttrigger>
+						<back>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Home Screen Items.py)</back>
+						<black>XBMC.ActivateWindow(1112)</black>
 				</gamepad>
 		</Home>
 		<MyFiles>

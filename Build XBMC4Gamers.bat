@@ -4,6 +4,12 @@
 @Echo off & SetLocal EnableDelayedExpansion & Mode con:cols=100 lines=10 & Color 0B
 title XBMC4Gamers Builder
 
+REM Set d=%DATE:~3,2%/%DATE:~0,2%/%DATE:~6,4%
+REM Set t=%TIME:~0,2%:%TIME:~3,2%
+REM Set d=%d: =0%
+
+REM Echo timestamp=%d% %t%>"%USERPROFILE%\Desktop\New Downloader Builder\Downloader Builder\gamers_r_timestamp"
+
 if exist "XBMC" Set "foldername=XBMC"
 if exist "Build" Set "foldername=Build"
 if not exist "%foldername%" (
@@ -64,15 +70,26 @@ move "%foldername%\media" "%foldername%\system\"
 move "%foldername%\screenshots" "%foldername%\system\"
 move "%foldername%\UserData" "%foldername%\system\"
 XCopy /s /e /i /h /r /y "Mod Files" "%foldername%"
-REM if exist "Other\build for release" (
-	Call Other\Tools\repl.bat "XBMC4Gamers 0.0.000" "XBMC4Gamers %version%" L < "%foldername%\skins\Profile Skin\language\English\strings.po" >"%foldername%\skins\Profile Skin\language\English\strings.tmp"
-	Del "%foldername%\skins\Profile Skin\language\English\strings.po"
-	rename "%foldername%\skins\Profile Skin\language\English\strings.tmp" "strings.po"
-	MD "%foldername%\system\SystemInfo"
-	Call Other\Tools\repl.bat "	" "" L < "changes.txt" >"%foldername%\system\SystemInfo\changes.txt"
-REM )
-copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\Manage Profiles Skin\language\English\strings.po"
-copy "%foldername%\skins\Profile Skin\language\English\strings.po" "%foldername%\skins\DVD2Xbox Skin\language\English\strings.po"
+
+REM Update language files
+for /f "tokens=*" %%a in ('dir /b "%foldername%\skins\Profile Skin\language"') do (
+	Call Other\Tools\repl.bat "XBMC4Gamers 0.0.000" "XBMC4Gamers Stable Build %version%" L < "%foldername%\skins\Profile Skin\language\%%a\strings.po" >"%foldername%\skins\Profile Skin\language\%%a\strings.tmp"
+	Del "%foldername%\skins\Profile Skin\language\%%a\strings.po"
+	rename "%foldername%\skins\Profile Skin\language\%%a\strings.tmp" "strings.po"
+	
+	Call Other\Tools\repl.bat "XBMC4Gamers datetime" "[CR]Stable Build %version%: %d% - %t%" L < "%foldername%\skins\Profile Skin\language\%%a\strings.po" >"%foldername%\skins\Profile Skin\language\%%a\strings.tmp"
+	Del "%foldername%\skins\Profile Skin\language\%%a\strings.po"
+	rename "%foldername%\skins\Profile Skin\language\%%a\strings.tmp" "strings.po"
+
+	Call Other\Tools\repl.bat "build type" "Stable_Build" L < "%foldername%\skins\Profile Skin\language\%%a\strings.po" >"%foldername%\skins\Profile Skin\language\%%a\strings.tmp"
+	Del "%foldername%\skins\Profile Skin\language\%%a\strings.po"
+	rename "%foldername%\skins\Profile Skin\language\%%a\strings.tmp" "strings.po"
+)
+
+MD "%foldername%\system\SystemInfo"
+Call Other\Tools\repl.bat "	" "" L < "changes.txt" >"%foldername%\system\SystemInfo\changes.txt"
+XCopy /s /e /i /h /r /y "%foldername%\skins\Profile Skin\language\" "%foldername%\skins\Manage Profiles Skin\language\"
+
 del /Q "%foldername%\Changes.txt"
 copy /y "Source\default.xbe" "%foldername%\default.xbe"
 del /Q /S "%foldername%\*.bat"

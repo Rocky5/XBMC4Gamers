@@ -4,10 +4,10 @@
 				<control type="image">
 						<include>1280x720</include>
 						<texture>black-back.png</texture>
-						<include>dialogeffect</include>
+						<include>Dialog.Effect</include>
 				</control>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<left>495</left>
 						<top>165</top>
 						<control type="image">

@@ -3,11 +3,11 @@
 		<allowoverlay>no</allowoverlay>
 		<views>50</views>
 		<controls>
-				<include>CommonBackground</include>
+				<include>Global.Backgrounds</include>
 				<control type="group">
-						<include>ViewVisibleEffect</include>
+						<include>View.Visible.Effect</include>
 						<include file="Viewtype_CommonRootView.xml">CommonRootView</include>
 				</control>
-				<include>WindowHeader</include>
+				<include>Window.Header</include>
 		</controls>
 </window>

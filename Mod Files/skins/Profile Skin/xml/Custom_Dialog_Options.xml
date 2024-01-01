@@ -4,10 +4,10 @@
 				<control type="image">
 						<include>1280x720</include>
 						<texture>black-back.png</texture>
-						<include>dialogeffect</include>
+						<include>Dialog.Effect</include>
 				</control>
 				<control type="group">
-						<include>DialogEffectZoomFast</include>
+						<include>Dialog.Effect.Zoom.Fast</include>
 						<control type="image">
 								<left>270</left>
 								<top>80</top>
@@ -81,12 +81,12 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>1112_context_label</textcolor>
 										<label>$LOCALIZE[424]</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
 								<!-- B Button -->
 								<control type="image">
@@ -101,70 +101,67 @@
 										<left>0</left>
 										<top>0</top>
 										<width min="80" max="147">auto</width>
-										<height>20</height>
+										<height>32</height>
 										<font>size_19</font>
 										<align>left</align>
+										<aligny>center</aligny>
 										<textcolor>1112_context_label</textcolor>
 										<label>Back</label>
-										<include>Context_Buttons_Text_Align</include>
 								</control>
-						</control>
-						<control type="button" id="9002">
-								<left>-500</left>
-								<onfocus>Dialog.Close(1112,true)</onfocus>
-								<onfocus>ActivateWindow(Favourites)</onfocus>
-								<visible>!Skin.HasSetting(editmode)</visible>
 						</control>
 						<control type="grouplist" id="9002">
 								<description>button area</description>
 								<left>370</left>
 								<top>195</top>
-								<width>200</width>
-								<height>340</height>
+								<width max="200">auto</width>
+								<height max="340">auto</height>
 								<itemgap>10</itemgap>
 								<onleft>-</onleft>
 								<onright>-</onright>
 								<onup>9002</onup>
 								<ondown>9002</ondown>
-								<animation effect="slide" start="0,0" end="0,20" time="0" condition="!Skin.HasSetting(EmuButton)">Conditional</animation>
+								<align>center</align>
+								<aligny>center</aligny>
 								<control type="button" id="1">
-										<include>ButtonSettingsOptionsValues</include>
+										<include>Button.Settings.Options.Values</include>
 										<label>[UPPERCASE]$INFO[Skin.String(Emulator_Name)][/UPPERCASE]</label>
 										<onclick>RunXBE($INFO[Skin.String(Emulator_Path)])</onclick>
+										<onclick>RunScript($INFO[Skin.String(Emulator_Path)])</onclick>
 										<visible>Skin.HasSetting(EmuButton)</visible>
 								</control>
 								<control type="button" id="2">
-										<include>ButtonSettingsOptionsValues</include>
+										<include>Button.Settings.Options.Values</include>
 										<label>[UPPERCASE]$LOCALIZE[1036][/UPPERCASE]</label>
 										<onclick>Dialog.Close(1112,true)</onclick>
 										<onclick>ActivateWindow(Favourites)</onclick>
 										<visible>Window.IsActive(Programs)</visible>
 								</control>
 								<control type="button" id="3">
-										<include>ButtonSettingsOptionsValues</include>
+										<include>Button.Settings.Options.Values</include>
 										<label>[UPPERCASE]$LOCALIZE[20315][/UPPERCASE]</label>
 										<onclick>Dialog.Close(1112,true)</onclick>
 										<onclick>ActivateWindow(GameSaves)</onclick>
-										<visible>Window.IsActive(Programs)</visible>
+										<visible>Window.IsActive(Programs) + Skin.HasSetting(kioskmode)</visible>
 								</control>
 								<control type="button" id="4">
-										<include>ButtonSettingsOptionsValues</include>
+										<include>Button.Settings.Options.Values</include>
 										<label>[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</label>
 										<onclick>Dialog.Close(1112,true)</onclick>
 										<onclick>ActivateWindow(Settings)</onclick>
+										<visible>Skin.HasSetting(kioskmode)</visible>
 								</control>
 								<control type="button" id="5">
-										<include>ButtonSettingsOptionsValues</include>
+										<include>Button.Settings.Options.Values</include>
 										<label>[UPPERCASE]$LOCALIZE[13313][/UPPERCASE]</label>
-										<onclick>RunXBE(Special://root/default.xbe)</onclick>
+										<onclick>RestartApp</onclick>
 								</control>
 								<control type="button" id="6">
-										<include>ButtonSettingsOptionsValues</include>
+										<include>Button.Settings.Options.Values</include>
 										<label>[UPPERCASE]$LOCALIZE[13013][/UPPERCASE]</label>
 										<onclick>Reboot</onclick>
 								</control>
 								<control type="button" id="7">
-										<include>ButtonSettingsOptionsValues</include>
+										<include>Button.Settings.Options.Values</include>
 										<label>[UPPERCASE]$LOCALIZE[13005][/UPPERCASE]</label>
 										<onclick>Shutdown</onclick>
 								</control>

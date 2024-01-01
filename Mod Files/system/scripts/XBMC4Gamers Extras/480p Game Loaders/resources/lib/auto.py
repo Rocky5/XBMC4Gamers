@@ -183,6 +183,8 @@ for Game_Directories in Game_Directories:
 								if TitleID == "4947002b": Loader = Loader3 # Panzer Dragoon Orta alt
 								if TitleID == "4156000a": Loader = Loader3 # Wreckless - The Yakuza Missions
 								if TitleID == "4156000c": Loader = Loader3 # Wreckless - The Yakuza Missions alt
+								if TitleID == "42550001": Loader = Loader3 # Double-S.T.E.A.L
+								if TitleID == "42550002": Loader = Loader3 # Double-S.T.E.A.L alt
 								# Cleanup
 								if os.path.isfile(os.path.join(Game_Path, "default.xbe")) and os.path.isfile(os.path.join(Game_Path, "game_default.xbe")):
 									if os.path.isdir(os.path.join(Game_Path, "480loadr")): shutil.rmtree(os.path.join(Game_Path, "480loadr"))

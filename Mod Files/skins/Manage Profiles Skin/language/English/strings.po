@@ -13,10 +13,22 @@ msgstr ""
 "Language: en\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
+## DO NOT TRANSLATE (start)
+
 ## version
 msgctxt "#31000"
 msgid "XBMC4Gamers 0.0.000"
 msgstr ""
+
+msgctxt "#31001"
+msgid "build type"
+msgstr ""
+
+msgctxt "#31002"
+msgid "XBMC4Gamers datetime"
+msgstr ""
+
+##  DO NOT TRANSLATE (end)
 
 ## internal - no xml file id's cannot be changed, unless you recompile the xbe
 msgctxt "#32000"
@@ -24,7 +36,7 @@ msgid "Advanced"
 msgstr ""
 
 msgctxt "#32001"
-msgid "Disable slow scrolling"
+msgid ""
 msgstr ""
 
 msgctxt "#32002"
@@ -32,28 +44,27 @@ msgid "Enable fast game parsing"
 msgstr ""
 
 msgctxt "#32003"
-msgid "Use synopsis naming if available"
+msgid "Don't use Synopsis naming"
 msgstr ""
 
 msgctxt "#32004"
 msgid "This option will not work with forced 480p bios"
 msgstr ""
 
-## Custom_Dialog_Quick_Change.xml - 31000 to 31010
-msgctxt "#31001"
-msgid "applications"
+msgctxt "#32005"
+msgid "Enable higher resolution artwork"
 msgstr ""
 
-msgctxt "#31002"
-msgid "emulators"
+msgctxt "#32006"
+msgid "Refresh info"
 msgstr ""
 
-msgctxt "#31003"
-msgid "games"
+msgctxt "#32007"
+msgid "Refresh all contents info"
 msgstr ""
 
-msgctxt "#31004"
-msgid "homebrew"
+msgctxt "#32008"
+msgid "Refreshing Synopsis Information"
 msgstr ""
 
 ## Custom_logoff.xml - 31011 to 31015
@@ -67,7 +78,7 @@ msgid "loading"
 msgstr ""
 
 msgctxt "#31017"
-msgid "[B]User Mode[/B] is enabled[CR]Press (A) to logout"
+msgid "[B]Kiosk Mode[/B][CR]Profile is locked[CR]Press (A) to logout"
 msgstr ""
 
 ## Custom_Skin_Settings.xml - 31021 to 31034
@@ -105,11 +116,11 @@ msgid "Disable time overlay"
 msgstr ""
 
 msgctxt "#31036"
-msgid "Enable alternative synopsis view"
+msgid "Hide context buttons at the bottom of the screen"
 msgstr ""
 
 msgctxt "#31037"
-msgid "Enable a custom button on the options dialogue"
+msgid "Enable a custom button on the options dialog"
 msgstr ""
 
 msgctxt "#31038"
@@ -137,7 +148,7 @@ msgid "Hide played overlay on poster views"
 msgstr ""
 
 msgctxt "#31044"
-msgid "Hide reload skin and logout context buttons"
+msgid "Show reload skin and logout context buttons"
 msgstr ""
 
 msgctxt "#31045"
@@ -176,13 +187,21 @@ msgctxt "#31053"
 msgid "Only randomise downloaded themes"
 msgstr ""
 
+msgctxt "#31054"
+msgid "Use screensaver fanart in background (Download required)"
+msgstr ""
+
+msgctxt "#31055"
+msgid "Use none blurred fanart"
+msgstr ""
+
 ## Quick Change Menu - Custom_Skin_Settings.xml - 31056 to 31060
 msgctxt "#31056"
 msgid "Enable additional sources"
 msgstr ""
 
 msgctxt "#31057"
-msgid "Enter source name"
+msgid "Select source"
 msgstr ""
 
 ## Login - Custom_Skin_Settings.xml - 31061 to 31068
@@ -199,7 +218,7 @@ msgid "Enable profile lock"
 msgstr ""
 
 msgctxt "#31064"
-msgid "Enabling this setting will lock this profile if [B]Edit Mode[/B] is disabled"
+msgid "Enabling this setting will lock this profile if [B]Kiosk Mode[/B] is enabled"
 msgstr ""
 
 msgctxt "#31065"
@@ -209,6 +228,10 @@ msgstr ""
 ## Scripts - Custom_Skin_Settings.xml - 31069 to 31075
 msgctxt "#31069"
 msgid "Run"
+msgstr ""
+
+msgctxt "#31070"
+msgid "View Log Files"
 msgstr ""
 
 ## Home Window - Custom_Skin_Settings.xml - 31076 to 31085
@@ -431,6 +454,10 @@ msgctxt "#31172"
 msgid "Auto login disabled.[CR]You will be able to select from multiple profiles."
 msgstr ""
 
+msgctxt "#31173"
+msgid "Kiosk Mode"
+msgstr ""
+
 ## SettingsScreenCalibration.xml - 31176 to 31178
 msgctxt "#31176"
 msgid "Get spinning disc to have as little wobble as possible."
@@ -446,7 +473,7 @@ msgid "Initialising please wait..."
 msgstr ""
 
 msgctxt "#31181"
-msgid "Error has accrued. Please send me a copy of your [B]"xbmc.log"[/B] file, or try restarting the xbox."
+msgid "Error has occurred. Please send me a copy of your [B]"xbmc.log"[/B] file, or try restarting the xbox."
 msgstr ""
 
 ## View files - 31186 to 31209
@@ -497,7 +524,7 @@ msgstr ""
 
 ## Master Profile Strings - 31500 to 31519
 msgctxt "#31500"
-msgid "[B]Note:[/B] If you're wanting to use [B]XBMC4Gamers[/B] as an application or an individual profile then I would advise leaving the individual saves directories disabled."
+msgid ""
 msgstr ""
 
 msgctxt "#31501"
@@ -534,7 +561,7 @@ msgid "Context Menu"
 msgstr ""
 
 msgctxt "#31522"
-msgid "Edit Mode Enabled"
+msgid "Kiosk Mode Enabled"
 msgstr ""
 
 msgctxt "#31523"
@@ -562,4 +589,63 @@ msgstr ""
 
 msgctxt "#31532"
 msgid "Compact Mode"
+msgstr ""
+
+## Custom_Dialog_Quick_Change.xml - 31541 to 31550
+msgctxt "#31541"
+msgid "applications"
+msgstr ""
+
+msgctxt "#31542"
+msgid "emulators"
+msgstr ""
+
+msgctxt "#31543"
+msgid "games"
+msgstr ""
+
+msgctxt "#31544"
+msgid "homebrew"
+msgstr ""
+
+## Home.xml - 31560 to 31580
+msgctxt "#31560"
+msgid "Show Random Items"
+msgstr ""
+
+msgctxt "#31561"
+msgid "Show Recently Launched"
+msgstr ""
+
+msgctxt "#31562"
+msgid "Last Played:"
+msgstr ""
+
+msgctxt "#31563"
+msgid "Randoms:"
+msgstr ""
+
+## Home Window - Custom_Skin_Settings.xml - 31600 to 31650
+msgctxt "#31600"
+msgid ""
+msgstr ""
+
+msgctxt "#31601"
+msgid "Custom Button"
+msgstr ""
+
+msgctxt "#31602"
+msgid "Name"
+msgstr ""
+
+msgctxt "#31603"
+msgid "use , to separate max 2 example: Games,Applications"
+msgstr ""
+
+msgctxt "#31604"
+msgid "Search Entries"
+msgstr ""
+
+msgctxt "#31605"
+msgid "Open Source on click"
 msgstr ""

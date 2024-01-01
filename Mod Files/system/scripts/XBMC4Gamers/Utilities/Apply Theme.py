@@ -1,4 +1,4 @@
-import os,random,shutil,sys,xbmc,xbmcgui
+import glob,os,random,shutil,sys,xbmc,xbmcgui
 '''
  arguments 1:
 	toggle
@@ -44,39 +44,26 @@ if arg1 == 'toggle':
 
 
 if arg1 == 'select':
+	XPR = []
 	xbmc.executebuiltin('Skin.SetBool(SelectPreviewMode)') # This is set so the preview is shown in the skin settings menu when required.
-	
-	TMP_Theme_Path = 'Z:/temp/themes/'
-	if os.path.isdir(TMP_Theme_Path):
-		shutil.rmtree(TMP_Theme_Path)
-	os.makedirs(TMP_Theme_Path)
-	XPR = os.listdir(xbmc.translatePath('Special://skin/media'))
-	XPR = [x.lower().replace('textures',' default') for x in XPR]
-	
-	try:
-		for fn in XPR:
-			with open(os.path.join(TMP_Theme_Path,fn.upper()),"w") as ThemeFiles:
-				ThemeFiles.write('')
-	except: pass
-	
-	XPR = sorted(os.listdir(TMP_Theme_Path))
-	Filter_XPR = [os.path.basename(r[0:-4]) for r in XPR]
-	Filter_XPR = [x.replace(' D','D') for x in Filter_XPR]
+
+	Filter_XPR = sorted([x.lower().replace('textures','Default') for x in glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))], key=None, reverse=0)
+	Filter_XPR = [os.path.basename(x.replace(".xpr","").title()) for x in Filter_XPR]
 	ThemeFolder = xbmcgui.Dialog().select('Select Theme',Filter_XPR,10000)
 	
 	if ThemeFolder == -1:
 		pass
 	else:
-		SelectedTheme = XPR[ThemeFolder]
-		if SelectedTheme.lower() == ' default.xpr':
+		SelectedTheme = Filter_XPR[ThemeFolder]
+		if SelectedTheme.lower() == 'default':
 			ThemeFile = 'default'
 			ThemeColorFile = 'defaults'
 		else:
-			ThemeFile = SelectedTheme[:-4]
+			ThemeFile = SelectedTheme
 			ThemeColorFile= ThemeFile
-		# Check if it's a v1.4+ Gamers theme.
+		# Check if it's a v2.0+ Gamers theme.
 		with open(os.path.join(xbmc.translatePath('Special://skin/colors'),ThemeColorFile+'.xml')) as test_theme:
-			if 'XBMC4Gamers v1.4+' in test_theme.read():
+			if 'XBMC4Gamers v2.0+' in test_theme.read():
 				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skintheme;%s.xpr)'%ThemeFile)
 				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skincolors;%s.xml)'%ThemeFile)
 				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.font;%s.ttf)'%ThemeFile)
@@ -97,7 +84,7 @@ if arg1 == 'select':
 						xbmc.executebuiltin('Skin.Reset(Startup_Playback_Path)')
 				xbmc.executebuiltin('ReloadSkin')
 			else:
-				dialog.ok('ERROR','','This theme is not compatible with this version[CR]of XBMC4Gamers.','')
+				dialog.ok('ERROR','This theme is not compatible with this version of','XBMC4Gamers.','[CR]Try redownloading the theme.')
 	xbmc.executebuiltin('Skin.Reset(SelectPreviewMode)') # This is reset so the preview isn't shown in the skin settings menu when not required.
 
 
@@ -109,9 +96,9 @@ if arg1 == 'random':
 	else:
 		ThemeFile = Random_Theme[:-4]
 		ThemeColorFile= ThemeFile
-	# Check if it's a v1.4+ Gamers theme.
+	# Check if it's a v2.0+ Gamers theme.
 	with open(os.path.join(xbmc.translatePath('Special://skin/colors'),ThemeColorFile+'.xml')) as test_theme:
-		if 'XBMC4Gamers v1.4+' in test_theme.read():
+		if 'XBMC4Gamers v2.0+' in test_theme.read():
 			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skintheme;%s.xpr)'%ThemeFile)
 			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skincolors;%s.xml)'%ThemeFile)
 			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.font;%s.ttf)'%ThemeFile)

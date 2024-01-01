@@ -11,7 +11,7 @@
 										<width>1170</width>
 										<height>620</height>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">views/banner/thumbnf.png</texture>
+										<texture background="true">views/banner/underlay.png</texture>
 								</control>
 								<control type="image">
 										<left>580</left>
@@ -22,44 +22,14 @@
 										<texture background="true" border="2,2,2,2">views/banner/scrollbar_bar_back.png</texture>
 								</control>
 								<!-- fanart -->
-								<control type="image">
-										<left>595</left>
-										<top>5</top>
-										<width>570</width>
-										<height>321</height>
-										<aspectratio>stretch</aspectratio>
-										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture background="true">no_fanart.jpg</texture>
-								</control>
 								<control type="largeimage">
 										<left>595</left>
 										<top>5</top>
 										<width>570</width>
 										<height>321</height>
-										<aspectratio>stretch</aspectratio>
 										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture>$INFO[listitem.path,,fanart.jpg]</texture>
-										<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-								</control>
-								<control type="largeimage">
-										<left>595</left>
-										<top>5</top>
-										<width>570</width>
-										<height>321</height>
 										<aspectratio>stretch</aspectratio>
-										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture>$INFO[listitem.path,,_resources\artwork\fanart.jpg]</texture>
-										<visible>Skin.HasSetting(_resourcesenabled)</visible>
-								</control>
-								<control type="largeimage">
-										<left>595</left>
-										<top>5</top>
-										<width>570</width>
-										<height>321</height>
-										<aspectratio>stretch</aspectratio>
-										<fadetime>FanartCrossfadeTime</fadetime>
-										<texture>Special://skin/extras/folder fanart/$INFO[ListItem.Label].jpg</texture>
-										<visible>ListItem.IsFolder</visible>
+										<texture fallback="no_fanart.jpg">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View55_Fanart]</texture>
 								</control>
 								<control type="image">
 										<left>595</left>
@@ -69,153 +39,165 @@
 										<aspectratio>stretch</aspectratio>
 										<texture background="true">views/banner/glassoverlay.png</texture>
 								</control>
-								<control type="image">
-										<left>595</left>
-										<top>5</top>
-										<width>570</width>
-										<height>321</height>
-										<aspectratio>stretch</aspectratio>
-										<colordiffuse>view55_info_label_alt</colordiffuse>
-										<texture background="true" border="5">views/banner/poster-border.png</texture>
-								</control>
 								<!-- game info -->
-								<control type="label">
+								<control type="textbox">
 										<left>595</left>
-										<top>360</top>
+										<top>325</top>
 										<width>570</width>
-										<height>20</height>
-										<font>size_28</font>
-										<textcolor>view55_info_label</textcolor>
-										<scroll>true</scroll>
+										<height>35</height>
+										<font>size_22</font>
+										<textcolor>view55_label</textcolor>
+										<shadowcolor>50000000</shadowcolor>
 										<align>left</align>
 										<aligny>center</aligny>
-										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-										<visible>Skin.HasSetting(_resourcesenabled)</visible>
-								</control>
-								<control type="label">
-										<left>595</left>
-										<top>420</top>
-										<width>570</width>
-										<height>20</height>
-										<font>size_20</font>
-										<textcolor>view55_info_label_alt</textcolor>
-										<scroll>true</scroll>
-										<align>left</align>
-										<aligny>center</aligny>
-										<label>$LOCALIZE[31192]</label>
-								</control>
-								<control type="label">
-										<left>600</left>
-										<top>445</top>
-										<width>570</width>
-										<height>20</height>
-										<font>size_20</font>
-										<textcolor>view55_info_label</textcolor>
-										<scroll>true</scroll>
-										<align>left</align>
-										<aligny>center</aligny>
-										<label>$LOCALIZE[31191]</label>
-										<visible>StringCompare(ListItem.ProgramCount,0)</visible>
-								</control>
-								<control type="label">
-										<left>600</left>
-										<top>445</top>
-										<width>570</width>
-										<height>20</height>
-										<font>size_20</font>
-										<textcolor>view55_info_label</textcolor>
-										<scroll>true</scroll>
-										<align>left</align>
-										<aligny>center</aligny>
-										<label>$INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
-										<visible>StringCompare(ListItem.ProgramCount,1)</visible>
-								</control>
-								<control type="label">
-										<left>600</left>
-										<top>445</top>
-										<width>570</width>
-										<height>20</height>
-										<font>size_20</font>
-										<textcolor>view55_info_label</textcolor>
-										<scroll>true</scroll>
-										<align>left</align>
-										<aligny>center</aligny>
-										<label>$INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
-										<visible>IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
-								</control>
-								<control type="label">
-										<left>595</left>
-										<top>470</top>
-										<width>570</width>
-										<height>20</height>
-										<font>size_20</font>
-										<textcolor>view55_info_label_alt</textcolor>
-										<scroll>true</scroll>
-										<align>left</align>
-										<aligny>center</aligny>
-										<label>$LOCALIZE[31193]</label>
-								</control>
-								<control type="label">
-										<left>600</left>
-										<top>495</top>
-										<width>570</width>
-										<height>20</height>
-										<font>size_20</font>
-										<textcolor>view55_info_label</textcolor>
-										<scroll>true</scroll>
-										<align>left</align>
-										<aligny>center</aligny>
-										<label>$INFO[ListItem.Label2]</label>
-								</control>
-								<control type="label">
-										<left>595</left>
-										<top>520</top>
-										<width>570</width>
-										<height>20</height>
-										<font>size_20</font>
-										<textcolor>view55_info_label_alt</textcolor>
-										<scroll>true</scroll>
-										<align>left</align>
-										<aligny>center</aligny>
-										<label>$LOCALIZE[31194]</label>
-								</control>
-								<control type="label">
-										<left>600</left>
-										<top>545</top>
-										<width>570</width>
-										<height>20</height>
-										<font>size_20</font>
-										<textcolor>view55_info_label</textcolor>
-										<scroll>true</scroll>
-										<align>left</align>
-										<aligny>center</aligny>
-										<label>$INFO[ListItem.Path]</label>
+										<label>$INFO[ListItem.Label]</label>
 								</control>
 								<control type="grouplist">
 										<description>Control Info</description>
-										<left>600</left>
-										<top>578</top>
+										<left>595</left>
+										<top>360</top>
 										<width>570</width>
-										<height>30</height>
-										<itemgap>5</itemgap>
-										<orientation>Horizontal</orientation>
+										<height>40</height>
+										<itemgap>0</itemgap>
+										<align>left</align>
+										<orientation>horizontal</orientation>
+										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 										<control type="image">
 												<left>0</left>
 												<top>0</top>
-												<width>30</width>
-												<height>30</height>
-												<aspectratio>stretch</aspectratio>
-												<texture background="true">overlay-watched.png</texture>
-												<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+												<width>25</width>
+												<height>25</height>
+												<colordiffuse>view55_info_label_alt</colordiffuse>
+												<texture>synopsis icons/medium_trainer.png</texture>
+												<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayHasTrainer.png)</visible>
 										</control>
 										<control type="image">
 												<left>0</left>
 												<top>0</top>
-												<width>30</width>
-												<height>30</height>
-												<aspectratio>stretch</aspectratio>
-												<texture background="true">$INFO[listitem.overlay]</texture>
+												<width>25</width>
+												<height>25</height>
+												<colordiffuse>view55_info_label_alt</colordiffuse>
+												<texture>synopsis icons/medium_trained.png</texture>
+												<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayTrained.png)</visible>
 										</control>
+										<!-- dummy label (spacer)  -->
+										<control type="label">
+												<height>28</height>
+												<width min="5" max="10">auto</width>
+												<font>size_13</font>
+												<aligny>center</aligny>
+												<textcolor>view55_info_label</textcolor>
+												<label />
+												<visible>!IsEmpty(listitem.overlay)</visible>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>25</width>
+												<height>25</height>
+												<colordiffuse>view55_info_label_alt</colordiffuse>
+												<texture>synopsis icons/medium_played.png</texture>
+										</control>
+										<control type="label">
+												<height>28</height>
+												<width min="5" max="400">auto</width>
+												<font>size_17</font>
+												<aligny>center</aligny>
+												<textcolor>view55_info_label</textcolor>
+												<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>25</width>
+												<height>25</height>
+												<colordiffuse>view55_info_label_alt</colordiffuse>
+												<texture>synopsis icons/medium_playercount.png</texture>
+										</control>
+										<control type="label">
+												<height>28</height>
+												<width min="5" max="400">auto</width>
+												<font>size_17</font>
+												<aligny>center</aligny>
+												<textcolor>view55_info_label</textcolor>
+												<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>25</width>
+												<height>25</height>
+												<colordiffuse>view55_info_label_alt</colordiffuse>
+												<texture>synopsis icons/medium_rating.png</texture>
+												<visible>!IsEmpty(ListItem.Synopsis_Rating) + !IsEmpty(ListItem.Synopsis_AltName)</visible>
+										</control>
+										<control type="label">
+												<height>28</height>
+												<width min="5" max="400">auto</width>
+												<font>size_17</font>
+												<aligny>center</aligny>
+												<textcolor>view55_info_label</textcolor>
+												<label>[UPPERCASE] $INFO[ListItem.Synopsis_Rating]  [/UPPERCASE]</label>
+												<visible>!IsEmpty(ListItem.Synopsis_Rating)</visible>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>25</width>
+												<height>25</height>
+												<colordiffuse>view55_info_label_alt</colordiffuse>
+												<texture>synopsis icons/medium_date.png</texture>
+												<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
+										</control>
+										<control type="label">
+												<height>28</height>
+												<width min="5" max="400">auto</width>
+												<font>size_17</font>
+												<aligny>center</aligny>
+												<textcolor>view55_info_label</textcolor>
+												<label>[UPPERCASE] $INFO[ListItem.Synopsis_Year][/UPPERCASE]</label>
+										</control>
+								</control>
+								<control type="grouplist">
+										<description>Control Info</description>
+										<left>595</left>
+										<top>390</top>
+										<width>570</width>
+										<height>40</height>
+										<itemgap>0</itemgap>
+										<align>left</align>
+										<orientation>horizontal</orientation>
+										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>25</width>
+												<height>25</height>
+												<colordiffuse>view55_info_label_alt</colordiffuse>
+												<texture>synopsis icons/medium_genre.png</texture>
+												<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+										</control>
+										<control type="label">
+												<height>28</height>
+												<width min="5" max="400">auto</width>
+												<font>size_17</font>
+												<aligny>center</aligny>
+												<textcolor>view55_info_label</textcolor>
+												<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
+										</control>
+								</control>
+								<control type="textbox">
+										<left>595</left>
+										<top>420</top>
+										<width>570</width>
+										<height>196</height>
+										<font>size_15</font>
+										<textcolor>view55_label_alt</textcolor>
+										<shadowcolor>50000000</shadowcolor>
+										<align>justify</align>
+										<aligny>top</aligny>
+										<label>$INFO[ListItem.Synopsis_Overview]</label>
+										<autoscroll delay="8000" time="5000" repeat="10000" condition="true">Conditional</autoscroll>
 								</control>
 								<control type="list" id="55">
 										<left>5</left>
@@ -226,135 +208,58 @@
 										<onright>90</onright>
 										<onup>55</onup>
 										<ondown>55</ondown>
-										<viewtype label="view55">list</viewtype>
+										<viewtype label="view55">biglist</viewtype>
 										<pagecontrol>90</pagecontrol>
 										<scrolltime>230</scrolltime>
 										<orientation>vertical</orientation>
-										<preloaditems>4</preloaditems>
-										<itemlayout height="122" width="570">
-												<control type="group">
-														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="image">
-																<left>10</left>
-																<top>10</top>
-																<width>100</width>
-																<height>100</height>
-																<aspectratio>scale</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
-																<bordertexture border="5">-</bordertexture>
-																<bordersize>1</bordersize>
-																<visible>!Skin.HasSetting(imagestretchmode)</visible>
-														</control>
-														<control type="image">
-																<left>10</left>
-																<top>10</top>
-																<width>100</width>
-																<height>100</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
-																<bordertexture border="5">-</bordertexture>
-																<bordersize>1</bordersize>
-																<visible>Skin.HasSetting(imagestretchmode)</visible>
-														</control>
-														<control type="label">
-																<left>120</left>
-																<top>10</top>
-																<width>420</width>
-																<height>100</height>
-																<font>size_24</font>
-																<textcolor>view55_info_label</textcolor>
-																<scroll>true</scroll>
-																<align>left</align>
-																<aligny>center</aligny>
-																<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-																<wrapmultiline>true</wrapmultiline>
-														</control>
+										<preloaditems>2</preloaditems>
+										<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" height="122" width="570">
+												<control type="image">
+														<left>10</left>
+														<top>10</top>
+														<width>100</width>
+														<height>100</height>
+														<aspectratio>scale</aspectratio>
+														<texture background="true">$INFO[listitem.icon]</texture>
+														<bordertexture border="5">-</bordertexture>
+														<bordersize>1</bordersize>
+														<visible>!Skin.HasSetting(imagestretchmode)</visible>
 												</control>
-												<control type="group">
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="image">
-																<left>0</left>
-																<top>0</top>
-																<width>570</width>
-																<height>120</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">no_banner.png</texture>
-																<bordertexture border="5">-</bordertexture>
-																<bordersize>1</bordersize>
-														</control>
-														<control type="largeimage">
-																<left>0</left>
-																<top>0</top>
-																<width>570</width>
-																<height>120</height>
-																<aspectratio>stretch</aspectratio>
-																<texture>$INFO[listitem.path,,_resources\artwork\banner.png]</texture>
-																<bordertexture border="5">-</bordertexture>
-																<bordersize>1</bordersize>
-														</control>
+												<control type="image">
+														<left>10</left>
+														<top>10</top>
+														<width>100</width>
+														<height>100</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">$INFO[listitem.icon]</texture>
+														<bordertexture border="5">-</bordertexture>
+														<bordersize>1</bordersize>
+														<visible>Skin.HasSetting(imagestretchmode)</visible>
+												</control>
+												<control type="label">
+														<left>120</left>
+														<top>10</top>
+														<width>420</width>
+														<height>100</height>
+														<font>size_24</font>
+														<textcolor>view55_info_label</textcolor>
+														<scroll>true</scroll>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+														<wrapmultiline>true</wrapmultiline>
 												</control>
 										</itemlayout>
-										<focusedlayout height="122" width="570">
-												<control type="group">
-														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="image">
-																<left>10</left>
-																<top>10</top>
-																<width>100</width>
-																<height>100</height>
-																<aspectratio>scale</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
-																<bordertexture border="5">-</bordertexture>
-																<bordersize>1</bordersize>
-																<visible>!Skin.HasSetting(imagestretchmode)</visible>
-														</control>
-														<control type="image">
-																<left>10</left>
-																<top>10</top>
-																<width>100</width>
-																<height>100</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.icon]</texture>
-																<bordertexture border="5">-</bordertexture>
-																<bordersize>1</bordersize>
-																<visible>Skin.HasSetting(imagestretchmode)</visible>
-														</control>
-														<control type="label">
-																<left>120</left>
-																<top>10</top>
-																<width>420</width>
-																<height>100</height>
-																<font>size_24</font>
-																<textcolor>view55_info_label</textcolor>
-																<scroll>true</scroll>
-																<align>left</align>
-																<aligny>center</aligny>
-																<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-																<wrapmultiline>true</wrapmultiline>
-														</control>
-												</control>
-												<control type="group">
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="image">
-																<left>0</left>
-																<top>0</top>
-																<width>570</width>
-																<height>120</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">no_banner.png</texture>
-																<bordertexture border="5">-</bordertexture>
-																<bordersize>1</bordersize>
-														</control>
-														<control type="largeimage">
-																<left>0</left>
-																<top>0</top>
-																<width>570</width>
-																<height>120</height>
-																<aspectratio>stretch</aspectratio>
-																<texture>$INFO[listitem.path,,_resources\artwork\banner.png]</texture>
-																<bordertexture border="5">-</bordertexture>
-																<bordersize>1</bordersize>
-														</control>
+										<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="122" width="570">
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>570</width>
+														<height>120</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">no_banner.png</texture>
+														<bordertexture border="5">-</bordertexture>
+														<bordersize>1</bordersize>
 												</control>
 												<control type="image">
 														<left>0</left>
@@ -362,7 +267,83 @@
 														<width>570</width>
 														<height>120</height>
 														<aspectratio>stretch</aspectratio>
-														<colordiffuse>view55_info_label_alt</colordiffuse>
+														<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\banner.png</texture>
+														<bordertexture border="5">-</bordertexture>
+														<bordersize>1</bordersize>
+												</control>
+										</itemlayout>
+										<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="122" width="570">
+												<control type="image">
+														<left>10</left>
+														<top>10</top>
+														<width>100</width>
+														<height>100</height>
+														<aspectratio>scale</aspectratio>
+														<texture background="true">$INFO[listitem.icon]</texture>
+														<bordertexture border="5">-</bordertexture>
+														<bordersize>1</bordersize>
+														<visible>!Skin.HasSetting(imagestretchmode)</visible>
+												</control>
+												<control type="image">
+														<left>10</left>
+														<top>10</top>
+														<width>100</width>
+														<height>100</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">$INFO[listitem.icon]</texture>
+														<bordertexture border="5">-</bordertexture>
+														<bordersize>1</bordersize>
+														<visible>Skin.HasSetting(imagestretchmode)</visible>
+												</control>
+												<control type="label">
+														<left>120</left>
+														<top>10</top>
+														<width>420</width>
+														<height>100</height>
+														<font>size_24</font>
+														<textcolor>view55_info_label</textcolor>
+														<scroll>true</scroll>
+														<align>left</align>
+														<aligny>center</aligny>
+														<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+														<wrapmultiline>true</wrapmultiline>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>570</width>
+														<height>120</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true" border="5">views/banner/poster-border.png</texture>
+												</control>
+										</focusedlayout>
+										<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="122" width="570">
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>570</width>
+														<height>120</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">no_banner.png</texture>
+														<bordertexture border="5">-</bordertexture>
+														<bordersize>1</bordersize>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>570</width>
+														<height>120</height>
+														<aspectratio>stretch</aspectratio>
+														<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\banner.png</texture>
+														<bordertexture border="5">-</bordertexture>
+														<bordersize>1</bordersize>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>570</width>
+														<height>120</height>
+														<aspectratio>stretch</aspectratio>
 														<texture background="true" border="5">views/banner/poster-border.png</texture>
 												</control>
 										</focusedlayout>
@@ -375,7 +356,7 @@
 										<onleft>55</onleft>
 										<orientation>vertical</orientation>
 										<texturesliderbackground>-</texturesliderbackground>
-										<include condition="Control.IsVisible(55)">ViewScrollBarVer</include>
+										<include>View.ScrollBar.Vertical</include>
 								</control>
 						</control>
 				</control>

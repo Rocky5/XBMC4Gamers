@@ -12,67 +12,63 @@
 										<onright>63</onright>
 										<onup>9000</onup>
 										<ondown>90</ondown>
-										<viewtype label="view63">list</viewtype>
+										<viewtype label="view63">biglist</viewtype>
 										<pagecontrol>90</pagecontrol>
 										<scrolltime>230</scrolltime>
 										<focusposition>2</focusposition>
-										<movement>0</movement>
 										<orientation>horizontal</orientation>
-										<preloaditems>4</preloaditems>
-										<itemlayout height="290" width="414">
+										<preloaditems>2</preloaditems>
+										<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" height="290" width="414">
 												<control type="group">
 														<animation effect="slide" reversable="true" start="0,0" end="0,-40" time="0" condition="!Skin.HasSetting(_resourcesenabled)">Conditional</animation>
 														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
 														<include>fallback_view_itemlayout</include>
 												</control>
-												<control type="group">
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="image">
-																<left>5</left>
-																<top>5</top>
-																<width>149</width>
-																<height>264</height>
-																<aspectratio align="" aligny="bottom">stretch</aspectratio>
-																<texture background="true">no_opencase.png</texture>
-														</control>
-														<control type="largeimage">
-																<left>5</left>
-																<top>5</top>
-																<width>149</width>
-																<height>264</height>
-																<aspectratio align="" aligny="bottom">stretch</aspectratio>
-																<texture background="true">$INFO[listitem.path,,_resources\artwork\opencase.png]</texture>
-														</control>
+										</itemlayout>
+										<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="290" width="414">
+												<control type="image">
+														<left>5</left>
+														<top>5</top>
+														<width>149</width>
+														<height>264</height>
+														<aspectratio align="" aligny="bottom">stretch</aspectratio>
+														<texture background="true">no_opencase.png</texture>
+												</control>
+												<control type="largeimage">
+														<left>5</left>
+														<top>5</top>
+														<width>149</width>
+														<height>264</height>
+														<aspectratio align="" aligny="bottom">stretch</aspectratio>
+														<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\opencase.png</texture>
 												</control>
 										</itemlayout>
-										<focusedlayout height="290" width="414">
+										<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="290" width="414">
 												<control type="group">
-														<animation effect="slide" reversable="true" start="0,0" end="0,-40" time="0" condition="!Skin.HasSetting(_resourcesenabled)">Conditional</animation>
-														<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+														<animation effect="slide" reversable="true" start="0,0" end="0,-40" time="0" condition="true">Conditional</animation>
 														<include>fallback_view_focusedlayout</include>
 												</control>
-												<control type="group">
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
-														<control type="image">
-																<left>33</left>
-																<top>5</top>
-																<width>149</width>
-																<height>264</height>
-																<aspectratio align="" aligny="bottom">stretch</aspectratio>
-																<texture background="true">no_opencase.png</texture>
-																<animation reversible="false" effect="zoom" start="33,5,149,264" end="23,-31,169,304" time="100">focus</animation>
-																<animation reversible="false" effect="zoom" end="33,5,149,264" start="23,-31,169,304" time="100">unfocus</animation>
-														</control>
-														<control type="largeimage">
-																<left>33</left>
-																<top>5</top>
-																<width>149</width>
-																<height>264</height>
-																<aspectratio align="" aligny="bottom">stretch</aspectratio>
-																<texture background="true">$INFO[listitem.path,,_resources\artwork\opencase.png]</texture>
-																<animation reversible="false" effect="zoom" start="33,5,149,264" end="23,-31,169,304" time="100">focus</animation>
-																<animation reversible="false" effect="zoom" end="33,5,149,264" start="23,-31,169,304" time="100">unfocus</animation>
-														</control>
+										</focusedlayout>
+										<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="290" width="414">
+												<control type="image">
+														<left>33</left>
+														<top>5</top>
+														<width>149</width>
+														<height>264</height>
+														<aspectratio align="" aligny="bottom">stretch</aspectratio>
+														<texture background="true">no_opencase.png</texture>
+														<animation reversible="false" effect="zoom" start="33,5,149,264" end="23,-31,169,304" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="33,5,149,264" start="23,-31,169,304" time="100">unfocus</animation>
+												</control>
+												<control type="largeimage">
+														<left>33</left>
+														<top>5</top>
+														<width>149</width>
+														<height>264</height>
+														<aspectratio align="" aligny="bottom">stretch</aspectratio>
+														<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\opencase.png</texture>
+														<animation reversible="false" effect="zoom" start="33,5,149,264" end="23,-31,169,304" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="33,5,149,264" start="23,-31,169,304" time="100">unfocus</animation>
 												</control>
 										</focusedlayout>
 								</control>
@@ -82,13 +78,13 @@
 										<width>1280</width>
 										<height>36</height>
 										<font>size_35</font>
-										<textcolor>$VAR[var-labelcolour]</textcolor>
+										<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 										<scroll>true</scroll>
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(63).ListItem.IsFolder">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(63).ListItem.IsFolder">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 								</control>
 								<control type="grouplist">
 										<left>0</left>
@@ -97,14 +93,14 @@
 										<itemgap>5</itemgap>
 										<align>center</align>
 										<orientation>horizontal</orientation>
-										<visible>!Control.HasFocus(92) + !ListItem.IsFolder</visible>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !Container(63).ListItem.IsFolder">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + Container(63).ListItem.IsFolder">Conditional</animation>
+										<visible>!Control.HasFocus(92) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
 										<control type="label">
 												<width min="0" max="640">auto</width>
 												<height>30</height>
 												<font>size_15</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<aligny>center</aligny>
 												<label>$LOCALIZE[31186]</label>
@@ -114,7 +110,7 @@
 												<width min="0" max="640">auto</width>
 												<height>30</height>
 												<font>size_15</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<aligny>center</aligny>
 												<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
@@ -124,7 +120,7 @@
 												<width min="0" max="640">auto</width>
 												<height>30</height>
 												<font>size_15</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<aligny>center</aligny>
 												<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
@@ -134,7 +130,7 @@
 												<width min="0" max="640">auto</width>
 												<height>30</height>
 												<font>size_15</font>
-												<textcolor>$VAR[var-labelcolour]</textcolor>
+												<textcolor>$VAR[Alt_Label_Colour]</textcolor>
 												<scroll>true</scroll>
 												<aligny>center</aligny>
 												<label>- Has Trainer</label>
@@ -143,7 +139,7 @@
 								</control>
 								<control type="scrollbar" id="90">
 										<onup>63</onup>
-										<include condition="Control.IsVisible(63)">ViewScrollBarHor</include>
+										<include>View.ScrollBar.Horizontal</include>
 								</control>
 						</control>
 				</control>

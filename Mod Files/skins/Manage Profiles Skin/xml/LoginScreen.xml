@@ -1,18 +1,118 @@
 <window id="29">
 		<defaultcontrol always="true">52</defaultcontrol>
 		<allowoverlay>no</allowoverlay>
+		<onload>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Edit Mode Check.py)</onload>
 		<controls>
 				<control type="button" id="51">
 						<left>-500</left>
 				</control>
-				<include>CommonBackground</include>
-				<!-- Snow effect at winter time -->
-				<include condition="System.Date(12-20,1-1)">snow</include>
-				<!-- Halloween -->
-				<include condition="System.Date(10-24,11-1)">halloween</include>
+				<include condition="Window.IsActive(29)">Kiosk.Mode.Secret.Code</include>
+				<include>Login.Screen.Background.Stuff</include>
+				<!-- Profile List -->
+				<control type="fixedlist" id="52">
+						<left>0</left>
+						<top>230</top>
+						<width>1280</width>
+						<height>720</height>
+						<onleft>52</onleft>
+						<onright>52</onright>
+						<onup>9000</onup>
+						<ondown>-</ondown>
+						<viewtype>list</viewtype>
+						<scrolltime>100</scrolltime>
+						<orientation>horizontal</orientation>
+						<focusposition>2</focusposition>
+						<include condition="!Window.Previous(1113) + !Window.Previous(1116)">LoginView</include>
+						<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+						<itemlayout height="250" width="256">
+								<control type="image">
+										<left>35</left>
+										<top>8</top>
+										<width>185</width>
+										<height>185</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<colordiffuse>50FFFFFF</colordiffuse>
+										<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[listitem.Icon]</texture>
+								</control>
+								<control type="image">
+										<left>35</left>
+										<top>8</top>
+										<width>185</width>
+										<height>185</height>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<colordiffuse>40000000</colordiffuse>
+										<texture background="true">windows\login\user_thumb_overlay.png</texture>
+								</control>
+								<control type="label">
+										<left>8</left>
+										<top>210</top>
+										<width>246</width>
+										<height>16</height>
+										<align>center</align>
+										<font>size_24</font>
+										<textcolor>50000000</textcolor>
+										<shadowcolor>10000000</shadowcolor>
+										<label>$INFO[listitem.Label]</label>
+								</control>
+								<control type="label">
+										<left>8</left>
+										<top>240</top>
+										<width>246</width>
+										<height>16</height>
+										<align>center</align>
+										<font>size_16</font>
+										<textcolor>50000000</textcolor>
+										<shadowcolor>10000000</shadowcolor>
+										<label>$INFO[ListItem.label2]</label>
+								</control>
+						</itemlayout>
+						<focusedlayout height="250" width="256">
+								<control type="image">
+										<left>35</left>
+										<top>8</top>
+										<width>185</width>
+										<height>185</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[listitem.Icon]</texture>
+								</control>
+								<control type="image">
+										<left>35</left>
+										<top>8</top>
+										<width>185</width>
+										<height>185</height>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<colordiffuse>80000000</colordiffuse>
+										<texture background="true">windows\login\user_thumb_overlay.png</texture>
+								</control>
+								<control type="label">
+										<left>8</left>
+										<top>210</top>
+										<width>246</width>
+										<height>16</height>
+										<align>center</align>
+										<font>size_24</font>
+										<textcolor>FFFFFFFF</textcolor>
+										<selectedcolor>FFFFFFFF</selectedcolor>
+										<shadowcolor>50000000</shadowcolor>
+										<label>$INFO[listitem.Label]</label>
+								</control>
+								<control type="label">
+										<left>8</left>
+										<top>240</top>
+										<width>246</width>
+										<height>16</height>
+										<align>center</align>
+										<font>size_16</font>
+										<textcolor>A0FFFFFF</textcolor>
+										<selectedcolor>70FFFFFF</selectedcolor>
+										<shadowcolor>20000000</shadowcolor>
+										<label>$INFO[ListItem.label2]</label>
+								</control>
+						</focusedlayout>
+				</control>
 				<control type="group">
-						<animation effect="fade" time="100">WindowOpen</animation>
-						<animation effect="fade" time="400" delay="300">WindowClose</animation>
+						<animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
+						<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
 						<control type="label">
 								<left>10r</left>
 								<top>35r</top>
@@ -20,10 +120,11 @@
 								<height>36</height>
 								<font>size_15</font>
 								<textcolor>80FFFFFF</textcolor>
+								<shadowcolor>20000000</shadowcolor>
 								<align>right</align>
 								<aligny>center</aligny>
 								<label>$LOCALIZE[31522]</label>
-								<visible>Skin.HasSetting(editmode)</visible>
+								<visible>!Skin.HasSetting(kioskmode)</visible>
 						</control>
 						<control type="label">
 								<left>10</left>
@@ -32,6 +133,7 @@
 								<height>36</height>
 								<font>size_15</font>
 								<textcolor>80FFFFFF</textcolor>
+								<shadowcolor>20000000</shadowcolor>
 								<align>left</align>
 								<aligny>center</aligny>
 								<label>$LOCALIZE[31000]</label>
@@ -41,9 +143,10 @@
 								<top>30</top>
 								<width>1280</width>
 								<height>28</height>
-								<font>size_25</font>
+								<font>size_24</font>
 								<align>center</align>
 								<textcolor>FFFFFFFF</textcolor>
+								<shadowcolor>50000000</shadowcolor>
 								<label>$LOCALIZE[31523]</label>
 						</control>
 						<control type="label">
@@ -54,186 +157,17 @@
 								<font>size_22</font>
 								<align>center</align>
 								<textcolor>80FFFFFF</textcolor>
+								<shadowcolor>20000000</shadowcolor>
 								<label>$LOCALIZE[31524]</label>
 						</control>
-				</control>
-				<control type="group">
-						<include>DialogEffectZoomFast</include>
-						<!-- Profile List -->
-						<control type="fixedlist" id="52">
+						<control type="grouplist">
 								<left>0</left>
-								<top>157</top>
+								<top>23r</top>
 								<width>1280</width>
-								<height>720</height>
-								<onleft>-</onleft>
-								<onright>-</onright>
-								<onup>-</onup>
-								<ondown>-</ondown>
-								<viewtype>list</viewtype>
-								<scrolltime>300</scrolltime>
-								<orientation>horizontal</orientation>
-								<preloaditems>2</preloaditems>
-								<focusposition>1</focusposition>
-								<itemlayout height="478" width="387">
-										<control type="image">
-												<left>67</left>
-												<top>473</top>
-												<width>372</width>
-												<height>6</height>
-												<aspectratio>stretch</aspectratio>
-												<colordiffuse>50FFFFFF</colordiffuse>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true">windows\login\poster_shadow.png</texture>
-										</control>
-										<control type="image">
-												<left>77</left>
-												<top>97</top>
-												<width>352</width>
-												<height>378</height>
-												<aspectratio>stretch</aspectratio>
-												<colordiffuse>50FFFFFF</colordiffuse>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true">background diffuse.png</texture>
-										</control>
-										<control type="image">
-												<left>174</left>
-												<top>150</top>
-												<width>156</width>
-												<height>156</height>
-												<aspectratio>scale</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true">$INFO[listitem.Icon]</texture>
-										</control>
-										<control type="label">
-												<left>77</left>
-												<top>334</top>
-												<width>352</width>
-												<height>16</height>
-												<align>center</align>
-												<font>size_24</font>
-												<textcolor>FF424542</textcolor>
-												<selectedcolor>FF424542</selectedcolor>
-												<label>$INFO[listitem.Label]</label>
-										</control>
-										<control type="label">
-												<left>77</left>
-												<top>382</top>
-												<width>352</width>
-												<height>16</height>
-												<align>center</align>
-												<font>size_16</font>
-												<textcolor>FF424542</textcolor>
-												<selectedcolor>FF424542</selectedcolor>
-												<label>$INFO[ListItem.label2]</label>
-												<animation effect="fade" start="0" end="60" condition="true">Conditional</animation>
-										</control>
-								</itemlayout>
-								<focusedlayout height="563" width="387">
-										<control type="image">
-												<left>77</left>
-												<top>472</top>
-												<width>352</width>
-												<height>106</height>
-												<aspectratio>stretch</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true">windows\login\poster_shadow.png</texture>
-										</control>
-										<control type="image">
-												<left>77</left>
-												<top>26</top>
-												<width>352</width>
-												<height>449</height>
-												<aspectratio>stretch</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true">windows\login\profile_underlay.png</texture>
-												<visible>Control.HasFocus(52)</visible>
-										</control>
-										<control type="image">
-												<left>77</left>
-												<top>26</top>
-												<width>352</width>
-												<height>449</height>
-												<aspectratio>stretch</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true">windows\login\profile_underlay_alt.png</texture>
-												<visible>!Control.HasFocus(52)</visible>
-										</control>
-										<control type="image">
-												<left>130</left>
-												<top>0</top>
-												<width>246</width>
-												<height>246</height>
-												<aspectratio>scale</aspectratio>
-												<fadetime>ThumbCrossfadeTime</fadetime>
-												<texture background="true">$INFO[listitem.Icon]</texture>
-										</control>
-										<control type="label">
-												<left>77</left>
-												<top>282</top>
-												<width>352</width>
-												<height>16</height>
-												<align>center</align>
-												<font>size_24</font>
-												<textcolor>FFFFFFFF</textcolor>
-												<selectedcolor>FFFFFFFF</selectedcolor>
-												<label>$INFO[listitem.Label]</label>
-										</control>
-										<control type="label">
-												<left>77</left>
-												<top>330</top>
-												<width>352</width>
-												<height>16</height>
-												<align>center</align>
-												<font>size_16</font>
-												<textcolor>80FFFFFF</textcolor>
-												<selectedcolor>50FFFFFF</selectedcolor>
-												<label>$INFO[ListItem.label2]</label>
-										</control>
-								</focusedlayout>
-						</control>
-						<control type="grouplist">
-								<left>465</left>
-								<top>535</top>
-								<width>352</width>
-								<height>80</height>
-								<itemgap>10</itemgap>
-								<orientation>Horizontal</orientation>
-								<align>center</align>
-								<animation reversible="false" effect="fade" start="0" end="100" delay="300" time="500" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious">Conditional</animation>
-								<animation type="Conditional" reversible="false" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious" loop="true">
-										<effect type="fade" start="50" end="100" time="1000" />
-										<effect type="fade" start="100" end="50" delay="2000" time="1000" />
-								</animation>
-								<!-- A Button -->
-								<control type="image">
-										<left>0</left>
-										<top>0</top>
-										<width>32</width>
-										<height>32</height>
-										<colordiffuse>FFFFFFFF</colordiffuse>
-										<aspectratio>stretch</aspectratio>
-										<texture>pad_buttons\login\a_button_login.png</texture>
-								</control>
-								<control type="label">
-										<left>0</left>
-										<top>0</top>
-										<width min="50" max="300">auto</width>
-										<height>12</height>
-										<font>size_24</font>
-										<textcolor>FFFFFFFF</textcolor>
-										<label>$LOCALIZE[31520]</label>
-										<animation effect="slide" start="0,0" end="0,1" time="0" condition="true">Conditional</animation>
-								</control>
-						</control>
-						<control type="grouplist">
-								<left>465</left>
-								<top>605</top>
-								<width>352</width>
 								<height>80</height>
 								<itemgap>5</itemgap>
 								<orientation>Horizontal</orientation>
 								<align>center</align>
-								<animation reversible="false" effect="fade" start="0" end="100" delay="300" time="500" condition="!Container(52).OnNext + !Container(52).OnPrevious + !Container(52).OnScrollNext + !Container(52).OnScrollPrevious">Conditional</animation>
 								<!-- White Button -->
 								<control type="image">
 										<left>0</left>
@@ -243,19 +177,19 @@
 										<colordiffuse>A0FFFFFF</colordiffuse>
 										<aspectratio>stretch</aspectratio>
 										<texture>pad_buttons\login\white_button_small.png</texture>
-										<visible>Skin.HasSetting(editmode)</visible>
+										<visible>Skin.HasSetting(kioskmode)</visible>
 								</control>
 								<control type="label">
 										<left>0</left>
 										<top>0</top>
 										<width min="50" max="139">auto</width>
 										<height>12</height>
-										<font>size_12</font>
+										<font>size_13</font>
 										<align>left</align>
 										<textcolor>A0FFFFFF</textcolor>
-										<label>$LOCALIZE[31521]</label>
-										<visible>Skin.HasSetting(editmode)</visible>
-										<animation effect="slide" start="0,0" end="0,1" time="0" condition="true">Conditional</animation>
+										<label>$LOCALIZE[31521]  </label>
+										<visible>Skin.HasSetting(kioskmode)</visible>
+										<animation effect="slide" start="0,0" end="0,0" time="0" condition="true">Conditional</animation>
 								</control>
 								<!-- Start Button -->
 								<control type="image">
@@ -266,151 +200,22 @@
 										<colordiffuse>A0FFFFFF</colordiffuse>
 										<aspectratio>stretch</aspectratio>
 										<texture>pad_buttons\login\start_button_small.png</texture>
-										<visible>Skin.HasSetting(editmode)</visible>
+										<visible>Skin.HasSetting(kioskmode)</visible>
 								</control>
 								<control type="label">
 										<left>0</left>
 										<top>0</top>
 										<width min="50" max="139">auto</width>
 										<height>12</height>
-										<font>size_12</font>
+										<font>size_13</font>
 										<align>left</align>
 										<textcolor>A0FFFFFF</textcolor>
-										<label>$LOCALIZE[31090]</label>
-										<visible>Skin.HasSetting(editmode)</visible>
-										<animation effect="slide" start="0,0" end="0,1" time="0" condition="true">Conditional</animation>
+										<label>$LOCALIZE[33068] $LOCALIZE[33063]</label>
+										<visible>Skin.HasSetting(kioskmode)</visible>
+										<animation effect="slide" start="0,0" end="0,0" time="0" condition="true">Conditional</animation>
 								</control>
 						</control>
 				</control>
-				<!-- Secret Passcode -->
-				<control type="button" id="19">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onleft>52</onleft>
-						<onright>52</onright>
-						<onup>20</onup>
-						<ondown>52</ondown>
-				</control>
-				<control type="button" id="20">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onleft>52</onleft>
-						<onright>52</onright>
-						<onup>21</onup>
-						<ondown>52</ondown>
-				</control>
-				<control type="button" id="21">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onleft>52</onleft>
-						<onright>52</onright>
-						<onup>52</onup>
-						<ondown>22</ondown>
-				</control>
-				<control type="button" id="22">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onleft>52</onleft>
-						<onright>52</onright>
-						<onup>52</onup>
-						<ondown>23</ondown>
-				</control>
-				<control type="button" id="23">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onleft>24</onleft>
-						<onright>52</onright>
-						<onup>52</onup>
-						<ondown>52</ondown>
-				</control>
-				<control type="button" id="24">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onleft>25</onleft>
-						<onright>52</onright>
-						<onup>52</onup>
-						<ondown>52</ondown>
-				</control>
-				<control type="button" id="25">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onleft>52</onleft>
-						<onright>26</onright>
-						<onup>52</onup>
-						<ondown>52</ondown>
-				</control>
-				<control type="button" id="26">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onleft>52</onleft>
-						<onright>27</onright>
-						<onup>52</onup>
-						<ondown>52</ondown>
-				</control>
-				<control type="button" id="27">
-						<description>Secret Code Button</description>
-						<left>-5000</left>
-						<label>-</label>
-						<onclick>RunScript( Special://xbmc/system/scripts/XBMC4Gamers/Utilities/Edit Mode.py )</onclick>
-						<onclick>SetFocus(51)</onclick>
-						<onleft>52</onleft>
-						<onright>52</onright>
-						<onup>52</onup>
-						<ondown>52</ondown>
-				</control>
-				<!-- Had to add the exact date for each year :/ damn easter! -->
-				<include condition="StringCompare(System.Date,Sun, Apr 17, 2022)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 17 Apr 2022)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 9 2023)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 9 Apr 2023)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Mar 31 2024)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 31 Mar 2024)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 20 2025)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 20 Apr 2025)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 5 2026)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 5 Apr 2026)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Mar 28 2027)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 28 Mar 2027)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 16 2028)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 16 Apr 2028)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 1 2029)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 1 Apr 2029)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 21 2030)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 21 Apr 2030)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 13 2031)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 13 Apr 2031)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Mar 28 2032)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 28 Mar 2032)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 17 2033)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 17 Apr 2033)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 9 2034)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 9 Apr 2034)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Mar 25 2035)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 25 Mar 2035)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 13 2036)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 13 Apr 2036)">easter</include>
-				<!-- birthdays -->
-				<include condition="SubString(System.Date,Jan)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jan.xml">Jan</include>
-				<include condition="SubString(System.Date,Feb)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Feb.xml">Feb</include>
-				<include condition="SubString(System.Date,Mar)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Mar.xml">Mar</include>
-				<include condition="SubString(System.Date,Apr)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Apr.xml">Apr</include>
-				<include condition="SubString(System.Date,May)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_May.xml">May</include>
-				<include condition="SubString(System.Date,Jun)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jun.xml">Jun</include>
-				<include condition="SubString(System.Date,Jul)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jul.xml">Jul</include>
-				<include condition="SubString(System.Date,Aug)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Aug.xml">Aug</include>
-				<include condition="SubString(System.Date,Sep)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Sep.xml">Sep</include>
-				<include condition="SubString(System.Date,Oct)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Oct.xml">Oct</include>
-				<include condition="SubString(System.Date,Nov)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Nov.xml">Nov</include>
-				<include condition="SubString(System.Date,Dec)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Dec.xml">Dec</include>
-				
 				<include>View_Options</include>
 		</controls>
 </window>

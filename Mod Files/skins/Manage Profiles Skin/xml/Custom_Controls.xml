@@ -66,7 +66,7 @@
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32006]</label>
 						<include>Window_OpenClose_Animation</include>
-						<visible>Skin.HasSetting(EditMode)</visible>
+						<visible>Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="label">
 						<description>Y Button</description>
@@ -80,7 +80,7 @@
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32062]</label>
 						<include>Window_OpenClose_Animation</include>
-						<visible>!Skin.HasSetting(EditMode)</visible>
+						<visible>!Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="label">
 						<description>Black Button</description>
@@ -94,7 +94,7 @@
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32063]</label>
 						<include>Window_OpenClose_Animation</include>
-						<visible>Skin.HasSetting(EditMode)</visible>
+						<visible>Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="label">
 						<description>Black Button</description>
@@ -108,7 +108,7 @@
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32011]</label>
 						<include>Window_OpenClose_Animation</include>
-						<visible>!Skin.HasSetting(EditMode)</visible>
+						<visible>!Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="label">
 						<description>White Button</description>
@@ -135,7 +135,7 @@
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32064]</label>
 						<include>Window_OpenClose_Animation</include>
-						<visible>Skin.HasSetting(EditMode)</visible>
+						<visible>Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="label">
 						<description>Back Button</description>
@@ -149,7 +149,7 @@
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32062]</label>
 						<include>Window_OpenClose_Animation</include>
-						<visible>!Skin.HasSetting(EditMode)</visible>
+						<visible>!Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="label">
 						<description>Start Button</description>
@@ -176,7 +176,7 @@
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32065]</label>
 						<include>Window_OpenClose_Animation</include>
-						<visible>Skin.HasSetting(EditMode)</visible>
+						<visible>Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="label">
 						<description>Left Stick Button</description>
@@ -190,7 +190,7 @@
 						<textcolor>white</textcolor>
 						<label>$LOCALIZE[32062]</label>
 						<include>Window_OpenClose_Animation</include>
-						<visible>!Skin.HasSetting(EditMode)</visible>
+						<visible>!Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="label">
 						<description>Right Stick Button</description>
@@ -244,6 +244,5 @@
 						<label>$LOCALIZE[32069]</label>
 						<include>Window_OpenClose_Animation</include>
 				</control>
-				<include>WindowFooter</include>
 		</controls>
 </window>

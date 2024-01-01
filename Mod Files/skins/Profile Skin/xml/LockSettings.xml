@@ -5,7 +5,7 @@
 				<left>290</left>
 				<top>75</top>
 		</coordinates>
-		<include>dialogeffect</include>
+		<include>Dialog.Effect</include>
 		<controls>
 				<control type="image">
 						<description>background image</description>

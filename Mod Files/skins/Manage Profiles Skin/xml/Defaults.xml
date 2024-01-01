@@ -11,12 +11,14 @@
 				<label>-</label>
 				<font>size_23</font>
 				<textcolor>default_label</textcolor>
+				<selectedcolor>default_label</selectedcolor>
 		</default>
 		<default type="fadelabel">
 				<left>80</left>
 				<top>60</top>
 				<font>size_23</font>
 				<textcolor>default_label</textcolor>
+				<selectedcolor>default_label</selectedcolor>
 		</default>
 		<default type="button">
 				<left>300</left>

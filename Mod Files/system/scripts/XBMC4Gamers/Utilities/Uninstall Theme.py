@@ -2,30 +2,18 @@ import glob,os,shutil,sys,time,xbmc,xbmcgui
 
 xbmc.executebuiltin("Skin.SetBool(SelectPreviewMode)") # This is set so the preview is shown in the skin settings menu when required.
 xbmc.executebuiltin('Dialog.Close(1100,true)')
-TMP_Theme_Path = 'Z:/temp/themes/'
-if os.path.isdir(TMP_Theme_Path):
-	shutil.rmtree(TMP_Theme_Path)
-os.makedirs(TMP_Theme_Path)
-XPR = os.listdir(xbmc.translatePath('Special://skin/media'))
-Filter_XPR = [os.path.basename(r.lower()) for r in XPR if not "textures.xpr" in r.lower() and not "night.xpr" in r.lower()]
 
-
-try:
-	for fn in Filter_XPR:
-		with open(os.path.join(TMP_Theme_Path,fn.upper()),"w") as ThemeFiles:
-			ThemeFiles.write('')
-except: pass
-
-
-if len(os.listdir(TMP_Theme_Path)) > 0:
-	XPR = sorted(os.listdir(TMP_Theme_Path))
-	Filter_XPR = [os.path.basename(r[0:-4]) for r in XPR]
-	ThemeFolder = xbmcgui.Dialog().select("Uninstall Theme",Filter_XPR)
+if len(glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))) > 0:
+	Filter_XPR = sorted([os.path.basename(x.lower()) for x in glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))], key=None, reverse=0)
+	Filter_XPR.remove("textures.xpr")
+	Filter_XPR.remove("night.xpr")
+	Filter_XPR = [os.path.basename(x.replace(".xpr","").title()) for x in Filter_XPR]
+	ThemeFolder = xbmcgui.Dialog().select('Select Theme',Filter_XPR,10000)
 	
 	if ThemeFolder == -1:
 		pass
 	else:
-		Theme = XPR[ThemeFolder][0:-4]
+		Theme = Filter_XPR[ThemeFolder]
 		if xbmcgui.Dialog().yesno('Would you like to uninstall',Theme.upper(),'','','No','Yes'):
 			
 			# Check if current theme is the one you want to uninstall and change to the default theme
@@ -90,4 +78,3 @@ else:
 
 
 xbmc.executebuiltin("Skin.Reset(SelectPreviewMode)") # This is reset so the preview isn't shown in the skin settings menu when not required.
-if os.path.isdir(TMP_Theme_Path): shutil.rmtree(TMP_Theme_Path)

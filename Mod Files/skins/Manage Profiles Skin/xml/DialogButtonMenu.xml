@@ -9,7 +9,7 @@
 						<height>0</height>
 						<texturefocus>-</texturefocus>
 						<texturenofocus>-</texturenofocus>
-						<onfocus>ActivateWindow(1116)</onfocus>
+						<onfocus>ActivateWindow(1113)</onfocus>
 						<onup>1</onup>
 						<ondown>1</ondown>
 						<enable>System.HasLoginScreen</enable>
