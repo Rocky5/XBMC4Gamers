@@ -49,7 +49,7 @@
  ### Login screen
  * Black, UP, UP, DOWN, DOWN, LEFT, LEFT, RIGHT, RIGHT, A
  
- **note:** The same combination will also enable "Kiosk mode" if its disabled
+ * **note:** The same combination will also enable "Kiosk mode" if its disabled on the login screen.
 
 ## Game Resources and Synopsis
  * There is an example located [here](https://github.com/Rocky5/XBMC4Gamers/tree/master/Synopsis%20Example)
