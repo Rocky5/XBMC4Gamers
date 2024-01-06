@@ -159,6 +159,8 @@
 						<visible>!Skin.HasSetting(AdultProfile)</visible>
 				</control>
 				<control type="textbox">
+						<left>0</left>
+						<top>0</top>
 						<include>1280x720</include>
 						<font>size_50</font>
 						<textcolor>130_header_label</textcolor>
