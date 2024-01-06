@@ -35,29 +35,28 @@
  * Select Add Profile...
  * Enter your desired name
  * Now select an profile image
- * Now Log out. Press the (R) Stick in
- 
-## Individual Save Directories For Each Profile
- * Select the **Manage Profiles** profile
- * Toggle the **Individual Save Directories For Each Profile** option
- * **note:** This option is to only be used if **XBMC4Gamers** is being run as a dashboard. A backup is created of your original UDATA directory. Any softmod saves are transfered to the new profiles save directory automatically.
+ * Now Load your profile
  
 ## Setup Birthday Dates
  * Select the **Manage Profiles** profile
  * Select the **Setup Birthday Dates** option
  * Enable up to 5 birthdays, self explanatory
  
-## Toggle Edit Mode
- * Enter this key combination at the login screen
- * Up, UP, DOWN, DOWN, LEFT, LEFT, RIGHT, RIGHT, A
+## Toggle Kiosk Mode
+ ### Root menu (where applications, games etc... are)
+ * Y, UP, UP, DOWN, DOWN, LEFT, LEFT, RIGHT, RIGHT, A
+ 
+ ### Login screen
+ * Black, UP, UP, DOWN, DOWN, LEFT, LEFT, RIGHT, RIGHT, A
+ 
  * **note:** The same combination will also enable "Edit mode" if its disabled
 
 ## Game Resources and Synopsis
  * There is an example located [here](https://github.com/Rocky5/XBMC4Gamers/tree/master/Synopsis%20Example)
  * The _resources folder is places next to your games default.xbe
  * To see your new resources images you will need to enable the _Resources settings
- * Press UP when in the games list and press (A) on the correct tile
- * **note:** For synopsis information you will need a default.xml and to view this information you press the context button (white) when at the games list and pick synopsis
+ * Press UP (or left, view dependant) when in the games list and press (A) on the correct tile
+ * **note:** For synopsis information you will need a default.xml
  
 ## Everything else
  * The rest should be self explanatory, its all in the menu.
@@ -66,3 +65,5 @@
 
 #### Buzz
  For maintaining XBMC4Xbox over the years.
+#### Everyone
+ For testing and giving me ideas.
