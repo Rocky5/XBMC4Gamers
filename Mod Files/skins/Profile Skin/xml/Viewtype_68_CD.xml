@@ -64,7 +64,6 @@
 								<control type="group">
 										<left>37</left>
 										<top>260</top>
-										<visible>Skin.HasSetting(_resourcesenabled)</visible>
 										<control type="image">
 												<left>-10</left>
 												<top>100</top>
@@ -73,6 +72,7 @@
 												<aspectratio>stretch</aspectratio>
 												<texture background="true">no_cd.png</texture>
 												<animation effect="rotate" start="0" end="-360" center="auto" time="15000" loop="true" condition="true">conditional</animation>
+												<visible>Skin.HasSetting(_resourcesenabled)</visible>
 										</control>
 										<control type="largeimage">
 												<left>-10</left>
@@ -82,6 +82,7 @@
 												<aspectratio>stretch</aspectratio>
 												<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\cd.png</texture>
 												<animation effect="rotate" start="0" end="-360" center="auto" time="15000" loop="true" condition="true">conditional</animation>
+												<visible>Skin.HasSetting(_resourcesenabled)</visible>
 										</control>
 										<control type="label">
 												<left>280</left>
@@ -94,8 +95,8 @@
 												<align>left</align>
 												<aligny>center</aligny>
 												<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames)">Conditional</animation>
 										</control>
 										<control type="grouplist">
 												<left>280</left>
@@ -105,9 +106,9 @@
 												<itemgap>5</itemgap>
 												<align>left</align>
 												<orientation>horizontal</orientation>
-												<visible>!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled)</visible>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
-												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+												<visible>!ListItem.IsFolder</visible>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames)">Conditional</animation>
+												<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames)">Conditional</animation>
 												<control type="label">
 														<width min="0" max="640">auto</width>
 														<height>30</height>

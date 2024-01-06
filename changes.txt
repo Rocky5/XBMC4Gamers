@@ -11,8 +11,30 @@ So hopefully you enjoy your time in the dash and have a great New Year!
 Thank you for your support.
 I would also like to thank everyone that has donated it's very much appreciated.
 
+Please refresh your content after this update, press the white button and select "Refresh all contents info"
+This will fix any missing artwork
+
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Change log for v2.0.001
+6/1/2024
+
+	1) Fixed all views up to use keep for icons.
+	2) Fixed the database not setting the resources direct to empty if not found.
+	3) Added a no_fanart_blur.jpg due to the above fix.
+	4) Fixed the database not being updated if you were on one of the last test builds.
+	5) Updated the "Home Screen Items.py" reduced functions and optimized it.
+		(16560 games takes 11 seconds to parse and setup, no one will have that many lol on average it's about 4 to 5 seconds.)
+	6) Fixed loading the programs menu 2 times when not set to home screen :/
+		(Giorgos Tsamouris for being persistent lol)
+	7) Fixed string being wrong for the auto login toggle.
+		(Giorgos Tsamouris for noticing this)
+	8) Hopefully reduced the startup time if there is no network.
+		(It's just as fast for me so, can only do so much)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Previous Updates:
 
 Change log for v2.0.000
 1/1/2024
@@ -137,10 +159,6 @@ Change log for v2.0.000
 	
 	Other
 	1) Reverted to 3.5.3 _sqlite3.pyd as the newer one breaks "sqlite3.connect".
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Previous Updates:
 
 28/12/2022
 	1) Added X3 3294 and X2 5035 bios support for the auto video mode switching.

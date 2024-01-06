@@ -206,7 +206,7 @@ msgstr ""
 
 ## Login - Custom_Skin_Settings.xml - 31061 to 31068
 msgctxt "#31061"
-msgid "Auto Login"
+msgid "Enable Login Screen"
 msgstr ""
 
 msgctxt "#31062"
@@ -447,11 +447,11 @@ msgstr ""
 
 ## SettingsProfile.xml - 31171 to 31175
 msgctxt "#31171"
-msgid "Auto login enabled.[CR]You will always login as [B]$INFO[system.profilename][/B]"
+msgid ""
 msgstr ""
 
 msgctxt "#31172"
-msgid "Auto login disabled.[CR]You will be able to select from multiple profiles."
+msgid ""
 msgstr ""
 
 msgctxt "#31173"

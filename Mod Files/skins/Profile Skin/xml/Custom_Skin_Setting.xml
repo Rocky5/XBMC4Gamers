@@ -302,7 +302,7 @@
 										<onclick>Skin.SetString(HomeWindow,Home)</onclick>
 										<onclick>Skin.SetString(HomeWindowSource,Home)</onclick>
 										<onclick>Skin.SetString(HomeWindow_name,$LOCALIZE[31023])</onclick>
-										<onclick>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Home Screen Items.py)</onclick>
+										<onclick>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Home Screen Items.py,1)</onclick>
 										<onclick>Skin.Reset(Random_Game)</onclick>
 								</control>
 								<control type="button" id="511">
@@ -411,7 +411,7 @@
 										<visible>Skin.HasSetting(CustomHomeButton1Enabled)</visible>
 								</control>
 								<control type="label" id="703">
-										<description>Advanced Stuff</description>
+										<description>Search perams info</description>
 										<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 										<label>[COLOR=1111_category_labels_nofocus]$LOCALIZE[31603][/COLOR]</label>
 										<visible>Skin.HasSetting(CustomHomeButton1Enabled)</visible>
@@ -450,7 +450,7 @@
 										<visible>Skin.HasSetting(CustomHomeButton2Enabled)</visible>
 								</control>
 								<control type="label" id="708">
-										<description>Advanced Stuff</description>
+										<description>Search perams info</description>
 										<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 										<label>[COLOR=1111_category_labels_nofocus]$LOCALIZE[31603][/COLOR]</label>
 										<visible>Skin.HasSetting(CustomHomeButton2Enabled)</visible>
@@ -489,7 +489,7 @@
 										<visible>Skin.HasSetting(CustomHomeButton3Enabled)</visible>
 								</control>
 								<control type="label" id="713">
-										<description>Advanced Stuff</description>
+										<description>Search perams info</description>
 										<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 										<label>[COLOR=1111_category_labels_nofocus]$LOCALIZE[31603][/COLOR]</label>
 										<visible>Skin.HasSetting(CustomHomeButton3Enabled)</visible>
@@ -528,7 +528,7 @@
 										<visible>Skin.HasSetting(CustomHomeButton4Enabled)</visible>
 								</control>
 								<control type="label" id="718">
-										<description>Advanced Stuff</description>
+										<description>Search perams info</description>
 										<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 										<label>[COLOR=1111_category_labels_nofocus]$LOCALIZE[31603][/COLOR]</label>
 										<visible>Skin.HasSetting(CustomHomeButton4Enabled)</visible>
@@ -746,7 +746,7 @@
 										<selected>System.HasLoginScreen</selected>
 								</control>
 								<control type="radiobutton" id="601">
-										<description>Hide Profile Pic</description>
+										<description>Kiosk Mode</description>
 										<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
 										<label>$LOCALIZE[24022] $LOCALIZE[31173]</label>
 										<onclick>Skin.ToggleSetting(kioskmode)</onclick>

@@ -37,17 +37,25 @@
 																<aspectratio>stretch</aspectratio>
 																<texture diffuse="views/posterfixed/diffuse.png">no_poster.jpg</texture>
 														</control>
-														<control type="group">
-																<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-																<control type="image">
-																		<left>0</left>
-																		<top>145</top>
-																		<width>136</width>
-																		<height>190</height>
-																		<fadetime>ThumbCrossfadeTime</fadetime>
-																		<aspectratio scalediffuse="false">scale</aspectratio>
-																		<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
-																</control>
+														<control type="image">
+																<left>0</left>
+																<top>145</top>
+																<width>136</width>
+																<height>190</height>
+																<fadetime>ThumbCrossfadeTime</fadetime>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
+																<visible>ListItem.IsFolder + !Skin.HasSetting(_resourcesenabled)</visible>
+														</control>
+														<control type="image">
+																<left>0</left>
+																<top>145</top>
+																<width>136</width>
+																<height>190</height>
+																<fadetime>ThumbCrossfadeTime</fadetime>
+																<aspectratio scalediffuse="false">keep</aspectratio>
+																<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
+																<visible>!ListItem.IsFolder + !Skin.HasSetting(_resourcesenabled)</visible>
 														</control>
 														<control type="group">
 																<visible>Skin.HasSetting(_resourcesenabled)</visible>
@@ -59,7 +67,17 @@
 																		<fadetime>ThumbCrossfadeTime</fadetime>
 																		<aspectratio scalediffuse="false">scale</aspectratio>
 																		<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
-																		<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+																		<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+																</control>
+																<control type="image">
+																		<left>0</left>
+																		<top>145</top>
+																		<width>136</width>
+																		<height>190</height>
+																		<fadetime>ThumbCrossfadeTime</fadetime>
+																		<aspectratio scalediffuse="false">keep</aspectratio>
+																		<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
+																		<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
 																</control>
 																<control type="image">
 																		<left>0</left>
@@ -69,6 +87,7 @@
 																		<fadetime>ThumbCrossfadeTime</fadetime>
 																		<aspectratio>stretch</aspectratio>
 																		<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View67_Thumbs]</texture>
+																		<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 																</control>
 														</control>
 														<control type="image">
@@ -116,17 +135,25 @@
 																<aspectratio>stretch</aspectratio>
 																<texture diffuse="views/posterfixed/diffuse.png">no_poster.jpg</texture>
 														</control>
-														<control type="group">
-																<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-																<control type="image">
-																		<left>0</left>
-																		<top>145</top>
-																		<width>136</width>
-																		<height>190</height>
-																		<fadetime>ThumbCrossfadeTime</fadetime>
-																		<aspectratio scalediffuse="false">scale</aspectratio>
-																		<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
-																</control>
+														<control type="image">
+																<left>0</left>
+																<top>145</top>
+																<width>136</width>
+																<height>190</height>
+																<fadetime>ThumbCrossfadeTime</fadetime>
+																<aspectratio scalediffuse="false">scale</aspectratio>
+																<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
+																<visible>ListItem.IsFolder + !Skin.HasSetting(_resourcesenabled)</visible>
+														</control>
+														<control type="image">
+																<left>0</left>
+																<top>145</top>
+																<width>136</width>
+																<height>190</height>
+																<fadetime>ThumbCrossfadeTime</fadetime>
+																<aspectratio scalediffuse="false">keep</aspectratio>
+																<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
+																<visible>!ListItem.IsFolder + !Skin.HasSetting(_resourcesenabled)</visible>
 														</control>
 														<control type="group">
 																<visible>Skin.HasSetting(_resourcesenabled)</visible>
@@ -138,7 +165,17 @@
 																		<fadetime>ThumbCrossfadeTime</fadetime>
 																		<aspectratio scalediffuse="false">scale</aspectratio>
 																		<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
-																		<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+																		<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+																</control>
+																<control type="image">
+																		<left>0</left>
+																		<top>145</top>
+																		<width>136</width>
+																		<height>190</height>
+																		<fadetime>ThumbCrossfadeTime</fadetime>
+																		<aspectratio scalediffuse="false">keep</aspectratio>
+																		<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.icon]</texture>
+																		<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
 																</control>
 																<control type="image">
 																		<left>0</left>
@@ -148,6 +185,7 @@
 																		<fadetime>ThumbCrossfadeTime</fadetime>
 																		<aspectratio>stretch</aspectratio>
 																		<texture background="true" diffuse="views/posterfixed/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View67_Thumbs]</texture>
+																		<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 																</control>
 														</control>
 														<control type="image">
@@ -197,18 +235,27 @@
 												<aspectratio>stretch</aspectratio>
 												<texture diffuse="views/posterfixed/diffuse_large.png">no_poster.jpg</texture>
 										</control>
-										<control type="group">
-												<visible>!Skin.HasSetting(_resourcesenabled)</visible>
-												<control type="image">
-														<left>-10</left>
-														<top>0</top>
-														<width>275</width>
-														<height>385</height>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-														<aspectratio scalediffuse="false">scale</aspectratio>
-														<texture background="true" diffuse="views/posterfixed/diffuse_large.png">$INFO[listitem.icon]</texture>
-														<fadetime>ThumbCrossfadeTime</fadetime>
-												</control>
+										<control type="image">
+												<left>-10</left>
+												<top>0</top>
+												<width>275</width>
+												<height>385</height>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<aspectratio scalediffuse="false">scale</aspectratio>
+												<texture background="true" diffuse="views/posterfixed/diffuse_large.png">$INFO[listitem.icon]</texture>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<visible>ListItem.IsFolder + !Skin.HasSetting(_resourcesenabled)</visible>
+										</control>
+										<control type="image">
+												<left>-10</left>
+												<top>0</top>
+												<width>275</width>
+												<height>385</height>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<aspectratio scalediffuse="false">keep</aspectratio>
+												<texture background="true" diffuse="views/posterfixed/diffuse_large.png">$INFO[listitem.icon]</texture>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<visible>!ListItem.IsFolder + !Skin.HasSetting(_resourcesenabled)</visible>
 										</control>
 										<control type="group">
 												<visible>Skin.HasSetting(_resourcesenabled)</visible>
@@ -220,9 +267,19 @@
 														<fadetime>ThumbCrossfadeTime</fadetime>
 														<aspectratio scalediffuse="false">scale</aspectratio>
 														<texture background="true" diffuse="views/posterfixed/diffuse_large.png">$INFO[listitem.icon]</texture>
-														<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+														<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
-												<control type="largeimage">
+												<control type="image">
+														<left>-10</left>
+														<top>0</top>
+														<width>275</width>
+														<height>385</height>
+														<fadetime>ThumbCrossfadeTime</fadetime>
+														<aspectratio scalediffuse="false">keep</aspectratio>
+														<texture background="true" diffuse="views/posterfixed/diffuse_large.png">$INFO[listitem.icon]</texture>
+														<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+												</control>
+												<control type="image">
 														<left>-10</left>
 														<top>0</top>
 														<width>275</width>
@@ -230,6 +287,7 @@
 														<fadetime>ThumbCrossfadeTime</fadetime>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true" diffuse="views/posterfixed/diffuse_large.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View67_Thumbs]</texture>
+														<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
 										</control>
 										<control type="label">

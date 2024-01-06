@@ -1,6 +1,6 @@
 Here is where you place your custom view to be auto added to gamers.
 
-I added support for 11 custom views the following names are supported under xml\custom views\.
+I added support for 10 custom views the following names are supported under xml\custom views\.
 
 CustomViewtype_id_80.xml
 CustomViewtype_id_81.xml
@@ -12,7 +12,6 @@ CustomViewtype_id_86.xml
 CustomViewtype_id_87.xml
 CustomViewtype_id_88.xml
 CustomViewtype_id_89.xml
-CustomViewtype_id_90.xml
 
 you will need a .jpg with the same name as above or they wont be added.
 

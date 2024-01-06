@@ -111,7 +111,7 @@
 										<itemgap>0</itemgap>
 										<align>left</align>
 										<orientation>horizontal</orientation>
-										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+										<visible>!ListItem.IsFolder</visible>
 										<control type="image">
 												<left>0</left>
 												<top>0</top>
@@ -254,7 +254,7 @@
 						<!-- Fake list bottom -->
 						<control type="group">
 								<animation effect="slide" start="0,0" end="0,-75" time="0" condition="IsEmpty(ListItem.Synopsis_Overview)">Conditional</animation>
-								<animation effect="slide" start="0,0" end="0,-25" time="0" condition="IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+								<animation effect="slide" start="0,0" end="0,-25" time="0" condition="ListItem.IsFolder">Conditional</animation>
 								<control type="label">
 										<left>40</left>
 										<top>430</top>

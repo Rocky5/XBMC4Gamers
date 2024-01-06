@@ -46,7 +46,7 @@
 										<pagecontrol>90</pagecontrol>
 										<scrolltime>230</scrolltime>
 										<preloaditems>2</preloaditems>
-										<itemlayout condition="!Skin.HasSetting(hidecdartwork) + !IsEmpty(listitem.Synopsis_Resources)" height="90" width="720">
+										<itemlayout condition="!Skin.HasSetting(hidecdartwork) + !ListItem.IsFolder" height="90" width="720">
 												<control type="image">
 														<left>0</left>
 														<top>0</top>
@@ -67,7 +67,7 @@
 														<width>70</width>
 														<height>70</height>
 														<texture background="true" diffuse="views/list/CD_diffuse_listview.png">$INFO[listitem.Synopsis_Resources]artwork\cd_small.jpg</texture>
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+														<visible>Skin.HasSetting(_resourcesenabled) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>90</left>
@@ -90,7 +90,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>90</left>
@@ -102,7 +102,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>90</left>
@@ -114,7 +114,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
 														<left>680</left>
@@ -125,7 +125,7 @@
 														<texture>$INFO[listitem.overlay]</texture>
 												</control>
 										</itemlayout>
-										<itemlayout condition="Skin.HasSetting(hidecdartwork) | IsEmpty(listitem.Synopsis_Resources)" height="90" width="720">
+										<itemlayout condition="Skin.HasSetting(hidecdartwork) | ListItem.IsFolder" height="90" width="720">
 												<control type="image">
 														<left>0</left>
 														<top>0</top>
@@ -154,7 +154,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>20</left>
@@ -166,7 +166,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>20</left>
@@ -178,7 +178,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
 														<left>680</left>
@@ -189,7 +189,7 @@
 														<texture>$INFO[listitem.overlay]</texture>
 												</control>
 										</itemlayout>
-										<focusedlayout condition="!Skin.HasSetting(hidecdartwork) + !IsEmpty(listitem.Synopsis_Resources)" height="90" width="720">
+										<focusedlayout condition="!Skin.HasSetting(hidecdartwork) + !ListItem.IsFolder" height="90" width="720">
 												<control type="image">
 														<left>0</left>
 														<top>0</top>
@@ -218,7 +218,7 @@
 														<width>70</width>
 														<height>70</height>
 														<texture background="true" diffuse="views/list/CD_diffuse_listview.png">$INFO[listitem.Synopsis_Resources]artwork\cd_small.jpg</texture>
-														<visible>Skin.HasSetting(_resourcesenabled)</visible>
+														<visible>Skin.HasSetting(_resourcesenabled) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>90</left>
@@ -241,7 +241,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>90</left>
@@ -253,7 +253,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>90</left>
@@ -265,10 +265,10 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
 												</control>
 										</focusedlayout>
-										<focusedlayout condition="Skin.HasSetting(hidecdartwork) | IsEmpty(listitem.Synopsis_Resources)" height="90" width="720">
+										<focusedlayout condition="Skin.HasSetting(hidecdartwork) | ListItem.IsFolder" height="90" width="720">
 												<control type="image">
 														<left>0</left>
 														<top>0</top>
@@ -305,7 +305,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $LOCALIZE[31191]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,0) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>20</left>
@@ -317,7 +317,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + StringCompare(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
 												</control>
 												<control type="label">
 														<left>20</left>
@@ -329,7 +329,7 @@
 														<align>left</align>
 														<aligny>center</aligny>
 														<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
-														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1)</visible>
+														<visible>!StringCompare(ListItem.Label,Music) + !StringCompare(ListItem.Label,..) + IntegerGreaterThan(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
 												</control>
 										</focusedlayout>
 								</control>
@@ -353,14 +353,26 @@
 												<top>150</top>
 												<width>320</width>
 												<height>450</height>
+												<aspectratio>scale</aspectratio>
+												<texture background="true">$INFO[listitem.icon]</texture>
+												<bordertexture>-</bordertexture>
+												<bordersize>5</bordersize>
+												<fadetime>ThumbCrossfadeTime</fadetime>
+												<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+										</control>
+										<control type="image">
+												<left>120</left>
+												<top>150</top>
+												<width>320</width>
+												<height>450</height>
 												<aspectratio>keep</aspectratio>
 												<texture background="true">$INFO[listitem.icon]</texture>
 												<bordertexture>-</bordertexture>
 												<bordersize>5</bordersize>
 												<fadetime>ThumbCrossfadeTime</fadetime>
-												<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+												<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
 										</control>
-										<control type="largeimage">
+										<control type="image">
 												<left>120</left>
 												<top>150</top>
 												<width>320</width>
@@ -370,6 +382,7 @@
 												<bordertexture>-</bordertexture>
 												<bordersize>5</bordersize>
 												<fadetime>ThumbCrossfadeTime</fadetime>
+												<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 										</control>
 								</control>
 						</control>

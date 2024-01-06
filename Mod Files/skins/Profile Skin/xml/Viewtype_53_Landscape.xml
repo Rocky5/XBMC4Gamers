@@ -34,7 +34,7 @@
 																<top>5</top>
 																<width>310</width>
 																<height>170</height>
-																<aspectratio scalediffuse="false">scale</aspectratio>
+																<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
 																<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.icon]</texture>
 														</control>
 														<control type="image">
@@ -63,7 +63,7 @@
 																<top>5</top>
 																<width>310</width>
 																<height>170</height>
-																<aspectratio aligny="bottom" scalediffuse="false">scale</aspectratio>
+																<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
 																<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.icon]</texture>
 																<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
 														</control>
@@ -102,7 +102,7 @@
 																<top>0</top>
 																<width>320</width>
 																<height>180</height>
-																<aspectratio scalediffuse="false">scale</aspectratio>
+																<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
 																<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.icon]</texture>
 																<bordersize>2</bordersize>
 														</control>
@@ -142,7 +142,7 @@
 																<top>0</top>
 																<width>320</width>
 																<height>180</height>
-																<aspectratio aligny="bottom" scalediffuse="false">scale</aspectratio>
+																<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
 																<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.icon]</texture>
 																<bordersize>2</bordersize>
 																<visible>IsEmpty(listitem.Synopsis_Resources)</visible>

@@ -3,7 +3,7 @@
 				<control type="group">
 						<visible>Control.IsVisible(60) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
 						<control type="fixedlist" id="60">
-								<animation effect="zoom" reversable="true" start="0" end="80" time="0" condition="Control.IsVisible(60)">Conditional</animation>
+								<animation effect="zoom" reversable="true" start="0" end="81" time="0" condition="Control.IsVisible(60)">Conditional</animation>
 								<left>0</left>
 								<top>472</top>
 								<width>1700</width>
@@ -20,31 +20,41 @@
 								<preloaditems>2</preloaditems>
 								<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" height="290" width="414">
 										<control type="group">
-												<left>-136</left>
+												<left>-138.5</left>
 												<control type="image">
-														<left>-6</left>
-														<top>287</top>
-														<width>225</width>
-														<height>6</height>
+														<left>-10</left>
+														<top>286</top>
+														<width>220</width>
+														<height>7</height>
 														<aspectratio>stretch</aspectratio>
 														<colordiffuse>F0FFFFFF</colordiffuse>
 														<texture background="true">views/carousel/poster_shadow.png</texture>
 												</control>
 												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true" diffuse="views/carousel/diffuse.png">no_poster.jpg</texture>
 												</control>
 												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
-														<aspectratio>stretch</aspectratio>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>ListItem.IsFolder</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>!ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
 														<left>10</left>
@@ -74,40 +84,50 @@
 								</itemlayout>
 								<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="290" width="414">
 										<control type="group">
-												<left>-136</left>
+												<left>-138.5</left>
 												<control type="image">
-														<left>-6</left>
-														<top>287</top>
-														<width>225</width>
-														<height>6</height>
+														<left>-10</left>
+														<top>286</top>
+														<width>220</width>
+														<height>7</height>
 														<aspectratio>stretch</aspectratio>
 														<colordiffuse>F0FFFFFF</colordiffuse>
 														<texture background="true">views/carousel/poster_shadow.png</texture>
 												</control>
 												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true" diffuse="views/carousel/diffuse.png">no_poster.jpg</texture>
 												</control>
 												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
-														<aspectratio>stretch</aspectratio>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.icon]</texture>
-														<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+														<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
-												<control type="largeimage">
+												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View60_Thumbs]</texture>
+														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View59_Thumbs]</texture>
+														<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
 												<control type="image">
 														<left>10</left>
@@ -137,37 +157,49 @@
 								</itemlayout>
 								<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="290" width="414">
 										<control type="group">
-												<left>-136</left>
+												<left>-138.5</left>
 												<control type="image">
-														<left>-6</left>
-														<top>287</top>
-														<width>225</width>
-														<height>6</height>
+														<left>-10</left>
+														<top>286</top>
+														<width>220</width>
+														<height>7</height>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true">views/carousel/poster_shadow.png</texture>
 														<colordiffuse>F0FFFFFF</colordiffuse>
-														<animation reversible="false" effect="zoom" start="-6,267,225,6" end="-18,263,250,8" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="-6,267,225,6" start="-18,263,250,8" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="-10,286,220,7" end="-28,290,256,8" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="-10,286,220,7" start="-28,290,256,8" time="100">unfocus</animation>
 												</control>
 												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true" diffuse="views/carousel/diffuse.png">no_poster.jpg</texture>
-														<animation reversible="false" effect="zoom" start="0,0,214,290" end="-10,-36,234,330" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="0,0,214,290" start="-10,-36,234,330" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
 												</control>
 												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
-														<aspectratio>stretch</aspectratio>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.icon]</texture>
-														<animation reversible="false" effect="zoom" start="0,0,214,290" end="-10,-36,234,330" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="0,0,214,290" start="-10,-36,234,330" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+														<visible>ListItem.IsFolder</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.icon]</texture>
+														<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+														<visible>!ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
 														<left>10</left>
@@ -177,8 +209,8 @@
 														<aspectratio>stretch</aspectratio>
 														<texture>overlay-watched.png</texture>
 														<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
-														<animation reversible="false" effect="zoom" start="10,35,25,25" end="0,3,30,30" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="10,35,25,25" start="0,3,30,30" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="10,35,25,25" end="-5,3,30,30" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="10,35,25,25" start="-5,3,30,30" time="100">unfocus</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
 														<visible>!Skin.HasSetting(HidePlayedIndicator)</visible>
@@ -190,8 +222,8 @@
 														<height>25</height>
 														<aspectratio>stretch</aspectratio>
 														<texture>$INFO[listitem.overlay]</texture>
-														<animation reversible="false" effect="zoom" start="10,55,25,25" end="0,26,30,30" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="10,55,25,25" start="0,26,30,30" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="10,55,25,25" end="-5,26,30,30" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="10,55,25,25" start="-5,26,30,30" time="100">unfocus</animation>
 														<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
@@ -201,48 +233,60 @@
 								</focusedlayout>
 								<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="290" width="414">
 										<control type="group">
-												<left>-136</left>
+												<left>-138.5</left>
 												<control type="image">
-														<left>-6</left>
-														<top>287</top>
-														<width>225</width>
-														<height>6</height>
+														<left>-10</left>
+														<top>286</top>
+														<width>220</width>
+														<height>7</height>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true">views/carousel/poster_shadow.png</texture>
 														<colordiffuse>F0FFFFFF</colordiffuse>
-														<animation reversible="false" effect="zoom" start="-6,267,225,6" end="-18,263,250,8" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="-6,267,225,6" start="-18,263,250,8" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="-10,286,220,7" end="-28,290,256,8" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="-10,286,220,7" start="-28,290,256,8" time="100">unfocus</animation>
 												</control>
 												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true" diffuse="views/carousel/diffuse.png">no_poster.jpg</texture>
-														<animation reversible="false" effect="zoom" start="0,0,214,290" end="-10,-36,234,330" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="0,0,214,290" start="-10,-36,234,330" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
 												</control>
 												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
-														<aspectratio>stretch</aspectratio>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.icon]</texture>
-														<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
-														<animation reversible="false" effect="zoom" start="0,0,214,290" end="-10,-36,234,330" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="0,0,214,290" start="-10,-36,234,330" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+														<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
-												<control type="largeimage">
+												<control type="image">
 														<left>0</left>
-														<top>0</top>
-														<width>214</width>
-														<height>290</height>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.icon]</texture>
+														<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+														<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>7</top>
+														<width>200</width>
+														<height>283</height>
 														<aspectratio>stretch</aspectratio>
-														<texture background="true" diffuse="views/carousel/diffuse.png" border="5">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View60_Thumbs]</texture>
-														<animation reversible="false" effect="zoom" start="0,0,214,290" end="-10,-36,234,330" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="0,0,214,290" start="-10,-36,234,330" time="100">unfocus</animation>
+														<texture background="true" diffuse="views/carousel/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View59_Thumbs]</texture>
+														<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+														<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
 												<control type="image">
 														<left>10</left>
@@ -252,8 +296,8 @@
 														<aspectratio>stretch</aspectratio>
 														<texture>overlay-watched.png</texture>
 														<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
-														<animation reversible="false" effect="zoom" start="10,35,25,25" end="0,3,30,30" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="10,35,25,25" start="0,3,30,30" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="10,35,25,25" end="-5,3,30,30" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="10,35,25,25" start="-5,3,30,30" time="100">unfocus</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
 														<visible>!Skin.HasSetting(HidePlayedIndicator)</visible>
@@ -265,8 +309,8 @@
 														<height>25</height>
 														<aspectratio>stretch</aspectratio>
 														<texture>$INFO[listitem.overlay]</texture>
-														<animation reversible="false" effect="zoom" start="10,55,25,25" end="0,26,30,30" time="100">focus</animation>
-														<animation reversible="false" effect="zoom" end="10,55,25,25" start="0,26,30,30" time="100">unfocus</animation>
+														<animation reversible="false" effect="zoom" start="10,55,25,25" end="-5,26,30,30" time="100">focus</animation>
+														<animation reversible="false" effect="zoom" end="10,55,25,25" start="-5,26,30,30" time="100">unfocus</animation>
 														<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
 														<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>

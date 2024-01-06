@@ -170,25 +170,61 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<texture diffuse="views/synopsisinfolist/diffuse_poster.png">no_poster.jpg</texture>
 						</control>
-						<control type="image">
-								<left>40</left>
-								<top>100</top>
-								<width>340</width>
-								<height>499</height>
-								<aspectratio scalediffuse="false">stretch</aspectratio>
-								<fadetime>ThumbCrossfadeTime</fadetime>
-								<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
-								<visible>IsEmpty(listitem.Synopsis_Resources) | !Skin.HasSetting(_resourcesenabled)</visible>
+						<control type="group">
+								<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+								<control type="image">
+										<left>40</left>
+										<top>100</top>
+										<width>340</width>
+										<height>499</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+										<visible>ListItem.IsFolder</visible>
+								</control>
+								<control type="image">
+										<left>40</left>
+										<top>100</top>
+										<width>340</width>
+										<height>499</height>
+										<aspectratio scalediffuse="false">keep</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+										<visible>!ListItem.IsFolder</visible>
+								</control>
 						</control>
-						<control type="image">
-								<left>40</left>
-								<top>100</top>
-								<width>340</width>
-								<height>499</height>
-								<aspectratio scalediffuse="false">stretch</aspectratio>
-								<fadetime>ThumbCrossfadeTime</fadetime>
-								<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View72_Thumbs]</texture>
-								<visible>!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled)</visible>
+						<control type="group">
+								<visible>Skin.HasSetting(_resourcesenabled)</visible>
+								<control type="image">
+										<left>40</left>
+										<top>100</top>
+										<width>340</width>
+										<height>499</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+										<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+								</control>
+								<control type="image">
+										<left>40</left>
+										<top>100</top>
+										<width>340</width>
+										<height>499</height>
+										<aspectratio scalediffuse="false">keep</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+										<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+								</control>
+								<control type="image">
+										<left>40</left>
+										<top>100</top>
+										<width>340</width>
+										<height>499</height>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true" diffuse="views/synopsisinfolist/diffuse_poster.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View72_Thumbs]</texture>
+										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+								</control>
 						</control>
 						<!-- Star ratings and ESRB rating -->
 						<control type="image">
@@ -220,7 +256,7 @@
 								<itemgap>0</itemgap>
 								<align>left</align>
 								<orientation>horizontal</orientation>
-								<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+								<visible>!ListItem.IsFolder</visible>
 								<control type="image">
 										<left>0</left>
 										<top>0</top>

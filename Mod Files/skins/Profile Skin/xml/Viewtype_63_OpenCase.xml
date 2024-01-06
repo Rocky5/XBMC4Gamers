@@ -83,8 +83,8 @@
 										<align>center</align>
 										<aligny>center</aligny>
 										<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames)">Conditional</animation>
 								</control>
 								<control type="grouplist">
 										<left>0</left>
@@ -93,9 +93,9 @@
 										<itemgap>5</itemgap>
 										<align>center</align>
 										<orientation>horizontal</orientation>
-										<visible>!Control.HasFocus(92) + !IsEmpty(listitem.Synopsis_Resources)</visible>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
-										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+										<visible>!ListItem.IsFolder</visible>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames)">Conditional</animation>
+										<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames)">Conditional</animation>
 										<control type="label">
 												<width min="0" max="640">auto</width>
 												<height>30</height>

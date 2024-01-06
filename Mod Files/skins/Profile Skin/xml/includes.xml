@@ -34,21 +34,21 @@
 		<include name="Global.Backgrounds">
 				<control type="image">
 						<include>1280x720</include>
-						<texture fallback="background.jpg">$INFO[skin.string(background_color)]</texture>
 						<aspectratio>stretch</aspectratio>
+						<texture fallback="background.jpg">$INFO[skin.string(background_color)]</texture>
 						<visible>StringCompare(skin.string(background_image),) + StringCompare(skin.string(Background_Custom_Color),)</visible>
 				</control>
 				<control type="image">
 						<include>1280x720</include>
-						<texture>background diffuse.png</texture>
-						<colordiffuse>$VAR[Custom_BG_Colour]</colordiffuse>
 						<aspectratio>stretch</aspectratio>
+						<colordiffuse>$VAR[Custom_BG_Colour]</colordiffuse>
+						<texture>background diffuse.png</texture>
 						<visible>!StringCompare(skin.string(Background_Custom_Color),)</visible>
 				</control>
-				<control type="largeimage">
+				<control type="image">
 						<include>1280x720</include>
-						<texture>$INFO[skin.string(background_image)]</texture>
 						<aspectratio>stretch</aspectratio>
+						<texture>$INFO[skin.string(background_image)]</texture>
 						<visible>!StringCompare(skin.string(background_image),)</visible>
 				</control>
 		</include>

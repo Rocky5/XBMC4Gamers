@@ -206,8 +206,8 @@ msgstr "Seleziona fonte"
 
 ## Login - Custom_Skin_Settings.xml - 31061 to 31068
 msgctxt "#31061"
-msgid "Auto Login"
-msgstr "Accesso Automatico"
+msgid "Enable Login Screen"
+msgstr "Abilita schermata di accesso"
 
 msgctxt "#31062"
 msgid "Enable debug information"
@@ -443,12 +443,12 @@ msgstr "Indietro"
 
 ## SettingsProfile.xml - 31171 to 31175
 msgctxt "#31171"
-msgid "Auto login enabled.[CR]You will always login as [B]$INFO[system.profilename][/B]"
-msgstr "Accesso automatico attivo.[CR]Accederai sempre come [B]$INFO[system.profilename][/B]"
+msgid ""
+msgstr ""
 
 msgctxt "#31172"
-msgid "Auto login disabled.[CR]You will be able to select from multiple profiles."
-msgstr "Accesso automatico disattivato.[CR]Dovrai scegliere un profilo all'avvio."
+msgid ""
+msgstr ""
 
 msgctxt "#31173"
 msgid "Kiosk Mode"

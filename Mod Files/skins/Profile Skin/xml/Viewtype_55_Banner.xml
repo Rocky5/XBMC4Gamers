@@ -30,14 +30,17 @@
 										<fadetime>FanartCrossfadeTime</fadetime>
 										<aspectratio>stretch</aspectratio>
 										<texture fallback="no_fanart.jpg">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View55_Fanart]</texture>
+										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 								</control>
-								<control type="image">
+								<control type="largeimage">
 										<left>595</left>
 										<top>5</top>
 										<width>570</width>
 										<height>321</height>
+										<fadetime>FanartCrossfadeTime</fadetime>
 										<aspectratio>stretch</aspectratio>
-										<texture background="true">views/banner/glassoverlay.png</texture>
+										<texture fallback="no_fanart.jpg">$VAR[View_Fanart]</texture>
+										<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
 								</control>
 								<!-- game info -->
 								<control type="textbox">
@@ -51,6 +54,7 @@
 										<align>left</align>
 										<aligny>center</aligny>
 										<label>$INFO[ListItem.Label]</label>
+										<visible>Skin.HasSetting(_resourcesenabled)</visible>
 								</control>
 								<control type="grouplist">
 										<description>Control Info</description>
@@ -61,7 +65,7 @@
 										<itemgap>0</itemgap>
 										<align>left</align>
 										<orientation>horizontal</orientation>
-										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+										<visible>!ListItem.IsFolder</visible>
 										<control type="image">
 												<left>0</left>
 												<top>0</top>

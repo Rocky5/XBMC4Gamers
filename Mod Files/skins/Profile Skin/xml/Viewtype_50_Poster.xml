@@ -33,8 +33,18 @@
 														<top>0</top>
 														<width>200</width>
 														<height>283</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>ListItem.IsFolder</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>!ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
 														<left>5</left>
@@ -78,9 +88,18 @@
 														<top>0</top>
 														<width>200</width>
 														<height>283</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.icon]</texture>
-														<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+														<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.icon]</texture>
+														<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
 												<control type="image">
 														<left>0</left>
@@ -89,6 +108,7 @@
 														<height>283</height>
 														<aspectratio>stretch</aspectratio>
 														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View50_Thumbs]</texture>
+														<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
 												<control type="image">
 														<left>5</left>
@@ -134,10 +154,22 @@
 														<top>0</top>
 														<width>200</width>
 														<height>283</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.icon]</texture>
 														<animation reversible="false" effect="zoom" start="0,0,200,283" end="-15,-37,230,330" time="120">focus</animation>
 														<animation reversible="false" effect="zoom" end="0,0,200,283" start="-15,-37,230,330" time="120">unfocus</animation>
+														<visible>ListItem.IsFolder</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.icon]</texture>
+														<animation reversible="false" effect="zoom" start="0,0,200,283" end="-15,-37,230,330" time="120">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,0,200,283" start="-15,-37,230,330" time="120">unfocus</animation>
+														<visible>!ListItem.IsFolder</visible>
 												</control>
 												<control type="image">
 														<left>5</left>
@@ -197,11 +229,22 @@
 														<top>0</top>
 														<width>200</width>
 														<height>283</height>
-														<aspectratio>stretch</aspectratio>
+														<aspectratio>scale</aspectratio>
 														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.icon]</texture>
 														<animation reversible="false" effect="zoom" start="0,0,200,283" end="-15,-37,230,330" time="120">focus</animation>
 														<animation reversible="false" effect="zoom" end="0,0,200,283" start="-15,-37,230,330" time="120">unfocus</animation>
-														<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+														<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+												</control>
+												<control type="image">
+														<left>0</left>
+														<top>0</top>
+														<width>200</width>
+														<height>283</height>
+														<aspectratio>keep</aspectratio>
+														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.icon]</texture>
+														<animation reversible="false" effect="zoom" start="0,0,200,283" end="-15,-37,230,330" time="120">focus</animation>
+														<animation reversible="false" effect="zoom" end="0,0,200,283" start="-15,-37,230,330" time="120">unfocus</animation>
+														<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
 												<control type="image">
 														<left>0</left>
@@ -212,6 +255,7 @@
 														<texture background="true" diffuse="views/poster/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View50_Thumbs]</texture>
 														<animation reversible="false" effect="zoom" start="0,0,200,283" end="-15,-37,230,330" time="120">focus</animation>
 														<animation reversible="false" effect="zoom" end="0,0,200,283" start="-15,-37,230,330" time="120">unfocus</animation>
+														<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 												</control>
 												<control type="image">
 														<left>5</left>

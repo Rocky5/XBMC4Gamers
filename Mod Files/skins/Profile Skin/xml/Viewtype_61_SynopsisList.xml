@@ -170,6 +170,62 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<texture diffuse="views/synopsislist/diffuse_poster.png">no_poster.jpg</texture>
 						</control>
+						<control type="group">
+								<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+								<control type="largeimage">
+										<left>561</left>
+										<top>100</top>
+										<width>177</width>
+										<height>260</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture diffuse="views/synopsislist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+										<visible>ListItem.IsFolder</visible>
+								</control>
+								<control type="largeimage">
+										<left>561</left>
+										<top>100</top>
+										<width>177</width>
+										<height>260</height>
+										<aspectratio scalediffuse="false">keep</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture diffuse="views/synopsislist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+										<visible>!ListItem.IsFolder</visible>
+								</control>
+						</control>
+						<control type="group">
+								<visible>Skin.HasSetting(_resourcesenabled)</visible>
+								<control type="image">
+										<left>561</left>
+										<top>100</top>
+										<width>177</width>
+										<height>260</height>
+										<aspectratio scalediffuse="false">scale</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true" diffuse="views/synopsislist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+										<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+								</control>
+								<control type="image">
+										<left>561</left>
+										<top>100</top>
+										<width>177</width>
+										<height>260</height>
+										<aspectratio scalediffuse="false">keep</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true" diffuse="views/synopsislist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
+										<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+								</control>
+								<control type="image">
+										<left>561</left>
+										<top>100</top>
+										<width>177</width>
+										<height>260</height>
+										<aspectratio scalediffuse="false">stretch</aspectratio>
+										<fadetime>ThumbCrossfadeTime</fadetime>
+										<texture background="true" diffuse="views/synopsislist/diffuse_poster.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View61_Thumbs]</texture>
+										<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+								</control>
+						</control>
 						<control type="image">
 								<left>765</left>
 								<top>100</top>
@@ -179,27 +235,7 @@
 								<texture diffuse="views/synopsislist/diffuse_fanart.png">no_screenshots.jpg</texture>
 								<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 						</control>
-						<control type="largeimage">
-								<left>561</left>
-								<top>100</top>
-								<width>177</width>
-								<height>260</height>
-								<aspectratio scalediffuse="false">stretch</aspectratio>
-								<fadetime>ThumbCrossfadeTime</fadetime>
-								<texture diffuse="views/synopsislist/diffuse_poster.png">$INFO[ListItem.Icon]</texture>
-								<visible>IsEmpty(listitem.Synopsis_Resources) | !Skin.HasSetting(_resourcesenabled)</visible>
-						</control>
-						<control type="largeimage">
-								<left>561</left>
-								<top>100</top>
-								<width>177</width>
-								<height>260</height>
-								<aspectratio scalediffuse="false">stretch</aspectratio>
-								<fadetime>ThumbCrossfadeTime</fadetime>
-								<texture diffuse="views/synopsislist/diffuse_poster.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View61_Thumbs]</texture>
-								<visible>!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled)</visible>
-						</control>
-						<control type="largeimage">
+						<control type="image">
 								<left>765</left>
 								<top>100</top>
 								<width>462</width>
@@ -207,6 +243,7 @@
 								<aspectratio scalediffuse="false">stretch</aspectratio>
 								<fadetime>FanartCrossfadeTime</fadetime>
 								<texture background="true" diffuse="views/synopsislist/diffuse_fanart.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View61_Fanart]</texture>
+								<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
 						</control>
 						<control type="grouplist">
 								<description>Control Info</description>
@@ -217,7 +254,7 @@
 								<itemgap>0</itemgap>
 								<align>left</align>
 								<orientation>horizontal</orientation>
-								<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+								<visible>!ListItem.IsFolder</visible>
 								<control type="image">
 										<width>25</width>
 										<height>25</height>
