@@ -1,5 +1,6 @@
 <window id="1114">
 		<onload condition="StringCompare(Skin.String(HomeWindow),)">Skin.SetString(HomeWindow,Root)</onload>
+		<onload condition="StringCompare(Skin.String(HomeWindowSource),)">Skin.SetString(HomeWindowSource,Programs)</onload>
 		<onload condition="StringCompare(Skin.String(HomeWindow_name),)">Skin.SetString(HomeWindow_name,$LOCALIZE[20108])</onload>
 		<onload condition="Skin.HasSetting(Random_Game)">Skin.SetBool(run_random_script,true)</onload>
 		<onload condition="Skin.HasSetting(kioskmode) + !Skin.HasSetting(UseThemePlaylist) + Skin.HasSetting(Use_Startup_Playback) + !Skin.HasSetting(AdultProfile) + !Player.HasAudio">PlayMedia($INFO[Skin.String(Startup_Playback_Path)])</onload>
