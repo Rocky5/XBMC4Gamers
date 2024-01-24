@@ -271,105 +271,105 @@
 										<!-- Backgrounds -->
 										<item id="210">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/1.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,1.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/1.jpg</icon>
 										</item>
 										<item id="211">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/2.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,2.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/2.jpg</icon>
 										</item>
 										<item id="212">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/3.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,3.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/3.jpg</icon>
 										</item>
 										<item id="213">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/4.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,4.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/4.jpg</icon>
 										</item>
 										<item id="214">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/5.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,5.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/5.jpg</icon>
 										</item>
 										<item id="215">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/6.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,6.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/6.jpg</icon>
 										</item>
 										<item id="216">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/7.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,7.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/7.jpg</icon>
 										</item>
 										<item id="217">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/8.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,8.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/8.jpg</icon>
 										</item>
 										<item id="218">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/9.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,9.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/9.jpg</icon>
 										</item>
 										<item id="219">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/10.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,10.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/10.jpg</icon>
 										</item>
 										<item id="220">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/11.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,11.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/11.jpg</icon>
 										</item>
 										<item id="221">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/12.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,12.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/12.jpg</icon>
 										</item>
 										<item id="222">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/13.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,13.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/13.jpg</icon>
 										</item>
 										<item id="223">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/14.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,14.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/14.jpg</icon>
 										</item>
 										<item id="224">
 												<label>-</label>
-												<onclick>Skin.SetString(Background_Color,backgrounds/15.jpg)</onclick>
+												<onclick>Skin.SetString(Background_Color,15.jpg)</onclick>
 												<onclick>Skin.Reset(Background_Image)</onclick>
 												<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 												<icon>windows/programs/background thumbs/15.jpg</icon>

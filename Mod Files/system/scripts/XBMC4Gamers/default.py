@@ -1,7 +1,8 @@
 ### Script by Rocky
 import glob, os, re, shutil, time, xbmcgui, xbmc
 dialog = xbmcgui.Dialog()
-print "Loaded scripts\XBMC4Gamers\default.py"
+print "Loaded default.py"
+start_time = time.time()
 #  Sets paths, for profiles names & locations.
 kioskmode_Enabler = xbmc.translatePath("special://xbmc/system/keymaps/Enabled")
 Username = xbmc.getInfoLabel('system.profilename')
@@ -68,4 +69,4 @@ else:
 		except: print 'Error in "Get current profile" area'
 # Load next window
 xbmc.executebuiltin("ActivateWindow(1114)")
-print "Unloaded scripts\XBMC4Gamers\default.py"
+print "Unloaded default.py - took %s seconds to complete" % int(round((time.time() - start_time)))

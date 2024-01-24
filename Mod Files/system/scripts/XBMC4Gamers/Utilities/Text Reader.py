@@ -1,14 +1,13 @@
-import os, xbmc, xbmcgui
-dialog	= xbmcgui.Dialog()
 '''
 Mode:
 	0 = change log.
 	1 = Browse.
 	2 = View logs.
 '''
+import os, xbmc, xbmcgui
+dialog	= xbmcgui.Dialog()
 Mode = sys.argv[1:][0]
 File = sys.argv[2:][0]
-
 
 if Mode == '0':
 	if os.path.isfile(File):

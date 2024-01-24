@@ -1,4 +1,3 @@
-import glob,os,random,shutil,sys,xbmc,xbmcgui
 '''
  arguments 1:
 	toggle
@@ -7,6 +6,7 @@ import glob,os,random,shutil,sys,xbmc,xbmcgui
  arguments 2:
 	theme name (not including extension)
 '''
+import glob,os,random,shutil,sys,xbmc,xbmcgui
 dialog = xbmcgui.Dialog()
 arg1 = sys.argv[1:][0]
 arg2 = sys.argv[2:][0]
@@ -63,7 +63,7 @@ if arg1 == 'select':
 			ThemeColorFile= ThemeFile
 		# Check if it's a v2.0+ Gamers theme.
 		with open(os.path.join(xbmc.translatePath('Special://skin/colors'),ThemeColorFile+'.xml')) as test_theme:
-			if 'XBMC4Gamers v2.0+' in test_theme.read():
+			if 'XBMC4Gamers v2.0+' in test_theme.read() and os.path.isfile(os.path.join(xbmc.translatePath('Special://skin/backgrounds/'),ThemeFile+'/0.jpg')):
 				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skintheme;%s.xpr)'%ThemeFile)
 				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skincolors;%s.xml)'%ThemeFile)
 				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.font;%s.ttf)'%ThemeFile)
@@ -98,7 +98,7 @@ if arg1 == 'random':
 		ThemeColorFile= ThemeFile
 	# Check if it's a v2.0+ Gamers theme.
 	with open(os.path.join(xbmc.translatePath('Special://skin/colors'),ThemeColorFile+'.xml')) as test_theme:
-		if 'XBMC4Gamers v2.0+' in test_theme.read():
+		if 'XBMC4Gamers v2.0+' in test_theme.read() and os.path.isfile(os.path.join(xbmc.translatePath('Special://skin/backgrounds/'),ThemeFile+'/0.jpg')):
 			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skintheme;%s.xpr)'%ThemeFile)
 			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skincolors;%s.xml)'%ThemeFile)
 			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.font;%s.ttf)'%ThemeFile)

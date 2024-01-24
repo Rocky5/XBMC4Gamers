@@ -36,7 +36,7 @@
 						<dpadright>Right</dpadright>
 						<dpadup>Up</dpadup>
 						<dpaddown>Down</dpaddown>
-						<leftthumbbutton>Reloadskin</leftthumbbutton>
+						<leftthumbbutton>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Views Builder.py,1)</leftthumbbutton>
 						<rightthumbbutton>XBMC.ActivateWindow(ShutdownMenu)</rightthumbbutton>
 						<leftanalogtrigger>ScrollUp</leftanalogtrigger>
 						<rightanalogtrigger>ScrollDown</rightanalogtrigger>

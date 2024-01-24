@@ -6171,31 +6171,31 @@ msgstr "Esplora..."
 
 msgctxt "#20154"
 msgid "Summary information"
-msgstr "Riepilogo informazioni basilari"
+msgstr "Riepilogo"
 
 msgctxt "#20155"
 msgid "Storage information"
-msgstr "Informazioni sui dispositivi di memorizzazione"
+msgstr "Informazioni memoria"
 
 msgctxt "#20156"
 msgid "Hard disk information"
-msgstr "Informazioni sull'hard disk"
+msgstr "Informazioni hard disk"
 
 msgctxt "#20157"
 msgid "DVD-ROM information"
-msgstr "Informazioni sul lettore DVD-ROM"
+msgstr "Informazioni DVD-ROM"
 
 msgctxt "#20158"
 msgid "Network information"
-msgstr "Informazioni di rete"
+msgstr "Informazioni rete"
 
 msgctxt "#20159"
 msgid "Video information"
-msgstr "Informazioni sull uscita video"
+msgstr "Informazioni uscita video"
 
 msgctxt "#20160"
 msgid "Hardware information"
-msgstr "Informazioni generali dell'hardware"
+msgstr "Informazioni hardware"
 
 msgctxt "#20161"
 msgid "Total"

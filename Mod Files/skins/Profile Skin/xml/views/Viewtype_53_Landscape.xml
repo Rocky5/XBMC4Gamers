@@ -1,0 +1,241 @@
+<!-- LandscapeView ID = 53 -->
+<control type="group">
+		<visible>Control.IsVisible(53) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
+		<control type="group">
+				<control type="fixedlist" id="53">
+						<left>0</left>
+						<top>410</top>
+						<width>1380</width>
+						<height>430</height>
+						<onleft>53</onleft>
+						<onright>53</onright>
+						<onup>9000</onup>
+						<ondown>90</ondown>
+						<viewtype label="view53">biglist</viewtype>
+						<pagecontrol>90</pagecontrol>
+						<scrolltime>230</scrolltime>
+						<focusposition>2</focusposition>
+						<orientation>horizontal</orientation>
+						<preloaditems>2</preloaditems>
+						<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" height="180" width="320">
+								<control type="group">
+										<left>-160</left>
+										<control type="image">
+												<left>5</left>
+												<top>5</top>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">no_thumb.jpg</texture>
+										</control>
+										<control type="image">
+												<left>5</left>
+												<top>5</top>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.icon]</texture>
+										</control>
+										<control type="image">
+												<left>8</left>
+												<top>8</top>
+												<width>25</width>
+												<height>25</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[listitem.overlay]</texture>
+										</control>
+								</control>
+						</itemlayout>
+						<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="180" width="320">
+								<control type="group">
+										<left>-160</left>
+										<control type="image">
+												<left>5</left>
+												<top>5</top>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">no_thumb.jpg</texture>
+										</control>
+										<control type="image">
+												<left>5</left>
+												<top>5</top>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.icon]</texture>
+												<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+										</control>
+										<control type="image">
+												<left>5</left>
+												<top>5</top>
+												<width>310</width>
+												<height>170</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\thumb.jpg</texture>
+										</control>
+										<control type="image">
+												<left>8</left>
+												<top>8</top>
+												<width>25</width>
+												<height>25</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[listitem.overlay]</texture>
+										</control>
+								</control>
+						</itemlayout>
+						<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="180" width="320">
+								<control type="group">
+										<left>-160</left>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">no_thumb.jpg</texture>
+												<bordersize>2</bordersize>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.icon]</texture>
+												<bordersize>2</bordersize>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png" border="5">views/landscape/poster-border.png</texture>
+												<bordersize>2</bordersize>
+										</control>
+										<control type="image">
+												<left>8</left>
+												<top>8</top>
+												<width>25</width>
+												<height>25</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[listitem.overlay]</texture>
+										</control>
+								</control>
+						</focusedlayout>
+						<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="180" width="320">
+								<control type="group">
+										<left>-160</left>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">no_thumb.jpg</texture>
+												<bordersize>2</bordersize>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.icon]</texture>
+												<bordersize>2</bordersize>
+												<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\thumb.jpg</texture>
+												<bordersize>2</bordersize>
+										</control>
+										<control type="image">
+												<left>0</left>
+												<top>0</top>
+												<width>320</width>
+												<height>180</height>
+												<aspectratio>stretch</aspectratio>
+												<texture background="true" diffuse="views/landscape/diffuse.png" border="5">views/landscape/poster-border.png</texture>
+										</control>
+										<control type="image">
+												<left>8</left>
+												<top>8</top>
+												<width>25</width>
+												<height>25</height>
+												<aspectratio>stretch</aspectratio>
+												<texture>$INFO[listitem.overlay]</texture>
+										</control>
+								</control>
+						</focusedlayout>
+				</control>
+				<control type="label">
+						<left>0</left>
+						<top>115r</top>
+						<width>1280</width>
+						<height>36</height>
+						<font>size_35</font>
+						<textcolor>$VAR[Alt_Label_Colour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+				</control>
+				<control type="label">
+						<left>0</left>
+						<top>640</top>
+						<width>1280</width>
+						<height>30</height>
+						<font>size_15</font>
+						<textcolor>$VAR[Alt_Label_Colour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31186]</label>
+						<visible>StringCompare(ListItem.ProgramCount,0) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+				</control>
+				<control type="label">
+						<left>0</left>
+						<top>640</top>
+						<width>1280</width>
+						<height>30</height>
+						<font>size_15</font>
+						<textcolor>$VAR[Alt_Label_Colour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]]</label>
+						<visible>StringCompare(ListItem.ProgramCount,1) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+				</control>
+				<control type="label">
+						<left>0</left>
+						<top>640</top>
+						<width>1280</width>
+						<height>30</height>
+						<font>size_15</font>
+						<textcolor>$VAR[Alt_Label_Colour]</textcolor>
+						<scroll>true</scroll>
+						<align>center</align>
+						<aligny>center</aligny>
+						<label>$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]]</label>
+						<visible>IntegerGreaterThan(ListItem.ProgramCount,1) + !IsEmpty(listitem.Synopsis_Resources)</visible>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+						<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+				</control>
+				<control type="scrollbar" id="90">
+						<onup>53</onup>
+						<include>View.ScrollBar.Horizontal</include>
+				</control>
+		</control>
+</control>

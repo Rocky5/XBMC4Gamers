@@ -57,15 +57,15 @@ msgstr "Abilita grafica a risoluzione più elevata"
 
 msgctxt "#32006"
 msgid "Refresh info"
-msgstr "Aggiorna informazioni"
+msgstr "Aggiorna le informazioni"
 
 msgctxt "#32007"
 msgid "Refresh all contents info"
-msgstr "Aggiorna tutte le informazioni sui contenuti"
+msgstr "Aggiorna tutte le informazioni"
 
 msgctxt "#32008"
 msgid "Refreshing Synopsis Information"
-msgstr "Informazioni sulla sinossi in fase di aggiornamento"
+msgstr "Informazioni contenuti in aggiornamento"
 
 ## Custom_logoff.xml - 31011 to 31015
 msgctxt "#31011"
@@ -79,7 +79,7 @@ msgstr "caricamento"
 
 msgctxt "#31017"
 msgid "[B]Kiosk Mode[/B][CR]Profile is locked[CR]Press (A) to logout"
-msgstr "[B]Modalità Kiosk[/B][CR]profilo è bloccato[CR]Premi (A) per uscire"
+msgstr "[B]Modalità Kiosk[/B][CR]profilo bloccato[CR]Premi (A) per uscire"
 
 ## Custom_Skin_Settings.xml - 31021 to 31034
 msgctxt "#31021"
@@ -218,8 +218,8 @@ msgid "Enable profile lock"
 msgstr "Abilita blocco profilo"
 
 msgctxt "#31064"
-msgid "^ Enabling this setting will lock this profile if [B]Kiosk Mode[/B] is enabled"
-msgstr "L'attivazione bloccherà questo profilo se la [B]Modalità Chiosco[/B] è abilitata"
+msgid "Enabling this setting will lock this profile if [B]Kiosk Mode[/B] is enabled"
+msgstr "L'attivazione bloccherà questo profilo se la [B]Modalità Kiosk[/B] è abilitata"
 
 msgctxt "#31065"
 msgid "Hide profile image on startup"

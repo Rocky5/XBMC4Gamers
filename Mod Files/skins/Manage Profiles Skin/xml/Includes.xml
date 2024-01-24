@@ -16,8 +16,8 @@
 		<include name="Global.Backgrounds">
 				<control type="image">
 						<include>1280x720</include>
-						<texture fallback="background.jpg">$INFO[skin.string(background_color)]</texture>
 						<aspectratio>stretch</aspectratio>
+						<texture>Special://skin/backgrounds/$INFO[Skin.CurrentTheme]/$VAR[backgrounds]</texture>
 						<visible>StringCompare(skin.string(background_image),) + StringCompare(skin.string(Background_Custom_Color),)</visible>
 				</control>
 				<control type="image">
@@ -126,11 +126,7 @@
 				<include condition="System.Date(12-20,1-1)">snow</include>
 				<!-- Halloween -->
 				<include condition="System.Date(10-24,11-1)">halloween</include>
-				<!-- Had to add the exact date for each year :/ damn easter! -->
-				<include condition="StringCompare(System.Date,Sun, Apr 17, 2022)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 17 Apr 2022)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, Apr 9 2023)">easter</include>
-				<include condition="StringCompare(System.Date,Sun, 9 Apr 2023)">easter</include>
+				<!-- Had to add the exact date for each year :/ damn Easter! well the next 21 years are covered LMAO! -->
 				<include condition="StringCompare(System.Date,Sun, Mar 31 2024)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, 31 Mar 2024)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, Apr 20 2025)">easter</include>
@@ -157,6 +153,22 @@
 				<include condition="StringCompare(System.Date,Sun, 25 Mar 2035)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, Apr 13 2036)">easter</include>
 				<include condition="StringCompare(System.Date,Sun, 13 Apr 2036)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 5 2037)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 5 Apr 2037)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 25 2038)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 25 Apr 2038)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 10 2039)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 10 Apr 2039)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 1 2040)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 1 Apr 2040)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 21 2041)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 21 Apr 2041)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 06 2042)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 06 Apr 2042)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 29 2043)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 29 Apr 2043)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, Apr 17 2044)">easter</include>
+				<include condition="StringCompare(System.Date,Sun, 17 Apr 2044)">easter</include>
 				<!-- birthdays -->
 				<include condition="SubString(System.Date,Jan)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Jan.xml">Jan</include>
 				<include condition="SubString(System.Date,Feb)" file="Dates_SubString_Workaround\Includes_SubString_Workaround_Feb.xml">Feb</include>

@@ -2,7 +2,7 @@
 
 Welcome to XBMC4Gamers v2.0
 
-A lot has changed since the last Stable build, we now have full synopsis support, more views to shake a stick at and all round better experience.
+A lot has changed since v1.4, we now have full synopsis support, more views to shake a stick at and all round better experience.
 We now have a HOME MENU! yeah, it lets you launch menus and recently launched, random games, homebrew, emus, applications and up to 4 custom entries.
 I fixed all bugs I could find and some I missed or created from the last stable or test builds.
 
@@ -11,11 +11,32 @@ So hopefully you enjoy your time in the dash and have a great New Year!
 Thank you for your support.
 I would also like to thank everyone that has donated it's very much appreciated.
 
-Please refresh your content after this update, press the white button and select "Refresh all contents info"
-This will fix any missing artwork
+!!! Please refresh your content after this update, press the white button and select "Refresh all contents info"
+!!! This will fix any missing artwork
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
+Change log for v2.0.002
+24/1/2024
+
+	1) Updated the synopsis view to hide stuff that's not visible.
+	2) Forced context menu to be centred on all windows except file manager.
+	3) Now "," will be "/" on synopsis info for the below elements.
+		(features_general, features_online, esrb_descriptors, genre and platform. You want this refresh all your content.)
+	4) Updated Easter dates, so now the next 21 years are covered lol
+	5) Backgrounds are now out side the XPR files, so you will need to redownload your themes if you had any.
+	6) Views are now stored in the MyPrograms.xml. Custom views are still separate.
+		(this file is build on each load of gamers, this saves 2MB of memory. The view xmls are there as they are still required)
+	7) Clean up and moved some stuff about.
+	8) Fixed the context buttons view options showing the wrong direction for the view settings on new views.
+		(thanks to SPx982 for noticing)
+	9) In the rare case of the "Home Screen Items.py" failing to load home if DB isn't present fixed.
+	10) Updated Italian language,
+		(Thank you XGekoX)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Previous Updates:
 Change log for v2.0.001
 6/1/2024
 
@@ -31,10 +52,6 @@ Change log for v2.0.001
 		(Giorgos Tsamouris for noticing this)
 	8) Hopefully reduced the startup time if there is no network.
 		(It's just as fast for me so, can only do so much)
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Previous Updates:
 
 Change log for v2.0.000
 1/1/2024

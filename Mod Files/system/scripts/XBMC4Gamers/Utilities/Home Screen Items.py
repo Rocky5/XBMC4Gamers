@@ -22,8 +22,8 @@ class Main:
 	def __init__( self ):
 		global version
 		version = int("".join(str(x) for x in self.ParseDB('SELECT idVersion FROM version'))[1])
-		try: arg1 = int(sys.argv[1:][0])
-		except: arg1 = 0
+		try: arg = int(sys.argv[1:][0])
+		except: arg = 0
 		# These are the default search permas to search the DB. They are folder names, so Games will search Games, Games 1, Games 2, Games that are cool etc....
 		Search_Games	= "Games"
 		Search_Brews	= "Homebrew,Ports"
@@ -33,26 +33,29 @@ class Main:
 		custom2_enabled, custom2_search	= xbmc.getInfoLabel("Skin.HasSetting(CustomHomeButton2Enabled)"), xbmc.getInfoLabel("Skin.String(CustomHomeButton2Search)")
 		custom3_enabled, custom3_search	= xbmc.getInfoLabel("Skin.HasSetting(CustomHomeButton3Enabled)"), xbmc.getInfoLabel("Skin.String(CustomHomeButton3Search)")
 		custom4_enabled, custom4_search	= xbmc.getInfoLabel("Skin.HasSetting(CustomHomeButton4Enabled)"), xbmc.getInfoLabel("Skin.String(CustomHomeButton4Search)")
-		# First part is the skin property value, don't change this unless you want to edit the home.xml
-		self.Random("RandomGames,"+Search_Games)
-		self.Random("RandomBrews,"+Search_Brews)
-		self.Random("RandomEmus,"+Search_Emus)
-		self.Random("RandomApps,"+Search_Apps)
-		if arg1 > 0:
-			self.LastPlayed("LastPlayedGames,"+Search_Games)
-			self.LastPlayed("LastPlayedBrews,"+Search_Brews)
-			self.LastPlayed("LastPlayedEmus,"+Search_Emus)
-			self.LastPlayed("LastPlayedApps,"+Search_Apps)
-			if custom1_enabled and not custom1_search == "": self.LastPlayed("LastPlayedCustom1,"+custom1_search)
-			if custom2_enabled and not custom2_search == "": self.LastPlayed("LastPlayedCustom2,"+custom2_search)
-			if custom3_enabled and not custom3_search == "": self.LastPlayed("LastPlayedCustom3,"+custom3_search)
-			if custom4_enabled and not custom4_search == "": self.LastPlayed("LastPlayedCustom4,"+custom4_search)
-			if arg1 == 2:
-				xbmc.executebuiltin('ActivateWindow(Home)')
-		if custom1_enabled and not custom1_search == "": self.Random("RandomCustom1,"+custom1_search)
-		if custom2_enabled and not custom2_search == "": self.Random("RandomCustom2,"+custom2_search)
-		if custom3_enabled and not custom3_search == "": self.Random("RandomCustom3,"+custom3_search)
-		if custom4_enabled and not custom4_search == "": self.Random("RandomCustom4,"+custom4_search)
+		try:
+			# First part is the skin property value, don't change this unless you want to edit the home.xml
+			self.Random("RandomGames,"+Search_Games)
+			self.Random("RandomBrews,"+Search_Brews)
+			self.Random("RandomEmus,"+Search_Emus)
+			self.Random("RandomApps,"+Search_Apps)
+			if arg > 0:
+				self.LastPlayed("LastPlayedGames,"+Search_Games)
+				self.LastPlayed("LastPlayedBrews,"+Search_Brews)
+				self.LastPlayed("LastPlayedEmus,"+Search_Emus)
+				self.LastPlayed("LastPlayedApps,"+Search_Apps)
+				if custom1_enabled and not custom1_search == "": self.LastPlayed("LastPlayedCustom1,"+custom1_search)
+				if custom2_enabled and not custom2_search == "": self.LastPlayed("LastPlayedCustom2,"+custom2_search)
+				if custom3_enabled and not custom3_search == "": self.LastPlayed("LastPlayedCustom3,"+custom3_search)
+				if custom4_enabled and not custom4_search == "": self.LastPlayed("LastPlayedCustom4,"+custom4_search)
+				if arg == 2:
+					xbmc.executebuiltin('ActivateWindow(Home)')
+			if custom1_enabled and not custom1_search == "": self.Random("RandomCustom1,"+custom1_search)
+			if custom2_enabled and not custom2_search == "": self.Random("RandomCustom2,"+custom2_search)
+			if custom3_enabled and not custom3_search == "": self.Random("RandomCustom3,"+custom3_search)
+			if custom4_enabled and not custom4_search == "": self.Random("RandomCustom4,"+custom4_search)
+		except:
+			xbmc.executebuiltin('ActivateWindow(Home)')
 
 	def Random(self,var):
 		increment = 0

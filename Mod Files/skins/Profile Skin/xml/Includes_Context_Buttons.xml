@@ -228,7 +228,7 @@
 										<height>22</height>
 										<texture>pad_buttons\dpad_up_button.png</texture>
 										<aspectratio>keep</aspectratio>
-										<visible>![Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58)] + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
+										<visible>![Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58) | Control.IsVisible(61) | Control.IsVisible(72)] + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 								</control>
 								<control type="image">
 										<left>0</left>
@@ -237,7 +237,7 @@
 										<height>22</height>
 										<texture>pad_buttons\dpad_left_button.png</texture>
 										<aspectratio>keep</aspectratio>
-										<visible>[Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58)] + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
+										<visible>[Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58) | Control.IsVisible(61) | Control.IsVisible(72)] + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 								</control>
 								<control type="label">
 										<left>0</left>

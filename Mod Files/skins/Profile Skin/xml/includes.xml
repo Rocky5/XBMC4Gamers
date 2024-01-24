@@ -1,10 +1,10 @@
 <includes>
 		<include file="defaults.xml" />
-		<include file="includes_context_buttons.xml" />
-		<include file="includes_variables.xml" />
-		<include file="Includes_View_Options.xml" />
+		<include file="Includes_Context_Buttons.xml" />
+		<include file="Includes_Fallback_View.xml" />
 		<include file="Includes_URLDownloader.xml" />
-		<include file="Viewtype_fallback_view.xml" />
+		<include file="Includes_Variables.xml" />
+		<include file="Includes_View_Options.xml" />
 		<constant name="FanartCrossfadeTime">200</constant>
 		<constant name="ThumbCrossfadeTime">200</constant>
 		<include name="1280x720">
@@ -35,7 +35,7 @@
 				<control type="image">
 						<include>1280x720</include>
 						<aspectratio>stretch</aspectratio>
-						<texture fallback="background.jpg">$INFO[skin.string(background_color)]</texture>
+						<texture>Special://skin/backgrounds/$INFO[Skin.CurrentTheme]/$VAR[backgrounds]</texture>
 						<visible>StringCompare(skin.string(background_image),) + StringCompare(skin.string(Background_Custom_Color),)</visible>
 				</control>
 				<control type="image">
@@ -172,32 +172,6 @@
 						<animation effect="fade" start="0" end="100" delay="500" time="200">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
 				</control>
-		</include>
-		<include name="Context.Menu.Offsets">
-				<animation effect="slide" start="0,0" end="-50,-102" time="0" condition="StringCompare(Container.Viewmode,view50)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-210,-102" time="0" condition="StringCompare(Container.Viewmode,view51)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-50,-104" time="0" condition="StringCompare(Container.Viewmode,view52)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-50,-104" time="0" condition="StringCompare(Container.Viewmode,view53)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,91" time="0" condition="StringCompare(Container.Viewmode,view54)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="295,86" time="0" condition="StringCompare(Container.Viewmode,view55)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,22" time="0" condition="StringCompare(Container.Viewmode,view56)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="85,-104" time="0" condition="StringCompare(Container.Viewmode,view57)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-170,76" time="0" condition="StringCompare(Container.Viewmode,view58)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,-99" time="0" condition="StringCompare(Container.Viewmode,view59)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-210,-104" time="0" condition="StringCompare(Container.Viewmode,view60)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="353,57" time="0" condition="StringCompare(Container.Viewmode,view61)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="85,-104" time="0" condition="StringCompare(Container.Viewmode,view62)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="85,-104" time="0" condition="StringCompare(Container.Viewmode,view63)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="85,-100" time="0" condition="StringCompare(Container.Viewmode,view64)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="85,-104" time="0" condition="StringCompare(Container.Viewmode,view65)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-50,-104" time="0" condition="StringCompare(Container.Viewmode,view66)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-250,-65" time="0" condition="StringCompare(Container.Viewmode,view67)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-200,-75" time="0" condition="StringCompare(Container.Viewmode,view68)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-296,-104" time="0" condition="StringCompare(Container.Viewmode,view69)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-50,-104" time="0" condition="StringCompare(Container.Viewmode,view70)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="85,-104" time="0" condition="StringCompare(Container.Viewmode,view71)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-180,135" time="0" condition="StringCompare(Container.Viewmode,view72)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="0,221" time="0" condition="StringCompare(Container.Viewmode,view79)">Conditional</animation>
 		</include>
 		<include name="Window.Header">
 				<control type="image">

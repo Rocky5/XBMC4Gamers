@@ -28,6 +28,10 @@ if len(glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))) > 0:
 			if os.path.isfile('Q:/skins/profile skin/colors/'+Theme+'.xml'):
 				os.remove('Q:/skins/profile skin/colors/'+Theme+'.xml')
 			
+			# Backgrounds
+			if os.path.isdir('Q:/skins/profile skin/backgrounds/'+Theme+''):
+				shutil.rmtree('Q:/skins/profile skin/backgrounds/'+Theme+'')
+			
 			# Playlist
 			if os.path.isfile('Q:/skins/profile skin/extras/themes/playlists/'+Theme+'.m3u'):
 				os.remove('Q:/skins/profile skin/extras/themes/playlists/'+Theme+'.m3u')

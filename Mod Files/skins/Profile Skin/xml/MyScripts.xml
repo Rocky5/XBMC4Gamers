@@ -6,7 +6,223 @@
 				<include>Global.Backgrounds</include>
 				<control type="group">
 						<include>View.Visible.Effect</include>
-						<include file="Viewtype_CommonRootView.xml">CommonRootView</include>
+						<control type="image">
+								<left>55</left>
+								<top>55</top>
+								<width>1170</width>
+								<height>610</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\settings_categories\main.png</texture>
+						</control>
+						<control type="image">
+								<left>75</left>
+								<top>75</top>
+								<width>330</width>
+								<height>570</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\settings_categories\main_overlay.png</texture>
+						</control>
+						<control type="image">
+								<left>75</left>
+								<top>75</top>
+								<width>330</width>
+								<height>76</height>
+								<aspectratio>stretch</aspectratio>
+								<texture>windows\settings\header.png</texture>
+						</control>
+						<control type="label">
+								<left>75</left>
+								<top>95</top>
+								<width>330</width>
+								<height>28</height>
+								<font>size_28</font>
+								<scroll>true</scroll>
+								<align>center</align>
+								<textcolor>common_header_label</textcolor>
+								<label>$LOCALIZE[247]</label>
+								<visible>Window.IsActive(20)</visible>
+						</control>
+						<control type="label">
+								<left>75</left>
+								<top>95</top>
+								<width>330</width>
+								<height>28</height>
+								<font>size_28</font>
+								<scroll>true</scroll>
+								<align>center</align>
+								<textcolor>common_header_label</textcolor>
+								<label>$LOCALIZE[559]</label>
+								<visible>Window.IsActive(500)</visible>
+						</control>
+						<control type="label">
+								<left>75</left>
+								<top>95</top>
+								<width>330</width>
+								<height>28</height>
+								<font>size_28</font>
+								<scroll>true</scroll>
+								<align>center</align>
+								<textcolor>common_header_label</textcolor>
+								<label>$LOCALIZE[2]</label>
+								<visible>Window.IsActive(501)</visible>
+						</control>
+						<control type="grouplist">
+								<description>Control Info</description>
+								<left>415</left>
+								<top>568</top>
+								<width min="100" max="775">auto</width>
+								<height>80</height>
+								<itemgap>10</itemgap>
+								<orientation>Horizontal</orientation>
+								<align>center</align>
+								<!-- A Button -->
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\dialogs\a_button.png</texture>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="80" max="147">auto</width>
+										<height>32</height>
+										<font>size_19</font>
+										<align>left</align>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
+										<label>$LOCALIZE[424]</label>
+								</control>
+								<!-- B Button -->
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\dialogs\B_button.png</texture>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="60" max="80">auto</width>
+										<height>32</height>
+										<font>size_19</font>
+										<align>left</align>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
+										<label>$LOCALIZE[31151]</label>
+								</control>
+								<!-- Y Button -->
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>32</width>
+										<height>32</height>
+										<texture>pad_buttons\dialogs\y_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>Window.IsVisible(500) | Window.IsVisible(501)</visible>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="80" max="147">auto</width>
+										<height>32</height>
+										<font>size_19</font>
+										<align>left</align>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
+										<label>$LOCALIZE[31111]</label>
+										<visible>Window.IsVisible(501)</visible>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="80" max="147">auto</width>
+										<height>32</height>
+										<font>size_19</font>
+										<align>left</align>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
+										<label>$LOCALIZE[31112]</label>
+										<visible>Window.IsVisible(500)</visible>
+								</control>
+								<!-- White Button -->
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>32</width>
+										<height>32</height>
+										<aspectratio>stretch</aspectratio>
+										<texture>pad_buttons\dialogs\White_button.png</texture>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="80" max="147">auto</width>
+										<height>32</height>
+										<font>size_19</font>
+										<align>left</align>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
+										<label>$LOCALIZE[31113]</label>
+								</control>
+								<!-- Black Button -->
+								<control type="image">
+										<left>0</left>
+										<top>0</top>
+										<width>32</width>
+										<height>32</height>
+										<texture>pad_buttons\dialogs\black_button.png</texture>
+										<aspectratio>keep</aspectratio>
+										<visible>Window.IsVisible(500) | Window.IsVisible(501)</visible>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="80" max="147">auto</width>
+										<height>32</height>
+										<font>size_19</font>
+										<align>left</align>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
+										<label>$LOCALIZE[31117]</label>
+										<visible>Window.IsVisible(500)</visible>
+								</control>
+								<control type="label">
+										<left>0</left>
+										<top>0</top>
+										<width min="80" max="147">auto</width>
+										<height>32</height>
+										<font>size_19</font>
+										<align>left</align>
+										<aligny>center</aligny>
+										<textcolor>common_context_label</textcolor>
+										<label>$LOCALIZE[31118]</label>
+										<visible>Window.IsVisible(501)</visible>
+								</control>
+						</control>
+						<control type="image">
+								<left>75</left>
+								<top>170</top>
+								<width>330</width>
+								<height>410</height>
+								<aspectratio>keep</aspectratio>
+								<texture background="false">$INFO[listitem.Icon]</texture>
+						</control>
+						<!-- Content List -->
+						<control type="list" id="50">
+								<include>Common.View.Layout</include>
+						</control>
+						<control type="scrollbar" id="90">
+								<left>1190</left>
+								<top>105</top>
+								<width>4</width>
+								<height>420</height>
+								<include>Fake.ScrollBar.Vertical</include>
+						</control>
 				</control>
 				<include>Window.Header</include>
 		</controls>

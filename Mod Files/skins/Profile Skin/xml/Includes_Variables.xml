@@ -1,4 +1,8 @@
 <includes>
+		<variable name="backgrounds">
+				<value condition="IsEmpty(skin.string(background_color))">0.jpg</value>
+				<value condition="!IsEmpty(skin.string(background_color))">$INFO[skin.string(background_color)]</value>
+		</variable>
 		<variable name="Alt_Label_Colour">
 				<!-- all other windows -->
 				<value condition="!Skin.HasSetting(AltTextColour) + !Window.IsVisible(7) + !Window.IsVisible(2999)">$INFO[Container.Viewmode]_label</value>

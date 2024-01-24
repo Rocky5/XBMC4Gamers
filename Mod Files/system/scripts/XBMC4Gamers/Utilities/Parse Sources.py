@@ -2,7 +2,7 @@
 	Script by Rocky5
 	Used to grab source names for the quick changer toggles
 '''
-print "| Scripts\XBMC4Gamers\Utilities\Parse Sources.py loaded."
+print "Parse Sources.py"
 import os,sys,xbmc,xbmcgui
 import xml.etree.cElementTree as etree
 args = sys.argv[1:][0]

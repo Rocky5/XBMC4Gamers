@@ -76,6 +76,10 @@ if os.path.isfile(zip_file):
 		for viewfile in os.listdir(os.path.join(Root_Directory,'skins/Profile Skin/xml')):
 			if viewfile.startswith('Viewtype_View'):
 				os.remove(os.path.join(Root_Directory,'skins/Profile Skin/xml',viewfile))
+
+		for viewfile in os.listdir(os.path.join(Root_Directory,'skins/Profile Skin/xml')):
+			if viewfile.startswith('Viewtype_'):
+				os.remove(os.path.join(Root_Directory,'skins/Profile Skin/xml',viewfile))
 		
 		if os.path.isfile(Root_Directory+'skins/Profile Skin/xml/Viewtype_54_Panel.xml'):
 				os.remove(Root_Directory+'skins/Profile Skin/xml/Viewtype_54_Panel.xml')
