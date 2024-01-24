@@ -17,7 +17,7 @@
 				<control type="image">
 						<include>1280x720</include>
 						<aspectratio>stretch</aspectratio>
-						<texture>Special://skin/backgrounds/$INFO[Skin.CurrentTheme]/$VAR[backgrounds]</texture>
+						<texture>Special://skin/backgrounds/default/$VAR[backgrounds]</texture>
 						<visible>StringCompare(skin.string(background_image),) + StringCompare(skin.string(Background_Custom_Color),)</visible>
 				</control>
 				<control type="image">
