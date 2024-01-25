@@ -2,8 +2,8 @@
 		<controls>
 				<include>Behind.Dialog.FadeOut</include>
 				<control type="multiimage">
-						<left>20</left>
-						<top>20</top>
+						<left>608</left>
+						<top>328</top>
 						<width>64</width>
 						<height>64</height>
 						<aspectratio>stretch</aspectratio>
@@ -12,19 +12,6 @@
 						<timeperimage>24</timeperimage>
 						<fadetime>5</fadetime>
 						<loop>yes</loop>
-						<animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation>
-						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
-				</control>
-				<control type="label">
-						<left>19</left>
-						<top>80</top>
-						<width>64</width>
-						<height>30</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>size_14</font>
-						<label>Loading</label>
-						<textcolor>1100_label</textcolor>
 						<animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 				</control>

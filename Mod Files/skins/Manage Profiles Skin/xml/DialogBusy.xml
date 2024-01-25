@@ -2,8 +2,8 @@
 		<controls>
 				<include>Behind.Dialog.FadeOut</include>
 				<control type="multiimage">
-						<left>20</left>
-						<top>20</top>
+						<left>608</left>
+						<top>328</top>
 						<width>64</width>
 						<height>64</height>
 						<aspectratio>stretch</aspectratio>
@@ -15,40 +15,5 @@
 						<animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation>
 						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
 				</control>
-				<control type="label">
-						<left>19</left>
-						<top>80</top>
-						<width>64</width>
-						<height>30</height>
-						<align>center</align>
-						<aligny>center</aligny>
-						<font>size_14</font>
-						<label>Loading</label>
-						<textcolor>138_label</textcolor>
-						<animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation>
-						<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
-				</control>
-				<!-- <control type="image"> -->
-				<!-- <left>580</left> -->
-				<!-- <top>300</top> -->
-				<!-- <width>120</width> -->
-				<!-- <height>120</height> -->
-				<!-- <texture>spinner.png</texture> -->
-				<!-- <aspectratio>stretch</aspectratio> -->
-				<!-- <animation effect="rotate" start="0" end="-360" center="auto" time="3000" loop="true" condition="true">Conditional</animation> -->
-				<!-- <animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation> -->
-				<!-- <animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation> -->
-				<!-- </control> -->
-				<!-- <control type="image"> -->
-				<!-- <left>605</left> -->
-				<!-- <top>325</top> -->
-				<!-- <width>70</width> -->
-				<!-- <height>70</height> -->
-				<!-- <texture>spinner.png</texture> -->
-				<!-- <aspectratio>stretch</aspectratio> -->
-				<!-- <animation effect="rotate" start="0" end="360" center="auto" time="3000" loop="true" condition="true">Conditional</animation> -->
-				<!-- <animation effect="fade" start="0" end="100" delay="200" time="250">WindowOpen</animation> -->
-				<!-- <animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation> -->
-				<!-- </control> -->
 		</controls>
 </window>
