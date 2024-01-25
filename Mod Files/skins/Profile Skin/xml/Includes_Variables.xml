@@ -1,7 +1,9 @@
 <includes>
 		<variable name="backgrounds">
-				<value condition="IsEmpty(skin.string(background_color))">0.jpg</value>
-				<value condition="!IsEmpty(skin.string(background_color))">$INFO[skin.string(background_color)]</value>
+				<value condition="IsEmpty(skin.string(background_color)) + StringCompare(Skin.CurrentTheme,skindefault)">default/0.jpg</value>
+				<value condition="!IsEmpty(skin.string(background_color)) + StringCompare(Skin.CurrentTheme,skindefault)">default/$INFO[skin.string(background_color)]</value>
+				<value condition="IsEmpty(skin.string(background_color)) + !StringCompare(Skin.CurrentTheme,skindefault)">$INFO[Skin.CurrentTheme]/0.jpg</value>
+				<value condition="!IsEmpty(skin.string(background_color)) + !StringCompare(Skin.CurrentTheme,skindefault)">$INFO[Skin.CurrentTheme]/$INFO[skin.string(background_color)]</value>
 		</variable>
 		<variable name="Alt_Label_Colour">
 				<!-- all other windows -->

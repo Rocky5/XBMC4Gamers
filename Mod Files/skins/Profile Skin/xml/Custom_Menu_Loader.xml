@@ -14,7 +14,7 @@
 				</control>
 				<control type="button" id="1">
 						<left>-5000</left>
-						<onfocus>ActivateWindow($INFO[skin.String(HomeWindowSource)],$INFO[skin.String(HomeWindow)])</onfocus>
+						<onfocus>ActivateWindow(Programs,$INFO[skin.String(HomeWindow)])</onfocus>
 						<animation effect="fade" start="0" end="100" delay="0" time="50">Focus</animation>
 						<visible>!StringCompare(Skin.String(HomeWindowSource),Home)</visible>
 				</control>

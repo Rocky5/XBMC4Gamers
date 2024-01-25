@@ -185,8 +185,8 @@
 				<top>355</top>
 				<width>1380</width>
 				<height>460</height>
-				<onleft>52</onleft>
-				<onright>52</onright>
+				<onleft>79</onleft>
+				<onright>79</onright>
 				<onup>9000</onup>
 				<ondown>-</ondown>
 				<viewtype label="view79">biglist</viewtype>
