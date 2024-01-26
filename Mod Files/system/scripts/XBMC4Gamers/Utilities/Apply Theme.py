@@ -44,12 +44,11 @@ if arg1 == 'toggle':
 
 
 if arg1 == 'select':
-	XPR = []
 	xbmc.executebuiltin('Skin.SetBool(SelectPreviewMode)') # This is set so the preview is shown in the skin settings menu when required.
 
 	Filter_XPR = sorted([x.lower().replace('textures','Default') for x in glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))], key=None, reverse=0)
 	Filter_XPR = [os.path.basename(x.replace(".xpr","").title()) for x in Filter_XPR]
-	ThemeFolder = xbmcgui.Dialog().select('Select Theme',Filter_XPR,10000)
+	ThemeFolder = dialog.select('Select Theme',Filter_XPR,10000)
 	
 	if ThemeFolder == -1:
 		pass

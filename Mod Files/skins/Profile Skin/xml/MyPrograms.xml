@@ -3542,8 +3542,8 @@
 										<top>355</top>
 										<width>1380</width>
 										<height>460</height>
-										<onleft>52</onleft>
-										<onright>52</onright>
+										<onleft>57</onleft>
+										<onright>57</onright>
 										<onup>9000</onup>
 										<ondown>90</ondown>
 										<viewtype label="view57">biglist</viewtype>
@@ -8723,8 +8723,8 @@
 										<top>355</top>
 										<width>1380</width>
 										<height>460</height>
-										<onleft>52</onleft>
-										<onright>52</onright>
+										<onleft>71</onleft>
+										<onright>71</onright>
 										<onup>9000</onup>
 										<ondown>90</ondown>
 										<viewtype label="view71">biglist</viewtype>
@@ -9307,8 +9307,8 @@
 										<top>355</top>
 										<width>1380</width>
 										<height>460</height>
-										<onleft>52</onleft>
-										<onright>52</onright>
+										<onleft>79</onleft>
+										<onright>79</onright>
 										<onup>9000</onup>
 										<ondown>-</ondown>
 										<viewtype label="view79">biglist</viewtype>

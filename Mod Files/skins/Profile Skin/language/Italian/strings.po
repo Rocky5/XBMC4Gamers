@@ -110,7 +110,7 @@ msgctxt "#31027"
 msgid "Startup Options"
 msgstr "Opzioni di Avvio"
 
-## General Toggles - Custom_Skin_Settings.xml - 31035 to 31055
+## General Toggles - Custom_Skin_Settings.xml - 31035 to 31058
 msgctxt "#31035"
 msgid "Disable time overlay"
 msgstr "Nascondi orario"
@@ -195,12 +195,16 @@ msgctxt "#31055"
 msgid "Use none blurred fanart"
 msgstr "Non utilizzare fanart sfocate"
 
-## Quick Change Menu - Custom_Skin_Settings.xml - 31056 to 31060
 msgctxt "#31056"
+msgid "Change splash"
+msgstr "Cambia spruzzo"
+
+## Quick Change Menu - Custom_Skin_Settings.xml - 31059 to 31060
+msgctxt "#31059"
 msgid "Enable additional sources"
 msgstr "Abilita sorgente aggiuntiva"
 
-msgctxt "#31057"
+msgctxt "#31060"
 msgid "Select source"
 msgstr "Seleziona fonte"
 

@@ -5,7 +5,7 @@
 import glob,os,sys,time,xbmc
 print "Loaded Views Builder.py"
 start_time = time.time()
-MyProgramsFile = '<window id="1">\n\
+FileHeader = '<window id="1">\n\
 		<defaultcontrol always="true">50</defaultcontrol>\n\
 		<allowoverlay>no</allowoverlay>\n\
 		<onload condition="Skin.HasSetting(run_random_script)">RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Random Select.py)</onload>\n\
@@ -18,9 +18,8 @@ MyProgramsFile = '<window id="1">\n\
 				<control type="group">\n\
 						<visible>!Window.IsActive(1101)</visible>\n\
 						<animation effect="fade" start="100" end="0" time="100" delay="400">hidden</animation>\n\
-						<animation effect="fade" start="0" end="100" delay="0" time="100">visible</animation>\n\
-						%s\n\
-						<!-- Custom views -->\n\
+						<animation effect="fade" start="0" end="100" delay="0" time="100">visible</animation>\n'
+FileFooter = '						<!-- Custom views -->\n\
 						<include file="custom views\CustomViewtype_id_80.xml" condition="Skin.HasSetting(CustomViewtype_id_80)">custom_id_80</include>\n\
 						<include file="custom views\CustomViewtype_id_81.xml" condition="Skin.HasSetting(CustomViewtype_id_81)">custom_id_81</include>\n\
 						<include file="custom views\CustomViewtype_id_82.xml" condition="Skin.HasSetting(CustomViewtype_id_82)">custom_id_82</include>\n\
@@ -40,22 +39,15 @@ MyProgramsFile = '<window id="1">\n\
 				<include condition="Skin.HasSetting(kioskmode)">View_Options</include>\n\
 		</controls>\n\
 </window>'
-
 try: arg = int(sys.argv[1:][0])
 except: arg = 0
 if xbmc.getCondVisibility('Window.IsVisible(2999)') or xbmc.getCondVisibility('Window.IsVisible(1)'):
-	print "Building Views Views Builder.py"
-	ViewsStored = ""
-	viewPath = xbmc.translatePath('Q:/skins/profile skin/xml/views/')
-	ProgramsPath = xbmc.translatePath('Q:/skins/profile skin/xml/')
-	Filter_XMLS = sorted([os.path.basename(x) for x in glob.glob(viewPath+'Viewtype_*.xml')], key=None, reverse=0)
-
-	for xmls in Filter_XMLS:
-		with open(os.path.join(viewPath,xmls), "r") as ViewsRead:
-			ViewsStored = ViewsStored+ViewsRead.read()
-
-	with open(os.path.join(ProgramsPath,'MyPrograms.xml'), "w") as WriteProgramsFile:
-		WriteProgramsFile.write(MyProgramsFile % (ViewsStored))
+	viewPath = 'Q:/skins/profile skin/xml/views/'
+	with open('Q:/skins/profile skin/xml/MyPrograms.xml', "w") as WriteFile:
+		WriteFile.write(FileHeader)
+		for xmls in sorted(os.listdir(viewPath)):
+			with open(os.path.join(viewPath,xmls), "r") as Views: WriteFile.write(Views.read())
+		WriteFile.write(FileFooter)
 
 if arg: xbmc.executebuiltin('Reloadskin')
 

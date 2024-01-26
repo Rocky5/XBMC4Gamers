@@ -47,6 +47,8 @@ if len(glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))) > 0:
 			# Splash
 			if os.path.isfile('Q:/skins/profile skin/extras/themes/splashes/'+Theme+'.png'):
 				os.remove('Q:/skins/profile skin/extras/themes/splashes/'+Theme+'.png')
+			if os.path.isfile('Q:/skins/profile skin/extras/themes/splashes/thumbs/'+Theme+'.png'):
+				os.remove('Q:/skins/profile skin/extras/themes/splashes/thumbs/'+Theme+'.png')
 			
 			# Font
 			if os.path.isfile('Q:/skins/profile skin/fonts/'+Theme+'.ttf'):

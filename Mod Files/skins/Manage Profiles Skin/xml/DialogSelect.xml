@@ -1,24 +1,20 @@
 <window type="window" id="2000">
 		<defaultcontrol always="true">3</defaultcontrol>
+		<allowoverlay>no</allowoverlay>
 		<coordinates>
 				<system>1</system>
-				<left>335</left>
-				<top>35</top>
+				<left>320</left>
+				<top>10</top>
 		</coordinates>
+		<include>Dialog.Effect.Zoom.Fast</include>
 		<controls>
 				<control type="group">
 						<!-- Image Preview -->
-						<left>260</left>
-						<top>0</top>
+						<left>270</left>
+						<top>28</top>
 						<visible>Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)</visible>
-						<animation type="Visible" reversible="false">
-								<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="back" time="300" delay="300" />
-								<effect type="fade" start="0" end="100" time="300" delay="300" />
-						</animation>
-						<animation type="Hidden" reversible="false">
-								<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="back" time="200" />
-								<effect type="fade" start="100" end="0" time="200" />
-						</animation>
+						<animation effect="slide" start="-270,0" end="0,0" time="300">Visible</animation>
+						<animation effect="slide" start="0,0" end="-270,0" time="300">Hidden</animation>
 						<control type="image">
 								<left>30</left>
 								<top>34</top>
@@ -48,34 +44,45 @@
 						</control>
 						<control type="image">
 								<description>Current Icon image</description>
-								<left>50</left>
+								<left>40</left>
 								<top>90</top>
-								<width>540</width>
-								<height>510</height>
+								<width>550</width>
+								<height>480</height>
 								<aspectratio>keep</aspectratio>
 								<texture>Special://skin/extras/urldownloader themes/previews/$INFO[Container(3).ListItem.Label].jpg</texture>
-								<aspectratio>keep</aspectratio>
 								<bordertexture border="5">white-back.png</bordertexture>
 								<bordersize>1</bordersize>
 								<visible>Window.IsVisible(1901)</visible>
 						</control>
 						<control type="image">
 								<description>Current Icon image</description>
-								<left>50</left>
+								<left>40</left>
 								<top>90</top>
-								<width>540</width>
-								<height>510</height>
+								<width>550</width>
+								<height>480</height>
 								<aspectratio>keep</aspectratio>
 								<texture>Special://skin/extras/themes/previews/$INFO[Container(3).ListItem.Label].jpg</texture>
-								<aspectratio>keep</aspectratio>
 								<bordertexture border="5">white-back.png</bordertexture>
 								<bordersize>1</bordersize>
-								<visible>Window.IsVisible(1111)</visible>
+								<visible>Window.IsVisible(1111) + !Skin.HasSetting(SelectSplash)</visible>
+						</control>
+						<control type="image">
+								<description>Current Icon image</description>
+								<left>40</left>
+								<top>90</top>
+								<width>550</width>
+								<height>480</height>
+								<aspectratio>keep</aspectratio>
+								<texture>Special://skin/extras/themes/splashes/thumbs/$INFO[Container(3).ListItem.Label].jpg</texture>
+								<bordertexture border="5">white-back.png</bordertexture>
+								<bordersize>1</bordersize>
+								<visible>Window.IsVisible(1111) + Skin.HasSetting(SelectSplash)</visible>
 						</control>
 				</control>
 				<control type="group">
+						<top>28</top>
 						<!-- Browser pane -->
-						<animation effect="slide" start="0,0" end="-290,0" time="300" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="-275,0" time="300" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
 						<control type="image">
 								<description>background image</description>
 								<left>30</left>
@@ -106,7 +113,6 @@
 								<textcolor>2000_header_label</textcolor>
 						</control>
 						<control type="list" id="3">
-								<!-- <animation effect="slide" start="0,0" end="10,0" time="0" condition="!Control.IsVisible(61)">Conditional</animation> -->
 								<left>45</left>
 								<top>90</top>
 								<width>500</width>
@@ -117,64 +123,54 @@
 								<onright>61</onright>
 								<pagecontrol>61</pagecontrol>
 								<scrolltime>200</scrolltime>
-								<itemlayout height="60">
+								<itemlayout height="40">
 										<control type="image">
 												<left>0</left>
 												<top>0</top>
 												<width>500</width>
-												<height>55</height>
-												<texture border="3">button-nofocus.png</texture>
+												<height>35</height>
+												<texture border="5">button-nofocus.png</texture>
 										</control>
 										<control type="label">
 												<left>10</left>
-												<top>0</top>
+												<top>-1</top>
 												<width>480</width>
-												<height>50</height>
-												<font>size_18</font>
+												<height>35</height>
+												<font>size_20</font>
 												<align>left</align>
 												<aligny>center</aligny>
-												<textcolor>2000_label</textcolor>
-												<selectedcolor>2000_label_selected</selectedcolor>
+												<textcolor>126_label</textcolor>
+												<selectedcolor>126_label_selected</selectedcolor>
 												<info>ListItem.Label</info>
-												<wrapmultiline>true</wrapmultiline>
 										</control>
 								</itemlayout>
-								<focusedlayout height="60">
+								<focusedlayout height="40">
 										<control type="image">
 												<left>0</left>
 												<top>0</top>
 												<width>500</width>
-												<height>55</height>
-												<visible>!Control.HasFocus(3)</visible>
-												<texture border="3">button-nofocus.png</texture>
-										</control>
-										<control type="image">
-												<left>0</left>
-												<top>0</top>
-												<width>500</width>
-												<height>55</height>
-												<visible>Control.HasFocus(3)</visible>
-												<texture border="3">button-focus2.png</texture>
+												<height>35</height>
+												<texture border="5">button-focus2.png</texture>
 										</control>
 										<control type="label">
 												<left>10</left>
-												<top>0</top>
+												<top>-1</top>
 												<width>480</width>
-												<height>50</height>
-												<font>size_18</font>
+												<height>35</height>
+												<font>size_20</font>
 												<align>left</align>
 												<aligny>center</aligny>
-												<textcolor>2000_label</textcolor>
-												<selectedcolor>2000_label_selected</selectedcolor>
+												<textcolor>126_label</textcolor>
+												<selectedcolor>126_label_selected</selectedcolor>
 												<info>ListItem.Label</info>
-												<wrapmultiline>true</wrapmultiline>
 										</control>
 								</focusedlayout>
 						</control>
 				</control>
 				<control type="group">
+						<top>28</top>
 						<visible>Control.IsVisible(3)</visible>
-						<animation effect="slide" start="0,0" end="-290,0" time="300" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
+						<animation effect="slide" start="0,0" end="-275,0" time="300" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
 						<control type="scrollbar" id="61">
 								<left>550</left>
 								<top>90</top>
@@ -194,12 +190,12 @@
 						</control>
 						<control type="label">
 								<description>number of files/pages in list text label</description>
-								<left>570</left>
+								<left>30</left>
 								<top>570</top>
-								<width>300</width>
+								<width>550</width>
 								<height>35</height>
 								<font>size_20</font>
-								<align>right</align>
+								<align>center</align>
 								<aligny>center</aligny>
 								<scroll>true</scroll>
 								<textcolor>2000_label</textcolor>
@@ -214,9 +210,9 @@
 						<height>40</height>
 						<label>186</label>
 						<font>size_20</font>
-						<textcolor>126_button_label</textcolor>
-						<focusedcolor>126_button_label_focus</focusedcolor>
-						<disabledcolor>126_button_label</disabledcolor>
+						<textcolor>2000_button_label</textcolor>
+						<focusedcolor>2000_button_label_focus</focusedcolor>
+						<disabledcolor>2000_button_label</disabledcolor>
 						<align>center</align>
 						<texturenofocus border="3">thumbnf.png</texturenofocus>
 						<texturefocus border="3">thumbfo.png</texturefocus>

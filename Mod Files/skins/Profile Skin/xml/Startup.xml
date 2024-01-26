@@ -1,5 +1,4 @@
 <window id="2999">
-		<onload>RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Views Builder.py)</onload>
 		<onload>RunScript(Special://root/system/scripts/XBMC4Gamers/default.py)</onload>
 		<onload>Skin.SetBool(xbmc4gamers)</onload>
 		<onload>Skin.SetString(dashboard_name,XBMC4Gamers)</onload>

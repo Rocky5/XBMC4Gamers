@@ -2,6 +2,21 @@
 
 Welcome to XBMC4Gamers v2.0
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Change log for v2.0.003
+26/1/2024
+
+	1) No longer builds the MyPrograms.xml on boot.
+		(There was no need as it's really only for me, but was causing issues on slow drives, will still do it if you reload the skin while in the programs window.)
+	2) Streamlined the "view builder.py" script
+	3) You can now choose a splash to use if you don't like the theme splash.
+		(Themes will need to be redownloaded if you want the preview thumbs.)
+	4) Moved the "Quick Change Menu" settings into the "Home Window" settings list.
+	5) Updated the select and browse dialog windows.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
 A lot has changed since v1.4, we now have full synopsis support, more views to shake a stick at and all round better experience.
 We now have a HOME MENU! yeah, it lets you launch menus and recently launched, random games, homebrew, emus, applications and up to 4 custom entries.
 I fixed all bugs I could find and some I missed or created from the last stable or test builds.
@@ -11,10 +26,13 @@ So hopefully you enjoy your time in the dash and have a great New Year!
 Thank you for your support.
 I would also like to thank everyone that has donated it's very much appreciated.
 
-!!! Please refresh your content after this update, press the white button and select "Refresh all contents info"
+!!! Please refresh your content after the v2.0.000 update, press the white button and select "Refresh all contents info"
 !!! This will fix any missing artwork
+!!! If you have already done the above, you don't need to do it again.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+Previous Updates:
 
 Change log for v2.0.002
 24/1/2024
@@ -34,9 +52,6 @@ Change log for v2.0.002
 	10) Updated Italian language,
 		(Thank you XGekoX)
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Previous Updates:
 Change log for v2.0.001
 6/1/2024
 
