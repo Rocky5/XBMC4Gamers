@@ -44,7 +44,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>-</label>
-						<font>font12</font>
+						<font>font18</font>
 				</control>
 				<control type="label" id="3">
 						<description>dialog line 2</description>
@@ -55,7 +55,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>-</label>
-						<font>font12</font>
+						<font>font18</font>
 				</control>
 				<control type="label" id="4">
 						<description>dialog line 3</description>
@@ -66,7 +66,7 @@
 						<align>center</align>
 						<aligny>center</aligny>
 						<label>-</label>
-						<font>font12</font>
+						<font>font18</font>
 				</control>
 				<control type="button" id="10">
 						<description>OK button</description>
@@ -74,10 +74,11 @@
 						<top>215</top>
 						<width>200</width>
 						<height>35</height>
-						<label>186</label>
+						<label>Press [B](A)[/B] to continue</label>
 						<textcolor>grey2</textcolor>
 						<focusedcolor>white</focusedcolor>
 						<align>center</align>
+						<font>font18</font>
 						<texturenofocus border="3">button-nofocus.png</texturenofocus>
 						<texturefocus border="3">button-focus2.png</texturefocus>
 						<onleft>10</onleft>

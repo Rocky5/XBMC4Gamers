@@ -76,9 +76,14 @@ cls
 Echo: & Echo: & Echo: & Echo   Creating archive & Echo   Please wait...
 (
 "C:\Program Files\7-Zip\7z.exe" a "..\Other\update build\updater\Update Files\%foldername%.zip" "*" -mx=7 -r -y
+"..\Other\Tools\md5.exe" -l "..\Other\update build\updater\Update Files\%foldername%.zip">"..\Other\update build\updater\Update Files\md5hash.bin"
+for /f "usebackq" %%b in ("..\Other\update build\updater\Update Files\md5hash.bin") do (
+	echo %%b>"..\Other\update build\updater\Update Files\md5hash.bin"
+)
 "C:\Program Files\7-Zip\7z.exe" a "..\%output_zip%" "..\Other\update build\*" -mx=7 -r -y
 cd ..\
 del /Q "Other\update build\updater\Update Files\%foldername%.zip"
+del /Q "Other\update build\updater\Update Files\md5hash.bin"
 rd /q /s "update-files"
 )>nul 2>&1
 
