@@ -18,7 +18,7 @@ else:
 
 # Randomise the wallpaper for the theme.
 if xbmc.getCondVisibility('Skin.HasSetting(randomthemewallpaper)'):
-	xbmc.executebuiltin('Skin.SetString(Background_Color,backgrounds/'+str(random.randint(1,15))+'.jpg)')
+	xbmc.executebuiltin('Skin.SetString(Background_Color,'+str(random.randint(1,15))+'.jpg)')
 	xbmc.executebuiltin('Skin.Reset(Background_Image)')
 	xbmc.executebuiltin('Skin.Reset(Background_Custom_Color)')
 
