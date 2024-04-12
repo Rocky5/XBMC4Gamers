@@ -197,7 +197,7 @@ msgstr "Non utilizzare fanart sfocate"
 
 msgctxt "#31056"
 msgid "Change splash"
-msgstr "Cambia spruzzo"
+msgstr "Cambia immagine di avvio"
 
 ## Quick Change Menu - Custom_Skin_Settings.xml - 31059 to 31060
 msgctxt "#31059"
@@ -394,6 +394,10 @@ msgstr "Opzioni Visuale"
 msgctxt "#31146"
 msgid "Switch View"
 msgstr "Cambia Visuale"
+
+msgctxt "#31147"
+msgid "Drive Space"
+msgstr "Spazio Disco"
 
 ## Settings.xml - 31151 to 31165
 msgctxt "#31151"

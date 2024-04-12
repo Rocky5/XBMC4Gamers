@@ -20,8 +20,10 @@ else:
 
 	if SelectedTheme.lower() == 'remove custom splash':
 		Label = "remove the custom_splash.png file."
+		Label2 = ""
 	else:
 		Label = "overwrite the existing custom_splash.png file."
+		Label2 = " Theme Splash"
 
 	if SelectedTheme.lower() == 'select image file':
 		ThemeImage = dialog.browse(2, 'Select your image', "files")
@@ -36,7 +38,7 @@ else:
 	
 	else:
 		if os.path.isfile(FileOut):
-			if dialog.yesno(SelectedTheme+" Theme Splash","This will "+Label):
+			if dialog.yesno(SelectedTheme+Label2,"This will "+Label):
 				if SelectedTheme.lower() == 'remove custom splash':
 					os.remove(FileOut)
 				else:

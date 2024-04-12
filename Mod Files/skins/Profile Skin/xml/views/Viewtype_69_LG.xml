@@ -333,7 +333,7 @@
 						<width>380</width>
 						<height>75</height>
 						<font>size_15</font>
-						<textcolor>view69_label_alt</textcolor>
+						<textcolor>view69_info_label</textcolor>
 						<shadowcolor>50000000</shadowcolor>
 						<align>left</align>
 						<aligny>top</aligny>

@@ -4,16 +4,12 @@ Welcome to XBMC4Gamers v2.0
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Change log for v2.0.003
-26/1/2024
+Change log for v2.0.004
+12/04/2024
 
-	1) No longer builds the MyPrograms.xml on boot.
-		(There was no need as it's really only for me, but was causing issues on slow drives, will still do it if you reload the skin while in the programs window.)
-	2) Streamlined the "view builder.py" script
-	3) You can now choose a splash to use if you don't like the theme splash.
-		(Themes will need to be redownloaded if you want the preview thumbs.)
-	4) Moved the "Quick Change Menu" settings into the "Home Window" settings list.
-	5) Updated the select and browse dialog windows.
+	1) Temperature should now be accurate on v1.6 Xbox, but thank you to Ack Ack (adam_r) from Discord.
+	2) Banner view now will show icons if no banner is available.
+	3) Italian translation updated.
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -33,6 +29,17 @@ I would also like to thank everyone that has donated it's very much appreciated.
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Previous Updates:
+
+Change log for v2.0.003
+26/1/2024
+
+	1) No longer builds the MyPrograms.xml on boot.
+		(There was no need as it's really only for me, but was causing issues on slow drives, will still do it if you reload the skin while in the programs window.)
+	2) Streamlined the "view builder.py" script
+	3) You can now choose a splash to use if you don't like the theme splash.
+		(Themes will need to be redownloaded if you want the preview thumbs.)
+	4) Moved the "Quick Change Menu" settings into the "Home Window" settings list.
+	5) Updated the select and browse dialog windows.
 
 Change log for v2.0.002
 24/1/2024

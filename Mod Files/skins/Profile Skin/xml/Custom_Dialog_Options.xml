@@ -246,7 +246,7 @@
 												<align>left</align>
 												<aligny>center</aligny>
 												<font>size_24</font>
-												<label>[UPPERCASE]$LOCALIZE[155] $LOCALIZE[20182][/UPPERCASE]</label>
+												<label>[UPPERCASE]$LOCALIZE[31147][/UPPERCASE]</label>
 												<textcolor>1112_label_alt</textcolor>
 										</control>
 										<control type="label">

@@ -4743,7 +4743,7 @@ msgstr "- Internet"
 
 msgctxt "#14034"
 msgid "DVD cache - DVD-ROM"
-msgstr "cache DVD - DVD-ROM"
+msgstr "Cache DVD - DVD-ROM"
 
 msgctxt "#14035"
 msgid "- Local Network"
