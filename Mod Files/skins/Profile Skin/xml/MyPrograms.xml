@@ -1766,7 +1766,6 @@
 																<height>100</height>
 																<aspectratio>scale</aspectratio>
 																<texture background="true">$INFO[listitem.icon]</texture>
-																<bordertexture border="5">-</bordertexture>
 																<bordersize>1</bordersize>
 																<visible>!Skin.HasSetting(imagestretchmode)</visible>
 														</control>
@@ -1777,7 +1776,6 @@
 																<height>100</height>
 																<aspectratio>stretch</aspectratio>
 																<texture background="true">$INFO[listitem.icon]</texture>
-																<bordertexture border="5">-</bordertexture>
 																<bordersize>1</bordersize>
 																<visible>Skin.HasSetting(imagestretchmode)</visible>
 														</control>
@@ -1801,20 +1799,30 @@
 																<top>0</top>
 																<width>570</width>
 																<height>120</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">no_banner.png</texture>
-																<bordertexture border="5">-</bordertexture>
+																<aspectratio>keep</aspectratio>
+																<texture background="true">$INFO[listitem.icon]</texture>
 																<bordersize>1</bordersize>
+																<visible>ListItem.IsFolder</visible>
 														</control>
 														<control type="image">
 																<left>0</left>
 																<top>0</top>
 																<width>570</width>
 																<height>120</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\banner.png</texture>
-																<bordertexture border="5">-</bordertexture>
+																<aspectratio>keep</aspectratio>
+																<texture background="true">$INFO[listitem.icon]</texture>
 																<bordersize>1</bordersize>
+																<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+														</control>
+														<control type="image">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>keep</aspectratio>
+																<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\banner.png</texture>
+																<bordersize>1</bordersize>
+																<visible>!ListItem.IsFolder</visible>
 														</control>
 												</itemlayout>
 												<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="122" width="570">
@@ -1825,7 +1833,6 @@
 																<height>100</height>
 																<aspectratio>scale</aspectratio>
 																<texture background="true">$INFO[listitem.icon]</texture>
-																<bordertexture border="5">-</bordertexture>
 																<bordersize>1</bordersize>
 																<visible>!Skin.HasSetting(imagestretchmode)</visible>
 														</control>
@@ -1836,7 +1843,6 @@
 																<height>100</height>
 																<aspectratio>stretch</aspectratio>
 																<texture background="true">$INFO[listitem.icon]</texture>
-																<bordertexture border="5">-</bordertexture>
 																<bordersize>1</bordersize>
 																<visible>Skin.HasSetting(imagestretchmode)</visible>
 														</control>
@@ -1868,20 +1874,30 @@
 																<top>0</top>
 																<width>570</width>
 																<height>120</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">no_banner.png</texture>
-																<bordertexture border="5">-</bordertexture>
+																<aspectratio>keep</aspectratio>
+																<texture background="true">$INFO[listitem.icon]</texture>
 																<bordersize>1</bordersize>
+																<visible>ListItem.IsFolder</visible>
 														</control>
 														<control type="image">
 																<left>0</left>
 																<top>0</top>
 																<width>570</width>
 																<height>120</height>
-																<aspectratio>stretch</aspectratio>
-																<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\banner.png</texture>
-																<bordertexture border="5">-</bordertexture>
+																<aspectratio>keep</aspectratio>
+																<texture background="true">$INFO[listitem.icon]</texture>
 																<bordersize>1</bordersize>
+																<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+														</control>
+														<control type="image">
+																<left>0</left>
+																<top>0</top>
+																<width>570</width>
+																<height>120</height>
+																<aspectratio>keep</aspectratio>
+																<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\banner.png</texture>
+																<bordersize>1</bordersize>
+																<visible>!ListItem.IsFolder</visible>
 														</control>
 														<control type="image">
 																<left>0</left>
@@ -7220,7 +7236,7 @@
 												<width>380</width>
 												<height>75</height>
 												<font>size_15</font>
-												<textcolor>view69_label_alt</textcolor>
+												<textcolor>view69_info_label</textcolor>
 												<shadowcolor>50000000</shadowcolor>
 												<align>left</align>
 												<aligny>top</aligny>
