@@ -1,0 +1,295 @@
+<window id="500">
+	<defaultcontrol always="true">50</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<include>Global.Backgrounds</include>
+		<control type="group">
+			<include>View.Visible.Effect</include>
+			<control type="image">
+				<left>55</left>
+				<top>55</top>
+				<width>1170</width>
+				<height>610</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>windows\settings_categories\main.png</texture>
+			</control>
+			<control type="image">
+				<left>75</left>
+				<top>75</top>
+				<width>330</width>
+				<height>570</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>windows\settings_categories\main_overlay.png</texture>
+			</control>
+			<control type="image">
+				<left>75</left>
+				<top>75</top>
+				<width>330</width>
+				<height>76</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>windows\settings\header.png</texture>
+			</control>
+			<control type="label">
+				<left>75</left>
+				<top>95</top>
+				<width>330</width>
+				<height>28</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<textcolor>common_header_label</textcolor>
+				<label>$LOCALIZE[247]</label>
+				<visible>Window.IsActive(20)</visible>
+			</control>
+			<control type="label">
+				<left>75</left>
+				<top>95</top>
+				<width>330</width>
+				<height>28</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<textcolor>common_header_label</textcolor>
+				<label>$LOCALIZE[559]</label>
+				<visible>Window.IsActive(500)</visible>
+			</control>
+			<control type="label">
+				<left>75</left>
+				<top>95</top>
+				<width>330</width>
+				<height>28</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<textcolor>common_header_label</textcolor>
+				<label>$LOCALIZE[2]</label>
+				<visible>Window.IsActive(501)</visible>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>415</left>
+				<top>568</top>
+				<width min="100" max="775">auto</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>Horizontal</orientation>
+				<align>center</align>
+				<!-- A Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\a_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>common_context_label</textcolor>
+					<label>$LOCALIZE[424]</label>
+				</control>
+				<!-- B Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\B_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="60" max="80">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>common_context_label</textcolor>
+					<label>$LOCALIZE[31151]</label>
+				</control>
+				<!-- Y Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<texture>pad_buttons\dialogs\y_button.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>Window.IsVisible(500) | Window.IsVisible(501)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>common_context_label</textcolor>
+					<label>$LOCALIZE[31111]</label>
+					<visible>Window.IsVisible(501)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>common_context_label</textcolor>
+					<label>$LOCALIZE[31112]</label>
+					<visible>Window.IsVisible(500)</visible>
+				</control>
+				<!-- White Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\White_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>common_context_label</textcolor>
+					<label>$LOCALIZE[31113]</label>
+				</control>
+				<!-- Black Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<texture>pad_buttons\dialogs\black_button.png</texture>
+					<aspectratio>keep</aspectratio>
+					<visible>Window.IsVisible(500) | Window.IsVisible(501)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>common_context_label</textcolor>
+					<label>$LOCALIZE[31117]</label>
+					<visible>Window.IsVisible(500)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>common_context_label</textcolor>
+					<label>$LOCALIZE[31118]</label>
+					<visible>Window.IsVisible(501)</visible>
+				</control>
+			</control>
+			<control type="image">
+				<left>75</left>
+				<top>170</top>
+				<width>330</width>
+				<height>410</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="false">$INFO[listitem.Icon]</texture>
+			</control>
+			<!-- Content List -->
+			<control type="list" id="50">
+				<include>Common.View.Layout</include>
+			</control>
+			<control type="scrollbar" id="90">
+				<left>1190</left>
+				<top>105</top>
+				<width>4</width>
+				<height>420</height>
+				<include>Fake.ScrollBar.Vertical</include>
+			</control>
+		</control>
+		<control type="group">
+			<include>Common.Options.Menu.Back</include>
+			<control type="group" id="9000">
+				<control type="button" id="2">
+					<description>View As button</description>
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<include>Button.Common.Values</include>
+					<label>-</label>
+					<onleft>9001</onleft>
+					<onright>50</onright>
+					<onup>22</onup>
+					<ondown>20</ondown>
+				</control>
+				<control type="radiobutton" id="20">
+					<description>Shuffle button</description>
+					<left>0</left>
+					<top>45</top>
+					<width>330</width>
+					<include>Button.Common.Values</include>
+					<label>191</label>
+					<onleft>9001</onleft>
+					<onright>50</onright>
+					<onup>2</onup>
+					<ondown>26</ondown>
+				</control>
+				<control type="button" id="26">
+					<description>Repeat button</description>
+					<left>0</left>
+					<top>90</top>
+					<width>330</width>
+					<include>Button.Common.Values</include>
+					<label>-</label>
+					<onleft>9001</onleft>
+					<onright>50</onright>
+					<onup>20</onup>
+					<ondown>21</ondown>
+				</control>
+				<control type="button" id="21">
+					<description>Save button</description>
+					<left>0</left>
+					<top>135</top>
+					<width>330</width>
+					<label>190</label>
+					<include>Button.Common.Values</include>
+					<onleft>9001</onleft>
+					<onright>50</onright>
+					<onup>26</onup>
+					<ondown>22</ondown>
+				</control>
+				<control type="button" id="22">
+					<description>Clear button</description>
+					<left>0</left>
+					<top>180</top>
+					<width>330</width>
+					<label>192</label>
+					<onclick>ReplaceWindow(music)</onclick>
+					<include>Button.Common.Values</include>
+					<onleft>9001</onleft>
+					<onright>50</onright>
+					<onup>21</onup>
+					<ondown>2</ondown>
+				</control>
+			</control>
+		</control>
+		<include>Window.Header</include>
+		<include>ScrollOffsetLabel</include>
+	</controls>
+</window>

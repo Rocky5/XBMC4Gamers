@@ -1,0 +1,50 @@
+<window id="104">
+	<defaultcontrol>1</defaultcontrol>
+	<controls>
+		<control type="group">
+			<visible>!StringCompare(System.Profilename,Manage Profiles) + !Window.IsActive(114)</visible>
+			<animation effect="slide" start="0,-50" end="0,0" delay="0" time="350" tween="sine">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="0,-50" delay="500" time="250" tween="sine">WindowClose</animation>
+			<control type="image">
+				<left>525</left>
+				<top>0</top>
+				<width>230</width>
+				<height>50</height>
+				<colordiffuse>104_diffuse</colordiffuse>
+				<texture>windows\volume\underlay.png</texture>
+			</control>
+			<control type="image">
+				<left>545</left>
+				<top>10</top>
+				<width>20</width>
+				<height>20</height>
+				<colordiffuse>104_icon</colordiffuse>
+				<texture>$VAR[VolumeIconVar]</texture>
+			</control>
+			<control type="label">
+				<left>705</left>
+				<top>0</top>
+				<width>45</width>
+				<height>37</height>
+				<font>mono_13</font>
+				<textcolor>104_label</textcolor>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>$INFO[Control.GetLabel(29999),,%]</label>
+			</control>
+			<control type="progress" id="29999">
+				<description>Progressbar</description>
+				<left>575</left>
+				<top>15</top>
+				<width>130</width>
+				<height>10</height>
+				<info>Player.Volume</info>
+				<texturebg>windows\volume\progress_back.png</texturebg>
+				<midtexture border="5,0,5,0">windows\volume\progress_bar.png</midtexture>
+				<lefttexture>windows\volume\progress_left.png</lefttexture>
+				<righttexture>windows\volume\progress_right.png</righttexture>
+				<overlaytexture>-</overlaytexture>
+			</control>
+		</control>
+	</controls>
+</window>

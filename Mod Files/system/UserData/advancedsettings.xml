@@ -1,5 +1,6 @@
 <advancedsettings>
-		<powersave>false</powersave>
+		<!-- <loglevel hide="false">-1</loglevel> -->
+		<powersave>true</powersave>
 		<nodvdrom>false</nodvdrom>
 		<enableintro>false</enableintro>
 		<splash>true</splash>

@@ -1,0 +1,11 @@
+<window id="0">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="group">
+			<!-- dummy group so setting is placed inside the guisettings.xml upon load. -->
+			<visible>Skin.HasSetting(UseProfiles)</visible>
+		</control>
+		<include>Global.Backgrounds</include>
+	</controls>
+</window>

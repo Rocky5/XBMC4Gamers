@@ -1,0 +1,121 @@
+<window id="101">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<controls>
+		<control type="image">
+			<include>1280x720</include>
+			<texture>black-back.png</texture>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<left>276</left>
+			<top>235</top>
+			<width>728</width>
+			<height>249</height>
+			<texture>windows\dialogs\main.png</texture>
+		</control>
+		<control type="image">
+			<description>Heading Background</description>
+			<left>291</left>
+			<top>243</top>
+			<width>698</width>
+			<height>60</height>
+			<texture>windows\dialogs\header.png</texture>
+		</control>
+		<control type="progress">
+			<description>Progressbar</description>
+			<left>320</left>
+			<top>426</top>
+			<width>430</width>
+			<height>23</height>
+			<info>System.Progressbar</info>
+			<texturebg>windows\dialogs\progressbackalt.png</texturebg>
+			<midtexture border="5,0,5,0">windows\dialogs\progressfrontalt.png</midtexture>
+			<lefttexture>windows\dialogs\progressleftalt.png</lefttexture>
+			<righttexture>windows\dialogs\progressrightalt.png</righttexture>
+			<overlaytexture>-</overlaytexture>
+			<visible>IsEmpty(Skin.String(DisableProgress)) | StringCompare(System.Progressbar, 0)</visible>
+		</control>
+		<control type="label">
+			<description>Progress Label</description>
+			<left>760</left>
+			<top>426</top>
+			<width>60</width>
+			<height>20</height>
+			<font>size_20</font>
+			<align>left</align>
+			<aligny>center</aligny>
+			<textcolor>101_label</textcolor>
+			<label>$INFO[System.Progressbar,,%]</label>
+		</control>
+		<control type="label" id="1">
+			<description>heading label</description>
+			<left>320</left>
+			<top>253</top>
+			<width>638</width>
+			<height>40</height>
+			<font>size_28</font>
+			<align>left</align>
+			<aligy>center</aligy>
+			<textcolor>101_header_label</textcolor>
+			<label>-</label>
+			<scroll>true</scroll>
+		</control>
+		<control type="label" id="2">
+			<description>dialog line 1</description>
+			<left>320</left>
+			<top>310</top>
+			<width>638</width>
+			<height>80</height>
+			<font>size_28</font>
+			<align>left</align>
+			<textcolor>101_label</textcolor>
+			<wrapmultiline>false</wrapmultiline>
+			<label>-</label>
+			<scroll>true</scroll>
+		</control>
+		<control type="label" id="3">
+			<description>dialog line 2</description>
+			<left>320</left>
+			<top>345</top>
+			<width>638</width>
+			<height>80</height>
+			<font>size_20</font>
+			<align>left</align>
+			<textcolor>101_label</textcolor>
+			<wrapmultiline>false</wrapmultiline>
+			<label>-</label>
+			<scroll>true</scroll>
+		</control>
+		<control type="label" id="4">
+			<description>dialog line 3</description>
+			<left>320</left>
+			<top>380</top>
+			<width>638</width>
+			<height>80</height>
+			<font>size_20</font>
+			<align>left</align>
+			<textcolor>101_label</textcolor>
+			<wrapmultiline>false</wrapmultiline>
+			<label>-</label>
+			<scroll>true</scroll>
+		</control>
+		<control type="button" id="10">
+			<description>Cancel button</description>
+			<left>858</left>
+			<top>420</top>
+			<width>100</width>
+			<height>36</height>
+			<label>222</label>
+			<textcolor>101_button_label</textcolor>
+			<focusedcolor>101_button_focus</focusedcolor>
+			<align>center</align>
+			<texturenofocus border="3">windows\dialogs\button_no_focus.png</texturenofocus>
+			<texturefocus border="3">windows\dialogs\button_focus.png</texturefocus>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<onup>10</onup>
+			<ondown>10</ondown>
+			<visible>!Window.IsActive(2999) + IsEmpty(Skin.String(DisableCancel))</visible>
+		</control>
+	</controls>
+</window>

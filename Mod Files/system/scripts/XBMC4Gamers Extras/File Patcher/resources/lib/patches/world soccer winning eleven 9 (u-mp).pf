@@ -1,0 +1,20 @@
+# Author: Rocky5
+# Credits: Rocky5
+# Info: Enables the crowd on all camera angles and always use the highest LOD for players.
+# Region: NTSC
+# Title: World Soccer Winning Eleven 9
+# TitleID: 4B4E002F
+# Type: Multi Patch
+
+CP|default.xbe|default_orig.xbe
+RM|dashupdate.xbe|update.xbe
+
+# flicker filter removal
+# OF|default.xbe|4203058|90903935FCF64E006A008B80281C00006A0090
+# OF|default.xbe|4210550|55908B86281C00006A00
+
+# crowd enabled in all views
+OF|default.xbe|440192|C3
+
+# highest LOD levels
+OF|default.xbe|5502496|3066310030663100306631003066

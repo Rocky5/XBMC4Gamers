@@ -1,24 +1,26 @@
 from random import randrange
-from xbmc import executebuiltin, getCondVisibility, getInfoLabel
-# from xbmcgui import getCurrentWindowId
-# from time import sleep
-# used for random selection of a game on boot, waits till the window is ready.
-# if getInfoLabel('Skin.HasSetting(Random_Game)') and getInfoLabel('Skin.HasSetting(run_random_script)') :
-	# while True:
-		# if not getCurrentWindowId() == 10101 and not getCurrentWindowId() == 10138:
-			# break
-	
-# main part that does the selection
-try:
-	ID	= getInfoLabel('Container.Viewmode').split('view')[1]
-	Get_Item_Count	= int(getInfoLabel('Container(' + ID + ').NumItems'))
-	Random 			= str(randrange(0,Get_Item_Count,1))
-	if getCondVisibility('Window.IsVisible(1)'):
-		executebuiltin('SetFocus('+ID+','+Random+')')
-	else:
-		if Get_Item_Count >= 10:
-			executebuiltin('SetFocus('+ID+','+Random+')')
-except:
-	pass
+import xbmc
+import xbmcgui
 
-executebuiltin('Skin.SetBool(run_random_script,false)')
+def wait_for_window_ready():
+	while True:
+		current_window_id = xbmcgui.getCurrentWindowId()
+		if current_window_id not in [10101, 10138]:
+			break
+
+def select_random_game():
+	try:
+		ID = xbmc.getInfoLabel('Container.Viewmode').split('view')[1]
+		item_count = int(xbmc.getInfoLabel('Container(' + ID + ').NumItems'))
+		random_index = str(randrange(0, item_count, 1))
+		
+		if xbmc.getCondVisibility('Window.IsVisible(1)') or item_count >= 10:
+			xbmc.executebuiltin('SetFocus(' + ID + ',' + random_index + ')')
+	except:
+		pass
+
+if __name__ == "__main__":
+	# if xbmc.getInfoLabel('Skin.HasSetting(Random_Game)') and xbmc.getInfoLabel('Skin.HasSetting(run_random_script)'):
+		# wait_for_window_ready()
+	select_random_game()
+	xbmc.executebuiltin('Skin.SetBool(run_random_script,false)')

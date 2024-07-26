@@ -1,0 +1,48 @@
+<window id="106">
+	<defaultcontrol always="false">1000</defaultcontrol>
+	<include>Context.Menu.OpenClose</include>
+	<onload condition="!Skin.HasSetting(kioskmode)">Dialog.Close(106,true)</onload>
+	<controls>
+		<control type="group">
+			<include>Context.Menu.Offsets</include>
+			<control type="image" id="997">
+				<description>background top image</description>
+				<left>0</left>
+				<top>-37</top>
+				<width>396</width>
+				<height>37</height>
+				<texture border="40,0,40,0">contextmenu_top.png</texture>
+			</control>
+			<control type="image" id="999">
+				<description>background image</description>
+				<left>0</left>
+				<top>0</top>
+				<width>396</width>
+				<texture border="40,0,40,0">contextmenu_middle.png</texture>
+			</control>
+			<control type="image" id="998">
+				<description>background bottom image</description>
+				<left>0</left>
+				<width>396</width>
+				<height>34</height>
+				<texture border="40,0,40,0">contextmenu_bottom.png</texture>
+			</control>
+			<control type="button" id="1000">
+				<description>button template</description>
+				<left>43</left>
+				<top>40</top>
+				<width>310</width>
+				<height>35</height>
+				<onup>1000</onup>
+				<font>size_20</font>
+				<align>center</align>
+				<textcolor>106_label_nofocus</textcolor>
+				<focusedcolor>106_label_focus</focusedcolor>
+				<shadowcolor>-</shadowcolor>
+				<texturefocus>windows\options\button_focus.png</texturefocus>
+				<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+				<include>Context.Menu.Offsets</include>
+			</control>
+		</control>
+	</controls>
+</window>

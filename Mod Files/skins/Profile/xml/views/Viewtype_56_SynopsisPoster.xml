@@ -1,0 +1,366 @@
+<!-- SynopsisPosterCenter ID = 56 -->
+<control type="group">
+	<visible>Control.IsVisible(56) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
+	<control type="largeimage">
+		<include>1280x720</include>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<fadetime>FanartCrossfadeTime</fadetime>
+		<texture>$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</texture>
+		<visible>!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur)</visible>
+	</control>
+	<control type="largeimage">
+		<include>1280x720</include>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<fadetime>FanartCrossfadeTime</fadetime>
+		<texture>$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</texture>
+		<visible>!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(fanartblur)</visible>
+	</control>
+	<control type="largeimage">
+		<include>1280x720</include>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<fadetime>FanartCrossfadeTime</fadetime>
+		<texture>$VAR[View_Fanart]</texture>
+		<visible>IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(fanartenabled)</visible>
+	</control>
+	<control type="image">
+		<include>1280x720</include>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<colordiffuse>F0FFFFFF</colordiffuse>
+		<texture>views\synopsispostercenter\black-back.png</texture>
+	</control>
+	<control type="fixedlist" id="56">
+		<left>40</left>
+		<top>198</top>
+		<width>1200</width>
+		<height>460</height>
+		<onleft>56</onleft>
+		<onright>56</onright>
+		<onup>9000</onup>
+		<ondown>90</ondown>
+		<viewtype label="view56">biglist</viewtype>
+		<pagecontrol>90</pagecontrol>
+		<scrolltime>230</scrolltime>
+		<focusposition>3</focusposition>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" height="241" width="171.4">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.icon]</texture>
+				<visible>ListItem.IsFolder</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.icon]</texture>
+				<visible>!ListItem.IsFolder</visible>
+			</control>
+		</itemlayout>
+		<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="241" width="171.4">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.icon]</texture>
+				<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.icon]</texture>
+				<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View56_Thumbs]</texture>
+				<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+			</control>
+		</itemlayout>
+		<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="241" width="171.4">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">no_poster.jpg</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-14.3,-21,200,283" time="120">focus</animation>
+				<animation reversible="false" effect="zoom" end="0,0,171.4,241" start="-14.3,-21,200,283" time="120">unfocus</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.icon]</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-14.3,-21,200,283" time="120">focus</animation>
+				<animation reversible="false" effect="zoom" end="0,0,171.4,241" start="-14.3,-21,200,283" time="120">unfocus</animation>
+				<visible>ListItem.IsFolder</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.icon]</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-14.3,-21,200,283" time="120">focus</animation>
+				<animation reversible="false" effect="zoom" end="0,0,171.4,241" start="-14.3,-21,200,283" time="120">unfocus</animation>
+				<visible>!ListItem.IsFolder</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png" border="5">views\synopsispostercenter\poster-border.png</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-16.3,-23,204,287" time="120">focus</animation>
+				<animation reversible="false" effect="fade" start="100" end="0" time="0">unfocus</animation>
+			</control>
+		</focusedlayout>
+		<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="241" width="171.4">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">no_poster.jpg</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-14.3,-21,200,283" time="120">focus</animation>
+				<animation reversible="false" effect="zoom" end="0,0,171.4,241" start="-14.3,-21,200,283" time="120">unfocus</animation>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>scale</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.icon]</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-14.3,-21,200,283" time="120">focus</animation>
+				<animation reversible="false" effect="zoom" end="0,0,171.4,241" start="-14.3,-21,200,283" time="120">unfocus</animation>
+				<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>keep</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.icon]</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-14.3,-21,200,283" time="120">focus</animation>
+				<animation reversible="false" effect="zoom" end="0,0,171.4,241" start="-14.3,-21,200,283" time="120">unfocus</animation>
+				<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View56_Thumbs]</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-14.3,-21,200,283" time="120">focus</animation>
+				<animation reversible="false" effect="zoom" end="0,0,171.4,241" start="-14.3,-21,200,283" time="120">unfocus</animation>
+				<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>171.4</width>
+				<height>241</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true" diffuse="views\synopsispostercenter\diffuse.png">views\synopsispostercenter\poster-border.png</texture>
+				<animation reversible="false" effect="zoom" start="0,0,171.4,241" end="-16.3,-23,204,287" time="120">focus</animation>
+				<animation reversible="false" effect="fade" start="100" end="0" time="0">unfocus</animation>
+			</control>
+		</focusedlayout>
+	</control>
+	<control type="textbox">
+		<left>0</left>
+		<top>0</top>
+		<width>1280</width>
+		<height>115</height>
+		<font>size_35</font>
+		<textcolor>view56_label</textcolor>
+		<shadowcolor>50000000</shadowcolor>
+		<align>center</align>
+		<aligny>bottom</aligny>
+		<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+		<autoscroll delay="8000" time="171.40" repeat="10000" condition="true">Conditional</autoscroll>
+	</control>
+	<control type="grouplist">
+		<description>Control Info</description>
+		<left>40</left>
+		<top>115</top>
+		<width>1200</width>
+		<height>40</height>
+		<itemgap>0</itemgap>
+		<align>center</align>
+		<orientation>horizontal</orientation>
+		<visible>!ListItem.IsFolder</visible>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>20</width>
+			<height>20</height>
+			<colordiffuse>view56_info_label_alt</colordiffuse>
+			<texture>synopsis icons\medium_trainer.png</texture>
+			<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayHasTrainer.png)</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>20</width>
+			<height>20</height>
+			<colordiffuse>view56_info_label_alt</colordiffuse>
+			<texture>synopsis icons\medium_trained.png</texture>
+			<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayTrained.png)</visible>
+		</control>
+		<!-- dummy label (spacer)  -->
+		<control type="label">
+			<height>22</height>
+			<width min="5" max="10">auto</width>
+			<font>size_13</font>
+			<aligny>center</aligny>
+			<textcolor>view56_info_label</textcolor>
+			<label/>
+			<visible>!IsEmpty(listitem.overlay)</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>20</width>
+			<height>20</height>
+			<colordiffuse>view56_info_label_alt</colordiffuse>
+			<texture>synopsis icons\medium_played.png</texture>
+		</control>
+		<control type="label">
+			<height>22</height>
+			<width min="5" max="400">auto</width>
+			<font>size_16</font>
+			<aligny>center</aligny>
+			<textcolor>view56_info_label</textcolor>
+			<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>20</width>
+			<height>20</height>
+			<colordiffuse>view56_info_label_alt</colordiffuse>
+			<texture>synopsis icons\medium_playercount.png</texture>
+		</control>
+		<control type="label">
+			<height>22</height>
+			<width min="5" max="400">auto</width>
+			<font>size_16</font>
+			<aligny>center</aligny>
+			<textcolor>view56_info_label</textcolor>
+			<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>20</width>
+			<height>20</height>
+			<colordiffuse>view56_info_label_alt</colordiffuse>
+			<texture>synopsis icons\medium_rating.png</texture>
+			<visible>!IsEmpty(ListItem.Synopsis_Rating) + !IsEmpty(ListItem.Synopsis_AltName)</visible>
+		</control>
+		<control type="label">
+			<height>22</height>
+			<width min="5" max="400">auto</width>
+			<font>size_16</font>
+			<aligny>center</aligny>
+			<textcolor>view56_info_label</textcolor>
+			<label>[UPPERCASE] $INFO[ListItem.Synopsis_Rating]  [/UPPERCASE]</label>
+			<visible>!IsEmpty(ListItem.Synopsis_Rating)</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>20</width>
+			<height>20</height>
+			<colordiffuse>view56_info_label_alt</colordiffuse>
+			<texture>synopsis icons\medium_genre.png</texture>
+			<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+		</control>
+		<control type="label">
+			<height>22</height>
+			<width min="5" max="400">auto</width>
+			<font>size_16</font>
+			<aligny>center</aligny>
+			<textcolor>view56_info_label</textcolor>
+			<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
+			<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>20</width>
+			<height>20</height>
+			<colordiffuse>view56_info_label_alt</colordiffuse>
+			<texture>synopsis icons\medium_date.png</texture>
+			<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
+		</control>
+		<control type="label">
+			<height>22</height>
+			<width min="5" max="400">auto</width>
+			<font>size_16</font>
+			<aligny>center</aligny>
+			<textcolor>view56_info_label</textcolor>
+			<label>[UPPERCASE] $INFO[ListItem.Synopsis_Year][/UPPERCASE]</label>
+			<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
+		</control>
+	</control>
+	<control type="textbox">
+		<left>40</left>
+		<bottom>217</bottom>
+		<width>1200</width>
+		<height>180</height>
+		<font>size_15</font>
+		<textcolor>view56_label_alt</textcolor>
+		<shadowcolor>50000000</shadowcolor>
+		<align>center</align>
+		<aligny>top</aligny>
+		<label>$INFO[ListItem.Synopsis_Overview]</label>
+		<autoscroll delay="8000" time="5000" repeat="10000" condition="true">Conditional</autoscroll>
+	</control>
+	<control type="scrollbar" id="90">
+		<onup>56</onup>
+		<include>View.ScrollBar.Horizontal</include>
+	</control>
+</control>

@@ -1,52 +1,75 @@
-import glob,os,shutil,xbmc,xbmcgui
-dialog = xbmcgui.Dialog()
-FileOut = 'Q:/custom_splash.png'
+import glob
+import os
+import shutil
+import xbmc
+import xbmcgui
 
-xbmc.executebuiltin('Skin.SetBool(SelectPreviewMode)') # This is set so the preview is shown in the skin settings menu when required.
-xbmc.executebuiltin('Skin.SetBool(SelectSplash)')
+def main():
+	dialog = xbmcgui.Dialog()
+	file_out = 'Q:/custom_splash.png'
 
-Filter_XPR = sorted([x.lower() for x in glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))], key=None, reverse=0)
-Filter_XPR = ['Select image file']+Filter_XPR
-if os.path.isfile(FileOut): Filter_XPR = ['Remove custom splash']+Filter_XPR
-Filter_XPR = [os.path.basename(x.replace(".xpr","").title()) for x in Filter_XPR]
-Filter_XPR.remove('Textures')
-ThemeFolder = dialog.select('Select Override Splash',Filter_XPR,10000)
+	xbmc.executebuiltin('Skin.SetBool(SelectPreviewMode)')
+	xbmc.executebuiltin('Skin.SetBool(SelectSplash)')
 
-if ThemeFolder == -1:
-	pass
-else:
-	SelectedTheme = Filter_XPR[ThemeFolder]
-	FileIn = xbmc.translatePath('Special://skin/extras/themes/splashes/')+SelectedTheme+'.png'
+	filter_xpr = sorted([x.lower() for x in glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))])
+	filter_xpr = ['Select image file'] + filter_xpr
+	if os.path.isfile(file_out):
+		filter_xpr = ['Remove custom splash'] + filter_xpr
+	filter_xpr = [os.path.basename(x.replace(".xpr", "").title()) for x in filter_xpr]
+	filter_xpr.remove('Textures')
+	theme_folder = dialog.select('Select Override Splash', filter_xpr, 10000)
 
-	if SelectedTheme.lower() == 'remove custom splash':
-		Label = "remove the custom_splash.png file."
-		Label2 = ""
+	if theme_folder == -1:
+		return
+
+	selected_theme = filter_xpr[theme_folder]
+	file_in = xbmc.translatePath('Special://skin/extras/themes/splashes/') + selected_theme + '.png'
+	thumb_in = xbmc.translatePath('Special://skin/extras/themes/splashes/thumbs/') + selected_theme + '.jpg'
+	thumb_out = xbmc.translatePath('Special://skin/extras/themes/splashes/thumbs/Remove custom splash.jpg')
+
+	if selected_theme.lower() == 'remove custom splash':
+		label = "remove the custom_splash.png file."
+		label2 = ""
 	else:
-		Label = "overwrite the existing custom_splash.png file."
-		Label2 = " Theme Splash"
+		label = "overwrite the existing custom_splash.png file."
+		label2 = " Theme Splash"
 
-	if SelectedTheme.lower() == 'select image file':
-		ThemeImage = dialog.browse(2, 'Select your image', "files")
-		if not ThemeImage == "":
-			
-			if os.path.isfile('Q:/custom_splash.png'): 
-				if dialog.yesno(os.path.basename(ThemeImage),"This will "+Label):
-					shutil.copy2(ThemeImage,FileOut)
+	if selected_theme.lower() == 'select image file':
+		theme_image = dialog.browse(2, 'Select your image', "files")
+		thumb_in = theme_image
+		if theme_image:
+			if os.path.isfile(file_out):
+				if dialog.yesno(os.path.basename(theme_image), "This will " + label,'','',xbmc.getLocalizedString(106),xbmc.getLocalizedString(107)):
+					shutil.copyfile(theme_image, file_out)
+					try:
+						shutil.copyfile(thumb_in, thumb_out)
+					except: pass
 			else:
-				shutil.copy2(ThemeImage,FileOut)
-	
-	
+				shutil.copyfile(theme_image, file_out)
+				try:
+					shutil.copyfile(thumb_in, thumb_out)
+				except: pass
 	else:
-		if os.path.isfile(FileOut):
-			if dialog.yesno(SelectedTheme+Label2,"This will "+Label):
-				if SelectedTheme.lower() == 'remove custom splash':
-					os.remove(FileOut)
-				else:
-					if os.path.isfile(FileIn):
-						shutil.copy2(FileIn,FileOut)
-		else:
-			if os.path.isfile(FileIn):
-				shutil.copy2(FileIn,FileOut)
+		if os.path.isfile(file_out):
+			if dialog.yesno(selected_theme + label2, "This will " + label,'','',xbmc.getLocalizedString(106),xbmc.getLocalizedString(107)):
+				if selected_theme.lower() == 'remove custom splash':
+					os.remove(file_out)
+					try:
+						os.remove(thumb_out)
+					except: pass
+				elif os.path.isfile(file_in):
+					shutil.copyfile(file_in, file_out)
+					try:
+						shutil.copyfile(thumb_in, thumb_out)
+					except: pass
+		elif os.path.isfile(file_in):
+			shutil.copyfile(file_in, file_out)
+			try:
+				shutil.copyfile(thumb_in, thumb_out)
+			except: pass
 
-xbmc.executebuiltin('Skin.Reset(SelectSplash)')
-xbmc.executebuiltin('Skin.Reset(SelectPreviewMode)') # This is reset so the preview isn't shown in the skin settings menu when not required.
+	xbmc.executebuiltin('Skin.Reset(SelectSplash)')
+	xbmc.executebuiltin('Skin.Reset(SelectPreviewMode)')
+
+if __name__ == "__main__":
+	main()

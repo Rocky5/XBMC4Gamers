@@ -1,86 +1,86 @@
-import glob,os,shutil,sys,time,xbmc,xbmcgui
+import glob
+import os
+import shutil
+import sys
+import time
+import xbmc
+import xbmcgui
 
-xbmc.executebuiltin("Skin.SetBool(SelectPreviewMode)") # This is set so the preview is shown in the skin settings menu when required.
-xbmc.executebuiltin('Dialog.Close(1100,true)')
+def main():
+	xbmc.executebuiltin("Skin.SetBool(SelectPreviewMode)")
+	xbmc.executebuiltin('Dialog.Close(1100,true)')
 
-if len(glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))) > 0:
-	Filter_XPR = sorted([os.path.basename(x.lower()) for x in glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))], key=None, reverse=0)
-	Filter_XPR.remove("textures.xpr")
-	Filter_XPR.remove("night.xpr")
-	Filter_XPR = [os.path.basename(x.replace(".xpr","").title()) for x in Filter_XPR]
-	ThemeFolder = xbmcgui.Dialog().select('Select Theme',Filter_XPR,10000)
-	
-	if ThemeFolder == -1:
-		pass
-	else:
-		Theme = Filter_XPR[ThemeFolder]
-		if xbmcgui.Dialog().yesno('Would you like to uninstall',Theme.upper(),'','','No','Yes'):
-			
-			# Check if current theme is the one you want to uninstall and change to the default theme
-			if xbmc.getCondVisibility('StringCompare(Skin.CurrentTheme,'+Theme+')'):
-				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skintheme;default.xpr)')
-				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skincolors;default.xml)')
-				xbmc.executehttpapi('SetGUISetting(3;lookandfeel.font;default.ttf)')
-				xbmc.executebuiltin('ReloadSkin')
-				time.sleep(2)
-			
-			# Colour.xml
-			if os.path.isfile('Q:/skins/profile skin/colors/'+Theme+'.xml'):
-				os.remove('Q:/skins/profile skin/colors/'+Theme+'.xml')
-			
-			# Backgrounds
-			if os.path.isdir('Q:/skins/profile skin/backgrounds/'+Theme+''):
-				shutil.rmtree('Q:/skins/profile skin/backgrounds/'+Theme+'')
-			
-			# Playlist
-			if os.path.isfile('Q:/skins/profile skin/extras/themes/playlists/'+Theme+'.m3u'):
-				os.remove('Q:/skins/profile skin/extras/themes/playlists/'+Theme+'.m3u')
-			
-			if os.path.isdir('Q:/skins/profile skin/extras/themes/playlists/'+Theme):
-				xbmc.Player().stop()
-				shutil.rmtree('Q:/skins/profile skin/extras/themes/playlists/'+Theme)
-			
-			# Preview
-			if os.path.isfile('Q:/skins/profile skin/extras/themes/previews/'+Theme+'.jpg'):
-				os.remove('Q:/skins/profile skin/extras/themes/previews/'+Theme+'.jpg')
-			
-			# Splash
-			if os.path.isfile('Q:/skins/profile skin/extras/themes/splashes/'+Theme+'.png'):
-				os.remove('Q:/skins/profile skin/extras/themes/splashes/'+Theme+'.png')
-			if os.path.isfile('Q:/skins/profile skin/extras/themes/splashes/thumbs/'+Theme+'.png'):
-				os.remove('Q:/skins/profile skin/extras/themes/splashes/thumbs/'+Theme+'.png')
-			
-			# Font
-			if os.path.isfile('Q:/skins/profile skin/fonts/'+Theme+'.ttf'):
-				os.remove('Q:/skins/profile skin/fonts/'+Theme+'.ttf')
-			
-			# XPR
-			if os.path.isfile('Q:/skins/profile skin/media/'+Theme+'.xpr'):
-				os.remove('Q:/skins/profile skin/media/'+Theme+'.xpr')
-			
-			# URLDownloader stuff
-			if os.path.isfile('Q:/skins/profile skin/extras/urldownloader themes/previews/'+Theme+'.jpg'):
-				os.remove('Q:/skins/profile skin/extras/urldownloader themes/previews/'+Theme+'.jpg')
-			
-			if os.path.isfile('Q:/skins/profile skin/extras/urldownloader themes/XML files/'+Theme+'.xml'):
-				os.remove('Q:/skins/profile skin/extras/urldownloader themes/XML files/'+Theme+'.xml')
-			
-			# Set theme playlist or reset to random
-			if os.path.isfile('Special://skin/extras/themes/playlists/default.m3u'):
-				xbmc.executebuiltin('Skin.SetString(Startup_Playback_Path,Special://skin/extras/themes/playlists/default.m3u)')
-			elif os.path.isfile('Special://profile/playlists/music/random.m3u'):
-				xbmc.executebuiltin('Skin.SetString(Startup_Playback_Path,Special://profile/playlists/music/random.m3u)')
+	xpr_files = glob.glob(xbmc.translatePath('Special://skin/media/*.xpr'))
+	if xpr_files:
+		filter_xpr = sorted([os.path.basename(x.lower()) for x in xpr_files])
+		filter_xpr = [x.replace(".xpr", "").title() for x in filter_xpr if x not in ["textures.xpr", "night.xpr"]]
+		theme_folder = xbmcgui.Dialog().select('Select Theme', filter_xpr, 10000)
+
+		if theme_folder != -1:
+			theme = filter_xpr[theme_folder]
+			if xbmcgui.Dialog().yesno('Would you like to uninstall', theme.upper(), '', '',xbmc.getLocalizedString(106),xbmc.getLocalizedString(107)):
+				uninstall_theme(theme)
+				xbmcgui.Dialog().ok(	'Complete',
+										'{} uninstalled.'.format(theme),
+										''	)
 			else:
-				xbmc.executebuiltin('Skin.Reset(Startup_Playback_Path)')
-				
-			xbmcgui.Dialog().ok('Complete','',Theme+' uninstalled.','')
+				xbmc.executebuiltin('ActivateWindow(1100)')
+				time.sleep(1)
+				xbmc.executebuiltin('RunScript(Special://scripts/XBMC4Gamers/Utilities/Uninstall Theme.py)')
+	else:
+		xbmcgui.Dialog().ok(	'ERROR',
+								'You have no themes installed.',
+								'You can download themes from the built-in downloader.'	)
 
-		else:
-			xbmc.executebuiltin('ActivateWindow(1100)')
-			time.sleep(1)
-			xbmc.executebuiltin('RunScript(Special://root/system/scripts/XBMC4Gamers/Utilities/Uninstall Theme.py)')
-else:
-	xbmcgui.Dialog().ok('ERROR','You have no themes installed.','You can download themes from the built in downloader.')
+	xbmc.executebuiltin("Skin.Reset(SelectPreviewMode)")
 
+def uninstall_theme(theme):
+	if xbmc.getCondVisibility('StringCompare(Skin.CurrentTheme,{})'.format(theme)):
+		if os.path.isfile('Special://skin/xml/Includes_Theme_Override.xml'):
+			os.remove('Special://skin/xml/Includes_Theme_Override.xml')
+		xbmcgui.Window(xbmcgui.getCurrentWindowId()).setProperty("MyScript.ExternalRunning", "True")
+		xbmc.executebuiltin('RunScript(Special://scripts/XBMC4Gamers/Utilities/Apply Theme.py,toggle,default)')
+		while xbmcgui.Window(xbmcgui.getCurrentWindowId()).getProperty("MyScript.ExternalRunning") == "True":
+			time.sleep(3)
 
-xbmc.executebuiltin("Skin.Reset(SelectPreviewMode)") # This is reset so the preview isn't shown in the skin settings menu when not required.
+	paths_to_remove = [
+		'Special://skin/colors/{}.xml'.format(theme),
+		'Special://skin/backgrounds/{}'.format(theme),
+		'Special://skin/extras/themes/playlists/{}.m3u'.format(theme),
+		'Special://skin/extras/themes/playlists/{}'.format(theme),
+		'Special://skin/extras/themes/previews/{}.jpg'.format(theme),
+		'Special://skin/extras/themes/splashes/{}.png'.format(theme),
+		'Special://skin/extras/themes/splashes/thumbs/{}.jpg'.format(theme),
+		'Special://skin/extras/themes/xmls/{}.xml'.format(theme),
+		'Special://skin/extras/themes/xmls/{}_fonts.xml'.format(theme),
+		'Special://skin/fonts/{}.ttf'.format(theme),
+		'Special://skin/media/{}.xpr'.format(theme),
+		'Special://skin/extras/urldownloader themes/previews/{}.jpg'.format(theme),
+		'Special://skin/extras/urldownloader themes/XML files/{}.xml'.format(theme)
+	]
+	# multi font check
+	font_files = glob.glob(os.path.join('Special://skin/fonts/', '{}_*.ttf'.format(theme)))
+	for font_file in font_files:
+		font_name = os.path.basename(font_file)
+		paths_to_remove.append('Special://skin/fonts/{}'.format(font_name))
+
+	for path in [xbmc.translatePath(path) for path in paths_to_remove]:
+		if os.path.isfile(path):
+			# print "File: {}".format(path)
+			os.remove(path)
+		elif os.path.isdir(path):
+			# print "Folder: {}".format(path)
+			shutil.rmtree(path)
+
+	set_theme_playlist()
+
+def set_theme_playlist():
+	if os.path.isfile('Special://skin/extras/themes/playlists/default.m3u'):
+		xbmc.executebuiltin('Skin.SetString(Startup_Playback_Path,Special://skin/extras/themes/playlists/default.m3u)')
+	elif os.path.isfile('Special://profile/playlists/music/random.m3u'):
+		xbmc.executebuiltin('Skin.SetString(Startup_Playback_Path,Special://profile/playlists/music/random.m3u)')
+	else:
+		xbmc.executebuiltin('Skin.Reset(Startup_Playback_Path)')
+
+if __name__ == "__main__":
+	main()

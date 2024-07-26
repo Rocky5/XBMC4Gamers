@@ -1,0 +1,338 @@
+<!-- CarouselView ID = 59 -->
+<control type="group">
+	<visible>Control.IsVisible(59) + !Control.IsVisible(50) + !Window.IsVisible(134)</visible>
+	<control type="fixedlist" id="59">
+		<left>0</left>
+		<top>320</top>
+		<width>1280</width>
+		<height>460</height>
+		<onleft>59</onleft>
+		<onright>59</onright>
+		<onup>9000</onup>
+		<ondown>90</ondown>
+		<viewtype label="view59">biglist</viewtype>
+		<pagecontrol>90</pagecontrol>
+		<scrolltime>230</scrolltime>
+		<focusposition>1</focusposition>
+		<orientation>horizontal</orientation>
+		<preloaditems>2</preloaditems>
+		<itemlayout condition="!Skin.HasSetting(_resourcesenabled)" height="290" width="414">
+			<control type="group">
+				<left>125.5</left>
+				<control type="image">
+					<left>-10</left>
+					<top>286</top>
+					<width>220</width>
+					<height>7</height>
+					<aspectratio>stretch</aspectratio>
+					<colordiffuse>F0FFFFFF</colordiffuse>
+					<texture background="true">views\carousel\poster_shadow.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">no_poster.jpg</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.icon]</texture>
+					<visible>ListItem.IsFolder</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.icon]</texture>
+					<visible>!ListItem.IsFolder</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>33</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>overlay-watched.png</texture>
+					<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+					<visible>!Skin.HasSetting(HidePlayedIndicator)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>35</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>$INFO[listitem.overlay]</texture>
+					<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+					<visible>!Skin.HasSetting(HideTrainerIndicator)</visible>
+				</control>
+			</control>
+		</itemlayout>
+		<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="290" width="414">
+			<control type="group">
+				<left>125.5</left>
+				<control type="image">
+					<left>-10</left>
+					<top>286</top>
+					<width>220</width>
+					<height>7</height>
+					<aspectratio>stretch</aspectratio>
+					<colordiffuse>F0FFFFFF</colordiffuse>
+					<texture background="true">views\carousel\poster_shadow.png</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">no_poster.jpg</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.icon]</texture>
+					<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.icon]</texture>
+					<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View59_Thumbs]</texture>
+					<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>33</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>overlay-watched.png</texture>
+					<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+					<visible>!Skin.HasSetting(HidePlayedIndicator)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>35</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>$INFO[listitem.overlay]</texture>
+					<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+					<visible>!Skin.HasSetting(HideTrainerIndicator)</visible>
+				</control>
+			</control>
+		</itemlayout>
+		<focusedlayout condition="!Skin.HasSetting(_resourcesenabled)" height="290" width="414">
+			<control type="group">
+				<left>125.5</left>
+				<control type="image">
+					<left>-10</left>
+					<top>286</top>
+					<width>220</width>
+					<height>7</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true">views\carousel\poster_shadow.png</texture>
+					<colordiffuse>F0FFFFFF</colordiffuse>
+					<animation reversible="false" effect="zoom" start="-10,286,220,7" end="-28,290,256,8" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="-10,286,220,7" start="-28,290,256,8" time="100">unfocus</animation>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">no_poster.jpg</texture>
+					<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.icon]</texture>
+					<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+					<visible>ListItem.IsFolder</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.icon]</texture>
+					<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+					<visible>!ListItem.IsFolder</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>35</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>overlay-watched.png</texture>
+					<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+					<animation reversible="false" effect="zoom" start="10,35,25,25" end="-5,3,30,30" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="10,35,25,25" start="-5,3,30,30" time="100">unfocus</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+					<visible>!Skin.HasSetting(HidePlayedIndicator)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>35</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>$INFO[listitem.overlay]</texture>
+					<animation reversible="false" effect="zoom" start="10,55,25,25" end="-5,26,30,30" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="10,55,25,25" start="-5,26,30,30" time="100">unfocus</animation>
+					<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+					<visible>!Skin.HasSetting(HideTrainerIndicator)</visible>
+				</control>
+			</control>
+		</focusedlayout>
+		<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="290" width="414">
+			<control type="group">
+				<left>125.5</left>
+				<control type="image">
+					<left>-10</left>
+					<top>286</top>
+					<width>220</width>
+					<height>7</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true">views\carousel\poster_shadow.png</texture>
+					<colordiffuse>F0FFFFFF</colordiffuse>
+					<animation reversible="false" effect="zoom" start="-10,286,220,7" end="-28,290,256,8" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="-10,286,220,7" start="-28,290,256,8" time="100">unfocus</animation>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">no_poster.jpg</texture>
+					<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>scale</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.icon]</texture>
+					<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+					<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>keep</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.icon]</texture>
+					<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+					<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>7</top>
+					<width>200</width>
+					<height>283</height>
+					<aspectratio>stretch</aspectratio>
+					<texture background="true" diffuse="views\carousel\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View59_Thumbs]</texture>
+					<animation reversible="false" effect="zoom" start="0,7,200,283" end="-17,-36,234,330" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="0,7,200,283" start="-17,-36,234,330" time="100">unfocus</animation>
+					<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>35</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>overlay-watched.png</texture>
+					<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+					<animation reversible="false" effect="zoom" start="10,35,25,25" end="-5,3,30,30" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="10,35,25,25" start="-5,3,30,30" time="100">unfocus</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+					<visible>!Skin.HasSetting(HidePlayedIndicator)</visible>
+				</control>
+				<control type="image">
+					<left>10</left>
+					<top>35</top>
+					<width>25</width>
+					<height>25</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>$INFO[listitem.overlay]</texture>
+					<animation reversible="false" effect="zoom" start="10,55,25,25" end="-5,26,30,30" time="100">focus</animation>
+					<animation reversible="false" effect="zoom" end="10,55,25,25" start="-5,26,30,30" time="100">unfocus</animation>
+					<animation reversible="false" effect="slide" start="0,0" end="0,23" time="0" condition="!Skin.HasSetting(HidePlayedIndicator) + IntegerGreaterThan(ListItem.ProgramCount,0)">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollNext">Conditional</animation>
+					<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(59).OnScrollPrevious">Conditional</animation>
+					<visible>!Skin.HasSetting(HideTrainerIndicator)</visible>
+				</control>
+			</control>
+		</focusedlayout>
+	</control>
+	<control type="label">
+		<left>0</left>
+		<top>95r</top>
+		<width>1280</width>
+		<height>36</height>
+		<font>size_35</font>
+		<textcolor>$VAR[Alt_Label_Colour]</textcolor>
+		<scroll>true</scroll>
+		<align>center</align>
+		<aligny>center</aligny>
+		<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+		<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + IsEmpty(listitem.Synopsis_Resources)">Conditional</animation>
+	</control>
+	<control type="scrollbar" id="90">
+		<onup>59</onup>
+		<include>View.ScrollBar.Horizontal</include>
+	</control>
+</control>

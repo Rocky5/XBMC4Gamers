@@ -1,3 +1,29 @@
+2.1.1
+1) Added softmod detection for stuff thats installed to C.
+(MSDash, UIX Lite etc...)
+2) Patch the MSDash or UIX Ultra Lite to work alongside the softmod.
+
+2.1.0
+1) Now rename emulators for XBMC4Gamers so they don't follow the XBMC-Emustation naming scheme.
+(if previous version exists it's renamed and updated, so you wont lose anything.)
+
+2.0.3
+1) Time out function for XBMC4Gamers.co.uk if the server thinks you're requesting to much to fast.
+
+2.0.2
+1) Used GoogleDrive as default download url and falls back to XBMC4Gamers.co.uk if GoogleDrive isn't available.
+
+2.0.1
+1) Back to requests, urllib was causing to many issues.
+2) Encode url, so fixes the urls so for example # becomes %23
+
+2.0.1
+1) Moved to https://xbmc4gamers.co.uk for hosting files.
+2) All the google download code removed and replaced with urlib code.
+
+1.0.39
+1) Bypass DNS check. If you have issues with your ISP blocking DNS 8.8.8.8 or Port 53. Add a file named "disable_dns_check.bin" to the system folder. 
+
 1.0.38
 1) Added a dash version check to see if there are any new builds.
 

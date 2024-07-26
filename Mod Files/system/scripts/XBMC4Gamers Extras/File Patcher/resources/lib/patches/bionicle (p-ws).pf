@@ -1,0 +1,11 @@
+# Author: Esppiral
+# Credits: Esppiral - https://discord.gg/8wKbXuqp
+# Info: Patches in widescreen aspect ratio.
+# Region: PAL
+# Title: Bionicle
+# TitleID: 45410039
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+HR|defaultws.xbe|2|ABAAAA3F|398EE33F
+HR|defaultws.xbe|1|BE9FAA3F|398EE33F

@@ -1,9 +1,0 @@
-<includes>
-		<variable name="backgrounds">
-				<value condition="IsEmpty(skin.string(background_color))">0.jpg</value>
-				<value condition="!IsEmpty(skin.string(background_color))">$INFO[skin.string(background_color)]</value>
-		</variable>
-		<variable name="var-labelcolour">
-				<value>130_label</value>
-		</variable>
-</includes>

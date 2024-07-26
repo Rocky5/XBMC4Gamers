@@ -4,12 +4,43 @@ Welcome to XBMC4Gamers v2.0
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Change log for v2.0.004
-12/04/2024
+Change log for v2.0.005
+26/07/2024
 
-	1) Temperature should now be accurate on v1.6 Xbox, but thank you to Ack Ack (adam_r) from Discord.
-	2) Banner view now will show icons if no banner is available.
-	3) Italian translation updated.
+	1) Themes can now edit any includes value.
+		(custom menu looks and animations)
+	2) Updated the file patcher script and patch files.
+		(New UI and updated patches)
+	3) Added a few more file patches for games.
+		(file patcher script under scripts menu.)
+	4) Fixed the fanart view not applying the diffuse image to screenshots.
+	5) New slant view.
+	6) Includes are now all one file, saves a little ram, this is so themes can override them.
+		(Like views this file is build when you refresh the skin on the root menu)
+	7) Update fonts to use the filename again, can use multiple fonts for example.
+	8) Updated the textviewer and debug info to use mono fonts.
+	9) Changed how I do the theme apply and uninstall theme.
+		(now use the Font.xml)
+	10) Re-factored almost all scripts.
+	11) Internal XBE updates.
+		(one is launch default_orig.xbe if found from the context menu)
+	12) Home menu buttons hidden if no content if found.
+	13) Few other odds and ends.
+	14) New menu entry under XBMC4Gamers Options > Debug to toggle debug modes.
+	15) Can now reset all XBMC4Gamers options under the XBMC4Gamers options > Debug menu. Main settings aren't touched.
+	16) Fixed xbes without titles being renamed to default.xbe when refreshing synopsis info.
+		(No they will use the folder name if the title is empty)
+	17) Integrated the Artwork Installer into the dash, you still need to download it but you can control all aspect of it from gamers.
+		(New run artwork installer script)
+	18) Some UI tweaks.
+	19) Skins are now renamed to "Manage Profiles" and "Profile"
+	20) Updated the home screen layout, looks better now.
+	21) Can set a custom intro file now.
+		(select any mp4 file from anywhere on your system)
+	22) Updated the system info screen.
+	23) Themes can now have as many fonts as they want, just have to be named "theme name"_1,2,3,4 etc...
+		("theme name"_fonts.xml is required)
+	24) New netflixish type view
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -29,6 +60,13 @@ I would also like to thank everyone that has donated it's very much appreciated.
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Previous Updates:
+
+Change log for v2.0.004
+12/04/2024
+
+	1) Temperature should now be accurate on v1.6 Xbox, but thank you to Ack Ack (adam_r) from Discord.
+	2) Banner view now will show icons if no banner is available.
+	3) Italian translation updated.
 
 Change log for v2.0.003
 26/1/2024

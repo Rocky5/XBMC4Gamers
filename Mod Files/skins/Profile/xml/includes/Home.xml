@@ -1,0 +1,378 @@
+<include name="Home.LastPlayed.Layout">
+	<left>60</left>
+	<top>345</top>
+	<width>145</width>
+	<height>40</height>
+	<onleft>9001</onleft>
+	<onright>9001</onright>
+	<onup condition="ControlGroup(1).HasFocus(100)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(101)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(102)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(103)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(104)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(105)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(106)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(107)">1</onup>
+	<ondown condition="ControlGroup(1).HasFocus(100) + Skin.HasSetting(RandomGames)">9002</ondown>
+	<ondown condition="ControlGroup(1).HasFocus(101) + Skin.HasSetting(RandomBrews)">9002</ondown>
+	<ondown condition="ControlGroup(1).HasFocus(102) + Skin.HasSetting(RandomEmus)">9002</ondown>
+	<ondown condition="ControlGroup(1).HasFocus(103) + Skin.HasSetting(RandomApps)">9002</ondown>
+	<ondown condition="ControlGroup(1).HasFocus(104) + Skin.HasSetting(Randomcustom1)">9002</ondown>
+	<ondown condition="ControlGroup(1).HasFocus(105) + Skin.HasSetting(Randomcustom2)">9002</ondown>
+	<ondown condition="ControlGroup(1).HasFocus(106) + Skin.HasSetting(Randomcustom3)">9002</ondown>
+	<ondown condition="ControlGroup(1).HasFocus(107) + Skin.HasSetting(Randomcustom4)">9002</ondown>
+	<onback>1</onback>
+	<viewtype label="home">biglist</viewtype>
+	<scrolltime>0</scrolltime>
+	<focusposition>0</focusposition>
+	<orientation>horizontal</orientation>
+	<include>Home.Underlay.Anims</include>
+	<itemlayout/>
+	<focusedlayout height="40" width="145">
+		<control type="image">
+			<height>40</height>
+			<width>145</width>
+			<aspectratio>stretch</aspectratio>
+			<texture>windows\home\lastplayed_button_nofo.png</texture>
+			<animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+			<visible>!Control.HasFocus(9001)</visible>
+		</control>
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<height>40</height>
+			<width>145</width>
+			<font>home_19</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>1_label_alt</textcolor>
+			<shadowcolor>D0000000</shadowcolor>
+			<label>[UPPERCASE]Launch[/UPPERCASE]</label>
+			<animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
+			<visible>!Control.HasFocus(9001)</visible>
+		</control>
+		<control type="image">
+			<height>40</height>
+			<width>145</width>
+			<aspectratio>stretch</aspectratio>
+			<texture>windows\home\lastplayed_button_fo.png</texture>
+			<visible>Control.HasFocus(9001)</visible>
+		</control>
+		<control type="label">
+			<left>0</left>
+			<top>0</top>
+			<height>40</height>
+			<width>145</width>
+			<font>home_19</font>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>1_label</textcolor>
+			<shadowcolor>D0000000</shadowcolor>
+			<label>[UPPERCASE]Launch[/UPPERCASE]</label>
+			<visible>Control.HasFocus(9001)</visible>
+		</control>
+	</focusedlayout>
+</include>
+<include name="Home.Random.Layout">
+	<left>326</left>
+	<top>478</top>
+	<width>954</width>
+	<height>188</height>
+	<onleft>9002</onleft>
+	<onright>9002</onright>
+	<onup condition="ControlGroup(1).HasFocus(100) + !Skin.HasSetting(LastPlayedGames)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(101) + !Skin.HasSetting(LastPlayedBrews)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(102) + !Skin.HasSetting(LastPlayedEmus)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(103) + !Skin.HasSetting(LastPlayedApps)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(104) + !Skin.HasSetting(LastPlayedcustom1)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(105) + !Skin.HasSetting(LastPlayedcustom2)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(106) + !Skin.HasSetting(LastPlayedcustom3)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(107) + !Skin.HasSetting(LastPlayedcustom4)">1</onup>
+	<onup condition="ControlGroup(1).HasFocus(100) + Skin.HasSetting(LastPlayedGames)">9001</onup>
+	<onup condition="ControlGroup(1).HasFocus(101) + Skin.HasSetting(LastPlayedBrews)">9001</onup>
+	<onup condition="ControlGroup(1).HasFocus(102) + Skin.HasSetting(LastPlayedEmus)">9001</onup>
+	<onup condition="ControlGroup(1).HasFocus(103) + Skin.HasSetting(LastPlayedApps)">9001</onup>
+	<onup condition="ControlGroup(1).HasFocus(104) + Skin.HasSetting(LastPlayedcustom1)">9001</onup>
+	<onup condition="ControlGroup(1).HasFocus(105) + Skin.HasSetting(LastPlayedcustom2)">9001</onup>
+	<onup condition="ControlGroup(1).HasFocus(106) + Skin.HasSetting(LastPlayedcustom3)">9001</onup>
+	<onup condition="ControlGroup(1).HasFocus(107) + Skin.HasSetting(LastPlayedcustom4)">9001</onup>
+	<onback>1</onback>
+	<viewtype label="home">biglist</viewtype>
+	<scrolltime>150</scrolltime>
+	<focusposition>0</focusposition>
+	<orientation>horizontal</orientation>
+	<preloaditems>2</preloaditems>
+	<include>Home.Layout.Thumbs.Anims</include>
+	<include>Home.Underlay.Anims</include>
+	<itemlayout height="188" width="154">
+		<control type="image">
+			<left>40</left>
+			<top>0</top>
+			<width>124</width>
+			<height>188</height>
+			<aspectratio>stretch</aspectratio>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<texture background="true" diffuse="windows\home\diffuse.png">no_poster.jpg</texture>
+		</control>
+		<control type="image">
+			<left>40</left>
+			<top>0</top>
+			<width>124</width>
+			<height>188</height>
+			<aspectratio>stretch</aspectratio>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<texture background="true" diffuse="windows\home\diffuse.png">$INFO[listitem.ActualIcon]</texture>
+			<fadetime>ThumbCrossfadeTime</fadetime>
+		</control>
+	</itemlayout>
+	<focusedlayout height="188" width="154">
+		<control type="image">
+			<left>40</left>
+			<top>0</top>
+			<width>124</width>
+			<height>188</height>
+			<aspectratio>stretch</aspectratio>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<texture background="true" diffuse="windows\home\diffuse.png">no_poster.jpg</texture>
+		</control>
+		<control type="image">
+			<left>40</left>
+			<top>0</top>
+			<width>124</width>
+			<height>188</height>
+			<aspectratio>stretch</aspectratio>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<texture background="true" diffuse="windows\home\diffuse.png">$INFO[listitem.ActualIcon]</texture>
+			<fadetime>ThumbCrossfadeTime</fadetime>
+		</control>
+	</focusedlayout>
+</include>
+<include name="Home.Layout.Random.Focus.Item">
+	<control type="group">
+		<visible>!IsEmpty(Container(9002).ListItem.Label)</visible>
+		<!-- <control type="largeimage"> -->
+		<!-- <left>0</left> -->
+		<!-- <top>424</top> -->
+		<!-- <width>1280</width> -->
+		<!-- <height>296</height> -->
+		<!-- <aspectratio scalediffuse="false">scale</aspectratio> -->
+		<!-- <fadetime>FanartCrossfadeTime</fadetime> -->
+		<!-- <colordiffuse>40808080</colordiffuse> -->
+		<!-- <texture>$INFO[Container(9002).ListItem.thumb]</texture> -->
+		<!-- <visible>Control.HasFocus(9002)</visible> -->
+		<!-- </control> -->
+		<!-- <control type="label"> -->
+		<!-- <left>110</left> -->
+		<!-- <top>488</top> -->
+		<!-- <width>110</width> -->
+		<!-- <height>20</height> -->
+		<!-- <font>home_12</font> -->
+		<!-- <align>right</align> -->
+		<!-- <aligny>top</aligny> -->
+		<!-- <textcolor>1_label</textcolor> -->
+		<!-- <shadowcolor>D0000000</shadowcolor> -->
+		<!-- <label>$LOCALIZE[31563]</label> -->
+		<!-- </control> -->
+		<control type="label">
+			<left>60</left>
+			<top>438</top>
+			<width>188</width>
+			<height>20</height>
+			<font>home_19</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>1_label</textcolor>
+			<shadowcolor>D0000000</shadowcolor>
+			<label>$LOCALIZE[31563]</label>
+		</control>
+		<control type="group">
+			<left>80</left>
+			<control type="image">
+				<left>0</left>
+				<top>468</top>
+				<width>430</width>
+				<height>228</height>
+				<aspectratio>stretch</aspectratio>
+				<colordiffuse>FFFFFFFF</colordiffuse>
+				<texture>windows\home\random_back.png</texture>
+			</control>
+			<control type="largeimage">
+				<left>0</left>
+				<top>468</top>
+				<width>430</width>
+				<height>228</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<fadetime>ThumbCrossfadeTime</fadetime>
+				<colordiffuse>10FFFFFF</colordiffuse>
+				<texture diffuse="windows\home\random_fanart_diffuse.png">$INFO[Container(9002).ListItem.thumb]</texture>
+				<visible>Control.HasFocus(9002)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>478</top>
+				<width>124</width>
+				<height>188</height>
+				<aspectratio>stretch</aspectratio>
+				<texture background="true">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>478</top>
+				<width>124</width>
+				<height>188</height>
+				<aspectratio>stretch</aspectratio>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture background="true">$INFO[Container(9002).ListItem.ActualIcon]</texture>
+			</control>
+			<control type="textbox">
+				<left>144</left>
+				<top>478</top>
+				<width>246</width>
+				<height>50</height>
+				<font>home_19</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>1_title_alt</textcolor>
+				<shadowcolor>D0000000</shadowcolor>
+				<include>Home.Layout.Randoms.Info.Anims</include>
+				<label>[UPPERCASE][B]$INFO[Container(9002).ListItem.Label][/B][/UPPERCASE]</label>
+			</control>
+			<control type="textbox">
+				<left>144</left>
+				<top>538</top>
+				<width>246</width>
+				<height>125</height>
+				<font>home_12</font>
+				<align>left</align>
+				<textcolor>1_synopsis_alt</textcolor>
+				<shadowcolor>D0000000</shadowcolor>
+				<include>Home.Layout.Randoms.Info.Anims</include>
+				<label>[B]$INFO[Container(9002).ListItem.Label2][/B]</label>
+				<visible>!Control.HasFocus(9002)</visible>
+			</control>
+			<control type="textbox">
+				<left>144</left>
+				<top>538</top>
+				<width>246</width>
+				<height>86</height>
+				<font>home_12</font>
+				<align>left</align>
+				<textcolor>1_synopsis_alt</textcolor>
+				<shadowcolor>D0000000</shadowcolor>
+				<include>Home.Layout.Randoms.Info.Anims</include>
+				<label>[B]$INFO[Container(9002).ListItem.Label2][/B]</label>
+				<visible>Control.HasFocus(9002)</visible>
+			</control>
+			<control type="image">
+				<left>144</left>
+				<top>638</top>
+				<width>22</width>
+				<height>22</height>
+				<aspectratio>stretch</aspectratio>
+				<fadetime>ThumbCrossfadeTime</fadetime>
+				<texture background="true">windows\home\a_button.png</texture>
+				<visible>Control.HasFocus(9002)</visible>
+			</control>
+			<control type="label">
+				<left>174</left>
+				<top>638</top>
+				<width>110</width>
+				<height>22</height>
+				<font>home_19</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>1_label</textcolor>
+				<shadowcolor>D0000000</shadowcolor>
+				<label>Launch</label>
+				<visible>Control.HasFocus(9002)</visible>
+			</control>
+		</control>
+	</control>
+</include>
+<include name="Home.Layout.Guide">
+	<control type="image">
+		<left>60</left>
+		<top>400</top>
+		<width>145</width>
+		<height>17</height>
+		<aspectratio>stretch</aspectratio>
+		<colordiffuse>50FFFFFF</colordiffuse>
+		<texture>windows\home\guides\$INFO[Container(9001).NumItems]\back.png</texture>
+	</control>
+	<control type="image">
+		<left>60</left>
+		<top>400</top>
+		<width>145</width>
+		<height>17</height>
+		<aspectratio>stretch</aspectratio>
+		<colordiffuse>$VAR[Value.TileColourSolid]</colordiffuse>
+		<texture>windows\home\guides\$INFO[Container(9001).NumItems]\$INFO[Container(9001).ListItem(0).Property(Guide)]</texture>
+	</control>
+</include>
+<!-- 9001 content -->
+<include name="Home.Layout.LastPlayed.Title">
+	<left>60</left>
+	<top>70</top>
+	<width>500</width>
+	<height>170</height>
+	<font>home_40</font>
+	<align>bottom</align>
+	<aligny>center</aligny>
+	<textcolor>1_title</textcolor>
+	<shadowcolor>D0000000</shadowcolor>
+	<autoscroll delay="10000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
+	<include>Home.Layout.LastPlayed.Info.Anims</include>
+</include>
+<include name="Home.Layout.LastPlayed.Synopsis">
+	<left>60</left>
+	<top>260</top>
+	<width>500</width>
+	<height>78</height>
+	<font>home_12</font>
+	<align>left</align>
+	<aligny>top</aligny>
+	<textcolor>1_synopsis</textcolor>
+	<shadowcolor>D0000000</shadowcolor>
+	<autoscroll delay="10000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
+	<include>Home.Layout.LastPlayed.Info.Anims</include>
+</include>
+<!-- Top buttons -->
+<include name="Home.Layout.Top.Buttons">
+	<height>30</height>
+	<width>130</width>
+	<font>home_19</font>
+	<align>center</align>
+	<aligny>top</aligny>
+	<textoffsety>0</textoffsety>
+	<focusedcolor>1_sidebar_labels_fo</focusedcolor>
+	<textcolor>1_sidebar_labels_nofo</textcolor>
+	<texturefocus>windows\home\button.png</texturefocus>
+	<texturenofocus>windows\home\button.png</texturenofocus>
+</include>
+<include name="Home.Layout.Anims">
+	<animation effect="fade" start="0" end="100" delay="0" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" delay="0" time="150">WindowClose</animation>
+</include>
+<include name="Home.Underlay.Anims">
+	<animation effect="fade" start="0" end="100" delay="0" time="150">Visible</animation>
+	<animation effect="fade" start="100" end="0" delay="0" time="150">Hidden</animation>
+</include>
+<include name="Home.Layout.Thumbs.Anims">
+	<include>Dialog.Effect.Zoom.Fast</include>
+</include>
+<include name="Home.Layout.LastPlayed.Info.Anims">
+	<!-- <animation type="Visible" reversible="false"> -->
+	<!-- <effect type="fade" delay="50" start="0" end="100" time="150"/> -->
+	<!-- </animation> -->
+	<!-- <animation type="Hidden" reversible="false"> -->
+	<!-- <effect type="fade" delay="0" start="100" end="0" time="150"/> -->
+	<!-- </animation> -->
+</include>
+<include name="Home.Layout.Randoms.Info.Anims">
+	<!-- <animation type="Visible" reversible="false"> -->
+	<!-- <effect type="fade" delay="50" start="0" end="100" time="150"/> -->
+	<!-- </animation> -->
+	<!-- <animation type="Hidden" reversible="false"> -->
+	<!-- <effect type="fade" delay="0" start="100" end="0" time="150"/> -->
+	<!-- </animation> -->
+</include>

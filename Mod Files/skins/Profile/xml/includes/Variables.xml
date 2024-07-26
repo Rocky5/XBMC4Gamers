@@ -1,0 +1,114 @@
+<!-- Variables.xml -->
+<variable name="backgrounds">
+	<value condition="IsEmpty(skin.string(background_color)) + StringCompare(Skin.CurrentTheme,skindefault)">default\0.jpg</value>
+	<value condition="!IsEmpty(skin.string(background_color)) + StringCompare(Skin.CurrentTheme,skindefault)">default\$INFO[skin.string(background_color)]</value>
+	<value condition="IsEmpty(skin.string(background_color)) + !StringCompare(Skin.CurrentTheme,skindefault)">$INFO[Skin.CurrentTheme]\0.jpg</value>
+	<value condition="!IsEmpty(skin.string(background_color)) + !StringCompare(Skin.CurrentTheme,skindefault)">$INFO[Skin.CurrentTheme]\$INFO[skin.string(background_color)]</value>
+</variable>
+<variable name="Alt_Label_Colour">
+	<!-- all other windows -->
+	<value condition="!Skin.HasSetting(AltTextColour) + !Window.IsVisible(7) + !Window.IsVisible(2999)">$INFO[Container.Viewmode]_label</value>
+	<value condition="Skin.HasSetting(AltTextColour) + !Window.IsVisible(7) + !Window.IsVisible(2999)">$INFO[Container.Viewmode]_label_alt</value>
+	<!-- system info window -->
+	<value condition="!Skin.HasSetting(AltTextColour) + Window.IsVisible(7)">7_label</value>
+	<value condition="Skin.HasSetting(AltTextColour) + Window.IsVisible(7)">7_label_alt</value>
+</variable>
+<variable name="Custom_BG_Colour">
+	<value>FF$INFO[Skin.String(Background_Custom_Color)]</value>
+</variable>
+<variable name="Custom_Gamers_Logo_Colour">
+	<value condition="Skin.HasSetting(EnabledXBMC4GamersLogoColour)">FF$INFO[Skin.String(XBMC4GamersLogoColour)]</value>
+	<value condition="!Skin.HasSetting(EnabledXBMC4GamersLogoColour)">variables_logo</value>
+</variable>
+<variable name="VolumeIconVar">
+	<value condition="Player.Muted">windows\volume\mute.png</value>
+	<value condition="IntegerGreaterThan(Control.GetLabel(29999),66)">windows\volume\volume.png</value>
+	<value condition="IntegerGreaterThan(Control.GetLabel(29999),33)">windows\volume\volume2.png</value>
+	<value condition="player.passthrough">windows\volume\volume.png</value>
+	<value>windows\volume\volume1.png</value>
+</variable>
+<variable name="HomeMultiimage">
+	<value condition="Skin.HasSetting(UseFanartFolder)">Q:\system\screensavers\fanart</value>
+	<value>windows\home\multiimages</value>
+</variable>
+<variable name="View_Fanart">
+	<value condition="!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</value>
+	<value condition="!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + !Skin.HasSetting(fanartblur)">$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</value>
+	<value condition="!IsEmpty(listitem.Synopsis_Resources) + !Skin.HasSetting(_resourcesenabled)">$INFO[listitem.Path,,]fanart.jpg</value>
+	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)">no_fanart_blur.jpg</value>
+	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + !Skin.HasSetting(fanartblur)">no_fanart.jpg</value>
+	<value condition="ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)">Special://skin\extras\folder fanart\$INFO[ListItem.Label].jpg</value>
+</variable>
+<variable name="View_Fanart_Fog">
+	<value condition="!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(customfanartfog)">$INFO[listitem.Synopsis_Resources]artwork\fog.jpg</value>
+	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(customfanartfog)">no_fog.jpg</value>
+	<value condition="ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(customfanartfog)">Special://skin\extras\folder fanart\$INFO[ListItem.Label]_fog.jpg</value>
+</variable>
+<variable name="View50_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View51_Thumbs">
+	<!-- <value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value> -->
+	<value>poster.jpg</value>
+</variable>
+<variable name="View55_Fanart">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">fanart.jpg</value>
+	<value>fanart_thumb.jpg</value>
+</variable>
+<variable name="View56_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View57_Fanart">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork) | Skin.HasSetting(fanartfullscreen)">fanart.jpg</value>
+	<value>fanart_thumb.jpg</value>
+</variable>
+<variable name="View58_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View59_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View60_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View61_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View61_Fanart">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">fanart.jpg</value>
+	<value>fanart_thumb.jpg</value>
+</variable>
+<variable name="View66_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View67_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View69_Thumbs">
+	<!-- <value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value> -->
+	<value>poster.jpg</value>
+</variable>
+<variable name="View71_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View72_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View73_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View74_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>

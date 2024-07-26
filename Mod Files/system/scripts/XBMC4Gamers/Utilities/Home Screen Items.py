@@ -10,13 +10,12 @@
 	
 '''
 import datetime,os,sqlite3,sys,time,xbmc,xbmcgui
-print "Loaded Home Screen Items.py"
 myprograms6_db	= xbmc.translatePath("special://profile/database/MyPrograms6.db")
 force64mbassets	= xbmc.executehttpapi('GetGUISetting(1;mygames.games128mbartwork)')
 use128mbassets	= xbmc.getInfoLabel("System.memory(total)")
 noblurredfanart	= xbmc.getInfoLabel("Skin.HasSetting(UseNoBlurredFanart)")
 
-class Main:
+class PopulateHome:
 	homewindow	= xbmcgui.Window( 10000 )
 	
 	def __init__( self ):
@@ -76,16 +75,17 @@ class Main:
 				
 				if not thumb[0] == "":
 					increment += 1
-					self.homewindow.setProperty(propertyvalue+'.%d.Fanart'													% (increment,),thumb[1])
-					self.homewindow.setProperty(propertyvalue+'.%d.Thumb'													% (increment,),thumb[0])
-					self.homewindow.setProperty(propertyvalue+'.%d.Title'													% (increment,),field[8])
-					if field[8] == "": self.homewindow.setProperty(propertyvalue+'.%d.Title'								% (increment,),field[3])
-					self.homewindow.setProperty(propertyvalue+'.%d.XBEPath' 												% (increment,),"RunXBE("+field[1]+")")
+					self.homewindow.setProperty(propertyvalue+'.%d.Fanart' % (increment,),thumb[1])
+					self.homewindow.setProperty(propertyvalue+'.%d.Thumb' % (increment,),thumb[0])
+					self.homewindow.setProperty(propertyvalue+'.%d.Title' % (increment,),truncate_with_ellipsis(field[8], 40))
+					if field[8] == "":
+						self.homewindow.setProperty(propertyvalue+'.%d.Title' % (increment,),field[3])
+					self.homewindow.setProperty(propertyvalue+'.%d.XBEPath' % (increment,),"RunXBE("+field[1]+")")
 					
 					if version > 3:
-						self.homewindow.setProperty(propertyvalue+'.%d.Rating'												% (increment,),field[18])
-						self.homewindow.setProperty(propertyvalue+'.%d.Synopsis'											% (increment,),field[22])
-						self.homewindow.setProperty(propertyvalue+'.%d.ExtraInfo'											% (increment,),self.ExtraInfo(field) )
+						# self.homewindow.setProperty(propertyvalue+'.%d.Rating' % (increment,),field[18])
+						self.homewindow.setProperty(propertyvalue+'.%d.Synopsis' % (increment,),truncate_with_ellipsis(field[22], 265))
+						# self.homewindow.setProperty(propertyvalue+'.%d.ExtraInfo' % (increment,),self.ExtraInfo(field) )
 		
 		if increment > 0:
 			xbmc.executebuiltin("Skin.SetBool("+propertyvalue+")")
@@ -116,16 +116,17 @@ class Main:
 					
 					if not thumb[0] == "":
 						increment += 1
-						self.homewindow.setProperty(propertyvalue+'.%d.Fanart'													% (increment,),thumb[1])
-						self.homewindow.setProperty(propertyvalue+'.%d.Thumb'													% (increment,),thumb[0])
-						self.homewindow.setProperty(propertyvalue+'.%d.Title'													% (increment,),field[8])
-						if field[8] == "": self.homewindow.setProperty(propertyvalue+'.%d.Title'								% (increment,),field[3])
-						self.homewindow.setProperty(propertyvalue+'.%d.XBEPath' 												% (increment,),"RunXBE("+field[1]+")")
+						self.homewindow.setProperty(propertyvalue+'.%d.Fanart' % (increment,),thumb[1])
+						self.homewindow.setProperty(propertyvalue+'.%d.Thumb' % (increment,),thumb[0])
+						self.homewindow.setProperty(propertyvalue+'.%d.Title' % (increment,),field[8])
+						if field[8] == "":
+							self.homewindow.setProperty(propertyvalue+'.%d.Title' % (increment,),field[3])
+						self.homewindow.setProperty(propertyvalue+'.%d.XBEPath' % (increment,),"RunXBE("+field[1]+")")
 						
 						if version > 3:
-							self.homewindow.setProperty(propertyvalue+'.%d.Rating'												% (increment,),field[18])
-							self.homewindow.setProperty(propertyvalue+'.%d.Synopsis'											% (increment,),field[22])
-							self.homewindow.setProperty(propertyvalue+'.%d.ExtraInfo'											% (increment,),self.ExtraInfo(field) )
+							# self.homewindow.setProperty(propertyvalue+'.%d.Rating' % (increment,),field[18])
+							self.homewindow.setProperty(propertyvalue+'.%d.Synopsis' % (increment,),truncate_with_ellipsis(field[22], 365))
+							# self.homewindow.setProperty(propertyvalue+'.%d.ExtraInfo' % (increment,),self.ExtraInfo(field) )
 		
 		if increment > 0:
 			xbmc.executebuiltin("Skin.SetBool("+propertyvalue+")")
@@ -180,9 +181,30 @@ class Main:
 		cur.execute(var)
 		return cur.fetchall()
 
-if ( __name__ == "__main__" ):
-	if os.path.isfile(myprograms6_db):
-		start_time = time.time()
-		Main()
+def truncate_with_ellipsis(text, max_length):
+	text = ' '.join(text.split()).strip()
+	# lines = text.splitlines()
+	# cleaned_lines = [line.strip() for line in lines if line.strip()]
+	# text = '\n'.join(cleaned_lines)
+	if len(text) <= max_length:
+		return text
+	else:
+		last_space_index = text.rfind(' ', 0, max_length)
+		if last_space_index == -1:
+			return text[:max_length]
+		else:
+			return text[:last_space_index] + "..."
 
-print "Unloaded Home Screen Items.py - took %s seconds to complete" % int(round((time.time() - start_time)))
+if __name__ == "__main__":
+	if os.path.isfile(myprograms6_db):
+		print("Loaded Home Screen Items.py")
+		start_time = time.time()
+		try:
+			if xbmcgui.getCurrentWindowId() == 10000:
+				xbmc.executebuiltin("ActivateWindow(1100)")
+			PopulateHome()
+			xbmc.executebuiltin("Dialog.Close(1100)")
+		finally:
+			if 'con' in locals():
+				con.close()
+		print("Unloaded Home Screen Items.py - took {} seconds to complete".format(int(round(time.time() - start_time))))

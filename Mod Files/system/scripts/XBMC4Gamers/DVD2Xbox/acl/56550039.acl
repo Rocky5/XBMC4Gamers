@@ -1,0 +1,18 @@
+# Game: The Incredible Hulk:Ultimate Destruction
+# Title ID: 56550039
+# Size: 2338 Mb(2 folders,20 files)
+# Author: ACL Written by AgentEB from Xbox-Scene
+
+# This acl written by yours truly. It will patch the default.xbe to allow 
+you to play off the hdd.
+# Thanks for playing Sierra! Ha Ha
+
+CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+# Offset @ 00000221
+HR|*.xbe|1|0100C00700000003|0200000700000003|
+# Offset @ 001f9a90
+HR|*.xbe|3|EC83EC34FF7508|EC83EC34EB4341|
+# Offset @ 001f9ad5
+HR|*.xbe|1|7D1B50E830060000E8D505000083F80275076A03E8F105000033C0EB33|7C46EB198B4508508B000C203D643A5C0075AF5856B800080000EB3390|
+# Media Check 1
+SM|*.xbe|C00001FF|

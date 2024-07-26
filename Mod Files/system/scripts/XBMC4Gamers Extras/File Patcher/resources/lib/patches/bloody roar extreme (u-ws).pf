@@ -1,0 +1,10 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Bloody Roar: Extreme
+# TitleID: 48550001
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+HR|defaultws.xbe|5|5C8FA23F|26BFD83F

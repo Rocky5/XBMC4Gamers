@@ -1,0 +1,14 @@
+<window id="29">
+	<defaultcontrol>52</defaultcontrol>
+	<allowoverlay>no</allowoverlay>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture>dialogback.png</texture>
+		</control>
+	</controls>
+</window>

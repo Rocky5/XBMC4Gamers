@@ -1,0 +1,619 @@
+<window type="dialog" id="1101">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<onload>FlushTextureCache</onload>
+	<onload>AlarmClock(AutoScroll_Synopsis_Thumbs,Control.Move(14,-1),00:10,silent,loop)</onload>
+	<onunload>CancelAlarm(AutoScroll_Synopsis_Thumbs,silent)</onunload>
+	<controls>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</texture>
+			<animation effect="fade" start="0" end="100" time="400" delay="100">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="100" delay="200">WindowClose</animation>
+		</control>
+		<control type="image.">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<colordiffuse>FFFFFFFF</colordiffuse>
+			<texture background="false" diffuse="windows\synopsis\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</texture>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<colordiffuse>CDFFFFFF</colordiffuse>
+			<texture background="false">windows\synopsis\black-back.png</texture>
+			<animation effect="fade" start="0" end="100" time="200" delay="0">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="100" delay="200">WindowClose</animation>
+		</control>
+		<!-- Poster image -->
+		<control type="group">
+			<!-- <animation effect="fade" start="0" end="100" time="400" delay="500">WindowOpen</animation> -->
+			<!-- <animation effect="fade" start="100" end="0" time="100" delay="0">WindowClose</animation> -->
+			<animation effect="slide" start="-600,0" end="0,0" time="300" delay="600">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="-600,0" time="200" delay="0">WindowClose</animation>
+			<control type="image">
+				<left>53</left>
+				<top>120</top>
+				<width>354</width>
+				<height>520</height>
+				<texture diffuse="views\largeposter\diffuse.png">no_poster.jpg</texture>
+				<aspectratio align="bottom">stretch</aspectratio>
+			</control>
+			<control id="14" type="wraplist">
+				<left>53</left>
+				<top>120</top>
+				<width>354</width>
+				<height>520</height>
+				<scrolltime>700</scrolltime>
+				<orientation>horizontal</orientation>
+				<preloaditems>1</preloaditems>
+				<itemlayout height="520" width="354">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>354</width>
+						<height>520</height>
+						<texture background="false" diffuse="views\largeposter\diffuse.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="bottom">stretch</aspectratio>
+					</control>
+				</itemlayout>
+				<focusedlayout height="520" width="354">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>354</width>
+						<height>520</height>
+						<texture background="true" diffuse="views\largeposter\diffuse.png">$INFO[ListItem.Thumb]</texture>
+						<aspectratio align="bottom">stretch</aspectratio>
+					</control>
+				</focusedlayout>
+				<content>
+					<item>
+						<thumb>$INFO[listitem.Synopsis_Resources]artwork\synopsis.jpg</thumb>
+						<onclick>-</onclick>
+					</item>
+					<item>
+						<thumb>$INFO[listitem.Synopsis_Resources]artwork\alt_synopsis.jpg</thumb>
+						<onclick>-</onclick>
+					</item>
+				</content>
+			</control>
+		</control>
+		<control type="group">
+			<!-- <animation effect="fade" start="0" end="100" time="400" delay="500">WindowOpen</animation> -->
+			<!-- <animation effect="fade" start="100" end="0" time="100" delay="0">WindowClose</animation> -->
+			<animation effect="slide" start="900,0" end="0,0" time="300" delay="600">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="900,0" time="200" delay="0">WindowClose</animation>
+			<left>440</left>
+			<top>125</top>
+			<!-- Screenshots and video preview -->
+			<control type="textbox">
+				<left>200</left>
+				<top>0</top>
+				<width>400</width>
+				<height>470</height>
+				<font>size_17</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>1101_label</textcolor>
+				<label>[B]No Screenshots Found[/B]</label>
+				<animation effect="fade" start="0" end="100" time="200" condition="System.IdleTime(1) + !Player.HasVideo">Conditional</animation>
+				<animation effect="fade" start="0" end="0" time="0" delay="0">Hidden</animation>
+				<visible>Control.HasFocus(12)</visible>
+			</control>
+			<control type="multiimage">
+				<description>Screenshots window</description>
+				<left>0</left>
+				<top>0</top>
+				<width>800</width>
+				<height>470</height>
+				<imagepath>$INFO[listitem.Synopsis_Resources]screenshots</imagepath>
+				<timeperimage>5000</timeperimage>
+				<fadetime>500</fadetime>
+				<pauseatend>0</pauseatend>
+				<randomize>true</randomize>
+				<loop>yes</loop>
+				<aspectratio>keep</aspectratio>
+				<visible>Control.HasFocus(12)</visible>
+			</control>
+			<control type="textbox">
+				<left>200</left>
+				<top>0</top>
+				<width>400</width>
+				<height>470</height>
+				<font>size_17</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>1101_label</textcolor>
+				<label>[B]You are playing music.[CR][CR]Press (A) to play the preview video.[CR][CR]Note your music wont restart after the video has ended.[/B]</label>
+				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" delay="0">Hidden</animation>
+				<visible>Control.HasFocus(13) + !IsEmpty(listitem.Synopsis_Preview) + Player.HasAudio</visible>
+			</control>
+			<control type="textbox">
+				<left>200</left>
+				<top>0</top>
+				<width>400</width>
+				<height>470</height>
+				<font>size_17</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>1101_label</textcolor>
+				<label>[B]You are running low on Memory. ($INFO[system.memory(free)])[CR][CR]The system would hang if I played the video.[CR][CR]Try reloading the skin (press Left stick in)[CR]or restart the dashboard.[/B]</label>
+				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" delay="0">Hidden</animation>
+				<visible>Control.HasFocus(13) + !IntegerGreaterThan(system.memory(free_no_mb),10) + !IsEmpty(listitem.Synopsis_Preview) + !Player.HasVideo + !Player.HasAudio</visible>
+			</control>
+			<control type="textbox">
+				<left>200</left>
+				<top>0</top>
+				<width>400</width>
+				<height>470</height>
+				<font>size_17</font>
+				<align>center</align>
+				<aligny>center</aligny>
+				<textcolor>1101_label</textcolor>
+				<label>[CR][CR][B]Press (A) to play the preview video.[/B][CR][CR]</label>
+				<animation effect="fade" start="0" end="100" time="200" delay="1000">Visible</animation>
+				<animation effect="fade" start="100" end="0" time="0" delay="0">Hidden</animation>
+				<visible>Control.HasFocus(13) + IntegerGreaterThan(system.memory(free_no_mb),10) + !IsEmpty(listitem.Synopsis_Preview) + !Player.HasAudio + !Player.HasVideo</visible>
+			</control>
+			<control type="videowindow">
+				<description>video preview window</description>
+				<left>0</left>
+				<top>0</top>
+				<width>800</width>
+				<height>470</height>
+				<visible>Control.HasFocus(13)</visible>
+				<animation effect="fade" start="0" end="100" time="230" delay="230" condition="Player.HasVideo">Conditional</animation>
+			</control>
+			<!-- Synopsis overview section -->
+			<control type="group">
+				<animation effect="fade" start="100" end="0" time="10" delay="0" condition="Control.HasFocus(12) | Control.HasFocus(13)">Conditional</animation>
+				<!-- Title -->
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>780</width>
+					<height>24</height>
+					<font>size_40</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>1101_label</textcolor>
+					<label>[B]$INFO[listitem.Label][/B]</label>
+					<visible>IsEmpty(ListItem.Synopsis_AltName)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>780</width>
+					<height>24</height>
+					<font>size_40</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>1101_label</textcolor>
+					<label>[B]$INFO[listitem.Synopsis_AltName][/B]</label>
+					<visible>!IsEmpty(ListItem.Synopsis_AltName)</visible>
+				</control>
+				<!-- Multi info labels -->
+				<control type="grouplist">
+					<left>0</left>
+					<top>40</top>
+					<width>780</width>
+					<height>30</height>
+					<itemgap>10</itemgap>
+					<orientation>Horizontal</orientation>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="10" max="250">auto</width>
+						<height>20</height>
+						<font>size_18</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>Rated  $INFO[listitem.Synopsis_ESRB]</label>
+						<visible>!IsEmpty(listitem.Synopsis_ESRB)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="10" max="20">auto</width>
+						<height>20</height>
+						<font>size_18</font>
+						<align>left</align>
+						<aligny>left</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>|</label>
+						<visible>!IsEmpty(listitem.Synopsis_ESRB)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="10" max="250">auto</width>
+						<height>20</height>
+						<font>size_18</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>$INFO[listitem.Synopsis_Year]</label>
+						<visible>!IsEmpty(listitem.Synopsis_Year)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="10" max="20">auto</width>
+						<height>20</height>
+						<font>size_18</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>|</label>
+						<visible>!IsEmpty(listitem.Synopsis_Year)</visible>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<width min="10" max="250">auto</width>
+						<height>20</height>
+						<font>size_18</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>ID  $INFO[listitem.Synopsis_TitleID]</label>
+						<visible>!IsEmpty(listitem.Synopsis_TitleID)</visible>
+					</control>
+				</control>
+				<!-- Star ratings and ESRB rating -->
+				<control type="image">
+					<left>0</left>
+					<top>75</top>
+					<width>150</width>
+					<height>21</height>
+					<colordiffuse>50FFFFFF</colordiffuse>
+					<texture>windows\synopsis\ratings\10.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>!IsEmpty(listitem.Synopsis_Rating)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>75</top>
+					<width>150</width>
+					<height>21</height>
+					<colordiffuse>1101_label</colordiffuse>
+					<texture>windows\synopsis\ratings\$INFO[listitem.Synopsis_Rating].png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>!IsEmpty(listitem.Synopsis_Rating)</visible>
+				</control>
+				<control type="image">
+					<left>-2.5</left>
+					<top>95</top>
+					<width>25</width>
+					<height>25</height>
+					<colordiffuse>1101_label</colordiffuse>
+					<texture>synopsis icons\medium_rating_alt.png</texture>
+					<aspectratio>stretch</aspectratio>
+					<visible>!IsEmpty(listitem.Synopsis_Rating)</visible>
+				</control>
+				<control type="label">
+					<left>27.5</left>
+					<top>95</top>
+					<width>30</width>
+					<height>25</height>
+					<font>size_18</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<textcolor>1101_label</textcolor>
+					<label>$INFO[listitem.Synopsis_Rating]</label>
+					<visible>!IsEmpty(listitem.Synopsis_Rating)</visible>
+				</control>
+				<control type="label">
+					<left>65</left>
+					<top>95</top>
+					<width>600</width>
+					<height>25</height>
+					<font>size_18</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>1101_label</textcolor>
+					<label>|   $INFO[listitem.Synopsis_ESRB_Descriptors]</label>
+					<animation effect="slide" start="0,0" end="-37.5,0" time="0" condition="IsEmpty(listitem.Synopsis_Rating)">Conditional</animation>
+					<visible>!IsEmpty(listitem.Synopsis_ESRB_Descriptors)</visible>
+				</control>
+				<!-- Synopsis -->
+				<control type="textbox">
+					<description>Synopsis Description alt</description>
+					<left>0</left>
+					<top>130</top>
+					<width>800</width>
+					<height>183</height>
+					<font>size_17</font>
+					<align>justify</align>
+					<textcolor>1101_label</textcolor>
+					<scrolltime>200</scrolltime>
+					<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(10)">Conditional</autoscroll>
+					<label>$INFO[listitem.Synopsis_Overview]</label>
+					<visible>!IsEmpty(listitem.Synopsis_Overview)</visible>
+				</control>
+				<!-- Lower info -->
+				<control type="label">
+					<description>Synopsis Year label</description>
+					<left>0</left>
+					<top>330</top>
+					<width>115</width>
+					<height>20</height>
+					<font>size_17</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>1101_label</textcolor>
+					<label>Genre</label>
+					<visible>!IsEmpty(listitem.Synopsis_Genre)</visible>
+				</control>
+				<control type="label">
+					<description>Synopsis Year label</description>
+					<left>115</left>
+					<top>330</top>
+					<width>690</width>
+					<height>20</height>
+					<font>size_17</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>1101_label</textcolor>
+					<label>$INFO[listitem.Synopsis_Genre]</label>
+					<visible>!IsEmpty(listitem.Synopsis_Genre)</visible>
+				</control>
+				<control type="group">
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Genre)">Conditional</animation>
+					<control type="label">
+						<description>Synopsis Developer label</description>
+						<left>0</left>
+						<top>360</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>Developer</label>
+						<visible>!IsEmpty(listitem.Synopsis_Developer)</visible>
+					</control>
+					<control type="label">
+						<description>Synopsis Developer label</description>
+						<left>115</left>
+						<top>360</top>
+						<width>690</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>$INFO[listitem.Synopsis_Developer]</label>
+						<visible>!IsEmpty(listitem.Synopsis_Developer)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Genre)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Developer)">Conditional</animation>
+					<control type="label">
+						<description>Synopsis Publisher label</description>
+						<left>0</left>
+						<top>390</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>Publisher</label>
+						<visible>!IsEmpty(listitem.Synopsis_Publisher)</visible>
+					</control>
+					<control type="label">
+						<description>Synopsis Publisher label</description>
+						<left>115</left>
+						<top>390</top>
+						<width>690</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>$INFO[listitem.Synopsis_Publisher]</label>
+						<visible>!IsEmpty(listitem.Synopsis_Publisher)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Genre)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Developer)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Publisher)">Conditional</animation>
+					<control type="label">
+						<description>Synopsis Features label</description>
+						<left>0</left>
+						<top>420</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>Features</label>
+						<visible>!IsEmpty(listitem.Synopsis_Features_General)</visible>
+					</control>
+					<control type="label">
+						<description>Synopsis General Features label</description>
+						<left>115</left>
+						<top>420</top>
+						<width>690</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>$INFO[listitem.Synopsis_Features_General]</label>
+						<visible>!IsEmpty(listitem.Synopsis_Features_General)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Genre)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Developer)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Publisher)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-30" time="0" delay="0" condition="IsEmpty(listitem.Synopsis_Features_General)">Conditional</animation>
+					<control type="label">
+						<description>Synopsis Online label</description>
+						<left>0</left>
+						<top>450</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>Online</label>
+						<visible>!IsEmpty(listitem.Synopsis_Features_Online)</visible>
+					</control>
+					<control type="label">
+						<description>Synopsis Online Features label</description>
+						<left>115</left>
+						<top>450</top>
+						<width>690</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>1101_label</textcolor>
+						<label>$INFO[listitem.Synopsis_Features_Online]</label>
+						<visible>!IsEmpty(listitem.Synopsis_Features_Online)</visible>
+					</control>
+				</control>
+			</control>
+			<!-- Buttons -->
+			<control type="button" id="10">
+				<description>Synopsis overview</description>
+				<onleft>-</onleft>
+				<onright>12</onright>
+				<onback>SetFocus(14,0)</onback>
+				<onback>Dialog.Close(1101)</onback>
+				<left>0</left>
+				<top>495</top>
+				<width>97</width>
+				<height>20</height>
+				<label>[B]PLAY[/B]</label>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textoffsetx>25</textoffsetx>
+				<font>size_14</font>
+				<textcolor>1101_disabled_label</textcolor>
+				<focusedcolor>1101_label</focusedcolor>
+				<disabledcolor>1101_disabled_label</disabledcolor>
+				<texturefocus>windows\synopsis\icon_play_fo.png</texturefocus>
+				<texturenofocus>windows\synopsis\icon_play.png</texturenofocus>
+				<onclick>$INFO[listitem.Path,,default.xbe]</onclick>
+			</control>
+			<control type="button" id="12">
+				<description>Synopsis screenshots</description>
+				<onleft>10</onleft>
+				<onright>13</onright>
+				<onback>SetFocus(14,0)</onback>
+				<onback>Dialog.Close(1101)</onback>
+				<left>115</left>
+				<top>495</top>
+				<width>20</width>
+				<height>20</height>
+				<label/>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>size_14</font>
+				<textcolor>1101_label</textcolor>
+				<focusedcolor>1101_label</focusedcolor>
+				<disabledcolor>1101_disabled_label</disabledcolor>
+				<texturefocus>windows\synopsis\icon_pictures_fo.png</texturefocus>
+				<texturenofocus>windows\synopsis\icon_pictures.png</texturenofocus>
+				<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+			</control>
+			<control type="group">
+				<visible>!IsEmpty(listitem.Synopsis_Preview)</visible>
+				<!-- Not enough memory button -->
+				<control type="button" id="13">
+					<description>Synopsis video</description>
+					<onleft>12</onleft>
+					<onright>-</onright>
+					<onback>SetFocus(14,0)</onback>
+					<onback>Dialog.Close(1101)</onback>
+					<left>155</left>
+					<top>495</top>
+					<width>20</width>
+					<height>20</height>
+					<label/>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>size_14</font>
+					<textcolor>1101_label</textcolor>
+					<focusedcolor>1101_label</focusedcolor>
+					<disabledcolor>1101_disabled_label</disabledcolor>
+					<texturefocus>windows\synopsis\icon_video_fo.png</texturefocus>
+					<texturenofocus>windows\synopsis\icon_video.png</texturenofocus>
+					<visible>!IntegerGreaterThan(system.memory(free_no_mb),10) + !Player.HasAudio + !Player.HasVideo</visible>
+				</control>
+				<!-- Music playing button -->
+				<control type="button" id="13">
+					<description>Synopsis video</description>
+					<onleft>12</onleft>
+					<onright>-</onright>
+					<onback condition="Player.HasVideo">Stop</onback>
+					<onback>SetFocus(14,0)</onback>
+					<onback>Dialog.Close(1101)</onback>
+					<onleft condition="Player.HasVideo">stop</onleft>
+					<left>155</left>
+					<top>495</top>
+					<width>20</width>
+					<height>20</height>
+					<label/>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>size_14</font>
+					<textcolor>1101_label</textcolor>
+					<focusedcolor>1101_label</focusedcolor>
+					<disabledcolor>1101_disabled_label</disabledcolor>
+					<texturefocus>windows\synopsis\icon_video_fo.png</texturefocus>
+					<texturenofocus>windows\synopsis\icon_video.png</texturenofocus>
+					<onclick>PlayMedia($INFO[listitem.Synopsis_Resources]media\preview.mp4)</onclick>
+					<visible>Player.HasAudio</visible>
+				</control>
+				<!-- Enough memory button -->
+				<control type="button" id="13">
+					<description>Synopsis video</description>
+					<onleft>12</onleft>
+					<onright>-</onright>
+					<onback condition="Player.HasVideo">Stop</onback>
+					<onback>SetFocus(14,0)</onback>
+					<onback>Dialog.Close(1101)</onback>
+					<onleft condition="Player.HasVideo">stop</onleft>
+					<left>155</left>
+					<top>495</top>
+					<width>20</width>
+					<height>20</height>
+					<label/>
+					<align>left</align>
+					<aligny>center</aligny>
+					<font>size_14</font>
+					<textcolor>1101_label</textcolor>
+					<focusedcolor>1101_label</focusedcolor>
+					<disabledcolor>1101_disabled_label</disabledcolor>
+					<texturefocus>windows\synopsis\icon_video_fo.png</texturefocus>
+					<texturenofocus>windows\synopsis\icon_video.png</texturenofocus>
+					<onfocus>PlayMedia($INFO[listitem.Synopsis_Resources]media\preview.mp4)</onfocus>
+					<onclick>PlayMedia($INFO[listitem.Synopsis_Resources]media\preview.mp4)</onclick>
+					<visible>!Player.HasAudio + IntegerGreaterThan(system.memory(free_no_mb),10) | Player.HasVideo</visible>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

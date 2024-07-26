@@ -1,0 +1,12 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Crazy Taxi 3: High Roller
+# TitleID: 53450004
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+HR|defaultws.xbe|2|C705D8A3210000007042C70530A42100ABAAAA3F|C705D8A3210000009642C70530A42100388EE33F
+HR|defaultws.xbe|8|68CDCCCC3D68ABAAAA3F6800007042|68CDCCCC3D68388EE33F6800009642
+HR|defaultws.xbe|12|68CDCCCC3D68ABAAAA3F|68CDCCCC3D68388EE33F

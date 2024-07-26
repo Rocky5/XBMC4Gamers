@@ -1,0 +1,755 @@
+<window id="129">
+	<defaultcontrol always="true">3000</defaultcontrol>
+	<coordinates>
+		<system>1</system>
+		<left>320</left>
+		<top>10</top>
+	</coordinates>
+	<controls>
+		<control type="image">
+			<left>-320</left>
+			<top>-10</top>
+			<include>1280x720</include>
+			<texture>black-back.png</texture>
+			<include>Dialog.Effect</include>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<control type="group">
+				<left>270</left>
+				<top>28</top>
+				<control type="image">
+					<left>30</left>
+					<top>34</top>
+					<width>580</width>
+					<height>580</height>
+					<texture border="20,20,20,20">thumbnofo.png</texture>
+				</control>
+				<control type="group">
+					<top>160</top>
+					<left>50</left>
+					<control type="textbox">
+						<left>0</left>
+						<top>-30</top>
+						<width>540</width>
+						<height>100</height>
+						<font>size_40</font>
+						<font>size_40</font>
+						<align>left</align>
+						<aligny>bottom</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>[B]$INFO[Container(3000).ListItem.Label][/B]</label>
+						<autoscroll delay="8000" time="2000" repeat="10000" condition="true">Conditional</autoscroll>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>70</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>Region</label>
+					</control>
+					<control type="label">
+						<left>85</left>
+						<top>70</top>
+						<width>690</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>$INFO[Container(3000).ListItem.Label2]</label>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>100</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>TitleID</label>
+					</control>
+					<control type="label">
+						<left>85</left>
+						<top>100</top>
+						<width>690</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>$INFO[Container(3000).ListItem.Property(TitleID)]</label>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>130</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>Type</label>
+					</control>
+					<control type="label">
+						<left>85</left>
+						<top>130</top>
+						<width>690</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>$INFO[Container(3000).ListItem.Property(Type)]</label>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>160</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>Credits</label>
+					</control>
+					<control type="label">
+						<left>85</left>
+						<top>160</top>
+						<width>690</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>$INFO[Container(3000).ListItem.Property(Credits)]</label>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>200</top>
+						<width>115</width>
+						<height>20</height>
+						<font>size_17</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>2000_label</textcolor>
+						<label>Information</label>
+					</control>
+					<control type="textbox">
+						<left>0</left>
+						<top>230</top>
+						<width>540</width>
+						<height>100</height>
+						<font>size_17</font>
+						<align>justify</align>
+						<textcolor>2000_label</textcolor>
+						<scrolltime>200</scrolltime>
+						<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(10)">Conditional</autoscroll>
+						<label>$INFO[Container(3000).ListItem.Property(Info)]</label>
+					</control>
+				</control>
+			</control>
+			<control type="group">
+				<top>28</top>
+				<animation effect="slide" start="0,0" end="-275,0" time="300" condition="true">Conditional</animation>
+				<control type="image">
+					<description>background image</description>
+					<left>30</left>
+					<top>34</top>
+					<width>550</width>
+					<height>580</height>
+					<texture border="20,20,20,20">thumbnofo.png</texture>
+				</control>
+				<control type="label">
+					<description>heading label</description>
+					<left>40</left>
+					<top>35</top>
+					<width>510</width>
+					<height>40</height>
+					<align>center</align>
+					<aligny>center</aligny>
+					<font>size_21_bold</font>
+					<label>FILE PATCHER</label>
+					<textcolor>2000_label</textcolor>
+				</control>
+				<control type="list" id="3000">
+					<left>45</left>
+					<top>90</top>
+					<width>500</width>
+					<height>480</height>
+					<onup>3000</onup>
+					<ondown>3000</ondown>
+					<onleft>5</onleft>
+					<onright>61</onright>
+					<pagecontrol>61</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout height="40">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>500</width>
+							<height>35</height>
+							<texture border="5">button-nofocus.png</texture>
+						</control>
+						<control type="label">
+							<left>430</left>
+							<top>-1</top>
+							<width>70</width>
+							<height>35</height>
+							<font>size_16</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<colordiffuse>20FFFFFF</colordiffuse>
+							<textcolor>2000_label</textcolor>
+							<info>ListItem.Label2</info>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<top>-1</top>
+							<width>420</width>
+							<height>35</height>
+							<font>size_20</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<colordiffuse>20FFFFFF</colordiffuse>
+							<textcolor>2000_label</textcolor>
+							<info>ListItem.Label</info>
+						</control>
+					</itemlayout>
+					<focusedlayout height="40">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>500</width>
+							<height>35</height>
+							<texture border="5">button-focus2.png</texture>
+						</control>
+						<control type="label">
+							<left>430</left>
+							<top>-1</top>
+							<width>70</width>
+							<height>35</height>
+							<font>size_16</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<textcolor>2000_label</textcolor>
+							<info>ListItem.Label2</info>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<top>-1</top>
+							<width>420</width>
+							<height>35</height>
+							<font>size_20</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>2000_label</textcolor>
+							<info>ListItem.Label</info>
+						</control>
+					</focusedlayout>
+					<content>
+						<item id="1">
+							<label>Generic Patches</label>
+							<label2>MULIT</label2>
+							<property name="Author">Rocky5</property>
+							<property name="Credits">Rocky5</property>
+							<property name="Info">Patch Fatx checks, allowed media and all region flags.</property>
+							<property name="TitleID">MULTI </property>
+							<property name="Type">Certificate & FATX Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,Generic patches.pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="2">
+							<label>Auto Modellista</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4343000E </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,auto modellista (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="3">
+							<label>Bionicle</label>
+							<label2>PAL</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">45410039 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,bionicle (p-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="4">
+							<label>Black</label>
+							<label2>PAL</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">45410083 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,black (p-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="5">
+							<label>Black</label>
+							<label2>NTSC</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">45410083 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,black (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="6">
+							<label>BLiNX: The Time Sweeper</label>
+							<label2>NTSC</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4D530013 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,blinx the time sweeper (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="7">
+							<label>Bloody Roar: Extreme</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">48550001 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,bloody roar extreme (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="8">
+							<label>Conker: Live & Reloaded</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4D530051 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,conker live & reloaded (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="9">
+							<label>Crash Bandicoot: The Wrath of Cortex</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">56550003 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,crash bandicoot wrath of cortex (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="10">
+							<label>Crazy Taxi 3: High Roller</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">53450004 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,crazy taxi 3 high roller (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="11">
+							<label>Darkwatch</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">43430016 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,darkwatch (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="12">
+							<label>Def Jam: Fight for NY</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">45410049 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,def jam fight for ny (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="13">
+							<label>Fable: The Lost Chapters</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4D530001 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,fable the lost chapters (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="14">
+							<label>FlatOut</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">454D0009 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,flatout (p-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="15">
+							<label>Futurama</label>
+							<label2>NTSC</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">46490002 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,futurama (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="16">
+							<label>Lara Croft Tomb Raider: Legend</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">534300FD </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,lara croft tomb raider legend (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="17">
+							<label>Legacy of Kain: Defiance</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4553000F </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,legacy of kain defiance (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="18">
+							<label>Marvel vs. Capcom 2: New Age of Heroes</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">43430007 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,marvel vs capcom 2 (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="19">
+							<label>Metal Gear Solid 2: Substance</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4B4E0007 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,metal gear solid 2 substance (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="20">
+							<label>Metal Slug 3</label>
+							<label2>PAL</label2>
+							<property name="Author">Rocky5</property>
+							<property name="Credits">Rocky5</property>
+							<property name="Info">Adds 480p progressive video support.</property>
+							<property name="TitleID">494F0005 </property>
+							<property name="Type">480p Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,metal slug 3 (p-pg).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="21">
+							<label>Metal Slug 3</label>
+							<label2>NTSC</label2>
+							<property name="Author">Rocky5</property>
+							<property name="Credits">Rocky5</property>
+							<property name="Info">Adds 480p progressive video support.</property>
+							<property name="TitleID">534E0002 </property>
+							<property name="Type">480p Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,metal slug 3 (u-pg).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="22">
+							<label>Metal Wolf Chaos</label>
+							<label2>NTSC-J</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">46530006 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,metal wolf chaos (j-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="23">
+							<label>Midtown Madness 3</label>
+							<label2>MULTI</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4D53002A </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,midtown madness 3 (a-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="24">
+							<label>Mortal Kombat: Shaolin Monks</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4D570025 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,mortal kombat shaolin monks (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="25">
+							<label>NFL Fever 2004</label>
+							<label2>NTSC</label2>
+							<property name="Author">DVD2Xbox</property>
+							<property name="Credits">DVD2Xbox & Mookie</property>
+							<property name="Info">Media check fix and HDD detection bypass.</property>
+							<property name="TitleID">4D53004D </property>
+							<property name="Type">Multi Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,nfl fever 2004 (u-mp).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="26">
+							<label>Ninja Gaiden Black</label>
+							<label2>NTSC</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">5443000D </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,ninja gaiden black (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="27">
+							<label>Pro Evolutions Soccer 5</label>
+							<label2>PAL</label2>
+							<property name="Author">Rocky5</property>
+							<property name="Credits">Rocky5</property>
+							<property name="Info">Enables the crowd on all camera angles and always use the highest LOD for players.</property>
+							<property name="TitleID">4B4E0030 </property>
+							<property name="Type">Multi Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,pro evolutions soccer 5 (p-mp).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="28">
+							<label>Richard Burns Rally</label>
+							<label2>PAL</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">53430005 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,richard burns rally (p-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="29">
+							<label>Star Wars - Jedi Outcast</label>
+							<label2>NTSC</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4c410009 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,star wars - jedi outcast (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="30">
+							<label>The Chronicles of Riddick</label>
+							<label2>MULTI</label2>
+							<property name="Author">Complex tools</property>
+							<property name="Credits">Complex tools</property>
+							<property name="Info">Patches media disc check.</property>
+							<property name="TitleID">56550026 </property>
+							<property name="Type">Multi Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,the chronicles of riddick (a-mp).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="31">
+							<label>The Punisher</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">54510018 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,the punisher (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="32">
+							<label>The Sims 2</label>
+							<label2>NTSC</label2>
+							<property name="Author">Rocky5</property>
+							<property name="Credits">Rocky5</property>
+							<property name="Info">Adds a xbe title (The Sims 2) and patches the HDD check.</property>
+							<property name="TitleID">4541038B </property>
+							<property name="Type">Multi Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,the sims 2 (u-mp).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="33">
+							<label>Race Driver 3</label>
+							<label2>MULTI</label2>
+							<property name="Author">Lord Crass</property>
+							<property name="Credits">Lord Crass</property>
+							<property name="Info">Fixes long file name check, removes FatX checks, disables save corruption and sector offset protection.</property>
+							<property name="TitleID">434d0050 </property>
+							<property name="Type">Multi Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,toca race driver 3 (a-mp).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="34">
+							<label>Top Spin</label>
+							<label2>NTSC</label2>
+							<property name="Author">Esppiral</property>
+							<property name="Credits">Esppiral - https://discord.gg/8wKbXuqp</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4D530035 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,top spine (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="35">
+							<label>Unreal Championship</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">49470024 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,unreal championship (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="36">
+							<label>Unreal Championship 2: The Liandri Conflict</label>
+							<label2>NTSC</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">4D570021 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,unreal championship 2 (u-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="37">
+							<label>Whiplash</label>
+							<label2>PAL</label2>
+							<property name="Author">Nemesis2000</property>
+							<property name="Credits">Nemesis2000 - http://ps2wide.net/xbox.html</property>
+							<property name="Info">Patches in widescreen aspect ratio.</property>
+							<property name="TitleID">45530011 </property>
+							<property name="Type">Widescreen Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,whiplash (p-ws).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+
+						<item id="38">
+							<label>World Soccer Winning Eleven 9</label>
+							<label2>NTSC</label2>
+							<property name="Author">Rocky5</property>
+							<property name="Credits">Rocky5</property>
+							<property name="Info">Enables the crowd on all camera angles and always use the highest LOD for players.</property>
+							<property name="TitleID">4B4E002F </property>
+							<property name="Type">Multi Patch</property>
+							<onclick>RunScript(Q:\system\scripts\XBMC4Gamers Extras\File Patcher\resources\lib\default.py,world soccer winning eleven 9 (u-mp).pf)</onclick>
+							<onclick>SetFocus(3001)</onclick>
+						</item>
+					</content>
+				</control>
+			</control>
+			<control type="group">
+				<top>28</top>
+				<animation effect="slide" start="0,0" end="-275,0" time="300" condition="true">Conditional</animation>
+				<control type="scrollbar" id="61">
+					<left>550</left>
+					<top>90</top>
+					<width>20</width>
+					<height>475</height>
+					<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+					<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="2,16,2,16">scrollbar_bar_focus.png</texturesliderbarfocus>
+					<textureslidernib>scrollbar_nib.png</textureslidernib>
+					<textureslidernibfocus>scrollbar_nib.png</textureslidernibfocus>
+					<onleft>3000</onleft>
+					<onright>3000</onright>
+					<ondown>61</ondown>
+					<onup>61</onup>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+				</control>
+				<control type="label">
+					<description>number of files/pages in list text label</description>
+					<left>30</left>
+					<top>570</top>
+					<width>550</width>
+					<height>35</height>
+					<font>size_20</font>
+					<align>center</align>
+					<aligny>center</aligny>
+					<scroll>true</scroll>
+					<textcolor>2000_label</textcolor>
+					<label>($INFO[Container(3000).NumItems]) $LOCALIZE[31211] - $LOCALIZE[31210] ($INFO[Container(3000).CurrentPage]/$INFO[Container(3000).NumPages])</label>
+				</control>
+				<control type="button" id="3001">
+					<left>-500</left>
+					<onleft>3000</onleft>
+					<onright>3000</onright>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

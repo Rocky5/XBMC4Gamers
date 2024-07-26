@@ -1,0 +1,94 @@
+<window id="2002">
+	<defaultcontrol always="true">10</defaultcontrol>
+	<controls>
+		<control type="image">
+			<include>1280x720</include>
+			<texture>black-back.png</texture>
+		</control>
+		<control type="image">
+			<description>background image</description>
+			<left>276</left>
+			<top>235</top>
+			<width>728</width>
+			<height>249</height>
+			<texture>windows\dialogs\main.png</texture>
+		</control>
+		<control type="image">
+			<description>Heading Background</description>
+			<left>291</left>
+			<top>243</top>
+			<width>698</width>
+			<height>60</height>
+			<texture>windows\dialogs\header.png</texture>
+		</control>
+		<control type="label" id="1">
+			<description>heading label</description>
+			<left>320</left>
+			<top>253</top>
+			<width>638</width>
+			<height>40</height>
+			<font>size_28</font>
+			<align>left</align>
+			<aligy>center</aligy>
+			<textcolor>2002_header_label</textcolor>
+			<label>-</label>
+			<scroll>true</scroll>
+		</control>
+		<control type="label" id="2">
+			<description>dialog line 1</description>
+			<left>320</left>
+			<top>310</top>
+			<width>638</width>
+			<height>80</height>
+			<font>size_20</font>
+			<align>left</align>
+			<textcolor>2002_label</textcolor>
+			<wrapmultiline>false</wrapmultiline>
+			<label>-</label>
+			<scroll>true</scroll>
+		</control>
+		<control type="label" id="3">
+			<description>dialog line 2</description>
+			<left>320</left>
+			<top>345</top>
+			<width>638</width>
+			<height>80</height>
+			<font>size_20</font>
+			<align>left</align>
+			<textcolor>2002_label</textcolor>
+			<wrapmultiline>false</wrapmultiline>
+			<label>-</label>
+			<scroll>true</scroll>
+		</control>
+		<control type="label" id="4">
+			<description>dialog line 3</description>
+			<left>320</left>
+			<top>380</top>
+			<width>638</width>
+			<height>80</height>
+			<font>size_20</font>
+			<align>left</align>
+			<textcolor>2002_label</textcolor>
+			<wrapmultiline>false</wrapmultiline>
+			<label>-</label>
+			<scroll>true</scroll>
+		</control>
+		<control type="button" id="10">
+			<description>OK button</description>
+			<left>858</left>
+			<top>420</top>
+			<width>100</width>
+			<height>36</height>
+			<label>186</label>
+			<textcolor>2002_button_label</textcolor>
+			<focusedcolor>2002_button_focus</focusedcolor>
+			<align>center</align>
+			<texturenofocus border="3">windows\dialogs\button_no_focus.png</texturenofocus>
+			<texturefocus border="3">windows\dialogs\button_focus.png</texturefocus>
+			<onleft>10</onleft>
+			<onright>10</onright>
+			<onup>10</onup>
+			<ondown>10</ondown>
+		</control>
+	</controls>
+</window>

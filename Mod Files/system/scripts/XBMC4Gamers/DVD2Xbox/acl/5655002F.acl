@@ -1,0 +1,21 @@
+# Game: FightClub HDD Fix
+# Title ID: 5655002F
+#
+# Submitted by Zombix (www.evo-x.de) PAL, tested by AgentEB on NTSC
+
+CP|${DEST}\default.xbe|${DEST}\default.xbe_orig|
+
+# Media patch long hex
+HR|*.xbe|1|744BE8CAFDFFFF85C07D0633C05050EB44F605|744BE8CAFDFFFF85C0EB0633C05050EB44F605|
+# Media patch short hex
+HR|*.xbe|1|E8CAFDFFFF85C07D|E8CAFDFFFF85C0EB|
+# FATX Detection
+HR|*.xbe|1|4641545800000000443A5C|0000000000000000000000|
+# Media check 1
+SM|*.xbe|C00001FF|
+# All game regions
+SR|*.xbe|00000007|
+
+# Disc check
+HR|${DEST}\default.xbe|1|0400558BEC83EC34FF75088D|0400558BEC83EC34EB41418D|
+HR|${DEST}\default.xbe|1|7d1b50e8d5e9ffffe87ae9ffff83f80275076a03e896e9ffff|7c178b4508508b000c203d643a5c0075b158b800080000eb37|

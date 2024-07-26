@@ -1,0 +1,15 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Legacy of Kain: Defiance
+# TitleID: 4553000F
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# cutscenes letterbox fix
+HR|defaultws.xbe|1|34EA460084C0740E|34EA460084C0EB0E
+
+# subtitles black background's fix
+HR|defaultws.xbe|1|40D80DF0E51B00D8|00D80DF0E51B00D8

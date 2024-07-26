@@ -1,0 +1,95 @@
+<window id="107">
+	<controls>
+		<control type="group">
+			<animation effect="slide" start="-400,0" end="0,0" time="200">WindowOpen</animation>
+			<animation effect="slide" start="0,0" end="-400,0" time="200">WindowClose</animation>
+			<control type="image">
+				<left>0</left>
+				<top>-2</top>
+				<width>409</width>
+				<height>71</height>
+				<colordiffuse>-</colordiffuse>
+				<texture border="2,2,9,11">banner_shadow.png</texture>
+				<bordertexture>-</bordertexture>
+				<bordersize>0</bordersize>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>400</width>
+				<height>60</height>
+				<colordiffuse>-</colordiffuse>
+				<texture>banner.png</texture>
+				<bordertexture>-</bordertexture>
+				<bordersize>0</bordersize>
+			</control>
+			<control type="image" id="400">
+				<description>avatar</description>
+				<left>10</left>
+				<top>10</top>
+				<width>40</width>
+				<height>40</height>
+				<aspectratio>keep</aspectratio>
+				<texture>defaulticoninfo.png</texture>
+			</control>
+			<control type="fadelabel" id="401">
+				<description>Line 1 Label</description>
+				<left>60</left>
+				<top>10</top>
+				<width>325</width>
+				<height>18</height>
+				<font>size_20</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<scrollout>false</scrollout>
+				<pauseatend>200</pauseatend>
+				<textcolor>107_header_label</textcolor>
+			</control>
+			<control type="fadelabel" id="402">
+				<description>Line 2 Label</description>
+				<left>60</left>
+				<top>31</top>
+				<width>325</width>
+				<height>20</height>
+				<font>size_15</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<scroll>true</scroll>
+				<scrollout>false</scrollout>
+				<pauseatend>200</pauseatend>
+				<textcolor>107_label</textcolor>
+			</control>
+			<control type="image" id="403">
+				<description>avatar</description>
+				<left>10</left>
+				<top>10</top>
+				<width>40</width>
+				<height>40</height>
+				<aspectratio>keep</aspectratio>
+				<visible>false</visible>
+				<texture>defaulticoninfo.png</texture>
+			</control>
+			<control type="image" id="404">
+				<description>avatar</description>
+				<left>10</left>
+				<top>10</top>
+				<width>40</width>
+				<height>40</height>
+				<aspectratio>keep</aspectratio>
+				<visible>false</visible>
+				<texture>defaulticonwarning.png</texture>
+			</control>
+			<control type="image" id="405">
+				<description>avatar</description>
+				<left>10</left>
+				<top>10</top>
+				<width>40</width>
+				<height>40</height>
+				<aspectratio>keep</aspectratio>
+				<visible>false</visible>
+				<texture>defaulticonerror.png</texture>
+			</control>
+		</control>
+	</controls>
+</window>

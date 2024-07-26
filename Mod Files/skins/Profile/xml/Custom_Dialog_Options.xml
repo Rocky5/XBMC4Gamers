@@ -1,0 +1,355 @@
+<window type="dialog" id="1112">
+	<defaultcontrol always="true">9002</defaultcontrol>
+	<controls>
+		<control type="image">
+			<include>1280x720</include>
+			<texture>black-back.png</texture>
+			<include>Dialog.Effect</include>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<control type="image">
+				<left>270</left>
+				<top>80</top>
+				<width>740</width>
+				<height>560</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>windows\options\main.png</texture>
+			</control>
+			<control type="image">
+				<left>286</left>
+				<top>99</top>
+				<width>709</width>
+				<height>61</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>windows\options\header.png</texture>
+			</control>
+			<control type="label">
+				<left>313</left>
+				<top>107</top>
+				<width>731</width>
+				<height>28</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<textcolor>1112_header_label</textcolor>
+				<label>$LOCALIZE[33063]</label>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<top>35r</top>
+				<width>1280</width>
+				<height>36</height>
+				<font>size_15</font>
+				<animation effect="fade" end="70" condition="true">Conditional</animation>
+				<textcolor>1112_label</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[31000]</label>
+			</control>
+			<control type="label">
+				<left>1270</left>
+				<top>35r</top>
+				<width>1280</width>
+				<height>36</height>
+				<font>size_15</font>
+				<animation effect="fade" end="70" condition="true">Conditional</animation>
+				<textcolor>1112_label</textcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[system.kernelversion] kernel</label>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>286</left>
+				<top>568</top>
+				<width>708</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>Horizontal</orientation>
+				<align>center</align>
+				<!-- A Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\a_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>1112_context_label</textcolor>
+					<label>$LOCALIZE[424]</label>
+				</control>
+				<!-- B Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\B_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>1112_context_label</textcolor>
+					<label>Back</label>
+				</control>
+			</control>
+			<control type="grouplist" id="9002">
+				<description>button area</description>
+				<left>370</left>
+				<top>195</top>
+				<width max="200">auto</width>
+				<height max="340">auto</height>
+				<itemgap>10</itemgap>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>9002</onup>
+				<ondown>9002</ondown>
+				<align>center</align>
+				<aligny>center</aligny>
+				<control type="button" id="1">
+					<include>Button.Settings.Options.Values</include>
+					<label>[UPPERCASE]$INFO[Skin.String(Emulator_Name)][/UPPERCASE]</label>
+					<onclick>RunXBE($INFO[Skin.String(Emulator_Path)])</onclick>
+					<onclick>RunScript($INFO[Skin.String(Emulator_Path)])</onclick>
+					<visible>Skin.HasSetting(EmuButton)</visible>
+				</control>
+				<control type="button" id="2">
+					<include>Button.Settings.Options.Values</include>
+					<label>[UPPERCASE]$LOCALIZE[1036][/UPPERCASE]</label>
+					<onclick>Dialog.Close(1112,true)</onclick>
+					<onclick>ActivateWindow(Favourites)</onclick>
+					<visible>Window.IsActive(Programs)</visible>
+				</control>
+				<control type="button" id="3">
+					<include>Button.Settings.Options.Values</include>
+					<label>[UPPERCASE]$LOCALIZE[20315][/UPPERCASE]</label>
+					<onclick>Dialog.Close(1112,true)</onclick>
+					<onclick>ActivateWindow(GameSaves)</onclick>
+					<visible>Window.IsActive(Programs) + Skin.HasSetting(kioskmode)</visible>
+				</control>
+				<control type="button" id="4">
+					<include>Button.Settings.Options.Values</include>
+					<label>[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</label>
+					<onclick>Dialog.Close(1112,true)</onclick>
+					<onclick>ActivateWindow(Settings)</onclick>
+					<visible>Skin.HasSetting(kioskmode)</visible>
+				</control>
+				<control type="button" id="5">
+					<include>Button.Settings.Options.Values</include>
+					<label>[UPPERCASE]$LOCALIZE[13313][/UPPERCASE]</label>
+					<onclick>RestartApp</onclick>
+				</control>
+				<control type="button" id="6">
+					<include>Button.Settings.Options.Values</include>
+					<label>[UPPERCASE]$LOCALIZE[13013][/UPPERCASE]</label>
+					<onclick>Reboot</onclick>
+				</control>
+				<control type="button" id="7">
+					<include>Button.Settings.Options.Values</include>
+					<label>[UPPERCASE]$LOCALIZE[13005][/UPPERCASE]</label>
+					<onclick>Shutdown</onclick>
+				</control>
+			</control>
+			<control type="group">
+				<left>650</left>
+				<top>190</top>
+				<control type="group">
+					<top>0</top>
+					<control type="label">
+						<description>IP Address label</description>
+						<left>0</left>
+						<top>0</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_24</font>
+						<label>[UPPERCASE]$LOCALIZE[705][/UPPERCASE]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>IP Address</description>
+						<left>10</left>
+						<top>25</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[Network.IPAddress]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>Internet state</description>
+						<left>10</left>
+						<top>45</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.InternetState]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<top>75</top>
+					<control type="label">
+						<description>Current Profile</description>
+						<left>0</left>
+						<top>0</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_24</font>
+						<label>[UPPERCASE]$LOCALIZE[20093][/UPPERCASE]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>Profile</description>
+						<left>10</left>
+						<top>25</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.ProfileName]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<top>130</top>
+					<control type="label">
+						<description>Drive Space</description>
+						<left>0</left>
+						<top>0</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_24</font>
+						<label>[UPPERCASE]$LOCALIZE[31147][/UPPERCASE]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>Space</description>
+						<left>10</left>
+						<top>25</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.Freespace(C)]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>Space</description>
+						<left>10</left>
+						<top>45</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.Freespace(E)]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>Space</description>
+						<left>10</left>
+						<top>65</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.Freespace(F)]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>Space</description>
+						<left>10</left>
+						<top>85</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.Freespace(G)]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<top>245</top>
+					<control type="label">
+						<description>System Info</description>
+						<left>0</left>
+						<top>0</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_24</font>
+						<label>[UPPERCASE]$LOCALIZE[10007][/UPPERCASE]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>RAM</description>
+						<left>10</left>
+						<top>25</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$LOCALIZE[158]: $INFO[System.FreeMemory]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>CPU Temp</description>
+						<left>10</left>
+						<top>45</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$LOCALIZE[22011] $INFO[System.CPUTemperature]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+					<control type="label">
+						<description>CPU Temp</description>
+						<left>10</left>
+						<top>65</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$LOCALIZE[22010] $INFO[System.GPUTemperature]</label>
+						<textcolor>1112_label_alt</textcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

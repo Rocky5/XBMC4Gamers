@@ -5,12 +5,12 @@ if os.path.isfile('Special://skin/720p/includes.xml') and not os.path.isfile('Sp
 xbmc.executebuiltin('Dialog.Close(1904,false)')
 Theme_Path = xbmc.translatePath('Special://skin/extras/urldownloader themes/XML files')
 Ouput_Path = xbmc.translatePath('Special://skin/'+skin_xml_path+'/Includes_URLDownloader_Colours.xml')
-Sorted_Theme_Path = [f for f in sorted(os.listdir(Theme_Path)) if f.endswith('.xml')]
-Sorted_Theme_Path_Files = [os.path.splitext(x)[0] for x in Sorted_Theme_Path]
-ThemeFolder = xbmcgui.Dialog().select("Select Theme",Sorted_Theme_Path_Files,10000)
+Sorted_Theme_Path = [f.lower() for f in os.listdir(Theme_Path) if f.endswith('.xml')]
+Sorted_Theme_Path_Files = [os.path.splitext(x)[0].title() for x in Sorted_Theme_Path]
+ThemeFolder = xbmcgui.Dialog().select("Select Theme",sorted(Sorted_Theme_Path_Files),10000)
 if ThemeFolder == -1:
 	pass
 else:
-	ThemeFile = os.path.join(Theme_Path,sorted(os.listdir(Theme_Path))[ThemeFolder])
+	ThemeFile = os.path.join(Theme_Path,sorted(Sorted_Theme_Path_Files)[ThemeFolder]+'.xml')
 	shutil.copy2(ThemeFile,Ouput_Path)
 	xbmc.executebuiltin('ReloadSkin')

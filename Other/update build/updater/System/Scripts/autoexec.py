@@ -22,7 +22,6 @@ if os.path.isfile(zip_file):
 
 		##############################################################
 		## Update folder names and remove old crap no longer needed
-		##############################################################
 		## Update older backup to backups
 		if os.path.isdir(Root_Directory+'system/backups') and os.path.isdir(Root_Directory+'system/backup'):
 			shutil.rmtree(Root_Directory+'system/backup')
@@ -36,76 +35,118 @@ if os.path.isfile(zip_file):
 		## Remove old folders or files that are no longer needed.
 		if os.path.isdir(Root_Directory+'system/toggles'):
 			shutil.rmtree(Root_Directory+'system/toggles')
+
+		# Rename old skin folders
+		if os.path.isdir(Root_Directory+'skins/Profile Skin'):
+			os.rename(Root_Directory+'skins/Profile Skin', Root_Directory+'skins/Profile')
+		if os.path.isdir(Root_Directory+'skins/Manage Profiles Skin'):
+			os.rename(Root_Directory+'skins/Manage Profiles Skin',Root_Directory+'skins/Manage Profiles')
 		
-		if os.path.isdir(Root_Directory+'skins/Manage Profiles Skin/720p'):
-			shutil.rmtree(Root_Directory+'skins/Manage Profiles Skin/720p')
+		if os.path.isdir(Root_Directory+'skins/Manage Profiles/720p'):
+			shutil.rmtree(Root_Directory+'skins/Manage Profiles/720p')
 		
-		if os.path.isdir(Root_Directory+'skins/Profile Skin/720p'):
-			shutil.rmtree(Root_Directory+'skins/Profile Skin/720p')
+		if os.path.isdir(Root_Directory+'skins/Profile/720p'):
+			shutil.rmtree(Root_Directory+'skins/Profile/720p')
 		
-		if os.path.isdir(Root_Directory+'skins/Profile Skin/media/backgrounds'):
-			shutil.rmtree(Root_Directory+'skins/Profile Skin/media/backgrounds')
+		if os.path.isdir(Root_Directory+'skins/Profile/media/backgrounds'):
+			shutil.rmtree(Root_Directory+'skins/Profile/media/backgrounds')
 		
-		if os.path.isdir(Root_Directory+'skins/Profile Skin/extras/splashes') and not os.path.isdir(Root_Directory+'skins/Profile Skin/extras/themes/splashes'):
-			shutil.move(Root_Directory+'skins/Profile Skin/extras/splashes',Root_Directory+'skins/Profile Skin/extras/themes/splashes')
+		if os.path.isdir(Root_Directory+'skins/Profile/extras/splashes') and not os.path.isdir(Root_Directory+'skins/Profile/extras/themes/splashes'):
+			shutil.move(Root_Directory+'skins/Profile/extras/splashes',Root_Directory+'skins/Profile/extras/themes/splashes')
 		else:
-			if os.path.isdir(Root_Directory+'skins/Profile Skin/extras/splashes'):
-				shutil.rmtree(Root_Directory+'skins/Profile Skin/extras/splashes')
+			if os.path.isdir(Root_Directory+'skins/Profile/extras/splashes'):
+				shutil.rmtree(Root_Directory+'skins/Profile/extras/splashes')
+
+		if os.path.isdir(Root_Directory+'Apps'):
+			shutil.rmtree(Root_Directory+'Apps')
 		
 		if os.path.isfile(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/dialog res check.py'):
 			os.remove(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/dialog res check.py')
 		
+		if os.path.isfile(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/Run Artwork Installer.py'):
+			os.remove(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/Run Artwork Installer.py')
+		
 		if os.path.isfile(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/Random Items.py'):
 			os.remove(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/Random Items.py')
 		
-		if os.path.isdir(Root_Directory+'skins/Manage Profiles Skin/xml'):
-			if os.path.isfile(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Context_Buttons.xml'):
-				os.remove(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Context_Buttons.xml')
+		if os.path.isdir(Root_Directory+'skins/Manage Profiles/xml'):
+			if os.path.isfile(Root_Directory+'skins/Manage Profiles/xml/Includes_Context_Buttons.xml'):
+				os.remove(Root_Directory+'skins/Manage Profiles/xml/Includes_Context_Buttons.xml')
 			
-			if os.path.isfile(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Snow.xml'):
-				os.remove(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Snow.xml')
+			if os.path.isfile(Root_Directory+'skins/Manage Profiles/xml/Includes_Snow.xml'):
+				os.remove(Root_Directory+'skins/Manage Profiles/xml/Includes_Snow.xml')
 			
-			if os.path.isfile(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Birthday.xml'):
-				os.remove(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Birthday.xml')
+			if os.path.isfile(Root_Directory+'skins/Manage Profiles/xml/Includes_Birthday.xml'):
+				os.remove(Root_Directory+'skins/Manage Profiles/xml/Includes_Birthday.xml')
 			
-			if os.path.isfile(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Easter.xml'):
-				os.remove(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Easter.xml')
+			if os.path.isfile(Root_Directory+'skins/Manage Profiles/xml/Includes_Easter.xml'):
+				os.remove(Root_Directory+'skins/Manage Profiles/xml/Includes_Easter.xml')
 			
-			if os.path.isfile(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Particles.xml'):
-				os.remove(Root_Directory+'skins/Manage Profiles Skin/xml/Includes_Particles.xml')
+			if os.path.isfile(Root_Directory+'skins/Manage Profiles/xml/Includes_Particles.xml'):
+				os.remove(Root_Directory+'skins/Manage Profiles/xml/Includes_Particles.xml')
 		
-		if os.path.isdir(Root_Directory+'skins/Profile Skin/xml'):
-			if os.path.isfile(Root_Directory+'skins/Profile Skin/xml/Custom_View_Options.xml'):
-				os.remove(Root_Directory+'skins/Profile Skin/xml/Custom_View_Options.xml')
+		if os.path.isdir(Root_Directory+'skins/Profile/xml'):
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Custom_View_Options.xml'):
+				os.remove(Root_Directory+'skins/Profile/xml/Custom_View_Options.xml')
 			
-			if os.path.isfile(Root_Directory+'skins/Profile Skin/xml/Includes_Recent_Played.xml'):
-				os.remove(Root_Directory+'skins/Profile Skin/xml/Includes_Recent_Played.xml')
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Includes_Recent_Played.xml'):
+				os.remove(Root_Directory+'skins/Profile/xml/Includes_Recent_Played.xml')
 			
-			for viewfile in os.listdir(os.path.join(Root_Directory,'skins/Profile Skin/xml')):
+			for viewfile in os.listdir(os.path.join(Root_Directory,'skins/Profile/xml')):
 				if viewfile.startswith('Viewtype_View'):
-					os.remove(os.path.join(Root_Directory,'skins/Profile Skin/xml',viewfile))
+					os.remove(os.path.join(Root_Directory,'skins/Profile/xml',viewfile))
 
-			for viewfile in os.listdir(os.path.join(Root_Directory,'skins/Profile Skin/xml')):
+			for viewfile in os.listdir(os.path.join(Root_Directory,'skins/Profile/xml')):
 				if viewfile.startswith('Viewtype_'):
-					os.remove(os.path.join(Root_Directory,'skins/Profile Skin/xml',viewfile))
+					os.remove(os.path.join(Root_Directory,'skins/Profile/xml',viewfile))
 			
-			if os.path.isfile(Root_Directory+'skins/Profile Skin/xml/Viewtype_54_Panel.xml'):
-					os.remove(Root_Directory+'skins/Profile Skin/xml/Viewtype_54_Panel.xml')
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Viewtype_54_Panel.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Viewtype_54_Panel.xml')
 			
-			if os.path.isfile(Root_Directory+'skins/Profile Skin/xml/Viewtype_56_Card.xml'):
-					os.remove(Root_Directory+'skins/Profile Skin/xml/Viewtype_56_Card.xml')
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Viewtype_56_Card.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Viewtype_56_Card.xml')
 			
-			if os.path.isfile(Root_Directory+'skins/Profile Skin/xml/Viewtype_61_CarouselSmaller.xml'):
-					os.remove(Root_Directory+'skins/Profile Skin/xml/Viewtype_61_CarouselSmaller.xml')
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Viewtype_61_CarouselSmaller.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Viewtype_61_CarouselSmaller.xml')
 			
-			if os.path.isfile(Root_Directory+'skins/Profile Skin/xml/_Script_Synopsis.xml'):
-					os.remove(Root_Directory+'skins/Profile Skin/xml/_Script_Synopsis.xml')	
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/_Script_Synopsis.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/_Script_Synopsis.xml')
+			
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Includes_Busy_ScriptBusy.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Includes_Busy_ScriptBusy.xml')
+			
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Includes_Theme_Override.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Includes_Theme_Override.xml')
+			
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Includes_Context_Buttons.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Includes_Context_Buttons.xml')
+					
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Includes_Fallback_View.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Includes_Fallback_View.xml')
+					
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Includes_Variables.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Includes_Variables.xml')
+					
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Includes_View_Options.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Includes_View_Options.xml')
+					
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Custom_Skin_Settings.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Custom_Skin_Settings.xml')
+			
+			if os.path.isfile(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/yes-no.py'):
+					os.remove(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/yes-no.py')
+			
+			if os.path.isfile(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/Views Builder.py'):
+					os.remove(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/Views Builder.py')
+			
+			if os.path.isfile(Root_Directory+'system/scripts/XBMC4Gamers/default old.py'):
+					os.remove(Root_Directory+'system/scripts/XBMC4Gamers/default old.py')
 		
-		if os.path.isdir(Root_Directory+'skins/Profile Skin/media/folder fanart'):
-			if os.path.isdir(Root_Directory+'skins/Profile Skin/extras/folder fanart'):
-				shutil.rmtree(Root_Directory+'skins/Profile Skin/extras/folder fanart')
-			shutil.copytree(Root_Directory+'skins/Profile Skin/media/folder fanart',Root_Directory+'skins/Profile Skin/extras/folder fanart')
-			shutil.rmtree(Root_Directory+'skins/Profile Skin/media/folder fanart')
+		if os.path.isdir(Root_Directory+'skins/Profile/media/folder fanart'):
+			if os.path.isdir(Root_Directory+'skins/Profile/extras/folder fanart'):
+				shutil.rmtree(Root_Directory+'skins/Profile/extras/folder fanart')
+			shutil.copytree(Root_Directory+'skins/Profile/media/folder fanart',Root_Directory+'skins/Profile/extras/folder fanart')
+			shutil.rmtree(Root_Directory+'skins/Profile/media/folder fanart')
 
 		if os.path.isdir('E:/TDATA/Rocky5 needs these Logs/XBMC4Gamers'):
 			shutil.rmtree('E:/TDATA/Rocky5 needs these Logs/XBMC4Gamers')
@@ -113,6 +154,10 @@ if os.path.isfile(zip_file):
 		
 		if os.path.isdir(os.path.join(Root_Directory,'system/scripts/XBMC4Gamers Extras/Synopsis')):
 			shutil.rmtree(os.path.join(Root_Directory,'system/scripts/XBMC4Gamers Extras/Synopsis'))
+		
+		# Remove old patcher files
+		if os.path.isdir(Root_Directory+'system/scripts/XBMC4Gamers Extras/File Patcher/patches'):
+				shutil.rmtree(Root_Directory+'system/scripts/XBMC4Gamers Extras/File Patcher/patches')
 		
 		if os.path.isdir('E:/UDATA/09999990'):
 			shutil.rmtree('E:/UDATA/09999990')
@@ -154,6 +199,7 @@ if os.path.isfile(zip_file):
 				line = line.replace('<video>1024','<video>0')
 				line = line.replace('<timeserveraddress>time.google.com</timeserveraddress>','<timeserveraddress>pool.ntp.org</timeserveraddress>')
 				line = line.replace('<timeserveraddress>time.windows.com</timeserveraddress>','<timeserveraddress>pool.ntp.org</timeserveraddress>')
+				line = line.replace('Manage Profiles Skin','Manage Profiles')
 				print line,
 		
 		for Profiles in os.listdir(os.path.join(Root_Directory,'system/userdata/profiles')):
@@ -167,6 +213,7 @@ if os.path.isfile(zip_file):
 					line = line.replace('<videotime>8','<videotime>0')
 					line = line.replace('<timeserveraddress>time.google.com</timeserveraddress>','<timeserveraddress>pool.ntp.org</timeserveraddress>')
 					line = line.replace('<timeserveraddress>time.windows.com</timeserveraddress>','<timeserveraddress>pool.ntp.org</timeserveraddress>')
+					line = line.replace('Profile Skin','Profile')
 					if '<font>' in line and not '<font>Arial.ttf</font>' in line: 
 						line = line = '<font>default.ttf</font>\n'
 					if '<skincolors>' in line: 
@@ -175,7 +222,19 @@ if os.path.isfile(zip_file):
 						line = line = '<skintheme>default.xpr</skintheme>\n'
 					if ' name="Manage Profiles Skin.' in line: 
 						line = line = '\n'
+					if ' name="Manage Profiles.' in line: 
+						line = line = '\n'
 					print line,
+		
+		# if os.path.isfile(Root_Directory+'skins/Profile Skin/xml/Font.xml'):
+			# # Update Font.xml with the new font info
+			# for line in fileinput.input(Root_Directory+'skins/Profile Skin/xml/Font.xml',inplace=1):
+				# if '<filename>' in line and not '<filename>monofont-' in line and not '<filename>home.ttf' in line:
+					# line = line = '			<filename>default.ttf</filename>\n'
+				# print line,
+
+		if os.path.isfile(Root_Directory+'system/UserData/setup.bin'):
+				os.remove(Root_Directory+'system/UserData/setup.bin')
 
 		##############################################################
 		## After extraction cleanup any files that the user didn't have enabled
@@ -192,8 +251,21 @@ else:
 	time.sleep(5)
 
 ## Write the cleanup script and reload the dashboard xbe
-success_data = "import os, xbmcgui\ntmp = 'E:/CACHE/tmp.bin'\nif os.path.isfile(tmp):\n	if os.path.isfile('Q:/system/keymaps/Enabled'): xbmc.executebuiltin('Skin.SetBool(editmode)')\n	os.remove(tmp)\n	xbmcgui.Dialog().textviewer('Changes.txt', open('Special://root/system/SystemInfo/changes.txt').read())"
-failed_data = "import os, xbmcgui\ntmp = 'E:/CACHE/tmp.bin'\nif os.path.isfile(tmp):\n	if os.path.isfile('Q:/system/keymaps/Enabled'): xbmc.executebuiltin('Skin.SetBool(editmode)')\n	os.remove(tmp)"
+success_data = '''import os, xbmc, xbmcgui
+tmp = 'E:/CACHE/tmp.bin'
+if os.path.isfile(tmp):
+	while True:
+		current_window_id = xbmcgui.getCurrentWindowId()
+		if current_window_id not in [10000, 10001, 10029]:
+			if os.path.isfile('Q:/system/keymaps/Enabled'): xbmc.executebuiltin('Skin.SetBool(editmode)')
+			os.remove(tmp)
+			xbmcgui.Dialog().textviewer('Changes.txt', open('Special://root/system/SystemInfo/changes.txt').read())
+			break'''
+failed_data = '''import os
+tmp = 'E:/CACHE/tmp.bin'
+if os.path.isfile(tmp):
+	if os.path.isfile('Q:/system/keymaps/Enabled'): xbmc.executebuiltin('Skin.SetBool(editmode)')
+	os.remove(tmp)'''
 with open(os.path.join(Root_Directory,'system/scripts/autoexec.py') , 'w') as autoexec: autoexec.write(success_data)
 if failed:
 	with open(os.path.join(Root_Directory,'system/scripts/autoexec.py') , 'w') as autoexec: autoexec.write(failed_data)

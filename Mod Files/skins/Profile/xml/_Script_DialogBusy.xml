@@ -1,0 +1,5 @@
+<window type="dialog" id="1100">
+	<controls>
+		<include>Loading.Busy</include>
+	</controls>
+</window>

@@ -1,0 +1,196 @@
+<window type="dialog" id="1115">
+	<defaultcontrol always="true">9000</defaultcontrol>
+	<controls>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<texture>black-back.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<include>Dialog.Effect</include>
+		</control>
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,200" time="100">WindowClose</animation>
+			<animation effect="slide" start="0,200" end="0,0" time="100" delay="100">WindowOpen</animation>
+			<control type="wraplist" id="9000">
+				<left>0</left>
+				<top>640</top>
+				<width>1280</width>
+				<height>50</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>50</onup>
+				<ondown>-</ondown>
+				<scrolltime>0</scrolltime>
+				<focusposition>0</focusposition>
+				<orientation>horizontal</orientation>
+				<itemlayout height="50" width="1280">
+								</itemlayout>
+				<focusedlayout height="50" width="1280">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1280</width>
+						<height>50</height>
+						<texture border="5">banner.png</texture>
+					</control>
+					<control type="label">
+						<description>heading label</description>
+						<left>0</left>
+						<top>0</top>
+						<width>1280</width>
+						<height>50</height>
+						<align>center</align>
+						<aligny>center</aligny>
+						<font>size_28</font>
+						<label>$INFO[ListItem.Label]</label>
+						<textcolor>1115_label</textcolor>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="0">
+						<label>[UPPERCASE]$LOCALIZE[31541][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,Applications)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="1">
+						<label>[UPPERCASE]$LOCALIZE[31542][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,Emulators)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="2">
+						<label>[UPPERCASE]$LOCALIZE[31543][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,Games)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="3">
+						<label>[UPPERCASE]$LOCALIZE[31544][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,Homebrew)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="4">
+						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange1)][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange1)])</onclick>
+						<icon>-</icon>
+						<visible>Skin.HasSetting(CustomQuickChange1Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange1)])</visible>
+					</item>
+					<item id="5">
+						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange2)][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange2)])</onclick>
+						<visible>Skin.HasSetting(CustomQuickChange2Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange2)])</visible>
+						<icon>-</icon>
+					</item>
+					<item id="6">
+						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange3)][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange3)])</onclick>
+						<visible>Skin.HasSetting(CustomQuickChange3Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange3)])</visible>
+						<icon>-</icon>
+					</item>
+					<item id="7">
+						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange4)][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange4)])</onclick>
+						<visible>Skin.HasSetting(CustomQuickChange4Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange4)])</visible>
+						<icon>-</icon>
+					</item>
+					<item id="8">
+						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange5)][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange5)])</onclick>
+						<visible>Skin.HasSetting(CustomQuickChange5Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange5)])</visible>
+						<icon>-</icon>
+					</item>
+					<item id="9">
+						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange6)][/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange6)])</onclick>
+						<visible>Skin.HasSetting(CustomQuickChange6Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange6)])</visible>
+						<icon>-</icon>
+					</item>
+				</content>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<top>650</top>
+				<width>30</width>
+				<height>30</height>
+				<texture>pad_buttons\dpad_left_button.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+			<control type="image">
+				<left>1220</left>
+				<top>650</top>
+				<width>30</width>
+				<height>30</height>
+				<texture>pad_buttons\dpad_right_button.png</texture>
+				<aspectratio>keep</aspectratio>
+			</control>
+		</control>
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,30" time="100" condition="Skin.HasSetting(HideContextBar)">WindowClose</animation>
+			<animation effect="slide" start="0,30" end="0,0" time="100" delay="100" condition="Skin.HasSetting(HideContextBar)">WindowOpen</animation>
+			<control type="image">
+				<left>0</left>
+				<bottom>30</bottom>
+				<width>1280</width>
+				<height>30</height>
+				<texture>pad_buttons\underlay.png</texture>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>10</left>
+				<bottom>25</bottom>
+				<width>1280</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>Horizontal</orientation>
+				<!-- A Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>22</width>
+					<height>22</height>
+					<texture>pad_buttons\a_button.png</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="250">auto</width>
+					<height>22</height>
+					<font>size_14</font>
+					<aligny>center</aligny>
+					<textcolor>context_buttons_label</textcolor>
+					<label>$LOCALIZE[31106]</label>
+				</control>
+				<!-- B Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>22</width>
+					<height>22</height>
+					<texture>pad_buttons\b_button.png</texture>
+					<aspectratio>keep</aspectratio>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="250">auto</width>
+					<height>22</height>
+					<font>size_14</font>
+					<aligny>center</aligny>
+					<textcolor>context_buttons_label</textcolor>
+					<label>$LOCALIZE[31108]</label>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

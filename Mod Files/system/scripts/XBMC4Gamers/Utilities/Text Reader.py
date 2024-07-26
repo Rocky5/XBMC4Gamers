@@ -4,44 +4,60 @@ Mode:
 	1 = Browse.
 	2 = View logs.
 '''
-import os, xbmc, xbmcgui
-dialog	= xbmcgui.Dialog()
-Mode = sys.argv[1:][0]
-File = sys.argv[2:][0]
+import os
+import sys
+import xbmc
+import xbmcgui
 
-if Mode == '0':
-	if os.path.isfile(File):
-		with open(File,"rb") as input:
-			xbmcgui.Dialog().textviewer(os.path.basename(File), input.read())
+def view_file(file_path):
+	if os.path.isfile(file_path):
+		with open(file_path, "rb") as input_file:
+			xbmcgui.Dialog().textviewer(os.path.basename(file_path), input_file.read())
 	else:
-		dialog.ok("Error","Cant find changes.txt")
+		xbmcgui.Dialog().ok(	"Error",
+								"Can't find changes.txt"	)
 
+def browse_file():
+	file_path = xbmcgui.Dialog().browse(1, "Select file to view", 'files', '')
+	if os.path.isfile(file_path):
+		with open(file_path, "rb") as text_viewer:
+			xbmcgui.Dialog().textviewer(os.path.basename(file_path), text_viewer.read())
 
-if Mode == '1':
-	File = dialog.browse(1,"Select file to view",'files','' )
-	Input = os.path.basename(File)
-	if os.path.isfile(File):
-		with open(File,"rb") as text_viewer:
-			xbmcgui.Dialog().textviewer(Input, text_viewer.read())
+def view_logs():
+	log_path = 'E:/TDATA/Rocky5 needs these Logs/'
+	select_root = xbmcgui.Dialog().select("Select Log File", sorted(os.listdir(log_path)), 10000)
+	if select_root == -1:
+		return
 
-
-if Mode == '2':
-	Log_Path = 'E:/TDATA/Rocky5 needs these Logs/'
-	Select_Root = dialog.select( "Select Log File",sorted(os.listdir(Log_Path)),10000 )
-	if Select_Root == -1:
-		pass
+	select_file = os.path.join(log_path, sorted(os.listdir(log_path))[select_root])
+	if os.path.isdir(select_file) and os.listdir(select_file):
+		select_root = xbmcgui.Dialog().select("Select Log File", sorted(os.listdir(select_file)), 10000)
+		select_file = os.path.join(select_file, sorted(os.listdir(select_file))[select_root])
 	else:
-		Select_File = os.path.join(Log_Path,sorted(os.listdir(Log_Path))[Select_Root])
-		if os.path.isdir(Select_File) and len(os.listdir(Select_File)) > 0:
-			Select_Root = dialog.select( "Select Log File",sorted(os.listdir(Select_File)),10000 )
-			Select_File = os.path.join(Select_File,sorted(os.listdir(Select_File))[Select_Root])
-		else:
-			xbmcgui.Dialog().ok("ERROR","There are no logs to be viewed.","","This is a good thing.")
-		if Select_Root == -1 or Select_File == -1:
-			pass
-		else:
-			File = Select_File
-			Input = os.path.basename(File)
-			if os.path.isfile(File):
-				with open(File,"rb") as text_viewer:
-					xbmcgui.Dialog().textviewer(Input, text_viewer.read())
+		xbmcgui.Dialog().ok(	"ERROR",
+								"There are no logs to be viewed.",
+								"",
+								"This is a good thing."	)
+		return
+
+	if select_root == -1 or select_file == -1:
+		return
+
+	if os.path.isfile(select_file):
+		with open(select_file, "rb") as text_viewer:
+			xbmcgui.Dialog().textviewer(os.path.basename(select_file), text_viewer.read())
+
+def main():
+	dialog = xbmcgui.Dialog()
+	mode = sys.argv[1]
+	file_path = sys.argv[2]
+
+	if mode == '0':
+		view_file(file_path)
+	elif mode == '1':
+		browse_file()
+	elif mode == '2':
+		view_logs()
+
+if __name__ == "__main__":
+	main()

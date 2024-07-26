@@ -1,0 +1,24 @@
+# Author: Rocky5
+# Credits: Rocky5
+# Info: Patch Fatx checks, allowed media and all region flags.
+# Region: MULIT
+# Title: Generic Patches
+# TitleID: MULTI
+# Type: Certificate & FATX Patch
+
+CP|default.xbe|default_orig.xbe
+
+# Media patch long hex
+HR|default.xbe|1|744BE8CAFDFFFF85C07D0633C05050EB44F605|744BE8CAFDFFFF85C0EB0633C05050EB44F605
+
+# Media patch short hex
+HR|default.xbe|1|E8CAFDFFFF85C07D|E8CAFDFFFF85C0EB
+
+# FATX Detection
+HR|default.xbe|1|4641545800000000443A5C|0000000000000000000000
+
+# Media check 1
+SM|default.xbe|C00001FF
+
+# All game regions + debug
+SR|default.xbe|80000007

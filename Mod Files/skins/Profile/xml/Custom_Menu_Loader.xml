@@ -1,0 +1,41 @@
+<window id="1114">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<onload condition="StringCompare(Skin.String(HomeWindow),)">Skin.SetString(HomeWindow,Root)</onload>
+	<onload condition="StringCompare(Skin.String(HomeWindow_name),)">Skin.SetString(HomeWindow_name,$LOCALIZE[20108])</onload>
+	<onload condition="StringCompare(Skin.String(HomeWindowSource),)">Skin.SetString(HomeWindowSource,Programs)</onload>
+	<onload condition="Skin.HasSetting(Random_Game)">Skin.SetBool(run_random_script,true)</onload>
+	<onload condition="Skin.HasSetting(kioskmode) + !Skin.HasSetting(UseThemePlaylist) + Skin.HasSetting(Use_Startup_Playback) + !Skin.HasSetting(AdultProfile) + !Player.HasAudio">PlayMedia($INFO[Skin.String(Startup_Playback_Path)])</onload>
+	<onload condition="Skin.HasSetting(kioskmode) + Skin.HasSetting(UseThemePlaylist) + Skin.HasSetting(Use_Startup_Playback) + !Skin.HasSetting(AdultProfile) + !Player.HasAudio">PlayMedia(Special://skin\extras\themes\playlists\$INFO[Skin.CurrentTheme].m3u)</onload>
+	<controls>
+		<control type="button" id="1">
+			<left>-5000</left>
+			<onclick>System.LogOff</onclick>
+			<visible>Skin.HasSetting(AdultProfile) + !Skin.HasSetting(kioskmode)</visible>
+			<animation effect="fade" start="0" end="100" delay="100" time="100">Focus</animation>
+		</control>
+		<control type="button" id="1">
+			<left>-5000</left>
+			<onfocus>ActivateWindow(Programs,$INFO[skin.String(HomeWindow)])</onfocus>
+			<animation effect="fade" start="0" end="100" delay="0" time="50">Focus</animation>
+			<visible>!StringCompare(Skin.String(HomeWindowSource),Home)</visible>
+		</control>
+		<control type="button" id="1">
+			<left>-5000</left>
+			<onfocus>ActivateWindow(Home)</onfocus>
+			<animation effect="fade" start="0" end="100" delay="0" time="50">Focus</animation>
+			<visible>StringCompare(Skin.String(HomeWindowSource),Home) + Window.Previous(1)</visible>
+		</control>
+		<control type="group">
+			<animation effect="fade" start="100" end="70" delay="0" time="300" condition="Skin.HasSetting(AdultProfile)">WindowOpen</animation>
+			<animation effect="fade" start="70" end="100" delay="0" time="100" condition="Skin.HasSetting(AdultProfile)">WindowClose</animation>
+			<include>Global.Backgrounds</include>
+		</control>
+		<control type="group">
+			<include condition="!Window.Previous(1)">Startup.Window.Profile</include>
+			<animation effect="fade" start="100" end="20" time="300" condition="Skin.HasSetting(AdultProfile) + !Skin.HasSetting(kioskmode)">WindowOpen</animation>
+			<animation effect="fade" start="20" end="100" time="100" condition="Skin.HasSetting(AdultProfile) + !Skin.HasSetting(kioskmode)">WindowClose</animation>
+			<animation effect="fade" start="100" end="0" time="300" condition="Skin.HasSetting(kioskmode)">WindowClose</animation>
+		</control>
+		<include condition="!Window.Previous(1)">Startup.Window.Info</include>
+	</controls>
+</window>

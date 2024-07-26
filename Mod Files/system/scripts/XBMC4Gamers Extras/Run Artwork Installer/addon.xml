@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<addon id="Run Artwork Installer" name="Run Artwork Installer" version="1.0.0" provider-name="Rocky5">
+		<requires>
+				<import addon="xbmc.python" version="1.0" />
+		</requires>
+		<extension point="xbmc.python.script" library="default.py" />
+		<extension point="xbmc.addon.metadata">
+				<platform>all</platform>
+				<summary lang="en">Run Artwork Installer</summary>
+				<description lang="en">Used to install artwork for content on your xbox.</description>
+		</extension>
+</addon>

@@ -1,0 +1,73 @@
+<window type="dialog" id="2004">
+	<defaultcontrol always="true">61</defaultcontrol>
+	<controls>
+		<control type="image">
+			<include>1280x720</include>
+			<texture>black-back.png</texture>
+			<include>Dialog.Effect</include>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<control type="image">
+				<left>52</left>
+				<top>51</top>
+				<width>1176</width>
+				<height>618</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>windows\generic\main.png</texture>
+			</control>
+			<control type="image">
+				<left>77</left>
+				<top>70</top>
+				<width>1126</width>
+				<height>60</height>
+				<aspectratio>stretch</aspectratio>
+				<texture>windows\generic\header.png</texture>
+			</control>
+			<control type="label">
+				<description>heading label used to bold and upper-case</description>
+				<left>90</left>
+				<top>70</top>
+				<width>1126</width>
+				<height>60</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>size_24</font>
+				<label>Script: $INFO[Control.GetLabel(1)]</label>
+				<textcolor>2004_header_label</textcolor>
+			</control>
+			<control type="label" id="1">
+				<description>heading label</description>
+				<left>90</left>
+				<top>75</top>
+				<width>1105</width>
+				<height>50</height>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>size_24</font>
+				<textcolor>2004_header_label</textcolor>
+				<visible>false</visible>
+			</control>
+			<control type="textbox" id="5">
+				<description>textarea</description>
+				<left>90</left>
+				<top>128</top>
+				<width>1100</width>
+				<height>520</height>
+				<font>size_16</font>
+				<align>left</align>
+				<textcolor>2004_label</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<pagecontrol>61</pagecontrol>
+			</control>
+			<!-- Scroll bar fails to work due to the scrolltime being set to 200 :-/ -->
+			<control type="scrollbar" id="61">
+				<left>1193</left>
+				<top>130</top>
+				<width>10</width>
+				<height>517</height>
+				<include>Fake.ScrollBar.Vertical</include>
+			</control>
+		</control>
+	</controls>
+</window>

@@ -1,0 +1,130 @@
+<includes>
+	<include name="June">
+		<!-- used to workout every bloody damn day in the year! because SubString doesn't work with $INFO labels! -->
+		<!-- Structure Date Month for every one bar USA and Canada :/ -->
+		<!-- June -->
+		<control type="group">
+			<visible>!SubString(System.Date,10 Jun) + !SubString(System.Date,11 Jun) + !SubString(System.Date,12 Jun) + !SubString(System.Date,13 Jun) + !SubString(System.Date,14 Jun) + !SubString(System.Date,15 Jun) + !SubString(System.Date,16 Jun) + !SubString(System.Date,17 Jun) + !SubString(System.Date,18 Jun) + !SubString(System.Date,19 Jun) + !SubString(System.Date,21 Jun) + !SubString(System.Date,22 Jun) + !SubString(System.Date,23 Jun) + !SubString(System.Date,24 Jun) + !SubString(System.Date,25 Jun) + !SubString(System.Date,26 Jun) + !SubString(System.Date,27 Jun) + !SubString(System.Date,28 Jun) + !SubString(System.Date,29 Jun) + !SubString(System.Date,31 Jun)</visible>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,1 Jun) + StringCompare(Skin.String(BirthdayDate1),1) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,1 Jun) + StringCompare(Skin.String(BirthdayDate2),1) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,1 Jun) + StringCompare(Skin.String(BirthdayDate3),1) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,1 Jun) + StringCompare(Skin.String(BirthdayDate4),1) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,1 Jun) + StringCompare(Skin.String(BirthdayDate5),1) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,2 Jun) + StringCompare(Skin.String(BirthdayDate1),2) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,2 Jun) + StringCompare(Skin.String(BirthdayDate2),2) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,2 Jun) + StringCompare(Skin.String(BirthdayDate3),2) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,2 Jun) + StringCompare(Skin.String(BirthdayDate4),2) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,2 Jun) + StringCompare(Skin.String(BirthdayDate5),2) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,3 Jun) + StringCompare(Skin.String(BirthdayDate1),3) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,3 Jun) + StringCompare(Skin.String(BirthdayDate2),3) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,3 Jun) + StringCompare(Skin.String(BirthdayDate3),3) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,3 Jun) + StringCompare(Skin.String(BirthdayDate4),3) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,3 Jun) + StringCompare(Skin.String(BirthdayDate5),3) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,4 Jun) + StringCompare(Skin.String(BirthdayDate1),4) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,4 Jun) + StringCompare(Skin.String(BirthdayDate2),4) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,4 Jun) + StringCompare(Skin.String(BirthdayDate3),4) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,4 Jun) + StringCompare(Skin.String(BirthdayDate4),4) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,4 Jun) + StringCompare(Skin.String(BirthdayDate5),4) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,5 Jun) + StringCompare(Skin.String(BirthdayDate1),5) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,5 Jun) + StringCompare(Skin.String(BirthdayDate2),5) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,5 Jun) + StringCompare(Skin.String(BirthdayDate3),5) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,5 Jun) + StringCompare(Skin.String(BirthdayDate4),5) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,5 Jun) + StringCompare(Skin.String(BirthdayDate5),5) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,6 Jun) + StringCompare(Skin.String(BirthdayDate1),6) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,6 Jun) + StringCompare(Skin.String(BirthdayDate2),6) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,6 Jun) + StringCompare(Skin.String(BirthdayDate3),6) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,6 Jun) + StringCompare(Skin.String(BirthdayDate4),6) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,6 Jun) + StringCompare(Skin.String(BirthdayDate5),6) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,7 Jun) + StringCompare(Skin.String(BirthdayDate1),7) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,7 Jun) + StringCompare(Skin.String(BirthdayDate2),7) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,7 Jun) + StringCompare(Skin.String(BirthdayDate3),7) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,7 Jun) + StringCompare(Skin.String(BirthdayDate4),7) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,7 Jun) + StringCompare(Skin.String(BirthdayDate5),7) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,8 Jun) + StringCompare(Skin.String(BirthdayDate1),8) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,8 Jun) + StringCompare(Skin.String(BirthdayDate2),8) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,8 Jun) + StringCompare(Skin.String(BirthdayDate3),8) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,8 Jun) + StringCompare(Skin.String(BirthdayDate4),8) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,8 Jun) + StringCompare(Skin.String(BirthdayDate5),8) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+			<control type="group">
+				<include>birthday</include>
+				<visible>[SubString(System.Date,9 Jun) + StringCompare(Skin.String(BirthdayDate1),9) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,9 Jun) + StringCompare(Skin.String(BirthdayDate2),9) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,9 Jun) + StringCompare(Skin.String(BirthdayDate3),9) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,9 Jun) + StringCompare(Skin.String(BirthdayDate4),9) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,9 Jun) + StringCompare(Skin.String(BirthdayDate5),9) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+			</control>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,10 Jun) + StringCompare(Skin.String(BirthdayDate1),10) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,10 Jun) + StringCompare(Skin.String(BirthdayDate2),10) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,10 Jun) + StringCompare(Skin.String(BirthdayDate3),10) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,10 Jun) + StringCompare(Skin.String(BirthdayDate4),10) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,10 Jun) + StringCompare(Skin.String(BirthdayDate5),10) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,11 Jun) + StringCompare(Skin.String(BirthdayDate1),11) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,11 Jun) + StringCompare(Skin.String(BirthdayDate2),11) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,11 Jun) + StringCompare(Skin.String(BirthdayDate3),11) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,11 Jun) + StringCompare(Skin.String(BirthdayDate4),11) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,11 Jun) + StringCompare(Skin.String(BirthdayDate5),11) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,12 Jun) + StringCompare(Skin.String(BirthdayDate1),12) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,12 Jun) + StringCompare(Skin.String(BirthdayDate2),12) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,12 Jun) + StringCompare(Skin.String(BirthdayDate3),12) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,12 Jun) + StringCompare(Skin.String(BirthdayDate4),12) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,12 Jun) + StringCompare(Skin.String(BirthdayDate5),12) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,13 Jun) + StringCompare(Skin.String(BirthdayDate1),13) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,13 Jun) + StringCompare(Skin.String(BirthdayDate2),13) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,13 Jun) + StringCompare(Skin.String(BirthdayDate3),13) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,13 Jun) + StringCompare(Skin.String(BirthdayDate4),13) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,13 Jun) + StringCompare(Skin.String(BirthdayDate5),13) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,14 Jun) + StringCompare(Skin.String(BirthdayDate1),14) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,14 Jun) + StringCompare(Skin.String(BirthdayDate2),14) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,14 Jun) + StringCompare(Skin.String(BirthdayDate3),14) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,14 Jun) + StringCompare(Skin.String(BirthdayDate4),14) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,14 Jun) + StringCompare(Skin.String(BirthdayDate5),14) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,15 Jun) + StringCompare(Skin.String(BirthdayDate1),15) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,15 Jun) + StringCompare(Skin.String(BirthdayDate2),15) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,15 Jun) + StringCompare(Skin.String(BirthdayDate3),15) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,15 Jun) + StringCompare(Skin.String(BirthdayDate4),15) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,15 Jun) + StringCompare(Skin.String(BirthdayDate5),15) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,16 Jun) + StringCompare(Skin.String(BirthdayDate1),16) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,16 Jun) + StringCompare(Skin.String(BirthdayDate2),16) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,16 Jun) + StringCompare(Skin.String(BirthdayDate3),16) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,16 Jun) + StringCompare(Skin.String(BirthdayDate4),16) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,16 Jun) + StringCompare(Skin.String(BirthdayDate5),16) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,17 Jun) + StringCompare(Skin.String(BirthdayDate1),17) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,17 Jun) + StringCompare(Skin.String(BirthdayDate2),17) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,17 Jun) + StringCompare(Skin.String(BirthdayDate3),17) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,17 Jun) + StringCompare(Skin.String(BirthdayDate4),17) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,17 Jun) + StringCompare(Skin.String(BirthdayDate5),17) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,18 Jun) + StringCompare(Skin.String(BirthdayDate1),18) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,18 Jun) + StringCompare(Skin.String(BirthdayDate2),18) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,18 Jun) + StringCompare(Skin.String(BirthdayDate3),18) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,18 Jun) + StringCompare(Skin.String(BirthdayDate4),18) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,18 Jun) + StringCompare(Skin.String(BirthdayDate5),18) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,19 Jun) + StringCompare(Skin.String(BirthdayDate1),19) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,19 Jun) + StringCompare(Skin.String(BirthdayDate2),19) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,19 Jun) + StringCompare(Skin.String(BirthdayDate3),19) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,19 Jun) + StringCompare(Skin.String(BirthdayDate4),19) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,19 Jun) + StringCompare(Skin.String(BirthdayDate5),19) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,20 Jun) + StringCompare(Skin.String(BirthdayDate1),20) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,20 Jun) + StringCompare(Skin.String(BirthdayDate2),20) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,20 Jun) + StringCompare(Skin.String(BirthdayDate3),20) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,20 Jun) + StringCompare(Skin.String(BirthdayDate4),20) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,20 Jun) + StringCompare(Skin.String(BirthdayDate5),20) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,21 Jun) + StringCompare(Skin.String(BirthdayDate1),21) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,21 Jun) + StringCompare(Skin.String(BirthdayDate2),21) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,21 Jun) + StringCompare(Skin.String(BirthdayDate3),21) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,21 Jun) + StringCompare(Skin.String(BirthdayDate4),21) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,21 Jun) + StringCompare(Skin.String(BirthdayDate5),21) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,22 Jun) + StringCompare(Skin.String(BirthdayDate1),22) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,22 Jun) + StringCompare(Skin.String(BirthdayDate2),22) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,22 Jun) + StringCompare(Skin.String(BirthdayDate3),22) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,22 Jun) + StringCompare(Skin.String(BirthdayDate4),22) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,22 Jun) + StringCompare(Skin.String(BirthdayDate5),22) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,23 Jun) + StringCompare(Skin.String(BirthdayDate1),23) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,23 Jun) + StringCompare(Skin.String(BirthdayDate2),23) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,23 Jun) + StringCompare(Skin.String(BirthdayDate3),23) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,23 Jun) + StringCompare(Skin.String(BirthdayDate4),23) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,23 Jun) + StringCompare(Skin.String(BirthdayDate5),23) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,24 Jun) + StringCompare(Skin.String(BirthdayDate1),24) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,24 Jun) + StringCompare(Skin.String(BirthdayDate2),24) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,24 Jun) + StringCompare(Skin.String(BirthdayDate3),24) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,24 Jun) + StringCompare(Skin.String(BirthdayDate4),24) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,24 Jun) + StringCompare(Skin.String(BirthdayDate5),24) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,25 Jun) + StringCompare(Skin.String(BirthdayDate1),25) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,25 Jun) + StringCompare(Skin.String(BirthdayDate2),25) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,25 Jun) + StringCompare(Skin.String(BirthdayDate3),25) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,25 Jun) + StringCompare(Skin.String(BirthdayDate4),25) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,25 Jun) + StringCompare(Skin.String(BirthdayDate5),25) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,26 Jun) + StringCompare(Skin.String(BirthdayDate1),26) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,26 Jun) + StringCompare(Skin.String(BirthdayDate2),26) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,26 Jun) + StringCompare(Skin.String(BirthdayDate3),26) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,26 Jun) + StringCompare(Skin.String(BirthdayDate4),26) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,26 Jun) + StringCompare(Skin.String(BirthdayDate5),26) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,27 Jun) + StringCompare(Skin.String(BirthdayDate1),27) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,27 Jun) + StringCompare(Skin.String(BirthdayDate2),27) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,27 Jun) + StringCompare(Skin.String(BirthdayDate3),27) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,27 Jun) + StringCompare(Skin.String(BirthdayDate4),27) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,27 Jun) + StringCompare(Skin.String(BirthdayDate5),27) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,28 Jun) + StringCompare(Skin.String(BirthdayDate1),28) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,28 Jun) + StringCompare(Skin.String(BirthdayDate2),28) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,28 Jun) + StringCompare(Skin.String(BirthdayDate3),28) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,28 Jun) + StringCompare(Skin.String(BirthdayDate4),28) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,28 Jun) + StringCompare(Skin.String(BirthdayDate5),28) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,29 Jun) + StringCompare(Skin.String(BirthdayDate1),29) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,29 Jun) + StringCompare(Skin.String(BirthdayDate2),29) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,29 Jun) + StringCompare(Skin.String(BirthdayDate3),29) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,29 Jun) + StringCompare(Skin.String(BirthdayDate4),29) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,29 Jun) + StringCompare(Skin.String(BirthdayDate5),29) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+		<control type="group">
+			<include>birthday</include>
+			<visible>[SubString(System.Date,30 Jun) + StringCompare(Skin.String(BirthdayDate1),30) + StringCompare(Skin.String(BirthdayMonth1),Jun)] | [SubString(System.Date,30 Jun) + StringCompare(Skin.String(BirthdayDate2),30) + StringCompare(Skin.String(BirthdayMonth2),Jun)] | [SubString(System.Date,30 Jun) + StringCompare(Skin.String(BirthdayDate3),30) + StringCompare(Skin.String(BirthdayMonth3),Jun)] | [SubString(System.Date,30 Jun) + StringCompare(Skin.String(BirthdayDate4),30) + StringCompare(Skin.String(BirthdayMonth4),Jun)] | [SubString(System.Date,30 Jun) + StringCompare(Skin.String(BirthdayDate5),30) + StringCompare(Skin.String(BirthdayMonth5),Jun)]</visible>
+		</control>
+	</include>
+</includes>

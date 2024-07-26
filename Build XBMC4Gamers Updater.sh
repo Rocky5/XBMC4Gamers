@@ -37,24 +37,24 @@ rm "./update-files/system/UserData/profiles.xml"
 
 echo "${green}Setting variables...${reset}"
 
-if [ ! -e "./update-files/skins/Profile Skin/language/English/strings.po" ]; then
+if [ ! -e "./update-files/skins/Profile/language/English/strings.po" ]; then
     echo "${red}ERROR: Place a fresh copy of XBMC into this folder and try again.${reset}"
     rm -r "./XBMC"
     exit 1
 fi
 
-sed -i "s/0.0.000/$VERSION/g" "./update-files/skins/Profile Skin/language/English/strings.po"
+sed -i "s/0.0.000/$VERSION/g" "./update-files/skins/Profile/language/English/strings.po"
 
-if [ ! -d "./update-files/skins/Manage Profiles Skin" ]; then
-    mkdir "./update-files/skins/Manage Profiles Skin"
+if [ ! -d "./update-files/skins/Manage Profiles" ]; then
+    mkdir "./update-files/skins/Manage Profiles"
 fi
 
 if [ ! -d "./update-files/skins/DVD2Xbox Skin" ]; then
     mkdir "./update-files/skins/DVD2Xbox Skin"
 fi
 
-cp "./update-files/skins/Profile Skin/language/English/strings.po" "./update-files/skins/Manage Profiles Skin/language/English/strings.po"
-cp "./update-files/skins/Profile Skin/language/English/strings.po" "./update-files/skins/DVD2Xbox Skin/language/English/strings.po"
+cp "./update-files/skins/Profile/language/English/strings.po" "./update-files/skins/Manage Profiles/language/English/strings.po"
+cp "./update-files/skins/Profile/language/English/strings.po" "./update-files/skins/DVD2Xbox Skin/language/English/strings.po"
 
 cp "Source/default.xbe" "./update-files/default.xbe"
 

@@ -1,0 +1,2443 @@
+<includes>
+	<include name="birthday">
+		<!-- Birthday -->
+		<control type="image">
+			<left>120</left>
+			<top>30</top>
+			<width>200</width>
+			<height>90</height>
+			<texture>windows\login\birthday\happy_birthday_banner.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<animation type="Conditional" condition="true" reversible="true" loop="true">
+				<effect type="zoom" tween="sine" easing="out" start="0,0,200,90" end="0,0,240,100" center="auto" delay="5000" time="500"/>
+				<effect type="zoom" tween="sine" easing="out" start="0,0,240,100" end="0,0,200,90" center="auto" delay="5500" time="500"/>
+				<effect type="zoom" tween="sine" easing="out" start="0,0,200,90" end="0,0,240,100" center="auto" delay="6000" time="500"/>
+				<effect type="zoom" tween="sine" easing="out" start="0,0,240,100" end="0,0,200,90" center="auto" delay="6500" time="500"/>
+				<effect type="zoom" tween="sine" easing="out" start="0,0,200,90" end="0,0,240,100" center="auto" delay="7000" time="500"/>
+				<effect type="zoom" tween="sine" easing="out" start="0,0,240,100" end="0,0,200,90" center="auto" delay="7500" time="500"/>
+			</animation>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>340</top>
+			<width>295</width>
+			<height>436</height>
+			<texture>windows\login\birthday\balloons.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<animation type="Conditional" condition="true" reversible="true" loop="true">
+				<effect type="slide" tween="sine" easing="inout" start="0,0" end="0,-40" time="2000"/>
+				<effect type="slide" tween="sine" easing="inout" start="0,0" end="0,40" delay="2000" time="2000"/>
+			</animation>
+		</control>
+		<control type="image">
+			<left>985</left>
+			<top>340</top>
+			<width>295</width>
+			<height>436</height>
+			<texture flipx="true">windows\login\birthday\balloons.png</texture>
+			<aspectratio>stretch</aspectratio>
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<animation type="Conditional" condition="true" reversible="true" loop="true">
+				<effect type="slide" tween="sine" easing="inout" start="0,0" end="0,-40" time="3000"/>
+				<effect type="slide" tween="sine" easing="inout" start="0,0" end="0,40" delay="2500" time="2000"/>
+			</animation>
+		</control>
+	</include>
+	<include name="easter">
+		<control type="group">
+			<control type="multiimage">
+				<left>-512</left>
+				<top>470</top>
+				<width>256</width>
+				<height>256</height>
+				<visible>true</visible>
+				<imagepath>windows/login/rabbit</imagepath>
+				<timeperimage>45</timeperimage>
+				<fadetime>0</fadetime>
+				<pauseatend>0</pauseatend>
+				<randomize>false</randomize>
+				<loop>yes</loop>
+				<aspectratio>stretch</aspectratio>
+				<animation type="Conditional" condition="true" reversible="false" loop="true">
+					<effect type="slide" start="-512" end="2304" delay="8000" time="12000"/>
+					<effect type="zoom" end="-100,100" center="auto" delay="23000" time="0"/>
+					<effect type="slide" start="-512" end="2304" delay="23000" time="12000"/>
+				</animation>
+			</control>
+		</control>
+	</include>
+	<include name="halloween">
+		<control type="group">
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>720</height>
+				<texture background="false">windows\login\halloween\background.jpg</texture>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+			</control>
+			<control type="multiimage">
+				<left>50</left>
+				<top>80</top>
+				<width>256</width>
+				<height>256</height>
+				<visible>true</visible>
+				<imagepath>windows/login/halloween/spider</imagepath>
+				<timeperimage>40</timeperimage>
+				<fadetime>2</fadetime>
+				<pauseatend>0</pauseatend>
+				<randomize>false</randomize>
+				<loop>yes</loop>
+				<colordiffuse>FF000000</colordiffuse>
+				<aspectratio>keep</aspectratio>
+			</control>
+		</control>
+	</include>
+	<include name="dust">
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-100</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-100</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="7000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="7300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="7500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="21500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="5000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="13000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="5300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="5500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="19500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="6000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="6300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="6500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="20500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-150</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="4000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="4300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="13300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="4500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="18500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>150</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="5000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="13000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="5300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="5500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="19500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>420</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="7000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="7300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="7500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="21500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-180</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>510</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="4000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="4300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="13300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="4500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="18500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>400</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>900</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>900</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>700</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>800</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-100</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>700</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>400</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>300</left>
+			<animation effect="rotate" end="30" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>900</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="4000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-100</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\dust\dust3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\dust\dust.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+	</include>
+	<!-- Snow images -->
+	<include name="snow">
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-100</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-100</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="7000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="7300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="7500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="21500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="5000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="13000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="5300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="5500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="19500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="6000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="6300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="6500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="20500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-150</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="4000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="4300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="13300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="4500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="18500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>150</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="5000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="13000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="5300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="5500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="19500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>420</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="7000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="7300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="7500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="21500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-180</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>510</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="4000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="4300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="13300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="4500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="18500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>400</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>900</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>900</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>700</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>800</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-100</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>600</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>700</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>400</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>300</left>
+			<animation effect="rotate" end="30" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="0" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="8000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="14500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>900</left>
+			<animation effect="rotate" start="10" end="60" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="1000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="9000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="1300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="1500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="15500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>200</left>
+			<animation effect="rotate" end="20" time="9000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="2000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="10000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="2300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="4000" delay="11300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow2.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="2500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="16500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<left>-100</left>
+			<animation effect="rotate" end="40" time="12000" delay="300" condition="true">Conditional</animation>
+			<control type="image">
+				<left>100</left>
+				<top>-100</top>
+				<width>20</width>
+				<height>20</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="9000" delay="3000" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-20,0" time="3200" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="11000" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>260</left>
+				<top>-80</top>
+				<width>15</width>
+				<height>15</height>
+				<texture>windows\login\snow\snow3.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="10000" delay="3300" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="40,0" end="-30,0" time="4000" delay="200" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="12300" reversible="false" loop="true" condition="true">Conditional</animation>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>-110</top>
+				<width>10</width>
+				<height>10</height>
+				<texture>windows\login\snow\snow.png</texture>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<animation effect="slide" start="0,0" end="0,920" time="15000" delay="3500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<animation effect="slide" start="20,0" end="-60,0" time="5300" delay="300" reversible="false" condition="true">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="1000" delay="17500" reversible="false" loop="true" condition="true">Conditional</animation>
+				<colordiffuse>C2FFFFFF</colordiffuse>
+			</control>
+		</control>
+	</include>
+</includes>
