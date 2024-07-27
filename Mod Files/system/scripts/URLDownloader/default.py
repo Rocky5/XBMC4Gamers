@@ -657,12 +657,15 @@ try:
 								if calculate_sha256('C:\\xboxdash.xbe') == "3ae2f3eae3917e0130d1e1a5c8e1c5df207ea31703646a174d98f7be9a769495":
 									source_name = getInfoLabel('Skin.String(downloader_label)')
 									rename_stuff = "msdash"
+									warning_line1, warning_line2, warning_line3 , warning_line4 = 'WARNING: POTENTIAL SOFTMOD FOUND',"Would you like me to patch the files to ensure compatibility with the[CR]softmod/BFM Bios? A shortcut to the new xb0xdash.xbe will be placed[CR]in the Applications folder.","",""
+									if getInfoLabel('Skin.String(dashboard_name)').lower() == 'xbmc-emustation':
+										warning_line1, warning_line2, warning_line3 , warning_line4 = 'POTENTIAL SOFTMOD FOUND',"Would you like me to patch the files to ensure","compatibility with the softmod/BFM Bios? A shortcut to","the new xb0xdash.xbe will alse be installed."
+									
 									if not dialog.yesno(
-										'WARNING: POTENTIAL SOFTMOD FOUND',
-										"Would you like me to patch the files to ensure compatibility with the[CR]softmod/BFM Bios? A shortcut to the new xb0xdash.xbe will be placed[CR]in the Applications folder."
-										"",
-										"",
-										"",
+										warning_line1,
+										warning_line2,
+										warning_line3,
+										warning_line4,
 										xbmc.getLocalizedString(106),
 										xbmc.getLocalizedString(107)
 									):
@@ -840,9 +843,14 @@ try:
 							pass
 				
 					except Exception as error:
+						warning_line1, warning_line2, warning_line3 , warning_line4 = 'WARNING: POTENTIAL SOFTMOD FOUND',"If this was/is a false positive, please fix or clean your C partition.[CR]It contains files that are used for softmods.[CR][CR]Be careful if you do.","",""
+						if getInfoLabel('Skin.String(dashboard_name)').lower() == 'xbmc-emustation':
+							warning_line1, warning_line2, warning_line3 , warning_line4 = 'POTENTIAL SOFTMOD FOUND',"If this was/is a false positive, please fix or clean your","C partition. It contains files that are used for softmods.","Be careful if you do."
 						dialog.ok(
-							'WARNING: POTENTIAL SOFTMOD FOUND',
-							"If this was/is a false positive, please fix or clean your C partition.[CR]It contains files that are used for softmods.[CR][CR]Please proceed with caution."
+							warning_line1,
+							warning_line2,
+							warning_line3,
+							warning_line4,
 						)
 					
 				else:

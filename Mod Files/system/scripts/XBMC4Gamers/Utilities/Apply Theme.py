@@ -31,7 +31,7 @@ def update_fontXML(ThemeFile):
 			file2_lines = file2.readlines()
 		updated_lines = []
 		for line1, line2 in zip(file1_lines, file2_lines):
-			if line1 != line2 and '<filename>monofont' not in line1:
+			if line1 != line2 and not '<filename>monofont-' in line1 and not '<filename>home.ttf' in line1:
 				updated_lines.append(line1)
 			else:
 				updated_lines.append(line2)

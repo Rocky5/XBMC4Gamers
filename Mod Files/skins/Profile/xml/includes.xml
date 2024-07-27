@@ -1207,19 +1207,6 @@
 			<effect type="fade" start="100" end="0" time="200"/>
 		</animation>
 	</include>
-	<include name="Home.Layout.Anims">
-		<!-- <animation effect="fade" start="100" end="40" delay="0" time="100" condition="ControlGroup(1).HasFocus()">Conditional</animation> -->
-		<animation effect="fade" start="0" end="100" delay="0" time="300">WindowOpen</animation>
-		<animation effect="fade" start="100" end="0" delay="0" time="150">WindowClose</animation>
-	</include>
-	<include name="Home.Layout.Thumbs.Anims">
-		<include>Dialog.Effect.Zoom.Fast</include>
-		<!-- <animation effect="fade" start="100" end="90" delay="0" time="100" condition="ControlGroup(1).HasFocus()">Conditional</animation> -->
-		<!-- <animation effect="slide" start="1200,0" end="0,0" delay="0" time="300">WindowOpen</animation> -->
-		<!-- <animation effect="fade" start="0" end="100" delay="100" time="300">WindowOpen</animation> -->
-		<!-- <animation effect="slide" start="0,0" end="1200,0" delay="0" time="150">WindowClose</animation> -->
-		<!-- <animation effect="fade" start="100" end="0" delay="0" time="150">WindowClose</animation> -->
-	</include>
 	<!-- View_Options.xml -->
 	<include name="PanelValues">
 		<left>460</left>
