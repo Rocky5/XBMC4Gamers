@@ -1,5 +1,5 @@
 <colors>
-	<!-- XBMC4Gamers v2.0+ -->
+	<!-- XBMC4Gamers v2.1+ -->
 	<!-- Home -->
 	<color name="1_label">FFFFFFFF</color>
 	<color name="1_label_alt">FFFFFFFF</color>
@@ -9,10 +9,10 @@
 	<color name="1_synopsis_alt">FFa4a4a4</color>
 	<color name="1_sidebar_labels_fo">FFFFFFFF</color>
 	<color name="1_sidebar_labels_nofo">FF666666</color>
-	<!-- _Script_DialogBusy  -->
+	<!-- _Script_DialogBusy -->
 	<color name="1100_diffuse">FFFFFFFF</color>
 	<color name="1100_label">FFFFFFFF</color>
-	<!-- _Script_Synopsis  -->
+	<!-- _Script_Synopsis -->
 	<color name="1101_label">FFFFFFFF</color>
 	<color name="1101_disabled_label">FF7a7c7d</color>
 	<!-- Custom_Dialog_Options -->
@@ -297,7 +297,7 @@
 	<color name="saves_context_label">FF5c5c5c</color>
 	<color name="saves_label_focus">FFFFFFFF</color>
 	<color name="saves_label_nofocus">FF424542</color>
-	<!-- Manage Profiles Skin  -->
+	<!-- Manage Profiles Skin -->
 	<color name="130_header_label">FFFFFFFF</color>
 	<color name="130_label">FFFFFFFF</color>
 	<color name="130_label_nofocus">FF424542</color>

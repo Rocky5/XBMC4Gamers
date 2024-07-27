@@ -5,6 +5,32 @@ import time
 import xbmc
 import xbmcgui
 
+def update_fontXML(ThemeFile):
+	theme_xml_path = 'Special://skin/extras/themes/xmls/{}_fonts.xml'.format(ThemeFile)
+	font_path = xbmc.translatePath('Special://skin/xml/Font.xml')
+	xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skintheme;{}.xpr)'.format(ThemeFile))
+	xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skincolors;{}.xml)'.format(ThemeFile))
+	xbmc.executehttpapi('SetGUISetting(3;lookandfeel.font;default)')
+	# if theme_fonts.xml is found its used to set fonts. Else default to normal method.
+	if os.path.isfile(theme_xml_path):
+		with open(theme_xml_path, 'r') as file1:
+			file1_lines = file1.readlines()
+		with open(font_path, 'r') as file2:
+			file2_lines = file2.readlines()
+		updated_lines = []
+		for line1, line2 in zip(file1_lines, file2_lines):
+			if line1 != line2 and not '<filename>monofont-' in line1 and not '<filename>home.ttf' in line1:
+				updated_lines.append(line1)
+			else:
+				updated_lines.append(line2)
+		with open(font_path, 'w') as output_file:
+			output_file.writelines(updated_lines)
+	else:
+		for line in fileinput.input(font_path,inplace=1):
+			if '<filename>' in line and not '<filename>monofont-' in line and not '<filename>home.ttf' in line:
+				line = line = '			<filename>{}.ttf</filename>\n'.format(ThemeFile)
+			print line,
+
 def get_random_theme(file_list):
 	if 'night.xpr' in file_list:
 		file_list.remove('night.xpr')
@@ -47,14 +73,8 @@ def main():
 
 	theme_color_path = os.path.join(xbmc.translatePath('Special://skin/colors'), theme_color_file + ".xml")
 	with open(theme_color_path) as test_theme:
-		if "XBMC4Gamers v2.0+" in test_theme.read():
-			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skintheme;%s.xpr)' % theme_file)
-			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.skincolors;%s.xml)' % theme_file)
-			xbmc.executehttpapi('SetGUISetting(3;lookandfeel.font;default)')
-			for line in fileinput.input(xbmc.translatePath('Special://skin/xml/Font.xml'),inplace=1):
-				if '<filename>' in line and not '<filename>monofont' in line:
-					line = line = '			<filename>%s.ttf</filename>\n' % theme_file
-				print line,
+		if "XBMC4Gamers v2.1+" in test_theme.read():
+			update_fontXML(theme_file)
 
 			if xbmc.getCondVisibility('Skin.HasSetting(usethemeplaylist)'):
 				set_startup_playback_path(theme_file)

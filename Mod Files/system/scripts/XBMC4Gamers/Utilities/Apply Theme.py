@@ -104,7 +104,7 @@ def main():
 			ThemeColorFile = 'defaults' if SelectedTheme.lower() == 'default' else ThemeFile
 			
 			with open(os.path.join(xbmc.translatePath('Special://skin/colors'), ThemeColorFile + '.xml')) as test_theme:
-				if 'XBMC4Gamers v2.0+' in test_theme.read() and os.path.isfile(os.path.join(xbmc.translatePath('Special://skin/backgrounds/'), ThemeFile + '/0.jpg')):
+				if 'XBMC4Gamers v2.1+' in test_theme.read() and os.path.isfile(os.path.join(xbmc.translatePath('Special://skin/backgrounds/'), ThemeFile + '/0.jpg')):
 					update_fontXML(ThemeFile)
 					handle_theme_file(ThemeFile)
 					handle_playlist(ThemeFile)

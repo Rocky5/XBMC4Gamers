@@ -1,12 +1,18 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Welcome to XBMC4Gamers v2.0
+Welcome to XBMC4Gamers v2.1
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Change log for v2.0.005
-26/07/2024
+Change log for v2.1.000
+27/07/2024
 
+	Note:
+	I should have made this update a magor one as alot had changed, so fixed the versoning to reflect that.
+	I have fixed a few issues with scripts regarding themes as there are new views and older themes wornk work now,
+	for those views, same with the home screen.
+	Source edits on the XBMC4Gamers-Source git will still be under v2.0.005 as nothing has changed in the xbe.
+	
 	1) Themes can now edit any includes value.
 		(custom menu looks and animations)
 	2) Updated the file patcher script and patch files.
