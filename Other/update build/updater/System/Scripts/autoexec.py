@@ -133,6 +133,9 @@ if os.path.isfile(zip_file):
 			if os.path.isfile(Root_Directory+'skins/Profile/xml/Custom_Skin_Settings.xml'):
 					os.remove(Root_Directory+'skins/Profile/xml/Custom_Skin_Settings.xml')
 			
+			if os.path.isfile(Root_Directory+'skins/Profile/xml/Custom_Skin_Setting.xml'):
+					os.remove(Root_Directory+'skins/Profile/xml/Custom_Skin_Setting.xml')
+			
 			if os.path.isfile(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/yes-no.py'):
 					os.remove(Root_Directory+'system/scripts/XBMC4Gamers/Utilities/yes-no.py')
 			
