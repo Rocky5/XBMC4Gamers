@@ -1,11 +1,11 @@
 # Author: Rocky5
 # Credits: Rocky5
 # Info: Adds a xbe title (The Sims 2) and patches the HDD check.
-# Region: NTSC
+# Region: MULTI
 # Title: The Sims 2
 # TitleID: 4541038B
 # Type: Multi Patch
 
 CP|default.xbe|default_orig.xbe
 OF|default.xbe|400|5400680065002000530069006D007300200032
-OF|default.xbe|1997564|EB
+OF|default.xbe|1|8BC8FF1284C075178B0D|8BC8FF1284C0EB178B0D
