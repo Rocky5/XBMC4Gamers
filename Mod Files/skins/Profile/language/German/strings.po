@@ -472,6 +472,10 @@ msgctxt "#31161"
 msgid "Temps · HDD Info · Hardware Info"
 msgstr "Temperaturen · HDD-Infos · Hardware-Infos"
 
+msgctxt "#31162"
+msgid "XBMC4Gamers Options"
+msgstr "XBMC4Gamers Optionen"
+
 ## SettingsCategory.xml - 31166 to 31170
 msgctxt "#31166"
 msgid "Back"
@@ -685,3 +689,15 @@ msgstr "Einträge suchen"
 msgctxt "#31605"
 msgid "Open Source on click"
 msgstr "Quelle öffnen auf Klick"
+
+msgctxt "#31606"
+msgid "Warning"
+msgstr "Warnung"
+
+msgctxt "#31607"
+msgid "This will reset all XBMC4Gamers options.[CR]Main settings are not reset."
+msgstr "Dies setzt alle XBMC4Gamers Optionen zurück.[CR]Die Haupteinstellungen werden nicht zurückgesetzt."
+
+msgctxt "#31608"
+msgid "Settings reset, will now reload the profile[CR]to complete the process."
+msgstr "Einstellungen zurückgesetzt, lädt nun das Profil[CR]neu, um den Vorgang abzuschließen."
