@@ -1,0 +1,703 @@
+# XBMC Media Center language file
+msgid ""
+msgstr ""
+"Project-Id-Version: xbmc4xbox\n"
+"Report-Msgid-Bugs-To: Rocky5 XBMC4Xbox forums\n"
+"POT-Creation-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Rocky5\n"
+"Language-Team: jamal2367"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: de\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+## DO NOT TRANSLATE (start)
+
+## version
+msgctxt "#31000"
+msgid "XBMC4Gamers 0.0.000"
+msgstr ""
+
+msgctxt "#31001"
+msgid "build type"
+msgstr ""
+
+msgctxt "#31002"
+msgid "XBMC4Gamers datetime"
+msgstr ""
+
+##  DO NOT TRANSLATE (end)
+
+## internal - no xml file id's cannot be changed, unless you recompile the xbe
+msgctxt "#32000"
+msgid "Advanced"
+msgstr "Erweitert"
+
+msgctxt "#32001"
+msgid ""
+msgstr ""
+
+msgctxt "#32002"
+msgid "Enable fast game parsing"
+msgstr "Schnelles Parsen des Spiels aktivieren"
+
+msgctxt "#32003"
+msgid "Don't use Synopsis naming"
+msgstr "Keine Synopsis-Benennung verwenden"
+
+msgctxt "#32004"
+msgid "This option will not work with forced 480p bios"
+msgstr "Diese Option funktioniert nicht mit erzwungenen 480p Bios"
+
+msgctxt "#32005"
+msgid "Enable higher resolution artwork"
+msgstr "Höher aufgelöste Artwork zulassen"
+
+msgctxt "#32006"
+msgid "Refresh info"
+msgstr "Info aktualisieren"
+
+msgctxt "#32007"
+msgid "Refresh all contents info"
+msgstr "Alle Inhalte aktualisieren"
+
+msgctxt "#32008"
+msgid "Refreshing Synopsis Information"
+msgstr "Zusammenfassung aktualisieren"
+
+## Custom_logoff.xml - 31011 to 31015
+msgctxt "#31011"
+msgid "logging off"
+msgstr "abmelden"
+
+## Custom_Menu_Loader.xml - 31016 to 31020
+msgctxt "#31016"
+msgid "loading"
+msgstr "laden"
+
+msgctxt "#31017"
+msgid "[B]Kiosk Mode[/B][CR]Profile is locked[CR]Press (A) to logout"
+msgstr "[B]Kiosk-Modus[/B][CR]Profil ist gesperrt[CR]Drücken Sie (A) zum Abmelden"
+
+## Custom_Skin_Settings.xml - 31021 to 31034
+msgctxt "#31021"
+msgid "Back"
+msgstr "Zurück"
+
+msgctxt "#31022"
+msgid "General Toggles"
+msgstr "Allgemeine Schaltflächen"
+
+msgctxt "#31023"
+msgid "Home Window"
+msgstr "Startbildschirm"
+
+msgctxt "#31024"
+msgid "Login"
+msgstr "Anmeldung"
+
+msgctxt "#31025"
+msgid "Quick Change Menu"
+msgstr "Schnellwechsel-Menü"
+
+msgctxt "#31026"
+msgid "Debug"
+msgstr "Debug"
+
+msgctxt "#31027"
+msgid "Startup Options"
+msgstr "Startoptionen"
+
+## General Toggles - Custom_Skin_Settings.xml - 31035 to 31058
+msgctxt "#31035"
+msgid "Disable time overlay"
+msgstr "Zeit-Overlay deaktivieren"
+
+msgctxt "#31036"
+msgid "Hide context buttons at the bottom of the screen"
+msgstr "Kontextschaltflächen am unteren Rand des Bildschirms ausblenden"
+
+msgctxt "#31037"
+msgid "Enable a custom button on the options dialog"
+msgstr "Eine benutzerdefinierte Schaltfläche im Optionsdialog aktivieren"
+
+msgctxt "#31038"
+msgid "Label"
+msgstr "Bezeichnung"
+
+msgctxt "#31039"
+msgid "Location"
+msgstr "Ort"
+
+msgctxt "#31040"
+msgid "Enable custom xbmc4gamers logo colour"
+msgstr "Benutzerdefinierte XBMC4Gamers-Logo-Farbe aktivieren"
+
+msgctxt "#31041"
+msgid "Custom hex value"
+msgstr "Benutzerdefinierter HEX-Wert"
+
+msgctxt "#31042"
+msgid "Enable alt fanart mask"
+msgstr "Alternative Fanart-Maske aktivieren"
+
+msgctxt "#31043"
+msgid "Hide played overlay on poster views"
+msgstr "Abgespieltes Overlay in Posteransichten ausblenden"
+
+msgctxt "#31044"
+msgid "Show reload skin and logout context buttons"
+msgstr "Skin neu laden und Ausloggen-Kontextschaltflächen anzeigen"
+
+msgctxt "#31045"
+msgid "Hide trainer overlay on poster views"
+msgstr "Trainer-Overlay in Posteransichten ausblenden"
+
+msgctxt "#31046"
+msgid "Enable night mode"
+msgstr "Nachtmodus aktivieren"
+
+msgctxt "#31047"
+msgid "Hide scrolling letter"
+msgstr "Laufschrift ausblenden"
+
+msgctxt "#31048"
+msgid "Change theme"
+msgstr "Design ändern"
+
+msgctxt "#31049"
+msgid "Uninstall themes"
+msgstr "Designs deinstallieren"
+
+msgctxt "#31050"
+msgid "Random theme"
+msgstr "Zufälliges Design"
+
+msgctxt "#31051"
+msgid "Randomise theme on startup"
+msgstr "Zufälliges Design beim Starten"
+
+msgctxt "#31052"
+msgid "Randomise wallpaper"
+msgstr "Zufälliges Hintergrundbild"
+
+msgctxt "#31053"
+msgid "Only randomise downloaded themes"
+msgstr "Nur heruntergeladene Designs zufällig auswählen"
+
+msgctxt "#31054"
+msgid "Use screensaver fanart in background (Download required)"
+msgstr "Bildschirmschoner-Fanart im Hintergrund verwenden (Download erforderlich)"
+
+msgctxt "#31055"
+msgid "Use non blurred fanart"
+msgstr "Keine unscharfe Fanart verwenden"
+
+msgctxt "#31056"
+msgid "Change splash"
+msgstr "Splash ändern"
+
+## Quick Change Menu - Custom_Skin_Settings.xml - 31059 to 31060
+msgctxt "#31059"
+msgid "Enable additional sources"
+msgstr "Zusätzliche Quellen aktivieren"
+
+msgctxt "#31060"
+msgid "Select source"
+msgstr "Quelle auswählen"
+
+## Login - Custom_Skin_Settings.xml - 31061 to 31068
+msgctxt "#31061"
+msgid "Enable Login Screen"
+msgstr "Anmeldebildschirm aktivieren"
+
+msgctxt "#31062"
+msgid "Enable debug information"
+msgstr "Debug-Informationen aktivieren"
+
+msgctxt "#31063"
+msgid "Enable profile lock"
+msgstr "Profilsperre einschalten"
+
+msgctxt "#31064"
+msgid "Enabling this setting will lock this profile if [B]Kiosk Mode[/B] is enabled"
+msgstr "Wenn Sie diese Einstellung aktivieren, wird dieses Profil gesperrt, wenn der [B]Kioskmodus[/B] aktiviert ist."
+
+msgctxt "#31065"
+msgid "Hide profile image on startup"
+msgstr "Profilbild beim Starten ausblenden"
+
+## Scripts - Custom_Skin_Settings.xml - 31069 to 31075
+msgctxt "#31069"
+msgid "Run"
+msgstr "Starte"
+
+msgctxt "#31070"
+msgid "View Log Files"
+msgstr "Log-Dateien anzeigen"
+
+msgctxt "#31071"
+msgid "Change Debug Modes"
+msgstr "Debug-Modi ändern"
+
+msgctxt "#31072"
+msgid "Reset All XBMC4Gamers Options"
+msgstr "Alle XBMC4Gamers Optionen zurücksetzen"
+
+## Home Window - Custom_Skin_Settings.xml - 31076 to 31085
+msgctxt "#31076"
+msgid "Current Home Window:"
+msgstr "Aktuelles Startbildschirm-Fenster:"
+
+msgctxt "#31077"
+msgid "Applications"
+msgstr "Anwendungen"
+
+msgctxt "#31078"
+msgid "Emulators"
+msgstr "Emulatoren"
+
+msgctxt "#31079"
+msgid "Games"
+msgstr "Spiele"
+
+msgctxt "#31080"
+msgid "Homebrew"
+msgstr "Homebrew"
+
+## Startup Options - Custom_Skin_Settings.xml - 31086 to 31100
+msgctxt "#31086"
+msgid "Enable intro video"
+msgstr "Intro-Video aktivieren"
+
+msgctxt "#31087"
+msgid "Enable audio playlist"
+msgstr "Audio-Wiedergabeliste aktivieren"
+
+msgctxt "#31088"
+msgid "[B]Generate[/B] random playlist"
+msgstr "[B]Erzeuge[/B] zufällige Wiedergabeliste"
+
+msgctxt "#31089"
+msgid "Custom playlist"
+msgstr "Benutzerdefinierte Wiedergabeliste"
+
+msgctxt "#31090"
+msgid "View Options"
+msgstr "Optionen anzeigen"
+
+msgctxt "#31091"
+msgid "Use theme playlist"
+msgstr "Themenwiedergabeliste verwenden"
+
+msgctxt "#31092"
+msgid "Enable Random Select"
+msgstr "Zufallsauswahl aktivieren"
+
+msgctxt "#31093"
+msgid "Select File"
+msgstr "Datei auswählen"
+
+msgctxt "#31094"
+msgid "If no file is selected/found it defaults to [B]Q:/intro.mp4[/B] or [B]Q:/system/intro/intro.mp4[/B]"
+msgstr "Wenn keine Datei ausgewählt oder gefunden wird, wird standardmäßig [B]Q:/intro.mp4[/B] oder [B]Q:/system/intro/intro.mp4[/B] verwendet."
+
+## DialogKeyboard.xml - 310101 to 31105
+msgctxt "#31101"
+msgid "6 digit hex colour code (0-F)"
+msgstr "6-stelliger HEX-Farbcode (0-F)"
+
+## Includes_Context_Buttons.xml - 31106 to 31140
+msgctxt "#31106"
+msgid "Select"
+msgstr "Auswählen"
+
+msgctxt "#31107"
+msgid "Game"
+msgstr "Spiel"
+
+msgctxt "#31108"
+msgid "Back"
+msgstr "Zurück"
+
+msgctxt "#31109"
+msgid "Media Controls"
+msgstr "Mediensteuerungen"
+
+msgctxt "#31110"
+msgid "Synopsis"
+msgstr "Kurzbeschreibung"
+
+msgctxt "#31111"
+msgid "Add to Playlist"
+msgstr "Zur Wiedergabeliste hinzufügen"
+
+msgctxt "#31112"
+msgid "Remove from Playlist"
+msgstr "Aus Wiedergabeliste entfernen"
+
+msgctxt "#31113"
+msgid "Context menu"
+msgstr "Kontextmenü"
+
+msgctxt "#31114"
+msgid "Options"
+msgstr "Optionen"
+
+msgctxt "#31115"
+msgid "Favourites"
+msgstr "Favoriten"
+
+msgctxt "#31116"
+msgid "Clear Cache"
+msgstr "Cache leeren"
+
+msgctxt "#31117"
+msgid "Exit Playlist Menu"
+msgstr "Wiedergabelisten-Menü verlassen"
+
+msgctxt "#31118"
+msgid "Enter Playlist Menu"
+msgstr "Wiedergabelisten-Menü öffnen"
+
+msgctxt "#31119"
+msgid "Quick Change"
+msgstr "Schneller Wechsel"
+
+msgctxt "#31120"
+msgid "Launch Disc"
+msgstr "Disk starten"
+
+msgctxt "#31121"
+msgid "View Settings"
+msgstr "Einstellungen anzeigen"
+
+msgctxt "#31122"
+msgid "Playlist Settings"
+msgstr "Einstellungen der Wiedergabeliste"
+
+msgctxt "#31123"
+msgid "Log Out"
+msgstr "Abmelden"
+
+msgctxt "#31124"
+msgid "Reload Skin"
+msgstr "Skin neu laden"
+
+msgctxt "#31125"
+msgid ""
+msgstr ""
+
+msgctxt "#31126"
+msgid "Launch"
+msgstr "Starten"
+
+msgctxt "#31127"
+msgid "Last Played/Randoms"
+msgstr "Zuletzt gespielt/Randomisierung"
+
+## Custom_View_Options.xml - 31141 to 31150
+msgctxt "#31141"
+msgid "Sort: Descending"
+msgstr "Sortieren: Absteigend"
+
+msgctxt "#31142"
+msgid "Sort: Ascending"
+msgstr "Sortieren: Aufsteigend"
+
+msgctxt "#31143"
+msgid "Close"
+msgstr "Schließen"
+
+msgctxt "#31144"
+msgid "Search & Sort"
+msgstr "Suchen & Sortieren"
+
+msgctxt "#31145"
+msgid "View Options"
+msgstr "Optionen anzeigen"
+
+msgctxt "#31146"
+msgid "Switch View"
+msgstr "Ansicht wechseln"
+
+msgctxt "#31147"
+msgid "Drive Space"
+msgstr "Festplattenspeicher"
+
+## Settings.xml - 31151 to 31165
+msgctxt "#31151"
+msgid "Back"
+msgstr "Zurück"
+
+msgctxt "#31152"
+msgid "Region · Screensavers · Display"
+msgstr "Region · Bildschirmschoner · Anzeige"
+
+msgctxt "#31153"
+msgid "Playback · Video Playback Resolution"
+msgstr "Wiedergabe · Auflösung der Videowiedergabe"
+
+msgctxt "#31154"
+msgid "Trainer path · Game scanning · Dashboard path"
+msgstr "Trainer-Pfad · Spiel-Scan · Dashboard-Pfad"
+
+msgctxt "#31155"
+msgid "Static IP · DHCP"
+msgstr "Statische IP · DHCP"
+
+msgctxt "#31156"
+msgid "Output · Power saving · Autorun"
+msgstr "Ausgabe · Energiesparen · Autostart"
+
+msgctxt "#31157"
+msgid "Playback"
+msgstr "Wiedergabe"
+
+msgctxt "#31158"
+msgid "Copy · Move · Rename · Delete"
+msgstr "Kopieren · Verschieben · Umbenennen · Löschen"
+
+msgctxt "#31159"
+msgid "Applications · DLC · Mods · Update"
+msgstr "Anwendungen · DLC · Mods · Aktualisierung"
+
+msgctxt "#31160"
+msgid "Toggles · Scripts · Startup playlist"
+msgstr "Schaltflächen · Skripte · Wiedergabeliste für den Start"
+
+msgctxt "#31161"
+msgid "Temps · HDD Info · Hardware Info"
+msgstr "Temperaturen · HDD-Infos · Hardware-Infos"
+
+msgctxt "#31162"
+msgid "XBMC4Gamers Options"
+msgstr "XBMC4Gamers Optionen"
+
+## SettingsCategory.xml - 31166 to 31170
+msgctxt "#31166"
+msgid "Back"
+msgstr "Zurück"
+
+## SettingsProfile.xml - 31171 to 31175
+msgctxt "#31171"
+msgid ""
+msgstr ""
+
+msgctxt "#31172"
+msgid ""
+msgstr ""
+
+msgctxt "#31173"
+msgid "Kiosk Mode"
+msgstr "Kiosk-Modus"
+
+## SettingsScreenCalibration.xml - 31176 to 31178
+msgctxt "#31176"
+msgid "Get spinning disc to have as little wobble as possible."
+msgstr "Achte darauf, dass die rotierende Disk möglichst wenig schwingt."
+
+## Startup.xml - 31179 to 31185
+msgctxt "#31179"
+msgid "loading"
+msgstr "laden"
+
+msgctxt "#31180"
+msgid "Initialising please wait..."
+msgstr "Initialisierung bitte warten..."
+
+msgctxt "#31181"
+msgid "Error has occurred. Please send me a copy of your [B]"xbmc.log"[/B] file, or try restarting the xbox."
+msgstr "Ein Fehler ist aufgetreten. Bitte sende mir eine Kopie der [B]"xbmc.log"[/B] Datei, oder versuchen Sie, die Xbox neu zu starten."
+
+## View files - 31186 to 31209
+msgctxt "#31186"
+msgid "Played 0 times"
+msgstr "0 Mal gespielt"
+
+msgctxt "#31187"
+msgid "Played"
+msgstr " "
+
+msgctxt "#31188"
+msgid "time"
+msgstr "Mal gespielt"
+
+msgctxt "#31189"
+msgid "times"
+msgstr "Mal gespielt"
+
+msgctxt "#31190"
+msgid "Game Info"
+msgstr "Spiel-Informationen"
+
+msgctxt "#31191"
+msgid "0 times"
+msgstr "0 Mal"
+
+msgctxt "#31192"
+msgid "This game has been played"
+msgstr "Dieses Spiel wurde bereits gespielt"
+
+msgctxt "#31193"
+msgid "Used space"
+msgstr "Genutzter Speicher"
+
+msgctxt "#31194"
+msgid "Game location"
+msgstr "Ort des Spiels"
+
+## FileBrowser.xml - 31210 to 31212
+msgctxt "#31210"
+msgid "Page"
+msgstr "Seite"
+
+msgctxt "#31211"
+msgid "Items"
+msgstr "Einträge"
+
+## Master Profile Strings - 31500 to 31519
+msgctxt "#31500"
+msgid ""
+msgstr ""
+
+msgctxt "#31501"
+msgid "Individual save directories for each profile"
+msgstr "Individuelle Speicherverzeichnisse für jedes Profil"
+
+msgctxt "#31502"
+msgid "Setup Birthday dates."
+msgstr "Geburtstagsdaten einrichten."
+
+msgctxt "#31503"
+msgid "Welcome. [CR]In this menu you will be able to set up to 5 different birthdays. [CR]These will show on the login-screen when the date arrives."
+msgstr "Willkommen. [CR]In diesem Menü können bis zu 5 verschiedene Geburtstage eingestellt werden. [CR]Diese werden auf dem Anmeldebildschirm angezeigt, wenn das Datum erreicht ist."
+
+msgctxt "#31504"
+msgid "Enable intro video"
+msgstr "Intro-Video aktivieren"
+
+msgctxt "#31505"
+msgid "Other Options"
+msgstr "Andere Optionen"
+
+msgctxt "#31506"
+msgid "Context Menu"
+msgstr "Kontextmenü"
+
+## LoginScreen.xml - 31520 to 31529
+msgctxt "#31520"
+msgid "Load Profile"
+msgstr "Profil laden"
+
+msgctxt "#31521"
+msgid "Context Menu"
+msgstr "Kontextmenü"
+
+msgctxt "#31522"
+msgid "Kiosk Mode Enabled"
+msgstr "Kiosk-Modus aktiviert"
+
+msgctxt "#31523"
+msgid "Welcome to XBMC4Gamers"
+msgstr "Willkommen bei XBMC4Gamers"
+
+msgctxt "#31524"
+msgid "Who is using the controller?"
+msgstr "Wer verwendet den Controller?"
+
+## Settings.xml - 31529 to 31540
+msgctxt "#31529"
+msgid "Adjust your screen size"
+msgstr "Bildschirmgröße anpassen"
+
+
+## File Manager.xml - 31530 to 31540
+msgctxt "#31530"
+msgid "Highlight"
+msgstr "Highlight"
+
+msgctxt "#31531"
+msgid "Normal Mode"
+msgstr "Normaler Modus"
+
+msgctxt "#31532"
+msgid "Compact Mode"
+msgstr "Kompakter Modus"
+
+## Custom_Dialog_Quick_Change.xml - 31541 to 31550
+msgctxt "#31541"
+msgid "applications"
+msgstr "anwendungen"
+
+msgctxt "#31542"
+msgid "emulators"
+msgstr "emulatoren"
+
+msgctxt "#31543"
+msgid "games"
+msgstr "spiele"
+
+msgctxt "#31544"
+msgid "homebrew"
+msgstr "homebrew"
+
+## Home.xml - 31560 to 31580
+msgctxt "#31560"
+msgid ""
+msgstr ""
+
+msgctxt "#31561"
+msgid ""
+msgstr ""
+
+msgctxt "#31562"
+msgid ""
+msgstr ""
+
+msgctxt "#31563"
+msgid "Randoms:"
+msgstr "Zufällig"
+
+msgctxt "#31564"
+msgid "Close Home"
+msgstr "Startbildschirm schließen"
+
+## Home Window - Custom_Skin_Settings.xml - 31600 to 31650
+msgctxt "#31600"
+msgid ""
+msgstr ""
+
+msgctxt "#31601"
+msgid "Custom Button"
+msgstr "Benutzerdefinierte Schaltfläche"
+
+msgctxt "#31602"
+msgid "Name"
+msgstr "Name"
+
+msgctxt "#31603"
+msgid "use , to separate max 2 example: Games,Applications"
+msgstr "Verwenden , um maximal 2 Beispiele zu trennen: Spiele,Anwendungen"
+
+msgctxt "#31604"
+msgid "Search Entries"
+msgstr "Einträge suchen"
+
+msgctxt "#31605"
+msgid "Open Source on click"
+msgstr "Quelle öffnen auf Klick"
+
+msgctxt "#31606"
+msgid "Warning"
+msgstr "Warnung"
+
+msgctxt "#31607"
+msgid "This will reset all XBMC4Gamers options.[CR]Main settings are not reset."
+msgstr "Dies setzt alle XBMC4Gamers Optionen zurück.[CR]Die Haupteinstellungen werden nicht zurückgesetzt."
+
+msgctxt "#31608"
+msgid "Settings reset, will now reload the profile[CR]to complete the process."
+msgstr "Einstellungen zurückgesetzt, lädt nun das Profil[CR]neu, um den Vorgang abzuschließen."
