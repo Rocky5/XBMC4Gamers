@@ -2,103 +2,103 @@
 	<fontset id="default" unicode="True">
 		<font>
 			<name>size_13</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>13</size>
 		</font>
 		<font>
 			<name>size_14</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>14</size>
 		</font>
 		<font>
 			<name>size_15</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>15</size>
 		</font>
 		<font>
 			<name>size_16</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>16</size>
 		</font>
 		<font>
 			<name>size_17</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>17</size>
 		</font>
 		<font>
 			<name>size_18</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>18</size>
 		</font>
 		<font>
 			<name>size_19</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>19</size>
 		</font>
 		<font>
 			<name>size_20</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>20</size>
 		</font>
 		<font>
 			<name>size_21</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>21</size>
 		</font>
 		<font>
 			<name>size_21_bold</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>21</size>
 			<style>bold</style>
 		</font>
 		<font>
 			<name>size_22</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>22</size>
 		</font>
 		<font>
 			<name>size_23</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>23</size>
 		</font>
 		<font>
 			<name>size_24</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>24</size>
 		</font>
 		<font>
 			<name>size_27</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>27</size>
 		</font>
 		<font>
 			<name>size_28</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>28</size>
 		</font>
 		<font>
 			<name>size_30</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>30</size>
 		</font>
 		<font>
 			<name>size_35</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>35</size>
 		</font>
 		<font>
 			<name>size_40</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>40</size>
 		</font>
 		<font>
 			<name>size_50</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>50</size>
 		</font>
 		<font>
 			<name>size_200</name>
-			<filename>Rounded Night.ttf</filename>
+			<filename>default.ttf</filename>
 			<size>200</size>
 		</font>
 		<!-- The fonts below can't be removed. They are used by the debug overlay and the textviewer -->
