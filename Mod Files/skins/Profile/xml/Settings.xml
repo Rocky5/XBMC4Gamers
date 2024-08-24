@@ -4,7 +4,6 @@
 	<onload>Skin.Reset(SelectPreviewMode)</onload>
 	<controls>
 		<include>Global.Backgrounds</include>
-		<include>Window.Header</include>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<control type="image">
@@ -121,7 +120,7 @@
 				<include>Settings.Root.Button.Values</include>
 				<content>
 					<item id="1">
-						<label>XBMC4Gamers $LOCALIZE[33063]</label>
+						<label>$LOCALIZE[31162]</label>
 						<label2>$LOCALIZE[31160]</label2>
 						<onclick>ActivateWindow(1111)</onclick>
 						<icon>thumbs\SkinSettings.png</icon>

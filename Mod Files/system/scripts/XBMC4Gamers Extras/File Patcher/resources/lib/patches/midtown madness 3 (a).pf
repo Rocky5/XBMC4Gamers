@@ -1,0 +1,12 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: MULTI
+# Title: Midtown Madness 3
+# TitleID: 4D53002A
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+HR|defaultws.xbe|1|CCCCCCCCCCCCCCCC8B44240485C0689C|35FA0E3CCCCCCCCC8B44240485C0689C
+HR|defaultws.xbe|1|D80D9C5F3800D80D88503800D9F2DDD8|D80D88E20800D9F2DDD8D80D205F3800
+HR|defaultws.xbe|2|D905205F3800|D90568A73600

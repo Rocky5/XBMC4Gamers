@@ -1,12 +1,12 @@
 from xbmcgui import Dialog
 import sys
 
-sys.argv.extend(["", "", "Change me", "", "", "", "no", "yes", "", "no"])
+sys.argv.extend(["", "", "Change me", "", "", "", xbmc.getLocalizedString(106), xbmc.getLocalizedString(107), "", "no"])
 settings, dialog_type, title, line1, line2, line3, no, yes, commands, runcommands = sys.argv[1:11]
 
 
 if dialog_type == "yesno":
-	if Dialog().yesno(title,line1,line2,line3,xbmc.getLocalizedString(106),xbmc.getLocalizedString(107)):
+	if Dialog().yesno(title,line1,line2,line3,no,yes):
 		if settings != "":
 			for settings in settings.split('~'):
 				xbmc.executebuiltin(settings)

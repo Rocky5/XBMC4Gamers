@@ -1,11 +1,46 @@
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-Welcome to XBMC4Gamers v2.1
+Version 2.1.001 - 23/08/2024
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+New Features:
+	1) Folder fanart can be theme-specific and/or can be toggled on and off.
+	2) Press X to open the music visualisation window, when in the dialog options menu.
+	   (black button and when music is playing)
+	3) You can control music with the D-pad when in the visualisation menu.
+	   (A toggles info, (or wait 5 mins) lock visualisation presets with X or press Black to change settings & White to change visualisation presets)
+	4) German translation by jamal2362. Thank you.
 
-Change log for v2.1.000
-27/07/2024
+Bug Fixes:
+	1) Updated and fixed the patcher script erroring if titleid didn't match an xbe.
+	2) Fixed the Run Artwork Installer script descriptions for buttons.
+	3) Fixed some strings not being translatable.
+
+Improvements:
+	1) A few more patches added for games.
+	2) Updated the home screen and fixed and improved a few things.
+	3) Made the startup playlist play on unload of the menu loader window.
+	   (This helps slower HDDs when the home screen is enabled)
+	4) Moved the spinning disc when media is inserted to the top left.
+	5) Changed some elements to use stock fonts (non-theme font)
+	6) Home can be fully modded.
+		(So any themers want to make a new home you can)
+	7) Added missing visualisation
+		(fixed sources but 2 are missing, as one won't compile & the other has no source)
+	8) Added more MilkDrop visualisation from 2002 and 2003.
+		(we now have 1600+)
+	9) Fixed up the music menus.
+	10) Added ListItem.Synopsis_Fanart to the xbe but currently isn't used.
+	11) Added a new dialog. DialogOverlay.xml, this can overlay elements on top of all windows bar, busy dialog as that's rendered separately from guiwindowmanager.
+	12) Changed the synopsis window to use the blurred fanart. Gives depth. If no blurred fanart will use normal one.
+		(also reduces ram usage a bit)
+	13) Quality of life improvements.
+
+____________________________________________________________________________________________________________________________________
+
+
+Previous Updates:
+
+Change log for v2.1.000 - 27/07/2024
+
 	
 	1) Themes can now edit any includes value.
 		(custom menu looks and animations)
@@ -41,25 +76,6 @@ Change log for v2.1.000
 	23) Themes can now have as many fonts as they want, just have to be named "theme name"_1,2,3,4 etc...
 		("theme name"_fonts.xml is required)
 	24) New netflixish type view
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-A lot has changed since v1.4, we now have full synopsis support, more views to shake a stick at and all round better experience.
-We now have a HOME MENU! yeah, it lets you launch menus and recently launched, random games, homebrew, emus, applications and up to 4 custom entries.
-I fixed all bugs I could find and some I missed or created from the last stable or test builds.
-
-So hopefully you enjoy your time in the dash and have a great New Year!
-
-Thank you for your support.
-I would also like to thank everyone that has donated it's very much appreciated.
-
-!!! Please refresh your content after the v2.0.000 update, press the white button and select "Refresh all contents info"
-!!! This will fix any missing artwork
-!!! If you have already done the above, you don't need to do it again.
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-Previous Updates:
 
 Change log for v2.0.004
 12/04/2024
@@ -112,6 +128,21 @@ Change log for v2.0.001
 		(Giorgos Tsamouris for noticing this)
 	8) Hopefully reduced the startup time if there is no network.
 		(It's just as fast for me so, can only do so much)
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//	A lot has changed since v1.4, we now have full synopsis support, more views to shake a stick at and all round better experience.
+//	We now have a HOME MENU! yeah, it lets you launch menus and recently launched, random games, homebrew, emus, applications and up to 4 custom entries.
+//	I fixed all bugs I could find and some I missed or created from the last stable or test builds.
+//
+//	So hopefully you enjoy your time in the dash and have a great New Year!
+//
+//	Thank you for your support.
+//	I would also like to thank everyone that has donated it's very much appreciated.
+//
+//	!!! Please refresh your content after the v2.0+ update, press the white button and select "Refresh all contents info"
+//	!!! This will fix any missing artwork
+//	!!! If you have already done the above, you don't need to do it again.
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Change log for v2.0.000
 1/1/2024

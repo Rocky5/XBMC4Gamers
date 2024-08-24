@@ -763,6 +763,18 @@
 					<icon>windows\programs\stretch_enabled.jpg</icon>
 					<visible>Skin.HasSetting(imagestretchmode) + StringCompare(Container.Viewmode,view55)</visible>
 				</item>
+				<item id="426">
+					<label>-</label>
+					<onclick>Skin.SetBool(showfolderfanart)</onclick>
+					<icon>windows\programs\show_folder_fanart.jpg</icon>
+					<visible>!Skin.HasSetting(showfolderfanart) + ListItem.isFolder</visible>
+				</item>
+				<item id="426">
+					<label>-</label>
+					<onclick>Skin.Reset(showfolderfanart)</onclick>
+					<icon>windows\programs\hide_folder_fanart.jpg</icon>
+					<visible>Skin.HasSetting(showfolderfanart) + ListItem.isFolder</visible>
+				</item>
 			</content>
 		</control>
 		<control type="scrollbar" id="90">

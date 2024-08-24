@@ -1,0 +1,17 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Digimon World 4
+# TitleID: 42410002
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# value 1
+HR|defaultws.xbe|1|D80D94B93000D91C24D944240CD80D94|D80D86421800D91C24D944240CD80D94
+# value 2
+HR|defaultws.xbe|1|C701E0010000C20800CCCCCCCCCCCCCC|C70168010000C20800CCCCCCCCCCCCCC
+
+# resolution upped from 640x480 to 720x480 (optional)
+HR|defaultws.xbe|1|C70780020000C74704E00100008BC3C1|C707D0020000C74704E00100008BC3C1

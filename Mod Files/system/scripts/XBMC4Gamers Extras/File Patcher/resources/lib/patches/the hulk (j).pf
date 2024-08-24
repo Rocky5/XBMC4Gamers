@@ -1,0 +1,15 @@
+# Author: Unknown
+# Credits: Rocky5
+# Info: Remove HDD protection. (not sure if it works or not)
+# Region: NTSC-J
+# Title: The Hulk
+# TitleID: 56550011
+# Type: Multi Patch
+
+CP|default.xbe|default_orig.xbe
+
+# Offset @ 00118966
+HR|default.xbe|1|FFFF85C07D055757|FFFF85C0EB055757
+
+# Media Check 1
+SM|default.xbe|C00001FF

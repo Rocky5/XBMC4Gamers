@@ -80,7 +80,7 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="70" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -100,13 +100,35 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="65" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
 					<textcolor>1112_context_label</textcolor>
 					<label>Back</label>
+				</control>
+				<!-- X Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\x_button.png</texture>
+					<visible>Player.HasAudio</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="70" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>1112_context_label</textcolor>
+					<label>$LOCALIZE[250]</label>
+					<visible>Player.HasAudio</visible>
 				</control>
 			</control>
 			<control type="grouplist" id="9002">
@@ -129,38 +151,38 @@
 					<onclick>RunScript($INFO[Skin.String(Emulator_Path)])</onclick>
 					<visible>Skin.HasSetting(EmuButton)</visible>
 				</control>
-				<control type="button" id="2">
+				<control type="button" id="3">
 					<include>Button.Settings.Options.Values</include>
 					<label>[UPPERCASE]$LOCALIZE[1036][/UPPERCASE]</label>
 					<onclick>Dialog.Close(1112,true)</onclick>
 					<onclick>ActivateWindow(Favourites)</onclick>
-					<visible>Window.IsActive(Programs)</visible>
+					<visible>Window.IsActive(Home) | Window.IsActive(Programs)</visible>
 				</control>
-				<control type="button" id="3">
+				<control type="button" id="4">
 					<include>Button.Settings.Options.Values</include>
 					<label>[UPPERCASE]$LOCALIZE[20315][/UPPERCASE]</label>
 					<onclick>Dialog.Close(1112,true)</onclick>
 					<onclick>ActivateWindow(GameSaves)</onclick>
 					<visible>Window.IsActive(Programs) + Skin.HasSetting(kioskmode)</visible>
 				</control>
-				<control type="button" id="4">
+				<control type="button" id="5">
 					<include>Button.Settings.Options.Values</include>
 					<label>[UPPERCASE]$LOCALIZE[5][/UPPERCASE]</label>
 					<onclick>Dialog.Close(1112,true)</onclick>
 					<onclick>ActivateWindow(Settings)</onclick>
 					<visible>Skin.HasSetting(kioskmode)</visible>
 				</control>
-				<control type="button" id="5">
+				<control type="button" id="6">
 					<include>Button.Settings.Options.Values</include>
 					<label>[UPPERCASE]$LOCALIZE[13313][/UPPERCASE]</label>
 					<onclick>RestartApp</onclick>
 				</control>
-				<control type="button" id="6">
+				<control type="button" id="7">
 					<include>Button.Settings.Options.Values</include>
 					<label>[UPPERCASE]$LOCALIZE[13013][/UPPERCASE]</label>
 					<onclick>Reboot</onclick>
 				</control>
-				<control type="button" id="7">
+				<control type="button" id="8">
 					<include>Button.Settings.Options.Values</include>
 					<label>[UPPERCASE]$LOCALIZE[13005][/UPPERCASE]</label>
 					<onclick>Shutdown</onclick>

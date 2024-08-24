@@ -25,6 +25,8 @@ Echo xml\DialogOK.xml
 Copy /Y "%ProfileSkin%\xml\DialogOK.xml"							"%MasterSkin%\xml\" >Nul
 Echo xml\DialogProgress.xml
 Copy /Y "%ProfileSkin%\xml\DialogProgress.xml"						"%MasterSkin%\xml\" >Nul
+Echo xml\DialogOverlay.xml
+Copy /Y "%ProfileSkin%\xml\DialogOverlay.xml"						"%MasterSkin%\xml\" >Nul
 Echo xml\DialogScriptInfo.xml
 Copy /Y "%ProfileSkin%\xml\DialogScriptInfo.xml"					"%MasterSkin%\xml\" >Nul
 Echo xml\DialogSeekBar.xml

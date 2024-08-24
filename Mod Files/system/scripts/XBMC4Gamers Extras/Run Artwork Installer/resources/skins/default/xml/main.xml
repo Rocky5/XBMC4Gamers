@@ -161,7 +161,7 @@
 					<font>size_16</font>
 					<align>justify</align>
 					<aligny>center</aligny>
-					<label>[COLOR=1111_category_labels_nofocus]Adds additional checks if the initial ones fail or if the TitleIDs match. This improves the accuracy of the scan, but it may slow down the process.[/COLOR]</label>
+					<label>[COLOR=1111_category_labels_nofocus]Log what's going on when processing content, handy if you want to see how stuff is matched or not matched.[/COLOR]</label>
 					<animation effect="slide" start="0,0" end="20,0" time="10" condition="true">Conditional</animation>
 					<visible>ControlGroup(3000).HasFocus(100)</visible>
 				</control>
@@ -183,7 +183,7 @@
 					<textoffsetx>44</textoffsetx>
 					<textoffsety>15</textoffsety>
 					<scroll>true</scroll>
-					<label>[COLOR=1111_category_labels_nofocus]Adds additional checks if the initial ones fail or if the TitleIDs match. This improves the accuracy of the scan, but it may slow down the process.[/COLOR]</label>
+					<label>[COLOR=1111_category_labels_nofocus]Install larger fanart images if available. This will increase the time required for the installer to complete.[/COLOR]</label>
 					<animation effect="slide" start="0,0" end="20,0" time="10" condition="true">Conditional</animation>
 					<visible>!StringCompare(System.memory(total_no_mb),64)</visible>
 				</control>

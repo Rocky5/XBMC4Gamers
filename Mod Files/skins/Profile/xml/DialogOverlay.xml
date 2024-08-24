@@ -1,0 +1,7 @@
+<window id="148">
+	<zorder>20</zorder>
+	<controls>
+		<include>Window.Header</include>
+		<include>Scanlines</include>
+	</controls>
+</window>

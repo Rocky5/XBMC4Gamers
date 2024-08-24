@@ -10798,10 +10798,7 @@
 			<include file="custom views\CustomViewtype_id_88.xml" condition="Skin.HasSetting(CustomViewtype_id_88)">custom_id_88</include>
 			<include file="custom views\CustomViewtype_id_89.xml" condition="Skin.HasSetting(CustomViewtype_id_89)">custom_id_89</include>
 		</control>
-		<control type="group">
-			<include>Window.Header</include>
-			<include>Window.Footer</include>
-		</control>
+		<include>Window.Footer</include>
 		<include condition="Skin.HasSetting(kioskmode)">View_Options</include>
 	</controls>
 </window>

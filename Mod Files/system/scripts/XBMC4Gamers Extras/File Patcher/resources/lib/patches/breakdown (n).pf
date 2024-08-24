@@ -1,0 +1,14 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Breakdown
+# TitleID: 4E4D0009
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# value 1
+HR|defaultws.xbe|1|D918D9EED95804D9EED95808D9EED9580CD9EED95810D87510D95814D9EED95818D9EED9581C|D80D182E210090D918B90000000089480489480889480C894810D87510D9581489481889481C
+# value 2
+HR|defaultws.xbe|1|2000D9053CE02000D8C9E885B01800D8|2000D90580AB0800D8C9E885B01800D8

@@ -1,0 +1,9 @@
+<visualisation>
+	<TimeBetweenPresets>5.000000</TimeBetweenPresets>
+	<TimeBetweenPresetsRand>5.000000</TimeBetweenPresetsRand>
+	<HoldPreset>0</HoldPreset>
+	<CurrentPreset>35</CurrentPreset>
+	<RandomPresets>true</RandomPresets>
+	<UseAlbumArt>true</UseAlbumArt>
+	<EnableTransitions>true</EnableTransitions>
+</visualisation>

@@ -3,7 +3,6 @@
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>Global.Backgrounds</include>
-		<include>Window.Header</include>
 		<control type="group">
 			<animation effect="fade" time="100">WindowOpen</animation>
 			<animation effect="fade" time="400" delay="300">WindowClose</animation>

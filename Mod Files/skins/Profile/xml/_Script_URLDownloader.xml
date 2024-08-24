@@ -4,7 +4,6 @@
 	<controls>
 		<!-- Background Images -->
 		<include>Global.Backgrounds</include>
-		<include>Window.Header</include>
 		<include>ContextButtonsSettings</include>
 	</controls>
 </window>

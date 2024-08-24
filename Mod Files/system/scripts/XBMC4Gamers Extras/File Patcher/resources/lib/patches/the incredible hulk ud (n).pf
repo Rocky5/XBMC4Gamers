@@ -1,0 +1,18 @@
+# Author: AgentEB
+# Credits: AgentEB - Fixed by Rocky5
+# Info: Remove HDD protection.
+# Region: NTSC
+# Title: The Incredible Hulk: Ultimate Destruction
+# TitleID: 56550039
+# Type: Multi Patch
+
+CP|default.xbe|default_orig.xbe
+
+# Offset @ 001FA539
+HR|default.xbe|1|5EC9C20400558BEC83EC34FF7508|5EC9C20400558BEC83EC34EB4341
+
+# Offset @ 001FA585
+HR|default.xbe|1|7D1B50E830060000E8D505000083F80275076A03E8F105000033C0EB33|7C46EB198B4508508B000C203D643A5C0075AF5856B800080000EB3390
+
+# Media Check 1
+SM|default.xbe|C00001FF

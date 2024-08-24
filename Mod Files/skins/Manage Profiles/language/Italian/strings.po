@@ -472,6 +472,10 @@ msgctxt "#31161"
 msgid "Temps · HDD Info · Hardware Info"
 msgstr "Temperature · Info HDD · Info Hardware"
 
+msgctxt "#31162"
+msgid "XBMC4Gamers Options"
+msgstr "Opzioni XBMC4Gamers"
+
 ## SettingsCategory.xml - 31166 to 31170
 msgctxt "#31166"
 msgid "Back"
@@ -675,8 +679,8 @@ msgid "Name"
 msgstr "Nome"
 
 msgctxt "#31603"
-msgid "use , to separate max 2 example: Games,Applications"
-msgstr "utilizzare , per separare massimo 2 esempi: Giochi,Applicazioni"
+msgid "Use , to separate. (Max 2) Example: Games,Applications"
+msgstr "Utilizzare , per separare. (massimo 2) Esempi: Giochi,Applicazioni"
 
 msgctxt "#31604"
 msgid "Search Entries"
@@ -685,3 +689,15 @@ msgstr "Cerca voci"
 msgctxt "#31605"
 msgid "Open Source on click"
 msgstr "Open Source a portata di clic"
+
+msgctxt "#31606"
+msgid "Warning"
+msgstr "Attenzione"
+
+msgctxt "#31607"
+msgid "This will reset all XBMC4Gamers options.[CR]Main settings are not reset."
+msgstr "Questo reimposterà tutte le opzioni di XBMC4Gamers.[CR]Le impostazioni principali non verranno ripristinate."
+
+msgctxt "#31608"
+msgid "Settings reset, will now reload the profile[CR]to complete the process."
+msgstr "Opzioni reimpostate, ora verrà ricaricato il profilo[CR]per completare il processo."

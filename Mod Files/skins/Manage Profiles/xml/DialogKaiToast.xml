@@ -1,6 +1,8 @@
 <window id="107">
 	<controls>
 		<control type="group">
+			<!-- workaround for canceling the alarm that cycles the last played list, even though it set to silent it will show randomly when moving fast -->
+			<animation effect="slide" start="0,-2300" end="0,2300" time="0" condition="Window.IsActive(Home)">Conditional</animation>
 			<animation effect="slide" start="-400,0" end="0,0" time="200">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="-400,0" time="200">WindowClose</animation>
 			<control type="image">

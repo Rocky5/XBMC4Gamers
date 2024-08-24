@@ -1,0 +1,18 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Digimon Rumble Arena 2
+# TitleID: 42410001
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# built in widescreen
+
+# value 1
+HR|defaultws.xbe|1|D94424248B1544942900D8742420|8B1544942900D905FC2C29009090
+# value 2
+HR|defaultws.xbe|1|D944240C8B1548F32900D8742408|8B1548F32900D905FC2C29009090
+# value 3
+HR|defaultws.xbe|1|2F00D80DFC2C2900D9F2DDD8D95C|2F00D80D02AF2700D9F2DDD8D95C

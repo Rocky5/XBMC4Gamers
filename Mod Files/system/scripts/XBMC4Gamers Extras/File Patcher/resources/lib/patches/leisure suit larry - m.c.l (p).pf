@@ -1,0 +1,15 @@
+# Author: DVD2Xbox
+# Credits: DVD2Xbox
+# Info: Patch Fatx check & allowed media.
+# Region: PAL
+# Title: Leisure Suit Larry: Magna Cum Laude
+# TitleID: 56550031
+# Type: Certificate & FATX Patch
+
+CP|default.xbe|default_orig.xbe
+
+# Offset 00169020 Removes protection from the game to be played on your hard drive
+HR|default.xbe|1|3B819C05000074|3B819C050000EB
+
+# Media check 1
+SM|default.xbe|C00001FF

@@ -15,15 +15,15 @@
 				<texture>windows\settings_categories\main.png</texture>
 			</control>
 			<control type="image">
-				<left>75</left>
+				<left>80</left>
 				<top>75</top>
 				<width>330</width>
-				<height>570</height>
+				<height>450</height>
 				<aspectratio>stretch</aspectratio>
 				<texture>windows\settings_categories\main_overlay.png</texture>
 			</control>
 			<control type="image">
-				<left>75</left>
+				<left>80</left>
 				<top>75</top>
 				<width>330</width>
 				<height>76</height>
@@ -31,7 +31,7 @@
 				<texture>windows\settings\header.png</texture>
 			</control>
 			<control type="label">
-				<left>75</left>
+				<left>80</left>
 				<top>95</top>
 				<width>330</width>
 				<height>28</height>
@@ -43,7 +43,7 @@
 				<visible>Window.IsActive(20)</visible>
 			</control>
 			<control type="label">
-				<left>75</left>
+				<left>80</left>
 				<top>95</top>
 				<width>330</width>
 				<height>28</height>
@@ -55,7 +55,7 @@
 				<visible>Window.IsActive(500)</visible>
 			</control>
 			<control type="label">
-				<left>75</left>
+				<left>80</left>
 				<top>95</top>
 				<width>330</width>
 				<height>28</height>
@@ -68,9 +68,9 @@
 			</control>
 			<control type="grouplist">
 				<description>Control Info</description>
-				<left>415</left>
+				<left>80</left>
 				<top>568</top>
-				<width min="100" max="775">auto</width>
+				<width min="100" max="1120">auto</width>
 				<height>80</height>
 				<itemgap>10</itemgap>
 				<orientation>Horizontal</orientation>
@@ -87,7 +87,7 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="80" max="200">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -107,7 +107,7 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="60" max="80">auto</width>
+					<width min="60" max="200">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -128,7 +128,7 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="80" max="200">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -140,7 +140,7 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="80" max="200">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -161,7 +161,7 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="80" max="200">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -182,7 +182,7 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="80" max="200">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -194,7 +194,7 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="80" max="200">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -205,12 +205,12 @@
 				</control>
 			</control>
 			<control type="image">
-				<left>75</left>
-				<top>170</top>
+				<left>80</left>
+				<top>151</top>
 				<width>330</width>
-				<height>410</height>
-				<aspectratio>keep</aspectratio>
-				<texture background="false">$INFO[listitem.Icon]</texture>
+				<height>375</height>
+				<aspectratio>scale</aspectratio>
+				<texture background="true">$INFO[listitem.Icon]</texture>
 			</control>
 			<!-- Content List -->
 			<control type="list" id="50">
@@ -326,7 +326,6 @@
 				</control>
 			</control>
 		</control>
-		<include>Window.Header</include>
 		<include>ScrollOffsetLabel</include>
 	</controls>
 </window>

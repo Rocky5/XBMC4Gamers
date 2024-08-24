@@ -4,14 +4,14 @@
 	<onload condition="StringCompare(Skin.String(HomeWindow_name),)">Skin.SetString(HomeWindow_name,$LOCALIZE[20108])</onload>
 	<onload condition="StringCompare(Skin.String(HomeWindowSource),)">Skin.SetString(HomeWindowSource,Programs)</onload>
 	<onload condition="Skin.HasSetting(Random_Game)">Skin.SetBool(run_random_script,true)</onload>
-	<onload condition="Skin.HasSetting(kioskmode) + !Skin.HasSetting(UseThemePlaylist) + Skin.HasSetting(Use_Startup_Playback) + !Skin.HasSetting(AdultProfile) + !Player.HasAudio">PlayMedia($INFO[Skin.String(Startup_Playback_Path)])</onload>
-	<onload condition="Skin.HasSetting(kioskmode) + Skin.HasSetting(UseThemePlaylist) + Skin.HasSetting(Use_Startup_Playback) + !Skin.HasSetting(AdultProfile) + !Player.HasAudio">PlayMedia(Special://skin\extras\themes\playlists\$INFO[Skin.CurrentTheme].m3u)</onload>
+	<onunload condition="Skin.HasSetting(kioskmode) + !Skin.HasSetting(UseThemePlaylist) + Skin.HasSetting(Use_Startup_Playback) + !Skin.HasSetting(AdultProfile) + !Player.HasAudio">PlayMedia($INFO[Skin.String(Startup_Playback_Path)])</onunload>
+	<onunload condition="Skin.HasSetting(kioskmode) + Skin.HasSetting(UseThemePlaylist) + Skin.HasSetting(Use_Startup_Playback) + !Skin.HasSetting(AdultProfile) + !Player.HasAudio">PlayMedia(Special://skin\extras\themes\playlists\$INFO[Skin.CurrentTheme].m3u)</onunload>
 	<controls>
 		<control type="button" id="1">
 			<left>-5000</left>
 			<onclick>System.LogOff</onclick>
-			<visible>Skin.HasSetting(AdultProfile) + !Skin.HasSetting(kioskmode)</visible>
 			<animation effect="fade" start="0" end="100" delay="100" time="100">Focus</animation>
+			<visible>Skin.HasSetting(AdultProfile) + !Skin.HasSetting(kioskmode)</visible>
 		</control>
 		<control type="button" id="1">
 			<left>-5000</left>

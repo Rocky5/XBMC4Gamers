@@ -1,0 +1,15 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Blood Omen 2: The Legacy of Kain Series
+# TitleID: 4553006
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# Gameplay
+HR|defaultws.xbe|2|804068ABAAAA3F|804068398EE33F
+
+# FMV's and menu fix
+HR|defaultws.xbe|1|ABAAAA3F28733700|398EE33F28733700

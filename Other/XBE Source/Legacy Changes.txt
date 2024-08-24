@@ -1,0 +1,63 @@
+
+I have stopped adding to this file, so you will need to look through the source for changes.
+
+..:: XBMC4Xbox 3.5.3 Modifications ::..
+
+1) Changed how the game save menu works, it now doesn't list "TitleMeta.xbx" files as files, there in the own directory like the rest.
+2) Increased the Splash screen display time, no point having a nice splash if you dont get to see it.
+3) Fullscreen Splashscreen!
+4) Faster loading of your games library.
+5) Added my Synopsis script to the context menu for the MyPrograms windows
+6) Added a new custom window _script*.xml will now be automatically parsed like Custom*.xml
+7) Rearranged the folders structure to make it cleaner.
+8) removed the extension from Skin.CurrentTheme
+9) Moved screensavers to the system folder :) ( Had to use XP to build the screensavers )
+10) Added the option to disable the splash image via the advancedsettings.xml ( <splash>false</splash> )
+11) system\toggles\no splash.enabled added to the system folder to easily disable the splash if you don't want to use the advancedsettings.xml
+12) Reload skin almost instantly, changed for the them selection screen.
+13) It now runs the "home_themer.py" script after changing the theme, so it now also works in the Settings menu of XBMC.
+	( Also means faster cycling of themes )
+14) Fix ported over from Kodi to fix the SetFocus function, it now focuses from the first entry in the list instead of the current page.
+15) Fixed the setting a new language, forgot to change a path.
+16) Updated the debug overlay to use debugloggin font name and added MBs to the layout.
+17) Fixed centring labels in lists.
+	( If you have a skin that uses centre for its labels in a list you may want to remove the offset you had to use for posx )
+18) Update to the centre label fix in lists, if your skin version is 2.1 it will use the old way and if its 2.2 or higher will use the fixed way.
+19) Now creates the system\trainers directory
+20) Now creates system\screenshots if it doesn't exist when you take a screenshot.
+21) Splash overlay file so folk can keep the splash but add there own logo or visa-versa. ( custom_splash.png )
+22) Fixed the XBE title extraction from the xbe files, so no more broken names!
+23) Added Special://root/ so that we can get the absolute path of XBMCs installation.
+	( will output for example E:\xbmc4gamers\ instead of Q:\ that xbmc and home use )
+24) Added slow scrolling for artwork.
+	( part of the advancedsettings.xml )
+25) Changed how the login screen works when launching a profile for the first time. It no longer asks to edit the info.
+26) Removed some of the functionality from the profile settings dialog. ALso copies the guisettings & sources automatically.
+27) Added Special://urldownloader/ so that we can get the absolute path of the urldownloaders installation.
+	( will output for example Q:\system\scripts\urldownloader  )
+28) Fixed favourites getting corrupted if you reload the skin when editing a label.
+29) If fast loading is enabled it will log any games added to the database in the log file.
+30) Moved the fanart screensaver path to Q:\System\Screensavers\Fanart
+31) When you exit a emulators that supports command line launching it will return to XBMC4Gamers.
+	( Just like coinops, but only seems to work once for some reason :/ so disabled 
+32) Fixed the internal jpg decoder breaking if ram hits 0MB. If it hits less than 10MB of free ram it will use Imagelib to decode the images.
+33) Added different error screen colour and txt for the forced error screen. ( if you arse something up and its a crash ) (White + Y)
+34) Added 2 new Programs Settings, Disable slow scrolling and Enable fast game parsing.
+35) Made it so you can now run scripts and actions on the login screen.
+	( ie, builtin functions now work here )
+36) Can now launch default_p.xbe or defaultxhd.xbe from the context menu if found.
+37) Changed .modules to _modules
+38) New system variable. system.screenwidthxheight - this will return 1280x720 for example
+39) New system variable. system.dvdtitleid - this will return the titleid of the inserted game
+	( used for showing artwork, from the downloader )
+40) skins now use xml for there xml folder
+41) Added dialog.textviewer("header","content")
+42) Fixed the audio not muting when set to zero
+43) FFPatchXBE added to builtin functions.
+	( this will patch the xbe you point to with the value set in the video settings, its useless as is as XBMC will do it automatically but I wanted this for Python. )
+44) Other changes, forgot some lol
+45) Now will parse _resources/default.xml if found and use the title field as the game name.
+	( toggle in the My Programs settings menu )
+46) Hide edit xbe title when synopsis titles are enabled.
+47) Fixed and added to the auto video switching feature
+48) Stopped adding as I forgot lol

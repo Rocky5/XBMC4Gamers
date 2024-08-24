@@ -472,12 +472,16 @@ msgctxt "#31161"
 msgid "Temps · HDD Info · Hardware Info"
 msgstr ""
 
+msgctxt "#31162"
+msgid "XBMC4Gamers Options"
+msgstr ""
+
 ## SettingsCategory.xml - 31166 to 31170
 msgctxt "#31166"
 msgid "Back"
 msgstr ""
 
-## SettingsProfile.xml - 31171 to 31175
+## Startup Options - Custom_Skin_Settings.xml
 msgctxt "#31171"
 msgid ""
 msgstr ""
@@ -675,7 +679,7 @@ msgid "Name"
 msgstr ""
 
 msgctxt "#31603"
-msgid "use , to separate max 2 example: Games,Applications"
+msgid "Use , to separate. (Max 2) Example: Games,Applications"
 msgstr ""
 
 msgctxt "#31604"
@@ -684,4 +688,16 @@ msgstr ""
 
 msgctxt "#31605"
 msgid "Open Source on click"
+msgstr ""
+
+msgctxt "#31606"
+msgid "Warning"
+msgstr ""
+
+msgctxt "#31607"
+msgid "This will reset all XBMC4Gamers options.[CR]Main settings are not reset."
+msgstr ""
+
+msgctxt "#31608"
+msgid "Settings reset, will now reload the profile[CR]to complete the process."
 msgstr ""

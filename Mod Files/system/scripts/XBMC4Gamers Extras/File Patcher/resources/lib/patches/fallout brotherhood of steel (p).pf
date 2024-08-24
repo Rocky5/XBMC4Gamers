@@ -1,0 +1,25 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: PAL
+# Title: Fallout: Brotherhood of Steel
+# TitleID: 49500008
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# value 1
+HR|defaultws.xbe|1|2700C744245C0000F843C74424600000|2700C744245C0000BA43C74424600000
+# value 2
+HR|defaultws.xbe|1|006860962700F3A5C74424680000F843|006860962700F3A5C74424680000BA43
+# value 3
+HR|defaultws.xbe|1|0000680000803E51C74424700000F843|0000680000803E51C74424700000BA43
+# value 4
+HR|defaultws.xbe|3|680000A04351|680000704351
+# value 5
+HR|defaultws.xbe|2|680000A04352|680000704352
+# value 6
+HR|defaultws.xbe|1|680000A04350|680000704350
+
+# render fix
+HR|defaultws.xbe|2|713DAA3F|398EE33F

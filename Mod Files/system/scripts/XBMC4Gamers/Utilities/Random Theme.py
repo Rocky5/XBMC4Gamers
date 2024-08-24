@@ -73,7 +73,7 @@ def main():
 
 	theme_color_path = os.path.join(xbmc.translatePath('Special://skin/colors'), theme_color_file + ".xml")
 	with open(theme_color_path) as test_theme:
-		if "XBMC4Gamers v2.1+" in test_theme.read():
+		if "XBMC4Gamers v2.1+ 002" in test_theme.read():
 			update_fontXML(theme_file)
 
 			if xbmc.getCondVisibility('Skin.HasSetting(usethemeplaylist)'):

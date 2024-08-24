@@ -56,7 +56,7 @@ fi
 cp "./update-files/skins/Profile/language/English/strings.po" "./update-files/skins/Manage Profiles/language/English/strings.po"
 cp "./update-files/skins/Profile/language/English/strings.po" "./update-files/skins/DVD2Xbox Skin/language/English/strings.po"
 
-cp "Source/default.xbe" "./update-files/default.xbe"
+# cp "Source/default.xbe" "./update-files/default.xbe"
 
 # Create zip file
 echo "${green}Creating zip file...${reset}"

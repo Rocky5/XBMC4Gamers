@@ -1,0 +1,8 @@
+<window type="dialog" id="120">
+	<defaultcontrol>-</defaultcontrol>
+	<onload condition="!Skin.HasSetting(HideMusicInfo)">Skin.SetBool(HideMusicInfo)</onload>
+	<onload condition="Skin.HasSetting(HideMusicInfo)">Skin.Reset(HideMusicInfo)</onload>
+	<onload>Dialog.Close(120,true)</onload>
+	<controls>
+	</controls>
+</window>

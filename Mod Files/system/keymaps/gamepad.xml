@@ -120,20 +120,19 @@
 		</PlayerControls>
 		<Visualisation>
 				<gamepad>
-						<A>Pause</A>
+						<A>XBMC.ActivateWindow(120)</A>
 						<B>back</B>
-						<x>LockPreset</x>
-						<Y>XBMC.ActivateWindow(VisualisationPresetList)</Y>
-						<black>CodecInfo</black>
-						<white>Info</white>
-						<start>XBMC.ActivateWindow(MusicOSD)</start>
-						<back>back</back>
+						<X>LockPreset</X>
+						<Y>highlight</Y>
+						<black>XBMC.ActivateWindow(121)</black>
+						<white>XBMC.ActivateWindow(122)</white>
+						<start>highlight</start>
 						<leftanalogtrigger>AnalogRewind</leftanalogtrigger>
 						<rightanalogtrigger>AnalogFastForward</rightanalogtrigger>
 						<dpadleft>SkipPrevious</dpadleft>
 						<dpadright>SkipNext</dpadright>
-						<dpadup>NextPreset</dpadup>
-						<dpaddown>PreviousPreset</dpaddown>
+						<dpadup>Pause</dpadup>
+						<dpaddown>Stop</dpaddown>
 				</gamepad>
 		</Visualisation>
 		<MusicOSD>
@@ -148,16 +147,16 @@
 		<VisualisationSettings>
 				<gamepad>
 						<start>Back</start>
-						<leftanalogtrigger>AnalogRewind</leftanalogtrigger>
-						<rightanalogtrigger>AnalogFastForward</rightanalogtrigger>
+						<leftanalogtrigger>ScrollUp</leftanalogtrigger>
+						<rightanalogtrigger>ScrollDown</rightanalogtrigger>
 				</gamepad>
 		</VisualisationSettings>
 		<VisualisationPresetList>
 				<gamepad>
 						<start>Back</start>
 						<Y>Back</Y>
-						<leftanalogtrigger>AnalogRewind</leftanalogtrigger>
-						<rightanalogtrigger>AnalogFastForward</rightanalogtrigger>
+						<leftanalogtrigger>ScrollUp</leftanalogtrigger>
+						<rightanalogtrigger>ScrollDown</rightanalogtrigger>
 				</gamepad>
 		</VisualisationPresetList>
 		<SlideShow>

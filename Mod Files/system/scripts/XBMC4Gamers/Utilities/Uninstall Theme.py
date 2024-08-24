@@ -46,6 +46,7 @@ def uninstall_theme(theme):
 	paths_to_remove = [
 		'Special://skin/colors/{}.xml'.format(theme),
 		'Special://skin/backgrounds/{}'.format(theme),
+		'Special://skin/extras/themes/folder fanart/{}'.format(theme),
 		'Special://skin/extras/themes/playlists/{}.m3u'.format(theme),
 		'Special://skin/extras/themes/playlists/{}'.format(theme),
 		'Special://skin/extras/themes/previews/{}.jpg'.format(theme),

@@ -4,24 +4,26 @@
 	<onload>AlarmClock(AutoScroll_Synopsis_Thumbs,Control.Move(14,-1),00:10,silent,loop)</onload>
 	<onunload>CancelAlarm(AutoScroll_Synopsis_Thumbs,silent)</onunload>
 	<controls>
+		<!-- <control type="image"> -->
+		<!-- <left>0</left> -->
+		<!-- <top>0</top> -->
+		<!-- <width>1280</width> -->
+		<!-- <height>720</height> -->
+		<!-- <aspectratio>stretch</aspectratio> -->
+		<!-- <texture background="true">$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</texture> -->
+		<!-- <animation effect="fade" start="0" end="100" time="400" delay="100">WindowOpen</animation> -->
+		<!-- <animation effect="fade" start="100" end="0" time="100" delay="200">WindowClose</animation> -->
+		<!-- </control> -->
 		<control type="image">
 			<left>0</left>
 			<top>0</top>
 			<width>1280</width>
 			<height>720</height>
 			<aspectratio>stretch</aspectratio>
-			<texture background="true">$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</texture>
-			<animation effect="fade" start="0" end="100" time="400" delay="100">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="100" delay="200">WindowClose</animation>
-		</control>
-		<control type="image.">
-			<left>0</left>
-			<top>0</top>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
 			<colordiffuse>FFFFFFFF</colordiffuse>
-			<texture background="false" diffuse="windows\synopsis\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</texture>
+			<texture background="false">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</texture>
+			<animation effect="fade" start="0" end="100" time="100" delay="100">WindowOpen</animation>
+			<animation effect="fade" start="100" end="0" time="100" delay="200">WindowClose</animation>
 		</control>
 		<control type="image">
 			<left>0</left>
@@ -36,8 +38,6 @@
 		</control>
 		<!-- Poster image -->
 		<control type="group">
-			<!-- <animation effect="fade" start="0" end="100" time="400" delay="500">WindowOpen</animation> -->
-			<!-- <animation effect="fade" start="100" end="0" time="100" delay="0">WindowClose</animation> -->
 			<animation effect="slide" start="-600,0" end="0,0" time="300" delay="600">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="-600,0" time="200" delay="0">WindowClose</animation>
 			<control type="image">
@@ -87,10 +87,20 @@
 					</item>
 				</content>
 			</control>
+			<control type="label.">
+				<left>10</left>
+				<bottom>30</bottom>
+				<width>1260</width>
+				<height>20</height>
+				<font>size_17</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>1101_label</textcolor>
+				<label>$INFO[listitem.Path]</label>
+				<animation effect="fade" start="50" end="50" time="0" condition="true">Conditional</animation>
+			</control>
 		</control>
 		<control type="group">
-			<!-- <animation effect="fade" start="0" end="100" time="400" delay="500">WindowOpen</animation> -->
-			<!-- <animation effect="fade" start="100" end="0" time="100" delay="0">WindowClose</animation> -->
 			<animation effect="slide" start="900,0" end="0,0" time="300" delay="600">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="900,0" time="200" delay="0">WindowClose</animation>
 			<left>440</left>

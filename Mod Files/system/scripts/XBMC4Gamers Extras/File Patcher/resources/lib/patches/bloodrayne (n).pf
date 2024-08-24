@@ -1,0 +1,12 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: BloodRayne 
+# TitleID: 4D4A0001
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# built in widescreen
+HR|defaultws.xbe|1|8B0D503440008D1409891540602F00EB0AA150344000|B901000000908D1409891540602F00EB0AB801000000

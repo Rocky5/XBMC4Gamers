@@ -107,7 +107,7 @@ fi
 cp "./XBMC/skins/Profile/language/English/strings.po" "./XBMC/skins/Manage Profiles/language/English/strings.po"
 cp "./XBMC/skins/Profile/language/English/strings.po" "./XBMC/skins/DVD2Xbox Skin/language/English/strings.po"
 
-cp "Source/default.xbe" "./XBMC/default.xbe"
+# cp "Source/default.xbe" "./XBMC/default.xbe"
 
 mv "./XBMC" "./XBMC4Gamers"
 

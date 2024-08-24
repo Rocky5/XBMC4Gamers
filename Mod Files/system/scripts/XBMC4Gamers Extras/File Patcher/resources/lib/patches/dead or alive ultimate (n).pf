@@ -1,0 +1,11 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Dead or Alive Ultimate 
+# TitleID: 54430006
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+HR|defaultws.xbe|1|713DAA3F|96FCE23F

@@ -1,0 +1,10 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Conker: Live & Reloaded
+# TitleID: 4D530051
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+HR|defaultws.xbe|1|F30F10840164020000E94A010000CCCCCCCCCCCCCCCCCC|F30F590D50996400F30F10840164020000E942010000CC

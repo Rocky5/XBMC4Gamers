@@ -1,18 +1,17 @@
 <!-- Context_Buttons.xml -->
 <include name="Context_Buttons">
 	<control type="group">
-		<visible>!Skin.HasSetting(HideContextBar)</visible>
-		<animation effect="slide" start="0,0" end="0,30" time="100">WindowClose</animation>
-		<animation effect="slide" start="0,30" end="0,0" time="100" delay="100">WindowOpen</animation>
+		<visible>[Window.IsActive(0) + !System.IdleTime(8) | !ControlGroup(1).HasFocus(110)] + !Skin.HasSetting(HideContextBar) + !Window.IsActive(1112) + !Window.IsActive(129) + !Window.IsActive(134)</visible>
+		<animation effect="slide" start="0,30" end="0,0" time="100" delay="100" condition="Window.Next(4) | Window.Previous(4) | Window.Previous(35) | Window.Previous(2006)">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,30" time="100" condition="Window.Next(4) | Window.Previous(4) | Window.Next(2006)">WindowClosed</animation>
+		<animation effect="slide" start="0,0" end="0,30" time="100">Hidden</animation>
+		<animation effect="slide" start="0,30" end="0,0" time="100" delay="100">Visible</animation>
 		<control type="image">
 			<left>0</left>
 			<bottom>30</bottom>
 			<width>1280</width>
 			<height>30</height>
 			<texture>pad_buttons\underlay.png</texture>
-			<visible>!Window.IsActive(1112) + !Window.IsActive(129)</visible>
-			<animation effect="slide" start="0,0" end="0,30" time="100" condition="Window.IsActive(1112) + !Window.IsActive(129)">Hidden</animation>
-			<animation effect="slide" start="0,30" end="0,0" time="100" delay="100" condition="!Window.IsActive(1112) + !Window.IsActive(129)">Visible</animation>
 		</control>
 		<control type="grouplist">
 			<description>Control Info</description>
@@ -22,9 +21,6 @@
 			<height>80</height>
 			<itemgap>10</itemgap>
 			<orientation>Horizontal</orientation>
-			<visible>!Window.IsActive(1112) + !Window.IsActive(129)</visible>
-			<animation effect="slide" start="0,0" end="0,30" time="100" condition="Window.IsActive(1112) + !Window.IsActive(129)">Hidden</animation>
-			<animation effect="slide" start="0,30" end="0,0" time="100" delay="100" condition="!Window.IsActive(1112) + !Window.IsActive(129)">Visible</animation>
 			<!-- A Button -->
 			<control type="image">
 				<left>0</left>
@@ -54,7 +50,7 @@
 				<aligny>center</aligny>
 				<textcolor>context_buttons_label</textcolor>
 				<label>$LOCALIZE[31106]</label>
-				<visible>Window.IsActive(Home) + !Control.HasFocus(9001) + !Control.HasFocus(9002)</visible>
+				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus</visible>
 			</control>
 			<control type="label">
 				<left>0</left>
@@ -65,7 +61,7 @@
 				<aligny>center</aligny>
 				<textcolor>context_buttons_label</textcolor>
 				<label>$LOCALIZE[31126]</label>
-				<visible>Window.IsActive(Home) + Control.HasFocus(9001) | Control.HasFocus(9002)</visible>
+				<visible>Window.IsActive(Home) + !ControlGroup(1).HasFocus</visible>
 			</control>
 			<!-- B Button -->
 			<control type="image">
@@ -75,7 +71,7 @@
 				<height>22</height>
 				<texture>pad_buttons\b_button.png</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>[Window.IsActive(Home) + Control.HasFocus(9001) | Control.HasFocus(9002)] + [!SubString(ListItem.FolderPath,multipath,left) | StringCompare(Skin.String(HomeWindowSource),Home)]</visible>
+				<visible>[Window.IsActive(Home) + !ControlGroup(1).HasFocus] + [!SubString(ListItem.FolderPath,multipath,left) | StringCompare(Skin.String(HomeWindowSource),Home)]</visible>
 			</control>
 			<control type="label">
 				<left>0</left>
@@ -86,7 +82,7 @@
 				<aligny>center</aligny>
 				<textcolor>context_buttons_label</textcolor>
 				<label>$LOCALIZE[31108]</label>
-				<visible>[Window.IsActive(Home) + Control.HasFocus(9001) | Control.HasFocus(9002)] + [!SubString(ListItem.FolderPath,multipath,left) | StringCompare(Skin.String(HomeWindowSource),Home)]</visible>
+				<visible>[Window.IsActive(Home) + !ControlGroup(1).HasFocus] + [!SubString(ListItem.FolderPath,multipath,left) | StringCompare(Skin.String(HomeWindowSource),Home)]</visible>
 			</control>
 			<!-- X Button -->
 			<control type="image">
@@ -300,9 +296,9 @@
 				<top>0</top>
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\dpad_right_button.png</texture>
+				<texture>pad_buttons\dpad_down_button.png</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>Window.IsActive(Home) + !Control.HasFocus(9001) + !Control.HasFocus(9002) + !ControlGroup(1).HasFocus(110)</visible>
+				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus + !ControlGroup(1).HasFocus(110)</visible>
 			</control>
 			<control type="label">
 				<left>0</left>
@@ -313,7 +309,7 @@
 				<aligny>center</aligny>
 				<textcolor>context_buttons_label</textcolor>
 				<label>$LOCALIZE[31127]</label>
-				<visible>Window.IsActive(Home) + !Control.HasFocus(9001) + !Control.HasFocus(9002) + !ControlGroup(1).HasFocus(110)</visible>
+				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus + !ControlGroup(1).HasFocus(110)</visible>
 			</control>
 			<!-- L Stick Button -->
 			<control type="image">

@@ -1,0 +1,16 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Demon Stone
+# TitleID: 49470074
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# built in widescreen
+HR|defaultws.xbe|1|68ABAAAA3F|867477E33F
+HR|defaultws.xbe|1|0FBF9184060000|BA550300009090
+
+# cutscenes letterbox fix
+HR|defaultws.xbe|1|A198E31B0083F803|A1A410010083F803

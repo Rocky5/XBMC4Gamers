@@ -10,13 +10,20 @@
 		</control>
 		<control type="button" id="9001">
 			<left>-500</left>
+			<onfocus>Dialog.Close(1112,true)</onfocus>
+			<onfocus>Dialog.Close(114,true)</onfocus>
+			<onfocus>ActivateWindow(2006)</onfocus>
+			<visible>Player.HasMedia + Window.IsActive(1112)</visible>
+		</control>
+		<control type="button" id="9001">
+			<left>-500</left>
 			<onfocus>SetFocus(603)</onfocus>
 			<visible>Player.HasMedia</visible>
 		</control>
 		<control type="group">
 			<left>452</left>
 			<top>0</top>
-			<visible>Player.HasAudio</visible>
+			<visible>Player.HasAudio + !Window.IsActive(1112)</visible>
 			<animation effect="slide" start="0,-301" end="0,0" delay="10" time="250" tween="Quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,-115" delay="170" time="250" tween="Quadratic" easing="out">WindowClose</animation>
 			<!-- Bottom Overlay Information -->

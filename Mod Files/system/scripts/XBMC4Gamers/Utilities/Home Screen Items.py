@@ -9,7 +9,14 @@
 		2. Last played items, this will display the last 10 items you have run.
 	
 '''
-import datetime,os,sqlite3,sys,time,xbmc,xbmcgui
+import datetime
+import os
+import sqlite3
+import sys
+import time
+import xbmc
+import xbmcgui
+
 myprograms6_db	= xbmc.translatePath("special://profile/database/MyPrograms6.db")
 force64mbassets	= xbmc.executehttpapi('GetGUISetting(1;mygames.games128mbartwork)')
 use128mbassets	= xbmc.getInfoLabel("System.memory(total)")

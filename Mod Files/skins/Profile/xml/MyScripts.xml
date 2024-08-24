@@ -224,6 +224,5 @@
 				<include>Fake.ScrollBar.Vertical</include>
 			</control>
 		</control>
-		<include>Window.Header</include>
 	</controls>
 </window>

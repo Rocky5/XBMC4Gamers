@@ -1,0 +1,12 @@
+# Author: Rocky5
+# Credits: Rocky5
+# Info: Adds 480p progressive video support.
+# Region: NTSC
+# Title: Metal Slug 3
+# TitleID: 534E0002
+# Type: 480p Patch
+
+# 480p patch, v1.6 xbox still require a xbe loader to unscrable the screen.
+
+CP|default.xbe|default_orig.xbe
+HR|default.xbe|1|8B5728508B4730508B472C518B4F0452|508B4730508B472C518B4F04906A0090

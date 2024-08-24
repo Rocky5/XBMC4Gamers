@@ -1,0 +1,20 @@
+# Author: Rocky5
+# Credits: Rocky5
+# Info: Enables the crowd on all camera angles and always use the highest LOD for players.
+# Region: PAL
+# Title: Pro Evolutions Soccer 5
+# TitleID: 4B4E0030
+# Type: Multi Patch
+
+CP|default.xbe|default_orig.xbe
+RM|dashupdate.xbe|update.xbe
+
+# flicker filter removal
+# OF|default.xbe|4203058|90903935DCF14E006A008B80281C00006A0090
+# OF|default.xbe|4210550|55908B86281C00006A00
+
+# crowd enabled in all views
+OF|default.xbe|440432|C3
+
+# highest LOD levels
+OF|default.xbe|5503632|4066310040663100406631004066

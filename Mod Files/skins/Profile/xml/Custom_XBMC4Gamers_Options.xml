@@ -3,7 +3,6 @@
 	<onload condition="StringCompare(Skin.String(Emulator_Name),)">Skin.SetString(Emulator_Name,Custom Button)</onload>
 	<controls>
 		<include>Global.Backgrounds</include>
-		<include>Window.Header</include>
 		<control type="button" id="9002">
 			<description>Hidden Button</description>
 			<left>-1000</left>
@@ -746,20 +745,6 @@
 					<visible>System.HasLoginScreen</visible>
 				</control>
 				<control type="radiobutton" id="604">
-					<description>Adult Profile</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>$LOCALIZE[31063]</label>
-					<onclick>Skin.ToggleSetting(AdultProfile)</onclick>
-					<selected>Skin.HasSetting(AdultProfile)</selected>
-					<visible>System.HasLoginScreen</visible>
-				</control>
-				<control type="button" id="610">
-					<description>Startup Playback creation</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[10500] &gt;</label>
-					<onclick>ActivateWindow(501)</onclick>
-				</control>
-				<control type="radiobutton" id="620">
 					<description>Startup Random</description>
 					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
 					<label>$LOCALIZE[31092] - $INFO[skin.String(HomeWindow)]</label>
@@ -767,6 +752,20 @@
 					<onclick>Skin.SetBool(run_random_script,false)</onclick>
 					<selected>Skin.HasSetting(Random_Game)</selected>
 					<enable>!StringCompare(Skin.String(HomeWindow),Root) + !StringCompare(Skin.String(HomeWindow),Home)</enable>
+				</control>
+				<control type="radiobutton" id="605">
+					<description>Adult Profile</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<label>$LOCALIZE[31063]</label>
+					<onclick>Skin.ToggleSetting(AdultProfile)</onclick>
+					<selected>Skin.HasSetting(AdultProfile)</selected>
+					<visible>System.HasLoginScreen</visible>
+				</control>
+				<control type="button" id="620">
+					<description>Startup Playback creation</description>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>$LOCALIZE[10500] &gt;</label>
+					<onclick>ActivateWindow(501)</onclick>
 				</control>
 				<control type="radiobutton" id="621">
 					<description>Startup Playback</description>
@@ -778,25 +777,25 @@
 				<control type="button" id="622">
 					<description>Startup Playback Path</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label> - $LOCALIZE[31089]</label>
+					<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
+					<onclick>Skin.SetFile(Startup_Playback_Path,.m3u,Special://profile\playlists\music\)</onclick>
+					<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
+				</control>
+				<control type="button" id="623">
+					<description>Startup Playback Path</description>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 					<label> - $LOCALIZE[31088]</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers\Utilities\Generate Random Playlist.py)</onclick>
 					<onclick>Skin.Reset(UseThemePlaylist)</onclick>
 					<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
 				</control>
-				<control type="radiobutton" id="623">
+				<control type="radiobutton" id="624">
 					<description>Startup Playback Themes</description>
 					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
 					<label> - $LOCALIZE[31091]</label>
 					<onclick>Skin.ToggleSetting(UseThemePlaylist)</onclick>
 					<selected>Skin.HasSetting(UseThemePlaylist)</selected>
-					<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
-				</control>
-				<control type="button" id="624">
-					<description>Startup Playback Path</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31089]</label>
-					<label2>[COLOR=1111_category_disabled_labels]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
-					<onclick>Skin.SetFile(Startup_Playback_Path,.m3u,Special://profile\playlists\music\)</onclick>
 					<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
 				</control>
 				<control type="radiobutton" id="625">
@@ -916,7 +915,7 @@
 					<description>Reset Settings</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 					<label>$LOCALIZE[31072]</label>
-					<onclick>RunScript(Special://Scripts\XBMC4Gamers\Utilities\Dialogs.py,"Skin.ResetSettings~Skin.SetBool(kioskmode)~Skin.SetString(HomeWindow,Root)~Skin.SetString(HomeWindow_name,$LOCALIZE[20108])~Skin.SetString(HomeWindowSource,Programs)","yesno","Warning","This will reset all XBMC4Gamers options.","Main settings are not reset.","","Cancel","Reset",RunScript(Special://Scripts\XBMC4Gamers\Utilities\Dialogs.py,"","ok","Warning","Settings reset, will now reload the profile","to complete the process.","","","","LoadProfile($INFO[System.ProfileName])","yes"),"yes")</onclick>
+					<onclick>RunScript(Special://Scripts\XBMC4Gamers\Utilities\Dialogs.py,"Skin.ResetSettings~Skin.SetBool(kioskmode)~Skin.SetString(HomeWindow,Root)~Skin.SetString(HomeWindow_name,$LOCALIZE[20108])~Skin.SetString(HomeWindowSource,Programs)","yesno","$LOCALIZE[31606]","","$LOCALIZE[31607]","","$LOCALIZE[222]","Reset",RunScript(Special://Scripts\XBMC4Gamers\Utilities\Dialogs.py,"","ok","$LOCALIZE[31606]","","$LOCALIZE[31608]","","","","LoadProfile($INFO[System.ProfileName])","yes"),"yes")</onclick>
 				</control>
 				<control type="button" id="710">
 					<description>Text viewer</description>

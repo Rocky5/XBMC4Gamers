@@ -1,0 +1,112 @@
+<window id="122">
+	<defaultcontrol>2</defaultcontrol>
+	<onload condition="!Skin.HasSetting(kioskmode)">Dialog.Close(122,true)</onload>
+	<include>Dialog.Effect</include>
+	<controls>
+		<control type="image">
+			<description>background image</description>
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio>stretch</aspectratio>
+			<texture>visualistation_osd_back.png</texture>
+		</control>
+		<control type="group">
+			<top>90</top>
+			<control type="label" id="3">
+				<description>heading label</description>
+				<left>0</left>
+				<top>0</top>
+				<width>1280</width>
+				<height>30</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>mono_27</font>
+				<label>$LOCALIZE[12015]</label>
+				<textcolor>FFF5F5F5</textcolor>
+			</control>
+			<control type="label" id="4">
+				<description>no presets label</description>
+				<left>190</left>
+				<top>60</top>
+				<width>900</width>
+				<height>320</height>
+				<align>center</align>
+				<aligny>center</aligny>
+				<font>mono_16</font>
+				<label>13389</label>
+				<textcolor>FFFFFFFF</textcolor>
+			</control>
+			<control type="label">
+				<description>number of files/pages in list text label</description>
+				<left>0</left>
+				<top>520</top>
+				<width>1280</width>
+				<height>20</height>
+				<font>mono_16</font>
+				<align>center</align>
+				<scroll>true</scroll>
+				<textcolor>FFF5F5F5</textcolor>
+				<label>($INFO[Container(2).NumItems])($INFO[Container(2).CurrentPage]/$INFO[Container(2).NumPages])</label>
+				<!-- <animation effect="fade" start="75" end="75" condition="true">Conditional</animation> -->
+			</control>
+			<control type="list" id="2">
+				<left>110</left>
+				<top>60</top>
+				<width>1060</width>
+				<height>440</height>
+				<onleft>PageUp</onleft>
+				<onright>PageDown</onright>
+				<onup>2</onup>
+				<ondown>2</ondown>
+				<pagecontrol>61</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<itemlayout height="40">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1060</width>
+						<height>35</height>
+						<texture border="5">button-nofocus.png</texture>
+						<!-- <animation effect="fade" start="75" end="75" condition="true">Conditional</animation> -->
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>1040</width>
+						<height>30</height>
+						<font>mono_16</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>FFFFFFFF</textcolor>
+						<selectedcolor>orange</selectedcolor>
+						<info>ListItem.Label</info>
+						<!-- <animation effect="fade" start="75" end="75" condition="true">Conditional</animation> -->
+					</control>
+				</itemlayout>
+				<focusedlayout height="40">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>1060</width>
+						<height>35</height>
+						<texture border="5">button-focus2.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>1040</width>
+						<height>30</height>
+						<font>mono_16</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>FFFFFFFF</textcolor>
+						<selectedcolor>orange</selectedcolor>
+						<info>ListItem.Label</info>
+					</control>
+				</focusedlayout>
+			</control>
+		</control>
+	</controls>
+</window>

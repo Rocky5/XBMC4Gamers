@@ -1,0 +1,12 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Call of Cthulhu: Dark Corners of the Earth
+# TitleID: 42530007
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# value 1
+HR|defaultws.xbe|2|A5ACA93F|398EE33F

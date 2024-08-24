@@ -1,14 +1,16 @@
 <colors>
-	<!-- XBMC4Gamers v2.1+ -->
+	<!-- XBMC4Gamers v2.1+ 002 -->
 	<!-- Home -->
-	<color name="1_label">FFFFFFFF</color>
-	<color name="1_label_alt">FFFFFFFF</color>
-	<color name="1_title">FFFFFFFF</color>
+	<color name="1_label">FFF5F5F5</color>
+	<color name="1_label_alt">FF424542</color>
+	<color name="1_title">FF424542</color>
 	<color name="1_title_alt">FFFFFFFF</color>
-	<color name="1_synopsis">FFdadada</color>
-	<color name="1_synopsis_alt">FFa4a4a4</color>
-	<color name="1_sidebar_labels_fo">FFFFFFFF</color>
-	<color name="1_sidebar_labels_nofo">FF666666</color>
+	<color name="1_shadow">10000000</color>
+	<color name="1_random">FF424542</color>
+	<color name="1_synopsis">FF424542</color>
+	<color name="1_synopsis_alt">FFFFFFFF</color>
+	<color name="1_bar_labels_fo">FFFFFFFF</color>
+	<color name="1_bar_labels_nofo">FF7a7c7d</color>
 	<!-- _Script_DialogBusy -->
 	<color name="1100_diffuse">FFFFFFFF</color>
 	<color name="1100_label">FFFFFFFF</color>
@@ -81,8 +83,8 @@
 	<color name="2004_header_label">FFFFFFFF</color>
 	<color name="2004_label">FF424542</color>
 	<!-- DialogSeekBar -->
-	<color name="115_diffuse">FFFFFFFF</color>
-	<color name="115_label">FF737373</color>
+	<color name="115_diffuse">FF424542</color>
+	<color name="115_label">FFFFFFFF</color>
 	<!-- DialogSelect -->
 	<color name="2000_header_label">FF000000</color>
 	<color name="2000_label">FFFFFFFF</color>
@@ -140,10 +142,6 @@
 	<color name="131_header_label">FFF5F5F5</color>
 	<color name="131_button_label">FFFFFFFF</color>
 	<color name="131_button_focus">FFFFFFFF</color>
-	<!-- MusicOSDVisSettings -->
-	<color name="121_header_label">FFF5F5F5</color>
-	<color name="121_button_label">FFFFFFFF</color>
-	<color name="121_button_focus">FFFFFFFF</color>
 	<!-- MyMusicPlaylist -->
 	<color name="500_header_label">FFFFFFFF</color>
 	<!-- MyMusicSongs -->

@@ -130,7 +130,6 @@
 				<include>Fake.ScrollBar.Vertical</include>
 			</control>
 		</control>
-		<include>Window.Header</include>
 		<control type="group">
 			<include>Common.Options.Menu.Back</include>
 			<control type="group" id="9000">

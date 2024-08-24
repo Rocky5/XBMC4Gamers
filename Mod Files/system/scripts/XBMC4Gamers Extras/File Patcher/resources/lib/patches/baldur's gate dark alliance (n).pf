@@ -1,0 +1,22 @@
+# Author: Nemesis2000
+# Credits: Nemesis2000 - http://ps2wide.net/xbox.html
+# Info: Patches in widescreen aspect ratio.
+# Region: NTSC
+# Title: Baldur's Gate: Dark Alliance 
+# TitleID: 5655001A
+# Type: Widescreen Patch
+
+CP|default.xbe|defaultws.xbe
+
+# value 1
+HR|defaultws.xbe|1|4424600000F843C7|4424600000BA43C7
+# value 2
+HR|defaultws.xbe|1|44246C0000F843C7|44246C0000BA43C7
+# value 3
+HR|defaultws.xbe|1|6C0000F843C74424|6C0000BA43C74424
+# value 4
+HR|defaultws.xbe|2|680000A04350|680000704350
+# value 5
+HR|defaultws.xbe|1|680000A04351|680000704351
+# value 6
+HR|defaultws.xbe|2|713DAA3F|398EE33F

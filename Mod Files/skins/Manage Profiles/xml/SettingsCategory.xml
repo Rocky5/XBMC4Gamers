@@ -3,7 +3,6 @@
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>Global.Backgrounds</include>
-		<include>Window.Header</include>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<control type="image">

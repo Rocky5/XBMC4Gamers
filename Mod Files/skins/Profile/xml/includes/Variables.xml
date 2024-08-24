@@ -14,10 +14,10 @@
 	<value condition="Skin.HasSetting(AltTextColour) + Window.IsVisible(7)">7_label_alt</value>
 </variable>
 <variable name="Custom_BG_Colour">
-	<value>FF$INFO[Skin.String(Background_Custom_Color)]</value>
+	<value>FF$INFO[skin.string(Background_Custom_Color)]</value>
 </variable>
 <variable name="Custom_Gamers_Logo_Colour">
-	<value condition="Skin.HasSetting(EnabledXBMC4GamersLogoColour)">FF$INFO[Skin.String(XBMC4GamersLogoColour)]</value>
+	<value condition="Skin.HasSetting(EnabledXBMC4GamersLogoColour)">FF$INFO[skin.string(XBMC4GamersLogoColour)]</value>
 	<value condition="!Skin.HasSetting(EnabledXBMC4GamersLogoColour)">variables_logo</value>
 </variable>
 <variable name="VolumeIconVar">
@@ -37,12 +37,12 @@
 	<value condition="!IsEmpty(listitem.Synopsis_Resources) + !Skin.HasSetting(_resourcesenabled)">$INFO[listitem.Path,,]fanart.jpg</value>
 	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)">no_fanart_blur.jpg</value>
 	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + !Skin.HasSetting(fanartblur)">no_fanart.jpg</value>
-	<value condition="ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)">Special://skin\extras\folder fanart\$INFO[ListItem.Label].jpg</value>
+	<value condition="Skin.HasSetting(showfolderfanart) + ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)">$INFO[skin.string(FolderFanartPath)]\$INFO[ListItem.Label].jpg</value>
 </variable>
 <variable name="View_Fanart_Fog">
 	<value condition="!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(customfanartfog)">$INFO[listitem.Synopsis_Resources]artwork\fog.jpg</value>
 	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(customfanartfog)">no_fog.jpg</value>
-	<value condition="ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(customfanartfog)">Special://skin\extras\folder fanart\$INFO[ListItem.Label]_fog.jpg</value>
+	<value condition="Skin.HasSetting(showfolderfanart) + ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(customfanartfog)">$INFO[skin.string(FolderFanartPath)]\$INFO[ListItem.Label]_fog.jpg</value>
 </variable>
 <variable name="View50_Thumbs">
 	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>

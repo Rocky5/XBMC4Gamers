@@ -50,7 +50,6 @@ Attrib /s -r -h -s "Thumbs.db"
 Del /Q /S "desktop.ini"
 Del /Q /S "Thumbs.db"
 XCopy /s /e /i /h /r /y "Mod Files" "%foldername%"
-copy /y "Source\default.xbe" "%foldername%\default.xbe"
 del /q "%foldername%\system\userdata\profiles.xml"
 del /q "%foldername%\system\userdata\guisettings.xml"
 
@@ -74,7 +73,7 @@ Call Other\Tools\repl.bat "	" "" L < "changes.txt" >"%foldername%\system\SystemI
 XCopy /s /e /i /h /r /y "%foldername%\skins\Profile\language\" "%foldername%\skins\Manage Profiles\language\"
 
 del /Q /S "%foldername%\*.bat"
-del /Q /S "%foldername%\empty"
+del /Q /S "%foldername%\empty.file"
 CD %foldername%\
 del /Q "Changes.txt"
 )>nul 2>&1
@@ -89,8 +88,7 @@ for /f "usebackq" %%b in ("..\Other\update build\updater\Update Files\md5hash.bi
 )
 "C:\Program Files\7-Zip\7z.exe" a "..\%output_zip%" "..\Other\update build\*" -mx=7 -r -y
 cd ..\
-del /Q "Other\update build\updater\Update Files\%foldername%.zip"
-del /Q "Other\update build\updater\Update Files\md5hash.bin"
+rd /q /s "Other\update build\updater\Update Files"
 rd /q /s "update-files"
 )>nul 2>&1
 

@@ -92,9 +92,8 @@ Call Other\Tools\repl.bat "	" "" L < "changes.txt" >"%foldername%\system\SystemI
 XCopy /s /e /i /h /r /y "%foldername%\skins\Profile\language\" "%foldername%\skins\Manage Profiles\language\"
 
 del /Q "%foldername%\Changes.txt"
-copy /y "Source\default.xbe" "%foldername%\default.xbe"
 del /Q /S "%foldername%\*.bat"
-del /Q /S "%foldername%\empty"
+del /Q /S "%foldername%\empty.file"
 ren "%foldername%" "XBMC4Gamers"
 )>nul 2>&1
 

@@ -80,6 +80,12 @@ def handle_playlist(ThemeFile):
 		else:
 			xbmc.executebuiltin('Skin.Reset(Startup_Playback_Path)')
 
+def handle_folder_fanart(ThemeFile):
+	xbmc.executebuiltin('Skin.SetString(FolderFanartPath,{})'.format(xbmc.translatePath('Special://skin/extras/folder fanart/default')))
+	folder_fanart = xbmc.translatePath('Special://skin/extras/folder fanart/{}'.format(ThemeFile))
+	if len(os.listdir(folder_fanart)) > 0:
+		xbmc.executebuiltin('Skin.SetString(FolderFanartPath,{})'.format(folder_fanart))
+
 def main():
 	dialog = xbmcgui.Dialog()
 	arg1 = sys.argv[1:][0]
@@ -87,6 +93,7 @@ def main():
 
 	if arg1 == 'toggle':
 		ThemeFile = 'default' if xbmc.getCondVisibility('StringCompare(Skin.CurrentTheme,night)') else arg2
+		handle_folder_fanart(ThemeFile)
 		update_fontXML(ThemeFile)
 		handle_theme_file(ThemeFile)
 		handle_playlist(ThemeFile)
@@ -104,7 +111,8 @@ def main():
 			ThemeColorFile = 'defaults' if SelectedTheme.lower() == 'default' else ThemeFile
 			
 			with open(os.path.join(xbmc.translatePath('Special://skin/colors'), ThemeColorFile + '.xml')) as test_theme:
-				if 'XBMC4Gamers v2.1+' in test_theme.read() and os.path.isfile(os.path.join(xbmc.translatePath('Special://skin/backgrounds/'), ThemeFile + '/0.jpg')):
+				if 'XBMC4Gamers v2.1+ 002' in test_theme.read() and os.path.isfile(os.path.join(xbmc.translatePath('Special://skin/backgrounds/'), ThemeFile + '/0.jpg')):
+					handle_folder_fanart(ThemeFile)
 					update_fontXML(ThemeFile)
 					handle_theme_file(ThemeFile)
 					handle_playlist(ThemeFile)
@@ -123,7 +131,8 @@ def main():
 			ThemeColorFile = 'defaults' if Random_Theme.lower() == 'textures.xpr' else ThemeFile
 			
 			with open(os.path.join(xbmc.translatePath('Special://skin/colors'), ThemeColorFile + '.xml')) as test_theme:
-				if 'XBMC4Gamers v2.0+' in test_theme.read() and os.path.isfile(os.path.join(xbmc.translatePath('Special://skin/backgrounds/'), ThemeFile + '/0.jpg')):
+				if 'XBMC4Gamers v2.1+ 002' in test_theme.read() and os.path.isfile(os.path.join(xbmc.translatePath('Special://skin/backgrounds/'), ThemeFile + '/0.jpg')):
+					handle_folder_fanart(ThemeFile)
 					update_fontXML(ThemeFile)
 					handle_theme_file(ThemeFile)
 					handle_playlist(ThemeFile)
