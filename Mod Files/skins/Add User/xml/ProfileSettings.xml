@@ -1,0 +1,168 @@
+<window id="130">
+	<defaultcontrol>7</defaultcontrol>
+	<onload condition="StringCompare(Control.GetLabel(1000),Add User)">Dialog.Close(130,true)</onload>
+	<controls>
+		<include>Behind.Dialog</include>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<top>2.5</top>
+			<control type="image">
+				<description>background image</description>
+				<left>326</left>
+				<top>185</top>
+				<width>628</width>
+				<height>345</height>
+				<texture colordiffuse="colour.settings.diffuse.main">windows\dialogs\main.png</texture>
+			</control>
+			<control type="image">
+				<description>Heading Background</description>
+				<left>339</left>
+				<top>192</top>
+				<width>602</width>
+				<height>61</height>
+				<texture colordiffuse="colour.settings.diffuse.header">windows\dialogs\header.png</texture>
+			</control>
+			<control type="label" id="1">
+				<description>heading label</description>
+				<left>370</left>
+				<top>202</top>
+				<width>240</width>
+				<height>40</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<textcolor>colour.settings.label.header</textcolor>
+				<label>$LOCALIZE[20067]</label>
+			</control>
+			<control type="image" id="2">
+				<description>profile image</description>
+				<left>345</left>
+				<top>265</top>
+				<width>370</width>
+				<height>120</height>
+				<align>left</align>
+				<aspectratio>scale</aspectratio>
+				<texture>unknown-user.png</texture>
+				<bordertexture border="5">white-back.png</bordertexture>
+				<bordersize>1</bordersize>
+			</control>
+			<control type="label">
+				<description>dialog line 1</description>
+				<left>345</left>
+				<top>385</top>
+				<width>240</width>
+				<height>40</height>
+				<font>size_23</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<textcolor>colour.settings.label.info.text</textcolor>
+				<label>[B]$LOCALIZE[20093][/B]</label>
+			</control>
+			<control type="label" id="1000">
+				<description>dialog line 1</description>
+				<left>345</left>
+				<top>410</top>
+				<width>240</width>
+				<height>40</height>
+				<font>size_21</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<textcolor>colour.settings.label.info.text</textcolor>
+				<label>-</label>
+			</control>
+			<control type="label">
+				<description>dialog line 2</description>
+				<left>345</left>
+				<top>445</top>
+				<width>240</width>
+				<height>40</height>
+				<font>size_23</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<textcolor>colour.settings.label.info.text</textcolor>
+				<label>[B]$LOCALIZE[20070][/B]</label>
+			</control>
+			<control type="label" id="1001">
+				<description>dialog line 2</description>
+				<left>345</left>
+				<top>470</top>
+				<width>240</width>
+				<height>40</height>
+				<font>size_21</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<textcolor>colour.settings.label.info.text</textcolor>
+				<label>-</label>
+			</control>
+			<control type="grouplist" id="5">
+				<description>control area</description>
+				<left>720</left>
+				<top>280</top>
+				<width>210</width>
+				<height>200</height>
+				<onleft>5</onleft>
+				<onright>5</onright>
+				<onup>28</onup>
+				<ondown>28</ondown>
+				<scroll>true</scroll>
+				<itemgap>10</itemgap>
+			</control>
+			<control type="button" id="7">
+				<description>Default Button</description>
+				<height>40</height>
+				<font>size_20</font>
+				<align>center</align>
+				<textcolor>colour.settings.button.nofocus</textcolor>
+				<focusedcolor>colour.settings.button.focus</focusedcolor>
+				<texturenofocus border="3" colordiffuse="colour.settings.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+				<texturefocus border="3" colordiffuse="colour.settings.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+			</control>
+			<control type="button" id="8">
+				<description>Default Button</description>
+				<height>40</height>
+				<font>size_20</font>
+				<align>center</align>
+				<textcolor>colour.settings.button.nofocus</textcolor>
+				<focusedcolor>colour.settings.button.focus</focusedcolor>
+				<texturenofocus border="3" colordiffuse="colour.settings.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+				<texturefocus border="3" colordiffuse="colour.settings.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+			</control>
+			<control type="button" id="28">
+				<description>Yes button</description>
+				<left>720</left>
+				<top>455</top>
+				<width>100</width>
+				<height>40</height>
+				<label>[UPPERCASE]$LOCALIZE[186][/UPPERCASE]</label>
+				<font>size_20</font>
+				<align>center</align>
+				<textcolor>colour.settings.button.nofocus</textcolor>
+				<focusedcolor>colour.settings.button.focus</focusedcolor>
+				<texturenofocus border="3" colordiffuse="colour.settings.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+				<texturefocus border="3" colordiffuse="colour.settings.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+				<onleft>29</onleft>
+				<onright>29</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+			<control type="button" id="29">
+				<description>No button</description>
+				<left>830</left>
+				<top>455</top>
+				<width>100</width>
+				<height>40</height>
+				<label>[UPPERCASE]$LOCALIZE[222][/UPPERCASE]</label>
+				<font>size_20</font>
+				<align>center</align>
+				<textcolor>colour.settings.button.nofocus</textcolor>
+				<focusedcolor>colour.settings.button.focus</focusedcolor>
+				<texturenofocus border="3" colordiffuse="colour.settings.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+				<texturefocus border="3" colordiffuse="colour.settings.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+				<onleft>28</onleft>
+				<onright>28</onright>
+				<onup>5</onup>
+				<ondown>5</ondown>
+			</control>
+		</control>
+	</controls>
+</window>

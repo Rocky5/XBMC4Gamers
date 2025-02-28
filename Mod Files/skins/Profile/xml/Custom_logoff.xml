@@ -13,6 +13,7 @@
 				<effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle"/>
 				<effect type="slide" start="0,-720" end="0,0" time="1000" delay="0"/>
 			</animation>
+			<visible>!Skin.HasSetting(LoginFade)</visible>
 		</control>
 		<control type="group">
 			<animation effect="fade" time="300">WindowOpen</animation>

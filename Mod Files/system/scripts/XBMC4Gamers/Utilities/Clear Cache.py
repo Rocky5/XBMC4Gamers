@@ -1,6 +1,7 @@
 '''
-   A simple cache cleanign script
+   A simple cache cleaning script
 '''
+
 import os
 import xbmcgui
 import xbmc
@@ -25,13 +26,14 @@ def main():
 	pDialog.update(0)
 
 	drives = ["E:\\Cache\\", "X:\\", "Y:\\", "Z:\\"]
-	update_values = [20, 40, 60, 80]
+	update_values = [25, 50, 75, 100]
 
 	for drive, update_value in zip(drives, update_values):
 		clear_cache(drive, pDialog, update_value)
 
 	pDialog.update(100, '', 'Done')
 	time.sleep(1)
+	pDialog.close()
 
 if __name__ == "__main__":
 	main()

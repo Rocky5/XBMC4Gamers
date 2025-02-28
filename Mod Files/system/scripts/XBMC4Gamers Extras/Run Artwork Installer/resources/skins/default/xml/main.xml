@@ -1,11 +1,7 @@
 <window id="3000">
 	<defaultcontrol always="true">100</defaultcontrol>
 	<controls>
-		<control type="image">
-			<include>1280x720</include>
-			<texture>black-back.png</texture>
-			<include>Dialog.Effect</include>
-		</control>
+		<include>Behind.Dialog</include>
 		<control type="button" id="9000">
 			<left>-1000</left>
 			<onclick>SetFocus(3000)</onclick>
@@ -13,12 +9,12 @@
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<control type="image">
-				<left>55</left>
+				<left>50</left>
 				<top>55</top>
-				<width>1170</width>
+				<width>1180</width>
 				<height>610</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings_categories\main.png</texture>
+				<texture colordiffuse="colour.settings.diffuse.main">windows\settings_categories\main.png</texture>
 			</control>
 			<control type="image">
 				<left>75</left>
@@ -26,7 +22,7 @@
 				<width>330</width>
 				<height>570</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings_categories\main_overlay.png</texture>
+				<texture colordiffuse="colour.settings.diffuse.main.overlay">windows\settings_categories\main_overlay.png</texture>
 			</control>
 			<control type="grouplist">
 				<description>Control Info</description>
@@ -49,13 +45,38 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="80" max="300">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>1111_context_label</textcolor>
-					<label>$LOCALIZE[424]</label>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>Select</label>
+					<visible>!ControlGroup(3000).HasFocus</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="300">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>Run Automatic Mode</label>
+					<visible>ControlGroup(3000).HasFocus + ControlGroup(3000).HasFocus(100)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="300">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>Run Manual Mode</label>
+					<visible>ControlGroup(3000).HasFocus + ControlGroup(3000).HasFocus(101)</visible>
 				</control>
 				<!-- B Button -->
 				<control type="image">
@@ -69,13 +90,13 @@
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="80" max="300">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>1111_context_label</textcolor>
-					<label>$LOCALIZE[31021]</label>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>Back</label>
 				</control>
 			</control>
 			<control type="grouplist" id="3000">
@@ -98,14 +119,13 @@
 					<font>size_27</font>
 					<align>left</align>
 					<aligny>top</aligny>
-					<textcolor>1111_label_nofocus</textcolor>
-					<focusedcolor>1111_label_focus</focusedcolor>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
 					<aspectratio>stretch</aspectratio>
-					<textcolor>includes_settings_category_right_label_no_focus</textcolor>
-					<focusedcolor>includes_settings_category_right_label_focus</focusedcolor>
-					<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
-					<texturefocus>windows/settings_categories/button_focus.png</texturefocus>
-					<texturenofocus>windows/settings_categories/button_no_focus.png</texturenofocus>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
 					<label>Automatic Mode</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\Run Artwork Installer\resources\lib\default.py,True,$INFO[Skin.HasSetting(ArtworkInstallerSkip)],$INFO[Skin.HasSetting(ArtworkInstallerVideo)],$INFO[Skin.HasSetting(ArtworkInstallerFanart)],$INFO[Skin.HasSetting(ArtworkInstallerAddChecks)],$INFO[Skin.HasSetting(ArtworkInstallerLogging)])</onclick>
 					<onclick>ActivateWindow(1100)</onclick>
@@ -120,14 +140,13 @@
 					<font>size_27</font>
 					<align>left</align>
 					<aligny>top</aligny>
-					<textcolor>1111_label_nofocus</textcolor>
-					<focusedcolor>1111_label_focus</focusedcolor>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
 					<aspectratio>stretch</aspectratio>
-					<textcolor>includes_settings_category_right_label_no_focus</textcolor>
-					<focusedcolor>includes_settings_category_right_label_focus</focusedcolor>
-					<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
-					<texturefocus>windows/settings_categories/button_focus.png</texturefocus>
-					<texturenofocus>windows/settings_categories/button_no_focus.png</texturenofocus>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
 					<label>Manual Mode</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\Run Artwork Installer\resources\lib\default.py,False,False,$INFO[Skin.HasSetting(ArtworkInstallerVideo)],$INFO[Skin.HasSetting(ArtworkInstallerFanart)],False],False)</onclick>
 					<onclick>ActivateWindow(1100)</onclick>
@@ -161,7 +180,7 @@
 					<font>size_16</font>
 					<align>justify</align>
 					<aligny>center</aligny>
-					<label>[COLOR=1111_category_labels_nofocus]Log what's going on when processing content, handy if you want to see how stuff is matched or not matched.[/COLOR]</label>
+					<label>[COLOR=colour.settings.label.info.text]Log what's going on when processing content, handy if you want to see how stuff is matched or not matched.[/COLOR]</label>
 					<animation effect="slide" start="0,0" end="20,0" time="10" condition="true">Conditional</animation>
 					<visible>ControlGroup(3000).HasFocus(100)</visible>
 				</control>
@@ -183,7 +202,7 @@
 					<textoffsetx>44</textoffsetx>
 					<textoffsety>15</textoffsety>
 					<scroll>true</scroll>
-					<label>[COLOR=1111_category_labels_nofocus]Install larger fanart images if available. This will increase the time required for the installer to complete.[/COLOR]</label>
+					<label>[COLOR=colour.settings.label.info.text]Install larger fanart images if available. This will increase the time required for the installer to complete.[/COLOR]</label>
 					<animation effect="slide" start="0,0" end="20,0" time="10" condition="true">Conditional</animation>
 					<visible>!StringCompare(System.memory(total_no_mb),64)</visible>
 				</control>
@@ -204,7 +223,7 @@
 					<textoffsetx>44</textoffsetx>
 					<textoffsety>15</textoffsety>
 					<scroll>true</scroll>
-					<label>[COLOR=1111_category_labels_nofocus]Install video previews if available. This will increase the time required for the installer to complete.[/COLOR]</label>
+					<label>[COLOR=colour.settings.label.info.text]Install video previews if available. This will increase the time required for the installer to complete.[/COLOR]</label>
 					<animation effect="slide" start="0,0" end="20,0" time="10" condition="true">Conditional</animation>
 				</control>
 				<control type="radiobutton" id="7">
@@ -225,7 +244,7 @@
 					<textoffsetx>44</textoffsetx>
 					<textoffsety>15</textoffsety>
 					<scroll>true</scroll>
-					<label>[COLOR=1111_category_labels_nofocus]Skip content that already has all artwork installed. If any artwork is missing, I will attempt to repair it.[/COLOR]</label>
+					<label>[COLOR=colour.settings.label.info.text]Skip content that already has all artwork installed. If any artwork is missing, I will attempt to repair it.[/COLOR]</label>
 					<animation effect="slide" start="0,0" end="20,0" time="10" condition="true">Conditional</animation>
 					<visible>ControlGroup(3000).HasFocus(100)</visible>
 				</control>
@@ -247,7 +266,7 @@
 					<textoffsetx>44</textoffsetx>
 					<textoffsety>15</textoffsety>
 					<scroll>true</scroll>
-					<label>[COLOR=1111_category_labels_nofocus]Adds additional checks if the initial ones fail or if the TitleIDs match. This improves the accuracy of the scan, but it may slow down the process.[/COLOR]</label>
+					<label>[COLOR=colour.settings.label.info.text]Adds additional checks if the initial ones fail or if the TitleIDs match. This improves the accuracy of the scan, but it may slow down the process.[/COLOR]</label>
 					<animation effect="slide" start="0,0" end="20,0" time="10" condition="true">Conditional</animation>
 					<visible>ControlGroup(3000).HasFocus(100)</visible>
 				</control>

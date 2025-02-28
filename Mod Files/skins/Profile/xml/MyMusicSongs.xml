@@ -12,7 +12,7 @@
 				<width>1170</width>
 				<height>610</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings_categories\main.png</texture>
+				<texture colordiffuse="colour.general.diffuse.main">windows\settings_categories\main.png</texture>
 			</control>
 			<control type="image">
 				<left>80</left>
@@ -20,7 +20,7 @@
 				<width>330</width>
 				<height>450</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings_categories\main_overlay.png</texture>
+				<texture colordiffuse="colour.general.diffuse.main.overlay">windows\settings_categories\main_overlay.png</texture>
 			</control>
 			<control type="image">
 				<left>80</left>
@@ -28,7 +28,7 @@
 				<width>330</width>
 				<height>76</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings\header.png</texture>
+				<texture colordiffuse="colour.general.diffuse.header">windows\settings\header.png</texture>
 			</control>
 			<control type="label">
 				<left>80</left>
@@ -38,7 +38,7 @@
 				<font>size_28</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<textcolor>common_header_label</textcolor>
+				<textcolor>colour.general.label.header</textcolor>
 				<label>$LOCALIZE[247]</label>
 				<visible>Window.IsActive(20)</visible>
 			</control>
@@ -50,7 +50,7 @@
 				<font>size_28</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<textcolor>common_header_label</textcolor>
+				<textcolor>colour.general.label.header</textcolor>
 				<label>$LOCALIZE[559]</label>
 				<visible>Window.IsActive(500)</visible>
 			</control>
@@ -62,7 +62,7 @@
 				<font>size_28</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<textcolor>common_header_label</textcolor>
+				<textcolor>colour.general.label.header</textcolor>
 				<label>$LOCALIZE[2]</label>
 				<visible>Window.IsActive(501)</visible>
 			</control>
@@ -92,7 +92,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[424]</label>
 				</control>
 				<!-- B Button -->
@@ -112,8 +112,8 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
-					<label>$LOCALIZE[31151]</label>
+					<textcolor>colour.general.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
 				</control>
 				<!-- Y Button -->
 				<control type="image">
@@ -133,7 +133,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[31111]</label>
 					<visible>Window.IsVisible(501)</visible>
 				</control>
@@ -145,7 +145,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[31112]</label>
 					<visible>Window.IsVisible(500)</visible>
 				</control>
@@ -166,7 +166,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[31113]</label>
 				</control>
 				<!-- Black Button -->
@@ -187,7 +187,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[31117]</label>
 					<visible>Window.IsVisible(500)</visible>
 				</control>
@@ -199,7 +199,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[31118]</label>
 					<visible>Window.IsVisible(501)</visible>
 				</control>

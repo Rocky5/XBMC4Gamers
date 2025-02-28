@@ -1,0 +1,278 @@
+<window type="dialog" id="1102">
+	<defaultcontrol always="true">9002</defaultcontrol>
+	<onunload>FlushTextureCache</onunload>
+	<controls>
+		<include>Behind.Dialog</include>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<control type="image">
+				<left>270</left>
+				<top>180</top>
+				<width>740</width>
+				<height>360</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.dialog.diffuse.main">windows\dialogs\select_browser\main.png</texture>
+			</control>
+			<control type="image">
+				<left>286</left>
+				<top>192</top>
+				<width>709</width>
+				<height>61</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.dialog.diffuse.header">windows\dialogs\select_browser\header.png</texture>
+			</control>
+			<control type="label" id="1">
+				<description>Heading label</description>
+				<left>313</left>
+				<top>200</top>
+				<width>731</width>
+				<height>37</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[31125]</label>
+				<textcolor>colour.dialog.label.header</textcolor>
+				<shadowcolor>-</shadowcolor>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>270</left>
+				<top>483</top>
+				<width>740</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>Horizontal</orientation>
+				<align>center</align>
+				<!-- A Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\a_button.png</texture>
+					<visible>!StringCompare(Container(9002).NumItems,0)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[424]</label>
+					<visible>!StringCompare(Container(9002).NumItems,0)</visible>
+				</control>
+				<!-- B Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\b_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
+				</control>
+			</control>
+			<control type="image">
+				<left>825</left>
+				<top>263</top>
+				<width>159</width>
+				<height>208</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="defaultprogram.png">$INFO[Container(9002).ListItem.Icon]</texture>
+				<visible>!StringCompare(Container(9002).CurrentItem,0)</visible>
+			</control>
+			<control type="group">
+				<visible>StringCompare(Container(9002).CurrentItem,0)</visible>
+				<!-- No items found -->
+				<control type="image">
+					<left>300</left>
+					<top>263</top>
+					<width>515</width>
+					<height>40</height>
+					<aspectratio>stretch</aspectratio>
+					<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+				</control>
+				<control type="label">
+					<left>310</left>
+					<top>263</top>
+					<width>495</width>
+					<height>40</height>
+					<font>size_20</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<label>$LOCALIZE[504]</label>
+					<scroll>false</scroll>
+				</control>
+			</control>
+			<control type="list" id="9002">
+				<left>300</left>
+				<top>263</top>
+				<width>515</width>
+				<height>210</height>
+				<onup>9002</onup>
+				<ondown>9002</ondown>
+				<onleft>60</onleft>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>90</pagecontrol>
+				<scrolltime>230</scrolltime>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="42" width="515">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>515</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<height>40</height>
+						<width>495</width>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.nofocus</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>false</scroll>
+					</control>
+				</itemlayout>
+				<focusedlayout height="42" width="515">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>515</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<height>40</height>
+						<width>495</width>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.focus</textcolor>
+						<selectedcolor>colour.dialog.button.nofocus</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>false</scroll>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.1.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.1.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.1.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.1.Title))</visible>
+					</item>
+					<item id="2">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.2.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.2.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.2.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.2.Title))</visible>
+					</item>
+					<item id="3">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.3.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.3.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.3.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.3.Title))</visible>
+					</item>
+					<item id="4">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.4.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.4.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.4.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.4.Title))</visible>
+					</item>
+					<item id="5">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.5.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.5.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.5.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.5.Title))</visible>
+					</item>
+					<item id="6">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.6.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.6.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.6.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.6.Title))</visible>
+					</item>
+					<item id="7">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.7.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.7.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.7.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.7.Title))</visible>
+					</item>
+					<item id="8">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.8.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.8.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.8.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.8.Title))</visible>
+					</item>
+					<item id="9">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.9.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.9.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.9.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.9.Title))</visible>
+					</item>
+					<item id="10">
+						<icon>$INFO[Window(Programs).Property(RecentPlayed.10.Poster)]</icon>
+						<label>$INFO[Window(Programs).Property(RecentPlayed.10.Title)]</label>
+						<onclick>$INFO[Window(Programs).Property(RecentPlayed.10.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(Programs).Property(RecentPlayed.10.Title))</visible>
+					</item>
+				</content>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>296</left>
+				<top>263</top>
+				<width>4</width>
+				<height>208</height>
+				<onright>9002</onright>
+				<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+				<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="2,16,2,16">scrollbar_bar.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+				<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(60)">Conditional</animation>
+			</control>
+			<control type="label">
+				<description>number of files in list text label</description>
+				<right>295</right>
+				<bottom>197</bottom>
+				<width>200</width>
+				<height>20</height>
+				<font>size_15</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<textcolor>colour.dialog.label.context</textcolor>
+				<label>$INFO[Container(9002).CurrentItem]/$INFO[Container(9002).NumItems]</label>
+				<animation reversible="false" effect="fade" start="0" end="75" time="300">Visible</animation>
+				<animation reversible="false" effect="fade" start="75" end="0" time="0">Hidden</animation>
+			</control>
+		</control>
+	</controls>
+</window>

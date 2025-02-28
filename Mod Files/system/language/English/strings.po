@@ -1669,6 +1669,10 @@ msgctxt "#471"
 msgid "Modchip"
 msgstr ""
 
+msgctxt "#472"
+msgid "I2C Address"
+msgstr ""
+
 #empty strings from id 472 to 473
 
 msgctxt "#474"

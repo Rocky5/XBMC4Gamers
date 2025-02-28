@@ -28,7 +28,7 @@
 				<top>205</top>
 				<control type="label">
 					<description>Title label</description>
-					<left>550</left>
+					<left>410</left>
 					<top>35</top>
 					<width>140</width>
 					<height>25</height>
@@ -52,7 +52,7 @@
 				</control>
 				<control type="label">
 					<description>Artist label</description>
-					<left>550</left>
+					<left>410</left>
 					<top>65</top>
 					<width>140</width>
 					<height>25</height>
@@ -76,7 +76,7 @@
 				</control>
 				<control type="label">
 					<description>Album label</description>
-					<left>550</left>
+					<left>410</left>
 					<top>95</top>
 					<width>140</width>
 					<height>25</height>
@@ -100,7 +100,7 @@
 				</control>
 				<control type="label">
 					<description>Track label</description>
-					<left>550</left>
+					<left>410</left>
 					<top>125</top>
 					<width>140</width>
 					<height>25</height>
@@ -124,7 +124,7 @@
 				</control>
 				<control type="label">
 					<description>locked visualisation preset</description>
-					<left>550</left>
+					<left>410</left>
 					<top>155</top>
 					<width>140</width>
 					<height>25</height>
@@ -175,7 +175,7 @@
 				</control>
 				<control type="label">
 					<description>Title label</description>
-					<left>550</left>
+					<left>410</left>
 					<top>245</top>
 					<width>140</width>
 					<height>25</height>
@@ -232,7 +232,7 @@
 				<control type="progress">
 					<description>Progressbar</description>
 					<left>100</left>
-					<bottom>20</bottom>
+					<bottom>14</bottom>
 					<width>1080</width>
 					<height>6</height>
 					<info>Player.Progress</info>
@@ -272,7 +272,7 @@
 				<control type="grouplist">
 					<description>Control Info</description>
 					<left>10</left>
-					<bottom>54</bottom>
+					<bottom>30</bottom>
 					<width>1280</width>
 					<height>24</height>
 					<itemgap>5</itemgap>
@@ -303,7 +303,7 @@
 				<control type="grouplist">
 					<description>Control Info</description>
 					<left>15</left>
-					<bottom>30</bottom>
+					<bottom>5</bottom>
 					<width>1260</width>
 					<height>25</height>
 					<itemgap>10</itemgap>

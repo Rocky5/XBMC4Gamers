@@ -2,9 +2,9 @@
 		<lastloaded>0</lastloaded>
 		<useloginscreen>true</useloginscreen>
 		<profile>
-				<name>Manage Profiles</name>
+				<name>Add User</name>
 				<directory pathversion="1">special://masterprofile/</directory>
-				<thumbnail pathversion="1">special://masterprofile/Thumbnails/Profiles/ManageProfiles.tbn</thumbnail>
+				<thumbnail pathversion="1">special://masterprofile/Thumbnails/Profiles/AddUser.tbn</thumbnail>
 				<hasdatabases>true</hasdatabases>
 				<canwritedatabases>true</canwritedatabases>
 				<hassources>true</hassources>

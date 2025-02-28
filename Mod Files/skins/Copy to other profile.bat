@@ -1,12 +1,14 @@
 @Echo off
 
 Set "ProfileSkin=%CD%\Profile"
-Set "MasterSkin=%CD%\Manage Profiles"
+Set "MasterSkin=%CD%\Add User"
 
 Echo colors\Defaults.xml
 Copy /Y "%ProfileSkin%\colors\Defaults.xml"							"%MasterSkin%\colors\" >Nul
 Echo xml\Defaults.xml
 Copy /Y "%ProfileSkin%\xml\Defaults.xml"							"%MasterSkin%\xml\" >Nul
+Echo xml\DialogContextMenu.xml
+Copy /Y "%ProfileSkin%\xml\DialogContextMenu.xml"					"%MasterSkin%\xml\" >Nul
 Echo xml\DialogBusy.xml
 Copy /Y "%ProfileSkin%\xml\DialogBusy.xml"							"%MasterSkin%\xml\" >Nul
 Echo xml\DialogGamepad.xml

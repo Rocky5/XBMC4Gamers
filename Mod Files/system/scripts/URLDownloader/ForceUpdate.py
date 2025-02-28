@@ -449,20 +449,20 @@ def dlc_hashing(titleid):
 			for _ in range(3):
 				dprogress.update(
 					0,
-					"Saving HDD Key",
-					"."
+					"Saving HDD Key.",
+					"Please wait"
 				)
 				time.sleep(0.5)
 				dprogress.update(
 					0,
-					"Saving HDD Key",
-					".."
+					"Saving HDD Key..",
+					"Please wait"
 				)
 				time.sleep(0.5)
 				dprogress.update(
 					0,
-					"Saving HDD Key",
-					"..."
+					"Saving HDD Key...",
+					"Please wait"
 				)
 				time.sleep(0.5)
 		else:
@@ -550,6 +550,9 @@ try:
 		internet_check()
 		executebuiltin(
 			'Dialog.Close(1904,false)'
+		)
+		executebuiltin(
+			'Dialog.Close(1100,false)'
 		)
 		global httperrors
 		httperrors = None
@@ -879,6 +882,9 @@ try:
 			executebuiltin(
 				'Dialog.Close(1902,false)'
 			)
+			executebuiltin(
+				'Dialog.Close(1100,false)'
+			)
 		
 		try: # Used to zero the progress bar after everything is done
 			dprogress.update(0)
@@ -890,6 +896,9 @@ try:
 	except Exception as ex:
 		executebuiltin(
 			'Dialog.Close(1904,false)'
+		)
+		executebuiltin(
+			'Dialog.Close(1100,false)'
 		)
 		dialog.ok(
 			'ERROR: NETWORK CHECK FAILED',
@@ -903,6 +912,9 @@ try:
 except Exception as ex:
 	executebuiltin(
 		'Dialog.Close(1904,false)'
+	)
+	executebuiltin(
+		'Dialog.Close(1100,false)'
 	)
 	dialog.ok(
 		'ERROR: INSIGNIA DNS DETECTED',

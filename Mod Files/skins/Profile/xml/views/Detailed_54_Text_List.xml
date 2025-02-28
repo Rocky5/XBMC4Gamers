@@ -1,0 +1,361 @@
+<!-- Detailed_54_Text_List ID = 54 -->
+<control type="group">
+	<visible>Control.IsVisible(54) + !Control.IsVisible(50)</visible>
+	<include>Fanart.FullScreen</include>
+	<control type="group">
+		<include>Game.Views</include>
+		<control type="image">
+			<include>1280x720</include>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture>views\54\black-back.png</texture>
+		</control>
+		<!-- Fake list top -->
+		<control type="label">
+			<left>40</left>
+			<top>160</top>
+			<width>1200</width>
+			<height>25</height>
+			<font>size_17</font>
+			<align>left</align>
+			<textcolor>colour.view54.label</textcolor>
+			<label>$INFO[ListItem(-5).Label]</label>
+			<animation effect="fade" end="40" condition="true">conditional</animation>
+		</control>
+		<control type="label">
+			<left>40</left>
+			<top>185</top>
+			<width>1200</width>
+			<height>25</height>
+			<font>size_17</font>
+			<align>left</align>
+			<textcolor>colour.view54.label</textcolor>
+			<label>$INFO[ListItem(-4).Label]</label>
+			<animation effect="fade" end="40" condition="true">conditional</animation>
+		</control>
+		<control type="label">
+			<left>40</left>
+			<top>210</top>
+			<width>1200</width>
+			<height>25</height>
+			<font>size_17</font>
+			<align>left</align>
+			<textcolor>colour.view54.label</textcolor>
+			<label>$INFO[ListItem(-3).Label]</label>
+			<animation effect="fade" end="40" condition="true">conditional</animation>
+		</control>
+		<control type="label">
+			<left>40</left>
+			<top>235</top>
+			<width>1200</width>
+			<height>25</height>
+			<font>size_17</font>
+			<align>left</align>
+			<textcolor>colour.view54.label</textcolor>
+			<label>$INFO[ListItem(-2).Label]</label>
+			<animation effect="fade" end="40" condition="true">conditional</animation>
+		</control>
+		<control type="label">
+			<left>40</left>
+			<top>260</top>
+			<width>1200</width>
+			<height>25</height>
+			<font>size_17</font>
+			<align>left</align>
+			<textcolor>colour.view54.label</textcolor>
+			<label>$INFO[ListItem(-1).Label]</label>
+			<animation effect="fade" end="40" condition="true">conditional</animation>
+		</control>
+		<control type="group">
+			<left>40</left>
+			<top>287.5</top>
+			<control type="label">
+				<left>0</left>
+				<top>0</top>
+				<width>1200</width>
+				<height>30</height>
+				<font>size_28</font>
+				<align>left</align>
+				<aligny>center</aligny>
+				<textcolor>colour.view54.label</textcolor>
+				<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>0</left>
+				<top>30</top>
+				<width>1200</width>
+				<height>40</height>
+				<itemgap>0</itemgap>
+				<align>left</align>
+				<orientation>horizontal</orientation>
+				<visible>!ListItem.IsFolder</visible>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>25</width>
+					<height>25</height>
+					<texture colordiffuse="colour.view54.info.icons">synopsis icons\medium_trainer.png</texture>
+					<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayHasTrainer.png)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>25</width>
+					<height>25</height>
+					<texture colordiffuse="colour.view54.info.icons">synopsis icons\medium_trained.png</texture>
+					<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayTrained.png)</visible>
+				</control>
+				<!-- dummy label (spacer)  -->
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<height>28</height>
+					<width min="5" max="10">auto</width>
+					<font>size_13</font>
+					<aligny>center</aligny>
+					<textcolor>colour.view54.info.label</textcolor>
+					<label/>
+					<visible>!IsEmpty(listitem.overlay)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>25</width>
+					<height>25</height>
+					<texture colordiffuse="colour.view54.info.icons">synopsis icons\medium_played.png</texture>
+				</control>
+				<control type="label">
+					<height>28</height>
+					<width min="5" max="400">auto</width>
+					<font>size_17</font>
+					<aligny>center</aligny>
+					<textcolor>colour.view54.info.label</textcolor>
+					<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>25</width>
+					<height>25</height>
+					<texture colordiffuse="colour.view54.info.icons">synopsis icons\medium_playercount.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<height>28</height>
+					<width min="5" max="400">auto</width>
+					<font>size_17</font>
+					<aligny>center</aligny>
+					<textcolor>colour.view54.info.label</textcolor>
+					<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>25</width>
+					<height>25</height>
+					<texture colordiffuse="colour.view54.info.icons">synopsis icons\medium_rating.png</texture>
+					<visible>!IsEmpty(ListItem.Synopsis_Rating) + !IsEmpty(ListItem.Synopsis_AltName)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<height>28</height>
+					<width min="5" max="400">auto</width>
+					<font>size_17</font>
+					<aligny>center</aligny>
+					<textcolor>colour.view54.info.label</textcolor>
+					<label>[UPPERCASE] $INFO[ListItem.Synopsis_Rating]  [/UPPERCASE]</label>
+					<visible>!IsEmpty(ListItem.Synopsis_Rating)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>25</width>
+					<height>25</height>
+					<texture colordiffuse="colour.view54.info.icons">synopsis icons\medium_genre.png</texture>
+					<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<height>28</height>
+					<width min="5" max="400">auto</width>
+					<font>size_17</font>
+					<aligny>center</aligny>
+					<textcolor>colour.view54.info.label</textcolor>
+					<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
+					<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>25</width>
+					<height>25</height>
+					<texture colordiffuse="colour.view54.info.icons">synopsis icons\medium_date.png</texture>
+					<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<height>28</height>
+					<width min="5" max="400">auto</width>
+					<font>size_17</font>
+					<aligny>center</aligny>
+					<textcolor>colour.view54.info.label</textcolor>
+					<label>[UPPERCASE] $INFO[ListItem.Synopsis_Year][/UPPERCASE]</label>
+					<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
+				</control>
+			</control>
+			<control type="textbox">
+				<left>0</left>
+				<top>60</top>
+				<width>1200</width>
+				<height>82</height>
+				<font>size_14</font>
+				<textcolor>colour.view54.info.synopsis</textcolor>
+				<align>justify</align>
+				<aligny>top</aligny>
+				<label>$INFO[ListItem.Synopsis_Overview]</label>
+				<animation effect="fade" end="95" condition="true">conditional</animation>
+				<autoscroll delay="8000" time="2000" repeat="10000" condition="true">Conditional</autoscroll>
+			</control>
+		</control>
+		<!-- Fake list bottom -->
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,-75" time="0" condition="IsEmpty(ListItem.Synopsis_Overview)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-25" time="0" condition="ListItem.IsFolder">Conditional</animation>
+			<control type="label">
+				<left>40</left>
+				<top>430</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(1).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>455</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(2).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>480</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(3).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>505</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(4).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>530</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(5).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>555</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(6).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+				<visible>IsEmpty(ListItem.Synopsis_Overview)</visible>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>580</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(7).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+				<visible>IsEmpty(ListItem.Synopsis_Overview)</visible>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>605</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(8).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+				<visible>IsEmpty(ListItem.Synopsis_Overview)</visible>
+			</control>
+			<control type="label">
+				<left>40</left>
+				<top>630</top>
+				<width>1200</width>
+				<height>25</height>
+				<font>size_17</font>
+				<align>left</align>
+				<textcolor>colour.view54.label</textcolor>
+				<label>$INFO[ListItem(7).Label]</label>
+				<animation effect="fade" end="40" condition="true">conditional</animation>
+				<visible>IsEmpty(ListItem.Synopsis_Overview) + IsEmpty(listitem.Synopsis_Resources)</visible>
+			</control>
+		</control>
+		<control type="wraplist" id="54">
+			<left>40</left>
+			<top>287.5</top>
+			<width>1200</width>
+			<height>145</height>
+			<onleft>9000</onleft>
+			<onright>90</onright>
+			<onup>54</onup>
+			<ondown>54</ondown>
+			<viewtype label="view54">bigwrap</viewtype>
+			<pagecontrol>90</pagecontrol>
+			<scrolltime>100</scrolltime>
+			<focusposition>5</focusposition>
+			<preloaditems>0</preloaditems>
+			<itemlayout height="25" width="1200">
+				</itemlayout>
+			<focusedlayout height="30" width="1200">
+				</focusedlayout>
+		</control>
+		<control type="scrollbar" id="90">
+			<right>10</right>
+			<top>160</top>
+			<width>10</width>
+			<height>400</height>
+			<onleft>54</onleft>
+			<orientation>vertical</orientation>
+			<include>View.ScrollBar.Vertical</include>
+		</control>
+	</control>
+</control>

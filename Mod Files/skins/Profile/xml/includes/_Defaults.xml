@@ -1,5 +1,6 @@
 <!-- _Defaults.xml -->
 <include file="defaults.xml"/>
+<include file="Includes_Custom_Views.xml"/>
 <include file="Includes_URLDownloader.xml"/>
 <include file="Includes_Theme_Override.xml"/>
 <constant name="FanartCrossfadeTime">300</constant>
@@ -8,23 +9,23 @@
 	<width>1280</width>
 	<height>720</height>
 </include>
-<include name="Scanlines">
+<include name="Global.Overlay">
 	<!-- <control type="largeimage"> -->
 	<!-- <include>1280x720</include> -->
 	<!-- <aspectratio scalediffuse="false">stretch</aspectratio> -->
-	<!-- <colordiffuse>20FFFFFF</colordiffuse> -->
+	<!-- <colordiffuse>30FFFFFF</colordiffuse> -->
 	<!-- <texture>shadowmask.png</texture> -->
 	<!-- </control> -->
 	<!-- <control type="largeimage"> -->
 	<!-- <include>1280x720</include> -->
 	<!-- <aspectratio scalediffuse="false">stretch</aspectratio> -->
-	<!-- <colordiffuse>20FFFFFF</colordiffuse> -->
+	<!-- <colordiffuse>30FFFFFF</colordiffuse> -->
 	<!-- <texture>shadowmask_alt.png</texture> -->
 	<!-- </control> -->
 	<!-- <control type="largeimage"> -->
 	<!-- <include>1280x720</include> -->
 	<!-- <aspectratio scalediffuse="false">stretch</aspectratio> -->
-	<!-- <colordiffuse>20FFFFFF</colordiffuse> -->
+	<!-- <colordiffuse>30FFFFFF</colordiffuse> -->
 	<!-- <texture>shadowmask1.png</texture> -->
 	<!-- </control> -->
 </include>
@@ -32,14 +33,14 @@
 	<control type="image">
 		<include>1280x720</include>
 		<aspectratio>stretch</aspectratio>
-		<texture>Special://skin\backgrounds\$VAR[backgrounds]</texture>
+		<texture>Special://skin\backgrounds\$VAR[Backgrounds]</texture>
 		<visible>StringCompare(skin.string(background_image),) + StringCompare(skin.string(Background_Custom_Color),)</visible>
 	</control>
 	<control type="image">
 		<include>1280x720</include>
 		<aspectratio>stretch</aspectratio>
 		<colordiffuse>$VAR[Custom_BG_Colour]</colordiffuse>
-		<texture>background diffuse.png</texture>
+		<texture>background diffuse.jpg</texture>
 		<visible>!StringCompare(skin.string(Background_Custom_Color),)</visible>
 	</control>
 	<control type="image">
@@ -50,23 +51,25 @@
 	</control>
 </include>
 <include name="Fanart">
-	<!-- These must be "largeimage" or backgrounded. If not you will get a application render exception crash due to the fog image lol -->
 	<control type="group">
-		<visible>Skin.HasSetting(fanartenabled) + ![Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(57) | Control.IsVisible(61) | Control.IsVisible(71) | Control.IsVisible(72) | Control.IsVisible(73) | Control.IsVisible(74) | Control.IsVisible(79) | Window.IsVisible(134) | Window.IsVisible(3000)]</visible>
+		<include>Game.Views</include>
+		<visible>Skin.HasSetting(fanartenabled) + ![Window.IsVisible(134) |  Window.IsVisible(1101) | Window.IsVisible(3000)]</visible>
 		<control type="group">
 			<visible>!Skin.HasSetting(higherfanart) + !Skin.HasSetting(fadedfanart)</visible>
 			<control type="image">
 				<include>1280x720</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="fanart_low_diffuse.png">$VAR[View_Fanart]</texture>
+				<texture background="true" diffuse="fanart_diffuse.png">$VAR[View_Fanart]</texture>
+				<visible>IntegerGreaterThan(system.memory(free_no_mb),2)</visible>
+				<include>Animated.Fanart.Effect</include>
 			</control>
 			<control type="image">
 				<include>1280x720</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="fanart_low_diffuse_Custom.png">$VAR[View_Fanart_Fog]</texture>
-				<visible>Skin.HasSetting(customfanartfog)</visible>
+				<texture background="true" diffuse="fanart_diffuse_fog.png">$VAR[View_Fanart_Fog]</texture>
+				<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(customfanartfog)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -75,14 +78,16 @@
 				<include>1280x720</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="fanart_diffuse.png">$VAR[View_Fanart]</texture>
+				<texture background="true" diffuse="fanart_diffuse_high.png">$VAR[View_Fanart]</texture>
+				<visible>IntegerGreaterThan(system.memory(free_no_mb),2)</visible>
+				<include>Animated.Fanart.Effect</include>
 			</control>
 			<control type="image">
 				<include>1280x720</include>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="fanart_diffuse_Custom.png">$VAR[View_Fanart_Fog]</texture>
-				<visible>Skin.HasSetting(customfanartfog)</visible>
+				<texture background="true" diffuse="fanart_diffuse_high_fog.png">$VAR[View_Fanart_Fog]</texture>
+				<visible>Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(customfanartfog)</visible>
 			</control>
 		</control>
 		<control type="group">
@@ -92,8 +97,33 @@
 				<colordiffuse>30FFFFFF</colordiffuse>
 				<fadetime>FanartCrossfadeTime</fadetime>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<texture background="true" diffuse="fanart_faded_diffuse.png">$VAR[View_Fanart]</texture>
+				<texture background="true" diffuse="fanart_diffuse_faded.png">$VAR[View_Fanart]</texture>
+				<visible>IntegerGreaterThan(system.memory(free_no_mb),2)</visible>
+				<include>Animated.Fanart.Effect</include>
 			</control>
+		</control>
+	</control>
+</include>
+<include name="Fanart.FullScreen">
+	<control type="group">
+		<include>Game.Views</include>
+		<visible>Skin.HasSetting(fanartenabled) + IntegerGreaterThan(system.memory(free_no_mb),2) + ![Window.IsVisible(134) |  Window.IsVisible(1101) | Window.IsVisible(3000)]</visible>
+		<control type="image">
+			<include>1280x720</include>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture background="true">$VAR[View_Fanart]</texture>
+			<visible>!Skin.HasSetting(fadedfanart)</visible>
+			<include>Animated.Fanart.Effect</include>
+		</control>
+		<control type="image">
+			<include>1280x720</include>
+			<colordiffuse>30FFFFFF</colordiffuse>
+			<fadetime>FanartCrossfadeTime</fadetime>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture background="true" diffuse="fanart_diffuse_faded.png">$VAR[View_Fanart]</texture>
+			<visible>Skin.HasSetting(fadedfanart)</visible>
+			<include>Animated.Fanart.Effect</include>
 		</control>
 	</control>
 </include>
@@ -105,7 +135,7 @@
 		<width>64</width>
 		<height>64</height>
 		<aspectratio>stretch</aspectratio>
-		<colordiffuse>1100_diffuse</colordiffuse>
+		<colordiffuse>colour.loading.diffuse</colordiffuse>
 		<imagepath>loading</imagepath>
 		<timeperimage>24</timeperimage>
 		<fadetime>5</fadetime>
@@ -120,7 +150,7 @@
 		<width>64</width>
 		<height>64</height>
 		<aspectratio>stretch</aspectratio>
-		<colordiffuse>138_diffuse</colordiffuse>
+		<colordiffuse>colour.loading.diffuse</colordiffuse>
 		<imagepath>loading</imagepath>
 		<timeperimage>24</timeperimage>
 		<fadetime>5</fadetime>
@@ -140,24 +170,41 @@
 		<animation effect="fade" delay="200" time="100">Hidden</animation>
 	</control>
 </include>
+<include name="Behind.Dialog">
+	<control type="image">
+		<include>1280x720</include>
+		<texture>black-back.png</texture>
+		<include>Dialog.Effect</include>
+	</control>
+</include>
+<include name="Behind.Dialog.Context">
+	<control type="image">
+		<left>-640</left>
+		<top>-360</top>
+		<width>2024</width>
+		<height>2024</height>
+		<texture>black-back.png</texture>
+		<include>Dialog.Effect</include>
+	</control>
+</include>
 <include name="Startup.Window.Profile">
 	<control type="image">
 		<left>547</left>
 		<top>238</top>
-		<width>185</width>
-		<height>185</height>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-		<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[system.profilethumb]</texture>
+		<width>186</width>
+		<height>186</height>
+		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<colordiffuse>80000000</colordiffuse>
+		<texture background="true">windows\login\user_thumb_overlay.png</texture>
 		<visible>System.HasLoginScreen | [!System.HasLoginScreen + !Skin.HasSetting(HideProfilePic)]</visible>
 	</control>
 	<control type="image">
 		<left>547</left>
 		<top>238</top>
-		<width>185</width>
-		<height>185</height>
-		<aspectratio scalediffuse="false">stretch</aspectratio>
-		<colordiffuse>80000000</colordiffuse>
-		<texture background="true">windows\login\user_thumb_overlay.png</texture>
+		<width>186</width>
+		<height>186</height>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+		<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[system.profilethumb]</texture>
 		<visible>System.HasLoginScreen | [!System.HasLoginScreen + !Skin.HasSetting(HideProfilePic)]</visible>
 	</control>
 </include>
@@ -172,9 +219,10 @@
 		<texture>windows\login\busy.png</texture>
 		<animation effect="fade" start="0" end="100" time="500" condition="Window.IsActive(2999)">WindowOpen</animation>
 		<animation effect="fade" start="100" end="0" time="100" condition="Window.IsActive(1114)">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" time="100" delay="0">Visible</animation>
 		<!-- <animation effect="slide" end="0,-140" time="0" condition="Skin.HasSetting(HideProfilePic)">Conditional</animation> -->
 		<animation effect="rotate" end="360" time="500" center="auto" loop="true" condition="true">Conditional</animation>
-		<visible>!Skin.HasSetting(AdultProfile)</visible>
+		<visible>!Skin.HasSetting(AdultProfile) + !Skin.HasSetting(UpdateDB)</visible>
 	</control>
 	<control type="image">
 		<left>620</left>
@@ -185,27 +233,29 @@
 		<colordiffuse>FFFFFFFF</colordiffuse>
 		<texture>windows\login\error.png</texture>
 		<animation effect="fade" start="0" end="100" time="0" delay="90000">WindowOpen</animation>
+		<animation effect="fade" start="0" end="100" time="0" delay="90000">Visible</animation>
 		<!-- <animation effect="slide" end="0,-140" time="0" condition="Skin.HasSetting(HideProfilePic)">Conditional</animation> -->
-		<visible>!Skin.HasSetting(AdultProfile)</visible>
+		<visible>!Skin.HasSetting(AdultProfile) + !Skin.HasSetting(UpdateDB)</visible>
 	</control>
 	<control type="textbox">
 		<left>0</left>
 		<top>0</top>
 		<include>1280x720</include>
 		<font>size_50</font>
-		<textcolor>130_header_label</textcolor>
-		<scroll>true</scroll>
+		<textcolor>FFFFFFFF</textcolor>
+		<shadowcolor>80000000</shadowcolor>
+		<scroll>false</scroll>
 		<align>center</align>
 		<aligny>center</aligny>
 		<label>$LOCALIZE[31017]</label>
 		<visible>!Skin.HasSetting(kioskmode) + Skin.HasSetting(AdultProfile) + Window.IsActive(1114)</visible>
-		<animation effect="fade" start="0" end="100" delay="500" time="200">WindowOpen</animation>
+		<animation effect="fade" start="0" end="100" delay="300" time="200">WindowOpen</animation>
 		<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
 	</control>
 </include>
 <include name="Window.Header">
 	<control type="group">
-		<visible>!Window.IsActive(11) + !Window.IsActive(29) + !Window.IsActive(2999) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(2006) + !Window.IsActive(2007) + !Window.IsActive(2900)</visible>
+		<visible>!Window.IsActive(11) + !Window.IsActive(29) + !Window.IsActive(2999) + !Window.IsActive(1113) + !Window.IsActive(1114) + !Window.IsActive(2006) + !Window.IsActive(2007) + !Window.IsActive(2900) + !Window.IsActive(2005)</visible>
 		<control type="image">
 			<left>24</left>
 			<top>11</top>
@@ -232,13 +282,14 @@
 		</control>
 		<control type="label">
 			<left>74</left>
-			<top>5</top>
+			<top>10</top>
 			<width>640</width>
 			<height>20</height>
 			<align>left</align>
 			<aligny>center</aligny>
 			<font>home_20</font>
 			<label>$INFO[System.DVDLabel]</label>
+			<textcolor>colour.general.label</textcolor>
 			<shadowcolor>A0000000</shadowcolor>
 			<animation type="Hidden" reversible="false">
 				<effect type="zoom" start="74,5,640,20" end="74,5,0,20" time="200" center="0,5"/>
@@ -275,13 +326,14 @@
 		</control>
 		<control type="label">
 			<right>15</right>
-			<top>5</top>
+			<top>10</top>
 			<width>300</width>
 			<height>20</height>
 			<align>right</align>
 			<aligny>center</aligny>
 			<font>home_20</font>
 			<label>$INFO[System.Time]</label>
+			<textcolor>colour.general.label</textcolor>
 			<shadowcolor>A0000000</shadowcolor>
 			<visible>!Skin.HasSetting(DisplayTime)</visible>
 			<animation effect="fade" start="20" end="20" delay="0" time="200" reversible="false" condition="Window.IsActive(2006)">Conditional</animation>
@@ -290,30 +342,37 @@
 </include>
 <include name="Window.Footer">
 	<include>Context_Buttons</include>
-	<control type="image">
-		<left>600</left>
-		<top>-90</top>
-		<width>80</width>
-		<height>80</height>
-		<colordiffuse>104_diffuse</colordiffuse>
-		<texture border="20">windows\volume\underlay.png</texture>
+	<control type="group">
 		<visible>Container.Scrolling + !Skin.HasSetting(HideScrollLabel)</visible>
-		<!-- <animation effect="fade" start="90" end="90" delay="0" time="0" condition="true">Conditional</animation> -->
-		<animation effect="slide" start="0,0" end="0,90" delay="100" time="200">Visible</animation>
-		<animation effect="slide" start="0,90" end="0,0" delay="100" time="100">Hidden</animation>
-	</control>
-	<control type="label">
-		<left>600</left>
-		<top>0</top>
-		<width>80</width>
-		<height>80</height>
-		<align>center</align>
-		<label>[B]$INFO[ListItem.SortLetter][/B]</label>
-		<textcolor>104_label</textcolor>
-		<font>size_50</font>
-		<visible>Container.Scrolling + !Skin.HasSetting(HideScrollLabel)</visible>
-		<animation effect="fade" start="0" end="100" delay="300" time="100">Visible</animation>
-		<animation effect="fade" start="100" end="0" delay="0" time="100">Hidden</animation>
+		<animation effect="fade" time="100" delay="2000">Visible</animation>
+		<animation effect="fade" time="100">Hidden</animation>
+		<control type="image">
+			<include>1280x720</include>
+			<texture>black-back.png</texture>
+		</control>
+		<control type="image">
+			<left>600</left>
+			<top>320</top>
+			<width>80</width>
+			<height>80</height>
+			<texture border="20,10,20,10" colordiffuse="colour.dialog.volumekaitoast.diffuse.main">windows\volume\underlay_alt.png</texture>
+			<!-- <animation effect="fade" start="90" end="90" delay="0" time="0" condition="true">Conditional</animation> -->
+			<!-- <animation effect="slide" start="0,0" end="0,90" delay="100" time="200">Visible</animation> -->
+			<!-- <animation effect="slide" start="0,90" end="0,0" delay="100" time="100">Hidden</animation> -->
+		</control>
+		<control type="label">
+			<left>600</left>
+			<top>320</top>
+			<width>80</width>
+			<height>80</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<label>[B]$INFO[ListItem.SortLetter][/B]</label>
+			<textcolor>colour.dialog.volumekaitoast.label</textcolor>
+			<font>size_50</font>
+			<!-- <animation effect="fade" start="0" end="100" delay="300" time="100">Visible</animation> -->
+			<!-- <animation effect="fade" start="100" end="0" delay="0" time="100">Hidden</animation> -->
+		</control>
 	</control>
 </include>
 <include name="Fake.ScrollBar.Vertical">
@@ -355,7 +414,7 @@
 </include>
 <include name="View.ScrollBar.Horizontal">
 	<left>150</left>
-	<top>48r</top>
+	<bottom>40</bottom>
 	<width>980</width>
 	<height>8</height>
 	<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
@@ -369,6 +428,177 @@
 	<visible allowhiddenfocus="true">Control.HasFocus(90)</visible>
 	<animation reversible="true" effect="fade" start="0" end="60" delay="" time="300">visible</animation>
 	<animation reversible="true" effect="fade" start="60" end="0" delay="" time="300">hidden</animation>
+</include>
+<include name="Context.Menu.Buttons">
+	<include>Behind.Dialog.Context</include>
+	<control type="image" id="997">
+		<description>background top image</description>
+		<left>0</left>
+		<top>-30</top>
+		<width>390</width>
+		<height>30</height>
+		<texture colordiffuse="colour.dialog.diffuse.main">contextmenu_top.png</texture>
+	</control>
+	<control type="image" id="999">
+		<description>background image</description>
+		<left>0</left>
+		<top>0</top>
+		<width>390</width>
+		<texture colordiffuse="colour.dialog.diffuse.main">contextmenu_middle.png</texture>
+	</control>
+	<control type="image" id="998">
+		<description>background bottom image</description>
+		<left>0</left>
+		<width>390</width>
+		<height>30</height>
+		<texture colordiffuse="colour.dialog.diffuse.main">contextmenu_bottom.png</texture>
+	</control>
+	<control type="button" id="1000">
+		<description>button template</description>
+		<left>30</left>
+		<top>30</top>
+		<width>330</width>
+		<height>35</height>
+		<textoffsety>3</textoffsety>
+		<onup>1000</onup>
+		<font>size_20</font>
+		<align>center</align>
+		<aligny>top</aligny>
+		<textcolor>colour.dialog.button.nofocus</textcolor>
+		<focusedcolor>colour.dialog.button.focus</focusedcolor>
+		<shadowcolor>-</shadowcolor>
+		<texturefocus colordiffuse="colour.dialog.diffuse.button.focus">windows\options\button_focus.png</texturefocus>
+		<texturenofocus colordiffuse="colour.dialog.diffuse.button.nofocus">windows\options\button_no_focus.png</texturenofocus>
+	</control>
+</include>
+<include name="Trainers.Settings.Dialog">
+	<control type="image">
+		<left>290</left>
+		<top>100</top>
+		<width>700</width>
+		<height>520</height>
+		<aspectratio>stretch</aspectratio>
+		<texture colordiffuse="colour.dialog.diffuse.main">windows\dialogs\select_browser\main.png</texture>
+	</control>
+	<control type="image">
+		<left>304</left>
+		<top>118</top>
+		<width>671</width>
+		<height>60</height>
+		<aspectratio>stretch</aspectratio>
+		<texture colordiffuse="colour.dialog.diffuse.header">windows\dialogs\select_browser\header.png</texture>
+	</control>
+	<control type="label" id="1">
+		<description>Heading label</description>
+		<left>323</left>
+		<top>123</top>
+		<width>633</width>
+		<height>40</height>
+		<font>size_28</font>
+		<textcolor>colour.dialog.label.header</textcolor>
+		<shadowcolor>-</shadowcolor>
+		<align>left</align>
+		<aligny>center</aligny>
+		<label>$LOCALIZE[12015]</label>
+	</control>
+	<control type="label" id="3">
+		<description>No Settings Label</description>
+		<left>314</left>
+		<top>100</top>
+		<width>641</width>
+		<height>520</height>
+		<align>center</align>
+		<aligny>center</aligny>
+		<label>12016</label>
+		<font>size_20</font>
+		<textcolor>colour.dialog.label.disabled</textcolor>
+	</control>
+	<control type="grouplist" id="5">
+		<description>control area</description>
+		<left>330</left>
+		<top>185</top>
+		<width>620</width>
+		<height>360</height>
+		<itemgap>5</itemgap>
+		<pagecontrol>-</pagecontrol>
+		<onleft>28</onleft>
+		<onright>28</onright>
+		<onup>28</onup>
+		<ondown>28</ondown>
+	</control>
+	<control type="radiobutton" id="8">
+		<description>Default RadioButton</description>
+		<height>35</height>
+		<font>size_20</font>
+		<textoffsety>2</textoffsety>
+		<aligny>top</aligny>
+		<textcolor>colour.dialog.button.nofocus</textcolor>
+		<focusedcolor>colour.dialog.button.focus</focusedcolor>
+		<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+		<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
+		<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
+	</control>
+	<control type="spincontrolex" id="9">
+		<description>Default spincontrolex</description>
+		<height>35</height>
+		<font>size_20</font>
+		<textoffsety>-2</textoffsety>
+		<aligny>top</aligny>
+		<reverse>yes</reverse>
+		<textcolor>colour.dialog.button.nofocus</textcolor>
+		<focusedcolor>colour.dialog.button.focus</focusedcolor>
+		<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+		<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
+		<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
+	</control>
+	<control type="grouplist">
+		<description>Control Info</description>
+		<left>286</left>
+		<top>555</top>
+		<width>700</width>
+		<height>80</height>
+		<itemgap>10</itemgap>
+		<orientation>Horizontal</orientation>
+		<align>center</align>
+		<control type="button" id="28">
+			<description>Ok Button</description>
+			<left>0</left>
+			<top>0</top>
+			<width>155</width>
+			<height>35</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>colour.dialog.button.nofocus</textcolor>
+			<focusedcolor>colour.dialog.button.focus</focusedcolor>
+			<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+			<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
+			<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
+			<label>186</label>
+			<onleft>29</onleft>
+			<onright>29</onright>
+			<onup>5</onup>
+			<ondown>5</ondown>
+		</control>
+		<control type="button" id="29">
+			<description>Cancel Button</description>
+			<left>0</left>
+			<top>0</top>
+			<width>155</width>
+			<height>35</height>
+			<align>center</align>
+			<aligny>center</aligny>
+			<textcolor>colour.dialog.button.nofocus</textcolor>
+			<focusedcolor>colour.dialog.button.focus</focusedcolor>
+			<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+			<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
+			<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
+			<label>222</label>
+			<onleft>28</onleft>
+			<onright>28</onright>
+			<onup>5</onup>
+			<ondown>5</ondown>
+		</control>
+	</control>
 </include>
 <include name="Common.View.Layout">
 	<left>415</left>
@@ -391,7 +621,7 @@
 			<width>770</width>
 			<height>60</height>
 			<aspectratio>stretch</aspectratio>
-			<texture>windows\settings\button_no_focus.png</texture>
+			<texture colordiffuse="colour.general.diffuse.button.nofocus">windows\settings\button_no_focus.png</texture>
 		</control>
 		<control type="label">
 			<left>8</left>
@@ -400,8 +630,8 @@
 			<height>23</height>
 			<align>left</align>
 			<font>size_24</font>
-			<textcolor>common_label_nofocus</textcolor>
-			<selectedcolor>context_buttons_label_selected</selectedcolor>
+			<textcolor>colour.general.button.nofocus</textcolor>
+			<selectedcolor>colour.general.label.selected</selectedcolor>
 			<label>$INFO[listitem.Label]</label>
 		</control>
 		<control type="label">
@@ -411,8 +641,8 @@
 			<height>20</height>
 			<align>left</align>
 			<font>size_18</font>
-			<textcolor>common_label_nofocus</textcolor>
-			<selectedcolor>context_buttons_label_selected</selectedcolor>
+			<textcolor>colour.general.button.nofocus</textcolor>
+			<selectedcolor>colour.general.label.selected</selectedcolor>
 			<label> $INFO[ListItem.label2]</label>
 		</control>
 	</itemlayout>
@@ -423,7 +653,7 @@
 			<width>770</width>
 			<height>60</height>
 			<aspectratio>stretch</aspectratio>
-			<texture>windows\settings\button_no_focus.png</texture>
+			<texture colordiffuse="colour.general.diffuse.button.nofocus">windows\settings\button_no_focus.png</texture>
 		</control>
 		<control type="image">
 			<left>0</left>
@@ -431,7 +661,7 @@
 			<width>770</width>
 			<height>60</height>
 			<aspectratio>stretch</aspectratio>
-			<texture>windows\settings\button_focus.png</texture>
+			<texture colordiffuse="colour.general.diffuse.button.focus">windows\settings\button_focus.png</texture>
 		</control>
 		<control type="label">
 			<left>8</left>
@@ -440,9 +670,8 @@
 			<height>23</height>
 			<align>left</align>
 			<font>size_24</font>
-			<textcolor>common_label_focus</textcolor>
-			<selectedcolor>common_label_focus</selectedcolor>
-			<selectedcolor>context_buttons_label_selected</selectedcolor>
+			<textcolor>colour.general.button.focus</textcolor>
+			<selectedcolor>colour.general.label.selected</selectedcolor>
 			<label>$INFO[listitem.Label]</label>
 		</control>
 		<control type="label">
@@ -452,19 +681,33 @@
 			<height>20</height>
 			<align>left</align>
 			<font>size_18</font>
-			<textcolor>common_label_focus</textcolor>
-			<selectedcolor>common_label_focus</selectedcolor>
-			<selectedcolor>context_buttons_label_selected</selectedcolor>
+			<textcolor>colour.general.button.focus</textcolor>
+			<selectedcolor>colour.general.label.selected</selectedcolor>
 			<label> $INFO[ListItem.label2]</label>
 		</control>
 	</focusedlayout>
 </include>
 <include name="Synopsis.Loader">
+	<!-- Y button for synopsis non kiosk mode -->
 	<control type="button" id="9099">
 		<left>-500</left>
+		<onfocus>ActivateWindow(1102)</onfocus>
 		<onfocus>SetFocus(50)</onfocus>
-		<visible>!SubString(ListItem.FolderPath,.xbe,right) + Skin.HasSetting(kioskmode)</visible>
+		<visible>!System.GetBool(mygames.gamesaltsynpsisbutton) + Skin.HasSetting(kioskmode)</visible>
 	</control>
+	<control type="button" id="9099">
+		<left>-500</left>
+		<onfocus>ReplaceWindow(1101)</onfocus>
+		<onfocus>SetFocus(50)</onfocus>
+		<visible>System.GetBool(mygames.gamesaltsynpsisbutton) + SubString(ListItem.FolderPath,.xbe,right) + Skin.HasSetting(kioskmode)</visible>
+	</control>
+	<control type="button" id="9099">
+		<left>-500</left>
+		<onfocus>ActivateWindow(1102)</onfocus>
+		<onfocus>SetFocus(50)</onfocus>
+		<visible>System.GetBool(mygames.gamesaltsynpsisbutton) + !SubString(ListItem.FolderPath,.xbe,right) + Skin.HasSetting(kioskmode)</visible>
+	</control>
+	<!-- synopsis kiosk mode -->
 	<control type="button" id="9099">
 		<left>-500</left>
 		<onfocus>SetFocus(19)</onfocus>
@@ -472,9 +715,14 @@
 	</control>
 	<control type="button" id="9099">
 		<left>-500</left>
+		<onfocus>SetFocus(50)</onfocus>
+		<visible>!System.GetBool(mygames.gamesaltsynpsisbutton) + SubString(ListItem.FolderPath,.xbe,right) + !Skin.HasSetting(kioskmode)</visible>
+	</control>
+	<control type="button" id="9099">
+		<left>-500</left>
 		<onfocus>ReplaceWindow(1101)</onfocus>
 		<onfocus>SetFocus(50)</onfocus>
-		<visible>SubString(ListItem.FolderPath,.xbe,right)</visible>
+		<visible>System.GetBool(mygames.gamesaltsynpsisbutton) + SubString(ListItem.FolderPath,.xbe,right) + !Skin.HasSetting(kioskmode)</visible>
 	</control>
 </include>
 <include name="Common.Options.Menu.Back">
@@ -497,13 +745,13 @@
 	<height>44</height>
 	<width>280</width>
 	<font>size_20</font>
-	<textcolor>includes_label</textcolor>
-	<focusedcolor>includes_label_focus</focusedcolor>
-	<shadowcolor>includes_label_shadow</shadowcolor>
+	<textcolor>colour.general.button.nofocus</textcolor>
+	<focusedcolor>colour.general.button.focus</focusedcolor>
+	<shadowcolor>colour.general.label.shadow</shadowcolor>
 	<align>left</align>
 	<aligny>center</aligny>
 	<textoffsetx>10</textoffsetx>
-	<texturefocus border="5">button-focus2.png</texturefocus>
+	<texturefocus border="5" colordiffuse="colour.general.diffuse.button.focus">button-focus2.png</texturefocus>
 	<texturenofocus>-</texturenofocus>
 	<pulseonselect>true</pulseonselect>
 </include>
@@ -518,11 +766,11 @@
 	<font>size_18</font>
 	<align>center</align>
 	<aligny>top</aligny>
-	<textcolor>includes_label_ButtonSettingsOptionsValues</textcolor>
-	<focusedcolor>includes_label_focus_ButtonSettingsOptionsValues</focusedcolor>
+	<textcolor>colour.dialog.button.nofocus</textcolor>
+	<focusedcolor>colour.dialog.button.focus</focusedcolor>
 	<shadowcolor>-</shadowcolor>
-	<texturefocus>windows\options\button_focus.png</texturefocus>
-	<texturenofocus>windows\options\button_no_focus.png</texturenofocus>
+	<texturefocus colordiffuse="colour.general.diffuse.button.focus">windows\options\button_focus.png</texturefocus>
+	<texturenofocus colordiffuse="colour.general.diffuse.button.nofocus">windows\options\button_no_focus.png</texturenofocus>
 </include>
 <include name="Button.Settings.Category.Values_Alt">
 	<description>Default Category Button</description>
@@ -535,11 +783,11 @@
 	<aligny>center</aligny>
 	<textoffsetx>44</textoffsetx>
 	<textoffsety>15</textoffsety>
-	<textcolor>includes_settings_category_left_label_no_focus</textcolor>
-	<focusedcolor>includes_settings_category_left_label_focus</focusedcolor>
-	<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
-	<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-	<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+	<textcolor>colour.settings.button.category.nofocus</textcolor>
+	<focusedcolor>colour.settings.button.category.focus</focusedcolor>
+	<disabledcolor>colour.settings.label.disabled</disabledcolor>
+	<texturefocus colordiffuse="colour.settings.diffuse.category.focus">windows\settings_categories\button_focus.png</texturefocus>
+	<texturenofocus colordiffuse="colour.settings.diffuse.category.nofocus">windows\settings_categories\button_no_focus.png</texturenofocus>
 </include>
 <include name="Button.SkinSettings.Category.Button.Values">
 	<description>Default Button</description>
@@ -552,11 +800,11 @@
 	<aligny>top</aligny>
 	<textoffsetx>44</textoffsetx>
 	<textoffsety>15</textoffsety>
-	<textcolor>includes_settings_category_right_label_no_focus</textcolor>
-	<focusedcolor>includes_settings_category_right_label_focus</focusedcolor>
-	<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
-	<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-	<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+	<textcolor>colour.settings.button.category.nofocus</textcolor>
+	<focusedcolor>colour.settings.button.category.focus</focusedcolor>
+	<disabledcolor>colour.settings.label.disabled</disabledcolor>
+	<texturefocus colordiffuse="colour.settings.diffuse.category.focus">windows\settings_categories\button_focus.png</texturefocus>
+	<texturenofocus colordiffuse="colour.settings.diffuse.category.nofocus">windows\settings_categories\button_no_focus.png</texturenofocus>
 </include>
 <include name="Button.SkinSettings.Category.Button.Values_Alt">
 	<description>Default Button</description>
@@ -569,11 +817,11 @@
 	<aligny>center</aligny>
 	<textoffsetx>44</textoffsetx>
 	<textoffsety>15</textoffsety>
-	<textcolor>includes_settings_category_right_label_no_focus</textcolor>
-	<focusedcolor>includes_settings_category_right_label_focus</focusedcolor>
-	<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
-	<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-	<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+	<textcolor>colour.settings.button.category.nofocus</textcolor>
+	<focusedcolor>colour.settings.button.category.focus</focusedcolor>
+	<disabledcolor>colour.settings.label.disabled</disabledcolor>
+	<texturefocus colordiffuse="colour.settings.diffuse.category.focus">windows\settings_categories\button_focus.png</texturefocus>
+	<texturenofocus colordiffuse="colour.settings.diffuse.category.nofocus">windows\settings_categories\button_no_focus.png</texturenofocus>
 </include>
 <include name="Button.SkinSettings.Category.Textbox.Values">
 	<description>Default Textbox</description>
@@ -584,9 +832,7 @@
 	<font>size_20</font>
 	<align>left</align>
 	<aligny>center</aligny>
-	<textcolor>includes_settings_category_right_label_no_focus</textcolor>
-	<focusedcolor>includes_settings_category_right_label_focus</focusedcolor>
-	<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
+	<textcolor>colour.settings.label.info.text</textcolor>
 	<animation effect="slide" start="0,0" end="44,0" time="10" condition="true">Conditional</animation>
 </include>
 <include name="Button.SkinSettings.Category.RadioButton.Values">
@@ -604,11 +850,11 @@
 	<aligny>top</aligny>
 	<textoffsetx>44</textoffsetx>
 	<textoffsety>15</textoffsety>
-	<textcolor>includes_settings_category_right_label_no_focus</textcolor>
-	<focusedcolor>includes_settings_category_right_label_focus</focusedcolor>
-	<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
-	<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-	<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+	<textcolor>colour.settings.button.category.nofocus</textcolor>
+	<focusedcolor>colour.settings.button.category.focus</focusedcolor>
+	<disabledcolor>colour.settings.label.disabled</disabledcolor>
+	<texturefocus colordiffuse="colour.settings.diffuse.category.focus">windows\settings_categories\button_focus.png</texturefocus>
+	<texturenofocus colordiffuse="colour.settings.diffuse.category.nofocus">windows\settings_categories\button_no_focus.png</texturenofocus>
 </include>
 <include name="Button.SkinSettings.Category.RadioButton.Values_alt">
 	<description>Default RadioButton</description>
@@ -625,21 +871,21 @@
 	<aligny>center</aligny>
 	<textoffsetx>44</textoffsetx>
 	<textoffsety>15</textoffsety>
-	<textcolor>includes_settings_category_right_label_no_focus</textcolor>
-	<focusedcolor>includes_settings_category_right_label_focus</focusedcolor>
-	<disabledcolor>includes_settings_category_disabled_label</disabledcolor>
-	<texturefocus>windows\settings_categories\button_focus.png</texturefocus>
-	<texturenofocus>windows\settings_categories\button_no_focus.png</texturenofocus>
+	<textcolor>colour.settings.button.category.nofocus</textcolor>
+	<focusedcolor>colour.settings.button.category.focus</focusedcolor>
+	<disabledcolor>colour.settings.label.disabled</disabledcolor>
+	<texturefocus colordiffuse="colour.settings.diffuse.category.focus">windows\settings_categories\button_focus.png</texturefocus>
+	<texturenofocus colordiffuse="colour.settings.diffuse.category.nofocus">windows\settings_categories\button_no_focus.png</texturenofocus>
 </include>
 <include name="Settings.Root.Button.Values">
-	<itemlayout height="74" width="796">
+	<itemlayout height="74" width="780">
 		<control type="image">
 			<left>0</left>
 			<top>-2</top>
 			<width>780</width>
 			<height>72</height>
 			<aspectratio>stretch</aspectratio>
-			<texture>windows\settings\button_no_focus.png</texture>
+			<texture colordiffuse="colour.settings.diffuse.root.nofocus">windows\settings\button_no_focus.png</texture>
 		</control>
 		<control type="image">
 			<left>4</left>
@@ -656,7 +902,7 @@
 			<height>23</height>
 			<align>left</align>
 			<font>size_24</font>
-			<textcolor>4_label_nofocus</textcolor>
+			<textcolor>colour.settings.button.nofocus</textcolor>
 			<label>$INFO[listitem.Label]</label>
 		</control>
 		<control type="label">
@@ -666,7 +912,7 @@
 			<height>23</height>
 			<align>left</align>
 			<font>size_19</font>
-			<textcolor>4_label_nofocus</textcolor>
+			<textcolor>colour.settings.button.nofocus</textcolor>
 			<label>$INFO[ListItem.label2]</label>
 		</control>
 	</itemlayout>
@@ -677,7 +923,7 @@
 			<width>780</width>
 			<height>72</height>
 			<aspectratio>stretch</aspectratio>
-			<texture>windows\settings\button_focus.png</texture>
+			<texture colordiffuse="colour.settings.diffuse.root.focus">windows\settings\button_focus.png</texture>
 		</control>
 		<control type="image">
 			<left>4</left>
@@ -694,8 +940,8 @@
 			<height>23</height>
 			<align>left</align>
 			<font>size_24</font>
-			<textcolor>4_label</textcolor>
-			<selectedcolor>4_label</selectedcolor>
+			<textcolor>colour.settings.button.focus</textcolor>
+			<selectedcolor>colour.settings.label.selected</selectedcolor>
 			<label>$INFO[listitem.Label]</label>
 		</control>
 		<control type="label">
@@ -705,8 +951,8 @@
 			<height>23</height>
 			<align>left</align>
 			<font>size_19</font>
-			<textcolor>4_label</textcolor>
-			<selectedcolor>4_label</selectedcolor>
+			<textcolor>colour.settings.button.focus</textcolor>
+			<selectedcolor>colour.settings.label.selected</selectedcolor>
 			<label>$INFO[ListItem.label2]</label>
 		</control>
 	</focusedlayout>
@@ -738,8 +984,8 @@
 				<width>450</width>
 				<height>45</height>
 				<font>size_19</font>
-				<textcolor>3_label_nofocus</textcolor>
-				<selectedcolor>3_label_selected_alt</selectedcolor>
+				<textcolor>colour.dialog.button.nofocus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -750,8 +996,8 @@
 				<width>90</width>
 				<height>45</height>
 				<font>size_17</font>
-				<textcolor>3_label_nofocus</textcolor>
-				<selectedcolor>3_label_selected_alt</selectedcolor>
+				<textcolor>colour.dialog.button.nofocus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label2]</label>
@@ -763,7 +1009,7 @@
 				<top>0</top>
 				<width>535</width>
 				<height>45</height>
-				<texture border="5">windows\file manager\button_focus.png</texture>
+				<texture border="5" colordiffuse="colour.dialog.diffuse.filemanager.focus.left">windows\file manager\button_focus.png</texture>
 			</control>
 			<control type="image">
 				<left>5</left>
@@ -778,8 +1024,8 @@
 				<width>450</width>
 				<height>45</height>
 				<font>size_19</font>
-				<textcolor>3_label</textcolor>
-				<selectedcolor>3_label_selected</selectedcolor>
+				<textcolor>colour.dialog.button.focus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -790,8 +1036,8 @@
 				<width>90</width>
 				<height>45</height>
 				<font>size_17</font>
-				<textcolor>3_label</textcolor>
-				<selectedcolor>3_label_selected</selectedcolor>
+				<textcolor>colour.dialog.button.focus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label2]</label>
@@ -826,8 +1072,8 @@
 				<width>390</width>
 				<height>45</height>
 				<font>size_19</font>
-				<textcolor>3_label_nofocus</textcolor>
-				<selectedcolor>3_label_selected_alt</selectedcolor>
+				<textcolor>colour.dialog.button.nofocus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -838,8 +1084,8 @@
 				<width>90</width>
 				<height>45</height>
 				<font>size_17</font>
-				<textcolor>3_label_nofocus</textcolor>
-				<selectedcolor>3_label_selected_alt</selectedcolor>
+				<textcolor>colour.dialog.button.nofocus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label2]</label>
@@ -851,7 +1097,7 @@
 				<top>0</top>
 				<width>535</width>
 				<height>45</height>
-				<texture border="5">windows\file manager\button_focus_alt.png</texture>
+				<texture border="5" flipx="true" colordiffuse="colour.dialog.diffuse.filemanager.focus.right">windows\file manager\button_focus_alt.png</texture>
 			</control>
 			<control type="image">
 				<left>5</left>
@@ -866,8 +1112,8 @@
 				<width>390</width>
 				<height>45</height>
 				<font>size_19</font>
-				<textcolor>3_label</textcolor>
-				<selectedcolor>3_label_selected</selectedcolor>
+				<textcolor>colour.dialog.button.focus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -878,8 +1124,8 @@
 				<width>90</width>
 				<height>45</height>
 				<font>size_17</font>
-				<textcolor>3_label</textcolor>
-				<selectedcolor>3_label_selected</selectedcolor>
+				<textcolor>colour.dialog.button.focus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label2]</label>
@@ -915,8 +1161,8 @@
 				<width>460</width>
 				<height>45</height>
 				<font>size_21</font>
-				<textcolor>3_label_nofocus</textcolor>
-				<selectedcolor>3_label_selected_alt</selectedcolor>
+				<textcolor>colour.dialog.button.nofocus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -927,8 +1173,8 @@
 				<width>250</width>
 				<height>45</height>
 				<font>size_21</font>
-				<textcolor>3_label_nofocus</textcolor>
-				<selectedcolor>3_label_selected_alt</selectedcolor>
+				<textcolor>colour.dialog.button.nofocus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label2]</label>
@@ -940,7 +1186,7 @@
 				<top>0</top>
 				<width>1070</width>
 				<height>45</height>
-				<texture border="5">windows\file manager\button_focus.png</texture>
+				<texture border="5" colordiffuse="colour.dialog.diffuse.filemanager.focus.left">windows\file manager\button_focus.png</texture>
 			</control>
 			<control type="image">
 				<left>5</left>
@@ -955,8 +1201,8 @@
 				<width>460</width>
 				<height>45</height>
 				<font>size_21</font>
-				<textcolor>3_label</textcolor>
-				<selectedcolor>3_label_selected</selectedcolor>
+				<textcolor>colour.dialog.button.focus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -967,8 +1213,8 @@
 				<width>250</width>
 				<height>45</height>
 				<font>size_21</font>
-				<textcolor>3_label</textcolor>
-				<selectedcolor>3_label_selected</selectedcolor>
+				<textcolor>colour.dialog.button.focus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label2]</label>
@@ -1004,8 +1250,8 @@
 				<width>460</width>
 				<height>45</height>
 				<font>size_21</font>
-				<textcolor>3_label_nofocus</textcolor>
-				<selectedcolor>3_label_selected_alt</selectedcolor>
+				<textcolor>colour.dialog.button.nofocus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -1016,8 +1262,8 @@
 				<width>250</width>
 				<height>45</height>
 				<font>size_21</font>
-				<textcolor>3_label_nofocus</textcolor>
-				<selectedcolor>3_label_selected_alt</selectedcolor>
+				<textcolor>colour.dialog.button.nofocus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label2]</label>
@@ -1029,7 +1275,7 @@
 				<top>0</top>
 				<width>1070</width>
 				<height>45</height>
-				<texture border="5">windows\file manager\button_focus_alt.png</texture>
+				<texture border="5" colordiffuse="colour.dialog.diffuse.filemanager.focus.right">windows\file manager\button_focus_alt.png</texture>
 			</control>
 			<control type="image">
 				<left>5</left>
@@ -1044,8 +1290,8 @@
 				<width>460</width>
 				<height>45</height>
 				<font>size_21</font>
-				<textcolor>3_label</textcolor>
-				<selectedcolor>3_label_selected</selectedcolor>
+				<textcolor>colour.dialog.button.focus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -1056,8 +1302,8 @@
 				<width>250</width>
 				<height>45</height>
 				<font>size_21</font>
-				<textcolor>3_label</textcolor>
-				<selectedcolor>3_label_selected</selectedcolor>
+				<textcolor>colour.dialog.button.focus</textcolor>
+				<selectedcolor>colour.dialog.label.selected</selectedcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label2]</label>
@@ -1072,96 +1318,80 @@
 		<left>-5000</left>
 		<label>-</label>
 		<onup>20</onup>
-		<onleft>4</onleft>
-		<onright>4</onright>
-		<ondown>4</ondown>
 		<onleft>50</onleft>
 		<onright>50</onright>
 		<ondown>50</ondown>
+		<onback>50</onback>
 	</control>
 	<control type="button" id="20">
 		<description>Secret Code Button</description>
 		<left>-5000</left>
 		<label>-</label>
 		<onup>21</onup>
-		<onleft>4</onleft>
-		<onright>4</onright>
-		<ondown>4</ondown>
 		<onleft>50</onleft>
 		<onright>50</onright>
 		<ondown>50</ondown>
+		<onback>50</onback>
 	</control>
 	<control type="button" id="21">
 		<description>Secret Code Button</description>
 		<left>-5000</left>
 		<label>-</label>
 		<ondown>22</ondown>
-		<onleft>4</onleft>
-		<onright>4</onright>
-		<onup>4</onup>
 		<onleft>50</onleft>
 		<onright>50</onright>
 		<onup>50</onup>
+		<onback>50</onback>
 	</control>
 	<control type="button" id="22">
 		<description>Secret Code Button</description>
 		<left>-5000</left>
 		<label>-</label>
 		<ondown>23</ondown>
-		<onleft>4</onleft>
-		<onright>4</onright>
-		<onup>4</onup>
 		<onleft>50</onleft>
 		<onright>50</onright>
 		<onup>50</onup>
+		<onback>50</onback>
 	</control>
 	<control type="button" id="23">
 		<description>Secret Code Button</description>
 		<left>-5000</left>
 		<label>-</label>
 		<onleft>24</onleft>
-		<onright>4</onright>
-		<onup>4</onup>
-		<ondown>4</ondown>
 		<onright>50</onright>
 		<onup>50</onup>
 		<ondown>50</ondown>
+		<onback>50</onback>
 	</control>
 	<control type="button" id="24">
 		<description>Secret Code Button</description>
 		<left>-5000</left>
 		<label>-</label>
 		<onleft>25</onleft>
-		<onright>4</onright>
-		<onup>4</onup>
-		<ondown>4</ondown>
 		<onright>50</onright>
 		<onup>50</onup>
 		<ondown>50</ondown>
+		<onback>50</onback>
 	</control>
 	<control type="button" id="25">
 		<description>Secret Code Button</description>
 		<left>-5000</left>
 		<label>-</label>
 		<onright>26</onright>
-		<onleft>4</onleft>
-		<onup>4</onup>
-		<ondown>4</ondown>
 		<onleft>50</onleft>
 		<onup>50</onup>
 		<ondown>50</ondown>
+		<onback>50</onback>
 	</control>
 	<control type="button" id="26">
 		<description>Secret Code Button</description>
 		<left>-5000</left>
 		<label>-</label>
 		<onright>27</onright>
-		<onleft>4</onleft>
-		<onup>4</onup>
-		<ondown>4</ondown>
 		<onleft>50</onleft>
 		<onup>50</onup>
 		<ondown>50</ondown>
+		<onback>50</onback>
 	</control>
 	<control type="button" id="27">
 		<description>Secret Code Button</description>
@@ -1169,14 +1399,11 @@
 		<label>-</label>
 		<onclick>RunScript(Special://scripts\XBMC4Gamers\Utilities\Edit Mode.py)</onclick>
 		<onclick>Skin.Reset(AdultProfile)</onclick>
-		<onleft>4</onleft>
-		<onright>4</onright>
-		<onup>4</onup>
-		<ondown>4</ondown>
 		<onleft>50</onleft>
 		<onright>50</onright>
 		<onup>50</onup>
 		<ondown>50</ondown>
+		<onback>50</onback>
 	</control>
 </include>
 <include name="Dialog.Effect">
@@ -1201,15 +1428,19 @@
 		<effect type="fade" start="100" end="0" time="110"/>
 	</animation>
 </include>
-<include name="Game.List.OpenClose">
+<include name="Game.Views">
 	<animation type="WindowOpen" reversible="false">
-		<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="100"/>
-		<effect type="fade" start="0" end="100" time="110"/>
+		<effect type="zoom" start="115" end="100" center="640,360" easing="out" tween="Quadratic" time="400"/>
+		<effect type="fade" start="0" end="100" time="400"/>
 	</animation>
 	<animation type="WindowClose" reversible="false">
-		<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100"/>
-		<effect type="fade" start="100" end="0" time="110"/>
+		<effect type="zoom" start="100" end="115" center="640,360" easing="in" tween="Quadratic" time="200"/>
+		<effect type="fade" start="100" end="0" time="200"/>
 	</animation>
+	<animation effect="zoom" start="100" end="102" center="auto" time="2000" tween="sine" easing="inout" pulse="true" condition="!Skin.HasSetting(kioskmode) + [Control.HasFocus(19) | Control.HasFocus(20) | Control.HasFocus(21) | Control.HasFocus(22) | Control.HasFocus(23) | Control.HasFocus(24) | Control.HasFocus(25) | Control.HasFocus(26) | Control.HasFocus(27)]">Conditional</animation>
+	<animation effect="slide" start="0,0" end="2,4" time="500" tween="sine" easing="inout" pulse="true" condition="!Skin.HasSetting(kioskmode) + [Control.HasFocus(19) | Control.HasFocus(20) | Control.HasFocus(21) | Control.HasFocus(22) | Control.HasFocus(23) | Control.HasFocus(24) | Control.HasFocus(25) | Control.HasFocus(26) | Control.HasFocus(27)]">Conditional</animation>ion>
+	<!-- <animation effect="fade" start="100" end="75" time="100" tween="Quadratic" easing="inout" condition="!Skin.HasSetting(kioskmode) + [Control.HasFocus(19) | Control.HasFocus(20) | Control.HasFocus(21) | Control.HasFocus(22) | Control.HasFocus(23) | Control.HasFocus(24) | Control.HasFocus(25) | Control.HasFocus(26) | Control.HasFocus(27)]">Conditional</animation> -->
+	<!-- <animation effect="zoom" start="105" end="100" time="100" center="640,360" tween="Quadratic" easing="inout" condition="!Window.IsVisible(106)">Conditional</animation> -->
 </include>
 <include name="Context.Menu.OpenClose">
 	<animation type="WindowOpen" reversible="false">
@@ -1230,4 +1461,8 @@
 		<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="200"/>
 		<effect type="fade" start="100" end="0" time="200"/>
 	</animation>
+</include>
+<include name="Animated.Fanart.Effect">
+	<animation effect="zoom" start="110" end="120" center="auto" time="12500" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>
+	<animation effect="slide" start="-20,-20" end="20,20" time="8500" tween="sine" easing="inout" pulse="true" condition="Skin.HasSetting(AnimatedFanart)">Conditional</animation>ion>
 </include>

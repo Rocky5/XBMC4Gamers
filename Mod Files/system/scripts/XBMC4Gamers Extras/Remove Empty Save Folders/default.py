@@ -8,32 +8,37 @@ import shutil
 
 def clean_save_folders(save_directories):
 	pDialog = xbmcgui.DialogProgress()
-	pDialog.update(0)
 	pDialog.create("Cleaning Save Folders")
-
+	
 	for save_directory in save_directories:
-		CountList = 1
 		if os.path.isdir(save_directory):
-			for save_dir in sorted(os.listdir(save_directory)):
+			save_dirs = sorted(os.listdir(save_directory))
+			total_dirs = len(save_dirs)
+
+			for count, save_dir in enumerate(save_dirs, start=1):
 				save_path = os.path.join(save_directory, save_dir)
+				process = ''
+				
 				if os.path.isdir(save_path):
-					pDialog.update((CountList * 100) / len(os.listdir(save_directory)), "Processing", save_path)
 					try:
 						subdirectories = next(os.walk(save_path))[1]
 						if subdirectories:
-							print save_path + " - skipping"
+							process = 'Not empty, skipping'
 						else:
 							files = os.listdir(save_path)
 							if any(not fname.endswith('.xbx') for fname in files):
-								print save_path + " - skipping"
+								process = 'Not empty, skipping'
 							else:
 								shutil.rmtree(save_path)
-								print save_path + " - removed"
-						CountList += 1
-					except StopIteration:
-						print save_path + " is write protected?"
+								process = 'Found empty folder, removing'
+					except (StopIteration, OSError):
+						process = 'Cannot remove folder, write protected?'
+					
+					print('{} - {}'.format(save_path, process))
+					progress = (count * 100) // total_dirs
+					pDialog.update(progress, "Processing", '{}[CR]{}'.format(save_path, process))
 		else:
-			print save_directory + " does not exist."
+			print(save_directory + " does not exist.")
 
 	pDialog.close()
 	xbmcgui.Dialog().ok("Cleaning Save Folders", "", "Process Complete")

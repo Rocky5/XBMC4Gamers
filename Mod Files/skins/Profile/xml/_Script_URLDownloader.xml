@@ -1,6 +1,7 @@
 <window type="window" id="1901">
 	<defaultcontrol always="true">1</defaultcontrol>
 	<onload>RunScript(Special://urldownloader\ForceUpdate.py)</onload>
+	<onload>ActivateWindow(1100)</onload>
 	<controls>
 		<!-- Background Images -->
 		<include>Global.Backgrounds</include>

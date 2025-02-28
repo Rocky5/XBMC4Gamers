@@ -1,53 +1,45 @@
 <window type="dialog" id="134">
 	<defaultcontrol always="true">450</defaultcontrol>
+	<onunload>FlushTextureCache</onunload>
 	<controls>
-		<control type="image">
-			<include>1280x720</include>
-			<texture>black-back.png</texture>
-			<include>Dialog.Effect</include>
-		</control>
+		<include>Behind.Dialog</include>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<control type="image">
-				<left>55</left>
-				<top>55</top>
-				<width>1170</width>
-				<height>582</height>
+				<left>270</left>
+				<top>180</top>
+				<width>740</width>
+				<height>360</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings_categories\main.png</texture>
+				<texture colordiffuse="colour.dialog.diffuse.main">windows\dialogs\select_browser\main.png</texture>
 			</control>
 			<control type="image">
-				<left>75</left>
-				<top>75</top>
-				<width>330</width>
-				<height>542</height>
+				<left>286</left>
+				<top>192</top>
+				<width>709</width>
+				<height>61</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings_categories\main_overlay.png</texture>
+				<texture colordiffuse="colour.dialog.diffuse.header">windows\dialogs\select_browser\header.png</texture>
 			</control>
-			<control type="image">
-				<left>75</left>
-				<top>75</top>
-				<width>330</width>
-				<height>76</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings\header.png</texture>
-			</control>
-			<control type="label">
-				<left>75</left>
-				<top>95</top>
-				<width>330</width>
-				<height>28</height>
+			<control type="label" id="1">
+				<description>Heading label</description>
+				<left>313</left>
+				<top>200</top>
+				<width>731</width>
+				<height>37</height>
 				<font>size_28</font>
 				<scroll>true</scroll>
-				<align>center</align>
-				<textcolor>common_header_label</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
 				<label>$LOCALIZE[1036]</label>
+				<textcolor>colour.dialog.label.header</textcolor>
+				<shadowcolor>-</shadowcolor>
 			</control>
 			<control type="grouplist">
 				<description>Control Info</description>
-				<left>415</left>
-				<top>555</top>
-				<width min="100" max="775">auto</width>
+				<left>270</left>
+				<top>483</top>
+				<width>740</width>
 				<height>80</height>
 				<itemgap>10</itemgap>
 				<orientation>Horizontal</orientation>
@@ -60,6 +52,7 @@
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>pad_buttons\dialogs\a_button.png</texture>
+					<visible>!StringCompare(Container(450).NumItems,0)</visible>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -69,8 +62,9 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.dialog.label.context</textcolor>
 					<label>$LOCALIZE[424]</label>
+					<visible>!StringCompare(Container(450).NumItems,0)</visible>
 				</control>
 				<!-- B Button -->
 				<control type="image">
@@ -79,18 +73,18 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\B_button.png</texture>
+					<texture>pad_buttons\dialogs\b_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="60" max="80">auto</width>
+					<width min="80" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
-					<label>$LOCALIZE[31151]</label>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
 				</control>
 				<!-- White Button -->
 				<control type="image">
@@ -100,7 +94,7 @@
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
 					<texture>pad_buttons\dialogs\White_button.png</texture>
-					<visible>Skin.HasSetting(kioskmode)</visible>
+					<visible>Skin.HasSetting(kioskmode) + !StringCompare(Container(450).NumItems,0)</visible>
 				</control>
 				<control type="label">
 					<left>0</left>
@@ -110,39 +104,135 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[31113]</label>
-					<visible>Skin.HasSetting(kioskmode)</visible>
+					<visible>Skin.HasSetting(kioskmode) + !StringCompare(Container(450).NumItems,0)</visible>
 				</control>
 			</control>
 			<control type="image">
-				<left>75</left>
-				<top>151</top>
-				<width>330</width>
-				<height>467</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>no_poster.jpg</texture>
+				<left>825</left>
+				<top>263</top>
+				<width>159</width>
+				<height>208</height>
+				<aspectratio>keep</aspectratio>
+				<texture fallback="defaultprogram.png">$INFO[Container(450).ListItem.Icon]</texture>
+				<visible>!StringCompare(Container(450).CurrentItem,0)</visible>
 			</control>
-			<control type="image">
-				<left>75</left>
-				<top>151</top>
-				<width>330</width>
-				<height>467</height>
-				<aspectratio>stretch</aspectratio>
-				<texture background="true">$INFO[listitem.Icon]</texture>
+			<control type="group">
+				<visible>StringCompare(Container(450).CurrentItem,0)</visible>
+				<!-- No items found -->
+				<control type="image">
+					<left>300</left>
+					<top>263</top>
+					<width>515</width>
+					<height>40</height>
+					<aspectratio>stretch</aspectratio>
+					<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+				</control>
+				<control type="label">
+					<left>310</left>
+					<top>263</top>
+					<width>495</width>
+					<height>40</height>
+					<font>size_20</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<label>$LOCALIZE[504]</label>
+					<scroll>false</scroll>
+				</control>
 			</control>
 			<!-- Content List -->
 			<control type="list" id="450">
+				<left>300</left>
+				<top>263</top>
+				<width>515</width>
+				<height>210</height>
 				<onup>450</onup>
 				<ondown>450</ondown>
-				<include>Common.View.Layout</include>
+				<onleft>60</onleft>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<pagecontrol>90</pagecontrol>
+				<scrolltime>230</scrolltime>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<itemlayout height="42" width="515">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>515</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<height>40</height>
+						<width>495</width>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.nofocus</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>false</scroll>
+					</control>
+				</itemlayout>
+				<focusedlayout height="42" width="515">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>515</width>
+						<height>40</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<height>40</height>
+						<width>495</width>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.focus</textcolor>
+						<selectedcolor>colour.dialog.button.nofocus</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>false</scroll>
+					</control>
+				</focusedlayout>
 			</control>
-			<control type="scrollbar" id="90">
-				<left>1190</left>
-				<top>105</top>
+			<control type="scrollbar" id="60">
+				<left>296</left>
+				<top>263</top>
 				<width>4</width>
-				<height>420</height>
-				<include>Fake.ScrollBar.Vertical</include>
+				<height>208</height>
+				<onright>450</onright>
+				<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+				<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="2,16,2,16">scrollbar_bar.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+				<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(60)">Conditional</animation>
+			</control>
+			<control type="label">
+				<description>number of files in list text label</description>
+				<right>295</right>
+				<bottom>197</bottom>
+				<width>200</width>
+				<height>20</height>
+				<font>size_15</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<textcolor>colour.dialog.label.context</textcolor>
+				<label>$INFO[Container(450).CurrentItem]/$INFO[Container(450).NumItems]</label>
+				<animation reversible="false" effect="fade" start="0" end="75" time="300">Visible</animation>
+				<animation reversible="false" effect="fade" start="75" end="0" time="0">Hidden</animation>
 			</control>
 		</control>
 	</controls>

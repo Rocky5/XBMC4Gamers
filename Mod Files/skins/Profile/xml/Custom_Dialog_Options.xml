@@ -1,11 +1,7 @@
 <window type="dialog" id="1112">
 	<defaultcontrol always="true">9002</defaultcontrol>
 	<controls>
-		<control type="image">
-			<include>1280x720</include>
-			<texture>black-back.png</texture>
-			<include>Dialog.Effect</include>
-		</control>
+		<include>Behind.Dialog</include>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<control type="image">
@@ -14,7 +10,7 @@
 				<width>740</width>
 				<height>560</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\options\main.png</texture>
+				<texture colordiffuse="colour.dialog.diffuse.main">windows\options\main.png</texture>
 			</control>
 			<control type="image">
 				<left>286</left>
@@ -22,7 +18,7 @@
 				<width>709</width>
 				<height>61</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\options\header.png</texture>
+				<texture colordiffuse="colour.dialog.diffuse.header">windows\options\header.png</texture>
 			</control>
 			<control type="label">
 				<left>313</left>
@@ -32,29 +28,29 @@
 				<font>size_28</font>
 				<scroll>true</scroll>
 				<align>left</align>
-				<textcolor>1112_header_label</textcolor>
+				<textcolor>colour.dialog.label.header</textcolor>
 				<label>$LOCALIZE[33063]</label>
 			</control>
 			<control type="label">
 				<left>10</left>
-				<top>35r</top>
+				<bottom>0</bottom>
 				<width>1280</width>
-				<height>36</height>
+				<height>35</height>
 				<font>size_15</font>
 				<animation effect="fade" end="70" condition="true">Conditional</animation>
-				<textcolor>1112_label</textcolor>
+				<textcolor>colour.dialog.label</textcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$LOCALIZE[31000]</label>
 			</control>
 			<control type="label">
-				<left>1270</left>
-				<top>35r</top>
+				<right>10</right>
+				<bottom>0</bottom>
 				<width>1280</width>
-				<height>36</height>
+				<height>35</height>
 				<font>size_15</font>
 				<animation effect="fade" end="70" condition="true">Conditional</animation>
-				<textcolor>1112_label</textcolor>
+				<textcolor>colour.dialog.label</textcolor>
 				<align>right</align>
 				<aligny>center</aligny>
 				<label>$INFO[system.kernelversion] kernel</label>
@@ -85,7 +81,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>1112_context_label</textcolor>
+					<textcolor>colour.dialog.label.context</textcolor>
 					<label>$LOCALIZE[424]</label>
 				</control>
 				<!-- B Button -->
@@ -105,8 +101,8 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>1112_context_label</textcolor>
-					<label>Back</label>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
 				</control>
 				<!-- X Button -->
 				<control type="image">
@@ -126,9 +122,29 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>1112_context_label</textcolor>
+					<textcolor>colour.dialog.label.context</textcolor>
 					<label>$LOCALIZE[250]</label>
 					<visible>Player.HasAudio</visible>
+				</control>
+				<!-- Black Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\black_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="70" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[31116]</label>
 				</control>
 			</control>
 			<control type="grouplist" id="9002">
@@ -150,6 +166,13 @@
 					<onclick>RunXBE($INFO[Skin.String(Emulator_Path)])</onclick>
 					<onclick>RunScript($INFO[Skin.String(Emulator_Path)])</onclick>
 					<visible>Skin.HasSetting(EmuButton)</visible>
+				</control>
+				<control type="button" id="2">
+					<include>Button.Settings.Options.Values</include>
+					<label>[UPPERCASE]$LOCALIZE[31125][/UPPERCASE]</label>
+					<onclick>Dialog.Close(1112)</onclick>
+					<onclick>ActivateWindow(1102)</onclick>
+					<visible>!Skin.HasSetting(kioskmode)</visible>
 				</control>
 				<control type="button" id="3">
 					<include>Button.Settings.Options.Values</include>
@@ -191,6 +214,8 @@
 			<control type="group">
 				<left>650</left>
 				<top>190</top>
+				<animation effect="slide" start="0,0" end="0,11" time="0" condition="!SubString(System.Freespace(F),MB)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,11" time="0" condition="!SubString(System.Freespace(G),MB)">Conditional</animation>
 				<control type="group">
 					<top>0</top>
 					<control type="label">
@@ -203,7 +228,7 @@
 						<aligny>center</aligny>
 						<font>size_24</font>
 						<label>[UPPERCASE]$LOCALIZE[705][/UPPERCASE]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>IP Address</description>
@@ -215,7 +240,7 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$INFO[Network.IPAddress]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>Internet state</description>
@@ -227,7 +252,7 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$INFO[System.InternetState]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 				</control>
 				<control type="group">
@@ -242,7 +267,7 @@
 						<aligny>center</aligny>
 						<font>size_24</font>
 						<label>[UPPERCASE]$LOCALIZE[20093][/UPPERCASE]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>Profile</description>
@@ -254,7 +279,7 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$INFO[System.ProfileName]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 				</control>
 				<control type="group">
@@ -268,8 +293,8 @@
 						<align>left</align>
 						<aligny>center</aligny>
 						<font>size_24</font>
-						<label>[UPPERCASE]$LOCALIZE[31147][/UPPERCASE]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<label>[UPPERCASE]$LOCALIZE[31614][/UPPERCASE]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>Space</description>
@@ -281,7 +306,7 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$INFO[System.Freespace(C)]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>Space</description>
@@ -293,7 +318,7 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$INFO[System.Freespace(E)]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>Space</description>
@@ -305,7 +330,8 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$INFO[System.Freespace(F)]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+						<visible>SubString(System.Freespace(F),MB)</visible>
 					</control>
 					<control type="label">
 						<description>Space</description>
@@ -317,11 +343,14 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$INFO[System.Freespace(G)]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+						<visible>SubString(System.Freespace(G),MB)</visible>
 					</control>
 				</control>
 				<control type="group">
 					<top>245</top>
+					<animation effect="slide" start="0,0" end="0,-22" time="0" condition="!SubString(System.Freespace(F),MB)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-22" time="0" condition="!SubString(System.Freespace(G),MB)">Conditional</animation>
 					<control type="label">
 						<description>System Info</description>
 						<left>0</left>
@@ -332,7 +361,7 @@
 						<aligny>center</aligny>
 						<font>size_24</font>
 						<label>[UPPERCASE]$LOCALIZE[10007][/UPPERCASE]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>RAM</description>
@@ -344,7 +373,7 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$LOCALIZE[158]: $INFO[System.FreeMemory]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>CPU Temp</description>
@@ -356,7 +385,7 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$LOCALIZE[22011] $INFO[System.CPUTemperature]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 					<control type="label">
 						<description>CPU Temp</description>
@@ -368,7 +397,7 @@
 						<aligny>center</aligny>
 						<font>size_19</font>
 						<label>$LOCALIZE[22010] $INFO[System.GPUTemperature]</label>
-						<textcolor>1112_label_alt</textcolor>
+						<textcolor>colour.dialog.label.info.text</textcolor>
 					</control>
 				</control>
 			</control>

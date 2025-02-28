@@ -1,0 +1,123 @@
+<includes>
+	<include name="custom_id_81">
+		<control type="group">
+			<visible>Control.IsVisible(81) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+			<control type="largeimage">
+				<include>1280x720</include>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture>$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</texture>
+				<visible>!IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur)</visible>
+			</control>
+			<control type="largeimage">
+				<include>1280x720</include>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture>$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</texture>
+				<visible>!IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(fanartblur)</visible>
+			</control>
+			<control type="largeimage">
+				<include>1280x720</include>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<fadetime>FanartCrossfadeTime</fadetime>
+				<texture>$VAR[View_Fanart]</texture>
+				<visible>IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartenabled)</visible>
+			</control>
+			<control type="image">
+				<include>1280x720</include>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<colordiffuse>F0FFFFFF</colordiffuse>
+				<texture>views\56\black-back.png</texture>
+			</control>
+			<control type="group">
+				<animation effect="slide" start="0,0" end="0,-10" time="100" condition="!Skin.HasSetting(HideContextBar) + !Window.IsActive(1112)">Conditional</animation>
+				<control type="panel" id="81">
+					<left>47</left>
+					<top>60</top>
+					<width>1230</width>
+					<height>660</height>
+					<onleft>81</onleft>
+					<onright>81</onright>
+					<onup>9000</onup>
+					<ondown>90</ondown>
+					<viewtype label="view81">biglist</viewtype>
+					<pagecontrol>90</pagecontrol>
+					<scrolltime>230</scrolltime>
+					<focusposition>0</focusposition>
+					<orientation>vertical</orientation>
+					<preloaditems>3</preloaditems>
+					<itemlayout condition="Skin.HasSetting(_resourcesenabled)" height="315" width="246">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>201</width>
+							<height>270</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="false" diffuse="views\56\diffuse.png">no_poster.jpg</texture>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>201</width>
+							<height>270</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="false" diffuse="views\56\diffuse.png">$INFO[listitem.icon]</texture>
+							<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>201</width>
+							<height>270</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="true" diffuse="views\56\diffuse.png">$INFO[ListItem.Thumb]</texture>
+						</control>
+					</itemlayout>
+					<focusedlayout condition="Skin.HasSetting(_resourcesenabled)" height="315" width="246">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>201</width>
+							<height>270</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="false" diffuse="views\56\diffuse.png">no_poster.jpg</texture>
+							<animation reversible="false" effect="zoom" start="0,0,201,270" end="-11,-13,223,296" time="120" tween="back" easing="out">focus</animation>
+							<animation reversible="false" effect="zoom" end="0,0,201,270" start="-11,-13,223,296" time="120" tween="back" easing="in">unfocus</animation>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>201</width>
+							<height>270</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="false" diffuse="views\56\diffuse.png">$INFO[listitem.icon]</texture>
+							<animation reversible="false" effect="zoom" start="0,0,201,270" end="-11,-13,223,296" time="120" tween="back" easing="out">focus</animation>
+							<animation reversible="false" effect="zoom" end="0,0,201,270" start="-11,-13,223,296" time="120" tween="back" easing="in">unfocus</animation>
+							<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>201</width>
+							<height>270</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="false" diffuse="views\56\diffuse.png">$INFO[ListItem.Thumb]</texture>
+							<animation reversible="false" effect="zoom" start="0,0,201,270" end="-11,-13,223,296" time="120" tween="back" easing="out">focus</animation>
+							<animation reversible="false" effect="zoom" end="0,0,201,270" start="-11,-13,223,296" time="120" tween="back" easing="in">unfocus</animation>
+						</control>
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>201</width>
+							<height>270</height>
+							<aspectratio>stretch</aspectratio>
+							<texture background="false" diffuse="views\56\diffuse.png">views\56\poster-border.png</texture>
+							<animation reversible="false" effect="zoom" start="0,0,201,270" end="-11,-13,223,296" time="120" tween="back" easing="out">focus</animation>
+							<animation reversible="false" effect="fade" start="100" end="0" time="0">unfocus</animation>
+						</control>
+					</focusedlayout>
+				</control>
+			</control>
+		</control>
+	</include>
+</includes>

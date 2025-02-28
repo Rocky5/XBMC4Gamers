@@ -1,9 +1,11 @@
 <window id="2999">
-	<onload>RunScript(Special://scripts\XBMC4Gamers\default.py)</onload>
 	<onload>Skin.SetBool(xbmc4gamers)</onload>
 	<onload>Skin.SetString(dashboard_name,XBMC4Gamers)</onload>
+	<onload>Skin.SetString(urldownloader_new,true</onload>
 	<onload>Skin.SetString(urldownloader,Special://urldownloader\)</onload>
-	<onunload condition="!Skin.HasSetting(AdultProfile) + StringCompare(Skin.String(HomeWindowSource),Home)">RunScript(Special://scripts\XBMC4Gamers\Utilities\Home Screen Items.py,2)</onunload>
+	<onload>RunScript(Special://scripts\XBMC4Gamers\default.py)</onload>
+	<onunload condition="!Skin.HasSetting(AdultProfile) + !StringCompare(Skin.String(HomeWindowSource),Home)">RunScript(Special://scripts\XBMC4Gamers\Utilities\Parse Programs DB.py,refresh_recents)</onunload>
+	<onunload condition="!Skin.HasSetting(AdultProfile) + StringCompare(Skin.String(HomeWindowSource),Home)">RunScript(Special://scripts\XBMC4Gamers\Utilities\Parse Programs DB.py,refresh_home_gotohome)</onunload>
 	<defaultcontrol always="true">1</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
@@ -20,7 +22,7 @@
 				<effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle"/>
 				<effect type="slide" start="0,0" end="0,720" time="1000" delay="0"/>
 			</animation>
-			<visible>System.HasLoginScreen</visible>
+			<visible>System.HasLoginScreen + !Skin.HasSetting(LoginFade)</visible>
 		</control>
 		<include>Startup.Window.Profile</include>
 		<include>Startup.Window.Info</include>

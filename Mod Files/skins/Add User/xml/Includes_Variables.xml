@@ -1,0 +1,9 @@
+<includes>
+	<variable name="Backgrounds">
+		<value condition="IsEmpty(skin.string(background_color))">0.jpg</value>
+		<value condition="!IsEmpty(skin.string(background_color))">$INFO[skin.string(background_color)]</value>
+	</variable>
+	<variable name="Custom_BG_Colour">
+		<value>FF$INFO[skin.string(Background_Custom_Color)]</value>
+	</variable>
+</includes>

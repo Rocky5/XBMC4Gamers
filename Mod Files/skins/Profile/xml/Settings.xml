@@ -1,7 +1,6 @@
 <window id="4">
 	<defaultcontrol>50</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<onload>Skin.Reset(SelectPreviewMode)</onload>
 	<controls>
 		<include>Global.Backgrounds</include>
 		<control type="group">
@@ -12,7 +11,7 @@
 				<width>878</width>
 				<height>558</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings\main.png</texture>
+				<texture colordiffuse="colour.settings.diffuse.main">windows\settings\main.png</texture>
 			</control>
 			<control type="image">
 				<left>219</left>
@@ -20,7 +19,7 @@
 				<width>842</width>
 				<height>61</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings\header.png</texture>
+				<texture colordiffuse="colour.settings.diffuse.header">windows\settings\header.png</texture>
 			</control>
 			<control type="label">
 				<left>250</left>
@@ -30,7 +29,7 @@
 				<font>size_28</font>
 				<scroll>true</scroll>
 				<align>left</align>
-				<textcolor>4_header_label</textcolor>
+				<textcolor>colour.settings.label.header</textcolor>
 				<label>$LOCALIZE[5]</label>
 			</control>
 			<control type="grouplist">
@@ -59,7 +58,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>4_context_label</textcolor>
+					<textcolor>colour.settings.label.context</textcolor>
 					<label>$LOCALIZE[424]</label>
 				</control>
 				<!-- B Button -->
@@ -79,8 +78,8 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>4_context_label</textcolor>
-					<label>$LOCALIZE[31151]</label>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
 				</control>
 				<!-- Black Button -->
 				<control type="image">
@@ -99,7 +98,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>4_context_label</textcolor>
+					<textcolor>colour.settings.label.context</textcolor>
 					<label>$LOCALIZE[33073]</label>
 				</control>
 			</control>

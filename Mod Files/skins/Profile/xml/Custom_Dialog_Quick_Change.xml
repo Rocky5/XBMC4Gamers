@@ -33,7 +33,7 @@
 						<top>0</top>
 						<width>1280</width>
 						<height>50</height>
-						<texture border="5">banner.png</texture>
+						<texture border="5" colordiffuse="colour.general.diffuse.quick.change">pad_buttons\underlay.png</texture>
 					</control>
 					<control type="label">
 						<description>heading label</description>
@@ -45,7 +45,7 @@
 						<aligny>center</aligny>
 						<font>size_28</font>
 						<label>$INFO[ListItem.Label]</label>
-						<textcolor>1115_label</textcolor>
+						<textcolor>colour.context.buttons.label</textcolor>
 					</control>
 				</focusedlayout>
 				<content>
@@ -139,7 +139,7 @@
 			<animation effect="slide" start="0,30" end="0,0" time="100" delay="100" condition="Skin.HasSetting(HideContextBar)">WindowOpen</animation>
 			<control type="image">
 				<left>0</left>
-				<bottom>30</bottom>
+				<bottom>0</bottom>
 				<width>1280</width>
 				<height>30</height>
 				<texture>pad_buttons\underlay.png</texture>
@@ -147,9 +147,9 @@
 			<control type="grouplist">
 				<description>Control Info</description>
 				<left>10</left>
-				<bottom>25</bottom>
+				<bottom>0</bottom>
 				<width>1280</width>
-				<height>80</height>
+				<height>25</height>
 				<itemgap>10</itemgap>
 				<orientation>Horizontal</orientation>
 				<!-- A Button -->
@@ -168,7 +168,7 @@
 					<height>22</height>
 					<font>size_14</font>
 					<aligny>center</aligny>
-					<textcolor>context_buttons_label</textcolor>
+					<textcolor>colour.context.buttons.label</textcolor>
 					<label>$LOCALIZE[31106]</label>
 				</control>
 				<!-- B Button -->
@@ -187,7 +187,7 @@
 					<height>22</height>
 					<font>size_14</font>
 					<aligny>center</aligny>
-					<textcolor>context_buttons_label</textcolor>
+					<textcolor>colour.context.buttons.label</textcolor>
 					<label>$LOCALIZE[31108]</label>
 				</control>
 			</control>

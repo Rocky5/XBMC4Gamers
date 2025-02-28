@@ -1,0 +1,770 @@
+<!-- Detailed_71_Large_Posters ID = 71 -->
+<control type="group">
+	<visible>Control.IsVisible(71) + !Control.IsVisible(50)</visible>
+	<include>Game.Views</include>
+	<control type="largeimage">
+		<include>1280x720</include>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+		<fadetime>FanartCrossfadeTime</fadetime>
+		<colordiffuse>30FFFFFF</colordiffuse>
+		<texture diffuse="views\71\fanart_diffuse.png">$INFO[ListItem.Synopsis_Resources]artwork\poster_small_blurred.jpg</texture>
+		<visible>Skin.HasSetting(fanartenabled)</visible>
+	</control>
+	<!-- On Previous -->
+	<control type="group" id="7101">
+		<visible>Container(71).OnPrevious</visible>
+		<animation effect="slide" end="0,0" reversible="false" time="250">Hidden</animation>
+		<control type="group">
+			<visible>Container(71).OnPrevious</visible>
+			<left>1312</left>
+			<top>160</top>
+			<width>266</width>
+			<height>400</height>
+			<animation reversible="false" effect="slide" start="-266,0" end="0,0" time="250">visible</animation>
+			<animation reversible="false" effect="slide" start="-266,0" end="0,0" time="250">hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(3).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(3).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(3).Icon]</texture>
+				<visible>Container(71).ListItem(3).IsFolder + IsEmpty(Container(71).ListItem(3).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(3).Icon]</texture>
+				<visible>!Container(71).ListItem(3).IsFolder + IsEmpty(Container(71).ListItem(3).Synopsis_Resources)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container(71).OnPrevious</visible>
+			<left>1046</left>
+			<top>160</top>
+			<width>266</width>
+			<height>400</height>
+			<animation reversible="false" effect="slide" start="-266,0" end="0,0" time="250">visible</animation>
+			<animation reversible="false" effect="slide" start="-266,0" end="0,0" time="250">hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Icon]</texture>
+				<visible>Container(71).ListItem(2).IsFolder + IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Icon]</texture>
+				<visible>!Container(71).ListItem(2).IsFolder + IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>118</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">views\71\poster_shadow.png</texture>
+				<visible>Container(71).OnPrevious</visible>
+				<animation reversible="false" effect="slide" start="0,0" end="-108,0" time="100">visible</animation>
+				<animation reversible="false" effect="slide" start="0,0" end="-108,0" time="100">hidden</animation>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container(71).OnPrevious</visible>
+			<left>780</left>
+			<top>160</top>
+			<width>266</width>
+			<height>400</height>
+			<animation reversible="false" effect="zoom" start="480,120,320,480" end="780,160,266,400" time="250">visible</animation>
+			<animation reversible="false" effect="zoom" start="480,120,320,480" end="780,160,266,400" time="250">hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Icon]</texture>
+				<visible>Container(71).ListItem(1).IsFolder + IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Icon]</texture>
+				<visible>!Container(71).ListItem(1).IsFolder + IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>118</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">views\71\poster_shadow.png</texture>
+				<visible>Container(71).OnPrevious</visible>
+				<animation reversible="false" effect="fade" start="0" end="100" time="250">visible</animation>
+				<animation reversible="false" effect="fade" start="0" end="100" time="250">hidden</animation>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container(71).OnPrevious</visible>
+			<left>480</left>
+			<top>120</top>
+			<width>320</width>
+			<height>480</height>
+			<animation reversible="false" effect="slide" start="-780,0" end="0,0" time="250">visible</animation>
+			<animation reversible="false" effect="slide" start="-780,0" end="0,0" time="250">hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Icon]</texture>
+				<visible>Container(71).ListItem(0).IsFolder + IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Icon]</texture>
+				<visible>!Container(71).ListItem(0).IsFolder + IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+		</control>
+	</control>
+	<!-- On Next -->
+	<control type="group" id="7102">
+		<visible>Container(71).OnNext</visible>
+		<animation effect="slide" end="0,0" reversible="false" time="250">Hidden</animation>
+		<control type="group">
+			<visible>Container(71).OnNext</visible>
+			<left>1312</left>
+			<top>160</top>
+			<width>266</width>
+			<height>400</height>
+			<animation reversible="false" effect="slide" start="0,0" end="-266,0" time="250">visible</animation>
+			<animation reversible="false" effect="slide" start="0,0" end="-266,0" time="250">hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Icon]</texture>
+				<visible>Container(71).ListItem(2).IsFolder + IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Icon]</texture>
+				<visible>!Container(71).ListItem(2).IsFolder + IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container(71).OnNext</visible>
+			<left>1046</left>
+			<top>160</top>
+			<width>266</width>
+			<height>400</height>
+			<animation reversible="false" effect="slide" start="0,0" end="-266,0" time="250">visible</animation>
+			<animation reversible="false" effect="slide" start="0,0" end="-266,0" time="250">hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Icon]</texture>
+				<visible>Container(71).ListItem(1).IsFolder + IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Icon]</texture>
+				<visible>!Container(71).ListItem(1).IsFolder + IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>118</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">views\71\poster_shadow.png</texture>
+				<visible>Container(71).OnNext</visible>
+				<animation reversible="false" effect="fade" start="0" end="100" time="150" delay="100">visible</animation>
+				<animation reversible="false" effect="fade" start="0" end="100" time="150" delay="100">hidden</animation>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container(71).OnNext</visible>
+			<left>780</left>
+			<top>160</top>
+			<width>266</width>
+			<height>400</height>
+			<animation reversible="false" effect="zoom" start="780,160,266,400" end="480,120,320,480" time="250">visible</animation>
+			<animation reversible="false" effect="zoom" start="780,160,266,400" end="480,120,320,480" time="250">hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Icon]</texture>
+				<visible>Container(71).ListItem(0).IsFolder + IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Icon]</texture>
+				<visible>!Container(71).ListItem(0).IsFolder + IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>118</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">views\71\poster_shadow.png</texture>
+				<visible>Container(71).OnNext</visible>
+				<animation reversible="false" effect="fade" start="100" end="0" time="250">visible</animation>
+				<animation reversible="false" effect="fade" start="100" end="0" time="250">hidden</animation>
+			</control>
+		</control>
+		<control type="group">
+			<visible>Container(71).OnNext</visible>
+			<left>480</left>
+			<top>120</top>
+			<width>320</width>
+			<height>480</height>
+			<animation reversible="false" effect="slide" start="0,0" end="-780,0" time="250">visible</animation>
+			<animation reversible="false" effect="slide" start="0,0" end="-780,0" time="250">hidden</animation>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(-1).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(-1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(-1).Icon]</texture>
+				<visible>Container(71).ListItem(-1).IsFolder + IsEmpty(Container(71).ListItem(-1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(-1).Icon]</texture>
+				<visible>!Container(71).ListItem(-1).IsFolder + IsEmpty(Container(71).ListItem(-1).Synopsis_Resources)</visible>
+			</control>
+		</control>
+	</control>
+	<!-- Static -->
+	<control type="group" id="7100">
+		<visible>!Control.IsVisible(7101) + !Control.IsVisible(7102)</visible>
+		<control type="group">
+			<left>-500</left>
+			<top>0</top>
+			<width>0</width>
+			<height>0</height>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>0</width>
+				<height>0</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(3).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(3).Synopsis_Resources)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<left>1046</left>
+			<top>160</top>
+			<width>266</width>
+			<height>400</height>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Icon]</texture>
+				<visible>Container(71).ListItem(2).IsFolder + IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(2).Icon]</texture>
+				<visible>!Container(71).ListItem(2).IsFolder + IsEmpty(Container(71).ListItem(2).Synopsis_Resources)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<left>780</left>
+			<top>160</top>
+			<width>266</width>
+			<height>400</height>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Icon]</texture>
+				<visible>Container(71).ListItem(1).IsFolder + IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>266</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(1).Icon]</texture>
+				<visible>!Container(71).ListItem(1).IsFolder + IsEmpty(Container(71).ListItem(1).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>118</width>
+				<height>400</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">views\71\poster_shadow.png</texture>
+				<visible>!Control.IsVisible(5001) + !Control.IsVisible(5002)</visible>
+				<animation reversible="false" effect="fade" start="100" end="0" time="150" delay="100">visible</animation>
+				<animation reversible="false" effect="fade" start="100" end="0" time="150" delay="100">hidden</animation>
+			</control>
+		</control>
+		<control type="group">
+			<left>480</left>
+			<top>120</top>
+			<width>320</width>
+			<height>480</height>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture diffuse="views\71\diffuse.png">no_poster.jpg</texture>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Icon]</texture>
+				<visible>Container(71).ListItem(0).IsFolder + IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>320</width>
+				<height>480</height>
+				<aspectratio scalediffuse="false">keep</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(0).Icon]</texture>
+				<visible>!Container(71).ListItem(0).IsFolder + IsEmpty(Container(71).ListItem(0).Synopsis_Resources)</visible>
+			</control>
+		</control>
+		<control type="group">
+			<left>-500</left>
+			<top>0</top>
+			<width>0</width>
+			<height>0</height>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>0</width>
+				<height>0</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\71\diffuse.png">$INFO[Container(71).ListItem(-1).Synopsis_Resources]artwork\$VAR[View71_Thumbs]</texture>
+				<visible>!IsEmpty(Container(71).ListItem(-1).Synopsis_Resources)</visible>
+			</control>
+		</control>
+	</control>
+	<control type="group">
+		<visible>!Control.IsVisible(7101) + !Control.IsVisible(7102)</visible>
+		<animation reversible="false" effect="fade" start="0" end="100" time="250" delay="400">visible</animation>
+		<animation reversible="false" effect="fade" start="0" end="0" time="0" delay="0">hidden</animation>
+		<control type="textbox">
+			<left>40</left>
+			<top>120</top>
+			<width>400</width>
+			<height>185</height>
+			<font>size_30</font>
+			<align>left</align>
+			<aligny>bottom</aligny>
+			<textcolor>colour.view71.label</textcolor>
+			<shadowcolor>50000000</shadowcolor>
+			<label>[UPPERCASE][B]$INFO[ListItem.Label][/B][/UPPERCASE]</label>
+			<autoscroll delay="8000" time="2000" repeat="10000" condition="true">Conditional</autoscroll>
+		</control>
+		<control type="grouplist">
+			<description>Control Info</description>
+			<left>40</left>
+			<top>305</top>
+			<width>400</width>
+			<height>40</height>
+			<itemgap>0</itemgap>
+			<align>left</align>
+			<orientation>horizontal</orientation>
+			<visible>!ListItem.IsFolder</visible>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view71.info.icons">synopsis icons\medium_trainer.png</texture>
+				<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayHasTrainer.png)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view71.info.icons">synopsis icons\medium_trained.png</texture>
+				<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayTrained.png)</visible>
+			</control>
+			<!-- dummy label (spacer)  -->
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="10">auto</width>
+				<font>size_13</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view71.info.label</textcolor>
+				<label/>
+				<visible>!IsEmpty(listitem.overlay)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view71.info.icons">synopsis icons\medium_played.png</texture>
+			</control>
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="400">auto</width>
+				<font>size_16</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view71.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view71.info.icons">synopsis icons\medium_playercount.png</texture>
+			</control>
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="220">auto</width>
+				<font>size_16</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view71.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view71.info.icons">synopsis icons\medium_rating.png</texture>
+				<visible>!IsEmpty(ListItem.Synopsis_Rating) + !IsEmpty(ListItem.Synopsis_AltName)</visible>
+			</control>
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="400">auto</width>
+				<font>size_16</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view71.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[ListItem.Synopsis_Rating]  [/UPPERCASE]</label>
+				<visible>!IsEmpty(ListItem.Synopsis_Rating)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view71.info.icons">synopsis icons\medium_date.png</texture>
+				<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
+			</control>
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="400">auto</width>
+				<font>size_16</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view71.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[ListItem.Synopsis_Year][/UPPERCASE]</label>
+				<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
+			</control>
+		</control>
+		<control type="grouplist">
+			<description>Control Info</description>
+			<left>40</left>
+			<top>330</top>
+			<width>400</width>
+			<height>40</height>
+			<itemgap>0</itemgap>
+			<align>left</align>
+			<orientation>horizontal</orientation>
+			<visible>!IsEmpty(ListItem.Synopsis_Resources) + !IsEmpty(ListItem.Synopsis_Genre)</visible>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>16</width>
+				<height>16</height>
+				<texture colordiffuse="colour.view71.info.icons">synopsis icons\small_genre.png</texture>
+			</control>
+			<control type="label">
+				<left>0</left>
+				<top>0</top>
+				<width min="5" max="400">auto</width>
+				<font>size_13</font>
+				<textcolor>colour.view71.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
+			</control>
+		</control>
+		<control type="textbox">
+			<left>40</left>
+			<top>355</top>
+			<width>400</width>
+			<height>235</height>
+			<font>size_15</font>
+			<textcolor>colour.view71.info.synopsis</textcolor>
+			<shadowcolor>50000000</shadowcolor>
+			<align>justify</align>
+			<aligny>top</aligny>
+			<label>$INFO[ListItem.Synopsis_Overview]</label>
+			<autoscroll delay="8000" time="2000" repeat="10000" condition="true">Conditional</autoscroll>
+			<animation effect="slide" start="0,0" end="0,-20" time="0" condition="IsEmpty(ListItem.Synopsis_Genre)">Conditional</animation>
+		</control>
+	</control>
+	<control type="list" id="71">
+		<left>0</left>
+		<top>0</top>
+		<width>1280</width>
+		<height>720</height>
+		<onleft>71</onleft>
+		<onright>71</onright>
+		<onup>9000</onup>
+		<ondown>90</ondown>
+		<viewtype label="view71">biglist</viewtype>
+		<pagecontrol>90</pagecontrol>
+		<scrolltime>230</scrolltime>
+		<focusposition>2</focusposition>
+		<orientation>horizontal</orientation>
+		<preloaditems>0</preloaditems>
+		<itemlayout height="290" width="414">
+				</itemlayout>
+		<focusedlayout height="290" width="414">
+				</focusedlayout>
+	</control>
+	<control type="scrollbar" id="90">
+		<onup>71</onup>
+		<include>View.ScrollBar.Horizontal</include>
+	</control>
+</control>

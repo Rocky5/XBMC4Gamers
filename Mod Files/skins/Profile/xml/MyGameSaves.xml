@@ -11,7 +11,7 @@
 				<width>1170</width>
 				<height>610</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings_categories\main.png</texture>
+				<texture colordiffuse="colour.general.diffuse.main">windows\settings_categories\main.png</texture>
 			</control>
 			<control type="image">
 				<left>75</left>
@@ -19,7 +19,7 @@
 				<width>330</width>
 				<height>570</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings_categories\main_overlay.png</texture>
+				<texture colordiffuse="colour.general.diffuse.main.overlay">windows\settings_categories\main_overlay.png</texture>
 			</control>
 			<control type="image">
 				<left>75</left>
@@ -27,7 +27,7 @@
 				<width>330</width>
 				<height>76</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>windows\settings\header.png</texture>
+				<texture colordiffuse="colour.general.diffuse.header">windows\settings\header.png</texture>
 			</control>
 			<control type="label">
 				<left>75</left>
@@ -37,7 +37,7 @@
 				<font>size_28</font>
 				<scroll>true</scroll>
 				<align>center</align>
-				<textcolor>common_header_label</textcolor>
+				<textcolor>colour.general.label.header</textcolor>
 				<label>$LOCALIZE[20315]</label>
 			</control>
 			<control type="grouplist">
@@ -66,7 +66,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[424]</label>
 				</control>
 				<!-- B Button -->
@@ -86,8 +86,8 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
-					<label>$LOCALIZE[31151]</label>
+					<textcolor>colour.general.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
 				</control>
 				<!-- White Button -->
 				<control type="image">
@@ -106,7 +106,7 @@
 					<font>size_19</font>
 					<align>left</align>
 					<aligny>center</aligny>
-					<textcolor>common_context_label</textcolor>
+					<textcolor>colour.general.label.context</textcolor>
 					<label>$LOCALIZE[31113]</label>
 				</control>
 			</control>

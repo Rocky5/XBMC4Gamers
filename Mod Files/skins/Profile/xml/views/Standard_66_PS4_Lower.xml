@@ -1,0 +1,212 @@
+<!-- Standard_66_PS4_Lower ID = 66 -->
+<control type="group">
+	<visible>Control.IsVisible(66) + !Control.IsVisible(50)</visible>
+	<include>Fanart</include>
+	<control type="group">
+		<include>Game.Views</include>
+		<control type="fixedlist" id="66">
+			<left>0</left>
+			<top>360</top>
+			<width>1380</width>
+			<height>430</height>
+			<onleft>66</onleft>
+			<onright>66</onright>
+			<onup>9000</onup>
+			<ondown>90</ondown>
+			<viewtype label="view66">biglist</viewtype>
+			<pagecontrol>90</pagecontrol>
+			<scrolltime>230</scrolltime>
+			<focusposition>2</focusposition>
+			<orientation>horizontal</orientation>
+			<preloaditems>2</preloaditems>
+			<itemlayout height="147" width="149">
+				<control type="group">
+					<left>-86</left>
+					<control type="image">
+						<left>3</left>
+						<top>90</top>
+						<width>141</width>
+						<height>141</height>
+						<aspectratio aligny="middle" scalediffuse="false">scale</aspectratio>
+						<texture diffuse="views\66\diffuse.png">no_loginIcon.jpg</texture>
+					</control>
+					<control type="image">
+						<left>5</left>
+						<top>92</top>
+						<width>137</width>
+						<height>137</height>
+						<fadetime>ThumbCrossfadeTime</fadetime>
+						<aspectratio aligny="middle" scalediffuse="false">scale</aspectratio>
+						<texture background="true" diffuse="views\66\diffuse.png">$INFO[listitem.icon]</texture>
+						<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+					</control>
+					<control type="group">
+						<visible>Skin.HasSetting(_resourcesenabled)</visible>
+						<control type="image">
+							<left>5</left>
+							<top>92</top>
+							<width>137</width>
+							<height>137</height>
+							<fadetime>ThumbCrossfadeTime</fadetime>
+							<aspectratio aligny="middle" scalediffuse="false">scale</aspectratio>
+							<texture background="true" diffuse="views\66\diffuse.png">$INFO[listitem.icon]</texture>
+							<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+						</control>
+						<control type="image">
+							<left>5</left>
+							<top>92</top>
+							<width>137</width>
+							<height>137</height>
+							<fadetime>ThumbCrossfadeTime</fadetime>
+							<aspectratio aligny="middle" scalediffuse="false">scale</aspectratio>
+							<texture background="true" diffuse="views\66\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View66_Thumbs]</texture>
+							<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+						</control>
+					</control>
+				</control>
+			</itemlayout>
+			<focusedlayout height="286" width="258">
+						</focusedlayout>
+		</control>
+		<control type="group">
+			<left>212</left>
+			<top>360</top>
+			<control type="image">
+				<left>8</left>
+				<top>0</top>
+				<width>240</width>
+				<height>286</height>
+				<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+				<texture diffuse="views\66\diffuse_large.png">no_loginIcon.jpg</texture>
+			</control>
+			<control type="image">
+				<left>13</left>
+				<top>5</top>
+				<width>230</width>
+				<height>276</height>
+				<fadetime>ThumbCrossfadeTime</fadetime>
+				<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+				<texture background="true" diffuse="views\66\diffuse_large.png">$INFO[listitem.icon]</texture>
+				<visible>!Skin.HasSetting(_resourcesenabled)</visible>
+			</control>
+			<control type="group">
+				<visible>Skin.HasSetting(_resourcesenabled)</visible>
+				<control type="image">
+					<left>13</left>
+					<top>5</top>
+					<width>230</width>
+					<height>276</height>
+					<fadetime>ThumbCrossfadeTime</fadetime>
+					<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="views\66\diffuse_large.png">$INFO[listitem.icon]</texture>
+					<visible>IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>13</left>
+					<top>5</top>
+					<width>230</width>
+					<height>276</height>
+					<fadetime>ThumbCrossfadeTime</fadetime>
+					<aspectratio aligny="top" scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="views\66\diffuse_large.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View66_Thumbs]</texture>
+					<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+			</control>
+			<control type="image">
+				<left>13</left>
+				<top>250</top>
+				<width>230</width>
+				<height>31</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture background="true" diffuse="views\66\diffuse_name_underlay.png">views\66\name_underlay.png</texture>
+				<visible>!ListItem.IsFolder</visible>
+			</control>
+			<control type="image">
+				<left>210</left>
+				<top>253</top>
+				<width>25</width>
+				<height>25</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture>overlay-watched.png</texture>
+				<visible>IntegerGreaterThan(ListItem.ProgramCount,0)</visible>
+				<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(66).OnScrollNext">Conditional</animation>
+				<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(66).OnScrollPrevious">Conditional</animation>
+				<visible>!Skin.HasSetting(HidePlayedIndicator) + !ListItem.IsFolder</visible>
+			</control>
+			<control type="image">
+				<left>20</left>
+				<top>253</top>
+				<width>25</width>
+				<height>25</height>
+				<aspectratio scalediffuse="false">stretch</aspectratio>
+				<texture>$INFO[listitem.overlay]</texture>
+				<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(66).OnScrollNext">Conditional</animation>
+				<animation reversible="false" effect="fade" start="100" end="0" time="0" condition="Container(66).OnScrollPrevious">Conditional</animation>
+				<visible>!Skin.HasSetting(HideTrainerIndicator) + !ListItem.IsFolder</visible>
+			</control>
+			<control type="label">
+				<left>13</left>
+				<top>250</top>
+				<width>230</width>
+				<height>31</height>
+				<font>size_15</font>
+				<textcolor>colour.view66.info.label</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$LOCALIZE[31186][/UPPERCASE]</label>
+				<visible>StringCompare(ListItem.ProgramCount,0) + !ListItem.IsFolder</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !ListItem.IsFolder">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + ListItem.IsFolder">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>13</left>
+				<top>250</top>
+				<width>230</width>
+				<height>31</height>
+				<font>size_15</font>
+				<textcolor>colour.view66.info.label</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31188]][/UPPERCASE]</label>
+				<visible>StringCompare(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !ListItem.IsFolder">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + ListItem.IsFolder">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>13</left>
+				<top>250</top>
+				<width>230</width>
+				<height>31</height>
+				<font>size_15</font>
+				<textcolor>colour.view66.info.label</textcolor>
+				<scroll>true</scroll>
+				<align>center</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$LOCALIZE[31187] $INFO[ListItem.ProgramCount,, $LOCALIZE[31189]][/UPPERCASE]</label>
+				<visible>IntegerGreaterThan(ListItem.ProgramCount,1) + !ListItem.IsFolder</visible>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !ListItem.IsFolder">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + ListItem.IsFolder">Conditional</animation>
+			</control>
+			<control type="label">
+				<left>270</left>
+				<top>240</top>
+				<width>1040</width>
+				<height>36</height>
+				<font>size_35</font>
+				<textcolor>$VAR[Alt_Label_Colour]</textcolor>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidefoldernames) + !ListItem.IsFolder">Conditional</animation>
+				<animation effect="fade" start="100" end="0" time="0" condition="Skin.HasSetting(hidegamenames) + ListItem.IsFolder">Conditional</animation>
+			</control>
+		</control>
+		<control type="scrollbar" id="90">
+			<onup>66</onup>
+			<include>View.ScrollBar.Horizontal</include>
+		</control>
+	</control>
+</control>

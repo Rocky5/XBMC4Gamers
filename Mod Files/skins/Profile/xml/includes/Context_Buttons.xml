@@ -8,86 +8,81 @@
 		<animation effect="slide" start="0,30" end="0,0" time="100" delay="100">Visible</animation>
 		<control type="image">
 			<left>0</left>
-			<bottom>30</bottom>
+			<bottom>0</bottom>
 			<width>1280</width>
 			<height>30</height>
-			<texture>pad_buttons\underlay.png</texture>
+			<texture colordiffuse="colour.context.diffuse.underlay">pad_buttons\underlay.png</texture>
 		</control>
 		<control type="grouplist">
 			<description>Control Info</description>
 			<left>10</left>
-			<bottom>25</bottom>
+			<bottom>0</bottom>
 			<width>1280</width>
-			<height>80</height>
+			<height>25</height>
 			<itemgap>10</itemgap>
 			<orientation>Horizontal</orientation>
 			<!-- A Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\a_button.png</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31106]</label>
 				<visible>!Window.IsActive(Home)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31106]</label>
 				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31126]</label>
 				<visible>Window.IsActive(Home) + !ControlGroup(1).HasFocus</visible>
 			</control>
 			<!-- B Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\b_button.png</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>[Window.IsActive(Home) + !ControlGroup(1).HasFocus] + [!SubString(ListItem.FolderPath,multipath,left) | StringCompare(Skin.String(HomeWindowSource),Home)]</visible>
+				<visible>StringCompare(Skin.String(HomeWindowSource),Home) | !IsEmpty(Container.FolderName)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31108]</label>
-				<visible>[Window.IsActive(Home) + !ControlGroup(1).HasFocus] + [!SubString(ListItem.FolderPath,multipath,left) | StringCompare(Skin.String(HomeWindowSource),Home)]</visible>
+				<visible>!ControlGroup(1).HasFocus + StringCompare(Skin.String(HomeWindowSource),Home) | !IsEmpty(Container.FolderName)</visible>
+			</control>
+			<control type="label">
+				<width min="40" max="250">auto</width>
+				<height>22</height>
+				<font>size_14</font>
+				<aligny>center</aligny>
+				<textcolor>colour.context.buttons.label</textcolor>
+				<label>$LOCALIZE[31564]</label>
+				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus</visible>
 			</control>
 			<!-- X Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\x_button.png</texture>
@@ -95,52 +90,67 @@
 				<visible>!Window.IsActive(Home) | [Window.IsActive(Home) + Player.HasMedia]</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31109]</label>
 				<visible>Player.HasMedia</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>590</label>
 				<visible>!Player.HasMedia + !Window.IsActive(Home)</visible>
 			</control>
 			<!-- Y Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\y_button.png</texture>
 				<aspectratio>keep</aspectratio>
-				<visible>SubString(ListItem.FolderPath,.xbe,right)</visible>
+				<visible>!Window.IsActive(Home) + Skin.HasSetting(kioskmode)</visible>
+			</control>
+			<control type="image">
+				<width>22</width>
+				<height>22</height>
+				<texture>pad_buttons\y_button.png</texture>
+				<aspectratio>keep</aspectratio>
+				<visible>!Window.IsActive(Home) + System.GetBool(mygames.gamesaltsynpsisbutton) + SubString(ListItem.FolderPath,.xbe,right) + !Skin.HasSetting(kioskmode)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31110]</label>
-				<visible>SubString(ListItem.FolderPath,.xbe,right)</visible>
+				<visible>!Window.IsActive(Home) + System.GetBool(mygames.gamesaltsynpsisbutton) + SubString(ListItem.FolderPath,.xbe,right)</visible>
+			</control>
+			<control type="label">
+				<width min="40" max="250">auto</width>
+				<height>22</height>
+				<font>size_14</font>
+				<aligny>center</aligny>
+				<textcolor>colour.context.buttons.label</textcolor>
+				<label>$LOCALIZE[31125]</label>
+				<visible>!Window.IsActive(Home) + System.GetBool(mygames.gamesaltsynpsisbutton) + !SubString(ListItem.FolderPath,.xbe,right) + Skin.HasSetting(kioskmode)</visible>
+			</control>
+			<control type="label">
+				<width min="40" max="250">auto</width>
+				<height>22</height>
+				<font>size_14</font>
+				<aligny>center</aligny>
+				<textcolor>colour.context.buttons.label</textcolor>
+				<label>$LOCALIZE[31125]</label>
+				<visible>!Window.IsActive(Home) + !System.GetBool(mygames.gamesaltsynpsisbutton) + Skin.HasSetting(kioskmode)</visible>
 			</control>
 			<!-- White Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\white_button.png</texture>
@@ -148,19 +158,15 @@
 				<visible>!Window.IsActive(Home) + Skin.HasSetting(kioskmode)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31113]</label>
 				<visible>!Window.IsActive(Home) + Skin.HasSetting(kioskmode)</visible>
 			</control>
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\white_button.png</texture>
@@ -168,39 +174,31 @@
 				<visible>!Window.IsActive(Home) + !Skin.HasSetting(kioskmode) + SubString(ListItem.FolderPath,.xbe,right)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31113]</label>
 				<visible>!Window.IsActive(Home) + !Skin.HasSetting(kioskmode) + SubString(ListItem.FolderPath,.xbe,right)</visible>
 			</control>
 			<!-- Black Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\black_button.png</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31114]</label>
 			</control>
 			<!-- Back Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\back_button.png</texture>
@@ -208,31 +206,25 @@
 				<visible>!Window.IsActive(134) + !Window.IsActive(1115)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31119]</label>
 				<visible>!Window.IsActive(134) + !Window.IsActive(1115) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[184]</label>
 				<visible>Window.IsActive(Home)</visible>
 			</control>
 			<!-- Start Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\start_button.png</texture>
@@ -240,20 +232,16 @@
 				<visible>System.HasMediaDVD</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31120]</label>
 				<visible>System.HasMediaDVD</visible>
 			</control>
 			<!-- DPad Buttons -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\dpad_up_button.png</texture>
@@ -261,8 +249,6 @@
 				<visible>![Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58) | Control.IsVisible(61) | Control.IsVisible(72)] + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\dpad_left_button.png</texture>
@@ -270,30 +256,24 @@
 				<visible>[Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58) | Control.IsVisible(61) | Control.IsVisible(72)] + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31121]</label>
 				<visible>Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31122]</label>
 				<visible>Window.IsActive(500) + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\dpad_down_button.png</texture>
@@ -301,20 +281,16 @@
 				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus + !ControlGroup(1).HasFocus(110)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31127]</label>
 				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus + !ControlGroup(1).HasFocus(110)</visible>
 			</control>
 			<!-- L Stick Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\l_stick_button.png</texture>
@@ -322,20 +298,16 @@
 				<visible>Skin.HasSetting(HideContextButtons)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31124]</label>
 				<visible>Skin.HasSetting(HideContextButtons)</visible>
 			</control>
 			<!-- R Stick Button -->
 			<control type="image">
-				<left>0</left>
-				<top>0</top>
 				<width>22</width>
 				<height>22</height>
 				<texture>pad_buttons\r_stick_button.png</texture>
@@ -343,13 +315,11 @@
 				<visible>System.HasLoginScreen + Skin.HasSetting(HideContextButtons)</visible>
 			</control>
 			<control type="label">
-				<left>0</left>
-				<top>0</top>
 				<width min="40" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
-				<textcolor>context_buttons_label</textcolor>
+				<textcolor>colour.context.buttons.label</textcolor>
 				<label>$LOCALIZE[31123]</label>
 				<visible>System.HasLoginScreen + Skin.HasSetting(HideContextButtons)</visible>
 			</control>

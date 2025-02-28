@@ -1,4 +1,113 @@
 
+Version 2.2.000 - 28/02/2025
+
+New Features:
+	1) Enabled PAL60 resolution selection in the Appearance menu.
+	2) Can now disable the transition effect when logging into/out of a profile.
+	   (Login screen under "Background Option")
+	3) Custom views are now global or theme-specific.
+	   (If a theme supplies views, they will be used even if global custom views exist, as themes supersede global.)
+	4) Screenshots in the synopsis window now use "listitem.Synopsis_Screenshot", so a refresh of content may be required.
+	5) New script to clean the "programs.db" file. This is handy if you have removed games, etc.
+	6) Themes can now have their own sounds.
+	7) Can now hide all source buttons on the home screen.
+	   (So if you only want games, you can hide the rest, this will speed up the loading of the home screen.)
+	8) Added new Xbox LCD option thanks to EqUiNoX.
+	   (https://github.com/Team-Resurgent/XBMC4Xbox/tree/xbox_lcd)
+	9) Added "CacheThumbnail(source, dest)" so I can cache thumbnails for the home screen.
+	10) Added "Use cached thumbnails" toggle to the home settings menu.
+	11) RSS feed added to home screen and a toggle for it under XBMC4Gamers Settings > General Toggles.
+	12) Added <centerleft>, <centeright>, <centertop> & <centerbottom> as position options.
+	13) Added support for % for positions.
+		(this and above it, aren't from from kodi, done my own implementation. There is no centerx etc... may do that another time.)
+	14) Added auto width for buttons.
+	15) I now update the database, update all information if coming from pre v2 builds of Gamers. I also clean the database of redundant entries.
+		(So there should be no more "Why are my posters like this, or my fanart has vanished etc...")
+	16) New context menu entries and rearranged it a tad. "Edit or Refresh" and "Set Launch XBE" if I find alternative xbe files.
+		(default_orig.xbe, default480p.xbe, default720p.xbe, default_p.xbe, defaultws.xbe, defaultxhd.xbe and xresizer.xbe)
+	17) When selecting one of the above from the menu it's store in the Database and loaded every time.
+		(You can reset it to default.xbe if you wish or if the file doesn't exist is defaults to default.xbe)
+	18) Views are split into 3 categories, "Detailed", "Standard" & "Custom". Views that rely on resources are now disabled when resources are disabled.
+		(This make my life easier in the long run and lets folk know what views use resources)
+	19) New view, similar to the Home screen look.
+	20) Added skin.setwallpaper so images are resized and cached.
+		(used to set the wallpaper now, uses the fanartheight value in the advancedsettings.xml for sizing)
+	21) ListItem.CurrentItem and Container.CurrentItem added to the xbe.
+	22) Animated fanart, ken burns kinda effect.
+	23) You can now configure the sizes of _resource images using the advancedsettings.xml
+	24) CleanViewDB added to xbe, so now views will be cleared when toggling Resources.
+	25) Profiles will now update the resolution when loaded or unloaded.
+		(If you use different resolutions for profiles they will now be correct to what the settings say)
+	26) Now you can access the recents (last played) from the programs menu using the (Y) button
+		(synopsis is now in the context menu under Information, you can toggle the old behaviour from the programs > advanced menu)
+	27) Power saving is no longer controlled via the advancedsettings.xml its now under Settings > System > Debugging
+		(If your xbox hangs due to power saving, hold the black button when you see the splash screen)
+	28) Random select now added to the xbe, use X when no media is playing to jump to a random item.
+	29) Added a few new windows to the keymap file to add functionality to a few new windows.
+		(_Script_URLDownloader (white button forceupdate), Custom_Dialog_Options & Custom_Synopsis)
+	30) Added back in navigation sounds when media is playing.
+		(toggle is under XBMC4Gamers Settings > Toggles)
+
+Bug Fixes:
+	1) Fixed the new dialog overlay from spamming (window manager) the log file when reloading a skin.
+	2) Fixed a typo in the Fight Club patch file.
+	3) Fixed right and bottom positions <right> & <bottom>.
+	4) Fixed the database not being setup properly when starting fresh.
+	5) Fixed some of the views.
+
+Improvements:
+	1) Redone the synopsis window to be quicker, extended info, can also view screenshots fullscreen and fanart.
+	2) Made all views not scale the diffuse for folder content.
+	3) Slight changes to clean thumb script and remove empty save folders.
+	4) Changed fanart to use new "listitem.synopsis_fanart" variables.
+	5) Lists labels won’t always auto scroll, they now accept the "<scroll>false</scroll>" element.
+	6) Moved all items from the home screen to includes, so you can theme everything on the home screen.
+	7) Default home screen layout randoms now use a fixed list.
+	8) Updated the "Home Screen Items.py" script.
+	   (Refactoring, and when refreshed only refreshes that source and loads DB into memory on initial boot. This speeds it up dramatically.)
+	9) Removed the Home custom search items limit, now can add as many as you want.
+	10) Themes with custom home screens can override the number of items parsed.
+	   (These go at the top of your XML under the "<includes>" tag:
+	   "<parse_lastplayed_total>10</parse_lastplayed_total>"
+	   "<parse_randoms_total>10</parse_randoms_total>"
+	   Note: if they don't exist or are blank, it will default to 10 for each.)
+	11) Updated the last played stuff in the XBE to fix random hangs when it’s accessing the DB and trying to do other stuff.
+	12) Redone "DialogSelect", "FileBrowser" & "DialogMediaSource" to match the rest of the dash skin.
+		(you will need to redownload themes, I have updated them all with the new images and colors)
+	13) Updated the thumbnail cleaner script to use the new thumbnail cacher function.
+	14) Added my old screenshot script, type site screenshot into the ftp command line box to take a png screenshot.
+	15) XBMC4Gamers Settings > Home Screen settings adjusted to keep Home screen stuff within the same menu.
+	16) Updated "XML Builder.py" to update the view ids dynamically so only what's loaded is there.
+	17) Updated the fanart stuff, now available on more views (where they look good)
+	18) Minor update to the View Options menu, fixed some niggles and updated images.
+	19) View files are renamed to reflect their type and what they are.
+		(Since I build the view list dynamically I can name then what I want)
+	20) New keyboard layout.
+		(it functions better and looks better, windows/Xbox look)
+	21) Now you will be asked to log off if you press the R3 button (right stick pressed) if login mode is enabled.
+	22) Fan min temp now sets the fan speed when you're cycling the value.
+	23) Decreased the imagelib kicking in to 3.5MB so this should give the best of both worlds when running resources.
+	24) Redone all theme color.xmls, so you will need to redownload themes for them to work properly.
+		(This makes colouring themes a hell of a lot simpler now)
+	25) TextureManager and GUILargeTextureManager now processes _resource images and wallpapers using values stored in the advancedsettings.xml
+		(This saves a few MB for wallpapers and _resource artwork will always be sized correctly even if larger.)
+	26) Redone the fanart views full screen mode.
+	27) Refactored most of the scripts, cleaned them up and improved them.
+	28) Game views now animate when opening and closing windows.
+	29) Fixed context buttons not showing back when not in the root menu.
+	30) Added new animation to the login screen when pressing A to load a profile.
+	31) Disabled the edit profile menu for the "Add User" profile, as this cant be renamed.
+	32) Now if 1080i is enabled on the system it wont reset it, it just wont use it.
+		(This lets games and other apps run in 1080i)
+
+	Additional:
+	1) Loads of QOL (Quality of Life) changes.
+
+____________________________________________________________________________________________________________________________________
+
+
+Previous Updates:
+
 Version 2.1.001 - 23/08/2024
 
 New Features:
@@ -33,11 +142,6 @@ Improvements:
 	12) Changed the synopsis window to use the blurred fanart. Gives depth. If no blurred fanart will use normal one.
 		(also reduces ram usage a bit)
 	13) Quality of life improvements.
-
-____________________________________________________________________________________________________________________________________
-
-
-Previous Updates:
 
 Change log for v2.1.000 - 27/07/2024
 

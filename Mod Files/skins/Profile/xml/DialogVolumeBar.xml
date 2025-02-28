@@ -11,14 +11,14 @@
 				<width>230</width>
 				<height>50</height>
 				<colordiffuse>104_diffuse</colordiffuse>
-				<texture>windows\volume\underlay.png</texture>
+				<texture colordiffuse="colour.dialog.volumekaitoast.diffuse.main">windows\volume\underlay.png</texture>
 			</control>
 			<control type="image">
 				<left>545</left>
 				<top>10</top>
 				<width>20</width>
 				<height>20</height>
-				<colordiffuse>104_icon</colordiffuse>
+				<colordiffuse>colour.dialog.volumekaitoast.diffuse.icon</colordiffuse>
 				<texture>$VAR[VolumeIconVar]</texture>
 			</control>
 			<control type="label">
@@ -27,7 +27,7 @@
 				<width>45</width>
 				<height>37</height>
 				<font>mono_13</font>
-				<textcolor>104_label</textcolor>
+				<textcolor>colour.dialog.volumekaitoast.label</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
 				<label>$INFO[Control.GetLabel(29999),,%]</label>
@@ -39,10 +39,10 @@
 				<width>130</width>
 				<height>10</height>
 				<info>Player.Volume</info>
-				<texturebg>windows\volume\progress_back.png</texturebg>
-				<midtexture border="5,0,5,0">windows\volume\progress_bar.png</midtexture>
-				<lefttexture>windows\volume\progress_left.png</lefttexture>
-				<righttexture>windows\volume\progress_right.png</righttexture>
+				<texturebg colordiffuse="colour.dialog.volumekaitoast.diffuse.progress.underlay">windows\volume\progress_back.png</texturebg>
+				<midtexture border="5,0,5,0" colordiffuse="colour.dialog.volumekaitoast.diffuse.progress.bar">windows\volume\progress_bar.png</midtexture>
+				<lefttexture colordiffuse="colour.dialog.volumekaitoast.diffuse.progress.underlay">windows\volume\progress_left.png</lefttexture>
+				<righttexture colordiffuse="colour.dialog.volumekaitoast.diffuse.progress.underlay">windows\volume\progress_right.png</righttexture>
 				<overlaytexture>-</overlaytexture>
 			</control>
 		</control>

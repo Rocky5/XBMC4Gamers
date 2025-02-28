@@ -19,24 +19,13 @@ if (__name__ == "__main__"):
 	
 	header = '''<window id="129">
 	<defaultcontrol always="true">3000</defaultcontrol>
-	<coordinates>
-		<system>1</system>
-		<left>320</left>
-		<top>10</top>
-	</coordinates>
 	<controls>
-		<control type="image">
-			<left>-320</left>
-			<top>-10</top>
-			<include>1280x720</include>
-			<texture>black-back.png</texture>
-			<include>Dialog.Effect</include>
-		</control>
+		<include>Behind.Dialog</include>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<control type="group">
-				<left>270</left>
-				<top>28</top>
+				<left>595</left>
+				<top>38</top>
 				<control type="image">
 					<left>30</left>
 					<top>34</top>
@@ -56,7 +45,7 @@ if (__name__ == "__main__"):
 						<font>size_40</font>
 						<align>left</align>
 						<aligny>bottom</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>[B]$INFO[Container(3000).ListItem.Label][/B]</label>
 						<autoscroll delay="8000" time="2000" repeat="10000" condition="true">Conditional</autoscroll>
 					</control>
@@ -68,7 +57,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>Region</label>
 					</control>
 					<control type="label">
@@ -79,7 +68,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>$INFO[Container(3000).ListItem.Label2]</label>
 					</control>
 					<control type="label">
@@ -90,7 +79,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>TitleID</label>
 					</control>
 					<control type="label">
@@ -101,7 +90,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>$INFO[Container(3000).ListItem.Property(TitleID)]</label>
 					</control>
 					<control type="label">
@@ -112,7 +101,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>Type</label>
 					</control>
 					<control type="label">
@@ -123,7 +112,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>$INFO[Container(3000).ListItem.Property(Type)]</label>
 					</control>
 					<control type="label">
@@ -134,7 +123,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>Credits</label>
 					</control>
 					<control type="label">
@@ -145,7 +134,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>$INFO[Container(3000).ListItem.Property(Credits)]</label>
 					</control>
 					<control type="label">
@@ -156,7 +145,7 @@ if (__name__ == "__main__"):
 						<font>size_17</font>
 						<align>left</align>
 						<aligny>center</aligny>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<label>Information</label>
 					</control>
 					<control type="textbox">
@@ -166,7 +155,7 @@ if (__name__ == "__main__"):
 						<height>100</height>
 						<font>size_17</font>
 						<align>justify</align>
-						<textcolor>2000_label</textcolor>
+						<textcolor>FFFFFFFF</textcolor>
 						<scrolltime>200</scrolltime>
 						<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(10)">Conditional</autoscroll>
 						<label>$INFO[Container(3000).ListItem.Property(Info)]</label>
@@ -174,8 +163,8 @@ if (__name__ == "__main__"):
 				</control>
 			</control>
 			<control type="group">
-				<top>28</top>
-				<animation effect="slide" start="0,0" end="-275,0" time="300" condition="true">Conditional</animation>
+				<top>38</top>
+				<animation effect="slide" start="0,0" end="45,0" time="300" condition="true">Conditional</animation>
 				<control type="image">
 					<description>background image</description>
 					<left>30</left>
@@ -194,7 +183,7 @@ if (__name__ == "__main__"):
 					<aligny>center</aligny>
 					<font>size_21_bold</font>
 					<label>FILE PATCHER</label>
-					<textcolor>2000_label</textcolor>
+					<textcolor>FFFFFFFF</textcolor>
 				</control>
 				<control type="list" id="3000">
 					<left>45</left>
@@ -224,7 +213,7 @@ if (__name__ == "__main__"):
 							<align>center</align>
 							<aligny>center</aligny>
 							<colordiffuse>20FFFFFF</colordiffuse>
-							<textcolor>2000_label</textcolor>
+							<textcolor>FFFFFFFF</textcolor>
 							<info>ListItem.Label2</info>
 						</control>
 						<control type="label">
@@ -236,7 +225,7 @@ if (__name__ == "__main__"):
 							<align>left</align>
 							<aligny>center</aligny>
 							<colordiffuse>20FFFFFF</colordiffuse>
-							<textcolor>2000_label</textcolor>
+							<textcolor>FFFFFFFF</textcolor>
 							<info>ListItem.Label</info>
 						</control>
 					</itemlayout>
@@ -256,7 +245,7 @@ if (__name__ == "__main__"):
 							<font>size_16</font>
 							<align>center</align>
 							<aligny>center</aligny>
-							<textcolor>2000_label</textcolor>
+							<textcolor>FFFFFFFF</textcolor>
 							<info>ListItem.Label2</info>
 						</control>
 						<control type="label">
@@ -267,7 +256,7 @@ if (__name__ == "__main__"):
 							<font>size_20</font>
 							<align>left</align>
 							<aligny>center</aligny>
-							<textcolor>2000_label</textcolor>
+							<textcolor>FFFFFFFF</textcolor>
 							<info>ListItem.Label</info>
 						</control>
 					</focusedlayout>
@@ -277,10 +266,9 @@ if (__name__ == "__main__"):
 				</control>
 			</control>
 			<control type="group">
-				<top>28</top>
-				<animation effect="slide" start="0,0" end="-275,0" time="300" condition="true">Conditional</animation>
+				<top>38</top>
 				<control type="scrollbar" id="61">
-					<left>550</left>
+					<left>595</left>
 					<top>90</top>
 					<width>20</width>
 					<height>475</height>
@@ -298,7 +286,7 @@ if (__name__ == "__main__"):
 				</control>
 				<control type="label">
 					<description>number of files/pages in list text label</description>
-					<left>30</left>
+					<left>-165</left>
 					<top>570</top>
 					<width>550</width>
 					<height>35</height>
@@ -306,8 +294,8 @@ if (__name__ == "__main__"):
 					<align>center</align>
 					<aligny>center</aligny>
 					<scroll>true</scroll>
-					<textcolor>2000_label</textcolor>
-					<label>($INFO[Container(3000).NumItems]) $LOCALIZE[31211] - $LOCALIZE[31210] ($INFO[Container(3000).CurrentPage]/$INFO[Container(3000).NumPages])</label>
+					<textcolor>FFFFFFFF</textcolor>
+					<label>$INFO[Container(3000).NumItems]/$INFO[Container(3000).CurrentItem]</label>
 				</control>
 				<control type="button" id="3001">
 					<left>-500</left>

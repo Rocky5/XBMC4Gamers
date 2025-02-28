@@ -1,298 +1,108 @@
 <colors>
-	<!-- XBMC4Gamers v2.1+ 002 -->
-	<!-- Home -->
-	<color name="1_label">FFFFFFFF</color>
-	<color name="1_label_alt">FFFFFFFF</color>
-	<color name="1_title">FFFFFFFF</color>
-	<color name="1_title_alt">FFFFFFFF</color>
-	<color name="1_shadow">50000000</color>
-	<color name="1_random">FFa4a4a4</color>
-	<color name="1_synopsis">FFdadada</color>
-	<color name="1_synopsis_alt">FFa4a4a4</color>
-	<color name="1_bar_labels_fo">FFFFFFFF</color>
-	<color name="1_bar_labels_nofo">FF666666</color>
-	<!-- _Script_DialogBusy -->
-	<color name="1100_diffuse">FFFFFFFF</color>
-	<color name="1100_label">FFc7c7c7</color>
-	<!-- _Script_Synopsis -->
-	<color name="1101_label">FFFFFFFF</color>
-	<color name="1101_disabled_label">FF7a7c7d</color>
-	<!-- Custom_Dialog_Options-->
-	<color name="1112_header_label">FFc7c7c7</color>
-	<color name="1112_context_label">FFc7c7c7</color>
-	<color name="1112_label">FFc7c7c7</color>
-	<color name="1112_label_alt">FFc7c7c7</color>
-	<!-- Custom_Dialog_Quick_Change-->
-	<color name="1115_label">FFc7c7c7</color>
-	<!-- Custom_Skin_Setting-->
-	<color name="1111_context_label">FFc7c7c7</color>
-	<color name="1111_label_focus">FFc7c7c7</color>
-	<color name="1111_label_nofocus">FFc7c7c7</color>
-	<color name="1111_category_labels_nofocus">FFb2b1b1</color>
-	<color name="1111_category_disabled_labels">FFb2b1b1</color>
-	<!-- Defaults-->
-	<color name="default_label">FFc7c7c7</color>
-	<color name="default_label_focus">FF000000</color>
-	<color name="default_disabled_label">FF666666</color>
-	<!-- DialogBusy-->
-	<color name="138_diffuse">FFFFFFFF</color>
-	<color name="138_label">FFc7c7c7</color>
-	<!-- DialogContextMenu-->
-	<color name="106_label_focus">FFc7c7c7</color>
-	<color name="106_label_nofocus">FFc7c7c7</color>
-	<!-- DialogFavourites-->
-	<color name="134_label">FFc7c7c7</color>
-	<color name="134_label_selected">FF399EDA</color>
-	<!-- DialogGamepad-->
-	<color name="110_header_label">FFc7c7c7</color>
-	<color name="110_label">FFc7c7c7</color>
-	<!-- DialogKaiToast-->
-	<color name="107_header_label">FFc7c7c7</color>
-	<color name="107_label">FFc7c7c7</color>
-	<!-- DialogKeyboard-->
-	<color name="103_header_label">FFF5F5F5</color>
-	<color name="103_label">FFc7c7c7</color>
-	<color name="103_keys">FFc7c7c7</color>
-	<color name="103_disabled_keys">FF666666</color>
-	<!-- DialogMediaSource-->
-	<color name="129_header_label">FFF5F5F5</color>
-	<color name="129_label">FFc7c7c7</color>
-	<color name="129_label_selected">FF399EDA</color>
-	<color name="129_button_label">FFc7c7c7</color>
-	<color name="129_button_focus">FFc7c7c7</color>
-	<color name="129_description_label">FF7a7c7d</color>
-	<!-- DialogNetworkSetup-->
-	<color name="128_header_label">FFF5F5F5</color>
-	<color name="128_label">FFc7c7c7</color>
-	<color name="128_disabled_label">FF666666</color>
-	<!-- DialogNumeric-->
-	<color name="109_header_label">FFF5F5F5</color>
-	<color name="109_label">FFc7c7c7</color>
-	<color name="109_disabled_label">FF666666</color>
-	<!-- DialogOK-->
-	<color name="2002_header_label">FFc7c7c7</color>
-	<color name="2002_label">FFc7c7c7</color>
-	<color name="2002_button_label">FFc7c7c7</color>
-	<color name="2002_button_focus">FFc7c7c7</color>
-	<!-- DialogProgress-->
-	<color name="101_header_label">FFc7c7c7</color>
-	<color name="101_label">FFc7c7c7</color>
-	<color name="101_button_label">FFc7c7c7</color>
-	<color name="101_button_focus">FFc7c7c7</color>
-	<!-- DialogScriptInfo-->
-	<color name="2004_header_label">FFc7c7c7</color>
-	<color name="2004_label">FFc7c7c7</color>
-	<!-- DialogSeekBar-->
-	<color name="115_diffuse">FF2a2929</color>
-	<color name="115_label">FFc7c7c7</color>
-	<!-- DialogSelect-->
-	<color name="2000_header_label">FF000000</color>
-	<color name="2000_label">FFc7c7c7</color>
-	<color name="2000_label_selected">FF399EDA</color>
-	<color name="2000_button_label">FF737373</color>
-	<color name="2000_button_label_focus">FF000000</color>
-	<!-- DialogTextViewer-->
-	<color name="147_header_label">FFc7c7c7</color>
-	<color name="147_label">FFc7c7c7</color>
-	<!-- DialogVolumeBar-->
-	<color name="104_label">FFc7c7c7</color>
-	<color name="104_icon">FFc7c7c7</color>
-	<color name="104_diffuse">FF2a2929</color>
-	<!-- DialogYesNo-->
-	<color name="100_header_label">FFc7c7c7</color>
-	<color name="100_label">FFc7c7c7</color>
-	<color name="100_button_label">FFc7c7c7</color>
-	<color name="100_button_focus">FFc7c7c7</color>
-	<!-- FileBrowser-->
-	<color name="126_header_label">FF000000</color>
-	<color name="126_label">FFc7c7c7</color>
-	<color name="126_label_selected">FF399EDA</color>
-	<color name="126_button_label">FF737373</color>
-	<color name="126_button_label_focus">FF000000</color>
-	<!-- FileManager-->
-	<color name="3_header_label">FFc7c7c7</color>
-	<color name="3_label">FFc7c7c7</color>
-	<color name="3_label_nofocus">FFc7c7c7</color>
-	<color name="3_label_selected">FF399EDA</color>
-	<color name="3_label_selected_alt">FFEB9E17</color>
-	<color name="3_other_label">FFc7c7c7</color>
-	<color name="3_context_label">FFc7c7c7</color>
-	<!-- includes-->
-	<color name="includes_label">FFc7c7c7</color>
-	<color name="includes_label_focus">FFc7c7c7</color>
-	<color name="includes_label_ButtonHomeSubCommonValues">FF969696</color>
-	<color name="includes_label_ButtonSettingsOptionsValues">FFc7c7c7</color>
-	<color name="includes_label_focus_ButtonSettingsOptionsValues">FFc7c7c7</color>
-	<color name="includes_settings_category_left_label_no_focus">FFc7c7c7</color>
-	<color name="includes_settings_category_left_label_focus">FFc7c7c7</color>
-	<color name="includes_settings_category_right_label_no_focus">FFc7c7c7</color>
-	<color name="includes_settings_category_right_label_focus">FFc7c7c7</color>
-	<color name="includes_settings_category_disabled_label">FF666666</color>
-	<color name="includes_label_shadow">FF000000</color>
-	<!-- Includes_Context_Buttons-->
-	<color name="context_buttons_label">FFc7c7c7</color>
-	<color name="context_buttons_label_selected">FFEB9E17</color>
-	<!-- Includes_Variables-->
-	<color name="variables_logo">FFc7c7c7</color>
-	<!-- Includes_View_Options-->
-	<color name="view_options_context_label">FFc7c7c7</color>
-	<color name="view_options_label_nofocus">FFc7c7c7</color>
-	<color name="view_options_label_focus">FFc7c7c7</color>
-	<!-- LockSettings-->
-	<color name="131_header_label">FFF5F5F5</color>
-	<color name="131_button_label">FFc7c7c7</color>
-	<color name="131_button_focus">FFc7c7c7</color>
-	<!-- MyMusicPlaylist-->
-	<color name="500_header_label">FFc7c7c7</color>
-	<!-- MyMusicSongs-->
-	<color name="502_header_label">FFc7c7c7</color>
-	<!-- PlayerControls-->
-	<color name="114_label">FFF5F5F5</color>
-	<color name="114_label_alt">FF737373</color>
-	<!-- Settings-->
-	<color name="4_header_label">FFc7c7c7</color>
-	<color name="4_context_label">FFc7c7c7</color>
-	<color name="4_label">FFc7c7c7</color>
-	<color name="4_label_nofocus">FFc7c7c7</color>
-	<!-- SettingsCategory-->
-	<color name="12_context_label">FFc7c7c7</color>
-	<!-- SettingsProfile-->
-	<color name="34_header_label">FFc7c7c7</color>
-	<color name="34_label">FFc7c7c7</color>
-	<color name="34_context_label">FFc7c7c7</color>
-	<!-- SettingsScreenCalibration-->
-	<color name="11_label">FFc7c7c7</color>
-	<color name="11_context_label">FFc7c7c7</color>
-	<!-- SettingsSystemInfo-->
-	<color name="7_header_label">FFc7c7c7</color>
-	<color name="7_context_label">FFc7c7c7</color>
-	<color name="7_label">FFc7c7c7</color>
-	<color name="7_label_alt">FF333333</color>
-	<color name="7_label_focus">FFc7c7c7</color>
-	<!-- Startup -->
-	<color name="2999_startup_label">CCc7c7c7</color>
-	<color name="2999_startup_label_alt">CC333333</color>
-	<!-- TrainerSettings-->
-	<color name="127_header_label">FFc7c7c7</color>
-	<color name="127_button_label">FFc7c7c7</color>
-	<color name="127_button_focus">FFc7c7c7</color>
-	<!-- Viewtype_50_Poster-->
-	<color name="view50_label">FFFFFFFF</color>
-	<color name="view50_label_alt">FF333333</color>
-	<!-- Viewtype_51_PosterSmall-->
-	<color name="view51_label">FFFFFFFF</color>
-	<color name="view51_label_alt">FF333333</color>
-	<!-- Viewtype_52_Login-->
-	<color name="view52_label">FFFFFFFF</color>
-	<color name="view52_label_alt">FF333333</color>
-	<!-- Viewtype_53_Landscape-->
-	<color name="view53_label">FFFFFFFF</color>
-	<color name="view53_label_alt">FF333333</color>
-	<!-- Viewtype_54_TextList -->
-	<color name="view54_label">FFFFFFFF</color>
-	<color name="view54_label_alt">FFFFFFFF</color>
-	<color name="view54_info_label">FFFFFFFF</color>
-	<color name="view54_info_label_alt">FFFFFFFF</color>
-	<!-- Viewtype_55_Banner-->
-	<color name="view55_label">FFFFFFFF</color>
-	<color name="view55_label_alt">FFFFFFFF</color>
-	<color name="view55_info_label">FFFFFFFF</color>
-	<color name="view55_info_label_alt">FFFFFFFF</color>
-	<!-- Viewtype_56_SynopsisPoster -->
-	<color name="view56_label">FFFFFFFF</color>
-	<color name="view56_label_alt">FFFFFFFF</color>
-	<color name="view56_info_label">FFFFFFFF</color>
-	<color name="view56_info_label_alt">FFFFFFFF</color>
-	<!-- Viewtype_57_Fanart-->
-	<color name="view57_label">FFFFFFFF</color>
-	<color name="view57_label_alt">FFFFFFFF</color>
-	<color name="view57_info_label">FFFFFFFF</color>
-	<color name="view57_info_label_alt">FFFFFFFF</color>
-	<!-- Viewtype_58_List-->
-	<color name="view58_label">FFFFFFFF</color>
-	<color name="view58_label_alt">FF333333</color>
-	<color name="view58_info_label">FF737373</color>
-	<color name="view58_info_label_alt">FF000000</color>
-	<!-- Viewtype_59_Carousel-->
-	<color name="view59_label">FFFFFFFF</color>
-	<color name="view59_label_alt">FF333333</color>
-	<!-- Viewtype_60_CarouselSmall-->
-	<color name="view60_label">FFFFFFFF</color>
-	<color name="view60_label_alt">FF333333</color>
-	<!-- Viewtype_61_SynopsosList -->
-	<color name="view61_label">FFFFFFFF</color>
-	<color name="view61_label_alt">FFFFFFFF</color>
-	<color name="view61_info_label">FFFFFFFF</color>
-	<color name="view61_info_label_alt">FFFFFFFF</color>
-	<color name="view61_info_synopsis">FFFFFFFF</color>
-	<color name="view61_info_star">FFFFFFFF</color>
-	<color name="view61_info_star_alt">60101010</color>
-	<!-- Viewtype_62_Icon-->
-	<color name="view62_label">FFFFFFFF</color>
-	<color name="view62_label_alt">FF333333</color>
-	<!-- Viewtype_63_OpenCase-->
-	<color name="view63_label">FFFFFFFF</color>
-	<color name="view63_label_alt">FF333333</color>
-	<!-- Viewtype_64_Dual3D-->
-	<color name="view64_label">FFFFFFFF</color>
-	<color name="view64_label_alt">FF333333</color>
-	<!-- Viewtype_65_IconAlt-->
-	<color name="view65_label">FFFFFFFF</color>
-	<color name="view65_label_alt">FF333333</color>
-	<!-- Viewtype_66_PS-->
-	<color name="view66_label">FFFFFFFF</color>
-	<color name="view66_label_alt">FF333333</color>
-	<color name="view66_info_label">FFFFFFFF</color>
-	<!-- Viewtype_67_PosterFixed-->
-	<color name="view67_label">FFFFFFFF</color>
-	<color name="view67_label_alt">FF333333</color>
-	<!-- Viewtype_68_CD-->
-	<color name="view68_label">FFFFFFFF</color>
-	<color name="view68_label_alt">FF333333</color>
-	<!-- Viewtype_69_LG-->
-	<color name="view69_label">FFFFFFFF</color>
-	<color name="view69_label_alt">FF333333</color>
-	<color name="view69_info_label">FFFFFFFF</color>
-	<color name="view69_info_label_alt">FF399EDA</color>
-	<!-- Viewtype_70_LoginAlt -->
-	<color name="view70_label">FFFFFFFF</color>
-	<color name="view70_label_alt">FF333333</color>
-	<!-- Viewtype_71_LargePoster -->
-	<color name="view71_label">FFFFFFFF</color>
-	<color name="view71_label_alt">FFFFFFFF</color>
-	<color name="view71_info_label">FFFFFFFF</color>
-	<color name="view71_info_label_alt">FFFFFFFF</color>
-	<!-- Viewtype_72_SynopsisInfoList -->
-	<color name="view72_label">FFFFFFFF</color>
-	<color name="view72_label_alt">FFFFFFFF</color>
-	<color name="view72_info_label">FFFFFFFF</color>
-	<color name="view72_info_label_alt">FFFFFFFF</color>
-	<color name="view72_info_synopsis">FFFFFFFF</color>
-	<color name="view72_info_star">FFFFFFFF</color>
-	<color name="view72_info_star_alt">60101010</color>
-	<!-- Viewtype_73_Slant -->
-	<color name="view73_label">FFFFFFFF</color>
-	<color name="view73_label_alt">FF333333</color>
-	<!-- Viewtype_74_Netflix -->
-	<color name="view74_label">FFFFFFFF</color>
-	<color name="view74_label_alt">FF333333</color>
-	<color name="view74_info_label">FFFFFFFF</color>
-	<color name="view74_info_label_alt">FFFFFFFF</color>
-	<color name="view74_info_synopsis">FFFFFFFF</color>
-	<color name="view74_info_back_label">FFFFFFFF</color>
-	<color name="view74_info_back_images">FFFFFFFF</color>
-	<color name="view74_info_back">FF333333</color>
-	<!-- Viewtype_79_Resources-->
-	<color name="view79_label">FFFFFFFF</color>
-	<color name="view79_label_alt">FF333333</color>
-	<!-- Viewtype_CommonRootView-->
-	<color name="common_header_label">FFFFFFFF</color>
-	<color name="common_context_label">FFc7c7c7</color>
-	<color name="common_label_focus">FFFFFFFF</color>
-	<color name="common_label_nofocus">FFc7c7c7</color>
-	<!-- Viewtype_GameSavesView-->
-	<color name="saves_header_label">FFFFFFFF</color>
-	<color name="saves_context_label">FFc7c7c7</color>
-	<color name="saves_label_focus">FFFFFFFF</color>
-	<color name="saves_label_nofocus">FFc7c7c7</color>
+	<!-- XBMC4Gamers v2.2+ 000 -->
+	<!-- ------ -->
+	<!-- Home Screen -->
+	<color name="colour.home.underlay.diffuse">FF1E1E1E</color>
+	<color name="colour.home.random.underlay.diffuse">FF1E1E1E</color>
+	<color name="colour.home.button.focus.diffuse">FF065f7C</color>
+	<color name="colour.home.button.nofocus.diffuse">FF2A2929</color>
+	<color name="colour.home.guides.focus.diffuse">FF065f7C</color>
+	<color name="colour.home.guides.nofocus.diffuse">502A2929</color>
+	<!-- labels -->
+	<color name="colour.home.label.title">FFFFFFFF</color>
+	<color name="colour.home.label.shadow">50000000</color>
+	<color name="colour.home.label.randoms">FFA4A4A4</color>
+	<color name="colour.home.label.synopsis">FFDADADA</color>
+	<color name="colour.home.label.synopsis2">FFA4A4A4</color>
+	<!-- buttons -->
+	<color name="colour.home.button.nofocus">FF666666</color>
+	
+	<!-- Dialogs -->
+	<!-- diffuse if using custom image set as FFFFFFFF -->
+	<color name="colour.dialog.diffuse.main">FF3C3C3C</color>
+	<color name="colour.dialog.diffuse.main.overlay">FF4C4C4D</color>
+	<color name="colour.dialog.diffuse.header">FF2A2929</color>
+	<color name="colour.dialog.diffuse.filemanager.focus.left">FF065f7C</color>
+	<color name="colour.dialog.diffuse.button.focus">FF065f7C</color>
+	<color name="colour.dialog.diffuse.button.nofocus">FF2A2929</color>
+	<color name="colour.dialog.diffuse.progress.bar">FFD9D9D9</color>
+	<!-- labels -->
+	<color name="colour.dialog.label.context">FFC7C7C7</color>
+	<color name="colour.dialog.label.disabled">FF666666</color>
+	<color name="colour.dialog.label.header">FFC7C7C7</color>
+	<color name="colour.dialog.label.nofocus">FFC7C7C7</color>
+	<color name="colour.dialog.label.selected">FF399EDA</color>
+	<color name="colour.dialog.label.info.text">FFC7C7C7</color>
+	<!-- buttons -->
+	<color name="colour.dialog.button.nofocus">FFC7C7C7</color>
+	
+	
+	<!-- Volume/kaitoast/seek -->
+	<!-- diffuse if using custom image set as FFFFFFFF -->
+	<color name="colour.dialog.volumekaitoast.diffuse.main">FF3C3C3C</color>
+	<color name="colour.dialog.volumekaitoast.diffuse.icon">FFC7C7C7</color>
+	<color name="colour.dialog.volumekaitoast.diffuse.progress.bar">FFD9D9D9</color>
+	<!-- labels -->
+	<color name="colour.dialog.volumekaitoast.label">FFC7C7C7</color>
+	<color name="colour.dialog.volumekaitoast.label.header">FFC7C7C7</color>
+	
+	<!-- Default/General -->
+	<!-- labels default -->
+	<color name="colour.default.label">FFC7C7C7</color>
+	<color name="colour.default.label.disabled">FF666666</color>
+														   
+	<!-- diffuse general if using custom image set as FFFFFFFF -->
+	<color name="colour.general.diffuse.main">FF3C3C3C</color>
+	<color name="colour.general.diffuse.main.overlay">FF4C4C4D</color>
+	<color name="colour.general.diffuse.header">FF2A2929</color>
+	<color name="colour.general.diffuse.button.focus">FF065f7C</color>
+	<color name="colour.general.diffuse.button.nofocus">FF2A2929</color>
+	<!-- labels general -->
+	<color name="colour.general.label">FFC7C7C7</color>
+	<color name="colour.general.label.context">FFC7C7C7</color>
+	<color name="colour.general.label.header">FFC7C7C7</color>
+	<color name="colour.general.label.selected">FF399EDA</color>
+	<color name="colour.general.label.info.text">FFC7C7C7</color>
+	<!-- buttons general -->
+	<color name="colour.general.button.nofocus">FFC7C7C7</color>
+	
+	
+	<!-- Settings -->
+	<!-- diffuse if using custom image set as FFFFFFFF -->
+	<color name="colour.settings.diffuse.main">FF3C3C3C</color>
+	<color name="colour.settings.diffuse.main.overlay">FF4C4C4D</color>
+	<color name="colour.settings.diffuse.header">FF2A2929</color>
+	<color name="colour.settings.diffuse.root.focus">FF065f7C</color>
+	<color name="colour.settings.diffuse.root.nofocus">FF676767</color>
+	<color name="colour.settings.diffuse.category.focus">FF065f7C</color>
+	<color name="colour.settings.diffuse.category.nofocus">FF2A2929</color>
+	<!-- labels -->
+	<color name="colour.settings.label2">FFC7C7C7</color>
+	<color name="colour.settings.label.context">FFC7C7C7</color>
+	<color name="colour.settings.label.disabled">FF666666</color>
+	<color name="colour.settings.label.header">FFC7C7C7</color>
+	<color name="colour.settings.label.info.text">FFC7C7C7</color>
+	<!-- buttons -->
+	<color name="colour.settings.button.nofocus">FFC7C7C7</color>
+	<color name="colour.settings.button.category.nofocus">FFC7C7C7</color>
+	
+	
+	<!-- Context buttons (bottom of screen) -->
+	<!-- labels -->
+	<color name="colour.context.buttons.label">FFC7C7C7</color>
+	
+	
+	<!-- Other screen -->
+	<!-- labels -->
+	<color name="colour.variables.logo">FFC7C7C7</color>
+	
+	
+	<!-- View files -->
+	<!-- View 75 -->
+	<color name="colour.view75.text">FFFFFFFF</color>
+	<color name="colour.view75.icons">FFFFFFFF</color>
+	<color name="colour.view75.info.star">FFFFFFFF</color>
+	<color name="colour.view75.info.star.alt">60FFFFFF</color>
+	<color name="colour.view75.shadow">50000000</color>
+	<color name="colour.view75.underlay.diffuse">FF1E1E1E</color>
 </colors>

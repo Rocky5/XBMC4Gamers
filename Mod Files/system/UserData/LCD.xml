@@ -19,7 +19,7 @@
 				<line>Freemem: $INFO[System.FreeMemory]</line>
 		</video>
 		<general>
-				<line>XBMC running...</line>
+				<line>XBMC4Gamers running.</line>
 				<line>$INFO[System.Time] $INFO[System.Date]</line>
 				<line>Freemem: $INFO[System.FreeMemory]</line>
 				<line>$INFO[System.ScreenWidth]x$INFO[System.ScreenHeight] $INFO[System.ScreenMode]</line>

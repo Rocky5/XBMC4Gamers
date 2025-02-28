@@ -1,0 +1,25 @@
+<window id="1113">
+	<defaultcontrol always="true">1</defaultcontrol>
+	<controls>
+		<include>Global.Backgrounds</include>
+		<control type="group">
+			<animation effect="fade" time="300">WindowOpen</animation>
+			<include>Startup.Window.Profile</include>
+		</control>
+		<!-- <include>Startup.Window.Info</include> -->
+		<control type="button" id="1">
+			<left>-5000</left>
+			<top>0</top>
+			<width>0</width>
+			<height>0</height>
+			<label>-</label>
+			<font>-</font>
+			<onfocus>dialog.close(all,true)</onfocus>
+			<onfocus>system.logoff</onfocus>
+			<texturenofocus>-</texturenofocus>
+			<texturefocus>-</texturefocus>
+			<enable>System.HasLoginScreen</enable>
+			<animation effect="fade" start="0" end="100" delay="1000" time="0">Focus</animation>
+		</control>
+	</controls>
+</window>

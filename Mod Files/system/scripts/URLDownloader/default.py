@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 ### URLDownloading by Rocky5.
-import extract, hashlib, math, os, requests, socket, struct, time, traceback
+import extract
+import hashlib
+import math
+import os
+import requests
+import shortcut
+import socket
+import struct
+import time
+import traceback
 
 requests.packages.urllib3.disable_warnings(
 	requests.packages.urllib3.exceptions.InsecureRequestWarning
@@ -25,6 +34,9 @@ URLDownloader_Bin = "1jX2Y5wUHeT0-3hSAAfce3bI0xG7aOUoI~versions/URLDownloader.bi
 DownloadList_Bin = "1jKhRDRa-Enk9eev0jovhpFr6rnQbedf8~versions/DownloadList.bin"
 URLDownloader_Zip = "1j568Tyojriizqflk3LGW4JUbEn4NuplD~updates/URLDownloader.zip"
 
+
+class ExceptionSoftmod(Exception):
+	pass 
 
 def download_url(url):
 	global StartTime
@@ -286,7 +298,7 @@ def download_update_check(url):
 	)
 
 
-def clear_X():
+def clear_Z():
 	try:
 		dprogress.create(
 			"INITIALIZING"
@@ -296,7 +308,7 @@ def clear_X():
 			"Preparing Cache Partition",
 			"This may take some time, please be patient."
 		)
-		for root, dirs, files in os.walk("X:/", topdown=False):
+		for root, dirs, files in os.walk("Z:/", topdown=False):
 			for name in files:
 				os.remove(os.path.join(root, name))
 			for name in dirs:
@@ -449,20 +461,20 @@ def dlc_hashing(titleid):
 			for _ in range(3):
 				dprogress.update(
 					0,
-					"Saving HDD Key",
-					"."
+					"Saving HDD Key.",
+					"Please wait"
 				)
 				time.sleep(0.5)
 				dprogress.update(
 					0,
-					"Saving HDD Key",
-					".."
+					"Saving HDD Key..",
+					"Please wait"
 				)
 				time.sleep(0.5)
 				dprogress.update(
 					0,
-					"Saving HDD Key",
-					"..."
+					"Saving HDD Key...",
+					"Please wait"
 				)
 				time.sleep(0.5)
 		else:
@@ -520,7 +532,7 @@ def dlc_hashing(titleid):
 			countlist = countlist + 1
 
 
-def call_exception(Exception):
+def call_exception(Exception, show_error):
 	exception_type = type(error).__name__
 	exception_message = str(error)
 	stack_trace = traceback.format_exc().splitlines()
@@ -533,10 +545,11 @@ def call_exception(Exception):
 	for line in stack_trace:
 		exceptionarray.append("\t" + line)
 
-	dialog.textviewer(
-		"ERROR",
-		"\n".join(exceptionarray)
-	)
+	if show_error:
+		dialog.textviewer(
+			"ERROR",
+			"\n".join(exceptionarray)
+		)
 
 # Some variables Set outside the loop
 re_focus_download_button = "9000"
@@ -551,6 +564,9 @@ try:
 		executebuiltin(
 			'Dialog.Close(1904,false)'
 		)
+		executebuiltin(
+			'Dialog.Close(1100,false)'
+		)
 		global httperrors
 		httperrors = None
 		global allowcancellation
@@ -559,7 +575,7 @@ try:
 		global invalidlink
 		invalidlink = 0
 		extensions = [ 'zip' ]
-		download_path = 'X:/downloads/'
+		download_path = 'Z:/temp/downloads/'
 		update_path = 'Z:/temp/'
 		udhashlibmd5 = hashlib.md5()
 		hashlibsha1 = hashlib.sha1
@@ -567,9 +583,11 @@ try:
 		source_name = ""
 		dlcmode = 0
 		skip = 0
+		altxboxdash = 0
 		xawinstal = 0
 		xmlinvalid = 0
 		urldinvalid = 0
+		show_error = 1
 		
 		# args passed from xml
 		defaulturl = sys.argv[1] if len(sys.argv) > 1 else ""
@@ -604,6 +622,12 @@ try:
 				install_path = ""
 		
 		if valid_arguments:
+			
+			# Update cleanup
+			try:
+				os.remove('Special://root/system/scripts/autoexec.py')
+			except:
+				pass
 
 			# Create folders required so there is no errors
 			if not os.path.exists( download_path ):
@@ -628,7 +652,7 @@ try:
 					executebuiltin(
 						'Dialog.Close(1902,false)'
 					)
-					call_exception(error)
+					call_exception(error, show_error)
 			
 			# If hash doesn't match tell user to update, also if filename is the urldownloader.zip bypass.
 			if xmlinvalid == 0 and urldinvalid == 0 or filename == "URLDownloader.zip" or getInfoLabel('Control.GetLabel(1)') == "Download Assets":
@@ -650,16 +674,16 @@ try:
 				
 				if filename == "URLDownloader.zip" or dialog.yesno('DOWNLOAD','','{}[CR]Install size {}'.format(filename,convert_size(float(zipsize))),'',xbmc.getLocalizedString(106),xbmc.getLocalizedString(107)):
 
-					try:
+					try:						
 						if install_path == "C:\\":
 							if os.path.isfile('C:\\xboxdash.xbe'):
 								# this is the sha256 hash of the softmod xboxdash.xbe
 								if calculate_sha256('C:\\xboxdash.xbe') == "3ae2f3eae3917e0130d1e1a5c8e1c5df207ea31703646a174d98f7be9a769495":
-									source_name = getInfoLabel('Skin.String(downloader_label)')
+									altxboxdash = 1
 									rename_stuff = "msdash"
 									warning_line1, warning_line2, warning_line3 , warning_line4 = 'WARNING: POTENTIAL SOFTMOD FOUND',"Would you like me to patch the files to ensure compatibility with the[CR]softmod/BFM Bios? A shortcut to the new xb0xdash.xbe will be placed[CR]in the Applications folder.","",""
 									if getInfoLabel('Skin.String(dashboard_name)').lower() == 'xbmc-emustation':
-										warning_line1, warning_line2, warning_line3 , warning_line4 = 'POTENTIAL SOFTMOD FOUND',"Would you like me to patch the files to ensure","compatibility with the softmod/BFM Bios? A shortcut to","the new xb0xdash.xbe will alse be installed."
+										warning_line1, warning_line2, warning_line3 , warning_line4 = 'POTENTIAL SOFTMOD FOUND',"Would you like me to patch the files to ensure","compatibility with the softmod/BFM Bios? A shortcut to","the new xb0xdash.xbe will also be installed."
 									
 									if not dialog.yesno(
 										warning_line1,
@@ -669,28 +693,55 @@ try:
 										xbmc.getLocalizedString(106),
 										xbmc.getLocalizedString(107)
 									):
-										raise Exception("WARNING: POTENTIAL SOFTMOD FOUND")
-						
+										raise ExceptionSoftmod("WARNING: POTENTIAL SOFTMOD FOUND")
+
+						if install_path == "E:\\UDATA\\":
+							warning_line1, warning_line2, warning_line3 , warning_line4 = "WARNING: SAVE FILE","Existing save files or duplicate files will be overwritten if they exist.","This is not reservable.","Proceed?"
+							if not dialog.yesno(
+								warning_line1,
+								warning_line2,
+								warning_line3,
+								warning_line4,
+								xbmc.getLocalizedString(106),
+								xbmc.getLocalizedString(107)
+							):
+								install_path = 0
+
 						if install_path == "":
 							if getInfoLabel('Skin.String(dashboard_name)').lower() == 'xbmc4gamers' and 'emulators' in getInfoLabel('Skin.String(downloader_thumb)').lower():
 								source_name = getInfoLabel('Skin.String(downloader_label)')
 								rename_stuff = "emulator"
 							
 							install_path = dialog.browse(3,'Select destination folder','files','')
-							
-							if mod_dlc_mode == "MOD" and not install_path == "" and not os.path.isfile(os.path.join(install_path,'default.xbe')):
-								dialog.ok(
-									'ERROR',
-									'Can not find a default.xbe',
-									'Did you select the proper folder?'
-								)
-								install_path = 0
+								
+							if mod_dlc_mode == "MOD" and not install_path == "":
+								if os.path.isfile(os.path.join(install_path,'default.xbe')):
+									for ext in [".iso", ".cci"]:
+										try:
+											ext_check = [f for f in os.listdir(install_path) if f.lower().endswith(ext)]
+											if ext_check:
+												dialog.ok(
+													'ERROR',
+													'This game looks like it maybe a ISO/CCI game.',
+													'Mods only work on non ISO/CCI games'
+												)
+												install_path = 0
+										except:
+											pass
+								else:
+									dialog.ok(
+										'ERROR',
+										'Can not find a default.xbe',
+										'Did you select the proper folder?'
+									)
+									install_path = 0
 
 						if xawinstal: # If Xbox Artwork Installer Files process it
 							if os.path.isfile('E:\\UDATA\\09999993\\location.bin'):
 								with open('E:\\UDATA\\09999993\\location.bin','r') as input:
 									install_path = input.readline().strip()
-									if not os.path.isfile(os.path.join(install_path,"default.xbe")):
+									if not os.path.isfile(os.path.join(install_path,"default.xbe")) or 'online' in install_path.lower():
+										show_error = 0
 										install_path = "0"
 										xawinstal = 2
 							else:
@@ -709,7 +760,7 @@ try:
 								if int(partition_free_space)*1024*1024 > int(zipsizecheck)+(1024*1024*2):
 									
 									try:
-										clear_X()
+										# clear_Z()
 										download_url(defaulturl)
 										executebuiltin(
 											'Skin.SetString(DisableCancel,Disabled)'
@@ -720,11 +771,7 @@ try:
 											os.remove(file)
 											
 											if dlcmode: # If DLC process the files
-												dlc_hashing(titleid)
-											
-											executebuiltin(
-												'Skin.SetString(DisableCancel,)'
-											) # Enable the cancel button								
+												dlc_hashing(titleid)							
 											
 											check_filename = filename.lower()
 											
@@ -735,6 +782,14 @@ try:
 													if 'online' in check_filename.lower():
 														input.write("{}Xbox Artwork Installer Online".format(install_path))
 													else: input.write("{}Xbox Artwork Installer".format(install_path))
+											
+											executebuiltin(
+												'Skin.SetString(DisableCancel,)'
+											) # Enable the cancel button
+											
+											# If MSDash or UIX Lite add shortcut to it to applications menu.
+											if check_filename == "uix lite.zip" or check_filename == "microsoft dashboard v5960.zip":
+												shortcut.msdash_shorcut(check_filename, altxboxdash)
 											
 											if check_filename == "xbmc-emustation-update-files.zip" or check_filename == "xbmc-emustation-test-build.zip" and os.path.isfile(translatePath('Special://xbmc/updater/default.xbe')):
 												dprogress.close()
@@ -747,7 +802,7 @@ try:
 													xbmc.getLocalizedString(106),
 													xbmc.getLocalizedString(107)
 												):
-													with open(os.path.join(working_directory,'skip_emus.bin'), 'w') as tmp: tmp.write('')
+													with open(os.path.join(working_directory,'install_emus.bin'), 'w') as tmp: tmp.write('')
 												
 												executebuiltin(
 													'RunXBE({})'.format(translatePath('Special://xbmc/updater/default.xbe'))
@@ -781,7 +836,7 @@ try:
 										
 										except Exception as error:
 											dprogress.close()
-											call_exception(error)
+											call_exception(error, show_error)
 									
 									except Exception as error:
 										executebuiltin(
@@ -816,7 +871,7 @@ try:
 											)
 										
 										else:
-											call_exception(error)
+											call_exception(error, show_error)
 								else:
 									dialog.ok(
 										'ERROR',
@@ -825,7 +880,7 @@ try:
 									)
 							
 							except Exception as error:
-								call_exception(error)
+								call_exception(error, show_error)
 								
 								if xawinstal == 2:
 									dprogress.close()
@@ -835,14 +890,14 @@ try:
 									dialog.ok(
 										'UH-OH',
 										'',
-										'Please download and/or run[CR]The Xbox Artwork installer at least once.',
+										"This isn't for the online version.[CR]If you have installed the offline version, please run it and[CR]try again.",
 										''
 									)
 						
 						else:
 							pass
-				
-					except Exception as error:
+
+					except ExceptionSoftmod as error:
 						warning_line1, warning_line2, warning_line3 , warning_line4 = 'WARNING: POTENTIAL SOFTMOD FOUND',"If this was/is a false positive, please fix or clean your C partition.[CR]It contains files that are used for softmods.[CR][CR]Be careful if you do.","",""
 						if getInfoLabel('Skin.String(dashboard_name)').lower() == 'xbmc-emustation':
 							warning_line1, warning_line2, warning_line3 , warning_line4 = 'POTENTIAL SOFTMOD FOUND',"If this was/is a false positive, please fix or clean your","C partition. It contains files that are used for softmods.","Be careful if you do."
@@ -852,6 +907,9 @@ try:
 							warning_line3,
 							warning_line4,
 						)
+
+					except Exception as error:
+						call_exception(error, show_error)
 					
 				else:
 					pass
@@ -879,6 +937,9 @@ try:
 			executebuiltin(
 				'Dialog.Close(1902,false)'
 			)
+			executebuiltin(
+				'Dialog.Close(1100,false)'
+			)
 		
 		try: # Used to zero the progress bar after everything is done
 			dprogress.update(0)
@@ -887,9 +948,12 @@ try:
 		
 		executebuiltin('SetFocus({})'.format(re_focus_download_button)) # Set focus to download button
 
-	except Exception as ex:
+	except Exception as error:
 		executebuiltin(
 			'Dialog.Close(1904,false)'
+		)
+		executebuiltin(
+			'Dialog.Close(1100,false)'
 		)
 		dialog.ok(
 			'ERROR: NETWORK CHECK FAILED',
@@ -900,9 +964,12 @@ try:
 			'SetFocus({})'.format(re_focus_download_button)
 		)
 
-except Exception as ex:
+except Exception as error:
 	executebuiltin(
 		'Dialog.Close(1904,false)'
+	)
+	executebuiltin(
+		'Dialog.Close(1100,false)'
 	)
 	dialog.ok(
 		'ERROR: INSIGNIA DNS DETECTED',

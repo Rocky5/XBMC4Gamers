@@ -1,5 +1,5 @@
 <!-- Variables.xml -->
-<variable name="backgrounds">
+<variable name="Backgrounds">
 	<value condition="IsEmpty(skin.string(background_color)) + StringCompare(Skin.CurrentTheme,skindefault)">default\0.jpg</value>
 	<value condition="!IsEmpty(skin.string(background_color)) + StringCompare(Skin.CurrentTheme,skindefault)">default\$INFO[skin.string(background_color)]</value>
 	<value condition="IsEmpty(skin.string(background_color)) + !StringCompare(Skin.CurrentTheme,skindefault)">$INFO[Skin.CurrentTheme]\0.jpg</value>
@@ -7,8 +7,8 @@
 </variable>
 <variable name="Alt_Label_Colour">
 	<!-- all other windows -->
-	<value condition="!Skin.HasSetting(AltTextColour) + !Window.IsVisible(7) + !Window.IsVisible(2999)">$INFO[Container.Viewmode]_label</value>
-	<value condition="Skin.HasSetting(AltTextColour) + !Window.IsVisible(7) + !Window.IsVisible(2999)">$INFO[Container.Viewmode]_label_alt</value>
+	<value condition="!Skin.HasSetting(AltTextColour) + !Window.IsVisible(7) + !Window.IsVisible(2999)">colour.$INFO[Container.Viewmode].label</value>
+	<value condition="Skin.HasSetting(AltTextColour) + !Window.IsVisible(7) + !Window.IsVisible(2999)">colour.$INFO[Container.Viewmode].label2</value>
 	<!-- system info window -->
 	<value condition="!Skin.HasSetting(AltTextColour) + Window.IsVisible(7)">7_label</value>
 	<value condition="Skin.HasSetting(AltTextColour) + Window.IsVisible(7)">7_label_alt</value>
@@ -18,7 +18,7 @@
 </variable>
 <variable name="Custom_Gamers_Logo_Colour">
 	<value condition="Skin.HasSetting(EnabledXBMC4GamersLogoColour)">FF$INFO[skin.string(XBMC4GamersLogoColour)]</value>
-	<value condition="!Skin.HasSetting(EnabledXBMC4GamersLogoColour)">variables_logo</value>
+	<value condition="!Skin.HasSetting(EnabledXBMC4GamersLogoColour)">colour.variables.logo</value>
 </variable>
 <variable name="VolumeIconVar">
 	<value condition="Player.Muted">windows\volume\mute.png</value>
@@ -32,17 +32,20 @@
 	<value>windows\home\multiimages</value>
 </variable>
 <variable name="View_Fanart">
-	<value condition="!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</value>
-	<value condition="!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + !Skin.HasSetting(fanartblur)">$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</value>
-	<value condition="!IsEmpty(listitem.Synopsis_Resources) + !Skin.HasSetting(_resourcesenabled)">$INFO[listitem.Path,,]fanart.jpg</value>
-	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(fanartblur)">no_fanart_blur.jpg</value>
-	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + !Skin.HasSetting(fanartblur)">no_fanart.jpg</value>
-	<value condition="Skin.HasSetting(showfolderfanart) + ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)">$INFO[skin.string(FolderFanartPath)]\$INFO[ListItem.Label].jpg</value>
+	<value condition="ListItem.IsFolder + Skin.HasSetting(showfolderfanart)">$INFO[skin.string(FolderFanartPath)]\$INFO[ListItem.Label].jpg</value>
+	<!-- resources disabled -->
+	<value condition="!ListItem.IsFolder + !Skin.HasSetting(_resourcesenabled)">$INFO[listitem.Path,,]fanart.jpg</value>
+	<!-- resources enabled -->
+	<value condition="!ListItem.IsFolder + !IsEmpty(listitem.Synopsis_Fanart) + !Skin.HasSetting(fanartblur)">$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</value>
+	<value condition="!ListItem.IsFolder + !IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartblur)">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</value>
+	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Fanart) + !Skin.HasSetting(fanartblur)">no_fanart.jpg</value>
+	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartblur)">no_fanart_blur.jpg</value>
 </variable>
 <variable name="View_Fanart_Fog">
-	<value condition="!IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(customfanartfog)">$INFO[listitem.Synopsis_Resources]artwork\fog.jpg</value>
-	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(customfanartfog)">no_fog.jpg</value>
-	<value condition="Skin.HasSetting(showfolderfanart) + ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources) + Skin.HasSetting(customfanartfog)">$INFO[skin.string(FolderFanartPath)]\$INFO[ListItem.Label]_fog.jpg</value>
+	<value condition="ListItem.IsFolder + Skin.HasSetting(showfolderfanart) + Skin.HasSetting(customfanartfog)">$INFO[skin.string(FolderFanartPath)]\$INFO[ListItem.Label]_fog.jpg</value>
+	<!-- resources enabled -->
+	<value condition="!ListItem.IsFolder + !IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(customfanartfog)">$INFO[listitem.Synopsis_Resources]artwork\fog.jpg</value>
+	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(customfanartfog)">no_fog.jpg</value>
 </variable>
 <variable name="View50_Thumbs">
 	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
@@ -109,6 +112,10 @@
 	<value>poster.jpg</value>
 </variable>
 <variable name="View74_Thumbs">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
+	<value>poster.jpg</value>
+</variable>
+<variable name="View75_Thumbs">
 	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
 	<value>poster.jpg</value>
 </variable>

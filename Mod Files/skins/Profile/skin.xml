@@ -1,9 +1,9 @@
 <skin>
 	<version>2.2</version>
-	<effectslowdown>1.00</effectslowdown>
+	<effectslowdown>.75</effectslowdown>
 	<debugging>false</debugging>
 	<credits>
-		<skinname>Profile Skin</skinname>
+		<skinname>Profile</skinname>
 		<name>Rocky5</name>
 	</credits>
 </skin>

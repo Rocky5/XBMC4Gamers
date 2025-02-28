@@ -1,0 +1,268 @@
+<!-- Detailed_69_LG_TV ID = 69 -->
+<control type="group">
+	<visible>Control.IsVisible(69) + !Control.IsVisible(50)</visible>
+	<include>Fanart</include>
+	<control type="group">
+		<include>Game.Views</include>
+		<!-- <animation effect="slide" start="0,0" end="0,-20" time="100" condition="Control.HasFocus(90)">Conditional</animation> -->
+		<control type="image">
+			<left>0</left>
+			<top>433</top>
+			<width>1280</width>
+			<height>227</height>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture background="true" border="10,10,10,10">views\69\lg_thumb_underlay.png</texture>
+		</control>
+		<control type="fixedlist" id="69">
+			<animation effect="zoom" reversable="true" start="0" end="80" time="0" condition="Control.IsVisible(69)">Conditional</animation>
+			<left>424</left>
+			<top>563</top>
+			<width>1186</width>
+			<height>300</height>
+			<onleft>69</onleft>
+			<onright>69</onright>
+			<onup>9000</onup>
+			<ondown>90</ondown>
+			<viewtype label="view69">biglist</viewtype>
+			<pagecontrol>90</pagecontrol>
+			<scrolltime>210</scrolltime>
+			<focusposition>1</focusposition>
+			<orientation>horizontal</orientation>
+			<preloaditems>2</preloaditems>
+			<itemlayout height="300" width="156">
+				<control type="image">
+					<left>0</left>
+					<top>20</top>
+					<width>144</width>
+					<height>200</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">no_poster.jpg</texture>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>20</top>
+					<width>144</width>
+					<height>200</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">$INFO[listitem.icon]</texture>
+					<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>20</top>
+					<width>144</width>
+					<height>200</height>
+					<aspectratio scalediffuse="false">keep</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">$INFO[listitem.icon]</texture>
+					<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>20</top>
+					<width>144</width>
+					<height>200</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View69_Thumbs]</texture>
+					<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+			</itemlayout>
+			<focusedlayout height="300" width="150">
+				<control type="image">
+					<left>-16</left>
+					<top>-1</top>
+					<width>172</width>
+					<height>242</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">views\69\poster-border.png</texture>
+				</control>
+				<control type="image">
+					<left>-17</left>
+					<top>-1</top>
+					<width>174</width>
+					<height>242</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">no_poster.jpg</texture>
+					<bordersize>4</bordersize>
+				</control>
+				<control type="image">
+					<left>-17</left>
+					<top>-1</top>
+					<width>174</width>
+					<height>242</height>
+					<aspectratio scalediffuse="false">scale</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">$INFO[listitem.icon]</texture>
+					<visible>ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+					<bordersize>4</bordersize>
+				</control>
+				<control type="image">
+					<left>-17</left>
+					<top>-1</top>
+					<width>174</width>
+					<height>242</height>
+					<aspectratio scalediffuse="false">keeo</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">$INFO[listitem.icon]</texture>
+					<visible>!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Resources)</visible>
+					<bordersize>4</bordersize>
+				</control>
+				<control type="image">
+					<left>-17</left>
+					<top>-1</top>
+					<width>174</width>
+					<height>242</height>
+					<aspectratio scalediffuse="false">stretch</aspectratio>
+					<texture background="true" diffuse="views\69\diffuse.png">$INFO[listitem.Synopsis_Resources]artwork\$VAR[View69_Thumbs]</texture>
+					<bordersize>4</bordersize>
+					<visible>!IsEmpty(listitem.Synopsis_Resources)</visible>
+				</control>
+			</focusedlayout>
+		</control>
+		<control type="image">
+			<left>0</left>
+			<top>0</top>
+			<width>1280</width>
+			<height>720</height>
+			<aspectratio scalediffuse="false">stretch</aspectratio>
+			<texture>views\69\lg_blur_underlay.png</texture>
+		</control>
+		<control type="textbox">
+			<left>15</left>
+			<top>445</top>
+			<width>385</width>
+			<height>80</height>
+			<font>size_30</font>
+			<align>left</align>
+			<aligny>bottom</aligny>
+			<textcolor>colour.view69.label</textcolor>
+			<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+			<autoscroll delay="8000" time="2000" repeat="10000" condition="true">Conditional</autoscroll>
+		</control>
+		<control type="grouplist">
+			<description>Control Info</description>
+			<left>15</left>
+			<top>530</top>
+			<width>380</width>
+			<height>20</height>
+			<itemgap>0</itemgap>
+			<align>left</align>
+			<orientation>horizontal</orientation>
+			<visible>!ListItem.IsFolder</visible>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view69.info.icons">synopsis icons\medium_trainer.png</texture>
+				<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayHasTrainer.png)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view69.info.icons">synopsis icons\medium_trained.png</texture>
+				<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayTrained.png)</visible>
+			</control>
+			<!-- dummy label (spacer)  -->
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="10">auto</width>
+				<font>size_13</font>
+				<textcolor>colour.view69.info.label</textcolor>
+				<label/>
+				<visible>!IsEmpty(listitem.overlay)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view69.info.icons">synopsis icons\medium_played.png</texture>
+			</control>
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="400">auto</width>
+				<font>size_15</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view69.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view69.info.icons">synopsis icons\medium_playercount.png</texture>
+			</control>
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="400">auto</width>
+				<font>size_15</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view69.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
+			</control>
+		</control>
+		<control type="grouplist">
+			<description>Control Info</description>
+			<left>15</left>
+			<top>550</top>
+			<width>380</width>
+			<height>20</height>
+			<itemgap>0</itemgap>
+			<align>left</align>
+			<orientation>horizontal</orientation>
+			<visible>!ListItem.IsFolder</visible>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view69.info.icons">synopsis icons\medium_genre.png</texture>
+				<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+			</control>
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="400">auto</width>
+				<font>size_15</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view69.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
+				<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>0</top>
+				<width>20</width>
+				<height>20</height>
+				<texture colordiffuse="colour.view69.info.icons">synopsis icons\medium_esrb.png</texture>
+				<visible>!IsEmpty(listitem.Synopsis_ESRB_Descriptors)</visible>
+			</control>
+			<control type="label">
+				<height>22</height>
+				<width min="5" max="400">auto</width>
+				<font>size_15</font>
+				<aligny>center</aligny>
+				<textcolor>colour.view69.info.label</textcolor>
+				<label>[UPPERCASE] $INFO[listitem.Synopsis_ESRB_Descriptors][/UPPERCASE]</label>
+				<visible>!IsEmpty(listitem.Synopsis_ESRB_Descriptors)</visible>
+			</control>
+		</control>
+		<control type="textbox">
+			<left>15</left>
+			<top>570</top>
+			<width>380</width>
+			<height>75</height>
+			<font>size_15</font>
+			<textcolor>colour.view69.info.synopsis</textcolor>
+			<shadowcolor>50000000</shadowcolor>
+			<align>left</align>
+			<aligny>top</aligny>
+			<label>$INFO[ListItem.Synopsis_Overview]</label>
+			<autoscroll delay="8000" time="5000" repeat="10000" condition="true">Conditional</autoscroll>
+		</control>
+		<control type="scrollbar" id="90">
+			<onup>69</onup>
+			<include>View.ScrollBar.Horizontal</include>
+		</control>
+	</control>
+</control>

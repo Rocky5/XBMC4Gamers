@@ -1,9 +1,30 @@
 <advancedsettings>
-		<powersave>false</powersave>
-		<nodvdrom>false</nodvdrom>
-		<enableintro>false</enableintro>
-		<splash>true</splash>
-		<pictures>
-				<screenshotpath>Q:\system\Screenshots\</screenshotpath>
-		</pictures>
+	<!-- <loglevel hide="false">-1</loglevel> -->
+	<nodvdrom>false</nodvdrom>
+	<enableintro>false</enableintro>
+	<splash>true</splash>
+	<images>
+		<_resources>
+			<banner>448x84</banner>
+			<cd>256x256</cd>
+			<cd_small>64x64</cd_small>
+			<cdposter>200x283</cdposter>
+			<dual3d>256x256</dual3d>
+			<fanart>640x360</fanart>
+			<fanart_blur>220x124</fanart_blur>
+			<fanart_thumb>360x203</fanart_thumb>
+			<fog>8x8</fog>
+			<icon>149x263</icon>
+			<opencase>149x263</opencase>
+			<poster>200x283</poster>
+			<poster_small>64x91</poster_small>
+			<synopsis>362x512</synopsis>
+			<thumb>227x129</thumb>
+		</_resources>
+		<wallpaper>720x405</wallpaper>
+		<wallpaper_128mb>1280x720</wallpaper_128mb>
+	</images>
+	<pictures>
+		<screenshotpath>Q:\system\Screenshots\</screenshotpath>
+	</pictures>
 </advancedsettings>

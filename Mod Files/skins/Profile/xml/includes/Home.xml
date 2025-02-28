@@ -3,25 +3,11 @@
 	<top>345</top>
 	<width>145</width>
 	<height>40</height>
-	<onleft>9001</onleft>
-	<onright>9001</onright>
-	<onup condition="ControlGroup(1).HasFocus(100)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(101)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(102)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(103)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(104)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(105)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(106)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(107)">8003</onup>
-	<ondown condition="ControlGroup(1).HasFocus(100) + Skin.HasSetting(RandomGames)">8002</ondown>
-	<ondown condition="ControlGroup(1).HasFocus(101) + Skin.HasSetting(RandomBrews)">8002</ondown>
-	<ondown condition="ControlGroup(1).HasFocus(102) + Skin.HasSetting(RandomEmus)">8002</ondown>
-	<ondown condition="ControlGroup(1).HasFocus(103) + Skin.HasSetting(RandomApps)">8002</ondown>
-	<ondown condition="ControlGroup(1).HasFocus(104) + Skin.HasSetting(Randomcustom1)">8002</ondown>
-	<ondown condition="ControlGroup(1).HasFocus(105) + Skin.HasSetting(Randomcustom2)">8002</ondown>
-	<ondown condition="ControlGroup(1).HasFocus(106) + Skin.HasSetting(Randomcustom3)">8002</ondown>
-	<ondown condition="ControlGroup(1).HasFocus(107) + Skin.HasSetting(Randomcustom4)">8002</ondown>
-	<onback>8003</onback>
+	<onleft>9000</onleft>
+	<onright>9000</onright>
+	<onup>1</onup>
+	<ondown>8001</ondown>
+	<onback>1</onback>
 	<viewtype label="home">biglist</viewtype>
 	<scrolltime>0</scrolltime>
 	<focusposition>0</focusposition>
@@ -33,43 +19,43 @@
 			<height>40</height>
 			<width>145</width>
 			<aspectratio>stretch</aspectratio>
-			<texture>windows\home\lastplayed_button_nofo.png</texture>
+			<texture colordiffuse="colour.home.button.nofocus.diffuse">windows\home\lastplayed_button_nofo.png</texture>
 			<animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
-			<visible>!Control.HasFocus(9001)</visible>
+			<visible>!Control.HasFocus(9000)</visible>
 		</control>
 		<control type="label">
 			<left>0</left>
 			<top>0</top>
-			<height>35</height>
+			<height>39</height>
 			<width>145</width>
 			<font>home_19</font>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>1_label_alt</textcolor>
-			<shadowcolor>1_shadow</shadowcolor>
-			<label>[UPPERCASE]Launch[/UPPERCASE]</label>
+			<textcolor>colour.home.button.nofocus</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
+			<label>[UPPERCASE]$LOCALIZE[518][/UPPERCASE]</label>
 			<animation effect="fade" start="10" end="10" time="0" condition="true">Conditional</animation>
-			<visible>!Control.HasFocus(9001)</visible>
+			<visible>!Control.HasFocus(9000)</visible>
 		</control>
 		<control type="image">
 			<height>40</height>
 			<width>145</width>
 			<aspectratio>stretch</aspectratio>
-			<texture>windows\home\lastplayed_button_fo.png</texture>
-			<visible>Control.HasFocus(9001)</visible>
+			<texture colordiffuse="colour.home.button.focus.diffuse">windows\home\lastplayed_button_fo.png</texture>
+			<visible>Control.HasFocus(9000)</visible>
 		</control>
 		<control type="label">
 			<left>0</left>
 			<top>0</top>
-			<height>35</height>
+			<height>39</height>
 			<width>145</width>
 			<font>home_19</font>
 			<align>center</align>
 			<aligny>center</aligny>
-			<textcolor>1_label</textcolor>
-			<shadowcolor>1_shadow</shadowcolor>
-			<label>[UPPERCASE]Launch[/UPPERCASE]</label>
-			<visible>Control.HasFocus(9001)</visible>
+			<textcolor>colour.home.button.focus</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
+			<label>[UPPERCASE]$LOCALIZE[518][/UPPERCASE]</label>
+			<visible>Control.HasFocus(9000)</visible>
 		</control>
 	</focusedlayout>
 </include>
@@ -78,25 +64,10 @@
 	<top>483</top>
 	<width>920</width>
 	<height>188</height>
-	<onleft>9002</onleft>
-	<onright>9002</onright>
-	<onup condition="ControlGroup(1).HasFocus(100) + !Skin.HasSetting(LastPlayedGames)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(101) + !Skin.HasSetting(LastPlayedBrews)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(102) + !Skin.HasSetting(LastPlayedEmus)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(103) + !Skin.HasSetting(LastPlayedApps)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(104) + !Skin.HasSetting(LastPlayedcustom1)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(105) + !Skin.HasSetting(LastPlayedcustom2)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(106) + !Skin.HasSetting(LastPlayedcustom3)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(107) + !Skin.HasSetting(LastPlayedcustom4)">8003</onup>
-	<onup condition="ControlGroup(1).HasFocus(100) + Skin.HasSetting(LastPlayedGames)">8001</onup>
-	<onup condition="ControlGroup(1).HasFocus(101) + Skin.HasSetting(LastPlayedBrews)">8001</onup>
-	<onup condition="ControlGroup(1).HasFocus(102) + Skin.HasSetting(LastPlayedEmus)">8001</onup>
-	<onup condition="ControlGroup(1).HasFocus(103) + Skin.HasSetting(LastPlayedApps)">8001</onup>
-	<onup condition="ControlGroup(1).HasFocus(104) + Skin.HasSetting(LastPlayedcustom1)">8001</onup>
-	<onup condition="ControlGroup(1).HasFocus(105) + Skin.HasSetting(LastPlayedcustom2)">8001</onup>
-	<onup condition="ControlGroup(1).HasFocus(106) + Skin.HasSetting(LastPlayedcustom3)">8001</onup>
-	<onup condition="ControlGroup(1).HasFocus(107) + Skin.HasSetting(LastPlayedcustom4)">8001</onup>
-	<onback>8003</onback>
+	<onleft>-</onleft>
+	<onright>-</onright>
+	<onup>8000</onup>
+	<onback>1</onback>
 	<viewtype label="home">biglist</viewtype>
 	<scrolltime>180</scrolltime>
 	<focusposition>0</focusposition>
@@ -111,7 +82,7 @@
 			<width>138</width>
 			<height>184</height>
 			<aspectratio>stretch</aspectratio>
-			<texture>windows\home\poster_shadow.png</texture>
+			<texture>windows\home\poster_shadow_nofocus.png</texture>
 		</control>
 		<control type="image">
 			<left>5</left>
@@ -119,20 +90,18 @@
 			<width>119</width>
 			<height>168</height>
 			<aspectratio>stretch</aspectratio>
-			<colordiffuse>FFFFFFFF</colordiffuse>
 			<texture background="true" diffuse="windows\home\diffuse.png">$INFO[listitem.ActualIcon]</texture>
-			<fadetime>ThumbCrossfadeTime</fadetime>
+			<fadetime>200</fadetime>
 		</control>
 	</itemlayout>
 	<focusedlayout height="188" width="165">
 		<control type="image">
-			<left>5</left>
-			<top>5</top>
-			<width>119</width>
-			<height>168</height>
+			<left>0</left>
+			<top>0</top>
+			<width>138</width>
+			<height>184</height>
 			<aspectratio>stretch</aspectratio>
-			<colordiffuse>FFFFFFFF</colordiffuse>
-			<texture diffuse="windows\home\diffuse.png">no_poster.jpg</texture>
+			<texture>windows\home\poster_shadow_nofocus.png</texture>
 		</control>
 		<control type="image">
 			<left>5</left>
@@ -140,13 +109,186 @@
 			<width>119</width>
 			<height>168</height>
 			<aspectratio>stretch</aspectratio>
-			<colordiffuse>FFFFFFFF</colordiffuse>
 			<texture background="true" diffuse="windows\home\diffuse.png">$INFO[listitem.ActualIcon]</texture>
-			<fadetime>ThumbCrossfadeTime</fadetime>
+			<fadetime>200</fadetime>
 		</control>
 	</focusedlayout>
 </include>
-<include name="Home.Layout.Random.Focus.Item">
+<!-- Source buttons values -->
+<include name="Home.Layout.Top.Buttons">
+	<height>30</height>
+	<width min="90" max="200">auto</width>
+	<font>home_15</font>
+	<align>center</align>
+	<aligny>top</aligny>
+	<textoffsety>4</textoffsety>
+	<focusedcolor>colour.home.button.focus</focusedcolor>
+	<textcolor>colour.home.button.nofocus</textcolor>
+	<texturefocus border="5,5,5,5" colordiffuse="colour.home.button.focus.diffuse">windows\home\button_fo.png</texturefocus>
+	<texturenofocus border="5,5,5,5" colordiffuse="colour.home.button.nofocus.diffuse">windows\home\button_nofo.png</texturenofocus>
+</include>
+<!-- Animations -->
+<include name="Home.Underlay.Anims">
+	<animation effect="fade" start="0" end="100" delay="0" time="200">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" delay="50" time="100">WindowClose</animation>
+</include>
+<include name="Home.Fanart.Anims">
+	<animation effect="fade" start="0" end="100" delay="500" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
+</include>
+<include name="Home.RSS.Anims">
+	<animation effect="fade" start="0" end="100" delay="600" time="600">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" delay="0" time="30">WindowClose</animation>
+	<animation effect="fade" start="100" end="100" delay="0" time="0">Visible</animation>
+</include>
+<include name="Home.RSS.Fade.Anims">
+	<animation effect="fade" start="0" end="100" delay="100" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" delay="0" time="50">WindowClose</animation>
+	<animation effect="fade" start="100" end="100" delay="0" time="0">Visible</animation>
+</include>
+<include name="Home.LastPlayed.Anims">
+	<animation effect="fade" start="0" end="100" delay="500" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" delay="0" time="150">WindowClose</animation>
+	<animation effect="fade" start="100" end="100" delay="0" time="0">Visible</animation>
+</include>
+<include name="Home.Randoms.Anims">
+	<animation effect="fade" start="0" end="100" delay="0" time="300">WindowOpen</animation>
+	<animation effect="fade" start="100" end="0" delay="0" time="50">WindowClose</animation>
+	<animation effect="fade" start="100" end="100" delay="0" time="0">Visible</animation>
+</include>
+<include name="Home.Includes">
+	<control type="group">
+		<visible>Window.Next(Programs) | Window.Next(Settings)</visible>
+		<include>Global.Backgrounds</include>
+	</control>
+	<control type="multiimage">
+		<include>1280x720</include>
+		<aspectratio scalediffuse="false">scale</aspectratio>
+		<fadetime>2000</fadetime>
+		<colordiffuse>FFFFFFFF</colordiffuse>
+		<timeperimage>5000</timeperimage>
+		<pauseatend>10000</pauseatend>
+		<randomize>true</randomize>
+		<loop>true</loop>
+		<imagepath background="true">$VAR[HomeMultiimage]</imagepath>
+		<animation effect="fade" start="0" end="100" delay="200" time="200">WindowOpen</animation>
+		<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
+		<animation effect="fade" start="0" end="100" delay="0" time="400">visible</animation>
+		<animation effect="fade" start="100" end="0" delay="0" time="100">hidden</animation>
+		<visible>ControlGroup(1).HasFocus(110) | IsEmpty(Container(9000).ListItem.Label)</visible>
+	</control>
+	<control type="group">
+		<visible>!ControlGroup(1).HasFocus(110)</visible>
+		<control type="largeimage">
+			<include>1280x720</include>
+			<aspectratio aligny="top">scale</aspectratio>
+			<fadetime>500</fadetime>
+			<texture>$INFO[Container(9000).ListItem.thumb]</texture>
+			<include>Home.Fanart.Anims</include>
+		</control>
+		<control type="image">
+			<include>1280x720</include>
+			<aspectratio>stretch</aspectratio>
+			<texture colordiffuse="colour.home.underlay.diffuse">windows\home\underlay.png</texture>
+			<include>Home.Underlay.Anims</include>
+		</control>
+		<!-- RSS feed -->
+		<control type="group">
+			<animation effect="slide" start="0,0" end="0,-20" time="100" condition="!Skin.HasSetting(HideContextBar) + !Window.IsActive(1112)">Conditional</animation>
+			<visible>system.getbool(lookandfeel.enablerssfeeds)</visible>
+			<control type="rss" id="500">
+				<description>rss feed</description>
+				<left>0</left>
+				<top>692</top>
+				<height>25</height>
+				<width>1280</width>
+				<align>left</align>
+				<aligny>center</aligny>
+				<font>home_12</font>
+				<urlset>1</urlset>
+				<headlinecolor>colour.home.label.title</headlinecolor>
+				<titlecolor>colour.home.label.title</titlecolor>
+				<textcolor>colour.home.label.title</textcolor>
+				<animation effect="fade" start="100" end="75" time="0" condition="true">Conditional</animation>
+				<include>Home.RSS.Anims</include>
+			</control>
+			<control type="image">
+				<left>0</left>
+				<top>648</top>
+				<height>72</height>
+				<width>100</width>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.home.underlay.diffuse">windows\home\rss_fade_right.png</texture>
+				<include>Home.RSS.Fade.Anims</include>
+			</control>
+			<control type="image">
+				<right>0</right>
+				<top>648</top>
+				<height>72</height>
+				<width>100</width>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.home.underlay.diffuse">windows\home\rss_fade_left.png</texture>
+				<include>Home.RSS.Fade.Anims</include>
+			</control>
+			<control type="image">
+				<left>37</left>
+				<top>691</top>
+				<height>20</height>
+				<width>20</width>
+				<aspectratio>stretch</aspectratio>
+				<texture>windows\home\rss.png</texture>
+				<include>Home.RSS.Anims</include>
+			</control>
+		</control>
+		<control type="textbox">
+			<left>60</left>
+			<top>70</top>
+			<width>500</width>
+			<height>170</height>
+			<font>home_40</font>
+			<align>bottom</align>
+			<aligny>center</aligny>
+			<textcolor>colour.home.label.title</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
+			<label>[UPPERCASE][B]$INFO[Container(9000).ListItem.label][/B][/UPPERCASE]</label>
+			<autoscroll delay="10000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
+			<include>Home.LastPlayed.Anims</include>
+		</control>
+		<control type="textbox">
+			<left>60</left>
+			<top>260</top>
+			<width>500</width>
+			<height>78</height>
+			<font>home_12</font>
+			<align>left</align>
+			<aligny>top</aligny>
+			<textcolor>colour.home.label.synopsis</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
+			<label>[B]$INFO[Container(9000).ListItem.label2][/B]</label>
+			<autoscroll delay="10000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
+			<include>Home.LastPlayed.Anims</include>
+		</control>
+		<control type="image">
+			<left>60</left>
+			<top>400</top>
+			<width>145</width>
+			<height>17</height>
+			<aspectratio>stretch</aspectratio>
+			<texture colordiffuse="colour.home.guides.nofocus.diffuse">windows\home\guides\$INFO[Container(9000).NumItems]\back.png</texture>
+			<include>Home.LastPlayed.Anims</include>
+		</control>
+		<control type="image">
+			<left>60</left>
+			<top>400</top>
+			<width>145</width>
+			<height>17</height>
+			<aspectratio>stretch</aspectratio>
+			<texture colordiffuse="colour.home.guides.focus.diffuse">windows\home\guides\$INFO[Container(9000).NumItems]\$INFO[Container(9000).ListItem(0).Property(Guide)]</texture>
+			<include>Home.LastPlayed.Anims</include>
+		</control>
+	</control>
+	<include>Home.List.Contents</include>
+	<!-- Random item focus here so they appear in the correct order -->
 	<control type="group">
 		<include>Home.Underlay.Anims</include>
 		<!-- window open animation workaround when id 110 has focus on load -->
@@ -157,8 +299,7 @@
 			<width>450</width>
 			<height>228</height>
 			<aspectratio>stretch</aspectratio>
-			<colordiffuse>FFFFFFFF</colordiffuse>
-			<texture>windows\home\random_back.png</texture>
+			<texture colordiffuse="colour.home.random.underlay.diffuse">windows\home\random_back.png</texture>
 		</control>
 	</control>
 	<control type="group">
@@ -171,10 +312,9 @@
 			<width>450</width>
 			<height>228</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<fadetime>250</fadetime>
 			<colordiffuse>10FFFFFF</colordiffuse>
-			<texture diffuse="windows\home\random_fanart_diffuse.png">$INFO[Container(9002).ListItem.thumb]</texture>
-			<visible>Control.HasFocus(9002)</visible>
+			<texture diffuse="windows\home\random_fanart_diffuse.png">$INFO[Container(9001).ListItem.thumb]</texture>
+			<visible>Control.HasFocus(9001)</visible>
 		</control>
 		<control type="label">
 			<left>60</left>
@@ -184,19 +324,19 @@
 			<font>home_19</font>
 			<align>left</align>
 			<aligny>top</aligny>
-			<textcolor>1_random</textcolor>
-			<shadowcolor>1_shadow</shadowcolor>
+			<textcolor>colour.home.label.randoms</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
 			<label>$LOCALIZE[31563]</label>
 		</control>
 		<control type="image">
-			<left>-53</left>
-			<top>478</top>
-			<width>133</width>
-			<height>188</height>
+			<left>-58</left>
+			<top>473</top>
+			<width>152</width>
+			<height>204</height>
 			<aspectratio>stretch</aspectratio>
-			<texture diffuse="windows\home\diffuse.png">no_poster.jpg</texture>
+			<texture>windows\home\poster_shadow_focus.png</texture>
 			<animation type="WindowOpen" reversible="false">
-				<effect type="zoom" start="80,478,0,188" end="-53,478,133,188" center="80,478" delay="450" time="120"/>
+				<effect type="zoom" start="85,473,0,204" end="-58,473,152,204" center="85,473" delay="450" time="120"/>
 				<effect type="slide" start="0" end="133" delay="460" time="120"/>
 			</animation>
 			<animation effect="slide" start="0" end="133" delay="0" time="0">WindowClose</animation>
@@ -207,8 +347,7 @@
 			<width>133</width>
 			<height>188</height>
 			<aspectratio>stretch</aspectratio>
-			<fadetime>100</fadetime>
-			<texture background="true" diffuse="windows\home\diffuse.png">$INFO[Container(9002).ListItem.ActualIcon]</texture>
+			<texture background="true" diffuse="windows\home\diffuse.png">$INFO[Container(9001).ListItem.ActualIcon]</texture>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="80,478,0,188" end="-53,478,133,188" center="80,478" delay="450" time="120"/>
 				<effect type="slide" start="0" end="133" delay="460" time="120"/>
@@ -223,9 +362,9 @@
 			<font>home_19</font>
 			<align>left</align>
 			<aligny>center</aligny>
-			<textcolor>1_title_alt</textcolor>
-			<shadowcolor>1_shadow</shadowcolor>
-			<label>[UPPERCASE][B]$INFO[Container(9002).ListItem.Label][/B][/UPPERCASE]</label>
+			<textcolor>colour.home.label.title2</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
+			<label>[UPPERCASE][B]$INFO[Container(9001).ListItem.Label][/B][/UPPERCASE]</label>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="224,478,0,50" end="224,478,246,50" center="224,478" delay="580" time="150"/>
 			</animation>
@@ -237,10 +376,10 @@
 			<height>125</height>
 			<font>home_12</font>
 			<align>left</align>
-			<textcolor>1_synopsis_alt</textcolor>
-			<shadowcolor>1_shadow</shadowcolor>
-			<label>[B]$INFO[Container(9002).ListItem.Label2][/B]</label>
-			<visible>!Control.HasFocus(9002)</visible>
+			<textcolor>colour.home.label.synopsis2</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
+			<label>[B]$INFO[Container(9001).ListItem.Label2][/B]</label>
+			<visible>!Control.HasFocus(9001)</visible>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="224,538,0,125" end="224,538,246,125" center="224,478" delay="580" time="150"/>
 			</animation>
@@ -252,10 +391,10 @@
 			<height>86</height>
 			<font>home_12</font>
 			<align>left</align>
-			<textcolor>1_synopsis_alt</textcolor>
-			<shadowcolor>1_shadow</shadowcolor>
-			<label>[B]$INFO[Container(9002).ListItem.Label2][/B]</label>
-			<visible>Control.HasFocus(9002)</visible>
+			<textcolor>colour.home.label.synopsis2</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
+			<label>[B]$INFO[Container(9001).ListItem.Label2][/B]</label>
+			<visible>Control.HasFocus(9001)</visible>
 			<animation type="WindowOpen" reversible="false">
 				<effect type="zoom" start="224,538,0,86" end="224,538,246,86" center="224,478" delay="580" time="150"/>
 			</animation>
@@ -266,245 +405,2128 @@
 			<width>22</width>
 			<height>22</height>
 			<aspectratio>stretch</aspectratio>
-			<fadetime>ThumbCrossfadeTime</fadetime>
-			<texture background="true">windows\home\a_button.png</texture>
-			<visible>Control.HasFocus(9002)</visible>
+			<fadetime>200</fadetime>
+			<texture background="true" colordiffuse="colour.home.button.abutton.diffuse">windows\home\a_button.png</texture>
+			<visible>Control.HasFocus(9001)</visible>
 		</control>
 		<control type="label">
 			<left>254</left>
-			<top>638</top>
-			<width>110</width>
+			<top>637</top>
+			<width>230</width>
 			<height>22</height>
 			<font>home_19</font>
 			<align>left</align>
 			<aligny>center</aligny>
-			<textcolor>1_title_alt</textcolor>
-			<shadowcolor>1_shadow</shadowcolor>
-			<label>Launch</label>
-			<visible>Control.HasFocus(9002)</visible>
+			<textcolor>colour.home.label.title2</textcolor>
+			<shadowcolor>colour.home.label.shadow</shadowcolor>
+			<label>$LOCALIZE[518]</label>
+			<visible>Control.HasFocus(9001)</visible>
 		</control>
 	</control>
-</include>
-<include name="Home.MulitImage">
-	<control type="multiimage">
-		<include>1280x720</include>
-		<aspectratio scalediffuse="false">scale</aspectratio>
-		<fadetime>2000</fadetime>
-		<colordiffuse>FFFFFFFF</colordiffuse>
-		<timeperimage>5000</timeperimage>
-		<pauseatend>10000</pauseatend>
-		<randomize>true</randomize>
-		<loop>true</loop>
-		<animation effect="fade" start="0" end="100" delay="200" time="200">WindowOpen</animation>
-		<animation effect="fade" start="100" end="0" delay="0" time="100">WindowClose</animation>
-		<animation effect="fade" start="0" end="100" time="100" delay="0">visible</animation>
-		<animation effect="fade" start="100" end="0" time="0" delay="0">hidden</animation>
-		<visible>ControlGroup(1).HasFocus(110) | IsEmpty(Container(9001).ListItem.Label)</visible>
-		<imagepath background="true">$VAR[HomeMultiimage]</imagepath>
+	<!-- Source buttons -->
+	<control type="grouplist" id="1">
+		<description>button area</description>
+		<left>0</left>
+		<top>40</top>
+		<width>1280</width>
+		<height>60</height>
+		<itemgap>4</itemgap>
+		<onup>-</onup>
+		<ondown>8001</ondown>
+		<onleft>1</onleft>
+		<onright>1</onright>
+		<onback>8100</onback>
+		<align>center</align>
+		<animation effect="slide" start="0,-100" end="0,0" delay="0" time="200">WindowOpen</animation>
+		<animation effect="slide" start="0,0" end="0,-100" delay="0" time="200">WindowClose</animation>
+		<animation effect="fade" start="100" end="20" time="250" condition="Control.HasFocus(9000) | Control.HasFocus(9001)">Conditional</animation>
+		<animation effect="fade" start="100" end="20" time="250" condition="System.IdleTime(5)">Conditional</animation>
+		<animation effect="slide" start="0,0" end="0,-100" delay="0" time="250" condition="System.IdleTime(8) + ControlGroup(1).HasFocus(110)">Conditional</animation>
+		<orientation>horizontal</orientation>
+		<control type="button" id="100">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$LOCALIZE[31079][/UPPERCASE]</label>
+			<ondown condition="Skin.HasSetting(LastPlayedGames)">8005</ondown>
+			<ondown condition="Skin.HasSetting(RandomGames)">8006</ondown>
+			<onclick>ActivateWindow(Programs,Games,return)</onclick>
+			<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+			<visible>!Skin.HasSetting(DisableHome1) + [Skin.HasSetting(LastPlayedGames) | Skin.HasSetting(RandomGames)]</visible>
+			<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+		</control>
+		<control type="button" id="101">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$LOCALIZE[31080][/UPPERCASE]</label>
+			<ondown condition="Skin.HasSetting(LastPlayedBrews)">8005</ondown>
+			<ondown condition="Skin.HasSetting(RandomBrews)">8006</ondown>
+			<onclick>ActivateWindow(Programs,Homebrew,return)</onclick>
+			<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+			<visible>!Skin.HasSetting(DisableHome2) + [Skin.HasSetting(LastPlayedBrews) | Skin.HasSetting(RandomBrews)]</visible>
+			<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+		</control>
+		<control type="button" id="102">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$LOCALIZE[31078][/UPPERCASE]</label>
+			<ondown condition="Skin.HasSetting(LastPlayedEmus)">8005</ondown>
+			<ondown condition="Skin.HasSetting(RandomEmus)">8006</ondown>
+			<onclick>ActivateWindow(Programs,Emulators,return)</onclick>
+			<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+			<visible>!Skin.HasSetting(DisableHome3) + [Skin.HasSetting(LastPlayedEmus) | Skin.HasSetting(RandomEmus)]</visible>
+			<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+		</control>
+		<control type="button" id="103">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$LOCALIZE[31077][/UPPERCASE]</label>
+			<ondown condition="Skin.HasSetting(LastPlayedApps)">8005</ondown>
+			<ondown condition="Skin.HasSetting(RandomApps)">8006</ondown>
+			<onclick>ActivateWindow(Programs,Applications,return)</onclick>
+			<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+			<visible>!Skin.HasSetting(DisableHome4) + [Skin.HasSetting(LastPlayedApps) | Skin.HasSetting(RandomApps)]</visible>
+			<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+		</control>
+		<control type="button" id="104">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$INFO[Skin.String(CustomHomeButton1Name)][/UPPERCASE]</label>
+			<ondown condition="Skin.HasSetting(LastPlayedcustom1)">8005</ondown>
+			<ondown condition="Skin.HasSetting(Randomcustom1)">8006</ondown>
+			<onclick>ActivateWindow(Programs,$INFO[Skin.String(CustomHomeButton1Source)],return)</onclick>
+			<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+			<visible>Skin.HasSetting(CustomHomeButton1Enabled)</visible>
+			<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+		</control>
+		<control type="button" id="105">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$INFO[Skin.String(CustomHomeButton2Name)][/UPPERCASE]</label>
+			<ondown condition="Skin.HasSetting(LastPlayedcustom2)">8005</ondown>
+			<ondown condition="Skin.HasSetting(Randomcustom2)">8006</ondown>
+			<onclick>ActivateWindow(Programs,$INFO[Skin.String(CustomHomeButton2Source)],return)</onclick>
+			<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+			<visible>Skin.HasSetting(CustomHomeButton2Enabled)</visible>
+			<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+		</control>
+		<control type="button" id="106">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$INFO[Skin.String(CustomHomeButton3Name)][/UPPERCASE]</label>
+			<ondown condition="Skin.HasSetting(LastPlayedcustom3)">8005</ondown>
+			<ondown condition="Skin.HasSetting(Randomcustom3)">8006</ondown>
+			<onclick>ActivateWindow(Programs,$INFO[Skin.String(CustomHomeButton3Source)],return)</onclick>
+			<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+			<visible>Skin.HasSetting(CustomHomeButton3Enabled)</visible>
+			<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+		</control>
+		<control type="button" id="107">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$INFO[Skin.String(CustomHomeButton4Name)][/UPPERCASE]</label>
+			<ondown condition="Skin.HasSetting(LastPlayedcustom4)">8005</ondown>
+			<ondown condition="Skin.HasSetting(Randomcustom4)">8006</ondown>
+			<onclick>ActivateWindow(Programs,$INFO[Skin.String(CustomHomeButton4Source)],return)</onclick>
+			<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+			<visible>Skin.HasSetting(CustomHomeButton4Enabled)</visible>
+			<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+		</control>
+		<control type="button" id="110">
+			<include>Home.Layout.Top.Buttons</include>
+			<label>[UPPERCASE]$LOCALIZE[31564][/UPPERCASE]</label>
+			<focusedcolor>1_sidebar_labels_fo</focusedcolor>
+			<textcolor>1_sidebar_labels_nofo</textcolor>
+			<onclick>ActivateWindow(Programs,Root)</onclick>
+			<visible>Skin.HasSetting(DisableHome1) + Skin.HasSetting(DisableHome2) + Skin.HasSetting(DisableHome3) + Skin.HasSetting(DisableHome4) + ![Skin.HasSetting(CustomHomeButton1Enabled) | Skin.HasSetting(CustomHomeButton2Enabled) | Skin.HasSetting(CustomHomeButton3Enabled) | Skin.HasSetting(CustomHomeButton4Enabled)]</visible>
+		</control>
+	</control>
+	<!-- Fake buttons so I can toggle the movements of the last played items if not focused -->
+	<!-- Visible if last played is empty and will focus the sources list -->
+	<control type="button" id="8000">
+		<left>-1000</left>
+		<onfocus>Setfocus(8007)</onfocus>
+		<visible>[ControlGroup(1).HasFocus(100) + !Skin.HasSetting(LastPlayedGames)] | [ControlGroup(1).HasFocus(101) + !Skin.HasSetting(LastPlayedBrews)] | [ControlGroup(1).HasFocus(102) + !Skin.HasSetting(LastPlayedEmus)] | [ControlGroup(1).HasFocus(103) + !Skin.HasSetting(LastPlayedApps)] | [ControlGroup(1).HasFocus(104) + !Skin.HasSetting(LastPlayedcustom1)] | [ControlGroup(1).HasFocus(105) + !Skin.HasSetting(LastPlayedcustom2)] | [ControlGroup(1).HasFocus(106) + !Skin.HasSetting(LastPlayedcustom3)] | [ControlGroup(1).HasFocus(107) + !Skin.HasSetting(LastPlayedcustom7)]</visible>
+	</control>
+	<!-- Visible if last played is not empty and will focus last played list -->
+	<control type="button" id="8000">
+		<left>-1000</left>
+		<onfocus>Setfocus(8005)</onfocus>
+		<visible>[ControlGroup(1).HasFocus(100) + Skin.HasSetting(LastPlayedGames)] | [ControlGroup(1).HasFocus(101) + Skin.HasSetting(LastPlayedBrews)] | [ControlGroup(1).HasFocus(102) + Skin.HasSetting(LastPlayedEmus)] | [ControlGroup(1).HasFocus(103) + Skin.HasSetting(LastPlayedApps)] | [ControlGroup(1).HasFocus(104) + Skin.HasSetting(LastPlayedcustom1)] | [ControlGroup(1).HasFocus(105) + Skin.HasSetting(LastPlayedcustom2)] | [ControlGroup(1).HasFocus(106) + Skin.HasSetting(LastPlayedcustom3)] | [ControlGroup(1).HasFocus(107) + Skin.HasSetting(LastPlayedcustom7)]</visible>
+	</control>
+	<!-- Visible if randoms list is visible and focus it -->
+	<control type="button" id="8001">
+		<left>-1000</left>
+		<onfocus>Setfocus(8006)</onfocus>
+		<visible>[ControlGroup(1).HasFocus(100) + Skin.HasSetting(RandomGames)] | [ControlGroup(1).HasFocus(101) + Skin.HasSetting(RandomBrews)] | [ControlGroup(1).HasFocus(102) + Skin.HasSetting(RandomEmus)] | [ControlGroup(1).HasFocus(103) + Skin.HasSetting(RandomApps)] | [ControlGroup(1).HasFocus(104) + Skin.HasSetting(Randomcustom1)] | [ControlGroup(1).HasFocus(105) + Skin.HasSetting(Randomcustom2)] | [ControlGroup(1).HasFocus(106) + Skin.HasSetting(Randomcustom3)] | [ControlGroup(1).HasFocus(107) + Skin.HasSetting(Randomcustom7)]</visible>
+	</control>
+	<!-- Visible if last played is empty and will focus the randoms list -->
+	<control type="button" id="8001">
+		<left>-1000</left>
+		<onfocus>Setfocus(8006)</onfocus>
+		<visible>[ControlGroup(1).HasFocus(100) + !Skin.HasSetting(LastPlayedGames)] | [ControlGroup(1).HasFocus(101) + !Skin.HasSetting(LastPlayedBrews)] | [ControlGroup(1).HasFocus(102) + !Skin.HasSetting(LastPlayedEmus)] | [ControlGroup(1).HasFocus(103) + !Skin.HasSetting(LastPlayedApps)] | [ControlGroup(1).HasFocus(104) + !Skin.HasSetting(LastPlayedcustom1)] | [ControlGroup(1).HasFocus(105) + !Skin.HasSetting(LastPlayedcustom2)] | [ControlGroup(1).HasFocus(106) + !Skin.HasSetting(LastPlayedcustom3)] | [ControlGroup(1).HasFocus(107) + !Skin.HasSetting(LastPlayedcustom7)]</visible>
+	</control>
+	<!-- Focus last played control -->
+	<control type="button" id="8005">
+		<left>-1000</left>
+		<onfocus>Setfocus(9000)</onfocus>
+		<onfocus>CancelAlarm(AutoScroll_Thumbs,silent)</onfocus>
+	</control>
+	<!-- Focus random control -->
+	<control type="button" id="8006">
+		<left>-1000</left>
+		<onfocus>Setfocus(9001)</onfocus>
+		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
+	</control>
+	<!-- Focus source list -->
+	<control type="button" id="8007">
+		<left>-1000</left>
+		<onfocus>Setfocus(1)</onfocus>
+		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9000,1),00:10,silent,loop)</onfocus>
 	</control>
 </include>
-<include name="Home.Fanart">
-	<include>1280x720</include>
-	<aspectratio aligny="top">scale</aspectratio>
-	<fadetime>300</fadetime>
-	<include>Home.Fanart.Anims</include>
-</include>
-<include name="Home.Underlay">
-	<control type="image">
-		<include>1280x720</include>
-		<aspectratio>stretch</aspectratio>
-		<texture>windows\home\underlay.png</texture>
-		<include>Home.Underlay.Anims</include>
+<include name="Home.List.Contents">
+	<!-- Games last played-->
+	<control type="list" id="9000">
+		<include>Home.LastPlayed.Layout</include>
+		<visible>ControlGroup(1).HasFocus(100)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.1.LargePoster)]</property>
+				<property name="Guide">01.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.2.LargePoster)]</property>
+				<property name="Guide">02.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.3.LargePoster)]</property>
+				<property name="Guide">03.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.4.LargePoster)]</property>
+				<property name="Guide">04.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.5.LargePoster)]</property>
+				<property name="Guide">05.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.6.LargePoster)]</property>
+				<property name="Guide">06.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.7.LargePoster)]</property>
+				<property name="Guide">07.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.8.LargePoster)]</property>
+				<property name="Guide">08.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.9.LargePoster)]</property>
+				<property name="Guide">09.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(LastPlayedGames.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedGames.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedGames.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedGames.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedGames.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedGames.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedGames.10.LargePoster)]</property>
+				<property name="Guide">10.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedGames.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedGames.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-</include>
-<include name="Home.Source.Buttons">
-	<left>55</left>
-	<top>35</top>
-	<width>1170</width>
-	<height>30</height>
-	<itemgap>0</itemgap>
-	<onup>-</onup>
-	<ondown>-</ondown>
-	<onleft>1</onleft>
-	<onright>1</onright>
-	<onback>8003</onback>
-	<align>center</align>
-	<animation effect="slide" start="0,-100" end="0,0" delay="0" time="200">WindowOpen</animation>
-	<animation effect="slide" start="0,0" end="0,-100" delay="0" time="200">WindowClose</animation>
-	<animation effect="fade" start="100" end="20" time="250" condition="Control.HasFocus(9001) | Control.HasFocus(9002)">Conditional</animation>
-	<animation effect="fade" start="100" end="20" time="250" condition="System.IdleTime(5)">Conditional</animation>
-	<animation effect="slide" start="0,0" end="0,-100" delay="0" time="250" condition="System.IdleTime(8) + ControlGroup(1).HasFocus(110)">Conditional</animation>
-	<orientation>horizontal</orientation>
-	<control type="button" id="100">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$LOCALIZE[31079]</label>
-		<ondown condition="Skin.HasSetting(LastPlayedGames)">8001</ondown>
-		<ondown condition="Skin.HasSetting(RandomGames)">8002</ondown>
-		<onclick>ActivateWindow(Programs,Games,return)</onclick>
-		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9001,1),00:10,silent,loop)</onfocus>
-		<visible>Skin.HasSetting(LastPlayedGames) | Skin.HasSetting(RandomGames)</visible>
-		<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+	<!-- Games Random -->
+	<control type="fixedlist" id="9001">
+		<include>Home.Random.Layout</include>
+		<visible>ControlGroup(1).HasFocus(100)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(RandomGames.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.1.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(RandomGames.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.2.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(RandomGames.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.3.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(RandomGames.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.4.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(RandomGames.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.5.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(RandomGames.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.6.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(RandomGames.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.7.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(RandomGames.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.8.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(RandomGames.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.9.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(RandomGames.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomGames.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomGames.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomGames.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomGames.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomGames.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomGames.10.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomGames.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomGames.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="button" id="101">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$LOCALIZE[31080]</label>
-		<ondown condition="Skin.HasSetting(LastPlayedBrews)">8001</ondown>
-		<ondown condition="Skin.HasSetting(RandomBrews)">8002</ondown>
-		<onclick>ActivateWindow(Programs,Homebrew,return)</onclick>
-		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9001,1),00:10,silent,loop)</onfocus>
-		<visible>Skin.HasSetting(LastPlayedBrews) | Skin.HasSetting(RandomBrews)</visible>
-		<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+	<!-- Brews last played-->
+	<control type="list" id="9000">
+		<include>Home.LastPlayed.Layout</include>
+		<visible>ControlGroup(1).HasFocus(101)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.1.LargePoster)]</property>
+				<property name="Guide">01.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.2.LargePoster)]</property>
+				<property name="Guide">02.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.3.LargePoster)]</property>
+				<property name="Guide">03.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.4.LargePoster)]</property>
+				<property name="Guide">04.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.5.LargePoster)]</property>
+				<property name="Guide">05.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.6.LargePoster)]</property>
+				<property name="Guide">06.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.7.LargePoster)]</property>
+				<property name="Guide">07.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.8.LargePoster)]</property>
+				<property name="Guide">08.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.9.LargePoster)]</property>
+				<property name="Guide">09.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(LastPlayedBrews.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedBrews.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedBrews.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedBrews.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedBrews.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedBrews.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedBrews.10.LargePoster)]</property>
+				<property name="Guide">10.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedBrews.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedBrews.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="button" id="102">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$LOCALIZE[31078]</label>
-		<ondown condition="Skin.HasSetting(LastPlayedEmus)">8001</ondown>
-		<ondown condition="Skin.HasSetting(RandomEmus)">8002</ondown>
-		<onclick>ActivateWindow(Programs,Emulators,return)</onclick>
-		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9001,1),00:10,silent,loop)</onfocus>
-		<visible>Skin.HasSetting(LastPlayedEmus) | Skin.HasSetting(RandomEmus)</visible>
-		<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+	<!-- Brews Random -->
+	<control type="fixedlist" id="9001">
+		<include>Home.Random.Layout</include>
+		<visible>ControlGroup(1).HasFocus(101)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(RandomBrews.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.1.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(RandomBrews.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.2.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(RandomBrews.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.3.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(RandomBrews.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.4.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(RandomBrews.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.5.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(RandomBrews.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.6.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(RandomBrews.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.7.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(RandomBrews.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.8.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(RandomBrews.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.9.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(RandomBrews.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomBrews.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomBrews.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomBrews.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomBrews.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomBrews.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomBrews.10.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomBrews.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomBrews.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="button" id="103">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$LOCALIZE[31077]</label>
-		<ondown condition="Skin.HasSetting(LastPlayedApps)">8001</ondown>
-		<ondown condition="Skin.HasSetting(RandomApps)">8002</ondown>
-		<onclick>ActivateWindow(Programs,Applications,return)</onclick>
-		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9001,1),00:10,silent,loop)</onfocus>
-		<visible>Skin.HasSetting(LastPlayedApps) | Skin.HasSetting(RandomApps)</visible>
-		<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+	<!-- Emus last played-->
+	<control type="list" id="9000">
+		<include>Home.LastPlayed.Layout</include>
+		<visible>ControlGroup(1).HasFocus(102)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.1.LargePoster)]</property>
+				<property name="Guide">01.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.2.LargePoster)]</property>
+				<property name="Guide">02.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.3.LargePoster)]</property>
+				<property name="Guide">03.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.4.LargePoster)]</property>
+				<property name="Guide">04.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.5.LargePoster)]</property>
+				<property name="Guide">05.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.6.LargePoster)]</property>
+				<property name="Guide">06.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.7.LargePoster)]</property>
+				<property name="Guide">07.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.8.LargePoster)]</property>
+				<property name="Guide">08.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.9.LargePoster)]</property>
+				<property name="Guide">09.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(LastPlayedEmus.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedEmus.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedEmus.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedEmus.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedEmus.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedEmus.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedEmus.10.LargePoster)]</property>
+				<property name="Guide">10.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedEmus.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedEmus.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="button" id="104">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$INFO[Skin.String(CustomHomeButton1Name)]</label>
-		<ondown condition="Skin.HasSetting(LastPlayedcustom1)">8001</ondown>
-		<ondown condition="Skin.HasSetting(Randomcustom1)">8002</ondown>
-		<onclick>ActivateWindow(Programs,$INFO[Skin.String(CustomHomeButton1Source)],return)</onclick>
-		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9001,1),00:10,silent,loop)</onfocus>
-		<visible>Skin.HasSetting(CustomHomeButton1Enabled)</visible>
-		<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+	<!-- Emus Random -->
+	<control type="fixedlist" id="9001">
+		<include>Home.Random.Layout</include>
+		<visible>ControlGroup(1).HasFocus(102)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(RandomEmus.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.1.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(RandomEmus.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.2.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(RandomEmus.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.3.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(RandomEmus.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.4.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(RandomEmus.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.5.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(RandomEmus.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.6.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(RandomEmus.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.7.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(RandomEmus.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.8.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(RandomEmus.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.9.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(RandomEmus.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomEmus.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomEmus.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomEmus.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomEmus.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomEmus.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomEmus.10.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomEmus.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomEmus.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="button" id="105">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$INFO[Skin.String(CustomHomeButton2Name)]</label>
-		<ondown condition="Skin.HasSetting(LastPlayedcustom2)">8001</ondown>
-		<ondown condition="Skin.HasSetting(Randomcustom2)">8002</ondown>
-		<onclick>ActivateWindow(Programs,$INFO[Skin.String(CustomHomeButton2Source)],return)</onclick>
-		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9001,1),00:10,silent,loop)</onfocus>
-		<visible>Skin.HasSetting(CustomHomeButton2Enabled)</visible>
-		<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+	<!-- Apps last played-->
+	<control type="list" id="9000">
+		<include>Home.LastPlayed.Layout</include>
+		<visible>ControlGroup(1).HasFocus(103)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.1.LargePoster)]</property>
+				<property name="Guide">01.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.2.LargePoster)]</property>
+				<property name="Guide">02.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.3.LargePoster)]</property>
+				<property name="Guide">03.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.4.LargePoster)]</property>
+				<property name="Guide">04.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.5.LargePoster)]</property>
+				<property name="Guide">05.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.6.LargePoster)]</property>
+				<property name="Guide">06.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.7.LargePoster)]</property>
+				<property name="Guide">07.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.8.LargePoster)]</property>
+				<property name="Guide">08.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.9.LargePoster)]</property>
+				<property name="Guide">09.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(LastPlayedApps.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedApps.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedApps.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedApps.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedApps.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedApps.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedApps.10.LargePoster)]</property>
+				<property name="Guide">10.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedApps.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedApps.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="button" id="106">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$INFO[Skin.String(CustomHomeButton3Name)]</label>
-		<ondown condition="Skin.HasSetting(LastPlayedcustom3)">8001</ondown>
-		<ondown condition="Skin.HasSetting(Randomcustom3)">8002</ondown>
-		<onclick>ActivateWindow(Programs,$INFO[Skin.String(CustomHomeButton3Source)],return)</onclick>
-		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9001,1),00:10,silent,loop)</onfocus>
-		<visible>Skin.HasSetting(CustomHomeButton3Enabled)</visible>
-		<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+	<!-- Apps Random -->
+	<control type="fixedlist" id="9001">
+		<include>Home.Random.Layout</include>
+		<visible>ControlGroup(1).HasFocus(103)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(RandomApps.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.1.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(RandomApps.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.2.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(RandomApps.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.3.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(RandomApps.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.4.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(RandomApps.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.5.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(RandomApps.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.6.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(RandomApps.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.7.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(RandomApps.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.8.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(RandomApps.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.9.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(RandomApps.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomApps.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomApps.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomApps.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomApps.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomApps.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomApps.10.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomApps.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomApps.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="button" id="107">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$INFO[Skin.String(CustomHomeButton4Name)]</label>
-		<ondown condition="Skin.HasSetting(LastPlayedcustom4)">8001</ondown>
-		<ondown condition="Skin.HasSetting(Randomcustom4)">8002</ondown>
-		<onclick>ActivateWindow(Programs,$INFO[Skin.String(CustomHomeButton4Source)],return)</onclick>
-		<onfocus>AlarmClock(AutoScroll_Thumbs,Control.Move(9001,1),00:10,silent,loop)</onfocus>
-		<visible>Skin.HasSetting(CustomHomeButton4Enabled)</visible>
-		<animation effect="fade" start="100" end="20" time="250" condition="ControlGroup(1).HasFocus(110)">Conditional</animation>
+	<!-- Custom1 last played-->
+	<control type="list" id="9000">
+		<include>Home.LastPlayed.Layout</include>
+		<visible>ControlGroup(1).HasFocus(104)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.1.LargePoster)]</property>
+				<property name="Guide">01.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.2.LargePoster)]</property>
+				<property name="Guide">02.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.3.LargePoster)]</property>
+				<property name="Guide">03.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.4.LargePoster)]</property>
+				<property name="Guide">04.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.5.LargePoster)]</property>
+				<property name="Guide">05.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.6.LargePoster)]</property>
+				<property name="Guide">06.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.7.LargePoster)]</property>
+				<property name="Guide">07.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.8.LargePoster)]</property>
+				<property name="Guide">08.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.9.LargePoster)]</property>
+				<property name="Guide">09.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom1.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom1.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom1.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom1.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom1.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom1.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom1.10.LargePoster)]</property>
+				<property name="Guide">10.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom1.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom1.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="button" id="110">
-		<include>Home.Layout.Top.Buttons</include>
-		<label>$LOCALIZE[31564]</label>
-		<focusedcolor>1_sidebar_labels_fo</focusedcolor>
-		<textcolor>1_sidebar_labels_nofo</textcolor>
-		<onclick>ActivateWindow(Programs)</onclick>
+	<!-- Custom1 Random -->
+	<control type="fixedlist" id="9001">
+		<include>Home.Random.Layout</include>
+		<visible>ControlGroup(1).HasFocus(104)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.1.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.2.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.3.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.4.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.5.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.6.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.7.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.8.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.9.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(RandomCustom1.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom1.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom1.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom1.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom1.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom1.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom1.10.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom1.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom1.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-</include>
-<!-- 9001 content -->
-<include name="Home.Layout.LastPlayed.Content">
-	<control type="textbox">
-		<left>60</left>
-		<top>70</top>
-		<width>500</width>
-		<height>170</height>
-		<font>home_40</font>
-		<align>bottom</align>
-		<aligny>center</aligny>
-		<textcolor>1_title</textcolor>
-		<shadowcolor>1_shadow</shadowcolor>
-		<label>[UPPERCASE][B]$INFO[Container(9001).ListItem.label][/B][/UPPERCASE]</label>
-		<autoscroll delay="10000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
-		<include>Home.LastPlayed.Anims</include>
+	<!-- Custom2 last played-->
+	<control type="list" id="9000">
+		<include>Home.LastPlayed.Layout</include>
+		<visible>ControlGroup(1).HasFocus(105)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.1.LargePoster)]</property>
+				<property name="Guide">01.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.2.LargePoster)]</property>
+				<property name="Guide">02.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.3.LargePoster)]</property>
+				<property name="Guide">03.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.4.LargePoster)]</property>
+				<property name="Guide">04.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.5.LargePoster)]</property>
+				<property name="Guide">05.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.6.LargePoster)]</property>
+				<property name="Guide">06.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.7.LargePoster)]</property>
+				<property name="Guide">07.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.8.LargePoster)]</property>
+				<property name="Guide">08.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.9.LargePoster)]</property>
+				<property name="Guide">09.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom2.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom2.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom2.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom2.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom2.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom2.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom2.10.LargePoster)]</property>
+				<property name="Guide">10.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom2.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom2.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="textbox">
-		<left>60</left>
-		<top>260</top>
-		<width>500</width>
-		<height>78</height>
-		<font>home_12</font>
-		<align>left</align>
-		<aligny>top</aligny>
-		<textcolor>1_synopsis</textcolor>
-		<shadowcolor>1_shadow</shadowcolor>
-		<label>[B]$INFO[Container(9001).ListItem.label2][/B]</label>
-		<autoscroll delay="10000" time="1000" repeat="10000" condition="true">Conditional</autoscroll>
-		<include>Home.LastPlayed.Anims</include>
+	<!-- Custom2 Random -->
+	<control type="fixedlist" id="9001">
+		<include>Home.Random.Layout</include>
+		<visible>ControlGroup(1).HasFocus(105)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.1.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.2.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.3.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.4.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.5.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.6.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.7.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.8.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.9.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(RandomCustom2.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom2.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom2.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom2.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom2.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom2.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom2.10.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom2.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom2.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="image">
-		<left>60</left>
-		<top>400</top>
-		<width>145</width>
-		<height>17</height>
-		<aspectratio>stretch</aspectratio>
-		<colordiffuse>50FFFFFF</colordiffuse>
-		<texture>windows\home\guides\$INFO[Container(9001).NumItems]\back.png</texture>
-		<include>Home.LastPlayed.Anims</include>
+	<!-- Custom3 last played-->
+	<control type="list" id="9000">
+		<include>Home.LastPlayed.Layout</include>
+		<visible>ControlGroup(1).HasFocus(106)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.1.LargePoster)]</property>
+				<property name="Guide">01.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.2.LargePoster)]</property>
+				<property name="Guide">02.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.3.LargePoster)]</property>
+				<property name="Guide">03.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.4.LargePoster)]</property>
+				<property name="Guide">04.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.5.LargePoster)]</property>
+				<property name="Guide">05.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.6.LargePoster)]</property>
+				<property name="Guide">06.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.7.LargePoster)]</property>
+				<property name="Guide">07.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.8.LargePoster)]</property>
+				<property name="Guide">08.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.9.LargePoster)]</property>
+				<property name="Guide">09.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom3.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom3.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom3.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom3.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom3.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom3.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom3.10.LargePoster)]</property>
+				<property name="Guide">10.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom3.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom3.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-	<control type="image">
-		<left>60</left>
-		<top>400</top>
-		<width>145</width>
-		<height>17</height>
-		<aspectratio>stretch</aspectratio>
-		<colordiffuse>$VAR[Value.TileColourSolid]</colordiffuse>
-		<texture>windows\home\guides\$INFO[Container(9001).NumItems]\$INFO[Container(9001).ListItem(0).Property(Guide)]</texture>
-		<include>Home.LastPlayed.Anims</include>
+	<!-- Custom3 Random -->
+	<control type="fixedlist" id="9001">
+		<include>Home.Random.Layout</include>
+		<visible>ControlGroup(1).HasFocus(106)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.1.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.2.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.3.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.4.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.5.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.6.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.7.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.8.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.9.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(RandomCustom3.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom3.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom3.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom3.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom3.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom3.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom3.10.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom3.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom3.10.Title))</visible>
+			</item>
+		</content>
 	</control>
-</include>
-<!-- Top buttons -->
-<include name="Home.Layout.Top.Buttons">
-	<height>30</height>
-	<width>130</width>
-	<font>home_19</font>
-	<align>center</align>
-	<aligny>top</aligny>
-	<textoffsety>0</textoffsety>
-	<focusedcolor>1_bar_labels_fo</focusedcolor>
-	<textcolor>1_bar_labels_nofo</textcolor>
-	<texturefocus>windows\home\button_fo.png</texturefocus>
-	<texturenofocus>windows\home\button_nofo.png</texturenofocus>
-</include>
-<!-- Animations -->
-<include name="Home.Underlay.Anims">
-	<animation effect="fade" start="0" end="100" delay="0" time="200">WindowOpen</animation>
-	<animation effect="fade" start="100" end="0" delay="50" time="100">WindowClose</animation>
-</include>
-<include name="Home.Fanart.Anims">
-	<animation effect="fade" start="0" end="100" delay="500" time="300">WindowOpen</animation>
-	<animation effect="fade" start="100" end="0" delay="0" time="0">WindowClose</animation>
-</include>
-<include name="Home.LastPlayed.Anims">
-	<animation effect="fade" start="0" end="100" delay="500" time="300">WindowOpen</animation>
-	<animation effect="fade" start="100" end="0" delay="0" time="150">WindowClose</animation>
-	<animation effect="fade" start="100" end="100" delay="0" time="0">Visible</animation>
-	<animation effect="fade" start="0" end="0" delay="0" time="0">Hidden</animation>
-</include>
-<include name="Home.Randoms.Anims">
-	<animation effect="fade" start="0" end="100" delay="0" time="300">WindowOpen</animation>
-	<animation effect="fade" start="100" end="0" delay="0" time="50">WindowClose</animation>
-	<animation effect="fade" start="100" end="100" delay="0" time="0">Visible</animation>
-	<animation effect="fade" start="0" end="0" delay="0" time="0">Hidden</animation>
+	<!-- Custom4 last played-->
+	<control type="list" id="9000">
+		<include>Home.LastPlayed.Layout</include>
+		<visible>ControlGroup(1).HasFocus(107)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.1.LargePoster)]</property>
+				<property name="Guide">01.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.2.LargePoster)]</property>
+				<property name="Guide">02.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.3.LargePoster)]</property>
+				<property name="Guide">03.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.4.LargePoster)]</property>
+				<property name="Guide">04.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.5.LargePoster)]</property>
+				<property name="Guide">05.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.6.LargePoster)]</property>
+				<property name="Guide">06.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.7.LargePoster)]</property>
+				<property name="Guide">07.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.8.LargePoster)]</property>
+				<property name="Guide">08.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.9.LargePoster)]</property>
+				<property name="Guide">09.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(LastPlayedCustom4.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(LastPlayedCustom4.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(LastPlayedCustom4.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(LastPlayedCustom4.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(LastPlayedCustom4.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(LastPlayedCustom4.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(LastPlayedCustom4.10.LargePoster)]</property>
+				<property name="Guide">10.png</property>
+				<onclick>$INFO[Window(Home).Property(LastPlayedCustom4.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(LastPlayedCustom4.10.Title))</visible>
+			</item>
+		</content>
+	</control>
+	<!-- Custom4 Random -->
+	<control type="fixedlist" id="9001">
+		<include>Home.Random.Layout</include>
+		<visible>ControlGroup(1).HasFocus(107)</visible>
+		<content>
+			<item id="1">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.1.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.1.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.1.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.1.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.1.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.1.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.1.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.1.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.1.Title))</visible>
+			</item>
+			<item id="2">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.2.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.2.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.2.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.2.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.2.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.2.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.2.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.2.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.2.Title))</visible>
+			</item>
+			<item id="3">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.3.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.3.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.3.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.3.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.3.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.3.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.3.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.3.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.3.Title))</visible>
+			</item>
+			<item id="4">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.4.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.4.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.4.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.4.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.4.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.4.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.4.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.4.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.4.Title))</visible>
+			</item>
+			<item id="5">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.5.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.5.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.5.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.5.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.5.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.5.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.5.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.5.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.5.Title))</visible>
+			</item>
+			<item id="6">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.6.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.6.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.6.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.6.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.6.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.6.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.6.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.6.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.6.Title))</visible>
+			</item>
+			<item id="7">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.7.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.7.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.7.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.7.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.7.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.7.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.7.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.7.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.7.Title))</visible>
+			</item>
+			<item id="8">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.8.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.8.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.8.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.8.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.8.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.8.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.8.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.8.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.8.Title))</visible>
+			</item>
+			<item id="9">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.9.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.9.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.9.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.9.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.9.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.9.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.9.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.9.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.9.Title))</visible>
+			</item>
+			<item id="10">
+				<icon>$INFO[Window(Home).Property(RandomCustom4.10.Poster)]</icon>
+				<label>$INFO[Window(Home).Property(RandomCustom4.10.Title)]</label>
+				<label2>$INFO[Window(Home).Property(RandomCustom4.10.Synopsis)]</label2>
+				<thumb>$INFO[Window(Home).Property(RandomCustom4.10.Fanart)]</thumb>
+				<property name="FanartThumb">$INFO[Window(Home).Property(RandomCustom4.10.FanartThumb)]</property>
+				<property name="PosterThumb">$INFO[Window(Home).Property(RandomCustom4.10.PosterThumb)]</property>
+				<property name="LargePoster">$INFO[Window(Home).Property(RandomCustom4.10.LargePoster)]</property>
+				<onclick>$INFO[Window(Home).Property(RandomCustom4.10.XBEPath)]</onclick>
+				<visible>!IsEmpty(Window(Home).Property(RandomCustom4.10.Title))</visible>
+			</item>
+		</content>
+	</control>
 </include>

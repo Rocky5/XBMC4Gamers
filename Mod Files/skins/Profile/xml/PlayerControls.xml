@@ -1,6 +1,5 @@
 <window type="dialog" id="114">
 	<defaultcontrol always="true">9001</defaultcontrol>
-	<onload condition="!Player.Playing">XBMC.RunScript(Special://scripts\XBMC4Gamers\Utilities\Random Select.py)</onload>
 	<controls>
 		<include>Behind.Dialog.FadeOut</include>
 		<control type="button" id="9001">
@@ -73,34 +72,34 @@
 					<overlaytexture>-</overlaytexture>
 				</control>
 				<control type="label">
-					<left>356</left>
-					<top>11</top>
-					<width>40</width>
-					<height>40</height>
-					<font>size_13</font>
+					<left>310</left>
+					<top>30</top>
+					<width>50</width>
+					<height>14</height>
+					<font>size_14</font>
 					<align>right</align>
-					<textcolor>114_label</textcolor>
-					<label>[B]$INFO[Player.Duration(mm:ss)][/B]</label>
+					<textcolor>colour.playercontrol.label</textcolor>
+					<label>$INFO[Player.Duration(mm:ss)]</label>
 				</control>
 				<!-- Labels -->
 				<control type="fadelabel">
 					<left>15</left>
 					<top>9</top>
-					<width>300</width>
+					<width>343</width>
 					<height>14</height>
 					<font>size_14</font>
 					<align>left</align>
-					<textcolor>114_label</textcolor>
-					<label>[B]$INFO[MusicPlayer.Album][/B]</label>
+					<textcolor>colour.playercontrol.label</textcolor>
+					<label>[B]$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Album][/B]</label>
 				</control>
 				<control type="fadelabel">
 					<left>15</left>
 					<top>30</top>
-					<width>340</width>
+					<width>300</width>
 					<height>14</height>
 					<font>size_14</font>
 					<align>left</align>
-					<textcolor>114_label</textcolor>
+					<textcolor>colour.playercontrol.label</textcolor>
 					<label>$INFO[MusicPlayer.Title]</label>
 				</control>
 			</control>
@@ -170,7 +169,7 @@
 				<height>20</height>
 				<font>size_13</font>
 				<align>center</align>
-				<textcolor>114_label_alt</textcolor>
+				<textcolor>colour.playercontrol.label2</textcolor>
 				<label>[B]$INFO[Control.GetLabel(29999),,%][/B]</label>
 				<!-- <visible>Control.HasFocus(601)</visible> -->
 				<animation effect="rotate" end="-90" center="auto" time="0" condition="true">Conditional</animation>

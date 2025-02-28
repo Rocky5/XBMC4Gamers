@@ -36,7 +36,7 @@ This I made for fun as I was bored and wanted something people could use to patc
 			Widescreen Patch
 
 	#:
-		# without the above is used to as a comment line. These are skipped and for manual viewing purposes only.
+		This is used to as a comment line. These are skipped and for manual viewing purposes only.
 
 --------------------------------------------------------------------------------------------------
 	Example patch
