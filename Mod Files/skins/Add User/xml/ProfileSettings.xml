@@ -5,107 +5,109 @@
 		<include>Behind.Dialog</include>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
-			<top>2.5</top>
 			<control type="image">
-				<description>background image</description>
-				<left>326</left>
-				<top>185</top>
-				<width>628</width>
-				<height>345</height>
-				<texture colordiffuse="colour.settings.diffuse.main">windows\dialogs\main.png</texture>
+				<left>270</left>
+				<top>180</top>
+				<width>740</width>
+				<height>360</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.dialog.diffuse.main">windows\dialogs\select_browser\main.png</texture>
 			</control>
 			<control type="image">
-				<description>Heading Background</description>
-				<left>339</left>
+				<left>286</left>
 				<top>192</top>
-				<width>602</width>
+				<width>709</width>
 				<height>61</height>
-				<texture colordiffuse="colour.settings.diffuse.header">windows\dialogs\header.png</texture>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.dialog.diffuse.header">windows\dialogs\select_browser\header.png</texture>
 			</control>
 			<control type="label" id="1">
-				<description>heading label</description>
-				<left>370</left>
-				<top>202</top>
-				<width>240</width>
-				<height>40</height>
+				<description>Heading label</description>
+				<left>313</left>
+				<top>200</top>
+				<width>731</width>
+				<height>37</height>
 				<font>size_28</font>
 				<scroll>true</scroll>
 				<align>left</align>
-				<textcolor>colour.settings.label.header</textcolor>
+				<aligny>center</aligny>
 				<label>$LOCALIZE[20067]</label>
+				<textcolor>colour.dialog.label.header</textcolor>
+				<shadowcolor>-</shadowcolor>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>270</left>
+				<top>483</top>
+				<width>740</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>Horizontal</orientation>
+				<align>center</align>
+				<!-- A Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
+					<visible>!StringCompare(Container(450).NumItems,0)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[424]</label>
+					<visible>!StringCompare(Container(450).NumItems,0)</visible>
+				</control>
+				<!-- B Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\b_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
+				</control>
 			</control>
 			<control type="image" id="2">
-				<description>profile image</description>
-				<left>345</left>
-				<top>265</top>
-				<width>370</width>
-				<height>120</height>
-				<align>left</align>
-				<aspectratio>scale</aspectratio>
+				<left>675</left>
+				<top>263</top>
+				<width>305</width>
+				<height>140</height>
+				<aspectratio>keep</aspectratio>
 				<texture>unknown-user.png</texture>
-				<bordertexture border="5">white-back.png</bordertexture>
-				<bordersize>1</bordersize>
 			</control>
-			<control type="label">
-				<description>dialog line 1</description>
-				<left>345</left>
-				<top>385</top>
-				<width>240</width>
-				<height>40</height>
-				<font>size_23</font>
-				<scroll>true</scroll>
-				<align>left</align>
-				<textcolor>colour.settings.label.info.text</textcolor>
-				<label>[B]$LOCALIZE[20093][/B]</label>
-			</control>
-			<control type="label" id="1000">
-				<description>dialog line 1</description>
-				<left>345</left>
-				<top>410</top>
-				<width>240</width>
-				<height>40</height>
-				<font>size_21</font>
-				<scroll>true</scroll>
-				<align>left</align>
-				<textcolor>colour.settings.label.info.text</textcolor>
-				<label>-</label>
-			</control>
-			<control type="label">
-				<description>dialog line 2</description>
-				<left>345</left>
-				<top>445</top>
-				<width>240</width>
-				<height>40</height>
-				<font>size_23</font>
-				<scroll>true</scroll>
-				<align>left</align>
-				<textcolor>colour.settings.label.info.text</textcolor>
-				<label>[B]$LOCALIZE[20070][/B]</label>
-			</control>
-			<control type="label" id="1001">
-				<description>dialog line 2</description>
-				<left>345</left>
-				<top>470</top>
-				<width>240</width>
-				<height>40</height>
-				<font>size_21</font>
-				<scroll>true</scroll>
-				<align>left</align>
-				<textcolor>colour.settings.label.info.text</textcolor>
-				<label>-</label>
-			</control>
+			<!-- Content List -->
 			<control type="grouplist" id="5">
-				<description>control area</description>
-				<left>720</left>
-				<top>280</top>
-				<width>210</width>
-				<height>200</height>
+				<left>300</left>
+				<top>263</top>
+				<width>365</width>
+				<height>210</height>
 				<onleft>5</onleft>
 				<onright>5</onright>
 				<onup>28</onup>
 				<ondown>28</ondown>
 				<scroll>true</scroll>
 				<itemgap>10</itemgap>
+				<aligny>centre</aligny>
 			</control>
 			<control type="button" id="7">
 				<description>Default Button</description>
@@ -129,9 +131,9 @@
 			</control>
 			<control type="button" id="28">
 				<description>Yes button</description>
-				<left>720</left>
-				<top>455</top>
-				<width>100</width>
+				<left>300</left>
+				<top>363</top>
+				<width>180</width>
 				<height>40</height>
 				<label>[UPPERCASE]$LOCALIZE[186][/UPPERCASE]</label>
 				<font>size_20</font>
@@ -147,9 +149,9 @@
 			</control>
 			<control type="button" id="29">
 				<description>No button</description>
-				<left>830</left>
-				<top>455</top>
-				<width>100</width>
+				<left>485</left>
+				<top>363</top>
+				<width>180</width>
 				<height>40</height>
 				<label>[UPPERCASE]$LOCALIZE[222][/UPPERCASE]</label>
 				<font>size_20</font>
@@ -162,6 +164,33 @@
 				<onright>28</onright>
 				<onup>5</onup>
 				<ondown>5</ondown>
+			</control>
+			<control type="label">
+				<description>dialog line 2</description>
+				<left>675</left>
+				<top>420</top>
+				<width>305</width>
+				<height>40</height>
+				<font>size_20</font>
+				<scroll>true</scroll>
+				<align>center</align>
+				<textcolor>colour.settings.button.nofocus</textcolor>
+				<focusedcolor>colour.settings.button.focus</focusedcolor>
+				<label>[B]$LOCALIZE[20070][/B]</label>
+			</control>
+			<control type="label" id="1001">
+				<description>dialog line 2</description>
+				<left>675</left>
+				<top>445</top>
+				<width>305</width>
+				<height>40</height>
+				<font>size_18</font>
+				<align>center</align>
+				<scroll>true</scroll>
+				<align>left</align>
+				<textcolor>colour.settings.button.nofocus</textcolor>
+				<focusedcolor>colour.settings.button.focus</focusedcolor>
+				<label>-</label>
 			</control>
 		</control>
 	</controls>

@@ -1,7 +1,8 @@
 <window id="106">
 	<defaultcontrol always="false">1000</defaultcontrol>
 	<include>Context.Menu.OpenClose</include>
-	<onload condition="!Skin.HasSetting(kioskmode) + [ListItem.IsFolder | Window.IsActive(29)]">Dialog.Close(106,true)</onload>
+	<onload condition="!Skin.HasSetting(kioskmode) | [Window.IsActive(29) + StringCompare(ListItem.Label,Add User)]">Dialog.Close(106,true)</onload>
+	<onload condition="!Skin.HasSetting(kioskmode) + ListItem.IsFolder">Dialog.Close(106,true)</onload>
 	<controls>
 		<include>Context.Menu.Buttons</include>
 	</controls>

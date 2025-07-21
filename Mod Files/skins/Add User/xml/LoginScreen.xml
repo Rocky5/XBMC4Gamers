@@ -1,200 +1,235 @@
 <window id="29">
 	<defaultcontrol always="true">52</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
-	<onload>RunScript(Special://scripts\XBMC4Gamers\Utilities\Edit Mode.py,2)</onload>
+	<onload>RunScript(Special://scripts\XBMC4Gamers\Utilities\Edit Mode.py)</onload>
+	<!-- Setup empty string with default values -->
+	<onload condition="StringCompare(System.memory(total),64MB) + StringCompare(Skin.String(WallpaperWidth),)">Skin.SetString(WallpaperWidth,720)</onload>
+	<onload condition="StringCompare(System.memory(total),64MB) + StringCompare(Skin.String(WallpaperHeight),)">Skin.SetString(WallpaperHeight,405)</onload>
+	<onload condition="!StringCompare(System.memory(total),64MB) + StringCompare(Skin.String(WallpaperWidth),)">Skin.SetString(WallpaperWidth,953)</onload>
+	<onload condition="!StringCompare(System.memory(total),64MB) + StringCompare(Skin.String(WallpaperHeight),)">Skin.SetString(WallpaperHeight,536)</onload>
+	<onload condition="StringCompare(Skin.String(WallpaperQuality),)">ReloadAdvancedSettings</onload>
+	<onload condition="StringCompare(Skin.String(WallpaperQuality),)">Skin.SetString(WallpaperQuality,100)</onload>
 	<controls>
-		<control type="button" id="51">
-			<left>-500</left>
-		</control>
 		<include>Kiosk.Mode.Secret.Code</include>
 		<include>Login.Screen.Background.Stuff</include>
-		<!-- Profile List -->
-		<control type="fixedlist" id="52">
-			<left>0</left>
-			<top>230</top>
-			<width>1280</width>
-			<height>720</height>
-			<onleft>52</onleft>
-			<onright>52</onright>
-			<onup>9000</onup>
-			<ondown>-</ondown>
-			<viewtype>list</viewtype>
-			<scrolltime>200</scrolltime>
-			<orientation>horizontal</orientation>
-			<focusposition>2</focusposition>
-			<include condition="!Window.Previous(1113) + !Window.Previous(1116)">LoginView</include>
-			<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
-			<itemlayout height="256" width="256">
-				<control type="image">
-					<left>60</left>
-					<top>32</top>
-					<width>136</width>
-					<height>136</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
-					<colordiffuse>40000000</colordiffuse>
-					<texture background="true">windows\login\user_thumb_overlay.png</texture>
-				</control>
-				<control type="image">
-					<left>60</left>
-					<top>32</top>
-					<width>136</width>
-					<height>136</height>
-					<aspectratio scalediffuse="false">scale</aspectratio>
-					<colordiffuse>50FFFFFF</colordiffuse>
-					<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[listitem.Icon]</texture>
-				</control>
-				<control type="label">
-					<left>5</left>
-					<top>200</top>
-					<width>246</width>
-					<height>16</height>
-					<align>center</align>
-					<font>size_18</font>
-					<textcolor>50708090</textcolor>
-					<shadowcolor>50000000</shadowcolor>
-					<label>$INFO[listitem.Label]</label>
-				</control>
-			</itemlayout>
-			<focusedlayout height="256" width="256">
-				<control type="image">
-					<left>35</left>
-					<top>8</top>
-					<width>186</width>
-					<height>186</height>
-					<aspectratio scalediffuse="false">stretch</aspectratio>
-					<colordiffuse>80000000</colordiffuse>
-					<texture background="true">windows\login\user_thumb_overlay.png</texture>
-				</control>
-				<control type="image">
-					<left>35</left>
-					<top>8</top>
-					<width>186</width>
-					<height>186</height>
-					<aspectratio scalediffuse="false">scale</aspectratio>
-					<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[listitem.Icon]</texture>
-				</control>
-				<control type="label">
-					<left>8</left>
-					<top>195</top>
-					<width>246</width>
-					<height>16</height>
-					<align>center</align>
-					<font>size_24</font>
-					<textcolor>FFFFFFFF</textcolor>
-					<selectedcolor>FFFFFFFF</selectedcolor>
-					<shadowcolor>50000000</shadowcolor>
-					<label>$INFO[listitem.Label]</label>
-				</control>
-				<control type="label">
-					<left>8</left>
-					<top>225</top>
-					<width>246</width>
-					<height>16</height>
-					<align>center</align>
-					<font>size_16</font>
-					<textcolor>A0FFFFFF</textcolor>
-					<selectedcolor>70FFFFFF</selectedcolor>
-					<shadowcolor>20000000</shadowcolor>
-					<label>$INFO[ListItem.label2]</label>
-					<visible>!StringCompare(ListItem.label,Add User)</visible>
-				</control>
-			</focusedlayout>
+		<control type="image">
+			<include>1280x720</include>
+			<texture>Q:\system\UserData\Profiles\$INFO[Container(52).ListItem.Label]\Thumbnails\Wallpapers\login.jpg</texture>
+			<aspectratio>stretch</aspectratio>
+			<!-- <include>Animated.Login.Wallpaper.Effect</include> -->
+			<visible>!Skin.HasSetting(profilewalls)</visible>
 		</control>
 		<control type="group">
-			<animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
-			<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-			<control type="label">
-				<right>10</right>
-				<bottom>0</bottom>
-				<width>1280</width>
-				<height>35</height>
-				<font>size_15</font>
-				<textcolor>80FFFFFF</textcolor>
-				<shadowcolor>20000000</shadowcolor>
-				<align>right</align>
-				<aligny>center</aligny>
-				<label>$LOCALIZE[31522]</label>
-				<visible>!Skin.HasSetting(kioskmode)</visible>
-			</control>
-			<control type="label">
-				<left>10</left>
-				<bottom>0</bottom>
-				<width>1280</width>
-				<height>35</height>
-				<font>size_15</font>
-				<textcolor>80FFFFFF</textcolor>
-				<shadowcolor>20000000</shadowcolor>
-				<align>left</align>
-				<aligny>center</aligny>
-				<label>$LOCALIZE[31000]</label>
-			</control>
-			<control type="label">
+			<animation effect="fade" start="30" end="100" time="1000" condition="!System.IdleTime(61)">Conditional</animation>
+			<animation effect="fade" start="100" end="30" time="1000" condition="System.IdleTime(61)">Conditional</animation>
+			<!-- Profile List -->
+			<control type="fixedlist" id="52">
 				<left>0</left>
-				<top>30</top>
+				<top>230</top>
 				<width>1280</width>
-				<height>28</height>
-				<font>size_24</font>
-				<align>center</align>
-				<textcolor>FFFFFFFF</textcolor>
-				<shadowcolor>50000000</shadowcolor>
-				<label>$LOCALIZE[31523]</label>
+				<height>720</height>
+				<onleft>52</onleft>
+				<onright>52</onright>
+				<onup>9000</onup>
+				<ondown>-</ondown>
+				<viewtype>list</viewtype>
+				<scrolltime>200</scrolltime>
+				<orientation>horizontal</orientation>
+				<focusposition>2</focusposition>
+				<include condition="!Window.Previous(1113) + !Window.Previous(1116)">LoginView</include>
+				<animation effect="zoom" start="100" end="102" center="auto" time="2000" tween="sine" easing="inout" pulse="true" condition="[Control.HasFocus(19) | Control.HasFocus(20) | Control.HasFocus(21) | Control.HasFocus(22) | Control.HasFocus(23) | Control.HasFocus(24) | Control.HasFocus(25) | Control.HasFocus(26) | Control.HasFocus(27)]">Conditional</animation>
+				<animation effect="slide" start="0,0" end="2,4" time="500" tween="sine" easing="inout" pulse="true" condition="[Control.HasFocus(19) | Control.HasFocus(20) | Control.HasFocus(21) | Control.HasFocus(22) | Control.HasFocus(23) | Control.HasFocus(24) | Control.HasFocus(25) | Control.HasFocus(26) | Control.HasFocus(27)]">Conditional</animation>ion>
+				<animation effect="fade" start="100" end="0" time="100">WindowClose</animation>
+				<itemlayout height="256" width="256">
+					<control type="image">
+						<left>60</left>
+						<top>32</top>
+						<width>136</width>
+						<height>136</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<colordiffuse>40000000</colordiffuse>
+						<texture background="false">windows\login\user_thumb_overlay.png</texture>
+					</control>
+					<control type="image">
+						<left>60</left>
+						<top>32</top>
+						<width>136</width>
+						<height>136</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<colordiffuse>50FFFFFF</colordiffuse>
+						<texture background="false" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[listitem.Icon]</texture>
+					</control>
+					<control type="label">
+						<left>5</left>
+						<top>200</top>
+						<width>246</width>
+						<height>16</height>
+						<align>center</align>
+						<font>size_18</font>
+						<textcolor>50708090</textcolor>
+						<shadowcolor>50000000</shadowcolor>
+						<label>$INFO[listitem.Label]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="256" width="256">
+					<control type="image">
+						<left>35</left>
+						<top>8</top>
+						<width>186</width>
+						<height>186</height>
+						<aspectratio scalediffuse="false">stretch</aspectratio>
+						<colordiffuse>80000000</colordiffuse>
+						<texture background="false">windows\login\user_thumb_overlay.png</texture>
+					</control>
+					<control type="image">
+						<left>35</left>
+						<top>8</top>
+						<width>186</width>
+						<height>186</height>
+						<aspectratio scalediffuse="false">scale</aspectratio>
+						<texture background="false" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[listitem.Icon]</texture>
+					</control>
+					<control type="label">
+						<left>8</left>
+						<top>195</top>
+						<width>246</width>
+						<height>16</height>
+						<align>center</align>
+						<font>size_24</font>
+						<textcolor>FFFFFFFF</textcolor>
+						<selectedcolor>FFFFFFFF</selectedcolor>
+						<shadowcolor>50000000</shadowcolor>
+						<label>$INFO[listitem.Label]</label>
+					</control>
+					<control type="label">
+						<left>8</left>
+						<top>225</top>
+						<width>246</width>
+						<height>16</height>
+						<align>center</align>
+						<font>size_16</font>
+						<textcolor>80FFFFFF</textcolor>
+						<selectedcolor>80FFFFFF</selectedcolor>
+						<shadowcolor>30000000</shadowcolor>
+						<label>$INFO[ListItem.label2]</label>
+						<visible>!StringCompare(ListItem.label,Add User)</visible>
+					</control>
+				</focusedlayout>
 			</control>
-			<control type="label">
-				<left>0</left>
-				<top>55</top>
-				<width>1280</width>
-				<height>28</height>
-				<font>size_22</font>
-				<align>center</align>
-				<textcolor>80FFFFFF</textcolor>
-				<shadowcolor>20000000</shadowcolor>
-				<label>$LOCALIZE[31524]</label>
-			</control>
-			<control type="grouplist">
-				<left>0</left>
-				<bottom>0</bottom>
-				<width>1280</width>
-				<height>25</height>
-				<itemgap>5</itemgap>
-				<orientation>Horizontal</orientation>
-				<align>center</align>
-				<!-- White Button -->
-				<control type="image">
-					<width>16</width>
-					<height>16</height>
-					<colordiffuse>A0FFFFFF</colordiffuse>
-					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\login\white_button_small.png</texture>
-					<visible>Skin.HasSetting(kioskmode)</visible>
+			<control type="group">
+				<animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="slide" start="0,0" end="0,-30" time="100">Hidden</animation>
+				<animation effect="slide" start="0,-30" end="0,0" time="100" delay="100">Visible</animation>
+				<visible>!Window.IsActive(1112)</visible>
+				<control type="label">
+					<left>0</left>
+					<top>30</top>
+					<width>1280</width>
+					<height>28</height>
+					<font>size_24</font>
+					<align>center</align>
+					<textcolor>FFFFFFFF</textcolor>
+					<shadowcolor>50000000</shadowcolor>
+					<label>$LOCALIZE[31523]</label>
 				</control>
 				<control type="label">
-					<width min="50" max="139">auto</width>
-					<height>12</height>
-					<font>size_13</font>
-					<align>left</align>
-					<textcolor>A0FFFFFF</textcolor>
-					<label>$LOCALIZE[31521]  </label>
-					<visible>Skin.HasSetting(kioskmode)</visible>
-					<animation effect="slide" start="0,0" end="0,0" time="0" condition="true">Conditional</animation>
+					<left>0</left>
+					<top>55</top>
+					<width>1280</width>
+					<height>28</height>
+					<font>size_22</font>
+					<align>center</align>
+					<textcolor>80FFFFFF</textcolor>
+					<shadowcolor>30000000</shadowcolor>
+					<label>$LOCALIZE[31524]</label>
 				</control>
-				<!-- Start Button -->
-				<control type="image">
-					<width>16</width>
-					<height>16</height>
-					<colordiffuse>A0FFFFFF</colordiffuse>
-					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\login\start_button_small.png</texture>
-					<visible>Skin.HasSetting(kioskmode)</visible>
+			</control>
+			<control type="group">
+				<animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
+				<animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
+				<animation effect="slide" start="0,0" end="0,30" time="100">Hidden</animation>
+				<animation effect="slide" start="0,30" end="0,0" time="100" delay="100">Visible</animation>
+				<visible>!Window.IsActive(1112)</visible>
+				<control type="grouplist">
+					<left>0</left>
+					<bottom>3</bottom>
+					<width>1280</width>
+					<height>25</height>
+					<itemgap>5</itemgap>
+					<orientation>Horizontal</orientation>
+					<align>center</align>
+					<!-- White Button -->
+					<control type="image">
+						<width>22</width>
+						<height>22</height>
+						<colordiffuse>80FFFFFF</colordiffuse>
+						<aspectratio>keep</aspectratio>
+						<texture>pad_buttons\login\white_button.png</texture>
+						<visible>Skin.HasSetting(kioskmode)</visible>
+					</control>
+					<control type="label">
+						<width min="10" max="250">auto</width>
+						<height>22</height>
+						<font>size_14</font>
+						<aligny>center</aligny>
+						<textcolor>80FFFFFF</textcolor>
+						<shadowcolor>30000000</shadowcolor>
+						<label>$LOCALIZE[31521]</label>
+						<visible>Skin.HasSetting(kioskmode)</visible>
+						<animation effect="slide" start="0,0" end="0,0" time="0" condition="true">Conditional</animation>
+					</control>
+					<!-- Start Button -->
+					<control type="image">
+						<width>22</width>
+						<height>22</height>
+						<colordiffuse>80FFFFFF</colordiffuse>
+						<aspectratio>keep</aspectratio>
+						<texture>pad_buttons\login\start_button.png</texture>
+						<visible>Skin.HasSetting(kioskmode)</visible>
+					</control>
+					<control type="label">
+						<width min="10" max="250">auto</width>
+						<height>22</height>
+						<font>size_14</font>
+						<aligny>center</aligny>
+						<textcolor>80FFFFFF</textcolor>
+						<shadowcolor>30000000</shadowcolor>
+						<label>$LOCALIZE[33069]</label>
+						<visible>Skin.HasSetting(kioskmode)</visible>
+						<animation effect="slide" start="0,0" end="0,0" time="0" condition="true">Conditional</animation>
+					</control>
+					<!-- Black Button -->
+					<control type="image">
+						<width>22</width>
+						<height>22</height>
+						<colordiffuse>80FFFFFF</colordiffuse>
+						<aspectratio>keep</aspectratio>
+						<texture>pad_buttons\login\black_button.png</texture>
+					</control>
+					<control type="label">
+						<width min="10" max="250">auto</width>
+						<height>22</height>
+						<font>size_14</font>
+						<aligny>center</aligny>
+						<textcolor>80FFFFFF</textcolor>
+						<shadowcolor>30000000</shadowcolor>
+						<label>$LOCALIZE[31114]</label>
+						<animation effect="slide" start="0,0" end="0,0" time="0" condition="true">Conditional</animation>
+					</control>
 				</control>
 				<control type="label">
-					<width min="50" max="139">auto</width>
-					<height>12</height>
-					<font>size_13</font>
-					<align>left</align>
-					<textcolor>A0FFFFFF</textcolor>
-					<label>$LOCALIZE[33068] $LOCALIZE[33063]</label>
-					<visible>Skin.HasSetting(kioskmode)</visible>
-					<animation effect="slide" start="0,0" end="0,0" time="0" condition="true">Conditional</animation>
+					<right>10</right>
+					<bottom>0</bottom>
+					<width>1280</width>
+					<height>35</height>
+					<font>size_15</font>
+					<textcolor>80FFFFFF</textcolor>
+					<shadowcolor>30000000</shadowcolor>
+					<align>right</align>
+					<aligny>center</aligny>
+					<label>$LOCALIZE[31522]</label>
+					<visible>!Skin.HasSetting(kioskmode)</visible>
 				</control>
 			</control>
 		</control>

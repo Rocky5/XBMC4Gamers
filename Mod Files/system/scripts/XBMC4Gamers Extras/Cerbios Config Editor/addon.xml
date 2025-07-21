@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="Windows-1252" standalone="yes"?>
+<addon id="Cerbios Config Editor" name="Cerbios Config Editor" version="1.0.0" provider-name="Rocky5">
+		<requires>
+				<import addon="xbmc.python" version="1.0" />
+		</requires>
+		<extension point="xbmc.python.script" library="default.py" />
+		<extension point="xbmc.addon.metadata">
+				<platform>all</platform>
+				<summary lang="en">Cerbios Config Editor</summary>
+				<description lang="en">Used to configure the Cerbios.ini</description>
+		</extension>
+</addon>

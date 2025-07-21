@@ -1673,7 +1673,7 @@ msgctxt "#472"
 msgid "I2C Address"
 msgstr ""
 
-#empty strings from id 472 to 473
+#empty strings from id 473 to 473
 
 msgctxt "#474"
 msgid "Off"
@@ -1844,7 +1844,7 @@ msgid "Launch"
 msgstr ""
 
 msgctxt "#519"
-msgid "Launch in..."
+msgid "Override Region"
 msgstr ""
 
 msgctxt "#520"
@@ -4206,7 +4206,15 @@ msgctxt "#13174"
 msgid "HDD power cycle count:"
 msgstr ""
 
-#empty strings from id 13175 to 13199
+msgctxt "#13175"
+msgid "HDD current UDMA mode:"
+msgstr ""
+
+msgctxt "#13176"
+msgid "HDD max supported UDMA mode:"
+msgstr ""
+
+#empty strings from id 13177 to 13199
 
 msgctxt "#13200"
 msgid "Profiles"
@@ -4788,6 +4796,9 @@ msgstr ""
 
 #empty string with id 13412
 
+msgctxt "#13412"
+msgid "Play from here"
+msgstr ""
 msgctxt "#13413"
 msgid "Downloading"
 msgstr ""
@@ -4836,8 +4847,15 @@ msgctxt "#13424"
 msgid "Use pixel buffer objects"
 msgstr ""
 
-#empty strings from id 13425 to 13499
+#empty strings from id 13433 to 13499
 
+msgctxt "#13433"
+msgid "Play the next video automatically"
+msgstr ""
+
+msgctxt "#13434"
+msgid "Play only this"
+msgstr ""
 msgctxt "#13500"
 msgid "A/V sync method"
 msgstr ""
@@ -8392,7 +8410,129 @@ msgstr ""
 #empty strings from id 30000 to 33000
 #strings 30000 thru 30999 reserved for plugins and plugin settings
 #strings 31000 thru 31999 reserved for skins
-#strings 32000 thru 32999 reserved for scripts
+
+#strings 32000 thru 32999 reserved for scripts and new internal names
+
+msgctxt "#32000"
+msgid "Advanced"
+msgstr ""
+
+msgctxt "#32001"
+msgid "Enable the use of the (Y) button to open the information window"
+msgstr ""
+
+msgctxt "#32002"
+msgid "Enable fast game parsing"
+msgstr ""
+
+msgctxt "#32003"
+msgid "Don't use Synopsis naming"
+msgstr ""
+
+msgctxt "#32004"
+msgid "This option will not work with forced 480p bios"
+msgstr ""
+
+msgctxt "#32005"
+msgid "Enable higher resolution artwork"
+msgstr ""
+
+msgctxt "#32006"
+msgid "Refresh info"
+msgstr ""
+
+msgctxt "#32007"
+msgid "Refresh all contents info"
+msgstr ""
+
+msgctxt "#32008"
+msgid "Refreshing Synopsis Information"
+msgstr ""
+
+msgctxt "#32009"
+msgid "Override Launch XBE"
+msgstr ""
+
+msgctxt "#32010"
+msgid "Unpatched"
+msgstr ""
+
+msgctxt "#32011"
+msgid "480p Patch"
+msgstr ""
+
+msgctxt "#32012"
+msgid "720p Patch"
+msgstr ""
+
+msgctxt "#32013"
+msgid "Generic Patch"
+msgstr ""
+
+msgctxt "#32014"
+msgid "Widescreen Patch"
+msgstr ""
+
+msgctxt "#32015"
+msgid "XHD Patch"
+msgstr ""
+
+msgctxt "#32016"
+msgid "Resize Screen"
+msgstr ""
+
+msgctxt "#32017"
+msgid "Edit or Refresh"
+msgstr ""
+
+msgctxt "#32018"
+msgid "Trainers (cheats)"
+msgstr ""
+
+msgctxt "#32019"
+msgid "Information"
+msgstr ""
+
+msgctxt "#32020"
+msgid "Power Saving"
+msgstr ""
+
+msgctxt "#32021"
+msgid "This can crash some Xbox. If yours crashes, hold the (Black) button[CR]when the splash screen appears to disable."
+msgstr ""
+
+msgctxt "#32022"
+msgid "  Ignore matches in path"
+msgstr ""
+
+msgctxt "#32023"
+msgid "  Ignore matches in name"
+msgstr ""
+
+msgctxt "#32024"
+msgid "1080i Patch"
+msgstr ""
+
+msgctxt "#32025"
+msgid "Discord"
+msgstr ""
+
+msgctxt "#32026"
+msgid "Enable xbdStats communication"
+msgstr ""
+
+msgctxt "#32027"
+msgid "- Send title names to server"
+msgstr ""
+
+msgctxt "#32028"
+msgid "- Clear presence on startup"
+msgstr ""
+
+msgctxt "#32029"
+msgid "Configure in the "Add User" profile, or disable the login screen."
+msgstr ""
+
 #strings 33000 thru 33999 reserved for common strings used in addons
 
 msgctxt "#33001"

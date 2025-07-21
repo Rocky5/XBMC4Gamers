@@ -30,99 +30,6 @@ msgstr ""
 
 ##  DO NOT TRANSLATE (end)
 
-## INTERNAL (start)
-## These are used for items that require you to recompile the xbe
-
-msgctxt "#32000"
-msgid "Advanced"
-msgstr "Erweitert"
-
-msgctxt "#32001"
-msgid "Enable the use of the (Y) button to open the information window"
-msgstr "Y-Taste zum Öffnen des Infofensters aktivieren"
-
-msgctxt "#32002"
-msgid "Enable fast game parsing"
-msgstr "Schnelles Parsen des Spiels aktivieren"
-
-msgctxt "#32003"
-msgid "Don't use Synopsis naming"
-msgstr "Keine Synopsis-Benennung verwenden"
-
-msgctxt "#32004"
-msgid "This option will not work with forced 480p bios"
-msgstr "Diese Option funktioniert nicht mit erzwungenen 480p Bios"
-
-msgctxt "#32005"
-msgid "Enable higher resolution artwork"
-msgstr "Höher aufgelöste Artwork zulassen"
-
-msgctxt "#32006"
-msgid "Refresh info"
-msgstr "Info aktualisieren"
-
-msgctxt "#32007"
-msgid "Refresh all contents info"
-msgstr "Alle Inhalte aktualisieren"
-
-msgctxt "#32008"
-msgid "Refreshing Synopsis Information"
-msgstr "Zusammenfassung aktualisieren"
-
-msgctxt "#32009"
-msgid "Set Launch XBE"
-msgstr "Start-XBE festlegen"
-
-msgctxt "#32010"
-msgid "Unpatched"
-msgstr "Ungepatcht"
-
-msgctxt "#32011"
-msgid "480p Patch"
-msgstr "480p Patch"
-
-msgctxt "#32012"
-msgid "720p Patch"
-msgstr "720p Patch"
-
-msgctxt "#32013"
-msgid "Generic Patch"
-msgstr "Allgemeiner Patch"
-
-msgctxt "#32014"
-msgid "Widescreen Patch"
-msgstr "Widescreen Patch"
-
-msgctxt "#32015"
-msgid "XHD Patch"
-msgstr "XHD Patch"
-
-msgctxt "#32016"
-msgid "Resize Screen"
-msgstr "Bildschirmgröße ändern"
-
-msgctxt "#32017"
-msgid "Edit or Refresh"
-msgstr "Bearbeiten oder Aktualisieren"
-
-msgctxt "#32018"
-msgid "Trainers (cheats)"
-msgstr "Trainer (Cheats)"
-
-msgctxt "#32019"
-msgid "Information"
-msgstr "Informationen"
-
-msgctxt "#32020"
-msgid "Power Saving"
-msgstr "Energiesparen"
-
-msgctxt "#32021"
-msgid "This can crash some Xbox. If yours crashes, hold the (Black) button when the[CR]splash screen appears to disable."
-msgstr "Das kann einige Xbox abstürzen lassen. Halten Sie die[CR](Schwarz) Taste beim Splash-Screen gedrückt, um zu deaktivieren."
-
-## INTERNAL (end)
-
 ## Custom_logoff.xml - 31011 to 31015
 msgctxt "#31011"
 msgid "logging off"
@@ -188,8 +95,8 @@ msgid "Label"
 msgstr "Bezeichnung"
 
 msgctxt "#31039"
-msgid "Location"
-msgstr "Ort"
+msgid "XBE/Script path"
+msgstr "XBE-/Skriptpfad"
 
 msgctxt "#31040"
 msgid "Enable custom xbmc4gamers logo colour"
@@ -200,8 +107,8 @@ msgid "Custom hex value"
 msgstr "Benutzerdefinierter HEX-Wert"
 
 msgctxt "#31042"
-msgid "Enable navigation sounds during media playback"
-msgstr "Navigationsgeräusche während der Medienwiedergabe aktivieren"
+msgid "Audio navigation sound options:"
+msgstr "Audio-Navigationssound-Optionen:"
 
 msgctxt "#31043"
 msgid "Hide played overlay on poster views"
@@ -236,16 +143,16 @@ msgid "Random theme"
 msgstr "Zufälliges Design"
 
 msgctxt "#31051"
-msgid "Randomise theme on startup"
-msgstr "Zufälliges Design beim Starten"
+msgid ""
+msgstr ""
 
 msgctxt "#31052"
-msgid "Randomise wallpaper"
-msgstr "Zufälliges Hintergrundbild"
+msgid ""
+msgstr ""
 
 msgctxt "#31053"
-msgid "Only randomise downloaded themes"
-msgstr "Nur heruntergeladene Designs zufällig auswählen"
+msgid ""
+msgstr ""
 
 msgctxt "#31054"
 msgid "Use screensaver fanart in background (DL required)"
@@ -260,8 +167,8 @@ msgid "Change splash"
 msgstr "Splash ändern"
 
 msgctxt "#31057"
-msgid "Disable theme sounds"
-msgstr "Themensounds deaktivieren"
+msgid "Disable theme custom navigation sounds"
+msgstr "Themeneigene Navigationsgeräusche deaktivieren"
 
 msgctxt "#31058"
 msgid "Use cached thumbnails"
@@ -299,8 +206,8 @@ msgstr "Profilbild beim Starten ausblenden"
 
 ## Scripts - Custom_Skin_Settings.xml - 31069 to 31075
 msgctxt "#31069"
-msgid "Run"
-msgstr "Starte"
+msgid "Run the most commonly used scripts"
+msgstr "Das am häufigsten verwendete Skript ausführen"
 
 msgctxt "#31070"
 msgid "View Log Files"
@@ -373,8 +280,8 @@ msgid "Select File"
 msgstr "Datei auswählen"
 
 msgctxt "#31094"
-msgid "If no file is selected/found it defaults to [B]Q:/intro.mp4[/B] or [B]Q:/system/intro/intro.mp4[/B]"
-msgstr "Wenn keine Datei ausgewählt oder gefunden wird, wird standardmäßig [B]Q:/intro.mp4[/B] oder [B]Q:/system/intro/intro.mp4[/B] verwendet."
+msgid "If no file is selected/found it defaults to [B]Q:/intro.mp4[/B] or [B]Q:/system/intros/[/B]"
+msgstr "Wenn keine Datei ausgewählt oder gefunden wird, wird standardmäßig [B]Q:/intro.mp4[/B] oder [B]Q:/system/intros/[/B] verwendet."
 
 ## DialogKeyboard.xml - 310101 to 31105
 msgctxt "#31101"
@@ -735,7 +642,7 @@ msgctxt "#31564"
 msgid "Close Home"
 msgstr "Startbildschirm schließen"
 
-## Home Window - Custom_Skin_Settings.xml - 31600 to 31650
+## Home Window - Custom_Skin_Settings.xml - 31600 to 31669
 msgctxt "#31600"
 msgid "Notice"
 msgstr "Hinweis"
@@ -749,8 +656,8 @@ msgid "Name"
 msgstr "Name"
 
 msgctxt "#31603"
-msgid "Separate search items with a comma.[CR]Example: Games,Applications,F:\\Games Alt"
-msgstr "Suchbegriffe mit einem Komma trennen.[CR]Beispiel: Spiele,Anwendungen,F:\\Spiele Alt"
+msgid "Leave blank to use the selected source.[CR]Additionally you can separate search items with a comma.[CR]Example: Games,Applications,F:\\Games Alt"
+msgstr "Lassen Sie das Feld leer, um die ausgewählte Quelle zu verwenden.[CR]Zusätzlich können Sie Suchbegriffe mit einem Komma trennen.[CR]Beispiel: Spiele,Anwendungen,F:\Spiele Alt"
 
 msgctxt "#31604"
 msgid "Search Entries"
@@ -781,8 +688,8 @@ msgid "Hide home screen RSS feed"
 msgstr "RSS-Feed der Startseite ausblenden"
 
 msgctxt "#31611"
-msgid "Because the current or previous theme used custom item values.[CR]Home screen is being refreshed."
-msgstr "Aktuelles oder vorheriges Thema mit benutzerdefinierten Werten.[CR]Startbildschirm wird aktualisiert."
+msgid "Previous theme used custom item values.[CR]Home screen is being refreshed."
+msgstr "Benutzerdefinierte Werte im alten Thema.[CR]Startbildschirm wird aktualisiert."
 
 msgctxt "#31612"
 msgid "Home content is being refreshed."
@@ -823,3 +730,44 @@ msgstr "Erweiterte Informationen"
 msgctxt "#31621"
 msgid "Fanart"
 msgstr "Fanart"
+
+msgctxt "#31622"
+msgid "Resources"
+msgstr "Ressourcen"
+
+msgctxt "#31623"
+msgid "Enable or Disable Views"
+msgstr "Ansichten aktivieren oder deaktivieren"
+
+## Other Options - Custom_Skin_Settings.xml - 31670 to 31700
+msgctxt "#31670"
+msgid "Configure the wallpaper/rendering dimensions, and quality settings."
+msgstr "Konfigurieren Sie die Hintergrundbild-/Rendering-Dimensionen und Qualitätseinstellungen."
+
+msgctxt "#31671"
+msgid ""
+msgstr ""
+
+msgctxt "#31672"
+msgid "Wallpaper Settings"
+msgstr "Hintergrundbild-Einstellungen"
+
+msgctxt "#31673"
+msgid "Width"
+msgstr "Breite"
+
+msgctxt "#31674"
+msgid "Height"
+msgstr "Höhe"
+
+msgctxt "#31675"
+msgid "Quality (0 - 100)"
+msgstr "Qualität (0 - 100)"
+
+msgctxt "#31051"
+msgid "Reset"
+msgstr "Zurücksetzen"
+
+msgctxt "#31677"
+msgid ""
+msgstr ""

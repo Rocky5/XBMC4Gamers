@@ -1,10 +1,6 @@
 <window id="1114">
 	<defaultcontrol always="true">1</defaultcontrol>
-	<!-- Setup skin settings folder paths and reset settings -->
-	<onload condition="StringCompare(Skin.String(FolderFanartPath),)">Skin.SetString(FolderFanartPath,Special://skin/extras/folder fanart/default)</onload>
-	<onload condition="StringCompare(Skin.String(HomeWindow),)">Skin.SetString(HomeWindow,Root)</onload>
-	<onload condition="StringCompare(Skin.String(HomeWindow_name),)">Skin.SetString(HomeWindow_name,$LOCALIZE[20108])</onload>
-	<onload condition="StringCompare(Skin.String(HomeWindowSource),)">Skin.SetString(HomeWindowSource,Programs)</onload>
+	<!-- Run random script if enabled and disable the updatedb settings -->
 	<onload condition="!Skin.HasSetting(AdultProfile) + Skin.HasSetting(Random_Game)">Skin.SetBool(run_random_script,true)</onload>
 	<onload condition="!Skin.HasSetting(AdultProfile) + Skin.HasSetting(UpdateDB)">Skin.Reset(UpdateDB)</onload>
 	<!-- Load windows outside the script -->
@@ -16,9 +12,8 @@
 	<controls>
 		<control type="button" id="1">
 			<left>-5000</left>
-			<onclick>System.LogOff</onclick>
+			<onclick condition="Skin.HasSetting(AdultProfile) + !Skin.HasSetting(kioskmode)">System.LogOff</onclick>
 			<animation effect="fade" start="0" end="100" delay="100" time="100">Focus</animation>
-			<visible>Skin.HasSetting(AdultProfile) + !Skin.HasSetting(kioskmode)</visible>
 		</control>
 		<control type="group">
 			<animation effect="fade" start="100" end="70" delay="0" time="300" condition="Skin.HasSetting(AdultProfile)">WindowOpen</animation>

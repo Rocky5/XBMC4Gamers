@@ -134,10 +134,10 @@
 				<enablerssfeeds>true</enablerssfeeds>
 				<font>Default</font>
 				<skin>Add User</skin>
-				<skincolors>SKINDEFAULT</skincolors>
-				<skintheme>SKINDEFAULT</skintheme>
+				<skincolors>default</skincolors>
+				<skintheme>default</skintheme>
 				<skinzoom>0</skinzoom>
-				<soundskin>SKINDEFAULT</soundskin>
+				<soundskin>default</soundskin>
 				<startupwindow>10000</startupwindow>
 		</lookandfeel>
 		<masterlock>

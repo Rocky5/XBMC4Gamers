@@ -291,7 +291,7 @@
 					<control type="label">
 						<left>0</left>
 						<top>0</top>
-						<width min="80" max="400">auto</width>
+						<width min="40" max="400">auto</width>
 						<height>24</height>
 						<font>home_20</font>
 						<align>left</align>

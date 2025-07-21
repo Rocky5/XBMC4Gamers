@@ -1,0 +1,867 @@
+<window type="dialog" id="3000">
+	<defaultcontrol always="true">9200</defaultcontrol>
+	<!-- <zorder>20</zorder> -->
+	<controls>
+		<include>Behind.Dialog</include>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<control type="image">
+				<left>270</left>
+				<top>180</top>
+				<width>740</width>
+				<height>360</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.dialog.diffuse.main">windows\dialogs\select_browser\main.png</texture>
+			</control>
+			<control type="image">
+				<left>286</left>
+				<top>192</top>
+				<width>709</width>
+				<height>61</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.dialog.diffuse.header">windows\dialogs\select_browser\header.png</texture>
+			</control>
+			<control type="label">
+				<description>Heading label</description>
+				<left>313</left>
+				<top>200</top>
+				<width>731</width>
+				<height>37</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>Insignia Info</label>
+				<textcolor>colour.dialog.label.header</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<visible>Control.HasFocus(9200)</visible>
+			</control>
+			<control type="label">
+				<description>Heading label</description>
+				<left>313</left>
+				<top>200</top>
+				<width>731</width>
+				<height>37</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>Active Games</label>
+				<textcolor>colour.dialog.label.header</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<visible>Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+			</control>
+			<control type="label">
+				<description>Heading label</description>
+				<left>313</left>
+				<top>200</top>
+				<width>731</width>
+				<height>37</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>Game Events</label>
+				<textcolor>colour.dialog.label.header</textcolor>
+				<shadowcolor>-</shadowcolor>
+				<visible>Control.HasFocus(9202) | Control.HasFocus(61)</visible>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>270</left>
+				<top>483</top>
+				<width>740</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>Horizontal</orientation>
+				<align>center</align>
+				<!-- A Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
+					<visible>Control.HasFocus(9200) | !StringCompare(Container(9201).NumItems,0) + !Control.HasFocus(9202) + !Control.HasFocus(61)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[424]</label>
+					<visible>Control.HasFocus(9200) | !StringCompare(Container(9201).NumItems,0) + !Control.HasFocus(9202) + !Control.HasFocus(61)</visible>
+				</control>
+				<!-- B Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\b_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
+				</control>
+				<!-- Y Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\y_button.png</texture>
+					<visible>Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>Update Icons</label>
+					<visible>Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+				</control>
+			</control>
+			<control type="grouplist">
+				<left>786</left>
+				<top>263</top>
+				<width>194</width>
+				<height min="20" max="210">Auto</height>
+				<itemgap>4</itemgap>
+				<orientation>Vertical</orientation>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>194</width>
+					<height>102</height>
+					<aspectratio>stretch</aspectratio>
+					<texture fallback="defaultprogram.png">$INFO[Container(9200).ListItem.Icon]</texture>
+					<visible>Control.HasFocus(9200)</visible>
+				</control>
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>194</width>
+					<height>102</height>
+					<aspectratio>scale</aspectratio>
+					<texture fallback="defaultprogram.png">$INFO[Container(9201).ListItem.Icon]</texture>
+					<visible>!StringCompare(Container(9201).CurrentItem,0) + Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>194</width>
+					<height>15</height>
+					<font>size_16</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<label>[B]ID:[/B] [UPPERCASE]$INFO[Container(9201).ListItem.Property(TitleID)][/UPPERCASE]</label>
+					<scroll>false</scroll>
+					<visible>!StringCompare(Container(9201).CurrentItem,0) + Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>194</width>
+					<height>15</height>
+					<font>size_16</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<label>[B]Installed:[/B] $INFO[Container(9201).ListItem.Property(Installed)]</label>
+					<scroll>false</scroll>
+					<visible>!StringCompare(Container(9201).CurrentItem,0) + Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>194</width>
+					<height>15</height>
+					<font>size_16</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<label>[B]Player(s):[/B] $INFO[Container(9201).ListItem.Property(PlayerCount)]</label>
+					<scroll>false</scroll>
+					<visible>!StringCompare(Container(9201).CurrentItem,0) + Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width>194</width>
+					<height>55</height>
+					<font>size_16</font>
+					<align>left</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<label>[B]Session(s):[/B] $INFO[Container(9201).ListItem.Property(Sessions)]</label>
+					<wrapmultiline>true</wrapmultiline>
+					<scroll>false</scroll>
+					<visible>!StringCompare(Container(9201).CurrentItem,0) + Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+				</control>
+			</control>
+			<control type="group">
+				<visible>StringCompare(Container(9201).CurrentItem,0) | StringCompare(Container(9202).CurrentItem,0)</visible>
+				<!-- No items found -->
+				<control type="image">
+					<left>300</left>
+					<top>263</top>
+					<width>475</width>
+					<height>40</height>
+					<aspectratio>stretch</aspectratio>
+					<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+				</control>
+				<control type="label">
+					<left>310</left>
+					<top>263</top>
+					<width>475</width>
+					<height>40</height>
+					<font>size_20</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<label>$LOCALIZE[504]</label>
+					<scroll>false</scroll>
+				</control>
+			</control>
+			<control type="list" id="9200">
+				<left>300</left>
+				<top>263</top>
+				<width>475</width>
+				<height>208</height>
+				<onup>9200</onup>
+				<ondown>9200</ondown>
+				<onback>SetFocus(9210)</onback>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<visible allowhiddenfocus="true">Control.HasFocus(9200)</visible>
+				<itemlayout height="52" width="475">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>475</width>
+						<height>50</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<height>50</height>
+						<width>455</width>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.nofocus</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>false</scroll>
+					</control>
+				</itemlayout>
+				<focusedlayout height="52" width="475">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>475</width>
+						<height>50</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<height>50</height>
+						<width>455</width>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.focus</textcolor>
+						<selectedcolor>colour.dialog.button.nofocus</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>true</scroll>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<icon>Special://scripts/XBMC4Gamers Extras/Insignia Info/resources/skins/Profile/media/sessions.jpg</icon>
+						<label>Active Games</label>
+						<onclick>RunScript(Special://scripts/XBMC4Gamers Extras/Insignia Info/resources/lib/default.py,sessions)</onclick>
+					</item>
+					<item id="2">
+						<icon>Special://scripts/XBMC4Gamers Extras/Insignia Info/resources/skins/Profile/media/events.jpg</icon>
+						<label>Game Events</label>
+						<onclick>RunScript(Special://scripts/XBMC4Gamers Extras/Insignia Info/resources/lib/default.py,events)</onclick>
+					</item>
+				</content>
+			</control>
+			<!-- active games -->
+			<control type="list" id="9201">
+				<left>300</left>
+				<top>263</top>
+				<width>475</width>
+				<height>208</height>
+				<onup>9201</onup>
+				<ondown>9201</ondown>
+				<onleft>60</onleft>
+				<onback>SetFocus(9200)</onback>
+				<pagecontrol>60</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<visible allowhiddenfocus="true">Control.HasFocus(9201) | Control.HasFocus(60)</visible>
+				<itemlayout height="52" width="475">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>475</width>
+						<height>50</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<height>50</height>
+						<width>455</width>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.nofocus</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>false</scroll>
+					</control>
+				</itemlayout>
+				<focusedlayout height="52" width="475">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>475</width>
+						<height>50</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<height>50</height>
+						<width>455</width>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.focus</textcolor>
+						<selectedcolor>colour.dialog.button.nofocus</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>true</scroll>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<icon>$INFO[Window(10002).Property(1.Image)]</icon>
+						<label>$INFO[Window(10002).Property(1.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(1.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(1.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(1.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(1.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(1.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(1.Title))</visible>
+					</item>
+					<item id="2">
+						<icon>$INFO[Window(10002).Property(2.Image)]</icon>
+						<label>$INFO[Window(10002).Property(2.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(2.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(2.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(2.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(2.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(2.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(2.Title))</visible>
+					</item>
+					<item id="3">
+						<icon>$INFO[Window(10002).Property(3.Image)]</icon>
+						<label>$INFO[Window(10002).Property(3.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(3.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(3.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(3.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(3.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(3.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(3.Title))</visible>
+					</item>
+					<item id="4">
+						<icon>$INFO[Window(10002).Property(4.Image)]</icon>
+						<label>$INFO[Window(10002).Property(4.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(4.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(4.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(4.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(4.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(4.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(4.Title))</visible>
+					</item>
+					<item id="5">
+						<icon>$INFO[Window(10002).Property(5.Image)]</icon>
+						<label>$INFO[Window(10002).Property(5.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(5.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(5.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(5.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(5.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(5.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(5.Title))</visible>
+					</item>
+					<item id="6">
+						<icon>$INFO[Window(10002).Property(6.Image)]</icon>
+						<label>$INFO[Window(10002).Property(6.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(6.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(6.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(6.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(6.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(6.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(6.Title))</visible>
+					</item>
+					<item id="7">
+						<icon>$INFO[Window(10002).Property(7.Image)]</icon>
+						<label>$INFO[Window(10002).Property(7.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(7.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(7.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(7.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(7.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(7.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(7.Title))</visible>
+					</item>
+					<item id="8">
+						<icon>$INFO[Window(10002).Property(8.Image)]</icon>
+						<label>$INFO[Window(10002).Property(8.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(8.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(8.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(8.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(8.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(8.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(8.Title))</visible>
+					</item>
+					<item id="9">
+						<icon>$INFO[Window(10002).Property(9.Image)]</icon>
+						<label>$INFO[Window(10002).Property(9.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(9.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(9.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(9.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(9.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(9.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(9.Title))</visible>
+					</item>
+					<item id="10">
+						<icon>$INFO[Window(10002).Property(10.Image)]</icon>
+						<label>$INFO[Window(10002).Property(10.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(10.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(10.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(10.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(10.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(10.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(10.Title))</visible>
+					</item>
+					<item id="11">
+						<icon>$INFO[Window(10002).Property(11.Image)]</icon>
+						<label>$INFO[Window(10002).Property(11.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(11.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(11.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(11.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(11.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(11.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(11.Title))</visible>
+					</item>
+					<item id="12">
+						<icon>$INFO[Window(10002).Property(12.Image)]</icon>
+						<label>$INFO[Window(10002).Property(12.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(12.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(12.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(12.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(12.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(12.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(12.Title))</visible>
+					</item>
+					<item id="13">
+						<icon>$INFO[Window(10002).Property(13.Image)]</icon>
+						<label>$INFO[Window(10002).Property(13.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(13.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(13.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(13.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(13.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(13.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(13.Title))</visible>
+					</item>
+					<item id="14">
+						<icon>$INFO[Window(10002).Property(14.Image)]</icon>
+						<label>$INFO[Window(10002).Property(14.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(14.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(14.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(14.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(14.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(14.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(14.Title))</visible>
+					</item>
+					<item id="15">
+						<icon>$INFO[Window(10002).Property(15.Image)]</icon>
+						<label>$INFO[Window(10002).Property(15.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(15.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(15.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(15.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(15.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(15.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(15.Title))</visible>
+					</item>
+					<item id="16">
+						<icon>$INFO[Window(10002).Property(16.Image)]</icon>
+						<label>$INFO[Window(10002).Property(16.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(16.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(16.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(16.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(16.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(16.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(16.Title))</visible>
+					</item>
+					<item id="17">
+						<icon>$INFO[Window(10002).Property(17.Image)]</icon>
+						<label>$INFO[Window(10002).Property(17.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(17.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(17.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(17.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(17.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(17.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(17.Title))</visible>
+					</item>
+					<item id="18">
+						<icon>$INFO[Window(10002).Property(18.Image)]</icon>
+						<label>$INFO[Window(10002).Property(18.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(18.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(18.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(18.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(18.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(18.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(18.Title))</visible>
+					</item>
+					<item id="19">
+						<icon>$INFO[Window(10002).Property(19.Image)]</icon>
+						<label>$INFO[Window(10002).Property(19.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(19.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(19.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(19.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(19.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(19.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(19.Title))</visible>
+					</item>
+					<item id="20">
+						<icon>$INFO[Window(10002).Property(20.Image)]</icon>
+						<label>$INFO[Window(10002).Property(20.Title)]</label>
+						<property name="Installed">$INFO[Window(10002).Property(20.Installed)]</property>
+						<property name="PlayerCount">$INFO[Window(10002).Property(20.PlayerCount)]</property>
+						<property name="Sessions">$INFO[Window(10002).Property(20.Sessions)]</property>
+						<property name="TitleID">$INFO[Window(10002).Property(20.TitleID)]</property>
+						<onclick>$INFO[Window(10002).Property(20.XBEPath)]</onclick>
+						<visible>!IsEmpty(Window(10002).Property(20.Title))</visible>
+					</item>
+				</content>
+			</control>
+			<control type="scrollbar" id="60">
+				<left>296</left>
+				<top>263</top>
+				<width>4</width>
+				<height>206</height>
+				<onright>9201</onright>
+				<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+				<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="2,16,2,16">scrollbar_bar.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<visible>Control.IsVisible(9201)</visible>
+				<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+				<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(60)">Conditional</animation>
+			</control>
+			<control type="label">
+				<description>number of files in list text label</description>
+				<right>295</right>
+				<bottom>197</bottom>
+				<width>200</width>
+				<height>20</height>
+				<font>size_15</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<textcolor>colour.dialog.label.context</textcolor>
+				<label>$INFO[Container(9201).CurrentItem]/$INFO[Container(9201).NumItems]</label>
+				<visible>Control.IsVisible(9201)</visible>
+				<animation reversible="false" effect="fade" start="0" end="75" time="100">Visible</animation>
+				<animation reversible="false" effect="fade" start="75" end="0" time="0">Hidden</animation>
+			</control>
+			<!-- events list -->
+			<control type="list" id="9202">
+				<left>300</left>
+				<top>263</top>
+				<width>680</width>
+				<height>210</height>
+				<onup>9202</onup>
+				<ondown>9202</ondown>
+				<onleft>61</onleft>
+				<onback>SetFocus(9200)</onback>
+				<pagecontrol>61</pagecontrol>
+				<scrolltime>200</scrolltime>
+				<orientation>vertical</orientation>
+				<preloaditems>2</preloaditems>
+				<visible allowhiddenfocus="true">Control.HasFocus(9202) | Control.HasFocus(61)</visible>
+				<itemlayout height="46" width="680">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>680</width>
+						<height>44</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>660</width>
+						<height>44</height>
+						<font>size_20</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.nofocus</textcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>false</scroll>
+					</control>
+				</itemlayout>
+				<focusedlayout height="118" width="680">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<width>680</width>
+						<height>116</height>
+						<aspectratio>stretch</aspectratio>
+						<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>10</left>
+						<top>0</top>
+						<width>660</width>
+						<height>30</height>
+						<font>size_24</font>
+						<align>left</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.focus</textcolor>
+						<selectedcolor>colour.dialog.button.nofocus</selectedcolor>
+						<label>$INFO[ListItem.Label]</label>
+						<scroll>true</scroll>
+					</control>
+					<control type="textbox">
+						<left>10</left>
+						<top>36</top>
+						<width>660</width>
+						<height>77</height>
+						<font>size_16</font>
+						<align>justify</align>
+						<aligny>top</aligny>
+						<textcolor>colour.dialog.button.focus</textcolor>
+						<selectedcolor>colour.dialog.button.nofocus</selectedcolor>
+						<label>$INFO[ListItem.Label2]</label>
+						<autoscroll delay="2000" time="2500" repeat="5000" condition="true">Conditional</autoscroll>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(1.Title)]</label>
+						<label2>$INFO[Window(10002).Property(1.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(1.Title))</visible>
+					</item>
+					<item id="2">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(2.Title)]</label>
+						<label2>$INFO[Window(10002).Property(2.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(2.Title))</visible>
+					</item>
+					<item id="3">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(3.Title)]</label>
+						<label2>$INFO[Window(10002).Property(3.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(3.Title))</visible>
+					</item>
+					<item id="4">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(4.Title)]</label>
+						<label2>$INFO[Window(10002).Property(4.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(4.Title))</visible>
+					</item>
+					<item id="5">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(5.Title)]</label>
+						<label2>$INFO[Window(10002).Property(5.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(5.Title))</visible>
+					</item>
+					<item id="6">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(6.Title)]</label>
+						<label2>$INFO[Window(10002).Property(6.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(6.Title))</visible>
+					</item>
+					<item id="7">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(7.Title)]</label>
+						<label2>$INFO[Window(10002).Property(7.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(7.Title))</visible>
+					</item>
+					<item id="8">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(8.Title)]</label>
+						<label2>$INFO[Window(10002).Property(8.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(8.Title))</visible>
+					</item>
+					<item id="9">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(9.Title)]</label>
+						<label2>$INFO[Window(10002).Property(9.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(9.Title))</visible>
+					</item>
+					<item id="10">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(10.Title)]</label>
+						<label2>$INFO[Window(10002).Property(10.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(10.Title))</visible>
+					</item>
+					<item id="11">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(11.Title)]</label>
+						<label2>$INFO[Window(10002).Property(11.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(11.Title))</visible>
+					</item>
+					<item id="12">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(12.Title)]</label>
+						<label2>$INFO[Window(10002).Property(12.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(12.Title))</visible>
+					</item>
+					<item id="13">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(13.Title)]</label>
+						<label2>$INFO[Window(10002).Property(13.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(13.Title))</visible>
+					</item>
+					<item id="14">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(14.Title)]</label>
+						<label2>$INFO[Window(10002).Property(14.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(14.Title))</visible>
+					</item>
+					<item id="15">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(15.Title)]</label>
+						<label2>$INFO[Window(10002).Property(15.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(15.Title))</visible>
+					</item>
+					<item id="16">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(16.Title)]</label>
+						<label2>$INFO[Window(10002).Property(16.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(16.Title))</visible>
+					</item>
+					<item id="17">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(17.Title)]</label>
+						<label2>$INFO[Window(10002).Property(17.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(17.Title))</visible>
+					</item>
+					<item id="18">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(18.Title)]</label>
+						<label2>$INFO[Window(10002).Property(18.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(18.Title))</visible>
+					</item>
+					<item id="19">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(19.Title)]</label>
+						<label2>$INFO[Window(10002).Property(19.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(19.Title))</visible>
+					</item>
+					<item id="20">
+						<icon>-</icon>
+						<label>$INFO[Window(10002).Property(20.Title)]</label>
+						<label2>$INFO[Window(10002).Property(20.Description)]</label2>
+						<onclick>-</onclick>
+						<visible>!IsEmpty(Window(10002).Property(20.Title))</visible>
+					</item>
+				</content>
+			</control>
+			<control type="scrollbar" id="61">
+				<left>296</left>
+				<top>263</top>
+				<width>4</width>
+				<height>206</height>
+				<onright>9202</onright>
+				<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+				<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+				<texturesliderbarfocus border="2,16,2,16">scrollbar_bar.png</texturesliderbarfocus>
+				<textureslidernib>-</textureslidernib>
+				<textureslidernibfocus>-</textureslidernibfocus>
+				<showonepage>false</showonepage>
+				<orientation>vertical</orientation>
+				<visible>Control.IsVisible(9202)</visible>
+				<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+				<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(61)">Conditional</animation>
+			</control>
+			<control type="label">
+				<description>number of files in list text label</description>
+				<right>295</right>
+				<bottom>197</bottom>
+				<width>200</width>
+				<height>20</height>
+				<font>size_15</font>
+				<align>right</align>
+				<aligny>center</aligny>
+				<scroll>false</scroll>
+				<textcolor>colour.dialog.label.context</textcolor>
+				<label>$INFO[Container(9202).CurrentItem]/$INFO[Container(9202).NumItems]</label>
+				<visible>Control.IsVisible(9202)</visible>
+				<animation reversible="false" effect="fade" start="0" end="75" time="100">Visible</animation>
+				<animation reversible="false" effect="fade" start="75" end="0" time="0">Hidden</animation>
+			</control>
+		</control>
+		<control type="button" id="9210">
+			<onfocus>Dialog.Close(3000, false)</onfocus>
+			<visible allowhiddenfocus="true">false</visible>
+		</control>
+	</controls>
+</window>

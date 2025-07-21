@@ -11,32 +11,29 @@
 		4. 10 Recent items using the Y button when in the programs window.
 	
 '''
-import datetime
-import os
+from os.path import isdir, dirname, isfile, join
+from sys import argv
+from xbmc import executebuiltin, executehttpapi, getCacheThumbName, getCondVisibility, getInfoLabel, translatePath
+from xbmcgui import Dialog, getCurrentWindowId, Window
 import sqlite3
-import sys
 import time
-import xbmc
-import xbmcgui
 import xml.etree.ElementTree as ET
 
-dialog = xbmcgui.Dialog()
-myprograms6_db	= xbmc.translatePath("special://profile/database/MyPrograms6.db")
-theme_override	= xbmc.translatePath("special://skin/xml/Includes_Theme_Override.xml")
-force64mbassets	= xbmc.executehttpapi('GetGUISetting(1;mygames.games128mbartwork)')
-usecachedthumbs	= xbmc.getInfoLabel("Skin.HasSetting(UseCachedThumbs)")
-use128mbassets	= xbmc.getInfoLabel("System.memory(total)")
-noblurredfanart	= xbmc.getInfoLabel("Skin.HasSetting(UseNoBlurredFanart)")
+dialog = Dialog()
+myprograms6_db	= translatePath("special://profile/database/MyPrograms6.db")
+theme_override	= translatePath("special://skin/xml/Includes_Theme_Override.xml")
+force64mbassets	= executehttpapi('GetGUISetting(1;mygames.games128mbartwork)')
+usecachedthumbs	= getInfoLabel("Skin.HasSetting(UseCachedThumbs)")
+use128mbassets	= getInfoLabel("System.memory(total)")
+noblurredfanart	= getInfoLabel("Skin.HasSetting(UseNoBlurredFanart)")
 
 class PopulateHome:
-	homewindow = xbmcgui.Window(10000)
-	programswindow = xbmcgui.Window(10001)
+	homewindow = Window(10000)
+	programswindow = Window(10001)
 
 	def __init__(self):
-		try:
-			arg = sys.argv[1]
-		except:
-			arg = "refresh_randoms"
+
+		arg = argv[1] if len(argv) > 1 else "refresh_randoms"
 			
 		# Default search parameters
 		searches = {
@@ -44,38 +41,37 @@ class PopulateHome:
 			"brews": "Homebrew,Ports",
 			"emus": "Emulators,Emus",
 			"apps": "Applications,Apps",
-			"custom1": xbmc.getInfoLabel("Skin.String(CustomHomeButton1Search)"),
-			"custom2": xbmc.getInfoLabel("Skin.String(CustomHomeButton2Search)"),
-			"custom3": xbmc.getInfoLabel("Skin.String(CustomHomeButton3Search)"),
-			"custom4": xbmc.getInfoLabel("Skin.String(CustomHomeButton4Search)")
+			"custom1": getInfoLabel("Skin.String(CustomHomeButton1Search)") or getInfoLabel("Skin.String(CustomHomeButton1Name)"),
+			"custom2": getInfoLabel("Skin.String(CustomHomeButton2Search)") or getInfoLabel("Skin.String(CustomHomeButton2Name)"),
+			"custom3": getInfoLabel("Skin.String(CustomHomeButton3Search)") or getInfoLabel("Skin.String(CustomHomeButton3Name)"),
+			"custom4": getInfoLabel("Skin.String(CustomHomeButton4Search)") or getInfoLabel("Skin.String(CustomHomeButton4Name)")
 		}
 		enabled = {
-			"games": not xbmc.getInfoLabel("Skin.HasSetting(DisableHome1)"),
-			"brews": not xbmc.getInfoLabel("Skin.HasSetting(DisableHome2)"),
-			"emus": not xbmc.getInfoLabel("Skin.HasSetting(DisableHome3)"),
-			"apps": not xbmc.getInfoLabel("Skin.HasSetting(DisableHome4)"),
-			"custom1": xbmc.getInfoLabel("Skin.HasSetting(CustomHomeButton1Enabled)"),
-			"custom2": xbmc.getInfoLabel("Skin.HasSetting(CustomHomeButton2Enabled)"),
-			"custom3": xbmc.getInfoLabel("Skin.HasSetting(CustomHomeButton3Enabled)"),
-			"custom4": xbmc.getInfoLabel("Skin.HasSetting(CustomHomeButton4Enabled)")
+			"games": not getInfoLabel("Skin.HasSetting(DisableHome1)"),
+			"brews": not getInfoLabel("Skin.HasSetting(DisableHome2)"),
+			"emus": not getInfoLabel("Skin.HasSetting(DisableHome3)"),
+			"apps": not getInfoLabel("Skin.HasSetting(DisableHome4)"),
+			"custom1": getInfoLabel("Skin.HasSetting(CustomHomeButton1Enabled)"),
+			"custom2": getInfoLabel("Skin.HasSetting(CustomHomeButton2Enabled)"),
+			"custom3": getInfoLabel("Skin.HasSetting(CustomHomeButton3Enabled)"),
+			"custom4": getInfoLabel("Skin.HasSetting(CustomHomeButton4Enabled)")
 		}
 		
 		self.source_focus = self.get_source_focus()
 		self.lastplayed_total, self.randoms_total = self.ParseOverride(theme_override)
-		if arg == "refresh_home_gotohome":
-			self.memory_db = self.load_database(1)
-		else: self.memory_db = self.load_database(0)
+		self.load_database()
 
 		try:
 			if arg == "refresh_home_gotohome":
 				self.populate_lastplayed(enabled, searches)
 				self.populate_randoms(enabled, searches)
-				self.populate_recents(searches)
+				self.populate_recents()
 				self.Check_For_HomeWindow()
 			
 			if arg == "refresh_home":
 				self.populate_lastplayed(enabled, searches)
 				self.populate_randoms(enabled, searches)
+				self.populate_recents()
 			
 			if arg == "refresh_media":
 				self.refresh_media_played(enabled, searches)
@@ -84,30 +80,27 @@ class PopulateHome:
 				self.populate_randoms(enabled, searches)
 			
 			if arg == "refresh_recents":
-				self.populate_recents(searches)
+				self.populate_recents()
 				self.Load_ProgramsWindow()
-		
 		except Exception as error:
 			print error
-			xbmc.executebuiltin("Dialog.Close(1100)")
-			xbmc.executebuiltin("ActivateWindow(Programs)")
-			xbmcgui.Dialog().ok("Parsing MyPrograms6.db Error",
+			executebuiltin("Dialog.Close(1100)")
+			executebuiltin("ActivateWindow(Programs)")
+			Dialog().ok("Parsing MyPrograms6.db Error",
 '''Navigate to:
 "Settings > XBMC4Xbox Setting > Debug > View Log Files"
 
 Send me a picture of the last few lines of the latest log file.''')
-	
+
 	def get_source_focus(self):
 		for control_id in range(100, 109):
-			if xbmc.getCondVisibility('ControlGroup(1).HasFocus({})'.format(control_id)):
+			if getCondVisibility('ControlGroup(1).HasFocus({})'.format(control_id)):
 				return control_id
 		return 0
 
-	def load_database(self, var):
-		if var:
-			return self.database_to_memory(myprograms6_db)
-		else:
-			return myprograms6_db
+	def load_database(self):
+		self.conn = sqlite3.connect(myprograms6_db)
+		self.conn.row_factory = sqlite3.Row
 
 	def populate_randoms(self, enabled, searches):
 		if enabled["games"] and (self.source_focus == 100 or self.source_focus == 0):
@@ -145,7 +138,7 @@ Send me a picture of the last few lines of the latest log file.''')
 		if enabled["custom4"] and searches["custom4"]:
 			self.LastPlayed("LastPlayedCustom4," + searches["custom4"])
 
-	def populate_recents(self, searches):
+	def populate_recents(self):
 		self.RecentPlayed("RecentPlayed")
 
 	def refresh_media_played(self, enabled, searches):
@@ -159,35 +152,35 @@ Send me a picture of the last few lines of the latest log file.''')
 			self.LastPlayed("LastPlayedCustom4," + searches["custom4"])
 
 	def Check_For_HomeWindow( self ):
-		if xbmcgui.getCurrentWindowId() != 10000:
-			xbmc.executebuiltin('ActivateWindow(Home)')
+		if getCurrentWindowId() != 10000:
+			executebuiltin('ActivateWindow(Home)')
 
 	def Load_ProgramsWindow( self ):
-		xbmc.executebuiltin('ActivateWindow(Programs,{})'.format(xbmc.getInfoLabel("Skin.String(HomeWindow)")))
+		executebuiltin('ActivateWindow(Programs,{})'.format(getInfoLabel("Skin.String(HomeWindow)")))
 
 	def Random(self, var):
 		increment = 0
 		propertyvalue = var.split(',')[0]
-		xbmc.executebuiltin("Skin.Reset(" + propertyvalue + ")")
+		executebuiltin("Skin.Reset(" + propertyvalue + ")")
 
 		search_params = var.split(',')[1:]
 
 		for i in range(len(search_params)):
 			if ":\\" not in search_params[i]:
-				search_params[i] = "%:\\{}".format(search_params[i])
+				search_params[i] = "%\\{}".format(search_params[i])
 
 		found_fields = set()
 		valid_fields = []
 		query_limit = 200
 
 		while increment < self.randoms_total and len(valid_fields) < self.randoms_total:
-			params = 'SELECT * FROM files WHERE ' + ' OR '.join(['strFileName LIKE "{}\\%"'.format(param) for param in search_params if param])
+			params = 'SELECT * FROM files WHERE ' + ' OR '.join(['LOWER(strFileName) LIKE LOWER("{}\\%")'.format(param) for param in search_params if param])
 			params += ' ORDER BY RANDOM() LIMIT {}'.format(query_limit)
 
-			results = self.ParseDB(self.memory_db, params)
+			results = self.ParseDB(self.conn, params)
 
 			for field in results:
-				if os.path.isfile(field['strFileName']) and field['strFileName'] not in found_fields:
+				if isfile(field['strFileName']) and field['strFileName'] not in found_fields:
 					valid_fields.append(field)
 					found_fields.add(field['strFileName'])
 					increment += 1
@@ -205,20 +198,20 @@ Send me a picture of the last few lines of the latest log file.''')
 				self.homewindow.setProperty(propertyvalue + '.%d.FanartThumb' % (index + 1), artwork[2])
 				self.homewindow.setProperty(propertyvalue + '.%d.Fanart' % (index + 1), artwork[3])
 				self.homewindow.setProperty(propertyvalue + '.%d.LargePoster' % (index + 1), artwork[4])
-				self.homewindow.setProperty(propertyvalue + '.%d.Title' % (index + 1), field['altname'] if 'altname' in field.keys() else 'Unknown Title')
-				self.homewindow.setProperty(propertyvalue + '.%d.XBEPath' % (index + 1), "RunXBE(" + field['strFileName'] + ")")
+				self.homewindow.setProperty(propertyvalue + '.%d.Title' % (index + 1), field['altname'] if 'altname' in field.keys() and field['altname'].strip() else field['xbedescription'])
+				self.homewindow.setProperty(propertyvalue + '.%d.XBEPath' % (index + 1), "RunXBE({},{})".format(field['strFileName'], field['iRegion'] if 'iRegion' in field.keys() and field['iRegion'] != -1 else 0))
 				self.homewindow.setProperty(propertyvalue + '.%d.Rating' % (index + 1), field['rating'])
 				self.homewindow.setProperty(propertyvalue + '.%d.ExtraInfo' % (index + 1), self.ExtraInfo(field))
 				self.homewindow.setProperty(propertyvalue + '.%d.Synopsis' % (index + 1), truncate_with_ellipsis(field['synopsis'], 265))
 
 		if increment > 0:
-			xbmc.executebuiltin("Skin.SetBool(" + propertyvalue + ")")
+			executebuiltin("Skin.SetBool(" + propertyvalue + ")")
 
 	def LastPlayed(self, var):
 		datesfound = []
 		increment = 0
 		propertyvalue = var.split(',')[0]
-		xbmc.executebuiltin("Skin.Reset(" + propertyvalue + ")")
+		executebuiltin("Skin.Reset(" + propertyvalue + ")")
 
 		for i in range(self.lastplayed_total):
 			self.homewindow.setProperty(propertyvalue + '.%d.Title' % (i + 1), '')
@@ -227,12 +220,12 @@ Send me a picture of the last few lines of the latest log file.''')
 
 		for i in range(len(search_params)):
 			if ":\\" not in search_params[i]:
-				search_params[i] = "%:\\{}".format(search_params[i])
+				search_params[i] = "%\\{}".format(search_params[i])
 
-		params = 'SELECT DISTINCT last_played FROM files WHERE ' + ' OR '.join(['strFileName LIKE "{}\\%"'.format(param) for param in search_params if param])
+		params = 'SELECT DISTINCT last_played FROM files WHERE ' + ' OR '.join(['LOWER(strFileName) LIKE LOWER("{}\\%")'.format(param) for param in search_params if param])
 		params += ' ORDER BY last_played DESC LIMIT {}'.format(self.lastplayed_total)
 
-		results = self.ParseDB(self.memory_db, params)
+		results = self.ParseDB(self.conn, params)
 		datesfound = [field['last_played'] for field in results if field['last_played'] != ""]
 
 		found_fields = set()
@@ -242,10 +235,10 @@ Send me a picture of the last few lines of the latest log file.''')
 			if increment >= self.lastplayed_total and len(valid_fields) >= self.lastplayed_total:
 				break
 			file_query = 'SELECT * FROM files WHERE last_played LIKE "%{}%"'.format(date)
-			file_results = self.ParseDB(self.memory_db, file_query)
+			file_results = self.ParseDB(self.conn, file_query)
 
 			for field in file_results:
-				if os.path.isfile(field['strFileName']) and field['strFileName'] not in found_fields:
+				if isfile(field['strFileName']) and field['strFileName'] not in found_fields:
 					valid_fields.append(field)
 					found_fields.add(field['strFileName'])
 					increment += 1
@@ -260,27 +253,26 @@ Send me a picture of the last few lines of the latest log file.''')
 				self.homewindow.setProperty(propertyvalue + '.%d.FanartThumb' % (index + 1), artwork[2])
 				self.homewindow.setProperty(propertyvalue + '.%d.Fanart' % (index + 1), artwork[3])
 				self.homewindow.setProperty(propertyvalue + '.%d.LargePoster' % (index + 1), artwork[4])
-				self.homewindow.setProperty(propertyvalue + '.%d.Title' % (index + 1), field['altname'] if 'altname' in field.keys() else 'Unknown Title')
-				self.homewindow.setProperty(propertyvalue + '.%d.XBEPath' % (index + 1), "RunXBE(" + field['strFileName'] + ")")
+				self.homewindow.setProperty(propertyvalue + '.%d.Title' % (index + 1), field['altname'] if 'altname' in field.keys() and field['altname'].strip() else field['xbedescription'])
+				self.homewindow.setProperty(propertyvalue + '.%d.XBEPath' % (index + 1), "RunXBE({},{})".format(field['strFileName'], field['iRegion'] if 'iRegion' in field.keys() and field['iRegion'] != -1 else 0))
 				self.homewindow.setProperty(propertyvalue + '.%d.Rating' % (index + 1), field['rating'])
 				self.homewindow.setProperty(propertyvalue + '.%d.ExtraInfo' % (index + 1), self.ExtraInfo(field))
 				self.homewindow.setProperty(propertyvalue + '.%d.Synopsis' % (index + 1), truncate_with_ellipsis(field['synopsis'], 365))
 
 		if increment > 0:
-			xbmc.executebuiltin("Skin.SetBool(" + propertyvalue + ")")
+			executebuiltin("Skin.SetBool(" + propertyvalue + ")")
 
-	def RecentPlayed(self, var):
+	def RecentPlayed(self, propertyvalue):
 		datesfound = []
 		increment = 0
 		total_limit = 10
-		propertyvalue = var
-		exclude_patterns = ["\\Media\\", "\\Movies\\", "\\TV Shows\\"]
+		exclude_patterns = ['4C464456'] # 4C464456 (VDFL) int 1279673430
 		
 		for i in range(total_limit):
 			self.programswindow.setProperty(propertyvalue + '.%d.Title' % (i + 1), '')
 
 		params = 'SELECT DISTINCT last_played FROM files ORDER BY last_played DESC'
-		results = self.ParseDB(self.memory_db, params)
+		results = self.ParseDB(self.conn, params)
 		datesfound = [field['last_played'] for field in results if field['last_played'] != ""]
 
 		found_fields = set()
@@ -288,12 +280,11 @@ Send me a picture of the last few lines of the latest log file.''')
 
 		for date in datesfound:
 			file_query = 'SELECT * FROM files WHERE last_played LIKE "%{}%"'.format(date)
-			file_results = self.ParseDB(self.memory_db, file_query)
+			file_results = self.ParseDB(self.conn, file_query)
 
 			for field in file_results:
-				if (os.path.isfile(field['strFileName']) 
-					and field['strFileName'] not in found_fields 
-					and not any(pattern in field['strFileName'] for pattern in exclude_patterns)):
+				titleid_str = "%08X" % field['titleid']
+				if (isfile(field['strFileName']) and field['strFileName'] not in found_fields and titleid_str not in exclude_patterns):
 					valid_fields.append(field)
 					found_fields.add(field['strFileName'])
 					increment += 1
@@ -307,41 +298,40 @@ Send me a picture of the last few lines of the latest log file.''')
 			artwork = self.Artwork(field)
 			if artwork[0] != "":
 				self.programswindow.setProperty(propertyvalue + '.%d.Poster' % (index + 1), artwork[0])
-				self.programswindow.setProperty(propertyvalue + '.%d.Title' % (index + 1), field['altname'] if 'altname' in field.keys() else 'Unknown Title')
-				self.programswindow.setProperty(propertyvalue + '.%d.XBEPath' % (index + 1), "RunXBE(" + field['strFileName'] + ")")
+				self.programswindow.setProperty(propertyvalue + '.%d.Title' % (index + 1), field['altname'] if 'altname' in field.keys() and field['altname'].strip() else field['xbedescription'])
+				self.programswindow.setProperty(propertyvalue + '.%d.XBEPath' % (index + 1), "RunXBE({},{})".format(field['strFileName'], field['iRegion'] if 'iRegion' in field.keys() and field['iRegion'] != -1 else 0))
 
 	def Artwork(self, var):
-		field = var['strFileName']
-		thumbcache = xbmc.getCacheThumbName(field)
+		field_xbe_path = var['strFileName']
+		field_resources_path = var['resources']
+		artwork_files = {
+			"fanart_thumb": join(field_resources_path, "artwork/fanart_thumb.jpg"),
+			"fanart_blur": join(field_resources_path, "artwork/fanart-blur.jpg"),
+			"synopsis": join(field_resources_path, "artwork/synopsis.jpg"),
+			"poster": join(field_resources_path, "artwork/poster.jpg"),
+			"thumb": join(field_resources_path, "artwork/thumb.jpg"),
+			"fanart": join(field_resources_path, "artwork/fanart.jpg")
+		}
+		file_exists = {key: isfile(path) for key, path in artwork_files.items()}
+		
+		thumbcache = getCacheThumbName(field_xbe_path)
 		cachedthumb = 'Special://profile/Thumbnails/Programs/{}/{}'.format(thumbcache[0], thumbcache)
-		field_path = "".join(str(x) for x in field).replace('default.xbe', '_resources\\artwork')
-
-		field_path = var['resources']
-
-		altfanartcheck = os.path.join(field_path, "artwork\\fanart_thumb.jpg")
-		fanartcheck = os.path.join(field_path, "artwork\\fanart-blur.jpg")
-		largepostercheck = os.path.join(field_path, "artwork\\synopsis.jpg")
-		postercheck = os.path.join(field_path, "artwork\\poster.jpg")
-		posterthumbcheck = os.path.join(field_path, "artwork\\thumb.jpg")
 
 		if noblurredfanart:
-			fanartcheck = os.path.join(field_path, "artwork\\fanart.jpg")
+			artwork_files["fanart_blur"] = artwork_files["fanart"]
 		
-		if usecachedthumbs:
-			if not os.path.isfile(cachedthumb):
-				xbmc.executebuiltin("CacheThumbnail({},{})".format(postercheck, cachedthumb))
+		if usecachedthumbs and not isfile(cachedthumb):
+			executebuiltin('CacheThumbnail("{}", "{}")'.format(artwork_files["poster"], cachedthumb))
 			poster = cachedthumb
 		else:
-			def get_poster_path(field_path, postercheck, cachedthumb):
-				poster = largepostercheck if not "64" in use128mbassets and "True" in force64mbassets else postercheck
-				return poster if os.path.isfile(poster) else cachedthumb if not os.path.isfile(postercheck) else postercheck
-			poster = get_poster_path(field_path, postercheck, cachedthumb)
+			poster = artwork_files["synopsis"] if not "64" in use128mbassets and "True" in force64mbassets else artwork_files["poster"]
+			poster = poster if file_exists.get(poster) else cachedthumb if not file_exists["poster"] else artwork_files["poster"]
 
-		posterthumb = posterthumbcheck if os.path.isfile(posterthumbcheck) else poster
-		fanart = fanartcheck if os.path.isfile(fanartcheck) else os.path.join(os.path.dirname(field), 'fanart.jpg')
-		fanart = fanart if os.path.isfile(fanart) else "no_fanart.jpg"
-		fanartthumb = altfanartcheck if os.path.isfile(altfanartcheck) else poster
-		largeposter = largepostercheck if os.path.isfile(largepostercheck) else poster
+		posterthumb = artwork_files["thumb"] if file_exists["thumb"] else poster
+		fanartthumb = artwork_files["fanart_thumb"] if file_exists["fanart_thumb"] else poster
+		fanart = artwork_files["fanart_blur"] if file_exists["fanart_blur"] else join(dirname(field_xbe_path), 'fanart.jpg')
+		fanart = fanart if isfile(fanart) else "no_fanart.jpg"
+		largeposter = artwork_files["synopsis"] if file_exists["synopsis"] else poster
 
 		return poster, posterthumb, fanartthumb, fanart, largeposter
 
@@ -350,52 +340,19 @@ Send me a picture of the last few lines of the latest log file.''')
 		info = " · ".join(filter(None, parts))
 		return info
 
-	def database_to_memory(self, var):
-		disk_conn = sqlite3.connect(var)
-		disk_conn.text_factory = lambda x: unicode(x, 'utf-8', 'ignore')
-		mem_conn = sqlite3.connect(':memory:')
-		mem_conn.text_factory = lambda x: unicode(x, 'utf-8', 'ignore')
-		disk_cursor = disk_conn.cursor()
-		mem_cursor = mem_conn.cursor()
-		tables = disk_cursor.execute("SELECT name FROM sqlite_master WHERE type='table';").fetchall()
-		
-		for table in tables:
-			table_name = table[0]
-			create_table_query = disk_cursor.execute("SELECT sql FROM sqlite_master WHERE type='table' AND name=?;", (table_name,)).fetchone()[0]
-			mem_cursor.execute(create_table_query)
-			rows = disk_cursor.execute("SELECT * FROM {};".format(table_name)).fetchall()
-			if rows:
-				placeholders = ", ".join("?" * len(rows[0]))
-				for row in rows:
-					try:
-						mem_cursor.execute("INSERT INTO {} VALUES ({});".format(table_name, placeholders), row)
-					except sqlite3.OperationalError as error:
-						print "Error inserting row: {}, Error: {}".format(row, error)
-						continue
-						
-		mem_conn.commit()
-		disk_conn.close()
-		return mem_conn
-
-	def ParseDB(self, memory_db, var):
-		if isinstance(memory_db, str):
-			conn = sqlite3.connect(memory_db)
-		else:
-			conn = memory_db
-		conn.row_factory = sqlite3.Row
-		cur = conn.cursor()
+	def ParseDB(self, conn, var):
 		conn.text_factory = str
+		cur = conn.cursor()
 		cur.execute(var)
 		results = cur.fetchall()
-		if self.source_focus != 0:
-			conn.close()
+		cur.close()
 		return results
 
 	def ParseOverride(self, var):
 		self.lastplayed_total = 10
 		self.randoms_total = 10
 		
-		if os.path.isfile(var):
+		if isfile(var):
 			elements = ET.parse(var).getroot().iter()
 			for lines_checked, element in enumerate(elements, start=1):
 				if element.tag.lower() == 'parse_lastplayed_total' and element.text:
@@ -421,17 +378,17 @@ def truncate_with_ellipsis(text, max_length):
 			return text[:last_space_index] + "..."
 
 if __name__ == "__main__":
-	if os.path.isfile(myprograms6_db):
-		print "Loaded Home Screen Items.py"
+	if isfile(myprograms6_db):
+		print "Loaded Parse Programs DB.py"
 		start_time = time.time()
 		
 		try:
 			PopulateHome()
-			xbmc.executebuiltin("Dialog.Close(1100)")
+			executebuiltin("Dialog.Close(1100)")
 		finally:
-			if 'con' in locals():
-				con.close()
+			if 'conn' in locals():
+				conn.close()
 		
-		print "Unloaded Home Screen Items.py - took {} seconds to complete".format(int(round(time.time() - start_time)))
+		print "Unloaded Parse Programs DB.py - took {} seconds to complete".format(int(round(time.time() - start_time)))
 	else:
-		xbmc.executebuiltin("ActivateWindow(Programs)")
+		executebuiltin("ActivateWindow(Programs)")

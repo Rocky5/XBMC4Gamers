@@ -17,7 +17,7 @@ print '[SCRIPT][%s] version %s initialized!' % (__scriptname__, __version__)
 if (__name__ == "__main__"):
 	import resources.lib.__init__ as __init__
 	ui = __init__.GUI('%s.xml' %  "main",__path__, 'default')
+	# Close the script loading dialog
+	xbmc.executebuiltin('Dialog.Close(1100,false)')
 	ui.doModal()
-	print '[SCRIPT][%s] version %s exited!' % (__scriptname__, __version__)
 	del ui
-sys.modules.clear()

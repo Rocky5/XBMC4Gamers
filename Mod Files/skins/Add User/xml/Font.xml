@@ -101,7 +101,7 @@
 			<filename>default.ttf</filename>
 			<size>200</size>
 		</font>
-		<!-- The fonts below can't be removed. They are used by the debug overlay and the textviewer -->
+		<!-- the fonts below can't be removed. they are used by the debug overlay and the textviewer -->
 		<font>
 			<name>mono_13</name>
 			<filename>monofont-medium.ttf</filename>
@@ -122,7 +122,7 @@
 			<filename>monofont-bold.ttf</filename>
 			<size>27</size>
 		</font>
-		<!-- Home screen & downloader-->
+		<!-- home screen & downloader -->
 		<font>
 			<name>home_12</name>
 			<filename>home.ttf</filename>

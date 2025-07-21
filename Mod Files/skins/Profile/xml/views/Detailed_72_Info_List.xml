@@ -1,6 +1,6 @@
 <!-- Detailed_72_Synopsis_Info_List ID = 72 -->
 <control type="group">
-	<visible>Control.IsVisible(72) + !Control.IsVisible(50)</visible>
+	<visible>Control.IsVisible(72) + ![Control.IsVisible(50) | Window.IsActive(1101)]</visible>
 	<include>Game.Views</include>
 	<control type="largeimage">
 		<include>1280x720</include>
@@ -34,6 +34,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.view72.label2</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<label>$INFO[listitem.Synopsis_Year]</label>
 				<visible>!IsEmpty(listitem.Synopsis_Year)</visible>
 			</control>
@@ -46,6 +47,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.view72.label2</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<label> - </label>
 				<visible>IsEmpty(listitem.Synopsis_Year)</visible>
 			</control>
@@ -56,6 +58,7 @@
 				<height>52</height>
 				<font>size_20</font>
 				<textcolor>colour.view72.label2</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -69,6 +72,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.view72.label2</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<label>$INFO[listitem.Synopsis_Rating]</label>
 				<visible>!IsEmpty(listitem.Synopsis_Rating)</visible>
 			</control>
@@ -81,6 +85,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.view72.label2</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<label> - </label>
 				<visible>IsEmpty(listitem.Synopsis_Rating)</visible>
 			</control>
@@ -102,6 +107,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.view72.label</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<label>$INFO[listitem.Synopsis_Year]</label>
 				<visible>!IsEmpty(listitem.Synopsis_Year)</visible>
 			</control>
@@ -114,6 +120,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.view72.label</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<label> - </label>
 				<visible>IsEmpty(listitem.Synopsis_Year)</visible>
 			</control>
@@ -124,6 +131,7 @@
 				<height>52</height>
 				<font>size_20</font>
 				<textcolor>colour.view72.label</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<align>left</align>
 				<aligny>center</aligny>
 				<label>$INFO[ListItem.Label]</label>
@@ -137,6 +145,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.view72.label</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<label>$INFO[listitem.Synopsis_Rating]</label>
 				<visible>!IsEmpty(listitem.Synopsis_Rating)</visible>
 			</control>
@@ -149,6 +158,7 @@
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.view72.label</textcolor>
+				<shadowcolor>colour.view72.shadow</shadowcolor>
 				<label> - </label>
 				<visible>IsEmpty(listitem.Synopsis_Rating)</visible>
 			</control>
@@ -259,6 +269,7 @@
 			<font>size_15</font>
 			<aligny>center</aligny>
 			<textcolor>colour.view72.info.label</textcolor>
+			<shadowcolor>colour.view72.shadow</shadowcolor>
 			<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
 		</control>
 		<control type="image">
@@ -274,6 +285,7 @@
 			<font>size_15</font>
 			<aligny>center</aligny>
 			<textcolor>colour.view72.info.label</textcolor>
+			<shadowcolor>colour.view72.shadow</shadowcolor>
 			<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
 		</control>
 		<control type="image">
@@ -290,6 +302,7 @@
 			<font>size_15</font>
 			<aligny>center</aligny>
 			<textcolor>colour.view72.info.label</textcolor>
+			<shadowcolor>colour.view72.shadow</shadowcolor>
 			<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
 			<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
 		</control>
@@ -307,6 +320,7 @@
 			<font>size_15</font>
 			<aligny>center</aligny>
 			<textcolor>colour.view72.info.label</textcolor>
+			<shadowcolor>colour.view72.shadow</shadowcolor>
 			<label>[UPPERCASE] $INFO[listitem.Synopsis_ESRB_Descriptors][/UPPERCASE]</label>
 			<visible>!IsEmpty(listitem.Synopsis_ESRB_Descriptors)</visible>
 		</control>
@@ -320,6 +334,7 @@
 		<font>size_17</font>
 		<align>justify</align>
 		<textcolor>colour.view72.info.synopsis</textcolor>
+		<shadowcolor>colour.view72.shadow</shadowcolor>
 		<autoscroll delay="10000" time="1000" repeat="10000" condition="ControlGroup(9001).HasFocus(10)">Conditional</autoscroll>
 		<label>$INFO[listitem.Synopsis_Overview]</label>
 	</control>

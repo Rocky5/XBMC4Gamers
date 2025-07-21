@@ -2,6 +2,8 @@ import xbmc
 import xbmcgui
 import os
 
+# Close the script loading dialog
+xbmc.executebuiltin('Dialog.Close(1100,true)')
 # Check for default.xbe in D if not found give error.
 if os.path.isfile("d:/default.xbe"):
     __title__ = "DVD2XBOX Runner"

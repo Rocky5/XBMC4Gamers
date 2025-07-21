@@ -57,7 +57,7 @@
 			<height>30</height>
 			<align>left</align>
 			<font>font14</font>
-			<label>Your console will reload XBMC4Gamers when complete.</label>
+			<label>Your console will reload $LOCALIZE[31000] when complete.</label>
 		</control>
 		<!-- Progress labels -->
 		<control type="label">
@@ -76,7 +76,7 @@
 		<!-- bottom right -->
 		<control type="label">
 			<description>progress label</description>
-			<left>133r</left>
+			<right>133</right>
 			<top>518</top>
 			<width>150</width>
 			<height>30</height>

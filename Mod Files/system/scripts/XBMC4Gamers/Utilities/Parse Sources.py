@@ -1,8 +1,7 @@
 # -*- coding: utf-8 -*-
-import os
-import sys
-import xbmc
-import xbmcgui
+from sys import argv
+from xbmc import executebuiltin, log, LOGERROR
+from xbmcgui import Dialog
 import xml.etree.cElementTree as etree
 
 SOURCES_XML_PATH = "P:/Sources.xml"
@@ -14,26 +13,28 @@ def parse_sources(sources_xml):
 		names = [name.find('name').text for name in root.findall('.//programs/source/[name]')]
 		return names
 	except Exception as error:
-		xbmc.log("Failed to parse sources XML: {}".format(error), xbmc.LOGERROR)
+		log("Failed to parse sources XML: {}".format(error), LOGERROR)
 		return []
 
 def main():
 	print "Parse Sources.py"
-	if len(sys.argv) < 2:
-		xbmc.log("Argument missing: The script requires one argument.", xbmc.LOGERROR)
+	if len(argv) < 2:
+		log("Argument missing: The script requires one argument.", LOGERROR)
 		return
 
-	arg = sys.argv[1]
+	arg = argv[1]
 	names = parse_sources(SOURCES_XML_PATH)
 
 	if names:
-		choice = xbmcgui.Dialog().select('Select Source', names, 10000)
+		choice = Dialog().select('Select Source', names, 10000)
 		if choice != -1:
-			xbmc.executebuiltin("Skin.SetString({}, {})".format(arg, names[choice]))
+			executebuiltin("Skin.SetString({}, {})".format(arg, names[choice]))
 		else:
-			xbmc.executebuiltin("Skin.Reset({})".format(arg))
+			executebuiltin("Skin.Reset({})".format(arg))
 	else:
-		xbmc.log("No sources found in the XML.", xbmc.LOGERROR)
+		log("No sources found in the XML.", LOGERROR)
 
 if __name__ == "__main__":
+	# Close the script loading dialog
+	executebuiltin('Dialog.Close(1100,true)')
 	main()

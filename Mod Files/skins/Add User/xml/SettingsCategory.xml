@@ -37,12 +37,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\a_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -57,12 +57,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\b_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\b_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -110,10 +110,10 @@
 				<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 			</control>
 			<control type="radiobutton" id="8">
-				<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+				<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 			</control>
 			<control type="spincontrolex" id="9">
-				<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+				<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 			</control>
 			<control type="label" id="2">
 				<description>Fake Label so we can pass it value down to the one above</description>

@@ -419,7 +419,7 @@
 		<lookandfeel>
 				<enablemouse>false</enablemouse>
 				<enablerssfeeds>true</enablerssfeeds>
-				<font>Default</font>
+				<font>default</font>
 				<rssedit>
 				</rssedit>
 				<sep2>
@@ -427,10 +427,10 @@
 				<sep3>
 				</sep3>
 				<skin>Updater</skin>
-				<skincolors>SKINDEFAULT</skincolors>
-				<skintheme>SKINDEFAULT</skintheme>
+				<skincolors>default</skincolors>
+				<skintheme>default</skintheme>
 				<skinzoom>0</skinzoom>
-				<soundskin>SKINDEFAULT</soundskin>
+				<soundskin>default</soundskin>
 				<startupwindow>10000</startupwindow>
 		</lookandfeel>
 		<masterlock>

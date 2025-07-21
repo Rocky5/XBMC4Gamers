@@ -1,20 +1,21 @@
-import datetime
-import os
-import xbmc
+from datetime import datetime
+from os.path import exists, join
+from os import makedirs
+from xbmc import executebuiltin, executehttpapi, getInfoLabel
 import xbmcgui
 
 folder = 'Q:/system/screenshots/'
-filename = 'Screenshot-{}.png'.format(datetime.datetime.now().strftime("%Y-%m-%d--%H-%M-%S"))
+filename = 'Screenshot-{}.png'.format(datetime.now().strftime("%Y-%m-%d--%H-%M-%S"))
 
 flash = 1
 rotate = 0
-width = xbmc.getInfoLabel('System.ScreenWidth')
-height = xbmc.getInfoLabel('System.ScreenHeight')
+width = getInfoLabel('System.ScreenWidth')
+height = getInfoLabel('System.ScreenHeight')
 quality = 100
 
-if not os.path.exists(folder):
-	os.makedirs(folder)
+if not exists(folder):
+	makedirs(folder)
 
-xbmc.executehttpapi('TakeScreenshot({}, {}, {}, {}, {}, {})'.format(os.path.join(folder, filename), flash, rotate, width, height, quality))
+executehttpapi('TakeScreenshot({}, {}, {}, {}, {}, {})'.format(join(folder, filename), flash, rotate, width, height, quality))
 
-xbmc.executebuiltin('Notification(Screenshot Saved, {})'.format(filename))
+executebuiltin('Notification(Screenshot Saved, {})'.format(filename))

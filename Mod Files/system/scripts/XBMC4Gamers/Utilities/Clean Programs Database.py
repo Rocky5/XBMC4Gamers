@@ -1,12 +1,14 @@
 # -*- coding: utf-8 -*- 
 import os
 import sqlite3
+import xbmc
 import xbmcgui
 
-MyPrograms_db = xbmc.translatePath('special://profile/database/MyPrograms6.db')
 pDialog = xbmcgui.DialogProgress()
 dialog = xbmcgui.Dialog()
 pDialog.update(0)
+
+MYPROGRAMS_DB = xbmc.translatePath('special://profile/database/MyPrograms6.db')
 
 class CancelledException(Exception):
 	pass
@@ -15,24 +17,22 @@ def clean_database(rows, cursor):
 	pDialog.create('Cleaning Database')
 	total_rows = len(rows)
 	deleted_count = 0
-	dots = ['', '', '', '', '', '', '', '', '', '',
-			'.', '.', '.', '.', '.', '.', '.', '.', '.', '.',
-			'..', '..', '..', '..', '..', '..', '..', '..', '..', '..',
-			'...', '...', '...', '...', '...', '...', '...', '...', '...', '...']
-	dot_index = 0
-	
+
 	for numb, row in enumerate(rows, start=1):
 		Game_Title, FilePath, idFile = row[3], row[1], row[0]
 		
 		if not os.path.isfile(FilePath):
 			cursor.execute('DELETE FROM files WHERE idFile = ?', (idFile,))
+			thumbcache = xbmc.getCacheThumbName(FilePath)
+			thumbcache = xbmc.translatePath('Special://profile/Thumbnails/Programs/{}/{}'.format(thumbcache[0], thumbcache))
+			if os.path.isfile(thumbcache):
+				os.remove(thumbcache)
 			deleted_count += 1
 		
 		progress = int((numb * 100) / total_rows)
-		if numb % 20 == 0:
-			pDialog.update(progress, '', 'Cleaning Database[CR]Please wait{}'.format(dots[dot_index]))
+		if numb % 25 == 0:
+			pDialog.update(progress, '', 'Cleaning Database[CR]Please wait...')
 		
-		dot_index = (dot_index + 1) % len(dots)
 		if pDialog.iscanceled():
 			raise CancelledException('You cancelled.')
 	return deleted_count
@@ -44,10 +44,10 @@ def format_size(size_in_bytes):
 		size_in_bytes /= 1024.0
 
 def main():
-	if os.path.isfile(MyPrograms_db):
+	if os.path.isfile(MYPROGRAMS_DB):
 		try:
-			start_size = os.path.getsize(MyPrograms_db)
-			with sqlite3.connect(MyPrograms_db) as con:
+			start_size = os.path.getsize(MYPROGRAMS_DB)
+			with sqlite3.connect(MYPROGRAMS_DB) as con:
 				con.text_factory = str
 				cur = con.cursor()
 				cur.execute('BEGIN TRANSACTION')
@@ -60,7 +60,7 @@ def main():
 				cur.execute('PRAGMA integrity_check')
 				integrity_check_result = cur.fetchone()
 			
-			end_size = os.path.getsize(MyPrograms_db)
+			end_size = os.path.getsize(MYPROGRAMS_DB)
 			pDialog.close()
 			if integrity_check_result and integrity_check_result[0] == 'ok':
 				dialog.ok('Database integrity is {}'.format(integrity_check_result[0]), '', 

@@ -5,6 +5,8 @@ Set "MasterSkin=%CD%\Add User"
 
 Echo colors\Defaults.xml
 Copy /Y "%ProfileSkin%\colors\Defaults.xml"							"%MasterSkin%\colors\" >Nul
+REM Echo xml\Custom_Dialog_Options.xml
+REM Copy /Y "%ProfileSkin%\xml\Custom_Dialog_Options.xml"				"%MasterSkin%\xml\" >Nul
 Echo xml\Defaults.xml
 Copy /Y "%ProfileSkin%\xml\Defaults.xml"							"%MasterSkin%\xml\" >Nul
 Echo xml\DialogContextMenu.xml
@@ -27,8 +29,8 @@ Echo xml\DialogOK.xml
 Copy /Y "%ProfileSkin%\xml\DialogOK.xml"							"%MasterSkin%\xml\" >Nul
 Echo xml\DialogProgress.xml
 Copy /Y "%ProfileSkin%\xml\DialogProgress.xml"						"%MasterSkin%\xml\" >Nul
-Echo xml\DialogOverlay.xml
-Copy /Y "%ProfileSkin%\xml\DialogOverlay.xml"						"%MasterSkin%\xml\" >Nul
+REM Echo xml\DialogOverlay.xml
+REM Copy /Y "%ProfileSkin%\xml\DialogOverlay.xml"						"%MasterSkin%\xml\" >Nul
 Echo xml\DialogScriptInfo.xml
 Copy /Y "%ProfileSkin%\xml\DialogScriptInfo.xml"					"%MasterSkin%\xml\" >Nul
 Echo xml\DialogSeekBar.xml

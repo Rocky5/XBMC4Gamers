@@ -29,7 +29,6 @@
 	</Settings>
 	<Profiles>
 		<gamepad>
-			<B>XBMC.ActivateWindow(ShutdownMenu)</B>
 			<back>Highlight</back>
 			<start>ActivateWindow(Settings)</start>
 			<rightthumbbutton>Highlight</rightthumbbutton>
@@ -61,9 +60,9 @@
 	</global>
 	<LoginScreen>
 		<gamepad>
-			<black/>
+			<rightthumbbutton>XBMC.SetFocus(19)</rightthumbbutton>
 			<start>SetFocus(9001)</start>
-			<black>XBMC.SetFocus(19)</black>
+			<black>XBMC.ActivateWindow(1112)</black>
 		</gamepad>
 	</LoginScreen>
 	<Home>
@@ -192,7 +191,7 @@
 	</SlideShow>
 	<ScreenCalibration>
 		<gamepad>
-			<leftthumbstick>AnalogMove</leftthumbstick>
+			<!-- <leftthumbstick>AnalogMove</leftthumbstick> -->
 			<A>NextCalibration</A>
 			<black>ResetCalibration</black>
 			<white>NextResolution</white>
@@ -200,7 +199,7 @@
 	</ScreenCalibration>
 	<GUICalibration>
 		<gamepad>
-			<leftthumbstick>AnalogMove</leftthumbstick>
+			<!-- <leftthumbstick>AnalogMove</leftthumbstick> -->
 			<A>NextCalibration</A>
 			<black>ResetCalibration</black>
 		</gamepad>
@@ -298,7 +297,8 @@
 	</Scripts>
 	<NumericInput>
 		<gamepad>
-			<B>BackSpace</B>
+			<B>Back</B>
+			<X>BackSpace</X>
 			<start>Enter</start>
 			<lefttrigger>SkipPrevious</lefttrigger>
 			<righttrigger>SkipNext</righttrigger>

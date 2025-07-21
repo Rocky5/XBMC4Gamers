@@ -29,7 +29,7 @@
 				<top>286</top>
 				<width>1254</width>
 				<height>30</height>
-				<font>size_21_bold</font>
+				<font>home_20</font>
 				<textcolor>colour.dialog.keyboardnumpad.label.header</textcolor>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -48,7 +48,7 @@
 				<top>327</top>
 				<width>1254</width>
 				<height>45</height>
-				<font>size_20</font>
+				<font>home_20</font>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.dialog.keyboardnumpad.label</textcolor>
@@ -71,7 +71,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<textoffsetx>30</textoffsetx>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -91,7 +91,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<textoffsetx>0</textoffsetx>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 				</control>
@@ -110,7 +110,7 @@
 					<textoffsety>80</textoffsety>
 					<align>center</align>
 					<aligny>top</aligny>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -133,7 +133,7 @@
 					<textoffsety>80</textoffsety>
 					<align>center</align>
 					<aligny>top</aligny>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -158,7 +158,7 @@
 					<label>-</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -178,7 +178,7 @@
 					<align>left</align>
 					<aligny>center</aligny>
 					<textoffsetx>0</textoffsetx>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 				</control>
@@ -197,7 +197,7 @@
 					<textoffsety>80</textoffsety>
 					<align>center</align>
 					<aligny>top</aligny>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -220,7 +220,7 @@
 					<textoffsety>80</textoffsety>
 					<align>center</align>
 					<aligny>top</aligny>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -241,7 +241,7 @@
 					<onup>90</onup>
 					<ondown>49</ondown>
 					<label>-</label>
-					<font>size_19</font>
+					<font>home_19</font>
 					<align>center</align>
 					<aligny>center</aligny>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
@@ -261,7 +261,7 @@
 					<align>center</align>
 					<aligny>center</aligny>
 					<textoffsetx>0</textoffsetx>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 				</control>
@@ -278,7 +278,7 @@
 					<label>-</label>
 					<align>left</align>
 					<aligny>center</aligny>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -296,7 +296,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<textoffsetx>0</textoffsetx>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 				</control>
@@ -314,7 +314,7 @@
 					<label>-</label>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -332,7 +332,7 @@
 					<align>right</align>
 					<aligny>center</aligny>
 					<textoffsetx>0</textoffsetx>
-					<font>size_19</font>
+					<font>home_19</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 				</control>
@@ -353,7 +353,7 @@
 						<ondown>81</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -373,7 +373,7 @@
 						<ondown>87</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -393,7 +393,7 @@
 						<ondown>69</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -413,7 +413,7 @@
 						<ondown>82</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -433,7 +433,7 @@
 						<ondown>84</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -453,7 +453,7 @@
 						<ondown>89</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -473,7 +473,7 @@
 						<ondown>85</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -493,7 +493,7 @@
 						<ondown>73</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -513,7 +513,7 @@
 						<ondown>79</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -534,7 +534,7 @@
 						<ondown>80</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -563,7 +563,7 @@
 						<onclick>Skin.Reset(kb_symbols_enabled)</onclick>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -583,7 +583,7 @@
 						<onclick>Skin.Reset(kb_symbols_enabled)</onclick>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -600,7 +600,7 @@
 						<ondown>68</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -620,7 +620,7 @@
 						<ondown>70</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -640,7 +640,7 @@
 						<ondown>71</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -660,7 +660,7 @@
 						<ondown>72</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -680,7 +680,7 @@
 						<ondown>74</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -700,7 +700,7 @@
 						<ondown>75</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -720,7 +720,7 @@
 						<ondown>76</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -741,7 +741,7 @@
 						<ondown>103</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -767,7 +767,7 @@
 						<ondown>90</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -787,7 +787,7 @@
 						<ondown>88</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -807,7 +807,7 @@
 						<ondown>67</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -827,7 +827,7 @@
 						<ondown>86</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -847,7 +847,7 @@
 						<ondown>66</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -867,7 +867,7 @@
 						<ondown>78</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -887,7 +887,7 @@
 						<ondown>77</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -907,7 +907,7 @@
 						<ondown>100</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -927,7 +927,7 @@
 						<ondown>101</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -948,7 +948,7 @@
 						<ondown>102</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<label>'</label>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
@@ -979,7 +979,7 @@
 						<ondown>307</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -999,7 +999,7 @@
 						<ondown>307</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -1019,7 +1019,7 @@
 						<ondown>32</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -1039,7 +1039,7 @@
 						<ondown>32</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -1059,7 +1059,7 @@
 						<ondown>32</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -1079,7 +1079,7 @@
 						<ondown>32</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -1099,7 +1099,7 @@
 						<ondown>32</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 						<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
@@ -1119,7 +1119,7 @@
 						<ondown>32</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<label>,</label>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
@@ -1144,7 +1144,7 @@
 						<ondown>8</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<label>.</label>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
@@ -1170,7 +1170,7 @@
 						<ondown>8</ondown>
 						<align>center</align>
 						<aligny>center</aligny>
-						<font>size_20</font>
+						<font>home_20</font>
 						<label>/</label>
 						<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 						<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
@@ -1193,11 +1193,11 @@
 			<top>140</top>
 			<visible>Skin.HasSetting(hex_entry)</visible>
 			<control type="image">
-				<left>210</left>
-				<top>10</top>
-				<width>360</width>
-				<height>390</height>
-				<texture border="40">keyboard_back.png</texture>
+				<left>240</left>
+				<top>40</top>
+				<width>300</width>
+				<height>320</height>
+				<texture colordiffuse="FBFFFFFF" border="40">windows\keyboard\back.png</texture>
 			</control>
 			<control type="image">
 				<left>260</left>
@@ -1205,7 +1205,7 @@
 				<width>260</width>
 				<height>30</height>
 				<colordiffuse>BBFFFFFF</colordiffuse>
-				<texture border="5">button-focus2.png</texture>
+				<texture border="5">windows\keyboard\text_box.png</texture>
 			</control>
 			<control type="label">
 				<description>dialog Heading</description>
@@ -1213,7 +1213,7 @@
 				<top>50</top>
 				<width>260</width>
 				<height>40</height>
-				<font>size_18</font>
+				<font>home_12</font>
 				<textcolor>colour.dialog.keyboardnumpad.label.header</textcolor>
 				<label>[B]$LOCALIZE[31101][/B]</label>
 				<align>center</align>
@@ -1225,7 +1225,7 @@
 				<top>93</top>
 				<width>260</width>
 				<height>30</height>
-				<font>size_20</font>
+				<font>home_20</font>
 				<align>center</align>
 				<aligny>center</aligny>
 				<textcolor>colour.dialog.keyboardnumpad.label</textcolor>
@@ -1248,14 +1248,14 @@
 					<ondown>8</ondown>
 					<angle>90</angle>
 					<textwidth>80</textwidth>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_15</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="8">
 					<description>BACKSPACE button</description>
@@ -1270,14 +1270,14 @@
 					<ondown>-</ondown>
 					<angle>90</angle>
 					<textwidth>100</textwidth>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_15</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="48">
 					<description>'0' button</description>
@@ -1289,14 +1289,14 @@
 					<onright>49</onright>
 					<onup>-</onup>
 					<ondown>52</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="49">
 					<description>'1' button</description>
@@ -1308,14 +1308,14 @@
 					<onright>50</onright>
 					<onup>-</onup>
 					<ondown>53</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="50">
 					<description>'2' button</description>
@@ -1327,14 +1327,14 @@
 					<onright>51</onright>
 					<onup>-</onup>
 					<ondown>54</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="51">
 					<description>'3' button</description>
@@ -1346,14 +1346,14 @@
 					<onright>-</onright>
 					<onup>-</onup>
 					<ondown>55</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="52">
 					<description>'4' button</description>
@@ -1365,14 +1365,14 @@
 					<onright>53</onright>
 					<onup>48</onup>
 					<ondown>56</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="53">
 					<description>'5' button</description>
@@ -1384,14 +1384,14 @@
 					<onright>54</onright>
 					<onup>49</onup>
 					<ondown>57</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="54">
 					<description>'6' button</description>
@@ -1403,14 +1403,14 @@
 					<onright>55</onright>
 					<onup>50</onup>
 					<ondown>65</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="55">
 					<description>'7' button</description>
@@ -1422,14 +1422,14 @@
 					<onright>-</onright>
 					<onup>51</onup>
 					<ondown>66</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="56">
 					<description>'8' button</description>
@@ -1441,14 +1441,14 @@
 					<onright>57</onright>
 					<onup>52</onup>
 					<ondown>67</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="57">
 					<description>'9' button</description>
@@ -1460,14 +1460,14 @@
 					<onright>65</onright>
 					<onup>53</onup>
 					<ondown>68</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="65">
 					<description>'A' button</description>
@@ -1479,14 +1479,14 @@
 					<onright>66</onright>
 					<onup>54</onup>
 					<ondown>69</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="66">
 					<description>'B' button</description>
@@ -1498,14 +1498,14 @@
 					<onright>-</onright>
 					<onup>55</onup>
 					<ondown>70</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="67">
 					<description>'C' button</description>
@@ -1517,14 +1517,14 @@
 					<onright>68</onright>
 					<onup>56</onup>
 					<ondown>-</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="68">
 					<description>'D' button</description>
@@ -1536,14 +1536,14 @@
 					<onright>69</onright>
 					<onup>57</onup>
 					<ondown>-</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="69">
 					<description>'E' button</description>
@@ -1555,14 +1555,14 @@
 					<onright>70</onright>
 					<onup>65</onup>
 					<ondown>-</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 				<control type="button" id="70">
 					<description>'F' button</description>
@@ -1574,14 +1574,14 @@
 					<onright>-</onright>
 					<onup>66</onup>
 					<ondown>-</ondown>
-					<texturenofocus border="3">button-nofocus.png</texturenofocus>
-					<texturefocus border="3">button-focus-keyboard.png</texturefocus>
 					<align>center</align>
 					<aligny>center</aligny>
-					<font>size_20</font>
+					<font>home_20</font>
 					<textcolor>colour.dialog.keyboardnumpad.keys.nofocus</textcolor>
 					<focusedcolor>colour.dialog.keyboardnumpad.keys</focusedcolor>
 					<disabledcolor>colour.dialog.keyboardnumpad.keys.disabled</disabledcolor>
+					<texturenofocus border="3">windows\keyboard\keys_nofocus.png</texturenofocus>
+					<texturefocus border="3">windows\keyboard\keys_focus.png</texturefocus>
 				</control>
 			</control>
 		</control>

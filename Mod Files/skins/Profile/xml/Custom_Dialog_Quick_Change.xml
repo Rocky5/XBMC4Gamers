@@ -1,4 +1,4 @@
-<window type="dialog" id="1115">
+<window id="1115" type="dialog">
 	<defaultcontrol always="true">9000</defaultcontrol>
 	<controls>
 		<control type="image">
@@ -11,9 +11,9 @@
 			<include>Dialog.Effect</include>
 		</control>
 		<control type="group">
-			<animation effect="slide" start="0,0" end="0,200" time="100">WindowClose</animation>
-			<animation effect="slide" start="0,200" end="0,0" time="100" delay="100">WindowOpen</animation>
-			<control type="wraplist" id="9000">
+			<animation effect="slide" end="0,200" start="0,0" time="100">WindowClose</animation>
+			<animation delay="100" effect="slide" end="0,0" start="0,200" time="100">WindowOpen</animation>
+			<control id="9000" type="wraplist">
 				<left>0</left>
 				<top>640</top>
 				<width>1280</width>
@@ -50,70 +50,100 @@
 				</focusedlayout>
 				<content>
 					<item id="0">
-						<label>[UPPERCASE]$LOCALIZE[31541][/UPPERCASE]</label>
+						<label>[UPPERCASE]Applications[/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,Applications)</onclick>
 						<icon>-</icon>
 					</item>
 					<item id="1">
-						<label>[UPPERCASE]$LOCALIZE[31542][/UPPERCASE]</label>
+						<label>[UPPERCASE]Demos[/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,Demos)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="2">
+						<label>[UPPERCASE]Emulators[/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,Emulators)</onclick>
 						<icon>-</icon>
 					</item>
-					<item id="2">
-						<label>[UPPERCASE]$LOCALIZE[31543][/UPPERCASE]</label>
+					<item id="3">
+						<label>[UPPERCASE]Game ISOs[/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,Game ISOs)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="4">
+						<label>[UPPERCASE]Games[/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,Games)</onclick>
 						<icon>-</icon>
 					</item>
-					<item id="3">
-						<label>[UPPERCASE]$LOCALIZE[31544][/UPPERCASE]</label>
+					<item id="5">
+						<label>[UPPERCASE]Homebrew[/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,Homebrew)</onclick>
 						<icon>-</icon>
 					</item>
-					<item id="4">
+					<item id="6">
+						<label>[UPPERCASE]Movies[/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,Movies)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="7">
+						<label>[UPPERCASE]Other Games[/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,Other Games)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="8">
+						<label>[UPPERCASE]TV Shows[/UPPERCASE]</label>
+						<onclick>Dialog.Close(1115)</onclick>
+						<onclick>ActivateWindow(1,TV Shows)</onclick>
+						<icon>-</icon>
+					</item>
+					<item id="9">
 						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange1)][/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange1)])</onclick>
 						<icon>-</icon>
 						<visible>Skin.HasSetting(CustomQuickChange1Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange1)])</visible>
 					</item>
-					<item id="5">
+					<item id="10">
 						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange2)][/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange2)])</onclick>
-						<visible>Skin.HasSetting(CustomQuickChange2Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange2)])</visible>
 						<icon>-</icon>
+						<visible>Skin.HasSetting(CustomQuickChange2Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange2)])</visible>
 					</item>
-					<item id="6">
+					<item id="11">
 						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange3)][/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange3)])</onclick>
-						<visible>Skin.HasSetting(CustomQuickChange3Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange3)])</visible>
 						<icon>-</icon>
+						<visible>Skin.HasSetting(CustomQuickChange3Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange3)])</visible>
 					</item>
-					<item id="7">
+					<item id="12">
 						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange4)][/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange4)])</onclick>
-						<visible>Skin.HasSetting(CustomQuickChange4Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange4)])</visible>
 						<icon>-</icon>
+						<visible>Skin.HasSetting(CustomQuickChange4Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange4)])</visible>
 					</item>
-					<item id="8">
+					<item id="13">
 						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange5)][/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange5)])</onclick>
-						<visible>Skin.HasSetting(CustomQuickChange5Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange5)])</visible>
 						<icon>-</icon>
+						<visible>Skin.HasSetting(CustomQuickChange5Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange5)])</visible>
 					</item>
-					<item id="9">
+					<item id="14">
 						<label>[UPPERCASE]$INFO[Skin.String(CustomQuickChange6)][/UPPERCASE]</label>
 						<onclick>Dialog.Close(1115)</onclick>
 						<onclick>ActivateWindow(1,$INFO[Skin.String(CustomQuickChange6)])</onclick>
-						<visible>Skin.HasSetting(CustomQuickChange6Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange6)])</visible>
 						<icon>-</icon>
+						<visible>Skin.HasSetting(CustomQuickChange6Enabled) + String.IsEmpty($INFO[Skin.String(CustomQuickChange6)])</visible>
 					</item>
 				</content>
 			</control>
@@ -122,7 +152,7 @@
 				<top>650</top>
 				<width>30</width>
 				<height>30</height>
-				<texture>pad_buttons\dpad_left_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.dpad_left_button">pad_buttons\dpad_left_button.png</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="image">
@@ -130,13 +160,13 @@
 				<top>650</top>
 				<width>30</width>
 				<height>30</height>
-				<texture>pad_buttons\dpad_right_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.dpad_right_button">pad_buttons\dpad_right_button.png</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 		</control>
 		<control type="group">
-			<animation effect="slide" start="0,0" end="0,30" time="100" condition="Skin.HasSetting(HideContextBar)">WindowClose</animation>
-			<animation effect="slide" start="0,30" end="0,0" time="100" delay="100" condition="Skin.HasSetting(HideContextBar)">WindowOpen</animation>
+			<animation condition="Skin.HasSetting(HideContextBar)" effect="slide" end="0,30" start="0,0" time="100">WindowClose</animation>
+			<animation condition="Skin.HasSetting(HideContextBar)" delay="100" effect="slide" end="0,0" start="0,30" time="100">WindowOpen</animation>
 			<control type="image">
 				<left>0</left>
 				<bottom>0</bottom>
@@ -152,38 +182,36 @@
 				<height>25</height>
 				<itemgap>10</itemgap>
 				<orientation>Horizontal</orientation>
-				<!-- A Button -->
 				<control type="image">
 					<left>0</left>
 					<top>0</top>
 					<width>22</width>
 					<height>22</height>
-					<texture>pad_buttons\a_button.png</texture>
+					<texture colordiffuse="colour.context.diffuse.a_button">pad_buttons\a_button.png</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="40" max="250">auto</width>
+					<width max="250" min="10">auto</width>
 					<height>22</height>
 					<font>size_14</font>
 					<aligny>center</aligny>
 					<textcolor>colour.context.buttons.label</textcolor>
 					<label>$LOCALIZE[31106]</label>
 				</control>
-				<!-- B Button -->
 				<control type="image">
 					<left>0</left>
 					<top>0</top>
 					<width>22</width>
 					<height>22</height>
-					<texture>pad_buttons\b_button.png</texture>
+					<texture colordiffuse="colour.context.diffuse.b_button">pad_buttons\b_button.png</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="40" max="250">auto</width>
+					<width max="250" min="10">auto</width>
 					<height>22</height>
 					<font>size_14</font>
 					<aligny>center</aligny>

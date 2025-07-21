@@ -1,0 +1,2518 @@
+<window type="dialog" id="3000">
+	<defaultcontrol always="true">9100</defaultcontrol>
+	<onload>Skin.Reset(cerbios_buttons_igrfull)</onload>
+	<onload>Skin.Reset(cerbios_buttons_igrcycle)</onload>
+	<onload>Skin.Reset(cerbios_buttons_igrgame)</onload>
+	<onload>Skin.Reset(cerbios_buttons_igrdash)</onload>
+	<onload>Skin.Reset(cerbios_buttons_igrscreen)</onload>
+	<onload>Skin.Reset(cerbios_buttons_igrshutdown)</onload>
+	<onload>Skin.Reset(cerbios_buttons_overclocking)</onload>
+	<!-- <zorder>20</zorder> -->
+	<controls>
+		<include>Behind.Dialog</include>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<control type="image">
+				<left>55</left>
+				<top>55</top>
+				<width>1170</width>
+				<height>610</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.general.diffuse.main">windows\settings_categories\main.png</texture>
+			</control>
+			<control type="image">
+				<left>75</left>
+				<top>75</top>
+				<width>330</width>
+				<height>570</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.general.diffuse.main.overlay">windows\settings_categories\main_overlay.png</texture>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>415</left>
+				<top>580</top>
+				<width>775</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>Horizontal</orientation>
+				<align>center</align>
+				<!-- A Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\a_button.png</texture>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="300">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>Select</label>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<!-- B Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture>pad_buttons\dialogs\b_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="80" max="300">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>Back</label>
+				</control>
+			</control>
+			<control type="grouplist" id="9100">
+				<description>control area</description>
+				<left>75</left>
+				<top>105</top>
+				<width>330</width>
+				<height>520</height>
+				<onleft>-</onleft>
+				<onright>9101</onright>
+				<onup/>
+				<ondown/>
+				<control type="button" id="99">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label> </label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus>-</texturenofocus>
+					<texturefocus>-</texturefocus>
+					<visible>!Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="button" id="100">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label>Boot Path & Startup</label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="button" id="103">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label>Cooling & Front Panel</label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="button" id="104">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label>Enhancements</label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="button" id="102">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label>Storage & Drive Config</label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="button" id="101">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label>Video & Display</label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="button" id="105">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label>Debug & Advanced</label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="button" id="110">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label>Save Settings</label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+					<onclick>RunScript($INFO[Window(3000).Property(script_path)],save)</onclick>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+				<control type="button" id="111">
+					<left>0</left>
+					<top>0</top>
+					<width>330</width>
+					<height>50</height>
+					<textoffsetx>44</textoffsetx>
+					<textoffsety>11</textoffsety>
+					<font>size_20</font>
+					<label>Default Settings</label>
+					<align>center</align>
+					<aligny>top</aligny>
+					<textcolor>colour.dialog.button.nofocus</textcolor>
+					<focusedcolor>colour.dialog.button.focus</focusedcolor>
+					<aspectratio>stretch</aspectratio>
+					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\button_no_focus.png</texturenofocus>
+					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\button_focus.png</texturefocus>
+					<onclick>RunScript($INFO[Window(3000).Property(script_path)],reset)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
+					<visible>Skin.HasSetting(cerbios_cansave)</visible>
+				</control>
+			</control>
+			<!-- General Toggles -->
+			<control type="grouplist" id="9101">
+				<description>control area</description>
+				<left>415</left>
+				<top>105</top>
+				<width>775</width>
+				<height>445</height>
+				<itemgap>4</itemgap>
+				<onleft>9100</onleft>
+				<onup>9101</onup>
+				<ondown>9101</ondown>
+				<pagecontrol>80</pagecontrol>
+				<!-- Error -->
+				<control type="textbox" id="150">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Error[/UPPERCASE][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(99)</visible>
+				</control>
+				<control type="textbox" id="151">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<!-- <aligny>center</aligny> -->
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Outdated Configuration Detected:[/B]
+Your system is running an outdated cerbios version. Please update Cerbios and cerbios.ini to the latest Cerbios release.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(99)</visible>
+				</control>
+				<!-- Boot Paths -->
+				<control type="textbox" id="200">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Boot Path & Startup[/UPPERCASE][/B]</label>
+					<visible>ControlGroup(9100).HasFocus(100)</visible>
+				</control>
+				<control type="textbox" id="201">
+					<left>0</left>
+					<top>0</top>
+					<height>80</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Dashboard Defaults:[/B]
+If the dashboard is unavailable, the system will fall back to these default locations:
+- E:\Cerbios\Recovery\default.xbe for Recovery Mode
+- C:\xboxdash.xbe for the Original Xbox Dashboard</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(100)</visible>
+				</control>
+				<control type="button" id="202">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>Dashboard Path</label>
+					<label2>$INFO[Skin.String(cerbios_dashpath)]</label2>
+					<onclick>Skin.SetFile(cerbios_dashpath,.xbe)</onclick>
+					<visible>ControlGroup(9100).HasFocus(100)</visible>
+				</control>
+				<control type="textbox" id="203">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Custom Boot Animation File Path:[/B]
+If the specified file is not found, the system will default to:
+- E:\Cerbios\BootAnims\Xbox\bootanim.xbe</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(100)</visible>
+				</control>
+				<control type="button" id="204">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>BootAnim Path</label>
+					<label2>$INFO[Skin.String(cerbios_bootanimpath)]</label2>
+					<onclick>Skin.SetFile(cerbios_bootanimpath,.xbe,E:\Cerbios\BootAnims)</onclick>
+					<visible>ControlGroup(9100).HasFocus(100)</visible>
+				</control>
+				<!-- Video and Display -->
+				<control type="textbox" id="220">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Video & Display[/UPPERCASE][/B]</label>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<control type="textbox" id="221">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]AV Pack Verification:[/B]
+- Allows enabling or disabling of AV Pack verification</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<control type="radiobutton" id="222">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>AV Check</label>
+					<onclick>Skin.ToggleSetting(cerbios_avcheck)</onclick>
+					<selected>Skin.HasSetting(cerbios_avcheck)</selected>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<control type="textbox" id="223">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Flicker Filter Level:[/B]
+- Adjusts the flicker filter to reduce screen flicker in interlaced display modes.
+- Current Setting: [B]$INFO[Skin.String(cerbios_flickerfilter)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<control type="multiselect" id="224">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_flickerfilter,System)]  System  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_flickerfilter,Off)]  Off  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_flickerfilter,Slight)]  Slight  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_flickerfilter,Moderate)]  Moderate  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_flickerfilter,Balanced)]  Balanced  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_flickerfilter,Enhanced)]  Enhanced  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_flickerfilter,Strong)]  Strong  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<control type="textbox" id="225">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Forced 480p Output:[/B]
+- Enables 480p output for video modes that typically use 480i.
+- Component cables are required.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<control type="radiobutton" id="226">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Force 480p</label>
+					<onclick>Skin.ToggleSetting(cerbios_force480p)</onclick>
+					<selected>Skin.HasSetting(cerbios_force480p)</selected>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<control type="textbox" id="227">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Forced VGA Output:[/B]
+- Enables VGA output when using component or custom VGA cables.
+- Sets the console to NTSC mode and enables Force 480p.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<control type="radiobutton" id="228">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Force VGA</label>
+					<onclick>Skin.ToggleSetting(cerbios_forcevga)</onclick>
+					<selected>Skin.HasSetting(cerbios_forcevga)</selected>
+					<visible>ControlGroup(9100).HasFocus(101)</visible>
+				</control>
+				<!-- Storage and Drive Config -->
+				<control type="textbox" id="240">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Storage & Drive Config[/UPPERCASE][/B]</label>
+					<visible>ControlGroup(9100).HasFocus(102)</visible>
+				</control>
+				<control type="textbox" id="241">
+					<left>0</left>
+					<top>0</top>
+					<height>110</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Drive Setup Modes:[/B]
+- Standard Mode: Requires a disc drive.
+- Legacy Mode: Operates with HDD onlydisables DVD functionality.
+- Modern Mode: Operates with HDD onlydisables DVD functionality completely.
+- Dual HDD Mode: Allows two hard drives for expanded storage options.
+- Current Setting: [B]$INFO[Skin.String(cerbios_drivesetup)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(102)</visible>
+				</control>
+				<control type="multiselect" id="242">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_drivesetup,Standard Mode)]  Standard Mode  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_drivesetup,Legacy Mode)]  Legacy Mode  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_drivesetup,Modern Mode)]  Modern Mode  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_drivesetup,Dual HDD Mode)]  Dual HDD Mode  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(102)</visible>
+				</control>
+				<!-- UDMA 4 and lower -->
+				<control type="textbox" id="243">
+					<left>0</left>
+					<top>0</top>
+					<height>100</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]UDMA Mode for Primary (Master) HDD:[/B]
+- This HDD supports up to UDMA $INFO[System.hddsupportedudmamode].
+- Recommended Setting: UDMA 4 for best compatibility.
+- Current Setting: [B]$INFO[Skin.String(cerbios_udmamodemaster)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(102) + !IntegerGreaterThan(System.hddsupportedudmamode,4)</visible>
+				</control>
+				<!-- UDMA 5 and 6 -->
+				<control type="textbox" id="245">
+					<left>0</left>
+					<top>0</top>
+					<height>100</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]UDMA Mode for Primary (Master) HDD:[/B]
+- This drive supports up to UDMA $INFO[System.hddsupportedudmamode].
+- Most SATA adapters are not compatible with UDMA $INFO[System.hddsupportedudmamode].
+- Recommended Setting: UDMA 4 for best compatibility.
+- Current Mode: [B]$INFO[Skin.String(cerbios_udmamodemaster)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(102) + IntegerGreaterThan(System.hddsupportedudmamode,4)</visible>
+				</control>
+				<control type="multiselect" id="246">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_udmamodemaster,System)]  Default  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodemaster,UDMA 1)]  UDMA 1  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodemaster,UDMA 2)]  UDMA 2  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodemaster,UDMA 3)]  UDMA 3  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodemaster,UDMA 4)]  UDMA 4  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodemaster,UDMA 5)]  UDMA 5  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodemaster,UDMA 6)]  UDMA 6  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(102)</visible>
+				</control>
+				<control type="textbox" id="247">
+					<left>0</left>
+					<top>0</top>
+					<height>80</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]UDMA Mode for Secondary (Slave) HDD:[/B]
+- Most SATA adapters are not compatible with UDMA 5 and 6.
+- Recommended Setting: UDMA 4 for best compatibility.
+- Current Setting: [B]$INFO[Skin.String(cerbios_udmamodeslave)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(102) + StringCompare(Skin.String(cerbios_drivesetup),Dual HDD Mode)</visible>
+				</control>
+				<control type="multiselect" id="248">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_udmamodeslave,System)]  Default  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodeslave,UDMA 1)]  UDMA 1  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodeslave,UDMA 2)]  UDMA 2  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodeslave,UDMA 3)]  UDMA 3  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodeslave,UDMA 4)]  UDMA 4  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodeslave,UDMA 5)]  UDMA 5  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_udmamodeslave,UDMA 6)]  UDMA 6  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(102) + StringCompare(Skin.String(cerbios_drivesetup),Dual HDD Mode)</visible>
+				</control>
+				<!-- Cooling and Front Panel -->
+				<control type="textbox" id="260">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Cooling & Front Panel[/UPPERCASE][/B]</label>
+					<visible>ControlGroup(9100).HasFocus(103)</visible>
+				</control>
+				<control type="textbox" id="261">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Fan speed settings:[/B]
+- Current Setting: [B]$INFO[Skin.String(cerbios_fanspeed)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(103)</visible>
+				</control>
+				<control type="multiselect" id="262">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>34</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_fanspeed,Auto)]  Auto  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,10%)]  10%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,20%)]  20%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,30%)]  30%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,40%)]  40%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,50%)]  50%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,60%)]  60%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,70%)]  70%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,80%)]  80%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,90%)]  90%  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_fanspeed,100%)]  100%  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(103)</visible>
+				</control>
+				<control type="textbox" id="263">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]LED Ring Colour Cycle:[/B]  
+The LED ring cycles through the following colours in order:  
+-    [B]$INFO[Skin.String(cerbios_ledcolour1)][/B]    -    [B]$INFO[Skin.String(cerbios_ledcolour2)][/B]    -    [B]$INFO[Skin.String(cerbios_ledcolour3)][/B]    -    [B]$INFO[Skin.String(cerbios_ledcolour4)][/B]    -</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(103)</visible>
+				</control>
+				<control type="panel" id="264">
+					<height>46</height>
+					<width>756</width>
+					<focusposition>0</focusposition>
+					<scrolltime>200</scrolltime>
+					<orientation>horizontal</orientation>
+					<visible>ControlGroup(9100).HasFocus(103)</visible>
+					<itemlayout height="46" width="46">
+						<control type="image">
+							<top>6</top>
+							<left>6</left>
+							<width>34</width>
+							<height>34</height>
+							<aspectratio>stretch</aspectratio>
+							<info>ListItem.Icon</info>
+						</control>
+						<control type="label">
+							<top>2</top>
+							<left>2</left>
+							<width>42</width>
+							<height>42</height>
+							<font>size_16</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>colour.settings.button.category.focus</textcolor>
+							<shadowcolor>80000000</shadowcolor>
+						</control>
+					</itemlayout>
+					<focusedlayout height="46" width="46">
+						<control type="image">
+							<top>1</top>
+							<left>1</left>
+							<width>44</width>
+							<height>44</height>
+							<aspectratio>stretch</aspectratio>
+							<info>ListItem.Icon</info>
+							<bordersize>1</bordersize>
+						</control>
+						<control type="label">
+							<top>0</top>
+							<left>0</left>
+							<width>46</width>
+							<height>46</height>
+							<font>size_20</font>
+							<align>center</align>
+							<aligny>center</aligny>
+							<label>[B]$INFO[ListItem.Label][/B]</label>
+							<textcolor>colour.settings.button.category.focus</textcolor>
+							<shadowcolor>80000000</shadowcolor>
+						</control>
+					</focusedlayout>
+					<content>
+						<item>
+							<label>$NUMBER[1]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour1,Off)</onclick>
+							<icon>led_off.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[1]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour1,Amber)</onclick>
+							<icon>led_amber.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[1]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour1,Green)</onclick>
+							<icon>led_green.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[1]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour1,Red)</onclick>
+							<icon>led_red.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[2]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour2,Off)</onclick>
+							<icon>led_off.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[2]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour2,Amber)</onclick>
+							<icon>led_amber.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[2]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour2,Green)</onclick>
+							<icon>led_green.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[2]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour2,Red)</onclick>
+							<icon>led_red.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[3]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour3,Off)</onclick>
+							<icon>led_off.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[3]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour3,Amber)</onclick>
+							<icon>led_amber.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[3]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour3,Green)</onclick>
+							<icon>led_green.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[3]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour3,Red)</onclick>
+							<icon>led_red.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[4]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour4,Off)</onclick>
+							<icon>led_off.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[4]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour4,Amber)</onclick>
+							<icon>led_amber.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[4]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour4,Green)</onclick>
+							<icon>led_green.png</icon>
+						</item>
+						<item>
+							<label>$NUMBER[4]</label>
+							<onclick>Skin.SetString(cerbios_ledcolour4,Red)</onclick>
+							<icon>led_red.png</icon>
+						</item>
+					</content>
+				</control>
+				<control type="multiselect" id="265">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_ledcolour1,Green), Skin.SetString(cerbios_ledcolour2,Green), Skin.SetString(cerbios_ledcolour3,Green), Skin.SetString(cerbios_ledcolour4,Green)]  Reset  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(103)</visible>
+				</control>
+				<control type="textbox" id="266">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]In-Game LCD Display Support:[/B]
+- Enables LCD screen functionality for SMBus-connected displays during gameplay.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(103)</visible>
+				</control>
+				<control type="radiobutton" id="267">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>SMBus LCD Support</label>
+					<onclick>Skin.ToggleSetting(cerbios_lcdsupport)</onclick>
+					<selected>Skin.HasSetting(cerbios_lcdsupport)</selected>
+					<visible>ControlGroup(9100).HasFocus(103)</visible>
+				</control>
+				<control type="textbox" id="268">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Configure I2C Address for LCD Display:[/B]  
+- Set the I2C address within the valid range: 0x20-0x27 or 0x38-0x3F, depending on the module type.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(103) + Skin.HasSetting(cerbios_lcdsupport)</visible>
+				</control>
+				<control type="button" id="269">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>LCD I2C Address</label>
+					<label2>0x[UPPERCASE]$INFO[Skin.String(cerbios_lcdi2caddr)][/UPPERCASE]</label2>
+					<onclick>Skin.SetBool(hex_entry)</onclick>
+					<onclick>Skin.Reset(cerbios_lcdi2caddr)</onclick>
+					<onclick>Skin.SetString(cerbios_lcdi2caddr)</onclick>
+					<onclick>Skin.Reset(hex_entry)</onclick>
+					<selected>Skin.HasSetting(cerbios_lcdi2caddr)</selected>
+					<visible>ControlGroup(9100).HasFocus(103) + Skin.HasSetting(cerbios_lcdsupport)</visible>
+				</control>
+				<control type="textbox" id="270">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Select I2C Protocol for LCD:[/B]  
+- Current Setting: [B]$INFO[Skin.String(cerbios_lcdi2cproto)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(103) + Skin.HasSetting(cerbios_lcdsupport)</visible>
+				</control>
+				<control type="multiselect" id="271">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_lcdi2cproto,HD44780 compatible (LCD2004))]  HD44780 compatible (LCD2004)  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_lcdi2cproto,US2066 (NHD-0420CW))]  US2066 (NHD-0420CW)  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(103) + Skin.HasSetting(cerbios_lcdsupport)</visible>
+				</control>
+				<!-- Enhancements -->
+				<control type="textbox" id="280">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Enhancements[/UPPERCASE][/B]</label>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="281">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]On-the-Fly XBE Patching:[/B]
+- Enables real-time XBE patching for overclocked or CPU-upgraded Xbox consoles.
+- Note: This feature has no effect on stock configurations.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="282">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Advanced CPU Support</label>
+					<onclick>Skin.ToggleSetting(cerbios_advcpusupport)</onclick>
+					<selected>Skin.HasSetting(cerbios_advcpusupport)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="283">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Prevent Game-Initiated Dashboard Updates:[/B]
+- Blocks games from modifying the dashboard.
+- For softmodded consoles running Cerbios as a BFM BIOS to safeguard system files from being overwritten.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="284">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Block MS Dashboard Update</label>
+					<onclick>Skin.ToggleSetting(cerbios_blockupdate)</onclick>
+					<selected>Skin.HasSetting(cerbios_blockupdate)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="285">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Read-Only C Partition:[/B]
+- Marks the C partition as read-only, preventing write operations while Cerbios is active. Useful for softmod installation scenarios.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="286">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Read Only C</label>
+					<onclick>Skin.ToggleSetting(cerbios_readonlyc)</onclick>
+					<selected>Skin.HasSetting(cerbios_readonlyc)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="287">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Redirect Xbox Live Dashboard Calls:[/B]  
+- Routes Xbox Live dashboard requests to `Xonlinedash_Original.xbe`.  
+- Useful for softmod setups that employ a dummy `Xonlinedash.xbe` to prevent disc-initiated updates.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="288">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Redirect XonlineDash</label>
+					<onclick>Skin.ToggleSetting(cerbios_xonlinedashredir)</onclick>
+					<selected>Skin.HasSetting(cerbios_xonlinedashredir)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="289">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]DVD Tray Eject Reset:[/B]
+- Restores the original Xbox behaviour where ejecting the DVD tray triggers a console reset.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="290">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Reset On Eject</label>
+					<onclick>Skin.ToggleSetting(cerbios_roeject)</onclick>
+					<selected>Skin.HasSetting(cerbios_roeject)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="291">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Real-Time Clock (RTC) Synchronization:[/B]
+- Enables RTC synchronization with compatible optional hardware via SMBus.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="292">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>RTC Support</label>
+					<onclick>Skin.ToggleSetting(cerbios_rtcsupport)</onclick>
+					<selected>Skin.HasSetting(cerbios_rtcsupport)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="293">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Framebuffer Screenshot Capture:[/B]
+- Enables capturing screenshots of the running XBE’s framebuffer.
+- Images are saved to $INFO[Skin.String(cerbios_screenshotpart)]:\Cerbios\Screenshots\(Title ID) upon pressing the screenshot button combination.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="294">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Screenshot Capture</label>
+					<onclick>Skin.ToggleSetting(cerbios_enablescreenshots)</onclick>
+					<selected>Skin.HasSetting(cerbios_enablescreenshots)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="295">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Redirect to HDD:[/B]  
+- Current Setting: [B]$INFO[Skin.String(cerbios_screenshothdd)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_enablescreenshots) + StringCompare(Skin.String(cerbios_drivesetup),Dual HDD Mode)</visible>
+				</control>
+				<control type="multiselect" id="296">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_screenshothdd,Master)]  Master  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_screenshothdd,Slave)]  Slave  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_enablescreenshots) + StringCompare(Skin.String(cerbios_drivesetup),Dual HDD Mode)</visible>
+				</control>
+				<control type="textbox" id="297">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Select Partition to save Screenshots:[/B] 
+- Current Setting: [B]$INFO[Skin.String(cerbios_screenshotpart)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_enablescreenshots)</visible>
+				</control>
+				<control type="multiselect" id="298">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_screenshotpart,E)]  Default  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_screenshotpart,F)]  F  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_enablescreenshots) + SubString(System.Freespace(F),MB) + !SubString(System.Freespace(G),MB)</visible>
+				</control>
+				<control type="multiselect" id="299">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_screenshotpart,E)]  Default  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_screenshotpart,F)]  F  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_screenshotpart,G)]  G  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_enablescreenshots) + SubString(System.Freespace(F),MB) + SubString(System.Freespace(G),MB)</visible>
+				</control>
+				<control type="textbox" id="300">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Game-Specific Compatibility Fixes:[/B]
+- Enables targeted fixes to improve compatibility for specific games.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="301">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Title Patches</label>
+					<onclick>Skin.ToggleSetting(cerbios_titlepatches)</onclick>
+					<selected>Skin.HasSetting(cerbios_titlepatches)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="302">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Redirect Saves:[/B]  
+- Redirects UDATA and TDATA to an alternate drive or partition.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="303">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>UDATA/TDATA Redirection</label>
+					<onclick>Skin.ToggleSetting(cerbios_tudataredir)</onclick>
+					<selected>Skin.HasSetting(cerbios_tudataredir)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="textbox" id="304">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Redirect to HDD:[/B]  
+- Current Setting: [B]$INFO[Skin.String(cerbios_tudataredirhdd)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_tudataredir) + StringCompare(Skin.String(cerbios_drivesetup),Dual HDD Mode)</visible>
+				</control>
+				<control type="multiselect" id="305">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_tudataredirhdd,Master)]  Master  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_tudataredirhdd,Slave)]  Slave  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_tudataredir) + StringCompare(Skin.String(cerbios_drivesetup),Dual HDD Mode)</visible>
+				</control>
+				<control type="textbox" id="306">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Select Partition for UDATA/TDATA:[/B] 
+- Current Setting: [B]$INFO[Skin.String(cerbios_tudataredirpart)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_tudataredir)</visible>
+				</control>
+				<control type="multiselect" id="307">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_tudataredirpart,System)]  Default  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_tudataredirpart,F)]  F  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_tudataredir) + SubString(System.Freespace(F),MB) + !SubString(System.Freespace(G),MB)</visible>
+				</control>
+				<control type="multiselect" id="308">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_tudataredirpart,System)]  Default  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_tudataredirpart,F)]  F  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_tudataredirpart,G)]  G  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(104) + Skin.HasSetting(cerbios_tudataredir) + SubString(System.Freespace(F),MB) + SubString(System.Freespace(G),MB)</visible>
+				</control>
+				<control type="textbox" id="309">
+					<left>0</left>
+					<top>0</top>
+					<height>40</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Ignore XBE 64MB Memory Limit:[/B]
+- When enabled, bypasses the 64MB memory restriction for XBEs.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<control type="radiobutton" id="310">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>XBE Memory limit bypass</label>
+					<onclick>Skin.ToggleSetting(cerbios_xbememlimit)</onclick>
+					<selected>Skin.HasSetting(cerbios_xbememlimit)</selected>
+					<visible>ControlGroup(9100).HasFocus(104)</visible>
+				</control>
+				<!-- Debug & Advanced -->
+				<control type="textbox" id="348">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Debug & Advanced[/UPPERCASE][/B]</label>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="textbox" id="349">
+					<left>0</left>
+					<top>0</top>
+					<height>80</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]XDK Launcher/XBDM Debugging Support:[/B]
+- Loads XDK Launcher/XBDM if available, enabling debugging features.
+- Boots C:\xshell.xbe (XDK Launcher Dashboard) if present.
+- Loads E:\xbdm.dll if present.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="radiobutton" id="350">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Debug support</label>
+					<onclick>Skin.ToggleSetting(cerbios_debugsupport)</onclick>
+					<selected>Skin.HasSetting(cerbios_debugsupport)</selected>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="textbox" id="351">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]IGR Controller Selection:[/B]
+- Specifies which controller port can trigger In-Game Reset (IGR) combos.
+- Current Setting: [B]$INFO[Skin.String(cerbios_igrmasterport)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="multiselect" id="352">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrmasterport,ALL)]  ALL  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrmasterport,Port 1)]  Port 1  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrmasterport,Port 2)]  Port 2  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrmasterport,Port 3)]  Port 3  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrmasterport,Port 4)]  Port 4  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="textbox" id="353">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Full Kernel Reset:[/B]
+- Unmounts any loaded ISO, CCI, or game and performs a full kernel reset, returning to the dashboard.
+-    [B]$INFO[Skin.String(cerbios_igrfull_1)][/B]    -    [B]$INFO[Skin.String(cerbios_igrfull_2)][/B]    -    [B]$INFO[Skin.String(cerbios_igrfull_3)][/B]    -    [B]$INFO[Skin.String(cerbios_igrfull_4)][/B]    -</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="radiobutton" id="354">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Change Button Combo</label>
+					<onclick>Skin.ToggleSetting(cerbios_buttons_igrfull)</onclick>
+					<selected>Skin.HasSetting(cerbios_buttons_igrfull)</selected>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="multiselect" id="355">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrfull_1,Black), Skin.SetString(cerbios_igrfull_2,Left Trigger), Skin.SetString(cerbios_igrfull_3,Right Trigger), Skin.SetString(cerbios_igrfull_4,Back)]  Default  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrfull)</visible>
+				</control>
+				<control type="multiselect" id="356">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrfull_1,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_1,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrfull)</visible>
+				</control>
+				<control type="multiselect" id="357">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrfull_2,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_2,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrfull)</visible>
+				</control>
+				<control type="multiselect" id="358">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrfull_3,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_3,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrfull)</visible>
+				</control>
+				<control type="multiselect" id="359">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrfull_4,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrfull_4,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrfull)</visible>
+				</control>
+				<control type="textbox" id="360">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Full Power Cycle:[/B]
+- Performs a complete power cycle of the console, fully rebooting the system.
+-    [B]$INFO[Skin.String(cerbios_igrcycle_1)][/B]    -    [B]$INFO[Skin.String(cerbios_igrcycle_2)][/B]    -    [B]$INFO[Skin.String(cerbios_igrcycle_3)][/B]    -    [B]$INFO[Skin.String(cerbios_igrcycle_4)][/B]    -</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="radiobutton" id="361">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Change Button Combo</label>
+					<onclick>Skin.ToggleSetting(cerbios_buttons_igrcycle)</onclick>
+					<selected>Skin.HasSetting(cerbios_buttons_igrcycle)</selected>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="multiselect" id="362">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrcycle_1,Black), Skin.SetString(cerbios_igrcycle_2,Left Trigger), Skin.SetString(cerbios_igrcycle_3,Right Trigger), Skin.SetString(cerbios_igrcycle_4,DPad Up)]  Default  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrcycle)</visible>
+				</control>
+				<control type="multiselect" id="363">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrcycle_1,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_1,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrcycle)</visible>
+				</control>
+				<control type="multiselect" id="364">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrcycle_2,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_2,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrcycle)</visible>
+				</control>
+				<control type="multiselect" id="365">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrcycle_3,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_3,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrcycle)</visible>
+				</control>
+				<control type="multiselect" id="366">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrcycle_4,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrcycle_4,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrcycle)</visible>
+				</control>
+				<control type="textbox" id="367">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Reload Current Game:[/B]
+- Reloads the currently running game or application without returning to the dashboard.
+-    [B]$INFO[Skin.String(cerbios_igrgame_1)][/B]    -    [B]$INFO[Skin.String(cerbios_igrgame_2)][/B]    -    [B]$INFO[Skin.String(cerbios_igrgame_3)][/B]    -    [B]$INFO[Skin.String(cerbios_igrgame_4)][/B]    -</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="radiobutton" id="368">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Change Button Combo</label>
+					<onclick>Skin.ToggleSetting(cerbios_buttons_igrgame)</onclick>
+					<selected>Skin.HasSetting(cerbios_buttons_igrgame)</selected>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="multiselect" id="369">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrgame_1,Black), Skin.SetString(cerbios_igrgame_2,Left Trigger), Skin.SetString(cerbios_igrgame_3,Right Trigger), Skin.SetString(cerbios_igrgame_4,Start)]  Default  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrgame)</visible>
+				</control>
+				<control type="multiselect" id="370">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrgame_1,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_1,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrgame)</visible>
+				</control>
+				<control type="multiselect" id="371">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrgame_2,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_2,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrgame)</visible>
+				</control>
+				<control type="multiselect" id="372">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrgame_3,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_3,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrgame)</visible>
+				</control>
+				<control type="multiselect" id="373">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrgame_4,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrgame_4,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrgame)</visible>
+				</control>
+				<control type="textbox" id="374">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Reset to Dashboard:[/B]
+- Performs a soft reset back to the dashboard while retaining any mounted ISO, CCI, or active game session.
+-    [B]$INFO[Skin.String(cerbios_igrdash_1)][/B]    -    [B]$INFO[Skin.String(cerbios_igrdash_2)][/B]    -    [B]$INFO[Skin.String(cerbios_igrdash_3)][/B]    -    [B]$INFO[Skin.String(cerbios_igrdash_4)][/B]    -</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="radiobutton" id="375">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Change Button Combo</label>
+					<onclick>Skin.ToggleSetting(cerbios_buttons_igrdash)</onclick>
+					<selected>Skin.HasSetting(cerbios_buttons_igrdash)</selected>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="multiselect" id="376">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrdash_1,Left Trigger), Skin.SetString(cerbios_igrdash_2,Right Trigger), Skin.SetString(cerbios_igrdash_3,Start), Skin.SetString(cerbios_igrdash_4,Back)]  Default  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrdash)</visible>
+				</control>
+				<control type="multiselect" id="377">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrdash_1,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_1,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrdash)</visible>
+				</control>
+				<control type="multiselect" id="378">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrdash_2,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_2,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrdash)</visible>
+				</control>
+				<control type="multiselect" id="379">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrdash_3,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_3,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrdash)</visible>
+				</control>
+				<control type="multiselect" id="380">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrdash_4,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrdash_4,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrdash)</visible>
+				</control>
+				<control type="textbox" id="381">
+					<left>0</left>
+					<top>0</top>
+					<height>80</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Screenshot Capture:[/B]
+- Captures a screenshot of the current framebuffer and saves it to $INFO[Skin.String(cerbios_screenshotpart)]:\Cerbios\Screenshots\(Title ID).
+- Requires EnableScreenshots to be set to True.
+-    [B]$INFO[Skin.String(cerbios_igrscreen_1)][/B]    -    [B]$INFO[Skin.String(cerbios_igrscreen_2)]    -    [B]$INFO[Skin.String(cerbios_igrscreen_3)]    -    [B]$INFO[Skin.String(cerbios_igrscreen_4)][/B]    -</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="radiobutton" id="382">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Change Button Combo</label>
+					<onclick>Skin.ToggleSetting(cerbios_buttons_igrscreen)</onclick>
+					<selected>Skin.HasSetting(cerbios_buttons_igrscreen)</selected>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="multiselect" id="383">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrscreen_1,Left Thumb), Skin.SetString(cerbios_igrscreen_2,Right Thumb), Skin.Reset(cerbios_igrscreen_3), Skin.Reset(cerbios_igrscreen_4)]  Default  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrscreen)</visible>
+				</control>
+				<control type="multiselect" id="384">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrscreen_1,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_1,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrscreen)</visible>
+				</control>
+				<control type="multiselect" id="385">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrscreen_2,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_2,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrscreen)</visible>
+				</control>
+				<control type="multiselect" id="386">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrscreen_3,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_3,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrscreen)</visible>
+				</control>
+				<control type="multiselect" id="387">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrscreen_4,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrscreen_4,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrscreen)</visible>
+				</control>
+				<control type="textbox" id="388">
+					<left>0</left>
+					<top>0</top>
+					<height>60</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Shutdown:[/B]
+- Shuts down the console.
+-    [B]$INFO[Skin.String(cerbios_igrshutdown_1)][/B]    -    [B]$INFO[Skin.String(cerbios_igrshutdown_2)]    -    [B]$INFO[Skin.String(cerbios_igrshutdown_3)]    -    [B]$INFO[Skin.String(cerbios_igrshutdown_4)][/B]    -</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="radiobutton" id="389">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Change Button Combo</label>
+					<onclick>Skin.ToggleSetting(cerbios_buttons_igrshutdown)</onclick>
+					<selected>Skin.HasSetting(cerbios_buttons_igrshutdown)</selected>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="multiselect" id="390">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Left Trigger), Skin.SetString(cerbios_igrshutdown_2,Right Trigger), Skin.SetString(cerbios_igrshutdown_3,DPad Up), Skin.SetString(cerbios_igrshutdown_4,Back)]  Default  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrshutdown)</visible>
+				</control>
+				<control type="multiselect" id="391">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrshutdown_1,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_1,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrshutdown)</visible>
+				</control>
+				<control type="multiselect" id="392">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrshutdown_2,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_2,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrshutdown)</visible>
+				</control>
+				<control type="multiselect" id="393">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrshutdown_3,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_3,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrshutdown)</visible>
+				</control>
+				<control type="multiselect" id="394">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>1</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>20</height>
+					<font>size_14</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_igrshutdown_4,)]  -  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,A)]  A  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,B)]  B  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,X)]  X  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,Y)]  Y  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,Black)]  Black  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,White)]  White  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,Left Trigger)]  Left Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,Right Trigger)]  Right Trigger  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,DPad Up)]  DPad Up  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,DPad Down)]  DPad Down  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,DPad Left)]  DPad Left  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,DPad Right)]  DPad Right  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,Start)]  Start  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,Back)]  Back  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,Left Thumb)]  Left Thumb  [/ONCLICK] 
+[ONCLICK Skin.SetString(cerbios_igrshutdown_4,Right Thumb)]  Right Thumb  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_igrshutdown)</visible>
+				</control>
+				<control type="radiobutton" id="395">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Show Overclocking Settings</label>
+					<onclick>Skin.ToggleSetting(cerbios_buttons_overclocking)</onclick>
+					<selected>Skin.HasSetting(cerbios_buttons_overclocking)</selected>
+					<visible>ControlGroup(9100).HasFocus(105)</visible>
+				</control>
+				<control type="textbox" id="396">
+					<left>0</left>
+					<top>0</top>
+					<height>80</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]Warning:[/B]
+Advanced users only — incorrect values may cause instability or damage. This feature directly controls CPU/GPU frequency via 3-byte hex registers (e.g. 0x23A801). Trial and error is required. Use Eject to reset to safe defaults. Test gradually, monitor temps, and increase fan speed if overclocking.</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_overclocking)</visible>
+				</control>
+				<control type="radiobutton" id="397">
+					<textoffsetx>10</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<radioleft>696</radioleft>
+					<height>35</height>
+					<width>766</width>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>Enable Overclocking</label>
+					<onclick>Skin.ToggleSetting(cerbios_overclocking)</onclick>
+					<selected>Skin.HasSetting(cerbios_overclocking)</selected>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_overclocking)</visible>
+				</control>
+				<control type="textbox" id="398">
+					<left>0</left>
+					<top>0</top>
+					<height>90</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]CPU Phase-Locked Loop Coefficient:[/B]
+- Controls CPU overclock via a 4-byte hex (e.g. 0x230801).
+- Stock Xbox: 733 MHz @ 0x230801 (5.5× CPU multiplier).
+- Example: 802 MHz CPU / 218 MHz RAM @ 0x232304.
+- Current Setting: [B]0x$INFO[Skin.String(cerbios_cpumpllcoeff)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_overclocking) + Skin.HasSetting(cerbios_overclocking)</visible>
+				</control>
+				<control type="multiselect" id="399">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_cpumpllcoeff,000000)]  Reset  [/ONCLICK] [ONCLICK Skin.SetBool(hex_entry), Skin.Reset(cerbios_cpumpllcoeff), Skin.SetString(cerbios_cpumpllcoeff), Skin.Reset(hex_entry)]  Set CPU PLL Value  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_overclocking) + Skin.HasSetting(cerbios_overclocking)</visible>
+				</control>
+				<control type="textbox" id="400">
+					<left>0</left>
+					<top>0</top>
+					<height>90</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>[B]NVIDIA Phase-Locked Loop Coefficient:[/B]
+- Sets GPU clock via 3-byte hex (e.g. 0x011C01).
+- Stock GPU: 233 MHz @ 0x011C01.
+- Example OC: 266 MHz @ 0x012001.
+- Current Setting: [B]0x$INFO[Skin.String(cerbios_nvpllcoeff)][/B]</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_overclocking) + Skin.HasSetting(cerbios_overclocking)</visible>
+				</control>
+				<control type="multiselect" id="401">
+					<textoffsetx>0</textoffsetx>
+					<textoffsety>4</textoffsety>
+					<aligny>top</aligny>
+					<width>766</width>
+					<height>35</height>
+					<font>size_18</font>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(cerbios_nvpllcoeff,000000)]  Reset  [/ONCLICK] [ONCLICK Skin.SetBool(hex_entry), Skin.Reset(cerbios_nvpllcoeff), Skin.SetString(cerbios_nvpllcoeff), Skin.Reset(hex_entry)]  Set NVIDIA PLL Value  [/ONCLICK]</label>
+					<onclick></onclick>
+					<visible>ControlGroup(9100).HasFocus(105) + Skin.HasSetting(cerbios_buttons_overclocking) + Skin.HasSetting(cerbios_overclocking)</visible>
+				</control>
+				<!-- Save Settings -->
+				<control type="textbox" id="500">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Save Settings[/UPPERCASE][/B]</label>
+					<visible>ControlGroup(9100).HasFocus(110)</visible>
+				</control>
+				<control type="textbox" id="501">
+					<left>0</left>
+					<top>0</top>
+					<height>20</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>Save your current configuration to E:\Cerbios\cerbios.ini</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(110)</visible>
+				</control>
+				<!-- Default Settings -->
+				<control type="textbox" id="502">
+					<left>0</left>
+					<top>0</top>
+					<height>50</height>
+					<width>766</width>
+					<font>size_35</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.settings.label.context</textcolor>
+					<label>[B][UPPERCASE]Default Settings[/UPPERCASE][/B]</label>
+					<visible>ControlGroup(9100).HasFocus(111)</visible>
+				</control>
+				<control type="textbox" id="503">
+					<left>0</left>
+					<top>0</top>
+					<height>20</height>
+					<width>756</width>
+					<font>size_14</font>
+					<align>left</align>
+					<textcolor>colour.settings.label.info.text</textcolor>
+					<label>Restore the default settings to E:\Cerbios\cerbios.ini</label>
+					<animation effect="slide" start="0,0" end="5,0" time="0" condition="true">Conditional</animation>
+					<visible>ControlGroup(9100).HasFocus(111)</visible>
+				</control>
+			</control>
+			<control type="scrollbar" id="80">
+				<left>1190</left>
+				<top>105</top>
+				<width>4</width>
+				<height>445</height>
+				<include>Fake.ScrollBar.Vertical</include>
+				<visible>Skin.HasSetting(cerbios_cansave) + ![Control.HasFocus(110) | Control.HasFocus(111)]</visible>
+			</control>
+		</control>
+	</controls>
+</window>

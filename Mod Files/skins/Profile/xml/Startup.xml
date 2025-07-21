@@ -1,29 +1,27 @@
 <window id="2999">
-	<onload>Skin.SetBool(xbmc4gamers)</onload>
-	<onload>Skin.SetString(dashboard_name,XBMC4Gamers)</onload>
-	<onload>Skin.SetString(urldownloader_new,true</onload>
-	<onload>Skin.SetString(urldownloader,Special://urldownloader\)</onload>
+	<!-- Onload when window opens -->
 	<onload>RunScript(Special://scripts\XBMC4Gamers\default.py)</onload>
+	<!-- Onunload when window closes -->
 	<onunload condition="!Skin.HasSetting(AdultProfile) + !StringCompare(Skin.String(HomeWindowSource),Home)">RunScript(Special://scripts\XBMC4Gamers\Utilities\Parse Programs DB.py,refresh_recents)</onunload>
 	<onunload condition="!Skin.HasSetting(AdultProfile) + StringCompare(Skin.String(HomeWindowSource),Home)">RunScript(Special://scripts\XBMC4Gamers\Utilities\Parse Programs DB.py,refresh_home_gotohome)</onunload>
 	<defaultcontrol always="true">1</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>
 		<include>Global.Backgrounds</include>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture background="true" flipy="true">windows\login\fade.png</texture>
-			<animation effect="fade" start="0" end="0" time="0">WindowClose</animation>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle"/>
-				<effect type="slide" start="0,0" end="0,720" time="1000" delay="0"/>
-			</animation>
-			<visible>System.HasLoginScreen + !Skin.HasSetting(LoginFade)</visible>
-		</control>
+		<!-- <control type="image"> -->
+		<!-- <left>0</left> -->
+		<!-- <top>0</top> -->
+		<!-- <width>1280</width> -->
+		<!-- <height>720</height> -->
+		<!-- <aspectratio>stretch</aspectratio> -->
+		<!-- <texture background="true" flipy="true">windows\login\fade.png</texture> -->
+		<!-- <animation effect="fade" start="0" end="0" time="0">WindowClose</animation> -->
+		<!-- <animation type="WindowOpen" reversible="false"> -->
+		<!-- <effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle"/> -->
+		<!-- <effect type="slide" start="0,0" end="0,720" time="1000" delay="0"/> -->
+		<!-- </animation> -->
+		<!-- <visible>System.HasLoginScreen + !Skin.HasSetting(LoginFade)</visible> -->
+		<!-- </control> -->
 		<include>Startup.Window.Profile</include>
 		<include>Startup.Window.Info</include>
 	</controls>

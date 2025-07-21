@@ -1,0 +1,11 @@
+Taken from https://github.com/astarivi/IVistation
+
+So thank you Astarivi
+
+### simplejson (Bob Ippolito, and contributors)
+For the included simplejson library, no modifications done.
+
+### configparser backport (Jason R. Coombs and contributors)
+For the included configparser backport, slightly modified to work on the Xbox
+
+I don't use these, but in case I do later I include them.

@@ -27,7 +27,7 @@
 				</control>
 				<control type="image">
 					<left>28</left>
-					<top>25</top>
+					<top>24</top>
 					<width>1224</width>
 					<height>60</height>
 					<aspectratio>stretch</aspectratio>
@@ -61,9 +61,9 @@
 			<control type="textbox" id="5">
 				<description>textarea</description>
 				<left>40</left>
-				<top>85</top>
+				<top>84</top>
 				<width>1185</width>
-				<height>610</height>
+				<height>612</height>
 				<font>mono_15</font>
 				<textcolor>colour.dialog.label.info.text</textcolor>
 				<shadowcolor>-</shadowcolor>

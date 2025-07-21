@@ -1,7 +1,6 @@
 <window id="2999">
-	<onload>Skin.SetBool(xbmc4gamers)</onload>
+	<!-- Run the main script -->
 	<onload>RunScript(Special://scripts\XBMC4Gamers\default.py)</onload>
-	<onunload>Skin.SetString(urldownloader,Special://xbmc\system\scripts\urldownloader\)</onunload>
 	<defaultcontrol always="true">1</defaultcontrol>
 	<allowoverlay>no</allowoverlay>
 	<controls>

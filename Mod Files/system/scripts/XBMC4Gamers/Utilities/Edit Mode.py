@@ -2,52 +2,51 @@
 Script by Rocky5
 Used to enable/disable edit mode control file.
 '''
+from os.path import isfile
+from os import remove
+from sys import argv
+from xbmc import executebuiltin, getInfoLabel
+from xbmcgui import Dialog, getCurrentWindowId
 
-import os
-import xbmcgui
-import xbmc
-import sys
+ENABLER_PATH = "Q:/system/keymaps/Enabled"
 
-dialog = xbmcgui.Dialog()
-enabler_path = "Q:/system/keymaps/Enabled"
-
-print "| Scripts/XBMC4Gamers/Utilities/Edit Mode.py loaded."
+# print "| Scripts/XBMC4Gamers/Utilities/Edit Mode.py loaded."
 
 def toggle_edit_mode():
-	if os.path.isfile(enabler_path):
-		os.remove(enabler_path)
-		dialog.ok(
+	if isfile(ENABLER_PATH):
+		remove(ENABLER_PATH)
+		Dialog().ok(
 			"Kiosk Mode",
 			"[CR]Kiosk mode has been enabled.[CR]Your access to features is now limited."
 		)
-		xbmc.executebuiltin('Skin.Reset(kioskmode)')
+		executebuiltin('Skin.Reset(kioskmode)')
 	else:
-		with open(enabler_path, "w") as profile:
+		with open(ENABLER_PATH, "w") as profile:
 			profile.write(" ")
-		dialog.ok(
+		Dialog().ok(
 			"Kiosk Mode",
 			"[CR]Kiosk mode has been disabled.[CR]You now have full access to all features."
 		)
-		xbmc.executebuiltin('Skin.SetBool(kioskmode)')
+		executebuiltin('Skin.SetBool(kioskmode)')
 
-	xbmc.executebuiltin("ReloadSkin")
+	executebuiltin("ReloadSkin")
 
-	if xbmcgui.getCurrentWindowId() == 11111:
-		home_window_source = xbmc.getInfoLabel('skin.String(HomeWindowSource)')
-		xbmc.executebuiltin('ReplaceWindow({})'.format(home_window_source))
+	if getCurrentWindowId() == 11111:
+		home_window_source = getInfoLabel('skin.String(HomeWindowSource)')
+		executebuiltin('ReplaceWindow({})'.format(home_window_source))
 
-	# xbmc.executebuiltin("Action(reloadkeymaps)")
-	# xbmc.executebuiltin("RestartApp")
+	# executebuiltin("Action(reloadkeymaps)")
+	# executebuiltin("RestartApp")
 
-def toggle_kiosk_mode():
-	if os.path.isfile(enabler_path):
-		xbmc.executebuiltin('Skin.SetBool(kioskmode)')
+def check_kioskmode():
+	if isfile(ENABLER_PATH):
+		executebuiltin('Skin.SetBool(kioskmode)')
 	else:
-		xbmc.executebuiltin('Skin.reset(kioskmode)')
+		executebuiltin('Skin.reset(kioskmode)')
 
 if __name__ == "__main__":
-	arg = sys.argv[1] if len(sys.argv) > 1 else '1'
+	arg = argv[1] if len(argv) > 1 else '0'
 	if arg == '1':
 		toggle_edit_mode()
 	else:
-		toggle_kiosk_mode()
+		check_kioskmode()

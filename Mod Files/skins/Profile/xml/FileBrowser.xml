@@ -119,12 +119,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\a_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -139,12 +139,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\b_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\b_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -278,7 +278,7 @@
 					<left>291</left>
 					<top>170</top>
 					<width>4</width>
-					<height>375</height>
+					<height>376</height>
 					<onright>450</onright>
 					<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
 					<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
@@ -309,7 +309,7 @@
 					<align>center</align>
 					<textcolor>colour.dialog.button.nofocus</textcolor>
 					<focusedcolor>colour.dialog.button.focus</focusedcolor>
-					<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+					<disabledcolor>colour.dialog.button.disabled</disabledcolor>
 					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
 					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
 				</control>
@@ -328,7 +328,7 @@
 					<align>center</align>
 					<textcolor>colour.dialog.button.nofocus</textcolor>
 					<focusedcolor>colour.dialog.button.focus</focusedcolor>
-					<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+					<disabledcolor>colour.dialog.button.disabled</disabledcolor>
 					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
 					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
 				</control>
@@ -347,7 +347,7 @@
 					<align>center</align>
 					<textcolor>colour.dialog.button.nofocus</textcolor>
 					<focusedcolor>colour.dialog.button.focus</focusedcolor>
-					<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+					<disabledcolor>colour.dialog.button.disabled</disabledcolor>
 					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
 					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
 				</control>
@@ -370,7 +370,7 @@
 					<align>center</align>
 					<textcolor>colour.dialog.button.nofocus</textcolor>
 					<focusedcolor>colour.dialog.button.focus</focusedcolor>
-					<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+					<disabledcolor>colour.dialog.button.disabled</disabledcolor>
 					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
 					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
 					<animation effect="slide" start="88,0,155,40" end="0,0,155,40" time="100">Visible</animation>
@@ -391,7 +391,7 @@
 					<align>center</align>
 					<textcolor>colour.dialog.button.nofocus</textcolor>
 					<focusedcolor>colour.dialog.button.focus</focusedcolor>
-					<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+					<disabledcolor>colour.dialog.button.disabled</disabledcolor>
 					<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
 					<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
 					<animation effect="slide" start="-88,45,155,40" end="0,0,155,40" time="100">Visible</animation>

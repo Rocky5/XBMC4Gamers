@@ -20,13 +20,9 @@
 	<!-- buttons -->
 	<color name="colour.home.button.focus">FFFFFFFF</color>
 	<color name="colour.home.button.nofocus">FF5C5C5C</color>
-
-	
 	<!-- Loading -->
 	<!-- diffuse if using custom image set as FFFFFFFF -->
 	<color name="colour.loading.diffuse">FFFFFFFF</color>
-
-	
 	<!-- Dialogs -->
 	<!-- diffuse if using custom image set as FFFFFFFF -->
 	<color name="colour.dialog.diffuse.main">FFFFFFFF</color>
@@ -38,6 +34,25 @@
 	<color name="colour.dialog.diffuse.button.nofocus">FFADAAAD</color>
 	<color name="colour.dialog.diffuse.progress.underlay">FF262626</color>
 	<color name="colour.dialog.diffuse.progress.bar">FF0A9ECE</color>
+	<color name="colour.dialog.diffuse.scroll.indicator">FF0A9ECE</color>
+	<color name="colour.dialog.diffuse.a_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.b_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.back_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.black_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.dpad_down_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.dpad_left_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.dpad_left_right_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.dpad_right_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.dpad_up_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.dpad_up_down_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.l_stick_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.l_trigger">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.r_stick_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.r_trigger">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.start_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.white_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.x_button">FFFFFFFF</color>
+	<color name="colour.dialog.diffuse.y_button">FFFFFFFF</color>
 	<!-- labels -->
 	<color name="colour.dialog.label">FFFFFFFF</color>
 	<color name="colour.dialog.label.context">FF5C5C5C</color>
@@ -49,8 +64,7 @@
 	<!-- buttons -->
 	<color name="colour.dialog.button.focus">FFFFFFFF</color>
 	<color name="colour.dialog.button.nofocus">FF5C5C5C</color>
-
-	
+	<color name="colour.dialog.button.disabled">FF7A7C7D</color>
 	<!-- Synopsis window -->
 	<!-- buttons -->
 	<color name="colour.synopsis.diffuse.button.focus">FFFFFFFF</color>
@@ -60,8 +74,6 @@
 	<color name="colour.synopsis.label.info.alt">BFFFFFFF</color>
 	<color name="colour.synopsis.label.info.shadow">80000000</color>
 	<color name="colour.synopsis.label.selected">60FFFFFF</color>
-
-	
 	<!-- Volume/kaitoast/seek -->
 	<!-- diffuse if using custom image set as FFFFFFFF -->
 	<color name="colour.dialog.volumekaitoast.diffuse.main">FFFFFFFF</color>
@@ -72,8 +84,6 @@
 	<!-- labels -->
 	<color name="colour.dialog.volumekaitoast.label">FF424542</color>
 	<color name="colour.dialog.volumekaitoast.label.header">FF424542</color>
-	
-	
 	<!-- Keyboard/Numbpad -->
 	<!-- labels -->
 	<color name="colour.dialog.keyboardnumpad.keys">FFFFFFFF</color>
@@ -82,8 +92,6 @@
 	<color name="colour.dialog.keyboardnumpad.label">FFFFFFFF</color>
 	<color name="colour.dialog.keyboardnumpad.label.disabled">50FFFFFF</color>
 	<color name="colour.dialog.keyboardnumpad.label.header">FFF5F5F5</color>
-	
-	
 	<!-- Default/General -->
 	<!-- labels default -->
 	<color name="colour.default.label">FFFFFFFF</color>
@@ -109,8 +117,6 @@
 	<!-- buttons general -->
 	<color name="colour.general.button.focus">FFFFFFFF</color>
 	<color name="colour.general.button.nofocus">FF5C5C5C</color>
-	
-	
 	<!-- Settings -->
 	<!-- diffuse if using custom image set as FFFFFFFF -->
 	<color name="colour.settings.diffuse.main">FFFFFFFF</color>
@@ -138,70 +144,94 @@
 	<color name="colour.settings.button.nofocus">FF5C5C5C</color>
 	<color name="colour.settings.button.category.focus">FFFFFFFF</color>
 	<color name="colour.settings.button.category.nofocus">FF5C5C5C</color>
-	
-	
 	<!-- Context buttons (bottom of screen) -->
 	<!-- diffuse if using custom image set as FFFFFFFF -->
+	<color name="colour.context.diffuse.a_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.b_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.back_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.black_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.dpad_down_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.dpad_left_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.dpad_left_right_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.dpad_right_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.dpad_up_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.dpad_up_down_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.l_stick_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.l_trigger">FFFFFFFF</color>
+	<color name="colour.context.diffuse.r_stick_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.r_trigger">FFFFFFFF</color>
+	<color name="colour.context.diffuse.start_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.white_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.x_button">FFFFFFFF</color>
+	<color name="colour.context.diffuse.y_button">FFFFFFFF</color>
 	<color name="colour.context.diffuse.underlay">FFFFFFFF</color>
 	<!-- labels -->
 	<color name="colour.context.buttons.label">FF5C5C5C</color>
-	
-	
 	<!-- Other screen -->
 	<!-- labels -->
 	<color name="colour.startup.button.label">FFFFFFFF</color>
 	<color name="colour.variables.logo">FFFFFFFF</color>
 	<color name="colour.playercontrol.label">FFF5F5F5</color>
 	<color name="colour.playercontrol.label2">FF737373</color>
-	
-	
 	<!-- View files -->
 	<!-- View 50 -->
 	<color name="colour.view50.label">FFFFFFFF</color>
 	<color name="colour.view50.label2">FF333333</color>
+	<color name="colour.view50.shadow">4D000000</color>
 	<!-- View 51 -->
 	<color name="colour.view51.label">FFFFFFFF</color>
 	<color name="colour.view51.label2">FF333333</color>
+	<color name="colour.view51.shadow">4D000000</color>
 	<!-- View 52 -->
 	<color name="colour.view52.label">FFFFFFFF</color>
 	<color name="colour.view52.label2">FF333333</color>
+	<color name="colour.view52.shadow">4D000000</color>
 	<!-- View 53 -->
 	<color name="colour.view53.label">FFFFFFFF</color>
 	<color name="colour.view53.label2">FF333333</color>
+	<color name="colour.view53.shadow">4D000000</color>
 	<!-- View 54 -->
 	<color name="colour.view54.label">FFFFFFFF</color>
+	<color name="colour.view54.shadow">4D000000</color>
 	<color name="colour.view54.info.icons">FFFFFFFF</color>
 	<color name="colour.view54.info.label">FFFFFFFF</color>
 	<color name="colour.view54.info.synopsis">FFFFFFFF</color>
 	<!-- View 55 -->
 	<color name="colour.view55.label">FFFFFFFF</color>
+	<color name="colour.view55.shadow">4D000000</color>
 	<color name="colour.view55.info.icons">FFFFFFFF</color>
 	<color name="colour.view55.info.label">FFFFFFFF</color>
 	<color name="colour.view55.info.synopsis">FFFFFFFF</color>
 	<!-- View 56 -->
 	<color name="colour.view56.label">FFFFFFFF</color>
 	<color name="colour.view56.label2">FFFFFFFF</color>
+	<color name="colour.view56.shadow">4D000000</color>
 	<color name="colour.view56.info.icons">FFFFFFFF</color>
 	<color name="colour.view56.info.label">FFFFFFFF</color>
 	<!-- View 57 -->
 	<color name="colour.view57.label">FFFFFFFF</color>
+	<color name="colour.view57.shadow">4D000000</color>
 	<color name="colour.view57.info.icons">FFFFFFFF</color>
 	<color name="colour.view57.info.label">FFFFFFFF</color>
 	<color name="colour.view57.info.synopsis">FFFFFFFF</color>
 	<!-- View 58 -->
 	<color name="colour.view58.label">FF333333</color>
 	<color name="colour.view58.label2">FF333333</color>
+	<color name="colour.view58.shadow">4D000000</color>
 	<color name="colour.view58.info.label">FF333333</color>
 	<color name="colour.view58.info.label2">FF333333</color>
 	<!-- View 59 -->
 	<color name="colour.view59.label">FFFFFFFF</color>
 	<color name="colour.view59.label2">FF333333</color>
+	<color name="colour.view59.shadow">4D000000</color>
 	<!-- View 60 -->
 	<color name="colour.view60.label">FFFFFFFF</color>
 	<color name="colour.view60.label2">FF333333</color>
+	<color name="colour.view60.shadow">4D000000</color>
 	<!-- View 61 -->
 	<color name="colour.view61.label">FFFFFFFF</color>
 	<color name="colour.view61.label2">FFFFFFFF</color>
+	<color name="colour.view61.shadow">4D000000</color>
 	<color name="colour.view61.info.icons">FFFFFFFF</color>
 	<color name="colour.view61.info.label">FFFFFFFF</color>
 	<color name="colour.view61.info.synopsis">FFFFFFFF</color>
@@ -211,41 +241,52 @@
 	<!-- View 62 -->
 	<color name="colour.view62.label">FFFFFFFF</color>
 	<color name="colour.view62.label2">FF333333</color>
+	<color name="colour.view62.shadow">4D000000</color>
 	<!-- View 63 -->
 	<color name="colour.view63.label">FFFFFFFF</color>
 	<color name="colour.view63.label2">FF333333</color>
+	<color name="colour.view63.shadow">4D000000</color>
 	<!-- View 64 -->
 	<color name="colour.view64.label">FFFFFFFF</color>
 	<color name="colour.view64.label2">FF333333</color>
+	<color name="colour.view64.shadow">4D000000</color>
 	<!-- View 65 -->
 	<color name="colour.view65.label">FFFFFFFF</color>
 	<color name="colour.view65.label2">FF333333</color>
+	<color name="colour.view65.shadow">4D000000</color>
 	<!-- View 66 -->
 	<color name="colour.view66.label">FFFFFFFF</color>
 	<color name="colour.view66.label2">FF333333</color>
+	<color name="colour.view66.shadow">4D000000</color>
 	<color name="colour.view66.info.label">FFFFFFFF</color>
 	<!-- View 67 -->
 	<color name="colour.view67.label">FFFFFFFF</color>
 	<color name="colour.view67.label2">FF333333</color>
+	<color name="colour.view67.shadow">4D000000</color>
 	<!-- View 68 -->
 	<color name="colour.view68.label">FFFFFFFF</color>
 	<color name="colour.view68.label2">FF333333</color>
+	<color name="colour.view68.shadow">4D000000</color>
 	<!-- View 69 -->
 	<color name="colour.view69.label">FFFFFFFF</color>
+	<color name="colour.view69.shadow">4D000000</color>
 	<color name="colour.view69.info.icons">FFFFFFFF</color>
 	<color name="colour.view69.info.label">FFFFFFFF</color>
 	<color name="colour.view69.info.synopsis">FFFFFFFF</color>
 	<!-- View 70 -->
 	<color name="colour.view70.label">FFFFFFFF</color>
 	<color name="colour.view70.label2">FF333333</color>
+	<color name="colour.view70.shadow">4D000000</color>
 	<!-- View 71 -->
 	<color name="colour.view71.label">FFFFFFFF</color>
+	<color name="colour.view71.shadow">4D000000</color>
 	<color name="colour.view71.info.icons">FFFFFFFF</color>
 	<color name="colour.view71.info.label">FFFFFFFF</color>
 	<color name="colour.view71.info.synopsis">FFFFFFFF</color>
 	<!-- View 72 -->
 	<color name="colour.view72.label">FFFFFFFF</color>
 	<color name="colour.view72.label2">FFFFFFFF</color>
+	<color name="colour.view72.shadow">4D000000</color>
 	<color name="colour.view72.info.icons">FFFFFFFF</color>
 	<color name="colour.view72.info.label">FFFFFFFF</color>
 	<color name="colour.view72.info.star">FFFFFFFF</color>
@@ -255,8 +296,10 @@
 	<!-- View 73 -->
 	<color name="colour.view73.label">FFFFFFFF</color>
 	<color name="colour.view73.label2">FF333333</color>
+	<color name="colour.view73.shadow">4D000000</color>
 	<!-- View 74 -->
 	<color name="colour.view74.label">FFFFFFFF</color>
+	<color name="colour.view74.shadow">4D000000</color>
 	<color name="colour.view74.info.back">FFFFFFFF</color>
 	<color name="colour.view74.info.back.label">FF333333</color>
 	<color name="colour.view74.info.back.images">FF333333</color>
@@ -268,6 +311,6 @@
 	<color name="colour.view75.icons">FF424542</color>
 	<color name="colour.view75.info.star">FF424542</color>
 	<color name="colour.view75.info.star.alt">60424542</color>
-	<color name="colour.view75.shadow">10000000</color>
+	<color name="colour.view75.shadow">30000000</color>
 	<color name="colour.view75.underlay.diffuse">FFFFFFFF</color>
 </colors>

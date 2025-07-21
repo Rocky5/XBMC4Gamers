@@ -1,9 +1,9 @@
 <window id="1111">
 	<defaultcontrol always="true">9000</defaultcontrol>
-	<onunload>Skin.Reset(HomeSettings)</onunload>
-	<onunload>Skin.Reset(SelectPreviewMode)</onunload>
-	<onunload>Skin.Reset(SelectSplash)</onunload>
-	<onload condition="StringCompare(Skin.String(Emulator_Name),)">Skin.SetString(Emulator_Name,Custom Button)</onload>
+	<onload>Skin.Reset(HomeSettings)</onload>
+	<onload condition="StringCompare(Skin.String(NavSoundMode),)">Skin.SetString(NavSoundMode,$LOCALIZE[305])</onload>
+	<onunload condition="Skin.HasSetting(RefershViews)">RunScript(Special://scripts/XBMC4Gamers/Utilities/XML Builder.py,2)</onunload>
+	<onunload condition="Skin.HasSetting(RefershViews)">Skin.Reset(RefershViews)</onunload>
 	<onunload condition="Skin.HasSetting(RefershHome)">RunScript(Special://Scripts/XBMC4Gamers/Utilities/Dialogs.py,"Skin.Reset(RefershHome)","ok","$LOCALIZE[31600]","","$LOCALIZE[31612]","","","",RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Programs DB.py,refresh_home),"yes")</onunload>
 	<controls>
 		<include>Global.Backgrounds</include>
@@ -41,12 +41,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\a_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -61,12 +61,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\b_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\b_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -92,6 +92,10 @@
 				</control>
 				<control type="button" id="2">
 					<label>$LOCALIZE[31023]</label>
+					<include>Button.Settings.Category.Values_Alt</include>
+				</control>
+				<control type="button" id="4">
+					<label>$LOCALIZE[31505]</label>
 					<include>Button.Settings.Category.Values_Alt</include>
 				</control>
 				<control type="button" id="5">
@@ -127,101 +131,97 @@
 				<visible>ControlGroup(9000).HasFocus(1)</visible>
 				<control type="radiobutton" id="12">
 					<description>Time Display</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31035]</label>
 					<onclick>Skin.ToggleSetting(DisplayTime)</onclick>
 					<selected>Skin.HasSetting(DisplayTime)</selected>
 				</control>
 				<control type="radiobutton" id="20">
-					<description>Launcher Toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<description>Custom Launcher Toggle</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31037]</label>
-					<onclick>Skin.ToggleSetting(EmuButton)</onclick>
-					<selected>Skin.HasSetting(EmuButton)</selected>
+					<onclick>Skin.ToggleSetting(Custom_Button)</onclick>
+					<selected>Skin.HasSetting(Custom_Button)</selected>
 				</control>
-				<control type="button" id="21">
-					<description>Launcher Label</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31038]</label>
-					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(Emulator_Name)][/COLOR]</label2>
-					<onclick>Skin.SetString(Emulator_Name,)</onclick>
-					<onclick>Skin.SetString(Emulator_Name)</onclick>
-					<visible>Skin.HasSetting(EmuButton)</visible>
+				<control type="multiselect" id="21">
+					<textoffsetx>0</textoffsetx>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(Custom_Button_Name1,), Skin.Reset(Custom_Button_Path1)]         $LOCALIZE[31051]     [/ONCLICK] [ONCLICK Skin.SetString(Custom_Button_Name1)]     $LOCALIZE[31038]: [COLOR=colour.settings.label2]$INFO[Skin.String(Custom_Button_Name1)][/COLOR]     [/ONCLICK] [ONCLICK Skin.SetFile(Custom_Button_Path1,.xbe|.py)]     $LOCALIZE[31039]: [COLOR=colour.settings.label2]$INFO[Skin.String(Custom_Button_Path1)][/COLOR]     [/ONCLICK]</label>
+					<visible>Skin.HasSetting(Custom_Button)</visible>
 				</control>
-				<control type="button" id="22">
-					<description>Launcher Path</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31039]</label>
-					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(Emulator_Path)][/COLOR]</label2>
-					<onclick>Skin.SetFile(Emulator_Path,.xbe|.py)</onclick>
-					<visible>Skin.HasSetting(EmuButton)</visible>
+				<control type="multiselect" id="22">
+					<textoffsetx>0</textoffsetx>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(Custom_Button_Name2,), Skin.Reset(Custom_Button_Path2)]         $LOCALIZE[31051]     [/ONCLICK] [ONCLICK Skin.SetString(Custom_Button_Name2)]     $LOCALIZE[31038]: [COLOR=colour.settings.label2]$INFO[Skin.String(Custom_Button_Name2)][/COLOR]     [/ONCLICK] [ONCLICK Skin.SetFile(Custom_Button_Path2,.xbe|.py)]     $LOCALIZE[31039]: [COLOR=colour.settings.label2]$INFO[Skin.String(Custom_Button_Path2)][/COLOR]     [/ONCLICK]</label>
+					<visible>Skin.HasSetting(Custom_Button)</visible>
 				</control>
-				<control type="radiobutton" id="23">
+				<control type="multiselect" id="23">
+					<textoffsetx>0</textoffsetx>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(Custom_Button_Name3,), Skin.Reset(Custom_Button_Path3)]         $LOCALIZE[31051]     [/ONCLICK] [ONCLICK Skin.SetString(Custom_Button_Name3)]     $LOCALIZE[31038]: [COLOR=colour.settings.label2]$INFO[Skin.String(Custom_Button_Name3)][/COLOR]     [/ONCLICK] [ONCLICK Skin.SetFile(Custom_Button_Path3,.xbe|.py,Special://scripts/XBMC4Gamers Extras/)]     $LOCALIZE[31039]: [COLOR=colour.settings.label2]$INFO[Skin.String(Custom_Button_Path3)][/COLOR]     [/ONCLICK]</label>
+					<visible>Skin.HasSetting(Custom_Button)</visible>
+				</control>
+				<control type="radiobutton" id="25">
 					<description>XBMC4Gamers Logo Colour Toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31040]</label>
 					<onclick>Skin.ToggleSetting(EnabledXBMC4GamersLogoColour)</onclick>
 					<selected>Skin.HasSetting(EnabledXBMC4GamersLogoColour)</selected>
 				</control>
-				<control type="button" id="24">
+				<control type="button" id="26">
 					<description>Colour Type</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31041]</label>
+					<label>  $LOCALIZE[31041]</label>
 					<label2>[COLOR=$VAR[Custom_Gamers_Logo_Colour]]$INFO[Skin.String(XBMC4GamersLogoColour)][/COLOR]</label2>
+					<onclick>Skin.Reset(XBMC4GamersLogoColour)</onclick>
+					<onclick>Skin.SetBool(hex_entry)</onclick>
 					<onclick>Skin.SetString(XBMC4GamersLogoColour)</onclick>
 					<visible>Skin.HasSetting(EnabledXBMC4GamersLogoColour)</visible>
 				</control>
-				<control type="radiobutton" id="25">
-					<description>Enable navigation sounds on playback</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>$LOCALIZE[31042]</label>
-					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Toggle PlayNavSounds.py)</onclick>
-					<selected>system.getbool(lookandfeel.soundsduringplayback)</selected>
-				</control>
-				<control type="radiobutton" id="26">
+				<control type="radiobutton" id="27">
 					<description>Context Buttons Toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31036]</label>
 					<onclick>Skin.ToggleSetting(HideContextBar)</onclick>
 					<selected>Skin.HasSetting(HideContextBar)</selected>
 				</control>
-				<control type="radiobutton" id="30">
-					<description>Hide Played Overlay</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>$LOCALIZE[31043]</label>
-					<onclick>Skin.ToggleSetting(HidePlayedIndicator)</onclick>
-					<selected>Skin.HasSetting(HidePlayedIndicator)</selected>
-				</control>
-				<control type="textbox" id="31">
+				<control type="textbox" id="28">
 					<description>Hide RSS feed info</description>
 					<include>Button.SkinSettings.Category.Textbox.Values</include>
 					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31609][/COLOR]</label>
 					<!-- <visible>!system.getbool(lookandfeel.enablerssfeeds)</visible> -->
 				</control>
-				<control type="radiobutton" id="32">
+				<control type="radiobutton" id="29">
 					<description>Hide RSS feed</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31610]</label>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Toggle RSS.py)</onclick>
 					<selected>!system.getbool(lookandfeel.enablerssfeeds)</selected>
 				</control>
-				<control type="radiobutton" id="33">
+				<control type="radiobutton" id="30">
+					<description>Hide Played Overlay</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>$LOCALIZE[31043]</label>
+					<onclick>Skin.ToggleSetting(HidePlayedIndicator)</onclick>
+					<selected>Skin.HasSetting(HidePlayedIndicator)</selected>
+				</control>
+				<control type="radiobutton" id="31">
 					<description>Hide Scroll Label</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31047]</label>
 					<onclick>Skin.ToggleSetting(HideScrollLabel)</onclick>
 					<selected>Skin.HasSetting(HideScrollLabel)</selected>
 				</control>
-				<control type="radiobutton" id="34">
+				<control type="radiobutton" id="32">
 					<description>Hide Trainer Overlay</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31045]</label>
 					<onclick>Skin.ToggleSetting(HideTrainerIndicator)</onclick>
 					<selected>Skin.HasSetting(HideTrainerIndicator)</selected>
 				</control>
-				<control type="radiobutton" id="35">
+				<control type="radiobutton" id="33">
 					<description>Hide some context buttons toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31044]</label>
 					<onclick>Skin.ToggleSetting(HideContextButtons)</onclick>
 					<selected>Skin.HasSetting(HideContextButtons)</selected>
@@ -245,44 +245,39 @@
 					<include>Button.SkinSettings.Category.Textbox.Values</include>
 					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31076] [B]$INFO[Skin.String(HomeWindow_name)][/B][/COLOR]</label>
 				</control>
-				<control type="button" id="501">
-					<description>Home Window Toggle</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31081]</label>
-					<onclick>Skin.Reset(Random_Game)</onclick>
-					<onclick>Skin.SetString(HomeWindow,Home)</onclick>
-					<onclick>Skin.SetString(HomeWindowSource,Home)</onclick>
-					<onclick>Skin.SetString(HomeWindow_name,$LOCALIZE[31081])</onclick>
-					<onclick>Skin.SetBool(RefershHome)</onclick>
+				<control type="multiselect" id="501">
+					<textoffsetx>0</textoffsetx>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.Reset(Random_Game), Skin.SetString(HomeWindow,Home), Skin.SetString(HomeWindowSource,Home), Skin.SetString(HomeWindow_name,$LOCALIZE[31081]), Skin.SetBool(RefershHome)]         $LOCALIZE[31081]     [/ONCLICK] [ONCLICK Skin.SetString(HomeWindow,Applications), Skin.SetString(HomeWindowSource,Programs), Skin.SetString(HomeWindow_name,$LOCALIZE[31077]), Skin.Reset(RefershHome)]     $LOCALIZE[31077]     [/ONCLICK] [ONCLICK Skin.SetString(HomeWindow,Emulators), Skin.SetString(HomeWindowSource,Programs), Skin.SetString(HomeWindow_name,$LOCALIZE[31078]), Skin.Reset(RefershHome)]     $LOCALIZE[31078]     [/ONCLICK] [ONCLICK Skin.SetString(HomeWindow,Games), Skin.SetString(HomeWindowSource,Programs), Skin.SetString(HomeWindow_name,$LOCALIZE[31079]), Skin.Reset(RefershHome)]     $LOCALIZE[31079]     [/ONCLICK] [ONCLICK Skin.SetString(HomeWindow,Homebrew), Skin.SetString(HomeWindowSource,Programs), Skin.SetString(HomeWindow_name,$LOCALIZE[31080]), Skin.Reset(RefershHome)]     $LOCALIZE[31080]     [/ONCLICK] [ONCLICK Skin.SetString(HomeWindow,Root), Skin.SetString(HomeWindowSource,Programs), Skin.SetString(HomeWindow_name,$LOCALIZE[20108]), Skin.Reset(RefershHome)]     $LOCALIZE[20108]     [/ONCLICK] [ONCLICK Skin.Reset(HomeWindow), Skin.SetString(HomeWindow), Skin.SetString(HomeWindow_name,$INFO[Skin.String(HomeWindow)]), Skin.SetString(HomeWindowSource,Programs), Skin.Reset(RefershHome)]     $LOCALIZE[20190]     [/ONCLICK]</label>
 				</control>
 				<control type="radiobutton" id="502">
 					<description>Show home settings buttons</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label> - $LOCALIZE[10000] $LOCALIZE[10004]</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>$LOCALIZE[10000] $LOCALIZE[10004]</label>
 					<onclick>Skin.ToggleSetting(HomeSettings)</onclick>
 					<selected>Skin.HasSetting(HomeSettings)</selected>
 					<visible>StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
 				<control type="radiobutton" id="503">
 					<description>Hide some context buttons toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[31058]</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[31058]</label>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
 					<onclick>Skin.ToggleSetting(UseCachedThumbs)</onclick>
 					<selected>Skin.HasSetting(UseCachedThumbs)</selected>
 					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
 				<control type="button" id="504">
-					<description>ThumbCleaner - Clean thumbnails, removed none used thumbnails.</description>
+					<description>Hide some context buttons toggle</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>     $LOCALIZE[31069] - Update Cached Thumbnails</label>
+					<label>   Update Cached Thumbnails</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\Clean Program Thumbs\resources\lib\default.py,1,0)</onclick>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(UseCachedThumbs) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
 				<control type="radiobutton" id="505">
 					<description>Hide some context buttons toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[31055]</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[31055]</label>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
 					<onclick>Skin.ToggleSetting(UseNoBlurredFanart)</onclick>
 					<selected>Skin.HasSetting(UseNoBlurredFanart)</selected>
@@ -290,74 +285,66 @@
 				</control>
 				<control type="radiobutton" id="506">
 					<description>Hide some context buttons toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[31054]</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[31054]</label>
 					<onclick>Skin.ToggleSetting(UseFanartFolder)</onclick>
 					<selected>Skin.HasSetting(UseFanartFolder)</selected>
 					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
 				<control type="radiobutton" id="507">
 					<description>Disable Stock Home Buttons</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[24021] $LOCALIZE[31079]</label>
-					<onclick>Skin.ToggleSetting(DisableHome1)</onclick>
-					<selected>Skin.HasSetting(DisableHome1)</selected>
-					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
-				</control>
-				<control type="radiobutton" id="508">
-					<description>Disable Stock Home Buttons</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[24021] $LOCALIZE[31080]</label>
-					<onclick>Skin.ToggleSetting(DisableHome2)</onclick>
-					<selected>Skin.HasSetting(DisableHome2)</selected>
-					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
-				</control>
-				<control type="radiobutton" id="509">
-					<description>Disable Stock Home Buttons</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[24021] $LOCALIZE[31078]</label>
-					<onclick>Skin.ToggleSetting(DisableHome3)</onclick>
-					<selected>Skin.HasSetting(DisableHome3)</selected>
-					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
-				</control>
-				<control type="radiobutton" id="510">
-					<description>Disable Stock Home Buttons</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[24021] $LOCALIZE[31077]</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[24021] $LOCALIZE[31077]</label>
 					<onclick>Skin.ToggleSetting(DisableHome4)</onclick>
 					<selected>Skin.HasSetting(DisableHome4)</selected>
 					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
+				<control type="radiobutton" id="508">
+					<description>Disable Stock Home Buttons</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[24021] $LOCALIZE[31078]</label>
+					<onclick>Skin.ToggleSetting(DisableHome3)</onclick>
+					<selected>Skin.HasSetting(DisableHome3)</selected>
+					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
+				</control>
+				<control type="radiobutton" id="509">
+					<description>Disable Stock Home Buttons</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[24021] $LOCALIZE[31079]</label>
+					<onclick>Skin.ToggleSetting(DisableHome1)</onclick>
+					<selected>Skin.HasSetting(DisableHome1)</selected>
+					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
+				</control>
+				<control type="radiobutton" id="510">
+					<description>Disable Stock Home Buttons</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[24021] $LOCALIZE[31080]</label>
+					<onclick>Skin.ToggleSetting(DisableHome2)</onclick>
+					<selected>Skin.HasSetting(DisableHome2)</selected>
+					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
+				</control>
 				<control type="radiobutton" id="511">
 					<description>Custom Home Search Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[31601] 1:</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[31601] 1:</label>
 					<onclick>Skin.ToggleSetting(CustomHomeButton1Enabled)</onclick>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
 					<selected>Skin.HasSetting(CustomHomeButton1Enabled)</selected>
 					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
-				<control type="button" id="520">
-					<description>Custom Home Search Entry variable</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31602]</label>
-					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton1Name)][/COLOR]</label2>
-					<onclick>Skin.Reset(CustomHomeButton1Name)</onclick>
-					<onclick>Skin.SetString(CustomHomeButton1Name)</onclick>
-					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton1Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
-				</control>
 				<control type="button" id="521">
 					<description>Custom Home Search Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31605]</label>
+					<label>     $LOCALIZE[31605]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton1Source)][/COLOR]</label2>
 					<onclick>Skin.Reset(CustomHomeButton1Source)</onclick>
-					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomHomeButton1Source)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomHomeButton1Source,CustomHomeButton1Name)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton1Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
 				<control type="textbox" id="522">
 					<description>Search perams info</description>
+					<height>80</height>
 					<include>Button.SkinSettings.Category.Textbox.Values</include>
 					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31603][/COLOR]</label>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton1Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
@@ -365,7 +352,7 @@
 				<control type="button" id="523">
 					<description>Custom Home Search Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31604]</label>
+					<label>     $LOCALIZE[31604]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton1Search)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomHomeButton1Search)</onclick>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
@@ -373,34 +360,26 @@
 				</control>
 				<control type="radiobutton" id="524">
 					<description>Custom Home Search Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[31601] 2:</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[31601] 2:</label>
 					<onclick>Skin.ToggleSetting(CustomHomeButton2Enabled)</onclick>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
 					<selected>Skin.HasSetting(CustomHomeButton2Enabled)</selected>
 					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
-				<control type="button" id="525">
-					<description>Custom Home Search Entry variable</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31602]</label>
-					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton2Name)][/COLOR]</label2>
-					<onclick>Skin.Reset(CustomHomeButton2Name)</onclick>
-					<onclick>Skin.SetString(CustomHomeButton2Name)</onclick>
-					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton2Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
-				</control>
 				<control type="button" id="526">
 					<description>Custom Home Search Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31605]</label>
+					<label>     $LOCALIZE[31605]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton2Source)][/COLOR]</label2>
 					<onclick>Skin.Reset(CustomHomeButton2Source)</onclick>
-					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomHomeButton2Source)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomHomeButton2Source,CustomHomeButton2Name)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton2Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
 				<control type="textbox" id="527">
 					<description>Search perams info</description>
+					<height>80</height>
 					<include>Button.SkinSettings.Category.Textbox.Values</include>
 					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31603][/COLOR]</label>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton2Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
@@ -408,7 +387,7 @@
 				<control type="button" id="528">
 					<description>Custom Home Search Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31604]</label>
+					<label>     $LOCALIZE[31604]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton2Search)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomHomeButton2Search)</onclick>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
@@ -416,34 +395,26 @@
 				</control>
 				<control type="radiobutton" id="529">
 					<description>Custom Home Search Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[31601] 3:</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[31601] 3:</label>
 					<onclick>Skin.ToggleSetting(CustomHomeButton3Enabled)</onclick>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
 					<selected>Skin.HasSetting(CustomHomeButton3Enabled)</selected>
 					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
-				<control type="button" id="530">
-					<description>Custom Home Search Entry variable</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31602]</label>
-					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton3Name)][/COLOR]</label2>
-					<onclick>Skin.Reset(CustomHomeButton3Name)</onclick>
-					<onclick>Skin.SetString(CustomHomeButton3Name)</onclick>
-					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton3Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
-				</control>
 				<control type="button" id="531">
 					<description>Custom Home Search Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31605]</label>
+					<label>     $LOCALIZE[31605]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton3Source)][/COLOR]</label2>
 					<onclick>Skin.Reset(CustomHomeButton3Source)</onclick>
-					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomHomeButton3Source)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomHomeButton3Source,CustomHomeButton3Name)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton3Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
 				<control type="textbox" id="532">
 					<description>Search perams info</description>
+					<height>80</height>
 					<include>Button.SkinSettings.Category.Textbox.Values</include>
 					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31603][/COLOR]</label>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton3Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
@@ -451,7 +422,7 @@
 				<control type="button" id="533">
 					<description>Custom Home Search Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31604]</label>
+					<label>     $LOCALIZE[31604]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton3Search)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomHomeButton3Search)</onclick>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
@@ -459,34 +430,26 @@
 				</control>
 				<control type="radiobutton" id="534">
 					<description>Custom Home Search Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>     $LOCALIZE[31601] 4:</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>   $LOCALIZE[31601] 4:</label>
 					<onclick>Skin.ToggleSetting(CustomHomeButton4Enabled)</onclick>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
 					<selected>Skin.HasSetting(CustomHomeButton4Enabled)</selected>
 					<visible>Skin.HasSetting(HomeSettings) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
-				<control type="button" id="535">
-					<description>Custom Home Search Entry variable</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31602]</label>
-					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton4Name)][/COLOR]</label2>
-					<onclick>Skin.Reset(CustomHomeButton4Name)</onclick>
-					<onclick>Skin.SetString(CustomHomeButton4Name)</onclick>
-					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton4Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
-				</control>
 				<control type="button" id="536">
 					<description>Custom Home Search Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31605]</label>
+					<label>     $LOCALIZE[31605]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton4Source)][/COLOR]</label2>
 					<onclick>Skin.Reset(CustomHomeButton4Source)</onclick>
-					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomHomeButton4Source)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomHomeButton4Source,CustomHomeButton4Name)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton4Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
 				</control>
 				<control type="textbox" id="537">
 					<description>Search perams info</description>
+					<height>80</height>
 					<include>Button.SkinSettings.Category.Textbox.Values</include>
 					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31603][/COLOR]</label>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton4Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
@@ -494,67 +457,11 @@
 				<control type="button" id="538">
 					<description>Custom Home Search Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>        - $LOCALIZE[31604]</label>
+					<label>     $LOCALIZE[31604]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomHomeButton4Search)][/COLOR]</label2>
 					<onclick>Skin.SetString(CustomHomeButton4Search)</onclick>
 					<onclick>Skin.SetBool(RefershHome)</onclick>
 					<visible>Skin.HasSetting(HomeSettings) + Skin.HasSetting(CustomHomeButton4Enabled) + StringCompare(Skin.String(HomeWindow),Home)</visible>
-				</control>
-				<control type="button" id="541">
-					<description>Home Window Toggle</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31077]</label>
-					<onclick>Skin.SetString(HomeWindow,Applications)</onclick>
-					<onclick>Skin.SetString(HomeWindowSource,Programs)</onclick>
-					<onclick>Skin.SetString(HomeWindow_name,$LOCALIZE[31077])</onclick>
-					<onclick>Skin.Reset(RefershHome)</onclick>
-				</control>
-				<control type="button" id="542">
-					<description>Home Window Toggle</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31078]</label>
-					<onclick>Skin.SetString(HomeWindow,Emulators)</onclick>
-					<onclick>Skin.SetString(HomeWindowSource,Programs)</onclick>
-					<onclick>Skin.SetString(HomeWindow_name,$LOCALIZE[31078])</onclick>
-					<onclick>Skin.Reset(RefershHome)</onclick>
-				</control>
-				<control type="button" id="543">
-					<description>Home Window Toggle</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31079]</label>
-					<onclick>Skin.SetString(HomeWindow,Games)</onclick>
-					<onclick>Skin.SetString(HomeWindowSource,Programs)</onclick>
-					<onclick>Skin.SetString(HomeWindow_name,$LOCALIZE[31079])</onclick>
-					<onclick>Skin.Reset(RefershHome)</onclick>
-				</control>
-				<control type="button" id="544">
-					<description>Home Window Toggle</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31080]</label>
-					<onclick>Skin.SetString(HomeWindow,Homebrew)</onclick>
-					<onclick>Skin.SetString(HomeWindowSource,Programs)</onclick>
-					<onclick>Skin.SetString(HomeWindow_name,$LOCALIZE[31080])</onclick>
-					<onclick>Skin.Reset(RefershHome)</onclick>
-				</control>
-				<control type="button" id="545">
-					<description>Home Window Toggle</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[20108]</label>
-					<onclick>Skin.SetString(HomeWindow,Root)</onclick>
-					<onclick>Skin.SetString(HomeWindowSource,Programs)</onclick>
-					<onclick>Skin.SetString(HomeWindow_name,$LOCALIZE[20108])</onclick>
-					<onclick>Skin.Reset(RefershHome)</onclick>
-					<onclick>Skin.Reset(Random_Game)</onclick>
-				</control>
-				<control type="button" id="546">
-					<description>Home Window Toggle</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[20190]</label>
-					<onclick>Skin.Reset(HomeWindow)</onclick>
-					<onclick>Skin.SetString(HomeWindow)</onclick>
-					<onclick>Skin.SetString(HomeWindowSource,Programs)</onclick>
-					<onclick>Skin.SetString(HomeWindow_name,$INFO[Skin.String(HomeWindow)])</onclick>
-					<onclick>Skin.Reset(RefershHome)</onclick>
 				</control>
 				<control type="textbox" id="559">
 					<description>Home Window Label</description>
@@ -563,7 +470,7 @@
 				</control>
 				<control type="radiobutton" id="560">
 					<description>Custom Quick Change Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31059] 1</label>
 					<onclick>Skin.ToggleSetting(CustomQuickChange1Enabled)</onclick>
 					<selected>Skin.HasSetting(CustomQuickChange1Enabled)</selected>
@@ -571,15 +478,15 @@
 				<control type="button" id="561">
 					<description>Custom Quick Change Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31060]</label>
+					<label>  $LOCALIZE[31060]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomQuickChange1)][/COLOR]</label2>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomQuickChange1)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(CustomQuickChange1Enabled)</visible>
 				</control>
 				<control type="radiobutton" id="562">
 					<description>Custom Quick Change Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31059] 2</label>
 					<onclick>Skin.ToggleSetting(CustomQuickChange2Enabled)</onclick>
 					<selected>Skin.HasSetting(CustomQuickChange2Enabled)</selected>
@@ -587,15 +494,15 @@
 				<control type="button" id="563">
 					<description>Custom Quick Change Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31060]</label>
+					<label>  $LOCALIZE[31060]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomQuickChange2)][/COLOR]</label2>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomQuickChange2)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(CustomQuickChange2Enabled)</visible>
 				</control>
 				<control type="radiobutton" id="564">
 					<description>Custom Quick Change Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31059] 3</label>
 					<onclick>Skin.ToggleSetting(CustomQuickChange3Enabled)</onclick>
 					<selected>Skin.HasSetting(CustomQuickChange3Enabled)</selected>
@@ -603,15 +510,15 @@
 				<control type="button" id="565">
 					<description>Custom Quick Change Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31060]</label>
+					<label>  $LOCALIZE[31060]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomQuickChange3)][/COLOR]</label2>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomQuickChange3)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(CustomQuickChange3Enabled)</visible>
 				</control>
 				<control type="radiobutton" id="566">
 					<description>Custom Quick Change Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31059] 4</label>
 					<onclick>Skin.ToggleSetting(CustomQuickChange4Enabled)</onclick>
 					<selected>Skin.HasSetting(CustomQuickChange4Enabled)</selected>
@@ -619,15 +526,15 @@
 				<control type="button" id="567">
 					<description>Custom Quick Change Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31060]</label>
+					<label>  $LOCALIZE[31060]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomQuickChange4)][/COLOR]</label2>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomQuickChange4)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(CustomQuickChange4Enabled)</visible>
 				</control>
 				<control type="radiobutton" id="568">
 					<description>Custom Quick Change Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31059] 5</label>
 					<onclick>Skin.ToggleSetting(CustomQuickChange5Enabled)</onclick>
 					<selected>Skin.HasSetting(CustomQuickChange5Enabled)</selected>
@@ -635,15 +542,15 @@
 				<control type="button" id="569">
 					<description>Custom Quick Change Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31060]</label>
+					<label>  $LOCALIZE[31060]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomQuickChange5)][/COLOR]</label2>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomQuickChange5)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(CustomQuickChange5Enabled)</visible>
 				</control>
 				<control type="radiobutton" id="570">
 					<description>Custom Quick Change Entry</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31059] 6</label>
 					<onclick>Skin.ToggleSetting(CustomQuickChange6Enabled)</onclick>
 					<selected>Skin.HasSetting(CustomQuickChange6Enabled)</selected>
@@ -651,11 +558,59 @@
 				<control type="button" id="571">
 					<description>Custom Quick Change Entry variable</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31060]</label>
+					<label>  $LOCALIZE[31060]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(CustomQuickChange6)][/COLOR]</label2>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Parse Sources.py,CustomQuickChange6)</onclick>
-					<onclick>Skin.Reset(SelectPreviewMode)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<visible>Skin.HasSetting(CustomQuickChange6Enabled)</visible>
+				</control>
+			</control>
+			<!-- Other Options -->
+			<control type="grouplist" id="9001">
+				<description>control area</description>
+				<left>415</left>
+				<top>105</top>
+				<width>775</width>
+				<height>445</height>
+				<itemgap>4</itemgap>
+				<onleft>9000</onleft>
+				<onright>-</onright>
+				<onup>9001</onup>
+				<ondown>9001</ondown>
+				<pagecontrol>80</pagecontrol>
+				<visible>ControlGroup(9000).HasFocus(4)</visible>
+				<control type="button" id="200">
+					<description>View toggles</description>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>$LOCALIZE[31623]</label>
+					<onclick>ActivateWindow(1117)</onclick>
+				</control>
+				<control type="textbox" id="205">
+					<description>Enable navigation sounds on playback</description>
+					<include>Button.SkinSettings.Category.Textbox.Values</include>
+					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31042] $INFO[Skin.String(NavSoundMode)][/COLOR]</label>
+				</control>
+				<control type="multiselect" id="206">
+					<textoffsetx>0</textoffsetx>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK DisableNavSounds(), Skin.SetString(NavSoundMode,$LOCALIZE[13106])]         $LOCALIZE[24021]     [/ONCLICK] [ONCLICK EnableNavSounds(), Skin.SetString(NavSoundMode,$LOCALIZE[305])]     $LOCALIZE[24022]     [/ONCLICK] [ONCLICK NavSoundsDuringPlayback(), Skin.SetString(NavSoundMode,$LOCALIZE[21370])]     $LOCALIZE[21370]     [/ONCLICK]</label>
+				</control>
+				<control type="textbox" id="211">
+					<description>Wallpaper settings info</description>
+					<include>Button.SkinSettings.Category.Textbox.Values</include>
+					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31670][/COLOR]</label>
+				</control>
+				<control type="multiselect" id="212">
+					<textoffsetx>0</textoffsetx>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(WallpaperWidth,720), Skin.SetString(WallpaperHeight,405), Skin.SetString(WallpaperQuality,100)]         $LOCALIZE[31051]     [/ONCLICK] [ONCLICK Skin.SetNumeric(WallpaperWidth)]     $LOCALIZE[31673]: $INFO[Skin.String(WallpaperWidth)]     [/ONCLICK] [ONCLICK Skin.SetNumeric(WallpaperHeight)]     $LOCALIZE[31674]: $INFO[Skin.String(WallpaperHeight)]     [/ONCLICK] [ONCLICK Skin.SetNumeric(WallpaperQuality)]     $LOCALIZE[31675]: $INFO[Skin.String(WallpaperQuality)]     [/ONCLICK]</label>
+					<visible>StringCompare(System.memory(total),64MB)</visible>
+				</control>
+				<control type="multiselect" id="213">
+					<textoffsetx>0</textoffsetx>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>[ONCLICK Skin.SetString(WallpaperWidth,953), Skin.SetString(WallpaperHeight,536), Skin.SetString(WallpaperQuality,100)]         $LOCALIZE[31051]     [/ONCLICK] [ONCLICK Skin.SetNumeric(WallpaperWidth)]     $LOCALIZE[31673]: $INFO[Skin.String(WallpaperWidth)]     [/ONCLICK] [ONCLICK Skin.SetNumeric(WallpaperHeight)]     $LOCALIZE[31674]: $INFO[Skin.String(WallpaperHeight)]     [/ONCLICK] [ONCLICK Skin.SetNumeric(WallpaperQuality)]     $LOCALIZE[31675]: $INFO[Skin.String(WallpaperQuality)]     [/ONCLICK]</label>
+					<visible>!StringCompare(System.memory(total),64MB)</visible>
 				</control>
 			</control>
 			<!-- Scripts -->
@@ -678,65 +633,86 @@
 					<label>$LOCALIZE[247] $LOCALIZE[33061] &gt;</label>
 					<onclick>ActivateWindow(Scripts)</onclick>
 				</control>
+				<control type="textbox" id="314">
+					<description>Scripts run</description>
+					<include>Button.SkinSettings.Category.Textbox.Values</include>
+					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31069][/COLOR]</label>
+				</control>
 				<control type="button" id="315">
 					<description>480p Game Loaders</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - 480p Game Loaders</label>
+					<label>  480p Game Loaders</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\480p Game Loaders\default.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
 				<control type="button" id="320">
 					<description>Clear Cache</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - Clear Cache</label>
+					<label>  Clear Cache</label>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Clear Cache.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
-				<control type="button" id="325">
-					<description>Clean Database</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - Clean Programs Database</label>
-					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Clean Programs Database.py)</onclick>
-				</control>
+				<!-- <control type="button" id="325"> -->
+				<!-- <description>Clean Database</description> -->
+				<!-- <include>Button.SkinSettings.Category.Button.Values_Alt</include> -->
+				<!-- <label>  Clean Programs Database</label> -->
+				<!-- <onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Clean Programs Database.py)</onclick> -->
+				<!-- </control> -->
 				<control type="button" id="330">
 					<description>Remove Empty Save Folders</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - Clean Save Folders</label>
+					<label>  Clean Save Folders</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\Remove Empty Save Folders\default.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
 				<control type="button" id="335">
-					<description>ThumbCleaner - Clean thumbnails, removed none used thumbnails.</description>
+					<description>ThumbCleaner: Clean thumbnails, removed none used thumbnails.</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - Clean Thumbnails</label>
+					<label>  Clean Thumbnails</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\Clean Program Thumbs\resources\lib\default.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
+				</control>
+				<control type="button" id="336">
+					<description>Database Updater</description>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>  Database Maintenance</label>
+					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Database Maintenance.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
 				<control type="button" id="340">
 					<description>File Patcher</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - File Patcher (Widescreen Patches etc...)</label>
+					<label>  File Patcher (Widescreen Patches etc...)</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\File Patcher\default.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
 				<control type="button" id="345">
 					<description>Rip game with DVD2Xbox</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - Rip Game Disc to HDD with DVD2Xbox</label>
+					<label>  Rip Game Disc to HDD with DVD2Xbox</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers\DVD2Xbox\default.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
 				<control type="button" id="350">
 					<description>Text viewer</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - View Text Based Files</label>
+					<label>  View Text Based Files</label>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Text Reader.py,1,)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
 				<control type="button" id="355">
 					<description>Xbox Games Artwork Installer</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - Xbox Games Artwork Installer</label>
+					<label>  Xbox Games Artwork Installer</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\Run Artwork Installer\default.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
 				<control type="button" id="360">
 					<description>XISO to HDD Installer</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label>$LOCALIZE[31069] - XISO to HDD Installer</label>
+					<label>  XISO to HDD Installer</label>
 					<onclick>RunScript(Special://scripts\XBMC4Gamers Extras\XISO to HDD Installer\default.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 				</control>
 			</control>
 			<!-- Startup Options -->
@@ -754,53 +730,51 @@
 				<pagecontrol>80</pagecontrol>
 				<visible>ControlGroup(9000).HasFocus(6)</visible>
 				<control type="radiobutton" id="600">
-					<description>Hide Profile Pic</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<description>Toggle login screen</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31061]</label>
 					<onclick>Skin.Reset(RandomTheme)</onclick>
-					<onclick>ActivateWindow(34)</onclick>
-					<onclick>SendClick(34,4)</onclick>
-					<onclick>ActivateWindow(1111)</onclick>
+					<onclick>ToggleLogin()</onclick>
 					<selected>System.HasLoginScreen</selected>
 				</control>
 				<control type="radiobutton" id="601">
 					<description>Kiosk Mode</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31173]</label>
 					<onclick>Skin.ToggleSetting(kioskmode)</onclick>
-					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Edit Mode.py)</onclick>
+					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Edit Mode.py,1)</onclick>
 					<selected>!Skin.HasSetting(kioskmode)</selected>
 				</control>
 				<control type="radiobutton" id="602">
 					<description>Hide Profile Pic</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31065]</label>
 					<onclick>Skin.ToggleSetting(HideProfilePic)</onclick>
 					<selected>Skin.HasSetting(HideProfilePic)</selected>
 					<visible>!System.HasLoginScreen</visible>
 				</control>
-				<control type="radiobutton" id="603">
-					<description>Startup Random</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>$LOCALIZE[31092] - $INFO[skin.String(HomeWindow)]</label>
-					<onclick>Skin.ToggleSetting(Random_Game)</onclick>
-					<onclick>Skin.SetBool(run_random_script,false)</onclick>
-					<selected>Skin.HasSetting(Random_Game)</selected>
-					<enable>!StringCompare(Skin.String(HomeWindow),Root) + !StringCompare(Skin.String(HomeWindow),Home)</enable>
-				</control>
-				<control type="textbox" id="604">
+				<control type="textbox" id="603">
 					<description>Advanced Stuff</description>
 					<include>Button.SkinSettings.Category.Textbox.Values</include>
 					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31064][/COLOR]</label>
 					<visible>System.HasLoginScreen</visible>
 				</control>
-				<control type="radiobutton" id="605">
+				<control type="radiobutton" id="604">
 					<description>Adult Profile</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31063]</label>
 					<onclick>Skin.ToggleSetting(AdultProfile)</onclick>
 					<selected>Skin.HasSetting(AdultProfile)</selected>
 					<visible>System.HasLoginScreen</visible>
+				</control>
+				<control type="radiobutton" id="605">
+					<description>Startup Random</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>$LOCALIZE[31092]: $INFO[skin.String(HomeWindow)]</label>
+					<onclick>Skin.ToggleSetting(Random_Game)</onclick>
+					<onclick>Skin.SetBool(run_random_script,false)</onclick>
+					<selected>Skin.HasSetting(Random_Game)</selected>
+					<enable>!StringCompare(Skin.String(HomeWindow),Root) + !StringCompare(Skin.String(HomeWindow),Home)</enable>
 				</control>
 				<control type="button" id="620">
 					<description>Startup Playback creation</description>
@@ -810,53 +784,91 @@
 				</control>
 				<control type="radiobutton" id="621">
 					<description>Startup Playback</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31087]</label>
 					<onclick>Skin.ToggleSetting(Use_Startup_Playback)</onclick>
+					<onclick>Skin.Reset(Show_Generate_Playlist)</onclick>
 					<selected>Skin.HasSetting(Use_Startup_Playback)</selected>
 				</control>
 				<control type="button" id="622">
 					<description>Startup Playback Path</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31089]</label>
+					<label>  $LOCALIZE[31089]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(Startup_Playback_Path)][/COLOR]</label2>
 					<onclick>Skin.SetFile(Startup_Playback_Path,.m3u,Special://profile\playlists\music\)</onclick>
 					<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
 				</control>
-				<control type="button" id="623">
-					<description>Startup Playback Path</description>
-					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31088]</label>
-					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Generate Random Playlist.py)</onclick>
-					<onclick>Skin.Reset(UseThemePlaylist)</onclick>
-					<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
-				</control>
-				<control type="radiobutton" id="624">
+				<control type="radiobutton" id="623">
 					<description>Startup Playback Themes</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label> - $LOCALIZE[31091]</label>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>  $LOCALIZE[31091]</label>
 					<onclick>Skin.ToggleSetting(UseThemePlaylist)</onclick>
 					<selected>Skin.HasSetting(UseThemePlaylist)</selected>
 					<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
 				</control>
 				<control type="radiobutton" id="625">
+					<description>Startup Playback</description>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
+					<label>  $LOCALIZE[31088]</label>
+					<onclick>Skin.ToggleSetting(Show_Generate_Playlist)</onclick>
+					<selected>Skin.HasSetting(Show_Generate_Playlist)</selected>
+					<visible>Skin.HasSetting(Use_Startup_Playback)</visible>
+				</control>
+				<control type="button" id="626">
+					<description>Startup Playback Path</description>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>     $LOCALIZE[31088]</label>
+					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Generate Random Playlist.py)</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
+					<onclick>Skin.Reset(UseThemePlaylist)</onclick>
+					<visible>Skin.HasSetting(Show_Generate_Playlist) + Skin.HasSetting(Use_Startup_Playback)</visible>
+				</control>
+				<control type="textbox" id="627">
+					<description>Search perams info</description>
+					<include>Button.SkinSettings.Category.Textbox.Values</include>
+					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[409]: E:\Music\, F:\Music\, G:\Music\[/COLOR]</label>
+					<visible>Skin.HasSetting(Show_Generate_Playlist)</visible>
+				</control>
+				<control type="button" id="628">
+					<description>Startup Playback Custom Paths</description>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>     $LOCALIZE[573] $LOCALIZE[31604]</label>
+					<label2>$INFO[Skin.String(MusicPaths)]</label2>
+					<onclick>Skin.SetString(MusicPaths)</onclick>
+					<visible>Skin.HasSetting(Show_Generate_Playlist) + Skin.HasSetting(Use_Startup_Playback)</visible>
+				</control>
+				<control type="textbox" id="629">
+					<description>Search perams info</description>
+					<include>Button.SkinSettings.Category.Textbox.Values</include>
+					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[409]: mp3, wma, ogg, m4a[/COLOR]</label>
+					<visible>Skin.HasSetting(Show_Generate_Playlist)</visible>
+				</control>
+				<control type="button" id="630">
+					<description>Startup Playback Custom Paths</description>
+					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
+					<label>     $LOCALIZE[10510] $LOCALIZE[31604]</label>
+					<label2>$INFO[Skin.String(MusicExtPaths)]</label2>
+					<onclick>Skin.SetString(MusicExtPaths)</onclick>
+					<visible>Skin.HasSetting(Show_Generate_Playlist) + Skin.HasSetting(Use_Startup_Playback)</visible>
+				</control>
+				<control type="radiobutton" id="632">
 					<description>Enable Intro</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31086]</label>
 					<onclick>Skin.ToggleSetting(introenabled)</onclick>
 					<selected>Skin.HasSetting(introenabled)</selected>
 				</control>
-				<control type="textbox" id="626">
+				<control type="textbox" id="633">
 					<description>Intro info</description>
 					<font>size_18</font>
 					<include>Button.SkinSettings.Category.Textbox.Values</include>
 					<label>[COLOR=colour.settings.label.info.text]$LOCALIZE[31094][/COLOR]</label>
 					<visible>Skin.HasSetting(introenabled)</visible>
 				</control>
-				<control type="button" id="627">
+				<control type="button" id="634">
 					<description>Intor Custom File</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
-					<label> - $LOCALIZE[31093]</label>
+					<label>  $LOCALIZE[31093]</label>
 					<label2>[COLOR=colour.settings.label2]$INFO[Skin.String(intro_file)][/COLOR]</label2>
 					<onclick>Skin.Reset(intro_file)</onclick>
 					<onclick>Skin.SetFile(intro_file,.mp4)</onclick>
@@ -877,66 +889,43 @@
 				<ondown>9001</ondown>
 				<pagecontrol>80</pagecontrol>
 				<visible>ControlGroup(9000).HasFocus(7)</visible>
-				<control type="button" id="400">
-					<description>Change Theme</description>
+				<control type="button" id="405">
+					<description>Change Theme Splash</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 					<label>$LOCALIZE[31056]</label>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Splash Selector.py)</onclick>
 					<onclick>ActivateWindow(1100)</onclick>
-					<onclick>Skin.Reset(SelectSplash)</onclick>
 				</control>
-				<control type="button" id="405">
+				<control type="button" id="406">
 					<description>Change Theme</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 					<label>$LOCALIZE[31048]</label>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Apply Theme.py,select,nothing)</onclick>
 					<onclick>ActivateWindow(1100)</onclick>
 				</control>
-				<control type="radiobutton" id="410">
+				<control type="radiobutton" id="407">
 					<description>theme sounds toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31057]</label>
 					<onclick>Skin.ToggleSetting(disablethemesounds)</onclick>
+					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Apply Theme.py,toggle,$INFO[Skin.CurrentTheme])</onclick>
+					<onclick>ActivateWindow(1100)</onclick>
 					<selected>Skin.HasSetting(disablethemesounds)</selected>
 				</control>
-				<control type="radiobutton" id="411">
+				<control type="radiobutton" id="408">
 					<description>night mode toggle</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>$LOCALIZE[31046]</label>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Apply Theme.py,toggle,night)</onclick>
 					<onclick>ActivateWindow(1100)</onclick>
 					<selected>StringCompare(Skin.CurrentTheme,night)</selected>
 				</control>
-				<control type="button" id="415">
+				<control type="button" id="409">
 					<description>Random Theme Selection</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 					<label>$LOCALIZE[31050]</label>
 					<onclick>RunScript(Special://scripts/XBMC4Gamers/Utilities/Apply Theme.py,random,nothing)</onclick>
 					<onclick>ActivateWindow(1100)</onclick>
-				</control>
-				<control type="radiobutton" id="420">
-					<description>Random Theme On Startup</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label>$LOCALIZE[31051]</label>
-					<onclick>Skin.ToggleSetting(RandomTheme)</onclick>
-					<selected>Skin.HasSetting(RandomTheme)</selected>
-					<enable>!System.HasLoginScreen</enable>
-				</control>
-				<control type="radiobutton" id="425">
-					<description>Skip builtin themes</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label> - $LOCALIZE[31053]</label>
-					<onclick>Skin.ToggleSetting(RandomThemeDL)</onclick>
-					<selected>Skin.HasSetting(RandomThemeDL)</selected>
-					<visible>Skin.HasSetting(RandomTheme)</visible>
-				</control>
-				<control type="radiobutton" id="430">
-					<description>Random Wallpaper On Startup</description>
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
-					<label> - $LOCALIZE[31052]</label>
-					<onclick>Skin.ToggleSetting(RandomThemeWallpaper)</onclick>
-					<selected>Skin.HasSetting(RandomThemeWallpaper)</selected>
-					<visible>Skin.HasSetting(RandomTheme)</visible>
 				</control>
 				<control type="button" id="435">
 					<description>Uninstall Theme</description>
@@ -970,7 +959,7 @@
 					<description>Reset Settings</description>
 					<include>Button.SkinSettings.Category.Button.Values_Alt</include>
 					<label>$LOCALIZE[31072]</label>
-					<onclick>RunScript(Special://Scripts/XBMC4Gamers/Utilities/Dialogs.py,"Skin.ResetSettings~Skin.SetBool(kioskmode)~Skin.SetString(HomeWindow,Root)~Skin.SetString(HomeWindow_name,$LOCALIZE[20108])~Skin.SetString(HomeWindowSource,Programs)","yesno","$LOCALIZE[31606]","","$LOCALIZE[31607]","","$LOCALIZE[222]","Reset",RunScript(Special://Scripts/XBMC4Gamers/Utilities/Dialogs.py,"","ok","$LOCALIZE[31606]","","$LOCALIZE[31608]","","","","LoadProfile($INFO[System.ProfileName])","yes"),"yes")</onclick>
+					<onclick>RunScript(Special://Scripts/XBMC4Gamers/Utilities/Dialogs.py,"Skin.ResetSettings","yesno","$LOCALIZE[31606]","","$LOCALIZE[31607]","","$LOCALIZE[222]","Reset",RunScript(Special://Scripts/XBMC4Gamers/Utilities/Dialogs.py,"","ok","$LOCALIZE[31606]","","$LOCALIZE[31608]","","","","LoadProfile($INFO[System.ProfileName])","yes"),"yes")</onclick>
 				</control>
 				<control type="button" id="710">
 					<description>Text viewer</description>

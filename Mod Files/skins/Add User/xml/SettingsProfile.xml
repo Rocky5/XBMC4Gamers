@@ -48,12 +48,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\a_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>20</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -67,13 +67,13 @@
 					<top>0</top>
 					<width>32</width>
 					<height>32</height>
-					<texture>pad_buttons\dialogs\b_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\b_button.png</texture>
 					<aspectratio>keep</aspectratio>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>20</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -88,42 +88,20 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\dpad_right_button.png</texture>
-					<visible allowhiddenfocus="true">!Control.HasFocus(9002) + !Control.HasFocus(9003) + !Control.HasFocus(9004)</visible>
+					<texture colordiffuse="colour.dialog.diffuse.dpad_right_button">pad_buttons\dialogs\dpad_right_button.png</texture>
+					<visible>Control.HasFocus(2)</visible>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>20</height>
 					<font>size_19</font>
 					<align>left</align>
 					<textcolor>colour.settings.label.context</textcolor>
 					<label>$LOCALIZE[31505]</label>
 					<include>Context.Buttons.Text.Align</include>
-					<visible allowhiddenfocus="true">!Control.HasFocus(9002) + !Control.HasFocus(9003) + !Control.HasFocus(9004)</visible>
-				</control>
-				<!-- D-Pad left Button -->
-				<control type="image">
-					<left>0</left>
-					<top>0</top>
-					<width>32</width>
-					<height>32</height>
-					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\dpad_left_button.png</texture>
-					<visible allowhiddenfocus="true">Control.HasFocus(9002) | Control.HasFocus(9003) | Control.HasFocus(9004)</visible>
-				</control>
-				<control type="label">
-					<left>0</left>
-					<top>0</top>
-					<width min="80" max="147">auto</width>
-					<height>20</height>
-					<font>size_19</font>
-					<align>left</align>
-					<textcolor>colour.settings.label.context</textcolor>
-					<label>13200</label>
-					<include>Context.Buttons.Text.Align</include>
-					<visible allowhiddenfocus="true">Control.HasFocus(9002) | Control.HasFocus(9003) | Control.HasFocus(9004)</visible>
+					<visible>Control.HasFocus(2)</visible>
 				</control>
 				<!-- White Button -->
 				<control type="image">
@@ -132,20 +110,20 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\white_button.png</texture>
-					<visible allowhiddenfocus="true">!Control.HasFocus(9002) + !Control.HasFocus(9003) + !Control.HasFocus(9004)</visible>
+					<texture colordiffuse="colour.dialog.diffuse.white_button">pad_buttons\dialogs\white_button.png</texture>
+					<visible>Control.HasFocus(2)</visible>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>20</height>
 					<font>size_19</font>
 					<align>left</align>
 					<textcolor>colour.settings.label.context</textcolor>
 					<label>$LOCALIZE[31506]</label>
 					<include>Context.Buttons.Text.Align</include>
-					<visible allowhiddenfocus="true">!Control.HasFocus(9002) + !Control.HasFocus(9003) + !Control.HasFocus(9004)</visible>
+					<visible>Control.HasFocus(2)</visible>
 				</control>
 				<!-- Start Button -->
 				<control type="image">
@@ -154,12 +132,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\start_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.start_button">pad_buttons\dialogs\start_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>20</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -178,11 +156,12 @@
 				<onright>9000</onright>
 				<onup>2</onup>
 				<ondown>2</ondown>
+				<onback>system.logoff</onback>
 				<viewtype>list</viewtype>
 				<scrolltime>200</scrolltime>
 				<orientation>vertical</orientation>
 				<preloaditems>2</preloaditems>
-				<visible allowhiddenfocus="true">!Control.HasFocus(9002) + !Control.HasFocus(9003) + !Control.HasFocus(9004) + !Window.IsVisible(1115)</visible>
+				<visible allowhiddenfocus="true">Control.HasFocus(2)</visible>
 				<itemlayout height="74" width="796">
 					<control type="image">
 						<left>0</left>
@@ -197,7 +176,7 @@
 						<top>4</top>
 						<width>64</width>
 						<height>64</height>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>scale</aspectratio>
 						<texture background="false" fallback="unknown-user.png">$INFO[listitem.Icon]</texture>
 					</control>
 					<control type="label">
@@ -243,7 +222,7 @@
 						<top>4</top>
 						<width>64</width>
 						<height>64</height>
-						<aspectratio>stretch</aspectratio>
+						<aspectratio>scale</aspectratio>
 						<texture background="false" fallback="unknown-user.png">$INFO[listitem.Icon]</texture>
 					</control>
 					<control type="label">
@@ -275,16 +254,17 @@
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<left>55</left>
 			<top>55</top>
-			<visible allowhiddenfocus="true">!Window.IsActive(1115) + [Control.HasFocus(9002) | Control.HasFocus(9003) | Control.HasFocus(9004)]</visible>
+			<visible allowhiddenfocus="true">!Window.IsActive(1115) + !Control.HasFocus(2)</visible>
 			<control type="grouplist" id="9000">
 				<left>305</left>
 				<top>200</top>
 				<width>570</width>
 				<height>250</height>
-				<onleft>2</onleft>
+				<onleft>-</onleft>
 				<onright>-</onright>
 				<onup>-</onup>
 				<ondown>-</ondown>
+				<onback>2</onback>
 				<itemgap>1</itemgap>
 				<scrolltime>0</scrolltime>
 				<orientation>vertical</orientation>
@@ -301,7 +281,6 @@
 				</control>
 				<control type="button" id="9003">
 					<description>Birthdays Button</description>
-					<onback>SetFocus(2)</onback>
 					<left>595</left>
 					<top>515</top>
 					<width>570</width>
@@ -316,7 +295,6 @@
 				</control>
 				<control type="radiobutton" id="9004">
 					<description>Intro Button</description>
-					<onback>SetFocus(2)</onback>
 					<left>595</left>
 					<top>515</top>
 					<width>570</width>

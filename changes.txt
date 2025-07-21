@@ -1,5 +1,120 @@
 
-Version 2.2.000 - 28/02/2025
+Version 2.3.000
+14/07/2025
+
+New Features:
+	1) Added Database Maintenance to the XBMC4Gamers Settings Scripts menu.
+		(This will update and clean your database, so if you want to refresh everything at once)
+	2) You can now specify the wallpaper, render size and quality via the XBMC4Gamers Settings > Other Options
+	3) If login screen is enabled Network settings are shared across profiles.
+		(Added Network to the options menu on the login screen. If login screen is disabled profile uses its own network settings)
+	4) ken burns kinda wallpaper effect on the login screen if you don't do anything for 30 seconds.
+	5) Now when you have synopsis naming enabled (default) when you edit a title it will update the default.xml
+		(synopsis info with current language tags will only update your current language title)
+	6) You can now exclude "search matches" from the fast game parsing via programs > advanced menu
+		(Thanks to Joshua Lineberry for the idea and making me redo what I had already done lol)
+	7) Toggle showing profile wallpapers on the login screen.
+		(press start and select the tile)
+	8) You can now set custom paths and extensions for the startup playlist.
+	9) Not toggle navigation sounds: Disable, Enable or enable during playback under "XBMC4Gamers Option > Themes"
+	10) UDMA info support added the system info window.
+	11) UDMA system info vars.
+		(
+			system.hddsupportedudmamode
+			system.hddudmamode
+		)
+	12) All dialog and context button images can be coloured via the colour xml.
+		(so you don't need to make textures if you want to change there colours)
+	13) New script for Insignias can show current sessions and up coming events.
+	14) Added Activate/ReplaceWindowAndFocus (ported from Gotham and fixed for xbox)
+	15) Dialog select updated with ID6 for Or4gins script to work correctly.
+	16) Update the intro code to randomly select a file from the system\intros folder if intro.mp4 doesn't exists or you haven't selected a file manually.
+	17) Added support for passing second argument (force video region code) to the RunXBE() function.
+		(Default regions are processed like normal, but if iRegion == 3 or iRegion == 5 or iRegion == 6 or iRegion == 7 set to NTSC and if invalid set to system region)
+	18) Custom_Dialog_Quick_Change.xml is updated on boot with your sources, so if you remove or add sources reload Gamers to update this file.
+	19) Multiselect button can now process multiple actions.
+		(Thanks to Joshua Lineberry helping fixing the last niggle I had with this.)
+	20) Added support for the new XBDStats "Discord Rich Presence" you need to set the IP and port in the network > discord settings
+	21) Added "Ignore articles when sorting (e.g. "the")" to Settings > Programs > Genera, this is separate from the Appearance version now.
+	22) When login screen is enabled the network settings are controlled via the "Add User". Disabling login screen lets you configure that specific profile.
+	23) You can now disable views via the Settings > XBMC4Gamers Options > Other Options
+		(If you want to decrease the time it takes to load into the programs menu, disable views you wont ever use)
+	24) Fixed the "Game Saves" manager and added F and G udata support.
+
+Bug Fixes:
+	1) Fixed custom view ID 87 not displaying its icon.
+	2) Fixed now playing controls showing 3 album names
+	3) Fixed "Detailed_56_Posters_Carousel" view. 
+	4) Fixed split ISO not loading with Cerbios attacher when filenames contain _1/2.
+		(Some other minor changes to improve the script)
+	5) Forgot to update fonts for different profiles using different themes
+	6) Xbox Artwork installer loader script wasn't setting the custom paths.
+	7) Fixed home screen not being refreshed if a theme has custom last and random values
+	8) Fixed the trainer dialog opening if you pressed B when editing a game title.
+	9) Fixed constantly opening the db file when parsing the home screen information.
+	10) Fixed the cachethumbnail function in the "Parse Programs DB.py" not processing items that end with a open )
+	11) Fixed the "Database Maintenance.py" script not fixing "&#x0A" that gets added to the default.xmls when XBMC updates them.
+	12) Workaround for XEmu downloader error.
+
+Improvements:
+	1) Removed "Make Default" from programs menus
+		(This is pointless in gamers)
+	2) Keyboard now uses the home font.
+	3) Updated some scripts.
+	4) Streamlined the code for updating the xbe timestamp (lastplayed) and alt xbe launching.
+		(Faster and simpler)
+	5) "Disabling theme sounds" will now reload the theme.
+		(So they are toggled)
+	6) Made the file patcher script always place the "generic patches" at the top list & updated the code.
+	7) Updated DialogNumeric and DialogNetworkSetup.
+	8) Updated all context buttons label spacing.
+	9) Redone the setwallpaper & cleanwallpaper functions.
+		(defaults to: 128MB 953x536 and 64MB 720x405)
+	10) Updated the "XISO to HDD Installer" script, to handle ISOs better. Repackinator split trim/scrubbed games wont work here.
+		(renames ISOs with _1/_2 at the end this fixes the mounting on cerbios)
+	11) Updated the login screens look again & you can now access the option overlay (black button)
+	12) Updated the main XBMC4Gamers script, removed redundant stuff and moved skin settings check into it instead of the startup.xml.
+	13) New profile settings look, to match other smaller dialogs.
+	14) Changed some strings and menu entries in the "XBMC4Gamers Option" menu.
+	15) Fixed the busy dialog when no network is established on startup.
+		(it's caused by python running autoexec.py and waiting up to 5 secs for network activity :/ I remove autoexec.py after its run now.)
+	16) Added support for user patches to the File Patcher script.
+		(
+			add your files to system/scripts/XBMC4Gamers Extras/File Patcher/user patches/
+			how files are formatted can be viewed in the readme.txt or by checking an existing patches in /resources/lib/patches/ folder.
+		)
+	17) Now you can use up to 3 custom button on the options dialog.
+	18) Sped up majority of scripts by only importing the functions required for the script to work.
+	19) Old method of loading synopsis info now pulls the full overview. Just like the Information button in the context menu.
+	20) Updated the XBMC4Gamers Options menus with multiselect buttons.
+	21) Refreshing info now doesn't need to reload the window. Thumbs will still be cached but you scroll a bit and it will update.
+	22) Editing the title name doesn't need to reload the window.
+	23) Updated the context menu Launch in... label to Override Region, it will also display the default or selected region.
+	24) Now when you select an Override Region for a game/xbe it wont auto launch the conten.
+		(This done my head in when testing stuff lol)
+	25) Moved the Fanart tile view to be a toggle under view optins for the large_poster view.
+	26) Fanart view is now full screen only.
+	27) Programs scanning and trainer scanning is sped up.
+	28) Information window, screenshots and fanart sizes and positions adjusted.
+	29) Adjustments to the wallpaper sizing and rendering code.
+	
+Additional:
+	1) Minor changes to skin files here and there to just refine things.
+	2) Removed the fade in and out when logging in/out of a profile
+	3) Removed random themes on startup, it worked but due to the changed to wallpapers it would always use the default wallpaper.
+		(I just didn't see the need for this option)
+	4) Added a check for default1080i.xbe (1080i patch) to the "Set Launch XBE" menu.
+	5) Updated "Run Artwork Installer" script to work with the new artwork installers menu system.
+	6) You can now select gifs as wallpapers, note not all work and they will eat up a lot of ram if they are large.
+	7) Moved the log off dialog into the options dialog.
+	
+____________________________________________________________________________________________________________________________________
+
+
+Previous Updates:
+
+Version 2.2.000
+28/02/2025
 
 New Features:
 	1) Enabled PAL60 resolution selection in the Appearance menu.
@@ -100,15 +215,11 @@ Improvements:
 	32) Now if 1080i is enabled on the system it wont reset it, it just wont use it.
 		(This lets games and other apps run in 1080i)
 
-	Additional:
+Additional:
 	1) Loads of QOL (Quality of Life) changes.
 
-____________________________________________________________________________________________________________________________________
-
-
-Previous Updates:
-
-Version 2.1.001 - 23/08/2024
+Version 2.1.001
+23/08/2024
 
 New Features:
 	1) Folder fanart can be theme-specific and/or can be toggled on and off.
@@ -143,7 +254,8 @@ Improvements:
 		(also reduces ram usage a bit)
 	13) Quality of life improvements.
 
-Change log for v2.1.000 - 27/07/2024
+Change log for v2.1.000
+27/07/2024
 
 	
 	1) Themes can now edit any includes value.

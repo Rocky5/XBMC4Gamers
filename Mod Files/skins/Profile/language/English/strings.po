@@ -30,99 +30,6 @@ msgstr ""
 
 ##  DO NOT TRANSLATE (end)
 
-## INTERNAL (start)
-## These are used for items that require you to recompile the xbe
-
-msgctxt "#32000"
-msgid "Advanced"
-msgstr ""
-
-msgctxt "#32001"
-msgid "Enable the use of the (Y) button to open the information window"
-msgstr ""
-
-msgctxt "#32002"
-msgid "Enable fast game parsing"
-msgstr ""
-
-msgctxt "#32003"
-msgid "Don't use Synopsis naming"
-msgstr ""
-
-msgctxt "#32004"
-msgid "This option will not work with forced 480p bios"
-msgstr ""
-
-msgctxt "#32005"
-msgid "Enable higher resolution artwork"
-msgstr ""
-
-msgctxt "#32006"
-msgid "Refresh info"
-msgstr ""
-
-msgctxt "#32007"
-msgid "Refresh all contents info"
-msgstr ""
-
-msgctxt "#32008"
-msgid "Refreshing Synopsis Information"
-msgstr ""
-
-msgctxt "#32009"
-msgid "Set Launch XBE"
-msgstr ""
-
-msgctxt "#32010"
-msgid "Unpatched"
-msgstr ""
-
-msgctxt "#32011"
-msgid "480p Patch"
-msgstr ""
-
-msgctxt "#32012"
-msgid "720p Patch"
-msgstr ""
-
-msgctxt "#32013"
-msgid "Generic Patch"
-msgstr ""
-
-msgctxt "#32014"
-msgid "Widescreen Patch"
-msgstr ""
-
-msgctxt "#32015"
-msgid "XHD Patch"
-msgstr ""
-
-msgctxt "#32016"
-msgid "Resize Screen"
-msgstr ""
-
-msgctxt "#32017"
-msgid "Edit or Refresh"
-msgstr ""
-
-msgctxt "#32018"
-msgid "Trainers (cheats)"
-msgstr ""
-
-msgctxt "#32019"
-msgid "Information"
-msgstr ""
-
-msgctxt "#32020"
-msgid "Power Saving"
-msgstr ""
-
-msgctxt "#32021"
-msgid "This can crash some Xbox. If yours crashes, hold the (Black) button[CR]when the splash screen appears to disable."
-msgstr ""
-
-## INTERNAL (end)
-
 ## Custom_logoff.xml - 31011 to 31015
 msgctxt "#31011"
 msgid "logging off"
@@ -188,7 +95,7 @@ msgid "Label"
 msgstr ""
 
 msgctxt "#31039"
-msgid "Location"
+msgid "XBE/Script path"
 msgstr ""
 
 msgctxt "#31040"
@@ -200,7 +107,7 @@ msgid "Custom hex value"
 msgstr ""
 
 msgctxt "#31042"
-msgid "Enable navigation sounds during media playback"
+msgid "Audio navigation sound options:"
 msgstr ""
 
 msgctxt "#31043"
@@ -236,15 +143,15 @@ msgid "Random theme"
 msgstr ""
 
 msgctxt "#31051"
-msgid "Randomise theme on startup"
+msgid "Reset"
 msgstr ""
 
 msgctxt "#31052"
-msgid "Randomise wallpaper"
+msgid ""
 msgstr ""
 
 msgctxt "#31053"
-msgid "Only randomise downloaded themes"
+msgid ""
 msgstr ""
 
 msgctxt "#31054"
@@ -260,7 +167,7 @@ msgid "Change splash"
 msgstr ""
 
 msgctxt "#31057"
-msgid "Disable theme sounds"
+msgid "Disable theme custom navigation sounds"
 msgstr ""
 
 msgctxt "#31058"
@@ -299,7 +206,7 @@ msgstr ""
 
 ## Scripts - Custom_Skin_Settings.xml - 31069 to 31075
 msgctxt "#31069"
-msgid "Run"
+msgid "Run the most commonly used scripts"
 msgstr ""
 
 msgctxt "#31070"
@@ -373,7 +280,7 @@ msgid "Select File"
 msgstr ""
 
 msgctxt "#31094"
-msgid "If no file is selected/found it defaults to [B]Q:/intro.mp4[/B] or [B]Q:/system/intro/intro.mp4[/B]"
+msgid "If no file is selected/found it defaults to [B]Q:/intro.mp4[/B] or [B]Q:/system/intros/[/B]"
 msgstr ""
 
 ## DialogKeyboard.xml - 310101 to 31105
@@ -735,7 +642,7 @@ msgctxt "#31564"
 msgid "Close Home"
 msgstr ""
 
-## Home Window - Custom_Skin_Settings.xml - 31600 to 31650
+## Home Window - Custom_Skin_Settings.xml - 31600 to 31669
 msgctxt "#31600"
 msgid "Notice"
 msgstr ""
@@ -753,7 +660,7 @@ msgid "Name"
 msgstr ""
 
 msgctxt "#31603"
-msgid "Separate search items with a comma.[CR]Example: Games,Applications,F:\\Games Alt"
+msgid "Leave blank to use the selected source.[CR]Additionally you can separate search items with a comma.[CR]Example: Games,Applications,F:\\Games Alt"
 msgstr ""
 
 msgctxt "#31604"
@@ -785,7 +692,7 @@ msgid "Hide home screen RSS feed"
 msgstr ""
 
 msgctxt "#31611"
-msgid "Because the current or previous theme used custom item values.[CR]Home screen is being refreshed."
+msgid "Previous theme used custom item values.[CR]Home screen is being refreshed."
 msgstr ""
 
 msgctxt "#31612"
@@ -826,4 +733,45 @@ msgstr ""
 
 msgctxt "#31621"
 msgid "Fanart"
+msgstr ""
+
+msgctxt "#31622"
+msgid "Resources"
+msgstr ""
+
+msgctxt "#31623"
+msgid "Enable or Disable Views"
+msgstr ""
+
+## Other Options - Custom_Skin_Settings.xml - 31670 to 31700
+msgctxt "#31670"
+msgid "Configure the wallpaper/rendering dimensions, and quality settings."
+msgstr ""
+
+msgctxt "#31671"
+msgid ""
+msgstr ""
+
+msgctxt "#31672"
+msgid "Wallpaper Settings"
+msgstr ""
+
+msgctxt "#31673"
+msgid "Width"
+msgstr ""
+
+msgctxt "#31674"
+msgid "Height"
+msgstr ""
+
+msgctxt "#31675"
+msgid "Quality (0 - 100)"
+msgstr ""
+
+msgctxt "#31676"
+msgid ""
+msgstr ""
+
+msgctxt "#31677"
+msgid ""
 msgstr ""

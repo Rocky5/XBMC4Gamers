@@ -51,6 +51,7 @@
 	<ondown>9002</ondown>
 	<onback>50</onback>
 	<animation effect="slide" start="0,0" end="96.3,0" time="0" condition="![Skin.HasSetting(CustomViewtype_id_80) | Skin.HasSetting(CustomViewtype_id_81) | Skin.HasSetting(CustomViewtype_id_82) | Skin.HasSetting(CustomViewtype_id_83) | Skin.HasSetting(CustomViewtype_id_84) | Skin.HasSetting(CustomViewtype_id_85) | Skin.HasSetting(CustomViewtype_id_86) | Skin.HasSetting(CustomViewtype_id_87) | Skin.HasSetting(CustomViewtype_id_88) | Skin.HasSetting(CustomViewtype_id_89)]">Conditional</animation>
+	<animation effect="slide" start="0,0" end="96.3,0" time="0" condition="Skin.HasSetting(_resourcesenabled) + Skin.HasSetting(View71_Disabled) + Skin.HasSetting(View57_Disabled) + Skin.HasSetting(View75_Disabled) + Skin.HasSetting(View56_Disabled) + Skin.HasSetting(View54_Disabled) + Skin.HasSetting(View61_Disabled) + Skin.HasSetting(View72_Disabled) + Skin.HasSetting(View74_Disabled) + Skin.HasSetting(View55_Disabled) + Skin.HasSetting(View69_Disabled)">Conditional</animation>
 	<animation effect="slide" start="0,0" end="96.3,0" time="0" condition="!Skin.HasSetting(_resourcesenabled)">Conditional</animation>
 	<itemlayout height="40" width="192.6">
 		<control type="image">
@@ -198,12 +199,12 @@
 				<width>32</width>
 				<height>32</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>pad_buttons\dialogs\a_button.png</texture>
+				<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
 			</control>
 			<control type="label">
 				<left>0</left>
 				<top>0</top>
-				<width min="80" max="147">auto</width>
+				<width min="40" max="147">auto</width>
 				<height>32</height>
 				<font>size_19</font>
 				<align>left</align>
@@ -218,12 +219,12 @@
 				<width>32</width>
 				<height>32</height>
 				<aspectratio>stretch</aspectratio>
-				<texture>pad_buttons\dialogs\b_button.png</texture>
+				<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\b_button.png</texture>
 			</control>
 			<control type="label">
 				<left>0</left>
 				<top>0</top>
-				<width min="80" max="147">auto</width>
+				<width min="40" max="147">auto</width>
 				<height>32</height>
 				<font>size_19</font>
 				<align>left</align>
@@ -347,153 +348,125 @@
 			<content>
 				<item id="200">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>SetWallpaper(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Color)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.SetBool(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)])</onclick>
 					<icon>windows\programs\hdd.jpg</icon>
 				</item>
 				<item id="201">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
 					<onclick>Skin.SetBool(hex_entry)</onclick>
-					<onclick>Skin.SetString(Background_Custom_Color)</onclick>
-					<onclick>Skin.Reset(Background_Color)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Custom_Color, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Background_Custom_Color)</onclick>
 					<icon>windows\programs\custom_color.jpg</icon>
 				</item>
 				<item id="202">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.Reset(Background_Color)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\0.jpg)</onclick>
 					<icon>windows\programs\reset.jpg</icon>
 				</item>
-				<item id="202">
+				<item id="203">
 					<label>-</label>
 					<onclick>Skin.ToggleSetting(AltTextColour)</onclick>
 					<icon>windows\programs\text_color.jpg</icon>
+					<visible>!Skin.HasSetting(AltTextColour)</visible>
+				</item>
+				<item id="203">
+					<label>-</label>
+					<onclick>Skin.Reset(AltTextColour)</onclick>
+					<icon>windows\programs\text_color_alt.jpg</icon>
+					<visible>Skin.HasSetting(AltTextColour)</visible>
 				</item>
 				<!-- Backgrounds -->
 				<item id="210">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,1.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\1.jpg)</onclick>
 					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
 					<icon>windows\programs\background thumbs\1.jpg</icon>
 				</item>
 				<item id="211">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,2.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\2.jpg)</onclick>
 					<icon>windows\programs\background thumbs\2.jpg</icon>
 				</item>
 				<item id="212">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,3.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\3.jpg)</onclick>
 					<icon>windows\programs\background thumbs\3.jpg</icon>
 				</item>
 				<item id="213">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,4.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\4.jpg)</onclick>
 					<icon>windows\programs\background thumbs\4.jpg</icon>
 				</item>
 				<item id="214">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,5.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\5.jpg)</onclick>
 					<icon>windows\programs\background thumbs\5.jpg</icon>
 				</item>
 				<item id="215">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,6.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\6.jpg)</onclick>
 					<icon>windows\programs\background thumbs\6.jpg</icon>
 				</item>
 				<item id="216">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,7.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\7.jpg)</onclick>
 					<icon>windows\programs\background thumbs\7.jpg</icon>
 				</item>
 				<item id="217">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,8.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\8.jpg)</onclick>
 					<icon>windows\programs\background thumbs\8.jpg</icon>
 				</item>
 				<item id="218">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,9.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\9.jpg)</onclick>
 					<icon>windows\programs\background thumbs\9.jpg</icon>
 				</item>
 				<item id="219">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,10.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\10.jpg)</onclick>
 					<icon>windows\programs\background thumbs\10.jpg</icon>
 				</item>
 				<item id="220">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,11.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\11.jpg)</onclick>
 					<icon>windows\programs\background thumbs\11.jpg</icon>
 				</item>
 				<item id="221">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,12.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\12.jpg)</onclick>
 					<icon>windows\programs\background thumbs\12.jpg</icon>
 				</item>
 				<item id="222">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,13.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\13.jpg)</onclick>
 					<icon>windows\programs\background thumbs\13.jpg</icon>
 				</item>
 				<item id="223">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,14.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\14.jpg)</onclick>
 					<icon>windows\programs\background thumbs\14.jpg</icon>
 				</item>
 				<item id="224">
 					<label>-</label>
-					<onclick>CleanWallpaper</onclick>
-					<onclick>Skin.SetString(Background_Color,15.jpg)</onclick>
-					<onclick>Skin.Reset(Background_Image)</onclick>
-					<onclick>Skin.Reset(Background_Custom_Color)</onclick>
+					<onclick>Skin.Reset(custom_wallpaper_set)</onclick>
+					<onclick>SetWallpaper(Background_Image, $INFO[Skin.String(WallpaperWidth)], $INFO[Skin.String(WallpaperHeight)], $INFO[Skin.String(WallpaperQuality)], Q:\skins\Profile\backgrounds\$INFO[Skin.CurrentTheme]\15.jpg)</onclick>
 					<icon>windows\programs\background thumbs\15.jpg</icon>
 				</item>
 			</content>
@@ -506,7 +479,7 @@
 					<label>$LOCALIZE[31615]</label>
 					<onclick>-</onclick>
 					<icon>-</icon>
-					<visible>Skin.HasSetting(_resourcesenabled)</visible>
+					<visible>Skin.HasSetting(_resourcesenabled) + ![Skin.HasSetting(View71_Disabled) + Skin.HasSetting(View57_Disabled) + Skin.HasSetting(View75_Disabled) + Skin.HasSetting(View56_Disabled) + Skin.HasSetting(View54_Disabled) + Skin.HasSetting(View61_Disabled) + Skin.HasSetting(View72_Disabled) + Skin.HasSetting(View74_Disabled) + Skin.HasSetting(View55_Disabled) + Skin.HasSetting(View69_Disabled)]</visible>
 				</item>
 				<item id="296">
 					<label>$LOCALIZE[31616]</label>
@@ -521,72 +494,81 @@
 				</item>
 			</content>
 		</control>
-		<!-- Views -->
+		<!-- Detailed Views -->
 		<control type="panel" id="9002">
 			<visible>Container(9001).HasFocus(295)</visible>
 			<pagecontrol>91</pagecontrol>
 			<include>Panel.Alt.Values</include>
 			<visible>Skin.HasSetting(_resourcesenabled)</visible>
 			<content>
-				<!-- Synopsis views -->
 				<item id="300">
 					<label>-</label>
 					<onclick>Container.SetViewMode(71)</onclick>
 					<icon>windows\programs\views\71.jpg</icon>
+					<visible>!Skin.HasSetting(View71_Disabled)</visible>
 				</item>
 				<item id="301">
 					<label>-</label>
 					<onclick>Container.SetViewMode(57)</onclick>
 					<icon>windows\programs\views\57.jpg</icon>
+					<visible>!Skin.HasSetting(View57_Disabled)</visible>
 				</item>
 				<item id="302">
 					<label>-</label>
 					<onclick>Container.SetViewMode(75)</onclick>
 					<icon>windows\programs\views\75.jpg</icon>
+					<visible>!Skin.HasSetting(View75_Disabled)</visible>
 				</item>
 				<item id="303">
 					<label>-</label>
 					<onclick>Container.SetViewMode(56)</onclick>
 					<icon>windows\programs\views\56.jpg</icon>
+					<visible>!Skin.HasSetting(View56_Disabled)</visible>
 				</item>
 				<item id="304">
 					<label>-</label>
 					<onclick>Container.SetViewMode(54)</onclick>
 					<icon>windows\programs\views\54.jpg</icon>
+					<visible>!Skin.HasSetting(View54_Disabled)</visible>
 				</item>
 				<item id="305">
 					<label>-</label>
 					<onclick>Container.SetViewMode(61)</onclick>
 					<icon>windows\programs\views\61.jpg</icon>
+					<visible>!Skin.HasSetting(View61_Disabled)</visible>
 				</item>
 				<item id="306">
 					<label>-</label>
 					<onclick>Container.SetViewMode(72)</onclick>
 					<icon>windows\programs\views\72.jpg</icon>
+					<visible>!Skin.HasSetting(View72_Disabled)</visible>
 				</item>
 				<item id="307">
 					<label>-</label>
 					<onclick>Container.SetViewMode(74)</onclick>
 					<icon>windows\programs\views\74.jpg</icon>
+					<visible>!Skin.HasSetting(View74_Disabled)</visible>
 				</item>
 				<item id="308">
 					<label>-</label>
 					<onclick>Container.SetViewMode(55)</onclick>
 					<icon>windows\programs\views\55.jpg</icon>
+					<visible>!Skin.HasSetting(View55_Disabled)</visible>
 				</item>
 				<item id="309">
 					<label>-</label>
 					<onclick>Container.SetViewMode(69)</onclick>
 					<icon>windows\programs\views\69.jpg</icon>
+					<visible>!Skin.HasSetting(View69_Disabled)</visible>
 				</item>
 			</content>
 		</control>
+		<!-- Resources and Standard Views -->
 		<control type="panel" id="9002">
 			<visible>Container(9001).HasFocus(296)</visible>
 			<pagecontrol>91</pagecontrol>
 			<include>Panel.Alt.Values</include>
 			<content>
-				<!-- Normal views -->
 				<item id="320">
 					<label>-</label>
 					<onclick>Container.SetViewMode(50)</onclick>
@@ -596,93 +578,101 @@
 					<label>-</label>
 					<onclick>Container.SetViewMode(51)</onclick>
 					<icon>windows\programs\views\51.jpg</icon>
+					<visible>!Skin.HasSetting(View51_Disabled)</visible>
 				</item>
 				<item id="323">
 					<label>-</label>
 					<onclick>Container.SetViewMode(52)</onclick>
 					<icon>windows\programs\views\52.jpg</icon>
+					<visible>!Skin.HasSetting(View52_Disabled)</visible>
 				</item>
 				<item id="324">
 					<label>-</label>
 					<onclick>Container.SetViewMode(70)</onclick>
 					<icon>windows\programs\views\70.jpg</icon>
+					<visible>!Skin.HasSetting(View70_Disabled)</visible>
 				</item>
 				<item id="325">
 					<label>-</label>
 					<onclick>Container.SetViewMode(53)</onclick>
 					<icon>windows\programs\views\53.jpg</icon>
 					<visible>Skin.HasSetting(_resourcesenabled)</visible>
+					<visible>!Skin.HasSetting(View53_Disabled)</visible>
 				</item>
 				<item id="326">
 					<label>-</label>
 					<onclick>Container.SetViewMode(58)</onclick>
 					<icon>windows\programs\views\58.jpg</icon>
 					<visible>Skin.HasSetting(_resourcesenabled)</visible>
+					<visible>!Skin.HasSetting(View58_Disabled)</visible>
 				</item>
 				<item id="327">
 					<label>-</label>
 					<onclick>Container.SetViewMode(59)</onclick>
 					<icon>windows\programs\views\59.jpg</icon>
+					<visible>!Skin.HasSetting(View59_Disabled)</visible>
 				</item>
 				<item id="328">
 					<label>-</label>
 					<onclick>Container.SetViewMode(60)</onclick>
 					<icon>windows\programs\views\60.jpg</icon>
+					<visible>!Skin.HasSetting(View60_Disabled)</visible>
 				</item>
 				<item id="329">
 					<label>-</label>
 					<onclick>Container.SetViewMode(66)</onclick>
 					<icon>windows\programs\views\66.jpg</icon>
+					<visible>!Skin.HasSetting(View66_Disabled)</visible>
 				</item>
 				<item id="330">
 					<label>-</label>
 					<onclick>Container.SetViewMode(67)</onclick>
 					<icon>windows\programs\views\67.jpg</icon>
+					<visible>!Skin.HasSetting(View67_Disabled)</visible>
 				</item>
 				<item id="331">
 					<label>-</label>
 					<onclick>Container.SetViewMode(62)</onclick>
 					<icon>windows\programs\views\62.jpg</icon>
 					<visible>Skin.HasSetting(_resourcesenabled)</visible>
+					<visible>!Skin.HasSetting(View62_Disabled)</visible>
 				</item>
 				<item id="332">
 					<label>-</label>
 					<onclick>Container.SetViewMode(63)</onclick>
 					<icon>windows\programs\views\63.jpg</icon>
 					<visible>Skin.HasSetting(_resourcesenabled)</visible>
+					<visible>!Skin.HasSetting(View63_Disabled)</visible>
 				</item>
 				<item id="333">
 					<label>-</label>
 					<onclick>Container.SetViewMode(64)</onclick>
 					<icon>windows\programs\views\64.jpg</icon>
 					<visible>Skin.HasSetting(_resourcesenabled)</visible>
+					<visible>!Skin.HasSetting(View64_Disabled)</visible>
 				</item>
 				<item id="334">
 					<label>-</label>
 					<onclick>Container.SetViewMode(65)</onclick>
 					<icon>windows\programs\views\65.jpg</icon>
 					<visible>Skin.HasSetting(_resourcesenabled)</visible>
+					<visible>!Skin.HasSetting(View65_Disabled)</visible>
 				</item>
 				<item id="335">
 					<label>-</label>
 					<onclick>Container.SetViewMode(68)</onclick>
 					<icon>windows\programs\views\68.jpg</icon>
 					<visible>Skin.HasSetting(_resourcesenabled)</visible>
+					<visible>!Skin.HasSetting(View68_Disabled)</visible>
 				</item>
-				<!-- <item id="336"> -->
-				<!-- <label>-</label> -->
-				<!-- <onclick>Container.SetViewMode(79)</onclick> -->
-				<!-- <icon>windows\programs\views\79.jpg</icon> -->
-				<!-- <visible>Skin.HasSetting(_resourcesenabled)</visible> -->
-				<!-- </item> -->
 			</content>
 		</control>
+		<!-- Custom Views -->
 		<control type="panel" id="9002">
 			<visible>Container(9001).HasFocus(297)</visible>
 			<pagecontrol>91</pagecontrol>
 			<include>Panel.Alt.Values</include>
 			<content>
-				<!-- Custom Views -->
 				<item id="360">
 					<label>-</label>
 					<onclick>Container.SetViewMode(80)</onclick>
@@ -728,7 +718,7 @@
 				<item id="367">
 					<label>-</label>
 					<onclick>Container.SetViewMode(87)</onclick>
-					<icon>$INFO[Skin.String(CustomViewtype_id_87_JPG))]</icon>
+					<icon>$INFO[Skin.String(CustomViewtype_id_87_JPG)]</icon>
 					<visible>Skin.HasSetting(CustomViewtype_id_87)</visible>
 				</item>
 				<item id="368">
@@ -902,19 +892,33 @@
 					<icon>windows\programs\animated_Fanart_on.jpg</icon>
 					<visible>Skin.HasSetting(fanartenabled) + Skin.HasSetting(AnimatedFanart) + ![StringCompare(Container.Viewmode,view55) | StringCompare(Container.Viewmode,view61) | StringCompare(Container.Viewmode,view71) | StringCompare(Container.Viewmode,view72)]</visible>
 				</item>
-				<!-- Enabled on view 57 -->
+				<!-- Enabled on view 71 -->
 				<item id="411">
 					<label>-</label>
-					<onclick>Skin.ToggleSetting(fanartfullscreen)</onclick>
-					<icon>windows\programs\fanart_full_screen_disabled.jpg</icon>
-					<visible>!Skin.HasSetting(fanartfullscreen) + StringCompare(Container.Viewmode,view57)</visible>
+					<onclick>Skin.ToggleSetting(fanartposters)</onclick>
+					<icon>windows\programs\views\71_alt.jpg</icon>
+					<visible>!Skin.HasSetting(fanartposters) + StringCompare(Container.Viewmode,view71)</visible>
 				</item>
-				<!-- Enabled on view 57 -->
+				<!-- Enabled on view 71 -->
 				<item id="411">
 					<label>-</label>
-					<onclick>Skin.Reset(fanartfullscreen)</onclick>
-					<icon>windows\programs\fanart_full_screen.jpg</icon>
-					<visible>Skin.HasSetting(fanartfullscreen) + StringCompare(Container.Viewmode,view57)</visible>
+					<onclick>Skin.Reset(fanartposters)</onclick>
+					<icon>windows\programs\views\71.jpg</icon>
+					<visible>Skin.HasSetting(fanartposters) + StringCompare(Container.Viewmode,view71)</visible>
+				</item>
+				<!-- Enabled on view 71 -->
+				<item id="412">
+					<label>-</label>
+					<onclick>Skin.ToggleSetting(multiimagefanartpostersview)</onclick>
+					<icon>windows\programs\enable_fanart_view_multiimage.jpg</icon>
+					<visible>!Skin.HasSetting(multiimagefanartpostersview) + Skin.HasSetting(fanartposters) + StringCompare(Container.Viewmode,view71)</visible>
+				</item>
+				<!-- Enabled on view 71 -->
+				<item id="412">
+					<label>-</label>
+					<onclick>Skin.Reset(multiimagefanartpostersview)</onclick>
+					<icon>windows\programs\disable_fanart_view_multiimage.jpg</icon>
+					<visible>Skin.HasSetting(multiimagefanartpostersview) + Skin.HasSetting(fanartposters) + StringCompare(Container.Viewmode,view71)</visible>
 				</item>
 				<!-- Enabled on view 57 -->
 				<item id="412">

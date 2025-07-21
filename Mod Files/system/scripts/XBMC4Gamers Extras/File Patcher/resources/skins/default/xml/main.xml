@@ -1,5 +1,6 @@
 <window id="129">
 	<defaultcontrol always="true">3000</defaultcontrol>
+	<!-- <zorder>20</zorder> -->
 	<coordinates>
 		<system>1</system>
 		<left>320</left>

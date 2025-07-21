@@ -2,6 +2,7 @@
 	<version>2.2</version>
 	<effectslowdown>.75</effectslowdown>
 	<debugging>false</debugging>
+	<showscantimes>false</showscantimes>
 	<credits>
 		<skinname>Profile</skinname>
 		<name>Rocky5</name>

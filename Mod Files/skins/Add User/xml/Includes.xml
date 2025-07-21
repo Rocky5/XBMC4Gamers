@@ -30,18 +30,8 @@
 			<include>1280x720</include>
 			<texture>$INFO[skin.string(background_image)]</texture>
 			<aspectratio>stretch</aspectratio>
+			<!-- <include>Animated.Login.Wallpaper.Effect</include> -->
 			<visible>!StringCompare(skin.string(background_image),)</visible>
-		</control>
-		<control type="image">
-			<include>1280x720</include>
-			<texture>Q:\system\UserData\Profiles\$INFO[Container(52).ListItem.Label]\Thumbnails\Wallpapers\wallpaper_small.jpg</texture>
-			<aspectratio>stretch</aspectratio>
-		</control>
-		<control type="largeimage">
-			<include>1280x720</include>
-			<texture>Q:\system\UserData\Profiles\$INFO[Container(52).ListItem.Label]\Thumbnails\Wallpapers\wallpaper.jpg</texture>
-			<aspectratio>stretch</aspectratio>
-			<fadetime>FanartCrossfadeTime</fadetime>
 		</control>
 	</include>
 	<include name="Kiosk.Mode.Secret.Code">
@@ -50,6 +40,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onleft>52</onleft>
 			<onright>52</onright>
 			<onup>20</onup>
@@ -59,6 +50,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onleft>52</onleft>
 			<onright>52</onright>
 			<onup>21</onup>
@@ -68,6 +60,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onleft>52</onleft>
 			<onright>52</onright>
 			<onup>52</onup>
@@ -77,6 +70,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onleft>52</onleft>
 			<onright>52</onright>
 			<onup>52</onup>
@@ -86,6 +80,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onleft>24</onleft>
 			<onright>52</onright>
 			<onup>52</onup>
@@ -95,6 +90,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onleft>25</onleft>
 			<onright>52</onright>
 			<onup>52</onup>
@@ -104,6 +100,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onleft>52</onleft>
 			<onright>26</onright>
 			<onup>52</onup>
@@ -113,6 +110,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onleft>52</onleft>
 			<onright>27</onright>
 			<onup>52</onup>
@@ -122,6 +120,7 @@
 			<description>Secret Code Button</description>
 			<left>-5000</left>
 			<label>-</label>
+			<onback>52</onback>
 			<onclick>RunScript(Special://scripts\XBMC4Gamers\Utilities\Edit Mode.py,1)</onclick>
 			<onclick>SetFocus(51)</onclick>
 			<onleft>52</onleft>
@@ -164,6 +163,22 @@
 			<include>Dialog.Effect</include>
 		</control>
 	</include>
+	<include name="Behind.Dialog.Instant">
+		<control type="image">
+			<include>1280x720</include>
+			<texture>black-back.png</texture>
+		</control>
+	</include>
+	<include name="Behind.Dialog.Context">
+		<control type="image">
+			<left>-840</left>
+			<top>-660</top>
+			<width>2024</width>
+			<height>2024</height>
+			<texture>black-back.png</texture>
+			<include>Dialog.Effect</include>
+		</control>
+	</include>
 	<include name="Startup.Window.Profile">
 		<control type="image">
 			<left>547</left>
@@ -172,7 +187,7 @@
 			<height>186</height>
 			<aspectratio scalediffuse="false">stretch</aspectratio>
 			<colordiffuse>80000000</colordiffuse>
-			<texture background="true">windows\login\user_thumb_overlay.png</texture>
+			<texture>windows\login\user_thumb_overlay.png</texture>
 		</control>
 		<control type="image">
 			<left>547</left>
@@ -180,7 +195,7 @@
 			<width>186</width>
 			<height>186</height>
 			<aspectratio scalediffuse="false">scale</aspectratio>
-			<texture background="true" diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[system.profilethumb]</texture>
+			<texture diffuse="windows\login\user_thumb_diffuse.png" fallback="unknown-user.png">$INFO[system.profilethumb]</texture>
 		</control>
 	</include>
 	<include name="Startup.Window.Info">
@@ -237,8 +252,6 @@
 				<aspectratio>stretch</aspectratio>
 				<colordiffuse>50000000</colordiffuse>
 				<texture>icon_xbmc4gamers.png</texture>
-				<animation effect="fade" start="100" end="0" delay="200" time="200" reversible="false" condition="System.HasMediaDVD">Conditional</animation>
-				<animation effect="fade" start="0" end="100" delay="200" time="200" reversible="false" condition="!System.HasMediaDVD">Conditional</animation>
 				<animation effect="fade" start="20" end="20" delay="0" time="200" reversible="false" condition="Window.IsActive(2006)">Conditional</animation>
 			</control>
 			<control type="image">
@@ -249,52 +262,7 @@
 				<aspectratio>stretch</aspectratio>
 				<colordiffuse>$VAR[Custom_Gamers_Logo_Colour]</colordiffuse>
 				<texture>icon_xbmc4gamers.png</texture>
-				<animation effect="fade" start="100" end="0" delay="200" time="200" reversible="false" condition="System.HasMediaDVD">Conditional</animation>
-				<animation effect="fade" start="0" end="100" delay="200" time="200" reversible="false" condition="!System.HasMediaDVD">Conditional</animation>
 				<animation effect="fade" start="20" end="20" delay="0" time="200" reversible="false" condition="Window.IsActive(2006)">Conditional</animation>
-			</control>
-			<control type="label">
-				<left>74</left>
-				<top>5</top>
-				<width>640</width>
-				<height>20</height>
-				<align>left</align>
-				<aligny>center</aligny>
-				<font>home_20</font>
-				<label>$INFO[System.DVDLabel]</label>
-				<shadowcolor>A0000000</shadowcolor>
-				<animation type="Hidden" reversible="false">
-					<effect type="zoom" start="74,5,640,20" end="74,5,0,20" time="200" center="0,5"/>
-					<effect type="fade" start="100" end="0" time="150"/>
-				</animation>
-				<animation type="Visible" reversible="false">
-					<effect type="zoom" start="74,5,0,20" end="74,5,640,20" delay="700" time="150" center="0,5"/>
-					<effect type="fade" start="0" end="100" delay="700" time="200"/>
-				</animation>
-				<visible>System.HasMediaDVD + !Window.IsVisible(2006)</visible>
-			</control>
-			<control type="image">
-				<left>-60</left>
-				<top>-60</top>
-				<width>128</width>
-				<height>128</height>
-				<aspectratio>stretch</aspectratio>
-				<texture>gamedisc_small_shadow.png</texture>
-				<animation effect="slide" start="0,0" end="-105,-105" delay="100" time="400" reversible="false">Hidden</animation>
-				<animation effect="slide" start="-105,-105" end="0,0" delay="100" time="500" reversible="false">Visible</animation>
-				<visible>System.HasMediaDVD + !Window.IsVisible(2006)</visible>
-			</control>
-			<control type="image">
-				<left>-60</left>
-				<top>-60</top>
-				<width>128</width>
-				<height>128</height>
-				<aspectratio>stretch</aspectratio>
-				<texture diffuse="gamedisc_small_diffuse.png" fallback="gamedisc_small_alt.png">Special://skin\extras\disc artwork\$INFO[System.DVDTitleid].jpg</texture>
-				<animation effect="slide" start="0,0" end="-105,-105" delay="100" time="400" reversible="false">Hidden</animation>
-				<animation effect="slide" start="-105,-105" end="0,0" delay="100" time="500" reversible="false">Visible</animation>
-				<animation effect="rotate" start="0" end="-360" center="auto" time="2000" loop="true" condition="System.HasMediaDVD">Conditional</animation>
-				<visible>System.HasMediaDVD + !Window.IsVisible(2006)</visible>
 			</control>
 			<control type="label">
 				<right>15</right>
@@ -337,7 +305,9 @@
 		</control>
 	</include>
 	<include name="Login.Screen.Background.Stuff">
-		<include>Global.Backgrounds</include>
+		<control type="group">
+			<include>Global.Backgrounds</include>
+		</control>
 		<!-- Snow effect at winter time -->
 		<include condition="System.Date(12-20,1-1)">snow</include>
 		<!-- Halloween -->
@@ -454,34 +424,34 @@
 		<include condition="SubString(System.Date,Nov)" file="Dates_SubString_Workaround/Includes_SubString_Workaround_Nov.xml">Nov</include>
 		<include condition="SubString(System.Date,Dec)" file="Dates_SubString_Workaround/Includes_SubString_Workaround_Dec.xml">Dec</include>
 		<!-- Fade effect -->
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture background="true" flipy="true">windows\login\fade.png</texture>
-			<animation effect="fade" start="0" end="0" time="0">WindowClose</animation>
-			<animation type="WindowOpen" reversible="false">
-				<effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle"/>
-				<effect type="slide" start="0,0" end="0,720" time="1000"/>
-			</animation>
-			<visible>!Skin.HasSetting(LoginFade) + !Window.Previous(1113) + Window.Previous(1116)</visible>
-		</control>
-		<control type="image">
-			<left>0</left>
-			<top>0</top>
-			<width>1280</width>
-			<height>720</height>
-			<aspectratio>stretch</aspectratio>
-			<texture background="true">windows\login\fade.png</texture>
-			<animation effect="fade" start="0" end="0" time="0">WindowOpen</animation>
-			<animation type="WindowClose" reversible="false">
-				<effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle"/>
-				<effect type="slide" start="0,-720" end="0,0" time="1000"/>
-			</animation>
-			<visible>!Skin.HasSetting(LoginFade) + !Window.Next(2900) + !Window.Next(2999)</visible>
-		</control>
+		<!-- <control type="image"> -->
+		<!-- <left>0</left> -->
+		<!-- <top>0</top> -->
+		<!-- <width>1280</width> -->
+		<!-- <height>720</height> -->
+		<!-- <aspectratio>stretch</aspectratio> -->
+		<!-- <texture background="true" flipy="true">windows\login\fade.png</texture> -->
+		<!-- <animation effect="fade" start="0" end="0" time="0">WindowClose</animation> -->
+		<!-- <animation type="WindowOpen" reversible="false"> -->
+		<!-- <effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle"/> -->
+		<!-- <effect type="slide" start="0,0" end="0,720" time="1000"/> -->
+		<!-- </animation> -->
+		<!-- <visible>!Skin.HasSetting(LoginFade) + !Window.Previous(1113) + Window.Previous(1116)</visible> -->
+		<!-- </control> -->
+		<!-- <control type="image"> -->
+		<!-- <left>0</left> -->
+		<!-- <top>0</top> -->
+		<!-- <width>1280</width> -->
+		<!-- <height>720</height> -->
+		<!-- <aspectratio>stretch</aspectratio> -->
+		<!-- <texture background="true">windows\login\fade.png</texture> -->
+		<!-- <animation effect="fade" start="0" end="0" time="0">WindowOpen</animation> -->
+		<!-- <animation type="WindowClose" reversible="false"> -->
+		<!-- <effect type="zoom" start="1280,720" end="1280,720" time="1000" center="auto" easing="out" tween="Circle"/> -->
+		<!-- <effect type="slide" start="0,-720" end="0,0" time="1000"/> -->
+		<!-- </animation> -->
+		<!-- <visible>!Skin.HasSetting(LoginFade) + !Window.Next(2900) + !Window.Next(2999)</visible> -->
+		<!-- </control> -->
 	</include>
 	<include name="Context.Menu.Buttons">
 		<include>Behind.Dialog.Context</include>
@@ -604,7 +574,7 @@
 		<left>0</left>
 		<top>0</top>
 		<height>60</height>
-		<width>795</width>
+		<width>775</width>
 		<font>size_28</font>
 		<align>left</align>
 		<aligny>center</aligny>
@@ -621,7 +591,7 @@
 		<left>0</left>
 		<top>0</top>
 		<height>60</height>
-		<width>795</width>
+		<width>775</width>
 		<font>size_20</font>
 		<align>left</align>
 		<aligny>top</aligny>
@@ -638,7 +608,7 @@
 		<left>0</left>
 		<top>0</top>
 		<height>60</height>
-		<width>795</width>
+		<width>775</width>
 		<font>size_20</font>
 		<align>left</align>
 		<aligny>center</aligny>
@@ -667,7 +637,7 @@
 		<left>0</left>
 		<top>0</top>
 		<height>60</height>
-		<width>795</width>
+		<width>775</width>
 		<radioposx>669</radioposx>
 		<radioposy>0</radioposy>
 		<radiowidth>73</radiowidth>
@@ -683,12 +653,12 @@
 		<texturefocus colordiffuse="colour.settings.diffuse.category.focus">windows\settings_categories\button_focus.png</texturefocus>
 		<texturenofocus colordiffuse="colour.settings.diffuse.category.nofocus">windows\settings_categories\button_no_focus.png</texturenofocus>
 	</include>
-	<include name="Button.SkinSettings.Category.RadioButton.Values_alt">
+	<include name="Button.SkinSettings.Category.RadioButton.Values_Alt">
 		<description>Default RadioButton</description>
 		<left>0</left>
 		<top>0</top>
 		<height>60</height>
-		<width>795</width>
+		<width>775</width>
 		<radioposx>669</radioposx>
 		<radioposy>0</radioposy>
 		<radiowidth>73</radiowidth>
@@ -1060,7 +1030,7 @@
 	</include>
 	<include name="LoginView">
 		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="500"/>
+			<effect type="zoom" start="120" end="100" center="640,360" easing="out" tween="Quadratic" time="500"/>
 			<effect type="fade" start="0" end="100" time="500"/>
 		</animation>
 		<animation effect="fade" start="100" end="0" time="0" delay="0">WindowClose</animation>
@@ -1079,42 +1049,36 @@
 	</include>
 	<include name="Dialog.Effect.Zoom.Fast">
 		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="100"/>
-			<effect type="fade" start="0" end="100" time="110"/>
+			<effect type="zoom" start="120" end="100" center="640,360" easing="out" tween="Quadratic" time="200"/>
+			<effect type="fade" start="0" end="100" time="200"/>
 		</animation>
 		<animation type="WindowClose" reversible="false">
-			<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100"/>
-			<effect type="fade" start="100" end="0" time="110"/>
-		</animation>
-	</include>
-	<include name="Game.List.OpenClose">
-		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="100"/>
-			<effect type="fade" start="0" end="100" time="110"/>
-		</animation>
-		<animation type="WindowClose" reversible="false">
-			<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100"/>
-			<effect type="fade" start="100" end="0" time="110"/>
+			<effect type="zoom" start="100" end="120" center="640,360" easing="in" tween="Quadratic" time="100"/>
+			<effect type="fade" start="100" end="0" time="100"/>
 		</animation>
 	</include>
 	<include name="Context.Menu.OpenClose">
 		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="100"/>
-			<effect type="fade" start="0" end="100" time="110"/>
+			<effect type="zoom" start="120" end="100" center="640,360" easing="out" tween="Quadratic" time="200"/>
+			<effect type="fade" start="0" end="100" time="200"/>
 		</animation>
 		<animation type="WindowClose" reversible="false">
-			<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="100"/>
-			<effect type="fade" start="100" end="0" time="110"/>
+			<effect type="zoom" start="100" end="120" center="640,360" easing="in" tween="Quadratic" time="100"/>
+			<effect type="fade" start="100" end="0" time="100"/>
 		</animation>
 	</include>
 	<include name="View.Visible.Effect">
 		<animation type="WindowOpen" reversible="false">
-			<effect type="zoom" start="80" end="100" center="640,360" easing="out" tween="Circle" time="200"/>
+			<effect type="zoom" start="120" end="100" center="640,360" easing="out" tween="Quadratic" time="200"/>
 			<effect type="fade" start="0" end="100" time="200"/>
 		</animation>
 		<animation type="WindowClose" reversible="false">
-			<effect type="zoom" start="100" end="80" center="640,360" easing="in" tween="Circle" time="200"/>
-			<effect type="fade" start="100" end="0" time="200"/>
+			<effect type="zoom" start="100" end="120" center="640,360" easing="in" tween="Quadratic" time="100"/>
+			<effect type="fade" start="100" end="0" time="100"/>
 		</animation>
+	</include>
+	<include name="Animated.Login.Wallpaper.Effect">
+		<animation effect="zoom" start="110" end="120" center="auto" time="12500" tween="sine" easing="inout" pulse="true" condition="System.IdleTime(60)">Conditional</animation>
+		<animation effect="slide" start="-20,-20" end="20,20" time="8500" tween="sine" easing="inout" pulse="true" condition="System.IdleTime(60)">Conditional</animation>
 	</include>
 </includes>

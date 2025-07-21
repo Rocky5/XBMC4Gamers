@@ -4,6 +4,8 @@
 	<onload condition="!StringCompare(Skin.String(HomeWindowSource),Home)">ActivateWindow(1)</onload>
 	<onload condition="Skin.HasSetting(HomeReloadCustoms)">RunScript(Special://scripts\XBMC4Gamers\Utilities\Parse Programs DB.py,refresh_media)</onload>
 	<onload condition="Skin.HasSetting(HomeReloadCustoms)">Skin.Reset(HomeReloadCustoms)</onload>
+	<onunload>CancelAlarm(AutoScroll_Lastplayed,silent)</onunload>
+	<onunload>CancelAlarm(AutoScroll_Randoms,silent)</onunload>
 	<onunload>CancelAlarm(AutoScroll_Thumbs,silent)</onunload>
 	<controls>
 		<include>Home.Includes</include>

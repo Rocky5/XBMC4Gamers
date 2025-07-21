@@ -1,11 +1,13 @@
 <includes>
 	<include name="custom_id_80">
 		<control type="group">
-			<visible>Control.IsVisible(80) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
+			<visible>Control.IsVisible(80) + ![Control.IsVisible(50) | Window.IsVisible(134) | Window.IsVisible(1101) | Window.IsVisible(3000)]</visible>
+			<include>Game.Views</include>
+			<include>Fanart.FullScreen</include>
 			<control type="image">
 				<include>1280x720</include>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<colordiffuse>50FFFFFF</colordiffuse>
+				<colordiffuse>7DFFFFFF</colordiffuse>
 				<texture>views\56\black-back.png</texture>
 			</control>
 			<control type="group">
@@ -152,7 +154,7 @@
 					<width>1280</width>
 					<height>140</height>
 					<font>size_50</font>
-					<textcolor>view56_label</textcolor>
+					<textcolor>colour.view56.label</textcolor>
 					<shadowcolor>50000000</shadowcolor>
 					<align>center</align>
 					<aligny>bottom</aligny>
@@ -172,14 +174,14 @@
 					<control type="image">
 						<width>25</width>
 						<height>25</height>
-						<colordiffuse>view56_info_label_alt</colordiffuse>
+						<colordiffuse>colour.view56.info.icons</colordiffuse>
 						<texture>synopsis icons\medium_trainer.png</texture>
 						<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayHasTrainer.png)</visible>
 					</control>
 					<control type="image">
 						<width>25</width>
 						<height>25</height>
-						<colordiffuse>view56_info_label_alt</colordiffuse>
+						<colordiffuse>colour.view56.info.icons</colordiffuse>
 						<texture>synopsis icons\medium_trained.png</texture>
 						<visible>!IsEmpty(listitem.overlay) + StringCompare(listitem.overlay,OverlayTrained.png)</visible>
 					</control>
@@ -189,14 +191,14 @@
 						<width min="5" max="10">auto</width>
 						<font>size_13</font>
 						<aligny>center</aligny>
-						<textcolor>view56_info_label</textcolor>
+						<textcolor>colour.view56.info.label</textcolor>
 						<label/>
 						<visible>!IsEmpty(listitem.overlay)</visible>
 					</control>
 					<control type="image">
 						<width>25</width>
 						<height>25</height>
-						<colordiffuse>view56_info_label_alt</colordiffuse>
+						<colordiffuse>colour.view56.info.icons</colordiffuse>
 						<texture>synopsis icons\medium_played.png</texture>
 					</control>
 					<control type="label">
@@ -204,13 +206,13 @@
 						<width min="5" max="400">auto</width>
 						<font>size_16</font>
 						<aligny>center</aligny>
-						<textcolor>view56_info_label</textcolor>
+						<textcolor>colour.view56.info.label</textcolor>
 						<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
 					</control>
 					<control type="image">
 						<width>25</width>
 						<height>25</height>
-						<colordiffuse>view56_info_label_alt</colordiffuse>
+						<colordiffuse>colour.view56.info.icons</colordiffuse>
 						<texture>synopsis icons\medium_playercount.png</texture>
 					</control>
 					<control type="label">
@@ -218,13 +220,13 @@
 						<width min="5" max="400">auto</width>
 						<font>size_16</font>
 						<aligny>center</aligny>
-						<textcolor>view56_info_label</textcolor>
+						<textcolor>colour.view56.info.label</textcolor>
 						<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
 					</control>
 					<control type="image">
 						<width>25</width>
 						<height>25</height>
-						<colordiffuse>view56_info_label_alt</colordiffuse>
+						<colordiffuse>colour.view56.info.icons</colordiffuse>
 						<texture>synopsis icons\medium_rating.png</texture>
 						<visible>!IsEmpty(ListItem.Synopsis_Rating) + !IsEmpty(ListItem.Synopsis_AltName)</visible>
 					</control>
@@ -233,14 +235,14 @@
 						<width min="5" max="400">auto</width>
 						<font>size_16</font>
 						<aligny>center</aligny>
-						<textcolor>view56_info_label</textcolor>
+						<textcolor>colour.view56.info.label</textcolor>
 						<label>[UPPERCASE] $INFO[ListItem.Synopsis_Rating]  [/UPPERCASE]</label>
 						<visible>!IsEmpty(ListItem.Synopsis_Rating)</visible>
 					</control>
 					<control type="image">
 						<width>25</width>
 						<height>25</height>
-						<colordiffuse>view56_info_label_alt</colordiffuse>
+						<colordiffuse>colour.view56.info.icons</colordiffuse>
 						<texture>synopsis icons\medium_genre.png</texture>
 						<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
 					</control>
@@ -249,14 +251,14 @@
 						<width min="5" max="400">auto</width>
 						<font>size_16</font>
 						<aligny>center</aligny>
-						<textcolor>view56_info_label</textcolor>
+						<textcolor>colour.view56.info.label</textcolor>
 						<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
 						<visible>!IsEmpty(ListItem.Synopsis_Genre)</visible>
 					</control>
 					<control type="image">
 						<width>25</width>
 						<height>25</height>
-						<colordiffuse>view56_info_label_alt</colordiffuse>
+						<colordiffuse>colour.view56.info.icons</colordiffuse>
 						<texture>synopsis icons\medium_date.png</texture>
 						<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
 					</control>
@@ -265,7 +267,7 @@
 						<width min="5" max="400">auto</width>
 						<font>size_16</font>
 						<aligny>center</aligny>
-						<textcolor>view56_info_label</textcolor>
+						<textcolor>colour.view56.info.label</textcolor>
 						<label>[UPPERCASE] $INFO[ListItem.Synopsis_Year][/UPPERCASE]</label>
 						<visible>!IsEmpty(ListItem.Synopsis_Year)</visible>
 					</control>
@@ -276,7 +278,7 @@
 					<width>1200</width>
 					<height>110</height>
 					<font>size_15</font>
-					<textcolor>view56_label_alt</textcolor>
+					<textcolor>colour.view56.info.label</textcolor>
 					<shadowcolor>50000000</shadowcolor>
 					<align>center</align>
 					<aligny>top</aligny>

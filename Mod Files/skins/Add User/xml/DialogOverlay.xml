@@ -2,6 +2,5 @@
 	<zorder>20</zorder>
 	<controls>
 		<include>Window.Header</include>
-		<include>Global.Overlay</include>
 	</controls>
 </window>

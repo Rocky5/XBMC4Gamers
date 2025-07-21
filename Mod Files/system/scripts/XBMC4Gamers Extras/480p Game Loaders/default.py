@@ -19,6 +19,8 @@ getLocalizedString = Addon.getLocalizedString
 getSetting = Addon.getSetting
 print '[SCRIPT][%s] version %s initialized!' % (__scriptname__, __version__)
 #####	Check for modules I need and error if not found.
+# Close the script loading dialog
+xbmc.executebuiltin('Dialog.Close(1100,false)')
 if os.path.isdir(limpp):
 	if os.path.isdir(xbeinfo):
 		#####	Extract the loaders.zip on first run.
@@ -33,11 +35,9 @@ if os.path.isdir(limpp):
 				import resources.lib.__init__ as __init__
 				ui = __init__.GUI('%s.xml' % "main", __path__, 'default')
 				ui.doModal()
-				print '[SCRIPT][%s] version %s exited!' % (__scriptname__, __version__)
 				del ui
 		else:
 			xbmcgui.Dialog().ok("Error","","The loaders folder is missing, please reinstall this script.")
-		sys.modules.clear()
 	else:
 		xbmcgui.Dialog().ok("Error","","Module is missing.","[B]script.module.xbeinfo[/B]")
 else:

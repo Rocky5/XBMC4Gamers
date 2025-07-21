@@ -31,6 +31,10 @@
 	<value condition="Skin.HasSetting(UseFanartFolder)">Q:\system\screensavers\fanart</value>
 	<value>windows\home\multiimages</value>
 </variable>
+<variable name="SynopsisCheck">
+	<value condition="System.GetBool(mygames.gamesaltsynpsisbutton)">$INFO[Window(10001).Property(Synopsis_Overview_Full_Alt)]</value>
+	<value>$INFO[ListItem.Property(Synopsis_Overview_Full)]</value>
+</variable>
 <variable name="View_Fanart">
 	<value condition="ListItem.IsFolder + Skin.HasSetting(showfolderfanart)">$INFO[skin.string(FolderFanartPath)]\$INFO[ListItem.Label].jpg</value>
 	<!-- resources disabled -->
@@ -38,14 +42,114 @@
 	<!-- resources enabled -->
 	<value condition="!ListItem.IsFolder + !IsEmpty(listitem.Synopsis_Fanart) + !Skin.HasSetting(fanartblur)">$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</value>
 	<value condition="!ListItem.IsFolder + !IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartblur)">$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</value>
-	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Fanart) + !Skin.HasSetting(fanartblur)">no_fanart.jpg</value>
-	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartblur)">no_fanart_blur.jpg</value>
+	<!-- <value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Fanart) + !Skin.HasSetting(fanartblur)">no_fanart.jpg</value> -->
+	<!-- <value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartblur)">no_fanart_blur.jpg</value> -->
 </variable>
 <variable name="View_Fanart_Fog">
 	<value condition="ListItem.IsFolder + Skin.HasSetting(showfolderfanart) + Skin.HasSetting(customfanartfog)">$INFO[skin.string(FolderFanartPath)]\$INFO[ListItem.Label]_fog.jpg</value>
 	<!-- resources enabled -->
 	<value condition="!ListItem.IsFolder + !IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(customfanartfog)">$INFO[listitem.Synopsis_Resources]artwork\fog.jpg</value>
 	<value condition="!ListItem.IsFolder + IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(customfanartfog)">no_fog.jpg</value>
+</variable>
+<!-- <variable name="View50_Condition"> -->
+<!-- <value condition="Skin.HasSetting(View50_Disabled)">Disabled</value> -->
+<!-- <value>Enabled</value> -->
+<!-- </variable> -->
+<variable name="View51_Condition">
+	<value condition="Skin.HasSetting(View51_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View52_Condition">
+	<value condition="Skin.HasSetting(View52_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View53_Condition">
+	<value condition="Skin.HasSetting(View53_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View54_Condition">
+	<value condition="Skin.HasSetting(View54_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View55_Condition">
+	<value condition="Skin.HasSetting(View55_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View56_Condition">
+	<value condition="Skin.HasSetting(View56_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View57_Condition">
+	<value condition="Skin.HasSetting(View57_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View58_Condition">
+	<value condition="Skin.HasSetting(View58_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View59_Condition">
+	<value condition="Skin.HasSetting(View59_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View60_Condition">
+	<value condition="Skin.HasSetting(View60_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View61_Condition">
+	<value condition="Skin.HasSetting(View61_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View62_Condition">
+	<value condition="Skin.HasSetting(View62_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View63_Condition">
+	<value condition="Skin.HasSetting(View63_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View64_Condition">
+	<value condition="Skin.HasSetting(View64_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View65_Condition">
+	<value condition="Skin.HasSetting(View65_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View66_Condition">
+	<value condition="Skin.HasSetting(View66_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View67_Condition">
+	<value condition="Skin.HasSetting(View67_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View68_Condition">
+	<value condition="Skin.HasSetting(View68_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View69_Condition">
+	<value condition="Skin.HasSetting(View69_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View70_Condition">
+	<value condition="Skin.HasSetting(View70_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View71_Condition">
+	<value condition="Skin.HasSetting(View71_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View72_Condition">
+	<value condition="Skin.HasSetting(View72_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View74_Condition">
+	<value condition="Skin.HasSetting(View74_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
+</variable>
+<variable name="View75_Condition">
+	<value condition="Skin.HasSetting(View75_Disabled)">$LOCALIZE[13106]</value>
+	<value>$LOCALIZE[305]</value>
 </variable>
 <variable name="View50_Thumbs">
 	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
@@ -64,8 +168,8 @@
 	<value>poster.jpg</value>
 </variable>
 <variable name="View57_Fanart">
-	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork) | Skin.HasSetting(fanartfullscreen)">fanart.jpg</value>
-	<value>fanart_thumb.jpg</value>
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">fanart.jpg</value>
+	<value>fanart.jpg</value>
 </variable>
 <variable name="View58_Thumbs">
 	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
@@ -102,6 +206,10 @@
 <variable name="View71_Thumbs">
 	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>
 	<value>poster.jpg</value>
+</variable>
+<variable name="View71_Fanart">
+	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">fanart.jpg</value>
+	<value>fanart_thumb.jpg</value>
 </variable>
 <variable name="View72_Thumbs">
 	<value condition="!StringCompare(System.memory(total),64MB) + System.GetBool(mygames.games128mbartwork)">synopsis.jpg</value>

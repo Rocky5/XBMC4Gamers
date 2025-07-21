@@ -9,25 +9,10 @@
 			<height>0</height>
 			<texturefocus>-</texturefocus>
 			<texturenofocus>-</texturenofocus>
-			<onfocus>RunScript(Special://Scripts/XBMC4Gamers/Utilities/Dialogs.py,"","yesno","$LOCALIZE[31600]","","$LOCALIZE[31012]","","","$LOCALIZE[20126]","PlayerControl(Stop)~Dialog.Close(1112,false)~ActivateWindow(1116)","yes")</onfocus>
-			<onfocus>Dialog.Close(111,true)</onfocus>
-			<onup>1</onup>
-			<ondown>1</ondown>
-			<enable>System.HasLoginScreen</enable>
-		</control>
-		<control type="button" id="4">
-			<description>Log Off xbmc</description>
-			<left>0</left>
-			<top>0</top>
-			<width>0</width>
-			<height>0</height>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
 			<onfocus>dialog.close(111,true)</onfocus>
 			<onfocus>ActivateWindow(1112)</onfocus>
 			<onup>1</onup>
 			<ondown>1</ondown>
-			<enable>!System.HasLoginScreen</enable>
 		</control>
 	</controls>
 </window>

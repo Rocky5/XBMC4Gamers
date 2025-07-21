@@ -90,7 +90,7 @@
 					<font>size_14</font>
 					<align>left</align>
 					<textcolor>colour.playercontrol.label</textcolor>
-					<label>[B]$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Album]$INFO[MusicPlayer.Album][/B]</label>
+					<label>[B]$INFO[MusicPlayer.Album][/B]</label>
 				</control>
 				<control type="fadelabel">
 					<left>15</left>

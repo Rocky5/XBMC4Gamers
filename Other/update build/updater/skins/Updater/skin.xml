@@ -1,10 +1,8 @@
 <skin>
-		<version>2.11</version>
-		<effectslowdown>1.00</effectslowdown>
-		<credits>
-				<skinname>Updater</skinname>
-				<name>Modded (Code + Graphics) by Rocky5</name>
-				<name>Originally Coded by Jezz_X</name>
-				<name>Graphics by Jezz_X</name>
-		</credits>
+	<version>2.2</version>
+	<effectslowdown>1.00</effectslowdown>
+	<credits>
+		<skinname>Updater</skinname>
+		<name>Rocky5</name>
+	</credits>
 </skin>

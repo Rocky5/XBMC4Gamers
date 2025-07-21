@@ -228,10 +228,14 @@ class XBE:
 		return t
 
 	def Get_game_region(self):
-		regions = { 0x00000001:'NA',
+		regions = { 0x00000001:'USA',
 					0x00000002:'Japan',
-					0x00000004:'World',
-					0x80000000:'Manufacturing'}
+					0x00000003:'USA & Japan',
+					0x00000004:'PAL',
+					0x00000005:'PAL & USA',
+					0x00000007:'Region Free',
+					0x80000000:'Manufacturing',
+					0x80000007:'Region Free'}
 		try:
 			return regions[self.certificate['game_region']]
 		except:

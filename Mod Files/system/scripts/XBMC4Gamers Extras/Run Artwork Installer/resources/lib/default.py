@@ -18,26 +18,26 @@ def check_version(artwork_path):
 			for line in strings:
 				if 'msgid "v' in line.lower():
 					version_numbers = ''.join(re.findall(r'\d+', line))
-					return int(version_numbers) >= 32 # version 3.2
+					return int(version_numbers) >= 33 # version 3.3
 	except IOError:
 		return False
 	return False
 
 def grab_custompaths(artwork_path):
-	guisettings_file = os.path.join(artwork_path, 'system/userdata/guisettings.xml')
-	args_custompath = [""] * 20
-	try:
-		with open(guisettings_file, "r") as xml:
-			for line in xml:
-				for i in range(1, 21):
-					pattern = r'default\.custompath{}selected">(.*?)<'.format(i)
-					match = re.search(pattern, line.lower())
-					if match:
-						args_custompath[i-1] = match.group(1)
-		custompath_args = [arg for arg in args_custompath if arg]
-		return ' '.join(custompath_args) if custompath_args else ''
-	except IOError:
-		return ''
+    guisettings_file = os.path.join(artwork_path, 'system/userdata/guisettings.xml')
+    args_custompath = [""] * 20
+    try:
+        with open(guisettings_file, "r") as xml:
+            for line in xml:
+                for i in range(1, 21):
+                    pattern = r'default\.custompath{}selected">(.*?)<'.format(i)
+                    match = re.search(pattern, line.lower())
+                    if match:
+                        args_custompath[i-1] = match.group(1)
+        custompath_args = sorted([arg for arg in args_custompath if arg], key=lambda s: s.upper())
+        return ','.join(custompath_args) if custompath_args else ''
+    except IOError:
+        return ''
 
 if __name__ == "__main__":
 	path_file = 'E:\\UDATA\\09999993\\location.bin'
@@ -64,7 +64,10 @@ if __name__ == "__main__":
 						Video_Install, Large_Fanart, grab_custompaths(artwork_path)))
 			else:
 				dialog.ok('ERROR: NOT INSTALLED', "Please ensure that the application is installed correctly. If you haven't[CR]installed it yet, download the latest version and once installed, try again.")
+				xbmc.executebuiltin('Dialog.Close(1100,false)')
 		else:
-			dialog.ok('ERROR: OUT OF DATE','The installed version is out of date. Please update to the latest version[CR](3.2 or higher) to ensure compatibility and access to the latest features.')
+			dialog.ok('ERROR: OUT OF DATE','The installed version is out of date. Please update to the latest version[CR](3.3 or higher) to ensure compatibility and access to the latest features.')
+			xbmc.executebuiltin('Dialog.Close(1100,false)')
 	else:
 		dialog.ok('ERROR: LOCATION NOT FOUND', 'The specified location for the Xbox Artwork Installer could not be[CR]found. Please ensure that the application is correctly installed.')
+		xbmc.executebuiltin('Dialog.Close(1100,false)')

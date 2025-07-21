@@ -44,5 +44,7 @@ def clean_save_folders(save_directories):
 	xbmcgui.Dialog().ok("Cleaning Save Folders", "", "Process Complete")
 
 if __name__ == "__main__":
+	# Close the script loading dialog
+	xbmc.executebuiltin('Dialog.Close(1100,false)')
 	Save_Directories = ["E:\\TDATA\\", "E:\\UDATA\\"]
 	clean_save_folders(Save_Directories)

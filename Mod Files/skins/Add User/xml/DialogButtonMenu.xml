@@ -1,18 +1,9 @@
 <window type="buttonMenu" id="111">
 	<defaultcontrol always="true">4</defaultcontrol>
+	<onload>Dialog.Close(111,true)</onload>
 	<controls>
 		<control type="button" id="4">
 			<description>Log Off xbmc</description>
-			<left>0</left>
-			<top>0</top>
-			<width>0</width>
-			<height>0</height>
-			<texturefocus>-</texturefocus>
-			<texturenofocus>-</texturenofocus>
-			<onfocus>ActivateWindow(1113)</onfocus>
-			<onup>1</onup>
-			<ondown>1</ondown>
-			<enable>System.HasLoginScreen</enable>
 		</control>
 	</controls>
 </window>

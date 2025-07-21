@@ -36,4 +36,6 @@ def main():
 	pDialog.close()
 
 if __name__ == "__main__":
+	# Close the script loading dialog
+	xbmc.executebuiltin('Dialog.Close(1100,false)')
 	main()

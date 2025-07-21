@@ -1,31 +1,32 @@
 # -*- coding: utf-8 -*-
-import glob
-import os
-import shutil
-import xbmc
-import xbmcgui
+from glob import glob
+from os.path import basename, isfile, join
+from os import remove
+from shutil import copyfile
+from xbmc import executebuiltin, getLocalizedString, translatePath
+from xbmcgui import Dialog
 
 FILE_OUT = 'Q:/custom_splash.png'
-SKIN_PATH = xbmc.translatePath
+SPLASH_PATH = translatePath('Special://skin/extras/themes/splashes/')
 SELECT_IMAGE_PROMPT = 'Select your image'
 OVERRIDE_SPLASH_PROMPT = 'Select Override Splash'
 REMOVE_CUSTOM_SPLASH = 'Remove custom splash'
 SELECT_IMAGE_FILE = 'Select image file'
 
 def main():
-	dialog = xbmcgui.Dialog()
+	dialog = Dialog()
 	
-	xbmc.executebuiltin('Skin.SetBool(SelectPreviewMode)')
-	xbmc.executebuiltin('Skin.SetBool(SelectSplash)')
+	executebuiltin('Skin.SetBool(SelectPreviewMode)')
+	executebuiltin('Skin.SetBool(SelectSplash)')
 
-	filter_xpr = sorted([x.lower() for x in glob.glob(SKIN_PATH('Special://skin/media/*.xpr'))])
+	filter_xpr = sorted([x.lower() for x in glob(translatePath('Special://skin/media/*.xpr'))])
 	filter_xpr = [SELECT_IMAGE_FILE] + filter_xpr
 
-	if os.path.isfile(FILE_OUT):
+	if isfile(FILE_OUT):
 		filter_xpr = [REMOVE_CUSTOM_SPLASH] + filter_xpr
 
-	filter_xpr = [os.path.basename(x).replace(".xpr", "").title() for x in filter_xpr]
-	filter_xpr.remove('Textures')
+	filter_xpr = [basename(x).replace(".xpr", "").upper() for x in filter_xpr]
+	filter_xpr.remove('TEXTURES')
 
 	theme_folder = dialog.select(OVERRIDE_SPLASH_PROMPT, filter_xpr, 10000)
 
@@ -33,9 +34,9 @@ def main():
 		return
 
 	selected_theme = filter_xpr[theme_folder]
-	file_in = os.path.join(SKIN_PATH('Special://skin/extras/themes/splashes/'), selected_theme + '.png')
-	thumb_in = os.path.join(SKIN_PATH('Special://skin/extras/themes/splashes/thumbs/'), selected_theme + '.jpg')
-	thumb_out = os.path.join(SKIN_PATH('Special://skin/extras/themes/splashes/thumbs/'), REMOVE_CUSTOM_SPLASH + '.jpg')
+	file_in = join(SPLASH_PATH, selected_theme + '.png')
+	thumb_in = join(SPLASH_PATH, 'thumbs', selected_theme + '.jpg')
+	thumb_out = join(SPLASH_PATH, 'thumbs', REMOVE_CUSTOM_SPLASH + '.jpg')
 
 	if selected_theme.lower() == REMOVE_CUSTOM_SPLASH.lower():
 		label = "remove the custom_splash.png file."
@@ -50,53 +51,54 @@ def main():
 		if theme_image:
 			copy_files(theme_image, FILE_OUT, thumb_in, thumb_out, dialog, label)
 	else:
-		if os.path.isfile(FILE_OUT):
-			if dialog.yesno(selected_theme + label2, "This will " + label, '', '', xbmc.getLocalizedString(106), xbmc.getLocalizedString(107)):
+		if isfile(FILE_OUT):
+			if dialog.yesno(selected_theme + label2, '', "This will " + label, '', getLocalizedString(106), getLocalizedString(107)):
 				if selected_theme.lower() == REMOVE_CUSTOM_SPLASH.lower():
 					remove_files(FILE_OUT, thumb_out)
-				elif os.path.isfile(file_in):
+				elif isfile(file_in):
 					copy_files(file_in, FILE_OUT, thumb_in, thumb_out)
-		elif os.path.isfile(file_in):
+		elif isfile(file_in):
 			copy_files(file_in, FILE_OUT, thumb_in, thumb_out)
 
-	xbmc.executebuiltin('Skin.Reset(SelectSplash)')
-	xbmc.executebuiltin('Skin.Reset(SelectPreviewMode)')
+	executebuiltin('Skin.Reset(SelectSplash)')
+	executebuiltin('Skin.Reset(SelectPreviewMode)')
 
 def copy_files(src, dst, thumb_src, thumb_dst, dialog=None, label=None):
 	try:
-		if os.path.isfile(dst):
+		if isfile(dst):
 			if dialog and label:
-				if dialog.yesno(os.path.basename(src), "This will " + label, '', '', xbmc.getLocalizedString(106), xbmc.getLocalizedString(107)):
-					shutil.copyfile(src, dst)
+				if dialog.yesno(basename(src), '', "This will " + label, '', getLocalizedString(106), getLocalizedString(107)):
+					copyfile(src, dst)
 					try:
-						shutil.copyfile(thumb_src, thumb_dst)
+						copyfile(thumb_src, thumb_dst)
 					except:
 						pass
 			else:
-				shutil.copyfile(src, dst)
+				copyfile(src, dst)
 				try:
-					shutil.copyfile(thumb_src, thumb_dst)
+					copyfile(thumb_src, thumb_dst)
 				except:
 					pass
 		else:
-			shutil.copyfile(src, dst)
+			copyfile(src, dst)
 			try:
-				shutil.copyfile(thumb_src, thumb_dst)
+				copyfile(thumb_src, thumb_dst)
 			except:
 				pass
 	except Exception as error:
-		xbmc.log("Failed to copy files: {}".format(error), xbmc.LOGERROR)
+		print "Failed to copy files: {}".format(error)
 
 def remove_files(file_out, thumb_out):
 	try:
-		os.remove(file_out)
+		remove(file_out)
 		try:
-			os.remove(thumb_out)
+			remove(thumb_out)
 		except:
 			pass
 	except Exception as error:
-		xbmc.log("Failed to remove files: {}".format(error), xbmc.LOGERROR)
+		print "Failed to remove files: {}".format(error)
 
 if __name__ == "__main__":
-	xbmc.executebuiltin('Dialog.Close(1100,false)')
+	# Close the script loading dialog
+	executebuiltin('Dialog.Close(1100,true)')
 	main()

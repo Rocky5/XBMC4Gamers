@@ -1734,8 +1734,8 @@ msgid "Launch"
 msgstr "Avvia"
 
 msgctxt "#519"
-msgid "Launch in..."
-msgstr "Avvia in..."
+msgid "Override Region"
+msgstr "Sostituisci Regione"
 
 msgctxt "#520"
 msgid "Edit XBE title"
@@ -4155,7 +4155,7 @@ msgstr "Riduzione banda nera"
 
 msgctxt "#13313"
 msgid "Restart"
-msgstr "Riavvia X4G"
+msgstr "Riavvia"
 
 msgctxt "#13314"
 msgid "Crossfade between songs"
@@ -7868,6 +7868,130 @@ msgstr "Periferica Audio passthrough utilizzata"
 msgctxt "#29999"
 msgid "Apply flicker filter setting to games"
 msgstr "Applica impostazioni flicker filter ai giochi"
+
+#strings 32000 thru 32999 reserved for scripts and new internal names
+
+msgctxt "#32000"
+msgid "Advanced"
+msgstr "Avanzate"
+
+msgctxt "#32001"
+msgid "Enable the use of the (Y) button to open the information window"
+msgstr "Abilita tasto Y per finestra info"
+
+msgctxt "#32002"
+msgid "Enable fast game parsing"
+msgstr "Abilita l'analisi veloce dei giochi"
+
+msgctxt "#32003"
+msgid "Don't use Synopsis naming"
+msgstr "Non utilizzare la denominazione di synopsis"
+
+msgctxt "#32004"
+msgid "This option will not work with forced 480p bios"
+msgstr "Questa opzione non funziona con bios forzato a 480p"
+
+msgctxt "#32005"
+msgid "Enable higher resolution artwork"
+msgstr "Abilita grafica a risoluzione più elevata"
+
+msgctxt "#32006"
+msgid "Refresh info"
+msgstr "Aggiorna le informazioni"
+
+msgctxt "#32007"
+msgid "Refresh all contents info"
+msgstr "Aggiorna tutte le informazioni"
+
+msgctxt "#32008"
+msgid "Refreshing Synopsis Information"
+msgstr "Informazioni contenuti in aggiornamento"
+
+msgctxt "#32009"
+msgid "Override Launch XBE"
+msgstr "Sovrascrivi avvio XBE"
+
+msgctxt "#32010"
+msgid "Unpatched"
+msgstr "Non patchato"
+
+msgctxt "#32011"
+msgid "480p Patch"
+msgstr "Patch 480p"
+
+msgctxt "#32012"
+msgid "720p Patch"
+msgstr "Patch 720p"
+
+msgctxt "#32013"
+msgid "Generic Patch"
+msgstr "Patch generiche"
+
+msgctxt "#32014"
+msgid "Widescreen Patch"
+msgstr "Patch widescreen"
+
+msgctxt "#32015"
+msgid "XHD Patch"
+msgstr "Patch XHD"
+
+msgctxt "#32016"
+msgid "Resize Screen"
+msgstr "Ridimensiona schermo"
+
+msgctxt "#32017"
+msgid "Edit or Refresh"
+msgstr "Modifica o aggiorna"
+
+msgctxt "#32018"
+msgid "Trainers (cheats)"
+msgstr "Trainer (trucchi)"
+
+msgctxt "#32019"
+msgid "Information"
+msgstr "Informazioni"
+
+msgctxt "#32020"
+msgid "Power Saving"
+msgstr "Risparmio energetico"
+
+msgctxt "#32021"
+msgid "This can crash some Xbox. If yours crashes, hold the (Black) button when the[CR]splash screen appears to disable."
+msgstr "Questo può bloccare alcune Xbox. Tieni premuto il tasto[CR](Nero) quando appare lo Splash-Screen per disattivare."
+
+msgctxt "#32022"
+msgid "  Ignore matches in path"
+msgstr "  Ignora corrispondenze nel percorso"
+
+msgctxt "#32023"
+msgid "  Ignore matches in name"
+msgstr "  Ignora corrispondenze nel nome"
+
+msgctxt "#32024"
+msgid "1080i Patch"
+msgstr "Patch 1080i"
+
+msgctxt "#32025"
+msgid "Discord"
+msgstr ""
+
+msgctxt "#32026"
+msgid "Enable xbdStats communication"
+msgstr "Abilitare la comunicazione xbdStats"
+
+msgctxt "#32027"
+msgid "- Send title names to server"
+msgstr "- Inviare i nomi dei titoli al server"
+
+msgctxt "#32028"
+msgid "- Clear presence on startup"
+msgstr "- Cancellare la presenza all'avvio"
+
+msgctxt "#32029"
+msgid "Configure in the "Add User" profile, or disable the login screen."
+msgstr "Configurare nel profilo "Aggiungi utente" o disattivare la schermata[CR]di accesso."
+
+#strings 33000 thru 33999 reserved for common strings used in addons
 
 msgctxt "#33001"
 msgid "Trailer quality"

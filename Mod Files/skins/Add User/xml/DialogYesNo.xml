@@ -1,10 +1,7 @@
 <window id="100">
 	<defaultcontrol always="true">10</defaultcontrol>
 	<controls>
-		<control type="image">
-			<include>1280x720</include>
-			<texture>black-back.png</texture>
-		</control>
+		<include>Behind.Dialog.Instant</include>
 		<control type="image">
 			<description>background image</description>
 			<left>276</left>

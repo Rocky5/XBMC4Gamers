@@ -1,0 +1,10 @@
+# Author: SilverRock
+# Credits: SilverRock OGXbox forum
+# Info: Enhances resolution to 720p.[CR]64mb = No[CR]128mb = Yes[CR]Widescreen dashboard = Yes[CR]Force it into NTSC to use 720p
+# Region: PAL
+# Title: DINO CRISIS 3
+# TitleID: 43430003
+# Type: 720p Resolution patch
+
+CP|default.xbe|default720p.xbe
+OF|default720p.xbe|292|00|1513350|0005|1513360|D002|1552256|EB|1683692|0005D002020A0B

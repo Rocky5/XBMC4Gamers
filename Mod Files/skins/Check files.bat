@@ -2,7 +2,7 @@
 Setlocal enabledelayedexpansion
 
 Set "Skin1=Profile"
-Set "Skin2=Manage Profiles"
+Set "Skin2=Add User"
 
 Echo:
 Echo !Skin1! Skin:

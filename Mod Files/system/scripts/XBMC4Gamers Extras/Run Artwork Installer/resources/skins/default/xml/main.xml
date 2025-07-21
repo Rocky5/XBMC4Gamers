@@ -1,11 +1,8 @@
 <window id="3000">
 	<defaultcontrol always="true">100</defaultcontrol>
+	<!-- <zorder>20</zorder> -->
 	<controls>
 		<include>Behind.Dialog</include>
-		<control type="button" id="9000">
-			<left>-1000</left>
-			<onclick>SetFocus(3000)</onclick>
-		</control>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<control type="image">
@@ -166,7 +163,7 @@
 				<ondown>3001</ondown>
 				<pagecontrol>80</pagecontrol>
 				<control type="radiobutton" id="1">
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>Enable scanner logging</label>
 					<onclick>Skin.ToggleSetting(ArtworkInstallerLogging)</onclick>
 					<selected>Skin.HasSetting(ArtworkInstallerLogging)</selected>
@@ -185,7 +182,7 @@
 					<visible>ControlGroup(3000).HasFocus(100)</visible>
 				</control>
 				<control type="radiobutton" id="3">
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>Install 128MB fanart if available</label>
 					<onclick>Skin.ToggleSetting(ArtworkInstallerFanart)</onclick>
 					<selected>Skin.HasSetting(ArtworkInstallerFanart)</selected>
@@ -207,7 +204,7 @@
 					<visible>!StringCompare(System.memory(total_no_mb),64)</visible>
 				</control>
 				<control type="radiobutton" id="5">
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>Install video previews if available</label>
 					<onclick>Skin.ToggleSetting(ArtworkInstallerVideo)</onclick>
 					<selected>Skin.HasSetting(ArtworkInstallerVideo)</selected>
@@ -227,7 +224,7 @@
 					<animation effect="slide" start="0,0" end="20,0" time="10" condition="true">Conditional</animation>
 				</control>
 				<control type="radiobutton" id="7">
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>Skip content with artwork</label>
 					<onclick>Skin.ToggleSetting(ArtworkInstallerSkip)</onclick>
 					<selected>Skin.HasSetting(ArtworkInstallerSkip)</selected>
@@ -249,7 +246,7 @@
 					<visible>ControlGroup(3000).HasFocus(100)</visible>
 				</control>
 				<control type="radiobutton" id="9">
-					<include>Button.SkinSettings.Category.RadioButton.Values_alt</include>
+					<include>Button.SkinSettings.Category.RadioButton.Values_Alt</include>
 					<label>Try additional checks</label>
 					<onclick>Skin.ToggleSetting(ArtworkInstallerAddChecks)</onclick>
 					<selected>Skin.HasSetting(ArtworkInstallerAddChecks)</selected>

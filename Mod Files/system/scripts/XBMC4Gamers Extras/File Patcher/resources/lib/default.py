@@ -2,53 +2,50 @@
 # Script by Rocky5
 
 import logging
-import traceback
-import time
 from binascii import hexlify, unhexlify
 from os import getcwd, listdir, rename, remove
 from os.path import getsize, isfile, join, splitext
 from shutil import copyfile, move
 from struct import unpack, calcsize
+import time
 from xbmc import getFreeMem
 from xbmcgui import Dialog
 
 # set up logging
 # logging.basicConfig(level=logging.INFO, format='%(levelname)s - %(message)s')
-logging.basicConfig(level=logging.INFO, format='\nFile Patcher:\n%(message)s')
+logging.basicConfig(level=logging.INFO, format='\n%(message)s')
 
 def copy_file(file_list):
 	for line in file_list.splitlines():
 		old_names, _, new_names = line.partition('|')
-		logging.info('Copying file from %s to %s', old_names, new_names)
+		logging.info('Copying file from {} to {}'.format(old_names, new_names))
 		if old_names.lower().endswith('.xbe'):
 			check_if_xbe = join(file2patch, old_names)
 			xbe_titleid = extract_titleid(check_if_xbe).upper()
 			if xbe_titleid != pf_titleid and pf_titleid != 'MULTI':
-				logging.error('TitleID mismatch: expected %s, found %s', pf_titleid, xbe_titleid)
-				Dialog().ok('ERROR', 'Title: ' + title,
-							'Looking for (' + pf_titleid + ') found (' + xbe_titleid + ')',
-							'Patch: ' + arg.lower())
-				raise error('TitleID mismatch: expected %s, found %s', pf_titleid, xbe_titleid)
+				logging.error('TitleID mismatch: expected {}, found {}'.format(pf_titleid, xbe_titleid))
+				Dialog().ok('ERROR', 'Title: ' + title,'Looking for (' + pf_titleid + ') found (' + xbe_titleid + ')','Patch: ' + path_file_name.lower())
+				raise ValueError('TitleID mismatch: expected {} found {}'.format(pf_titleid, xbe_titleid))
 		if isfile(join(file2patch, old_names)) and not isfile(join(file2patch, new_names)):
 			copyfile(join(file2patch, old_names), join(file2patch, new_names))
 			logging.info('File copied successfully')
+			return 1
+	return 0
 
 def extract_titleid(xbe_file):
-	with open(xbe_file, 'rb', buffering=4096) as xbe:
-		xbe.seek(0x104)
-		loadAddr = unpack('L', xbe.read(4))[0]
-		xbe.seek(0x118)
-		certLoc = unpack('L', xbe.read(4))[0]
-		xbe.seek((certLoc - loadAddr) + 8)
-		id_data = unpack('L', xbe.read(4))
-		xbe_title = ''
-		for dta in unpack("40H", xbe.read(calcsize("40H"))):
-			try:
-				if dta != 0:
-					xbe_title += str(unichr(dta))
-			except:
-				pass
-		return str(hex(id_data[0])[2:10]).upper().zfill(8)
+    # Read only 1024 bytes for the header, faster than reading the whole file.
+    with open(xbe_file, 'rb', buffering=1024) as xbe:
+        header = xbe.read(1024)
+    # Base certificate start
+    loadAddr = unpack('<L', header[0x104:0x108])[0]
+    certLoc = unpack('<L', header[0x118:0x11C])[0]
+    base_offset = certLoc - loadAddr
+    # Extract TitleID (4 bytes)
+    id_offset = base_offset + 0x0008
+    title_id_raw = unpack('<L', header[id_offset:id_offset + 4])[0]
+    title_id = '{:08X}'.format(title_id_raw)
+
+    return title_id.upper().zfill(8)
 
 def check_memory():
 	return 1024 * 1024 * getFreeMem() # Available memory in bytes
@@ -60,7 +57,7 @@ def hex_replace_file(file_list):
 		parts = data.split('|')
 		in_file = join(file2patch, parts[0])
 		hex_bytes = iter(parts[1:])
-		logging.info('Hex replacing in file %s', in_file)
+		logging.info('Hex replacing in file {}'.format(in_file))
 		with open(in_file, 'r+b') as file:
 			file_size = getsize(in_file)
 			try:
@@ -86,11 +83,11 @@ def hex_replace_file(file_list):
 				file.seek(0)
 				file.write(file_cont)
 				for instance, offset, old, new in replacements_info:
-					logging.info('Inst: %s\n\t Off: %s\n\t Fnd: %s\n\tRepl: %s', instance, hex(offset), old, new)
+					logging.info('Inst: {}\n\t Off: {}\n\t Fnd: {}\n\tRepl: {}'.format(instance, hex(offset), old, new))
 				logging.info('Hex replace completed in memory')
 			except MemoryError as memerror:
 				# Use buffering
-				logging.error('%s', memerror)
+				logging.error('{}'.format(memerror))
 				file.seek(0)
 				while True:
 					chunk = file.read(read_buffer)
@@ -114,7 +111,7 @@ def hex_replace_file(file_list):
 					file.seek(-len(chunk), 1)
 					file.write(buffer)
 				for instance, offset, old, new in replacements_info:
-					logging.info('Inst: %s\n\t Off: %s\n\t Fnd: %s\n\tRepl: %s', instance, hex(offset), old, new)
+					logging.info('Inst: {}\n\t Off: {}\n\t Fnd: {}\n\tRepl: {}'.format(instance, hex(offset), old, new))
 				logging.info('Hex replace completed with buffering')
 
 def move_file(file_list):
@@ -123,7 +120,7 @@ def move_file(file_list):
 		old_names, new_names = parts[0], parts[1]
 		old_path = join(file2patch, old_names)
 		new_path = join(file2patch, new_names)
-		logging.info('Moving file from %s to %s', old_path, new_path)
+		logging.info('Moving file from {} to {}'.format(old_path, new_path))
 		if isfile(old_path) and not isfile(new_path):
 			move(old_path, new_path)
 			logging.info('File moved successfully')
@@ -133,22 +130,22 @@ def offset_patch_file(file_list):
 		parts = data.split('|')
 		in_file = join(file2patch, parts[0])
 		offsets_bytes = iter(parts[1:])
-		logging.info('Offset patching file %s', in_file)
+		logging.info('Offset patching file {}'.format(in_file))
 		with open(in_file, 'r+b', buffering=4096) as file:
 			for x in offsets_bytes:
 				offset, new_bytes = x, next(offsets_bytes)
 				file.seek(int(offset))
 				file.write(unhexlify(new_bytes))
-				logging.info('Patched offset %s with new bytes %s', offset, new_bytes)
+				logging.info('Patched offset {} with new bytes {}'.format(offset, new_bytes))
 
 def remove_file(file_list):
 	for data in file_list.splitlines():
 		parts = data.split('|')
 		for file_name in parts:
 			file_path = join(file2patch, file_name)
-			logging.info('Removing file %s', file_path)
+			logging.info('Removing file {}'.format(file_path))
 			if isfile(file_path):
-				os.remove(file_path)
+				remove(file_path)
 				logging.info('File removed successfully')
 
 def rename_file(file_list):
@@ -157,9 +154,9 @@ def rename_file(file_list):
 		old_names, new_names = parts[0], parts[1]
 		old_path = join(file2patch, old_names)
 		new_path = join(file2patch, new_names)
-		logging.info('Renaming file from %s to %s', old_path, new_path)
+		logging.info('Renaming file from {} to {}'.format(old_path, new_path))
 		if isfile(old_path) and not isfile(new_path):
-			os.rename(old_path, new_path)
+			rename(old_path, new_path)
 			logging.info('File renamed successfully')
 
 def supported_media(file_list):
@@ -167,7 +164,7 @@ def supported_media(file_list):
 		parts = data.split('|')
 		in_file = join(file2patch, parts[0])
 		new_bytes = iter(parts[1:])
-		logging.info('Updating supported media in file %s', in_file)
+		logging.info('Updating supported media in file {}'.format(in_file))
 		with open(in_file, 'r+b', buffering=4096) as xbe:
 			xbe.seek(0x104)
 			loadAddr = unpack('L', xbe.read(4))[0]
@@ -176,14 +173,14 @@ def supported_media(file_list):
 			for x in new_bytes:
 				xbe.seek((certLoc - loadAddr) + 156)
 				xbe.write(unhexlify(swap_order(x)))
-				logging.info('Patched media support with new bytes %s', x)
+				logging.info('Patched media support with new bytes {}'.format(x))
 
 def supported_region(file_list):
 	for data in file_list.splitlines():
 		parts = data.split('|')
 		in_file = join(file2patch, parts[0])
 		new_bytes = iter(parts[1:])
-		logging.info('Updating supported media in file %s', in_file)
+		logging.info('Updating supported media in file {}'.format(in_file))
 		with open(in_file, 'r+b', buffering=4096) as xbe:
 			xbe.seek(0x104)
 			loadAddr = unpack('L', xbe.read(4))[0]
@@ -192,7 +189,7 @@ def supported_region(file_list):
 			for x in new_bytes:
 				xbe.seek((certLoc - loadAddr) + 160)
 				xbe.write(unhexlify(swap_order(x)))
-				logging.info('Patched region support with new bytes %s', x)
+				logging.info('Patched region support with new bytes {}'.format(x))
 				
 def swap_order(data, wsz=16, gsz=2): # https://stackoverflow.com/posts/36744477/revisions
 	chunks = [data[i:i+wsz] for i in range(0, len(data), wsz)]
@@ -204,8 +201,9 @@ if __name__ == "__main__":
 
 	if arg != 0:
 		try:
-			patch_file = join(os.getcwd(), 'patches', arg)
-			logging.info('Patch file: %s', patch_file)
+			patch_file = arg
+			path_file_name = basename(patch_file)
+			logging.info('Patch file: {}'.format(patch_file))
 
 			# Initialize data vars
 			info_data, cp_data, hr_data, mv_data, of_data, rm_data, rn_data, sm_data, sr_data = ('',) * 9
@@ -241,80 +239,59 @@ if __name__ == "__main__":
 						elif data_type == 'sr':
 							sr_data += data_value
 
-			file2patch = Dialog().browse(0, 'Select folder', "files") # select folder with file to patch
+			file2patch = Dialog().browse(0, 'Select folder with the games xbe file', "files") # select folder with file to patch
 
 			if file2patch:
-				logging.info('Selected folder: %s', file2patch)
+				logging.info('Selected folder: {}'.format(file2patch))
 				xbmc.executebuiltin('ActivateWindow(1100)')
+				process = 1
 				pf_titleid = pf_titleid.upper()
+				xbe_titleid = 'Unknown'
 
 				if cp_data:
 					logging.info('Copying files...')
-					copy_file(cp_data)
+					process = copy_file(cp_data)
 
-				xbe_titleid = 'Unknown'
-				if sr_data:
-					check_if_xbe = join(file2patch, sr_data.split('|')[0])
-					if hr_data.split('|')[0].lower().endswith('.xbe'):
-						xbe_titleid = extract_titleid(check_if_xbe).upper()
-				
-				if sm_data:
-					check_if_xbe = join(file2patch, sm_data.split('|')[0])
-					if hr_data.split('|')[0].lower().endswith('.xbe'):
-						xbe_titleid = extract_titleid(check_if_xbe).upper()
+				if process:
+					for data in [sr_data, sm_data, hr_data, of_data]:
+						if data:
+							xbe_file = data.split('|')[0]
+							check_if_xbe = join(file2patch, xbe_file)
+							if xbe_file.lower().endswith('.xbe'):
+								xbe_titleid = extract_titleid(check_if_xbe).upper().encode('utf-8')
 
-				if hr_data:
-					check_if_xbe = join(file2patch, hr_data.split('|')[0])
-					if hr_data.split('|')[0].lower().endswith('.xbe'):
-						xbe_titleid = extract_titleid(check_if_xbe).upper()
+					if xbe_titleid in {pf_titleid, 'Unknown'} or pf_titleid == 'MULTI':
+						patch_actions = {
+							hr_data: ("Hex replacing files...", hex_replace_file),
+							mv_data: ("Moving files...", move_file),
+							of_data: ("Offset patching files...", offset_patch_file),
+							rm_data: ("Removing files...", remove_file),
+							rn_data: ("Renaming files...", rename_file),
+							sm_data: ("Patching supported media...", supported_media),
+							sr_data: ("Patching supported region...", supported_region),
+						}
 
-				if of_data:
-					check_if_xbe = join(file2patch, of_data.split('|')[0])
-					if of_data.split('|')[0].lower().endswith('.xbe'):
-						xbe_titleid = extract_titleid(check_if_xbe).upper()
+						for data, (log_msg, patch_function) in patch_actions.iteritems():
+							if data:
+								logging.info(log_msg)
+								patch_function(data)
 
-				if xbe_titleid == pf_titleid or xbe_titleid == 'Unknown' or pf_titleid == 'MULTI':
-					
-					if mv_data:
-						logging.info('Moving files...')
-						move_file(mv_data)
-
-					if hr_data:
-						logging.info('Hex replacing files...')
-						hex_replace_file(hr_data)
-
-					if of_data:
-						logging.info('Offset patching files...')
-						offset_patch_file(of_data)
-
-					if rn_data:
-						logging.info('Renaming files...')
-						rename_file(rn_data)
-
-					if rm_data:
-						logging.info('Removing files...')
-						remove_file(rm_data)
-
-					if sm_data:
-						logging.info('Patching supported media...')
-						supported_media(sm_data)
-
-					if sr_data:
-						logging.info('Patching supported region...')
-						supported_region(sr_data)
-
-					xbmc.executebuiltin('Dialog.Close(1100)')
-					Dialog().ok('PATCH APPLIED', title, 'Author: ' + author, 'File: ' + arg.lower())
-					logging.info('Patch applied successfully: %s', title)
+						xbmc.executebuiltin('Dialog.Close(1100)')
+						Dialog().ok('PATCH APPLIED', title, 'Author: ' + author, 'File: ' + path_file_name.lower())
+						logging.info('Patch applied successfully: {}'.format(title))
+					else:
+						xbmc.executebuiltin('Dialog.Close(1100)')
+						print path_file_name
+						Dialog().ok('ERROR', 'Title: ' + title, 'Looking for (' + pf_titleid + ') found (' + xbe_titleid + ')', 'Patch: ' + path_file_name.lower())
+						logging.error('TitleID mismatch: expected {}, found {}'.format(pf_titleid, xbe_titleid))
 				else:
 					xbmc.executebuiltin('Dialog.Close(1100)')
-					Dialog().ok('ERROR', 'Title: ' + title, 'Looking for (' + pf_titleid + ') found (' + xbe_titleid + ')', 'Patch: ' + arg.lower())
-					logging.error('TitleID mismatch: expected %s, found %s', pf_titleid, xbe_titleid)
+					Dialog().ok('PATCH FOUND', '', 'Looks like a patch has already been applied.', '')
 			
 		except Exception as error:
 			xbmc.executebuiltin('Dialog.Close(1100)')
 			time.sleep(0.5)
 			xbmc.executebuiltin('SetFocus(3000)')
-			logging.error('Caught an exception: %s', error)
+			logging.error('Caught an exception: {}'.format(error))
 
 xbmc.executebuiltin('SetFocus(3000)')

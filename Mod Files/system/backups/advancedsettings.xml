@@ -1,7 +1,6 @@
 <advancedsettings>
 	<!-- <loglevel hide="false">-1</loglevel> -->
 	<nodvdrom>false</nodvdrom>
-	<enableintro>false</enableintro>
 	<splash>true</splash>
 	<images>
 		<_resources>
@@ -21,8 +20,6 @@
 			<synopsis>362x512</synopsis>
 			<thumb>227x129</thumb>
 		</_resources>
-		<wallpaper>720x405</wallpaper>
-		<wallpaper_128mb>1280x720</wallpaper_128mb>
 	</images>
 	<pictures>
 		<screenshotpath>Q:\system\Screenshots\</screenshotpath>

@@ -25,11 +25,11 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\a_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.a_button">pad_buttons\a_button.png</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -38,7 +38,7 @@
 				<visible>!Window.IsActive(Home)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -47,7 +47,7 @@
 				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -59,12 +59,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\b_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.b_button">pad_buttons\b_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>StringCompare(Skin.String(HomeWindowSource),Home) | !IsEmpty(Container.FolderName)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -73,7 +73,7 @@
 				<visible>!ControlGroup(1).HasFocus + StringCompare(Skin.String(HomeWindowSource),Home) | !IsEmpty(Container.FolderName)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -85,12 +85,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\x_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.x_button">pad_buttons\x_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>!Window.IsActive(Home) | [Window.IsActive(Home) + Player.HasMedia]</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -99,7 +99,7 @@
 				<visible>Player.HasMedia</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -111,19 +111,19 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\y_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.y_button">pad_buttons\y_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>!Window.IsActive(Home) + Skin.HasSetting(kioskmode)</visible>
 			</control>
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\y_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.y_button">pad_buttons\y_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>!Window.IsActive(Home) + System.GetBool(mygames.gamesaltsynpsisbutton) + SubString(ListItem.FolderPath,.xbe,right) + !Skin.HasSetting(kioskmode)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -132,7 +132,7 @@
 				<visible>!Window.IsActive(Home) + System.GetBool(mygames.gamesaltsynpsisbutton) + SubString(ListItem.FolderPath,.xbe,right)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -141,7 +141,7 @@
 				<visible>!Window.IsActive(Home) + System.GetBool(mygames.gamesaltsynpsisbutton) + !SubString(ListItem.FolderPath,.xbe,right) + Skin.HasSetting(kioskmode)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -153,12 +153,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\white_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.white_button">pad_buttons\white_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>!Window.IsActive(Home) + Skin.HasSetting(kioskmode)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -169,12 +169,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\white_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.white_button">pad_buttons\white_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>!Window.IsActive(Home) + !Skin.HasSetting(kioskmode) + SubString(ListItem.FolderPath,.xbe,right)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -186,11 +186,11 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\black_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.black_button">pad_buttons\black_button.png</texture>
 				<aspectratio>keep</aspectratio>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -201,12 +201,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\back_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.back_button">pad_buttons\back_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>!Window.IsActive(134) + !Window.IsActive(1115)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -215,7 +215,7 @@
 				<visible>!Window.IsActive(134) + !Window.IsActive(1115) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -227,12 +227,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\start_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.start_button">pad_buttons\start_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>System.HasMediaDVD</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -244,19 +244,19 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\dpad_up_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.dpad_up_button">pad_buttons\dpad_up_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>![Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58) | Control.IsVisible(61) | Control.IsVisible(72)] + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\dpad_left_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.dpad_left_button">pad_buttons\dpad_left_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>[Control.IsVisible(54) | Control.IsVisible(55) | Control.IsVisible(58) | Control.IsVisible(61) | Control.IsVisible(72)] + Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -265,7 +265,7 @@
 				<visible>Skin.HasSetting(kioskmode) + !Window.IsActive(Home)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -276,12 +276,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\dpad_down_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.dpad_down_button">pad_buttons\dpad_down_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>Window.IsActive(Home) + ControlGroup(1).HasFocus + !ControlGroup(1).HasFocus(110)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -293,12 +293,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\l_stick_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.l_stick_button">pad_buttons\l_stick_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>Skin.HasSetting(HideContextButtons)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>
@@ -310,12 +310,12 @@
 			<control type="image">
 				<width>22</width>
 				<height>22</height>
-				<texture>pad_buttons\r_stick_button.png</texture>
+				<texture colordiffuse="colour.context.diffuse.r_stick_button">pad_buttons\r_stick_button.png</texture>
 				<aspectratio>keep</aspectratio>
 				<visible>System.HasLoginScreen + Skin.HasSetting(HideContextButtons)</visible>
 			</control>
 			<control type="label">
-				<width min="40" max="250">auto</width>
+				<width min="10" max="250">auto</width>
 				<height>22</height>
 				<font>size_14</font>
 				<aligny>center</aligny>

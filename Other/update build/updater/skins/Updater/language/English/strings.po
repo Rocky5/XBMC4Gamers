@@ -1,0 +1,18 @@
+# xbmc media center language file
+msgid ""
+msgstr ""
+"project-id-version: xbmc4xbox\n"
+"report-msgid-bugs-to: rocky5 xbmc4xbox forums\n"
+"pot-creation-date: year-mo-da ho:mi+zone\n"
+"po-revision-date: year-mo-da ho:mi+zone\n"
+"last-translator: rocky5\n"
+"language-team: english (http://www.transifex.com/projects/p/xbmc4xbox/language/en/)\n"
+"mime-version: 1.0\n"
+"content-type: text/plain; charset=utf-8\n"
+"content-transfer-encoding: 8bit\n"
+"language: en\n"
+"plural-forms: nplurals=2; plural=(n != 1);\n"
+
+msgctxt "#31000"
+msgid "XBMC4Gamers"
+msgstr ""

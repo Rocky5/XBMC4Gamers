@@ -1,11 +1,7 @@
 <window id="128">
 	<defaultcontrol>10</defaultcontrol>
 	<controls>
-		<control type="image">
-			<include>1280x720</include>
-			<texture>black-back.png</texture>
-			<include>Dialog.Effect</include>
-		</control>
+		<include>Behind.Dialog</include>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<left>240</left>
@@ -27,7 +23,7 @@
 				<height>40</height>
 				<align>center</align>
 				<aligny>center</aligny>
-				<font>size_21_bold</font>
+				<font>home_20</font>
 				<label>1007</label>
 				<textcolor>colour.dialog.keyboardnumpad.label.header</textcolor>
 			</control>
@@ -44,7 +40,7 @@
 				<textoffsetx>12</textoffsetx>
 				<aligny>center</aligny>
 				<reverse>yes</reverse>
-				<font>size_20</font>
+				<font>home_20</font>
 				<label>1008</label>
 				<onup>18</onup>
 				<ondown>11</ondown>
@@ -63,7 +59,7 @@
 				<disabledcolor>colour.dialog.keyboardnumpad.label.disabled</disabledcolor>
 				<texturefocus border="5">button-focus2.png</texturefocus>
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
-				<font>size_20</font>
+				<font>home_20</font>
 				<label>-</label>
 				<onup>10</onup>
 				<onleft>12</onleft>
@@ -77,7 +73,7 @@
 				<width>150</width>
 				<height>35</height>
 				<textoffsetx>12</textoffsetx>
-				<font>size_20</font>
+				<font>home_20</font>
 				<label>1024</label>
 				<align>center</align>
 				<aligny>center</aligny>
@@ -102,7 +98,7 @@
 				<disabledcolor>colour.dialog.keyboardnumpad.label.disabled</disabledcolor>
 				<texturefocus border="5">button-focus2.png</texturefocus>
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
-				<font>size_20</font>
+				<font>home_20</font>
 				<label>-</label>
 				<onup>11</onup>
 				<onleft>16</onleft>
@@ -121,7 +117,7 @@
 				<disabledcolor>colour.dialog.keyboardnumpad.label.disabled</disabledcolor>
 				<texturefocus border="5">button-focus2.png</texturefocus>
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
-				<font>size_20</font>
+				<font>home_20</font>
 				<label>1013</label>
 				<onup>16</onup>
 				<onleft>13</onleft>
@@ -140,7 +136,7 @@
 				<disabledcolor>colour.dialog.keyboardnumpad.label.disabled</disabledcolor>
 				<texturefocus border="5">button-focus2.png</texturefocus>
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
-				<font>size_20</font>
+				<font>home_20</font>
 				<label>1014</label>
 				<onup>13</onup>
 				<onleft>14</onleft>
@@ -159,7 +155,7 @@
 				<disabledcolor>colour.dialog.keyboardnumpad.label.disabled</disabledcolor>
 				<texturefocus border="5">button-focus2.png</texturefocus>
 				<texturenofocus border="5">button-nofocus.png</texturenofocus>
-				<font>size_20</font>
+				<font>home_20</font>
 				<label>15052</label>
 				<onup>14</onup>
 				<onleft>15</onleft>
@@ -178,6 +174,7 @@
 				<disabledcolor>colour.dialog.keyboardnumpad.label.disabled</disabledcolor>
 				<texturenofocus border="3">button-nofocus.png</texturenofocus>
 				<texturefocus border="3">button-focus2.png</texturefocus>
+				<font>home_20</font>
 				<label>186</label>
 				<onup>15</onup>
 				<onleft>19</onleft>
@@ -196,6 +193,7 @@
 				<disabledcolor>colour.dialog.keyboardnumpad.label.disabled</disabledcolor>
 				<texturenofocus border="3">button-nofocus.png</texturenofocus>
 				<texturefocus border="3">button-focus2.png</texturefocus>
+				<font>home_20</font>
 				<label>222</label>
 				<onup>15</onup>
 				<onleft>18</onleft>

@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
-import fileinput
-import os
-import shutil
-import xbmc
-import xbmcgui
-import sys
+from fileinput import input as fileinput
+from os.path import isfile
+from shutil import copy2
+from sys import argv
+from xbmc import executehttpapi, log, translatePath
+from xbmcgui import Dialog
 
-BACKUP_ADV_SETTINGS = xbmc.translatePath('Special://root/system/backups/advancedsettings.xml')
-CURRENT_ADV_SETTINGS = xbmc.translatePath('Special://profile/advancedsettings.xml')
+BACKUP_ADV_SETTINGS = translatePath('Special://root/system/backups/advancedsettings.xml')
+CURRENT_ADV_SETTINGS = translatePath('Special://profile/advancedsettings.xml')
 MODE_LIST = [
 	'No logging',
 	'Normal logging',
@@ -17,29 +17,20 @@ MODE_LIST = [
 ]
 
 def main():
-	pDialog = xbmcgui.DialogProgress()
-	dialog = xbmcgui.Dialog()
-
 	# Restore advanced settings if the current profile doesn't have it
-	if not os.path.isfile(CURRENT_ADV_SETTINGS):
-		shutil.copy2(BACKUP_ADV_SETTINGS, CURRENT_ADV_SETTINGS)
+	if not isfile(CURRENT_ADV_SETTINGS):
+		copy2(BACKUP_ADV_SETTINGS, CURRENT_ADV_SETTINGS)
 
 	try:
-		arg1 = sys.argv[1]
+		arg1 = argv[1]
 	except IndexError:
 		arg1 = "false"
-
-	mode = dialog.select('Debug logging modes', MODE_LIST, 10000)
-
+	
+	mode = Dialog().select('Debug logging modes', MODE_LIST, 10000)
 	if mode != -1:
 		value = get_logging_value(MODE_LIST[mode])
 		if update_logging_level(CURRENT_ADV_SETTINGS, arg1, value):
-			if value >= 2:
-				xbmc.executebuiltin('EnableDebugMode')
-			else:
-				xbmc.executebuiltin('DisableDebugMode')
-
-			xbmc.executebuiltin('ReloadAdvancedSettings')
+			executehttpapi('SetLogLevel({})'.format(value))
 
 def get_logging_value(mode):
 	if mode == "No logging":
@@ -52,27 +43,27 @@ def get_logging_value(mode):
 		return 2
 	return 3
 
-def update_logging_level(file_path, arg1, value):
-	new_line = '        <loglevel hide="{}">{}</loglevel>\n'.format(arg1, value)
-	line_found = False
+def update_logging_level(file_path, hide_value, log_level):
+	new_line = '\t<loglevel hide="{}">{}</loglevel>\n'.format(hide_value, log_level)
 
 	try:
-		for line in fileinput.input(file_path, inplace=1):
-			if '<loglevel hide=' in line:
-				line = new_line
-				line_found = True
-			print line,
-
-		if not line_found:
-			with open(file_path, 'r') as f:
-				lines = f.readlines()
+		with open(file_path, 'r') as f:
+			lines = f.readlines()
+		updated = False
+		for i in range(len(lines)):
+			if '<loglevel hide=' in lines[i]:
+				lines[i] = new_line
+				updated = True
+				break
+		if not updated:
 			lines.insert(1, new_line)
-			with open(file_path, 'w') as f:
-				f.writelines(lines)
 
+		with open(file_path, 'w') as f:
+			f.writelines(lines)
 		return True
+
 	except Exception as error:
-		xbmc.log("Failed to update logging level: {}".format(error), xbmc.LOGERROR)
+		print "Failed to update logging level:", error
 		return False
 
 if __name__ == "__main__":

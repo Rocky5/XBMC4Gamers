@@ -1,0 +1,456 @@
+<window type="dialog" id="1112">
+	<defaultcontrol always="true">9003</defaultcontrol>
+	<controls>
+		<include>Behind.Dialog</include>
+		<control type="group">
+			<include>Dialog.Effect.Zoom.Fast</include>
+			<control type="image">
+				<left>270</left>
+				<top>80</top>
+				<width>740</width>
+				<height>560</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.dialog.diffuse.main">windows\options\main.png</texture>
+			</control>
+			<control type="image">
+				<left>286</left>
+				<top>99</top>
+				<width>709</width>
+				<height>61</height>
+				<aspectratio>stretch</aspectratio>
+				<texture colordiffuse="colour.dialog.diffuse.header">windows\options\header.png</texture>
+			</control>
+			<control type="label">
+				<left>313</left>
+				<top>107</top>
+				<width>731</width>
+				<height>28</height>
+				<font>size_28</font>
+				<scroll>true</scroll>
+				<align>left</align>
+				<textcolor>colour.dialog.label.header</textcolor>
+				<label>$LOCALIZE[33063]</label>
+			</control>
+			<control type="label">
+				<left>10</left>
+				<bottom>0</bottom>
+				<width>1280</width>
+				<height>35</height>
+				<font>size_15</font>
+				<animation effect="fade" end="70" condition="true">Conditional</animation>
+				<textcolor>colour.dialog.label</textcolor>
+				<align>left</align>
+				<aligny>center</aligny>
+				<label>$LOCALIZE[31000]</label>
+			</control>
+			<control type="label">
+				<right>10</right>
+				<bottom>0</bottom>
+				<width>1280</width>
+				<height>35</height>
+				<font>size_15</font>
+				<animation effect="fade" end="70" condition="true">Conditional</animation>
+				<textcolor>colour.dialog.label</textcolor>
+				<align>right</align>
+				<aligny>center</aligny>
+				<label>$INFO[system.kernelversion] kernel</label>
+			</control>
+			<control type="grouplist">
+				<description>Control Info</description>
+				<left>286</left>
+				<top>568</top>
+				<width>708</width>
+				<height>80</height>
+				<itemgap>10</itemgap>
+				<orientation>Horizontal</orientation>
+				<align>center</align>
+				<!-- A Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[424]</label>
+				</control>
+				<!-- B Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\B_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[31108]</label>
+				</control>
+				<!-- X Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.x_button">pad_buttons\dialogs\x_button.png</texture>
+					<visible>Player.HasAudio</visible>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[250]</label>
+					<visible>Player.HasAudio</visible>
+				</control>
+				<!-- Black Button -->
+				<control type="image">
+					<left>0</left>
+					<top>0</top>
+					<width>32</width>
+					<height>32</height>
+					<aspectratio>stretch</aspectratio>
+					<texture colordiffuse="colour.dialog.diffuse.black_button">pad_buttons\dialogs\black_button.png</texture>
+				</control>
+				<control type="label">
+					<left>0</left>
+					<top>0</top>
+					<width min="40" max="147">auto</width>
+					<height>32</height>
+					<font>size_19</font>
+					<align>left</align>
+					<aligny>center</aligny>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$LOCALIZE[31116]</label>
+				</control>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>185</top>
+				<width>160</width>
+				<height>20</height>
+				<texture colordiffuse="colour.dialog.diffuse.scroll.indicator" flipy="true">windows\options\glow.png</texture>
+				<animation type="Conditional" condition="true" loop="true" reversable="false">
+					<effect type="fade" start="25" end="75" time="1000" tween="cubic" easing="inout" delay="2000"/>
+					<effect type="fade" start="75" end="25" time="1000" tween="cubic" easing="inout" delay="5000"/>
+				</animation>
+				<visible>integergreaterthan(Container(9003).NumItems,7)</visible>
+			</control>
+			<control type="image">
+				<left>390</left>
+				<top>525</top>
+				<width>160</width>
+				<height>20</height>
+				<texture colordiffuse="colour.dialog.diffuse.scroll.indicator">windows\options\glow.png</texture>
+				<animation type="Conditional" condition="true" loop="true" reversable="false">
+					<effect type="fade" start="25" end="75" time="1000" tween="cubic" easing="inout" delay="2000"/>
+					<effect type="fade" start="75" end="25" time="1000" tween="cubic" easing="inout" delay="5000"/>
+				</animation>
+				<visible>integergreaterthan(Container(9003).NumItems,7)</visible>
+			</control>
+			<control type="list" id="9003">
+				<left>370</left>
+				<top>195</top>
+				<width>200</width>
+				<height>350</height>
+				<onleft>-</onleft>
+				<onright>-</onright>
+				<onup>9003</onup>
+				<ondown>9003</ondown>
+				<align>center</align>
+				<aligny>center</aligny>
+				<scrolltime>0</scrolltime>
+				<animation effect="slide" start="0,0" end="0,150" time="0" condition="StringCompare(Container(9003).NumItems,1)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,125" time="0" condition="StringCompare(Container(9003).NumItems,2)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,100" time="0" condition="StringCompare(Container(9003).NumItems,3)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,75" time="0" condition="StringCompare(Container(9003).NumItems,4)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,50" time="0" condition="StringCompare(Container(9003).NumItems,5)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,25" time="0" condition="StringCompare(Container(9003).NumItems,6)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,0" time="0" condition="StringCompare(Container(9003).NumItems,7)">Conditional</animation>
+				<itemlayout height="50" width="200">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>200</width>
+						<shadowcolor>-</shadowcolor>
+						<texture colordiffuse="colour.general.diffuse.button.nofocus">windows\options\button_no_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>200</width>
+						<font>size_18</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.nofocus</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>[UPPERCASE]$INFO[listitem.Label][/UPPERCASE]</label>
+					</control>
+				</itemlayout>
+				<focusedlayout height="50" width="200">
+					<control type="image">
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>200</width>
+						<shadowcolor>-</shadowcolor>
+						<texture colordiffuse="colour.general.diffuse.button.focus">windows\options\button_focus.png</texture>
+					</control>
+					<control type="label">
+						<left>0</left>
+						<top>0</top>
+						<height>40</height>
+						<width>200</width>
+						<font>size_18</font>
+						<align>center</align>
+						<aligny>center</aligny>
+						<textcolor>colour.dialog.button.focus</textcolor>
+						<shadowcolor>-</shadowcolor>
+						<label>[UPPERCASE]$INFO[listitem.Label][/UPPERCASE]</label>
+					</control>
+				</focusedlayout>
+				<content>
+					<item id="1">
+						<label>$LOCALIZE[705]</label>
+						<onclick>Dialog.Close(1112)</onclick>
+						<onclick>ActivateWindow(NetworkSettings)</onclick>
+						<visible>Skin.HasSetting(kioskmode)</visible>
+					</item>
+					<item id="2">
+						<label>$LOCALIZE[5]</label>
+						<onclick>Dialog.Close(1112,true)</onclick>
+						<onclick>ActivateWindow(Settings)</onclick>
+						<visible>Skin.HasSetting(kioskmode)</visible>
+					</item>
+					<item id="3">
+						<label>$LOCALIZE[13313]</label>
+						<onclick>RestartApp</onclick>
+					</item>
+					<item id="4">
+						<label>$LOCALIZE[13013]</label>
+						<onclick>Reboot</onclick>
+					</item>
+					<item id="5">
+						<label>$LOCALIZE[13005]</label>
+						<onclick>Shutdown</onclick>
+					</item>
+				</content>
+			</control>
+			<control type="group">
+				<left>650</left>
+				<top>190</top>
+				<animation effect="slide" start="0,0" end="0,11" time="0" condition="!SubString(System.Freespace(F),MB)">Conditional</animation>
+				<animation effect="slide" start="0,0" end="0,11" time="0" condition="!SubString(System.Freespace(G),MB)">Conditional</animation>
+				<control type="group">
+					<top>0</top>
+					<control type="label">
+						<description>IP Address label</description>
+						<left>0</left>
+						<top>0</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_24</font>
+						<label>[UPPERCASE]$LOCALIZE[705][/UPPERCASE]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>IP Address</description>
+						<left>10</left>
+						<top>25</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[Network.IPAddress]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>Internet state</description>
+						<left>10</left>
+						<top>45</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.InternetState]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<top>75</top>
+					<control type="label">
+						<description>Current Profile</description>
+						<left>0</left>
+						<top>0</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_24</font>
+						<label>[UPPERCASE]$LOCALIZE[20093][/UPPERCASE]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>Profile</description>
+						<left>10</left>
+						<top>25</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.ProfileName]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+				</control>
+				<control type="group">
+					<top>130</top>
+					<control type="label">
+						<description>Drive Space</description>
+						<left>0</left>
+						<top>0</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_24</font>
+						<label>[UPPERCASE]$LOCALIZE[31614][/UPPERCASE]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>Space</description>
+						<left>10</left>
+						<top>25</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.Freespace(C)]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>Space</description>
+						<left>10</left>
+						<top>45</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.Freespace(E)]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>Space</description>
+						<left>10</left>
+						<top>65</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.Freespace(F)]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+						<visible>SubString(System.Freespace(F),MB)</visible>
+					</control>
+					<control type="label">
+						<description>Space</description>
+						<left>10</left>
+						<top>85</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$INFO[System.Freespace(G)]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+						<visible>SubString(System.Freespace(G),MB)</visible>
+					</control>
+				</control>
+				<control type="group">
+					<top>245</top>
+					<animation effect="slide" start="0,0" end="0,-22" time="0" condition="!SubString(System.Freespace(F),MB)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="0,-22" time="0" condition="!SubString(System.Freespace(G),MB)">Conditional</animation>
+					<control type="label">
+						<description>System Info</description>
+						<left>0</left>
+						<top>0</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_24</font>
+						<label>[UPPERCASE]$LOCALIZE[10007][/UPPERCASE]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>RAM</description>
+						<left>10</left>
+						<top>25</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$LOCALIZE[158]: $INFO[System.FreeMemory]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>CPU Temp</description>
+						<left>10</left>
+						<top>45</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$LOCALIZE[22011] $INFO[System.CPUTemperature]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+					<control type="label">
+						<description>CPU Temp</description>
+						<left>10</left>
+						<top>65</top>
+						<width>380</width>
+						<height>40</height>
+						<align>left</align>
+						<aligny>center</aligny>
+						<font>size_19</font>
+						<label>$LOCALIZE[22010] $INFO[System.GPUTemperature]</label>
+						<textcolor>colour.dialog.label.info.text</textcolor>
+					</control>
+				</control>
+			</control>
+		</control>
+	</controls>
+</window>

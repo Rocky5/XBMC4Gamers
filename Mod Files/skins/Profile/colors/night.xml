@@ -16,7 +16,6 @@
 	<color name="colour.home.label.synopsis2">FFA4A4A4</color>
 	<!-- buttons -->
 	<color name="colour.home.button.nofocus">FF666666</color>
-	
 	<!-- Dialogs -->
 	<!-- diffuse if using custom image set as FFFFFFFF -->
 	<color name="colour.dialog.diffuse.main">FF3C3C3C</color>
@@ -26,6 +25,7 @@
 	<color name="colour.dialog.diffuse.button.focus">FF065f7C</color>
 	<color name="colour.dialog.diffuse.button.nofocus">FF2A2929</color>
 	<color name="colour.dialog.diffuse.progress.bar">FFD9D9D9</color>
+	<color name="colour.dialog.diffuse.scroll.indicator">FF065f7C</color>
 	<!-- labels -->
 	<color name="colour.dialog.label.context">FFC7C7C7</color>
 	<color name="colour.dialog.label.disabled">FF666666</color>
@@ -35,8 +35,7 @@
 	<color name="colour.dialog.label.info.text">FFC7C7C7</color>
 	<!-- buttons -->
 	<color name="colour.dialog.button.nofocus">FFC7C7C7</color>
-	
-	
+	<color name="colour.dialog.button.disabled">FF666666</color>
 	<!-- Volume/kaitoast/seek -->
 	<!-- diffuse if using custom image set as FFFFFFFF -->
 	<color name="colour.dialog.volumekaitoast.diffuse.main">FF3C3C3C</color>
@@ -45,12 +44,10 @@
 	<!-- labels -->
 	<color name="colour.dialog.volumekaitoast.label">FFC7C7C7</color>
 	<color name="colour.dialog.volumekaitoast.label.header">FFC7C7C7</color>
-	
 	<!-- Default/General -->
 	<!-- labels default -->
 	<color name="colour.default.label">FFC7C7C7</color>
 	<color name="colour.default.label.disabled">FF666666</color>
-														   
 	<!-- diffuse general if using custom image set as FFFFFFFF -->
 	<color name="colour.general.diffuse.main">FF3C3C3C</color>
 	<color name="colour.general.diffuse.main.overlay">FF4C4C4D</color>
@@ -65,8 +62,6 @@
 	<color name="colour.general.label.info.text">FFC7C7C7</color>
 	<!-- buttons general -->
 	<color name="colour.general.button.nofocus">FFC7C7C7</color>
-	
-	
 	<!-- Settings -->
 	<!-- diffuse if using custom image set as FFFFFFFF -->
 	<color name="colour.settings.diffuse.main">FF3C3C3C</color>
@@ -85,18 +80,12 @@
 	<!-- buttons -->
 	<color name="colour.settings.button.nofocus">FFC7C7C7</color>
 	<color name="colour.settings.button.category.nofocus">FFC7C7C7</color>
-	
-	
 	<!-- Context buttons (bottom of screen) -->
 	<!-- labels -->
 	<color name="colour.context.buttons.label">FFC7C7C7</color>
-	
-	
 	<!-- Other screen -->
 	<!-- labels -->
 	<color name="colour.variables.logo">FFC7C7C7</color>
-	
-	
 	<!-- View files -->
 	<!-- View 75 -->
 	<color name="colour.view75.text">FFFFFFFF</color>

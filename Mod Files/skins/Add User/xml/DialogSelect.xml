@@ -1,5 +1,7 @@
 <window type="window" id="2000">
 	<defaultcontrol always="true">3</defaultcontrol>
+	<onunload>Skin.Reset(SelectPreviewMode)</onunload>
+	<onunload>Skin.Reset(SelectSplash)</onunload>
 	<controls>
 		<include>Behind.Dialog</include>
 		<control type="group">
@@ -28,7 +30,9 @@
 				<top>107</top>
 				<width>731</width>
 				<height>37</height>
-				<font>size_28</font>
+				<!-- Had to use includes to do this -->
+				<include condition="Skin.HasSetting(ArtworkInstallerHeader)">Dialog.Select.Font.AWI</include>
+				<include condition="!Skin.HasSetting(ArtworkInstallerHeader)">Dialog.Select.Font</include>
 				<scroll>true</scroll>
 				<align>left</align>
 				<aligny>center</aligny>
@@ -94,12 +98,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\a_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.a_button">pad_buttons\dialogs\a_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -114,12 +118,12 @@
 					<width>32</width>
 					<height>32</height>
 					<aspectratio>stretch</aspectratio>
-					<texture>pad_buttons\dialogs\b_button.png</texture>
+					<texture colordiffuse="colour.dialog.diffuse.b_button">pad_buttons\dialogs\b_button.png</texture>
 				</control>
 				<control type="label">
 					<left>0</left>
 					<top>0</top>
-					<width min="80" max="147">auto</width>
+					<width min="40" max="147">auto</width>
 					<height>32</height>
 					<font>size_19</font>
 					<align>left</align>
@@ -128,115 +132,279 @@
 					<label>$LOCALIZE[31108]</label>
 				</control>
 			</control>
-			<control type="list" id="3">
-				<description>button area</description>
-				<left>305</left>
-				<top>170</top>
-				<width>510</width>
-				<height>378</height>
-				<onup>3</onup>
-				<ondown>3</ondown>
-				<onleft>60</onleft>
-				<onright>9000</onright>
-				<pagecontrol>60</pagecontrol>
-				<scrolltime>200</scrolltime>
-				<animation effect="slide" start="0,0" end="-144,0" time="0" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
-				<itemlayout height="42" width="510">
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>510</width>
-						<height>40</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
-					</control>
-					<control type="label">
-						<left>10</left>
-						<top>0</top>
-						<height>40</height>
-						<width>490</width>
-						<font>size_20</font>
-						<align>left</align>
-						<aligny>center</aligny>
-						<textcolor>colour.dialog.button.nofocus</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<scroll>false</scroll>
-					</control>
-				</itemlayout>
-				<focusedlayout height="42" width="510">
-					<control type="image">
-						<left>0</left>
-						<top>0</top>
-						<width>510</width>
-						<height>40</height>
-						<aspectratio>stretch</aspectratio>
-						<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
-					</control>
-					<control type="label">
-						<left>10</left>
-						<top>0</top>
-						<height>40</height>
-						<width>490</width>
-						<font>size_20</font>
-						<align>left</align>
-						<aligny>center</aligny>
-						<textcolor>colour.dialog.button.focus</textcolor>
-						<label>$INFO[ListItem.Label]</label>
-						<scroll>false</scroll>
-					</control>
-				</focusedlayout>
+			<control type="group">
+				<visible>StringCompare(Container(6).NumItems,0)</visible>
+				<control type="list" id="3">
+					<description>button area</description>
+					<left>305</left>
+					<top>170</top>
+					<width>670</width>
+					<height>378</height>
+					<onup>3</onup>
+					<ondown>3</ondown>
+					<onleft>60</onleft>
+					<onright>9000</onright>
+					<pagecontrol>60</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<animation effect="slide" start="0,0" end="-144,0" time="0" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
+					<itemlayout condition="Control.IsVisible(5) + Skin.HasSetting(SelectPreviewMode)" height="42" width="510">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>510</width>
+							<height>40</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<top>0</top>
+							<height>40</height>
+							<width>490</width>
+							<font>size_20</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>colour.dialog.button.nofocus</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>false</scroll>
+						</control>
+					</itemlayout>
+					<focusedlayout condition="Control.IsVisible(5) + Skin.HasSetting(SelectPreviewMode)" height="42" width="510">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>510</width>
+							<height>40</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<top>0</top>
+							<height>40</height>
+							<width>490</width>
+							<font>size_20</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>colour.dialog.button.focus</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>false</scroll>
+						</control>
+					</focusedlayout>
+					<itemlayout condition="!Control.IsVisible(5) + !Skin.HasSetting(SelectPreviewMode)" height="42" width="670">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>670</width>
+							<height>40</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<top>0</top>
+							<height>40</height>
+							<width>653</width>
+							<font>size_20</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>colour.dialog.button.nofocus</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>false</scroll>
+						</control>
+					</itemlayout>
+					<focusedlayout condition="!Control.IsVisible(5) + !Skin.HasSetting(SelectPreviewMode)" height="42" width="670">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>670</width>
+							<height>40</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
+						</control>
+						<control type="label">
+							<left>10</left>
+							<top>0</top>
+							<height>40</height>
+							<width>653</width>
+							<font>size_20</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>colour.dialog.button.focus</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>false</scroll>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="scrollbar" id="60">
+					<left>301</left>
+					<top>170</top>
+					<width>4</width>
+					<height>376</height>
+					<onright>3</onright>
+					<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+					<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="2,16,2,16">scrollbar_bar.png</texturesliderbarfocus>
+					<textureslidernib>-</textureslidernib>
+					<textureslidernibfocus>-</textureslidernibfocus>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+					<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(60)">Conditional</animation>
+					<animation effect="slide" start="0,0" end="-144,0" time="0" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>number of files in list text label</description>
+					<right>295</right>
+					<bottom>105</bottom>
+					<width>550</width>
+					<height>20</height>
+					<font>size_15</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<scroll>false</scroll>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$INFO[Container(3).CurrentItem]/$INFO[Container(3).NumItems]</label>
+					<animation reversible="false" effect="fade" start="0" end="75" time="300">Visible</animation>
+					<animation reversible="false" effect="fade" start="75" end="0" time="0">Hidden</animation>
+					<animation effect="slide" start="0,0" end="144,0" time="0" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
+				</control>
 			</control>
-			<control type="scrollbar" id="60">
-				<left>301</left>
-				<top>170</top>
-				<width>4</width>
-				<height>375</height>
-				<onright>3</onright>
-				<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
-				<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
-				<texturesliderbarfocus border="2,16,2,16">scrollbar_bar.png</texturesliderbarfocus>
-				<textureslidernib>-</textureslidernib>
-				<textureslidernibfocus>-</textureslidernibfocus>
-				<showonepage>false</showonepage>
-				<orientation>vertical</orientation>
-				<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
-				<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(60)">Conditional</animation>
-				<animation effect="slide" start="0,0" end="-144,0" time="0" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
-			</control>
-			<control type="label">
-				<description>number of files in list text label</description>
-				<right>295</right>
-				<bottom>105</bottom>
-				<width>550</width>
-				<height>20</height>
-				<font>size_15</font>
-				<align>right</align>
-				<aligny>center</aligny>
-				<scroll>false</scroll>
-				<textcolor>colour.dialog.label.context</textcolor>
-				<label>$INFO[Container(3).CurrentItem]/$INFO[Container(3).NumItems]</label>
-				<animation reversible="false" effect="fade" start="0" end="75" time="300">Visible</animation>
-				<animation reversible="false" effect="fade" start="75" end="0" time="0">Hidden</animation>
-				<animation effect="slide" start="0,0" end="144,0" time="0" condition="Skin.HasSetting(SelectPreviewMode) | Window.IsVisible(1901)">Conditional</animation>
-			</control>
-			<control type="button">
-				<description>Fake OK button</description>
-				<left>828</left>
-				<top>170</top>
-				<width>155</width>
-				<height>40</height>
-				<onup>3</onup>
-				<label>186</label>
-				<font>size_20</font>
-				<align>center</align>
-				<aspectratio>stretch</aspectratio>
-				<textcolor>colour.dialog.button.nofocus</textcolor>
-				<focusedcolor>colour.dialog.button.focus</focusedcolor>
-				<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
-				<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
-				<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
-				<visible>!Skin.HasSetting(SelectPreviewMode) + !Window.IsVisible(1901)</visible>
-				<animation reversible="false" effect="fade" start="100" end="50" time="100" condition="!Skin.HasSetting(SelectPreviewMode) + !Window.IsVisible(1901)">Conditional</animation>
+			<!-- This is for or4gins theme & additional themes in the future -->
+			<control type="group">
+				<visible>StringCompare(Container(3).NumItems,0)</visible>
+				<control type="list" id="6">
+					<description>button area</description>
+					<left>305</left>
+					<top>170</top>
+					<width>670</width>
+					<height>372</height>
+					<onup>3</onup>
+					<ondown>3</ondown>
+					<onleft>61</onleft>
+					<onright>9000</onright>
+					<pagecontrol>61</pagecontrol>
+					<scrolltime>200</scrolltime>
+					<itemlayout height="62" width="670">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>670</width>
+							<height>60</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texture>
+						</control>
+						<control type="image">
+							<posy>5</posy>
+							<posx>5</posx>
+							<width>50</width>
+							<height>50</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[Listitem.Icon]</texture>
+						</control>
+						<control type="label">
+							<left>65</left>
+							<top>0</top>
+							<height>60</height>
+							<width>585</width>
+							<font>size_20</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>colour.dialog.button.nofocus</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>false</scroll>
+							<animation effect="slide" start="0,0" end="0,-10" time="0" condition="!IsEmpty(ListItem.Label2)">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>65</left>
+							<top>12</top>
+							<height>60</height>
+							<width>585</width>
+							<font>size_14</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>colour.dialog.button.nofocus</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<scroll>false</scroll>
+							<animation effect="fade" start="50" end="50" time="0" condition="true">Conditional</animation>
+						</control>
+					</itemlayout>
+					<focusedlayout height="62" width="670">
+						<control type="image">
+							<left>0</left>
+							<top>0</top>
+							<width>670</width>
+							<height>60</height>
+							<aspectratio>stretch</aspectratio>
+							<texture border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texture>
+						</control>
+						<control type="image">
+							<posy>5</posy>
+							<posx>5</posx>
+							<width>50</width>
+							<height>50</height>
+							<aspectratio>keep</aspectratio>
+							<texture>$INFO[Listitem.Icon]</texture>
+						</control>
+						<control type="label">
+							<left>65</left>
+							<top>0</top>
+							<height>60</height>
+							<width>585</width>
+							<font>size_20</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>colour.dialog.button.focus</textcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<scroll>false</scroll>
+							<animation effect="slide" start="0,0" end="0,-10" time="0" condition="!IsEmpty(ListItem.Label2)">Conditional</animation>
+						</control>
+						<control type="label">
+							<left>65</left>
+							<top>12</top>
+							<height>60</height>
+							<width>585</width>
+							<font>size_14</font>
+							<align>left</align>
+							<aligny>center</aligny>
+							<textcolor>colour.dialog.button.focus</textcolor>
+							<label>$INFO[ListItem.Label2]</label>
+							<scroll>false</scroll>
+							<animation effect="fade" start="50" end="50" time="0" condition="true">Conditional</animation>
+						</control>
+					</focusedlayout>
+				</control>
+				<control type="scrollbar" id="61">
+					<left>301</left>
+					<top>170</top>
+					<width>4</width>
+					<height>371</height>
+					<onright>6</onright>
+					<texturesliderbackground border="2,2,2,2">scrollbar_bar_back2.png</texturesliderbackground>
+					<texturesliderbar border="2,16,2,16">scrollbar_bar.png</texturesliderbar>
+					<texturesliderbarfocus border="2,16,2,16">scrollbar_bar.png</texturesliderbarfocus>
+					<textureslidernib>-</textureslidernib>
+					<textureslidernibfocus>-</textureslidernibfocus>
+					<showonepage>false</showonepage>
+					<orientation>vertical</orientation>
+					<animation reversible="false" effect="fade" start="40" end="100" time="100">Focus</animation>
+					<animation reversible="false" effect="fade" start="100" end="40" time="100" condition="!Control.HasFocus(61)">Conditional</animation>
+				</control>
+				<control type="label">
+					<description>number of files in list text label</description>
+					<right>295</right>
+					<bottom>105</bottom>
+					<width>550</width>
+					<height>20</height>
+					<font>size_15</font>
+					<align>right</align>
+					<aligny>center</aligny>
+					<scroll>false</scroll>
+					<textcolor>colour.dialog.label.context</textcolor>
+					<label>$INFO[Container(6).CurrentItem]/$INFO[Container(6).NumItems]</label>
+					<animation reversible="false" effect="fade" start="0" end="75" time="300">Visible</animation>
+					<animation reversible="false" effect="fade" start="75" end="0" time="0">Hidden</animation>
+				</control>
 			</control>
 			<control type="button" id="5">
 				<description>OK button</description>
@@ -251,7 +419,7 @@
 				<aspectratio>stretch</aspectratio>
 				<textcolor>colour.dialog.button.nofocus</textcolor>
 				<focusedcolor>colour.dialog.button.focus</focusedcolor>
-				<disabledcolor>colour.dialog.button.nofocus</disabledcolor>
+				<disabledcolor>colour.dialog.button.disabled</disabledcolor>
 				<texturenofocus border="3" colordiffuse="colour.dialog.diffuse.button.nofocus">windows\dialogs\select_browser\button_no_focus.png</texturenofocus>
 				<texturefocus border="3" colordiffuse="colour.dialog.diffuse.button.focus">windows\dialogs\select_browser\button_focus.png</texturefocus>
 			</control>

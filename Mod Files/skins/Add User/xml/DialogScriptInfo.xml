@@ -1,11 +1,7 @@
 <window type="dialog" id="2004">
 	<defaultcontrol always="true">61</defaultcontrol>
 	<controls>
-		<control type="image">
-			<include>1280x720</include>
-			<texture>black-back.png</texture>
-			<include>Dialog.Effect</include>
-		</control>
+		<include>Behind.Dialog</include>
 		<control type="group">
 			<include>Dialog.Effect.Zoom.Fast</include>
 			<control type="image">

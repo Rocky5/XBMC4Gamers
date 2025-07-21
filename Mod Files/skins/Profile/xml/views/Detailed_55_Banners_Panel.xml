@@ -1,6 +1,6 @@
 <!-- Detailed_55_Banners_Panel ID = 55 -->
 <control type="group">
-	<visible>Control.IsVisible(55) + !Control.IsVisible(50)</visible>
+	<visible>Control.IsVisible(55) + ![Control.IsVisible(50) | Window.IsActive(1101)]</visible>
 	<include>Game.Views</include>
 	<control type="group">
 		<left>55</left>
@@ -50,11 +50,10 @@
 			<height>35</height>
 			<font>size_22</font>
 			<textcolor>colour.view55.label</textcolor>
-			<shadowcolor>50000000</shadowcolor>
+			<shadowcolor>colour.view55.shadow</shadowcolor>
 			<align>left</align>
 			<aligny>center</aligny>
 			<label>$INFO[ListItem.Label]</label>
-			<visible>Skin.HasSetting(_resourcesenabled)</visible>
 		</control>
 		<control type="grouplist">
 			<description>Control Info</description>
@@ -105,6 +104,7 @@
 				<font>size_17</font>
 				<aligny>center</aligny>
 				<textcolor>colour.view55.info.label</textcolor>
+				<shadowcolor>colour.view55.shadow</shadowcolor>
 				<label>[UPPERCASE] $INFO[ListItem.ProgramCount]  [/UPPERCASE]</label>
 			</control>
 			<control type="image">
@@ -120,6 +120,7 @@
 				<font>size_17</font>
 				<aligny>center</aligny>
 				<textcolor>colour.view55.info.label</textcolor>
+				<shadowcolor>colour.view55.shadow</shadowcolor>
 				<label>[UPPERCASE] $INFO[ListItem.Synopsis_PlayerCount]  [/UPPERCASE]</label>
 			</control>
 			<control type="image">
@@ -136,6 +137,7 @@
 				<font>size_17</font>
 				<aligny>center</aligny>
 				<textcolor>colour.view55.info.label</textcolor>
+				<shadowcolor>colour.view55.shadow</shadowcolor>
 				<label>[UPPERCASE] $INFO[ListItem.Synopsis_Rating]  [/UPPERCASE]</label>
 				<visible>!IsEmpty(ListItem.Synopsis_Rating)</visible>
 			</control>
@@ -153,6 +155,7 @@
 				<font>size_17</font>
 				<aligny>center</aligny>
 				<textcolor>colour.view55.info.label</textcolor>
+				<shadowcolor>colour.view55.shadow</shadowcolor>
 				<label>[UPPERCASE] $INFO[ListItem.Synopsis_Year][/UPPERCASE]</label>
 			</control>
 		</control>
@@ -180,6 +183,7 @@
 				<font>size_17</font>
 				<aligny>center</aligny>
 				<textcolor>colour.view55.info.label</textcolor>
+				<shadowcolor>colour.view55.shadow</shadowcolor>
 				<label>[UPPERCASE] $INFO[ListItem.Synopsis_Genre]  [/UPPERCASE]</label>
 			</control>
 		</control>
@@ -190,7 +194,7 @@
 			<height>196</height>
 			<font>size_15</font>
 			<textcolor>colour.view55.info.synopsis</textcolor>
-			<shadowcolor>50000000</shadowcolor>
+			<shadowcolor>colour.view55.shadow</shadowcolor>
 			<align>justify</align>
 			<aligny>top</aligny>
 			<label>$INFO[ListItem.Synopsis_Overview]</label>
@@ -228,6 +232,7 @@
 					<height>100</height>
 					<font>size_24</font>
 					<textcolor>colour.view55.info.label</textcolor>
+					<shadowcolor>colour.view55.shadow</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>
@@ -274,6 +279,7 @@
 					<height>100</height>
 					<font>size_24</font>
 					<textcolor>colour.view55.info.label</textcolor>
+					<shadowcolor>colour.view55.shadow</shadowcolor>
 					<scroll>true</scroll>
 					<align>left</align>
 					<aligny>center</aligny>

@@ -1,28 +1,9 @@
 <includes>
 	<include name="custom_id_81">
 		<control type="group">
-			<visible>Control.IsVisible(81) + !Control.IsVisible(50) + !Window.IsVisible(134) + !Window.IsVisible(3000)</visible>
-			<control type="largeimage">
-				<include>1280x720</include>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<fadetime>FanartCrossfadeTime</fadetime>
-				<texture>$INFO[listitem.Synopsis_Resources]artwork\fanart.jpg</texture>
-				<visible>!IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartenabled) + !Skin.HasSetting(fanartblur)</visible>
-			</control>
-			<control type="largeimage">
-				<include>1280x720</include>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<fadetime>FanartCrossfadeTime</fadetime>
-				<texture>$INFO[listitem.Synopsis_Resources]artwork\fanart-blur.jpg</texture>
-				<visible>!IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartenabled) + Skin.HasSetting(fanartblur)</visible>
-			</control>
-			<control type="largeimage">
-				<include>1280x720</include>
-				<aspectratio scalediffuse="false">stretch</aspectratio>
-				<fadetime>FanartCrossfadeTime</fadetime>
-				<texture>$VAR[View_Fanart]</texture>
-				<visible>IsEmpty(listitem.Synopsis_Fanart) + Skin.HasSetting(fanartenabled)</visible>
-			</control>
+			<visible>Control.IsVisible(81) + ![Control.IsVisible(50) | Window.IsVisible(134) | Window.IsVisible(1101) | Window.IsVisible(3000)]</visible>
+			<include>Game.Views</include>
+			<include>Fanart.FullScreen</include>
 			<control type="image">
 				<include>1280x720</include>
 				<aspectratio scalediffuse="false">stretch</aspectratio>
